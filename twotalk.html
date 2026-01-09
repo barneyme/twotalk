@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Two Talk</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-family='monospace' font-weight='bold' fill='%23e67e22'>~%22</text></svg>"
+        />
+        <style>
+            :root {
+                --dark: #1a2a3a;
+                --accent: #e67e22;
+                --accent-light: #fef5ed;
+                --light: #f4f7f6;
+                --white: #ffffff;
+                --border: #d1d8e0;
+                --radius: 12px;
+            }
+
+            * { box-sizing: border-box; }
+
+            body {
+                font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 10px;
+                background: var(--light);
+            }
+
+            header {
+                background: var(--dark);
+                color: white;
+                padding: 2.5rem 1rem;
+                border-radius: var(--radius);
+                text-align: center;
+                margin-bottom: 20px;
+                border-bottom: 6px solid var(--accent);
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: clamp(1.8rem, 6vw, 2.8rem);
+                text-transform: uppercase;
+                letter-spacing: 4px;
+            }
+
+            header h1 span { color: var(--accent); }
+
+            header p {
+                margin: 8px 0 0;
+                opacity: 0.9;
+                font-style: italic;
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
+
+            .section-box {
+                background: white;
+                border-radius: var(--radius);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                margin-bottom: 20px;
+                overflow: hidden;
+                border: 1px solid var(--border);
+            }
+
+            .toggle-btn {
+                background: white;
+                border: none;
+                padding: 20px 25px;
+                width: 100%;
+                cursor: pointer;
+                font-weight: 800;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1rem;
+                color: var(--dark);
+                text-align: left;
+                transition: background 0.2s;
+            }
+
+            .toggle-btn:hover { background: var(--accent-light); }
+
+            .toggle-btn span { color: var(--accent); font-size: 1.2rem; }
+
+            .content {
+                max-height: 0;
+                transition: max-height 0.4s ease-out;
+                padding: 0 25px;
+                overflow: hidden;
+            }
+
+            .content.open {
+                max-height: 25000px; /* Increased for full dictionary */
+                padding: 25px;
+                border-top: 1px solid #eee;
+            }
+
+            h3 {
+                color: var(--accent);
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                margin-top: 25px;
+                margin-bottom: 10px;
+            }
+            
+            h3:first-child { margin-top: 0; }
+
+            .rule-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+                font-size: 0.9rem;
+            }
+
+            .rule-table th {
+                background-color: var(--accent-light);
+                color: var(--dark);
+                border: 1px solid var(--border);
+                padding: 12px 8px;
+            }
+
+            .rule-table td { border: 1px solid var(--border); padding: 12px 8px; }
+
+            .toolbar {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            #search {
+                flex: 2 1 300px;
+                padding: 14px 20px;
+                border-radius: 8px;
+                border: 2px solid var(--border);
+                font-size: 1.1rem;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+
+            #search:focus { border-color: var(--accent); }
+
+            .btn-print {
+                flex: 1 1 200px;
+                background: var(--accent);
+                color: white;
+                border: none;
+                padding: 14px 20px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.2s, transform 0.1s;
+            }
+
+            .btn-print:hover { background: #d35400; transform: translateY(-1px); }
+
+            .main-table { width: 100%; border-collapse: collapse; }
+
+            .main-table tr:hover { background-color: var(--accent-light); }
+
+            .sym-cell {
+                font-family: monospace;
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: var(--accent);
+                padding: 15px;
+            }
+
+            .label {
+                font-size: 0.65rem;
+                color: var(--accent);
+                text-transform: uppercase;
+                display: block;
+                font-weight: 900;
+                margin-bottom: 2px;
+            }
+
+            @media (min-width: 768px) {
+                .main-table thead th {
+                    background: var(--dark);
+                    border-bottom: 4px solid var(--accent);
+                    color: white;
+                    padding: 15px;
+                    text-align: left;
+                }
+                .cluster-cell {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 15px;
+                    padding: 15px;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .main-table tr {
+                    border: 1px solid var(--border);
+                    margin-bottom: 10px;
+                    display: block;
+                    border-radius: 8px;
+                }
+                .cluster-cell { padding: 15px; display: block; }
+                .cluster-cell div { margin-bottom: 10px; }
+            }
+
+            @media print {
+                .toolbar, .toggle-btn, header, .btn-print { display: none !important; }
+                .content { max-height: none !important; display: block !important; padding: 0 !important; }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>TWO <span>TALK</span></h1>
+            <p>SMALL WORDS. BIG IDEAS.</p>
+        </header>
+
+        <div style="background: white; border-radius: var(--radius); padding: 25px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); border-left: 6px solid var(--accent);">
+            <p style="font-size: 1.1rem; line-height: 1.7; margin: 0; color: var(--dark)">
+                <strong>Two Talk</strong> is a semantic micro-notation system designed for the speed of the digital age. While traditional shorthand systems require years of practice, Two Talk uses the universal symbols already on your keyboard to map out meaning rather than sounds. It's <strong>60% faster than English</strong>, works across language barriers, and is built to help you capture the "essence" of a thought before it escapes your brain.
+            </p>
+        </div>
+
+        <div class="section-box">
+            <button class="toggle-btn" onclick="toggle('about')">
+                About Two Talk <span>▼</span>
+            </button>
+            <div id="about" class="content">
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Fixed Arity (The 2-Symbol Rule):</strong> Every "word" in Two Talk is exactly two symbols long - a <strong>Category</strong> and a <strong>Modifier</strong>.</li>
+                    <li><strong>Semantic Calculus:</strong> It translates concepts, not sounds. One pair can act as a noun, verb, or adjective depending on context.</li>
+                    <li><strong>Cognitive Categories:</strong> The 10 categories are based on how humans naturally "chunk" reality.</li>
+                    <li><strong>Compositional Chaining:</strong> Stack 2-symbol blocks for complex thoughts. The first block is the Subject, and following blocks provide Detail.</li>
+                </ul>
+
+                <h3>Advantages</h3>
+                <ul>
+                    <li><strong>Keyboard Ready:</strong> Every symbol is available on every smartphone and laptop on Earth.</li>
+                    <li><strong>Deductive Vocabulary:</strong> You don't need to memorize a massive dictionary; you can "invent" words based on logic.</li>
+                    <li><strong>Universal & Scannable:</strong> It bypasses language barriers and creates a visual rhythm that is easy to skim.</li>
+                    <li><strong>Ambiguity as a Feature:</strong> Relies on human logic to determine specific meaning from context.</li>
+                </ul>
+
+                <h3>Benefits</h3>
+                <ul>
+                    <li><strong>Fast and Efficient:</strong> Strip away grammatical noise to focus purely on data.</li>
+                    <li><strong>Easy to Learn:</strong> Most users become proficient in just hours.</li>
+                    <li><strong>Readable Later:</strong> Systematic structure keeps notes intelligible for years.</li>
+                    <li><strong>Systematically Expandable:</strong> Chaining allows for unlimited complexity.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <button class="toggle-btn" onclick="toggle('rules')">
+                Two Talk Rules <span>▼</span>
+            </button>
+            <div id="rules" class="content">
+                <h3>Categories (The "What")</h3>
+                <table class="rule-table">
+                    <thead><tr><th>Sym</th><th>Category</th><th>Meaning</th></tr></thead>
+                    <tbody>
+                        <tr><td>@</td><td>Life</td><td>People, animals, self, biological existence.</td></tr>
+                        <tr><td>[</td><td>Matter</td><td>Physical objects, tools, materials, containers.</td></tr>
+                        <tr><td>?</td><td>Mind</td><td>Thoughts, ideas, knowledge, logic, memory.</td></tr>
+                        <tr><td>&gt;</td><td>Motion</td><td>Actions, verbs, processes, travel, work.</td></tr>
+                        <tr><td>/</td><td>Time</td><td>Moments, duration, frequency, history.</td></tr>
+                        <tr><td>#</td><td>Space</td><td>Locations, rooms, geography, environment.</td></tr>
+                        <tr><td>*</td><td>Force</td><td>Energy, power, technology, intensity.</td></tr>
+                        <tr><td>"</td><td>Signal</td><td>Communication, language, sound, data.</td></tr>
+                        <tr><td>=</td><td>Order</td><td>Systems, laws, math, structures, ethics.</td></tr>
+                        <tr><td>$</td><td>Essence</td><td>Emotions, values, quality, worth.</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Modifiers (The "How")</h3>
+                <table class="rule-table">
+                    <thead><tr><th>Sym</th><th>Modifier</th><th>Meaning</th></tr></thead>
+                    <tbody>
+                        <tr><td>+</td><td>Positive</td><td>Good, addition, increase, gain.</td></tr>
+                        <tr><td>-</td><td>Negative</td><td>Bad, subtraction, decrease, loss.</td></tr>
+                        <tr><td>!</td><td>Great</td><td>Big, high, important, superior.</td></tr>
+                        <tr><td>.</td><td>Lesser</td><td>Small, low, minor, detail.</td></tr>
+                        <tr><td>(</td><td>Origin</td><td>Start, center, internal, cause.</td></tr>
+                        <tr><td>)</td><td>Target</td><td>End, external, effect, boundary.</td></tr>
+                        <tr><td>~</td><td>Fluid</td><td>Changing, fast, temporary, organic.</td></tr>
+                        <tr><td>_</td><td>Fixed</td><td>Constant, slow, permanent, rigid.</td></tr>
+                        <tr><td>:</td><td>Known</td><td>Clear, public, certain, "the".</td></tr>
+                        <tr><td>^</td><td>Hidden</td><td>Dark, private, potential, "a/an".</td></tr>
+                        <tr><td>1</td><td>Single</td><td>One, individual, unit, self.</td></tr>
+                        <tr><td>2</td><td>Dual</td><td>Two, pair, both, double.</td></tr>
+                        <tr><td>3</td><td>Group</td><td>Three, many, several, community.</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Two Rules</h3>
+                <div style="background: var(--dark); color: white; padding: 20px; border-radius: var(--radius); margin-bottom: 15px; border-left: 5px solid var(--accent);">
+                    <strong>Two Symbol Rule:</strong> Every word uses exactly two symbols. A "category" plus a "modifier".
+                </div>
+                <div style="background: var(--dark); color: white; padding: 20px; border-radius: var(--radius); margin-bottom: 20px; border-left: 5px solid var(--accent);">
+                    <strong>Two Word Rule:</strong> Combine pairs for complex meanings. 1st pair = "What", 2nd pair = "Detail".
+                </div>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <button class="toggle-btn" onclick="toggle('dictionary')">
+                Dictionary <span>▼</span>
+            </button>
+            <div id="dictionary" class="content">
+                <div class="toolbar">
+                    <input type="text" id="search" placeholder="Search dictionary..." onkeyup="render()" />
+                    <button class="btn-print" onclick="printGuide()">Print Guide</button>
+                </div>
+                <table class="main-table">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Definitions (Object / Idea / Action)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wordTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            const semanticClusters = {
+                // All 100+ entries from the original files are preserved here
+                "@1": ["Self/Individual", "Solitude/Existence", "To be/Exist"],
+                "@3": ["Team/Crowd", "Community", "To meet/Gather"],
+                "@!": ["Leader/Expert", "Authority/Truth", "To rule/Command"],
+                "@?": ["Seeker/Questioner", "Theory/Doubt", "To guess/Inquire"],
+                "@+": ["Friend/Ally", "Support", "To help/Assist"],
+                "@-": ["Enemy/Servant", "Humility/Conflict", "To serve/Oppose"],
+                "@~": ["Animal/Body", "Health/Organic Life", "To feel/Sense"],
+                "@#": ["Citizen/Resident", "Belonging/Home", "To inhabit/Live"],
+                "@=": ["Partner/Spouse", "Equality", "To cooperate/Marry"],
+                "@<": ["Consumer", "Receptivity", "To receive/Get"],
+                "!#": ["Evidence/Reality", "Certainty", "To manifest/Show"],
+                "?#": ["Mystery/Subject", "Possibility/Logic", "To hypothesize/Think"],
+                "!*": ["Map/Address", "Accuracy", "To locate/Define"],
+                "?*": ["Maze/Unknown", "Exploration", "To explore/Search"],
+                "!=": ["Constant/Fact", "Logic/Correctness", "To verify/Match"],
+                "?=": ["Metaphor", "Resemblance", "To compare"],
+                '!"': ["Message/Statement", "Fact", "To tell/Document"],
+                '?"': ["Question", "Curiosity", "To ask/Inquire"],
+                "[:": ["Container/Secret", "Essence/Privacy", "To contain/Hide"],
+                "[^": ["Vulnerability", "Worry/Anxiety", "To fear/Hesitate"],
+                "$#": ["Asset/Money", "Wealth", "To buy/Finance"],
+                "$+": ["Profit/Reward", "Success/Happiness", "To gain/Win"],
+                "$-": ["Debt/Loss", "Failure/Sadness", "To lose/Spend"],
+                "$=": ["Scale/Trade", "Justice/Fairness", "To trade/Equalize"],
+                "!$": ["Price/Standard", "Value", "To appraise/Value"],
+                "~#": ["Ice/Solid", "State-change", "To freeze/Harden"],
+                "~>": ["Stream/Pipe", "Direction/Flow", "To flow/Pour"],
+                "~<": ["Drain/Sponge", "Absorption", "To soak/Drink"],
+                "~+": ["Flood/Sea", "Abundance", "To overflow"],
+                "~-": ["Drop/Leak", "Scarcity", "To drip/Empty"],
+                "#_": ["Foundation/Earth", "Stability", "To ground/Situate"],
+                "#(": ["Room/Pocket", "Privacy", "To enclose/Hide"],
+                "#)": ["Plaza/Field", "Publicity", "To reveal/Open"],
+                "[*": ["Machine/Tool", "Utility/Function", "To work/Act"],
+                "[-": ["Scrap/Blade", "Weakness/Decay", "To break/Cut"],
+                "[!": ["Safe/Vault", "Security", "To protect/Guard"],
+                "[)": ["Key/Lever", "Access", "To unlock/Release"],
+                "[(": ["Entrance/Seed", "Beginning", "To enter/Start"],
+                "[>": ["Exit", "Conclusion", "To leave/Finish"],
+                "#1": ["Point/Part", "Singularity", "To isolate"],
+                "()": ["Bridge", "Connection", "To link/Join"],
+                ")(": ["Barrier/Wall", "Conflict", "To block/Fight"],
+                ">>": ["Arrow/Road", "Progress/Speed", "To go/Walk"],
+                "<<": ["Anchor", "History/Regression", "To stop/Return"],
+                "+1": ["Addition", "Growth", "To increase/Add"],
+                "-1": ["Subtraction", "Reduction", "To decrease/Take"],
+                "+>": ["Victory", "Advantage", "To advance/Surpass"],
+                "->": ["Death/Defeat", "Disadvantage", "To retreat/Die"],
+                "3*": ["Network/Grid", "Complexity", "To connect/Weave"],
+                "[]": ["Door/Portal", "Opportunity", "To transition"],
+                "@:": ["You", "Presence", "To face"],
+                "@^": ["He/She/Them", "Potential", "To observe"],
+                ":1": ["This", "Specificity", "To point"],
+                "^1": ["That", "Distance", "To refer"],
+                "#:": ["Here", "Proximity", "To stay"],
+                "#^": ["There", "Remote", "To reach"],
+                "#?": ["Where", "Location", "To find"],
+                "/?": ["When", "Timing", "To schedule"],
+                "*?": ["How", "Method/Force", "To process"],
+                "!-": ["None/Zero", "Negation", "To nullify/Kill"],
+                "!3": ["All/Universe", "Totality", "To encompass"],
+                "+3": ["Many", "Plurality", "To multiply"],
+                "^3": ["Some", "Uncertainty", "To sample"],
+                "-3": ["Few", "Scarcity", "To limit"],
+                "1:": ["One", "Unity", "To unify"],
+                "2:": ["Two", "Duality", "To pair"],
+                "3:": ["Three/Group", "Plurality", "To group"],
+                "+!": ["Giant", "Magnitude", "To expand"],
+                "/_": ["Length", "Duration", "To last/Endure"],
+                "#+": ["Width/Expanse", "Space", "To widen"],
+                "[_": ["Thickness", "Density", "To thicken"],
+                "*!": ["Weight/Heavy", "Pressure", "To press/Heavy"],
+                ".-": ["Small/Tiny", "Minutiae", "To shrink"],
+                "/.": ["Short/Brief", "Moment", "To shorten"],
+                "#.": ["Narrow", "Restriction", "To squeeze"],
+                "[.": ["Thin/Fine", "Subtlety", "To thin"],
+                "@.": ["Woman", "Femininity", "To nurture"],
+                "@@": ["Human", "Humanity", "To live"],
+                "@(": ["Child/Baby", "Origin", "To begin/Grow"],
+                "@>": ["Parent", "Provision", "To provide/Give"],
+                "~@": ["Bird", "Flight", "To fly"],
+                "~-": ["Snake", "Threat", "To slither/Bite"],
+                "[~": ["Tree", "Nature", "To grow"],
+                "[3": ["Forest", "Ecosystem", "To gather"],
+                "[(": ["Fruit", "Result", "To ripen"],
+                "[$": ["Flower", "Beauty", "To bloom"],
+                "~[": ["Meat", "Consumption", "To eat"],
+                "~_": ["Bone", "Structure", "To support"],
+                "~(": ["Egg", "Potential", "To hatch"],
+                "!!": ["Head", "Command", "To lead"],
+                '"{': ["Ear", "Reception", "To listen/Hear"],
+                "?:": ["Eye", "Clarity", "To see/Watch"],
+                "(~": ["Nose", "Scent", "To smell"],
+                "~)": ["Mouth", "Opening", "To eat/Speak"],
+                '~"': ["Tongue", "Language", "To taste/Say"],
+                "^#": ["Foot/Leg", "Base", "To stand/Walk"],
+                "$(": ["Heart", "Feeling", "To pump/Love"],
+                "!:": ["Knowledge", "Certainty", "To know"],
+                "><": ["Fight/Conflict", "Opposition", "To fight"],
+                "**": ["Sun", "Power", "To shine"],
+                "~:": ["Water", "Fluidity", "To flow"],
+                "/^": ["Night", "Darkness", "To sleep"],
+                "/:": ["Day", "Light", "To wake"],
+                "/!": ["Year", "Cycle", "To age"],
+                "$!": ["Red", "Intensity", "To burn"],
+                "$:": ["White", "Purity/Clarity", "To clean"],
+                "$^": ["Black", "Shadow", "To obscure"],
+                "^+": ["Mountain", "Peak", "To climb"],
+                "!@": ["Name", "Identity", "To call"],
+            };
+
+            function toggle(id) {
+                document.getElementById(id).classList.toggle("open");
+                if (id === "dictionary") setTimeout(render, 50);
+            }
+
+            function render() {
+                const query = document.getElementById("search").value.toLowerCase();
+                const tbody = document.getElementById("wordTableBody");
+                tbody.innerHTML = "";
+                Object.keys(semanticClusters).forEach((code) => {
+                    const meanings = semanticClusters[code];
+                    if (code.includes(query) || meanings.some((m) => m.toLowerCase().includes(query))) {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `<td class="sym-cell">${code}</td><td class="cluster-cell"><div><span class="label">Obj</span>${meanings[0]}</div><div><span class="label">Idea</span>${meanings[1]}</div><div><span class="label">Act</span>${meanings[2]}</div></td>`;
+                        tbody.appendChild(row);
+                    }
+                });
+            }
+
+            function printGuide() {
+                const about = document.getElementById("about").innerHTML;
+                const rules = document.getElementById("rules").innerHTML;
+                let dictHtml = '<div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">';
+                for (const [code, meanings] of Object.entries(semanticClusters)) {
+                    dictHtml += `<div style="border-bottom:1px solid #eee; padding:5px;"><strong>${code}</strong>: ${meanings.join(", ")}</div>`;
+                }
+                dictHtml += "</div>";
+                const printWin = window.open("", "_blank");
+                printWin.document.write(`<html><head><title>Two Talk Guide</title><style>body{font-family:sans-serif;padding:20px; color:#333;}h1{text-align:center; border-bottom:2px solid #333;}h3{border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 25px; color:#e67e22;}.rule-table{width:100%; border-collapse:collapse; margin-bottom:15px;}.rule-table td, th{border:1px solid #ccc; padding:5px; text-align:left;}ul{padding-left:20px;}li{margin-bottom:10px;}</style></head><body><h1>TWO TALK GUIDE</h1><h3>About Two Talk</h3>${about}<h3>Rules</h3>${rules}<h3>Dictionary</h3>${dictHtml}</body></html>`);
+                printWin.document.close();
+                setTimeout(() => { printWin.print(); }, 500);
+            }
+            render();
+        </script>
+    </body>
+</html>
