@@ -72,7 +72,6 @@
                 margin: 0 auto;
                 padding: 0 10px;
             }
-
             nav a {
                 display: block;
                 padding: 1.2rem 2rem;
@@ -82,7 +81,6 @@
                 transition: all 0.3s;
                 border-bottom: 3px solid transparent;
             }
-
             nav a:hover {
                 background: var(--accent-light);
                 border-bottom-color: var(--accent);
@@ -93,12 +91,10 @@
                 margin: 0 auto;
                 padding: 3rem 2rem;
             }
-
             section {
                 margin-bottom: 4rem;
                 scroll-margin-top: 80px;
             }
-
             section h2 {
                 font-size: 2rem;
                 color: var(--dark);
@@ -106,30 +102,6 @@
                 padding-bottom: 0.5rem;
                 border-bottom: 3px solid var(--accent);
                 text-transform: uppercase;
-            }
-
-            .rule-header-box {
-                background: var(--accent-light);
-                border: 2px solid var(--accent);
-                padding: 1.5rem;
-                border-radius: var(--radius);
-                margin-bottom: 2rem;
-            }
-
-            .rule-item {
-                margin-bottom: 1rem;
-            }
-
-            .rule-item:last-child {
-                margin-bottom: 0;
-            }
-
-            .rule-item strong {
-                color: var(--dark);
-                display: block;
-                font-size: 1.1rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
             }
 
             .card {
@@ -142,35 +114,60 @@
             }
 
             .tldr {
-                background: var(--dark);
-                color: white;
-                padding: 1rem;
-                border-radius: var(--radius);
                 font-weight: bold;
-                text-align: center;
-                margin-bottom: 2rem;
-            }
-
-            .info-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
-            }
-
-            .info-block h3 {
                 color: var(--dark);
-                border-bottom: 2px solid var(--accent);
-                display: inline-block;
+                margin: 1rem 0;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                padding: 0.5rem 0;
+                text-align: center;
+            }
+
+            .about-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            .about-cat h3 {
+                font-size: 1.1rem;
+                color: var(--dark);
                 margin-bottom: 1rem;
                 text-transform: uppercase;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 5px;
             }
-
-            .item {
-                margin-bottom: 1.2rem;
+            .about-item {
+                margin-bottom: 1rem;
             }
-            .item strong {
+            .about-item strong {
                 color: var(--accent);
                 display: block;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .about-item p {
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+            .rule-header-box {
+                background: var(--accent-light);
+                border: 2px solid var(--accent);
+                padding: 1.5rem;
+                border-radius: var(--radius);
+                margin-bottom: 2rem;
+            }
+            .rule-item {
+                margin-bottom: 1rem;
+            }
+            .rule-item strong {
+                color: var(--dark);
+                display: block;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
             }
 
             .rule-table {
@@ -181,15 +178,30 @@
                 border-radius: var(--radius);
                 overflow: hidden;
             }
-
-            .rule-table thead {
-                background: var(--dark);
-                color: white;
-            }
-            .rule-table td,
             .rule-table th {
+                text-align: left;
+                background: #f8f9fa;
+                padding: 0.8rem;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                color: #666;
+                border-bottom: 2px solid var(--border);
+            }
+            .rule-table td {
                 padding: 0.8rem;
                 border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+            }
+            .rule-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .notation-note {
+                font-style: italic;
+                color: #555;
+                margin: 1rem 0 2rem;
+                text-align: center;
+                font-size: 0.95rem;
             }
 
             #search {
@@ -207,6 +219,7 @@
                 background: white;
                 border-radius: var(--radius);
                 overflow: hidden;
+                border-collapse: collapse;
             }
             .sym-cell {
                 font-family: monospace;
@@ -216,6 +229,11 @@
                 width: 140px;
                 text-align: center;
                 padding: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+            .cluster-cell {
+                padding: 1rem;
+                border-bottom: 1px solid var(--border);
             }
             .label {
                 font-size: 0.7rem;
@@ -236,17 +254,8 @@
                 border-radius: var(--radius);
                 cursor: pointer;
                 text-transform: uppercase;
-                letter-spacing: 1px;
-                transition:
-                    transform 0.2s,
-                    background 0.2s;
                 display: block;
-                margin: 2rem auto 0;
-            }
-
-            .btn-print:hover {
-                background: #d35400;
-                transform: translateY(-2px);
+                margin: 2rem auto;
             }
 
             @media print {
@@ -259,26 +268,27 @@
                 body {
                     background: white;
                 }
-                .container {
-                    max-width: 100%;
-                    padding: 0;
-                }
-                .card,
-                .rule-table,
-                .dict-table,
-                .rule-header-box {
-                    box-shadow: none;
-                    border: 1px solid #eee;
-                }
                 section {
                     page-break-inside: avoid;
                 }
-                tr {
-                    page-break-inside: avoid;
-                }
-                #wordTableBody tr {
-                    display: table-row !important;
-                }
+            }
+            .site-footer {
+                background: var(--dark);
+                color: #ddd;
+                text-align: center;
+                padding: 2rem 1.5rem;
+                font-size: 0.85rem;
+                border-top: 4px solid var(--accent);
+            }
+
+            .site-footer a {
+                color: var(--accent);
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .site-footer a:hover {
+                text-decoration: underline;
             }
         </style>
     </head>
@@ -292,6 +302,7 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#rules">Rules</a></li>
+                <li><a href="#learn">Learn</a></li>
                 <li><a href="#dictionary">Words</a></li>
             </ul>
         </nav>
@@ -308,103 +319,90 @@
                         already on your keyboard to map out meaning rather than
                         sounds. It's 60% faster than English, works across
                         language barriers, and is built to help you capture the
-                        "essence" of a thought before it escapes your brain.
+                        "essence" of a thought before it escapes your brain. Two
+                        Talk is great for meeting notetaking, task tracking,
+                        bullet journaling and brain dumping.
                     </p>
-                </div>
-                <div class="tldr">
-                    TLDR: Two Talk is a concise digital notetaking system.
-                </div>
+                    <p class="tldr">
+                        TLDR: Two Talk is a concise digital notation system.
+                    </p>
 
-                <div class="info-grid">
-                    <div class="info-block">
-                        <h3>Key Features</h3>
-                        <div class="item">
-                            <strong>Fixed Arity</strong>
-                            <p>Every word is exactly two symbols long.</p>
+                    <div class="about-grid">
+                        <div class="about-cat">
+                            <h3>Key Features</h3>
+                            <div class="about-item">
+                                <strong>Fixed Arity</strong>
+                                <p>Every word is exactly two symbols long.</p>
+                            </div>
+                            <div class="about-item">
+                                <strong>Semantic Calculus</strong>
+                                <p>Translates concepts, not letters.</p>
+                            </div>
+                            <div class="about-item">
+                                <strong>Chaining</strong>
+                                <p>Stack blocks for complex thoughts.</p>
+                            </div>
                         </div>
-                        <div class="item">
-                            <strong>Semantic Calculus</strong>
-                            <p>Translates concepts, not letters.</p>
+                        <div class="about-cat">
+                            <h3>Advantages</h3>
+                            <div class="about-item">
+                                <strong>Keyboard Ready</strong>
+                                <p>Works on any device instantly.</p>
+                            </div>
+                            <div class="about-item">
+                                <strong>Universal</strong>
+                                <p>Bypasses language barriers.</p>
+                            </div>
+                            <div class="about-item">
+                                <strong>Deductive</strong>
+                                <p>Invent words using logical blocks.</p>
+                            </div>
                         </div>
-                        <div class="item">
-                            <strong>Chaining</strong>
-                            <p>Stack blocks for complex thoughts.</p>
-                        </div>
-                    </div>
-                    <div class="info-block">
-                        <h3>Advantages</h3>
-                        <div class="item">
-                            <strong>Keyboard Ready</strong>
-                            <p>Works on any device instantly.</p>
-                        </div>
-                        <div class="item">
-                            <strong>Universal</strong>
-                            <p>Bypasses language barriers.</p>
-                        </div>
-                        <div class="item">
-                            <strong>Deductive</strong>
-                            <p>Invent words using logical blocks.</p>
-                        </div>
-                    </div>
-                    <div class="info-block">
-                        <h3>Benefits</h3>
-                        <div class="item">
-                            <strong>Fast</strong>
-                            <p>Strip away grammatical noise.</p>
-                        </div>
-                        <div class="item">
-                            <strong>Easy</strong>
-                            <p>Proficient in hours, not months.</p>
-                        </div>
-                        <div class="item">
-                            <strong>Readable</strong>
-                            <p>Remains clear over time.</p>
+                        <div class="about-cat">
+                            <h3>Benefits</h3>
+                            <div class="about-item">
+                                <strong>Fast</strong>
+                                <p>Strip away grammatical noise.</p>
+                            </div>
+                            <div class="about-item">
+                                <strong>Easy</strong>
+                                <p>Proficient in hours, not months.</p>
+                            </div>
+                            <div class="about-item">
+                                <strong>Readable</strong>
+                                <p>Remains clear over time.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="rules">
-                <h2>The Rules</h2>
-
+                <h2>Rules</h2>
                 <div class="rule-header-box">
                     <div class="rule-item">
-                        <strong>Two Symbol Rule</strong>
-                        Every word uses exactly two symbols. A "category" plus a
-                        "modifier".
+                        <strong>Two Symbol Rule</strong> Every word = [Category]
+                        + [Modifier].
                     </div>
                     <div class="rule-item">
-                        <strong>Two Word Rule</strong>
-                        Combine pairs for complex meanings. 1st pair = "What",
-                        2nd pair = "Detail".
+                        <strong>Two Word Rule</strong> Chain symbols pairs to
+                        build complex words. [Subject] + [Action/Detail].
                     </div>
                 </div>
-
-                <h3>Objects (The "What")</h3>
+                <h3>SYMBOLS:</h3>
+                <h3>Objects</h3>
                 <table class="rule-table">
                     <tbody>
                         <tr>
-                            <td>@</td>
-                            <td>Person or Animal</td>
-                            <td>#</td>
-                            <td>Object or Work.</td>
+                            <td><strong>@</strong> Person or Animal</td>
+                            <td><strong>#</strong> Object or Work</td>
+                            <td><strong>^</strong> Place or Space</td>
+                            <td><strong>~</strong> Path or Move</td>
                         </tr>
                         <tr>
-                            <td>^</td>
-                            <td>Place or Space</td>
-                            <td>~</td>
-                            <td>Path or Move</td>
-                        </tr>
-                        <tr>
-                            <td>:</td>
-                            <td>Time</td>
-                            <td>%</td>
-                            <td>Value or Reward</td>
-                        </tr>
-                        <tr>
-                            <td>*</td>
-                            <td>Energy or Grow</td>
-                            <td></td>
+                            <td><strong>:</strong> Time</td>
+                            <td><strong>%</strong> Value or Reward</td>
+                            <td><strong>*</strong> Energy or Grow</td>
                             <td></td>
                         </tr>
                     </tbody>
@@ -414,39 +412,21 @@
                 <table class="rule-table">
                     <tbody>
                         <tr>
-                            <td>+</td>
-                            <td>Positive or Increase</td>
-                            <td>-</td>
-                            <td>Negative or Decrease</td>
+                            <td><strong>+</strong> Positive or Increase</td>
+                            <td><strong>-</strong> Negative or Decrease</td>
+                            <td><strong>!</strong> Fact or Known</td>
+                            <td><strong>?</strong> Question or Unknown</td>
                         </tr>
                         <tr>
-                            <td>!</td>
-                            <td>Fact or Known.</td>
-                            <td>?</td>
-                            <td>Question or Unknown.</td>
+                            <td><strong>&lt;</strong> Get / Come / Before</td>
+                            <td><strong>&gt;</strong> Give / Go / After</td>
+                            <td><strong>"</strong> Communicate</td>
+                            <td><strong>(</strong> Start or Begin</td>
                         </tr>
                         <tr>
-                            <td>&lt;</td>
-                            <td>Get / Come / Before</td>
-                            <td>&gt;</td>
-                            <td>Give / Go / After</td>
-                        </tr>
-                        <tr>
-                            <td>“</td>
-                            <td>Communicate.</td>
-                            <td>(</td>
-                            <td>Start or Begin.</td>
-                        </tr>
-                        <tr>
-                            <td>)</td>
-                            <td>Stop or End.</td>
-                            <td>[</td>
-                            <td>Inside or Close</td>
-                        </tr>
-                        <tr>
-                            <td>]</td>
-                            <td>Outside or Open</td>
-                            <td></td>
+                            <td><strong>)</strong> Stop or End</td>
+                            <td><strong>[</strong> Inside or Close</td>
+                            <td><strong>]</strong> Outside or Open</td>
                             <td></td>
                         </tr>
                     </tbody>
@@ -456,45 +436,210 @@
                 <table class="rule-table">
                     <tbody>
                         <tr>
-                            <td>=</td>
-                            <td>Same</td>
-                            <td>/</td>
-                            <td>Stop or No</td>
+                            <td><strong>=</strong> Same</td>
+                            <td><strong>/</strong> Stop or No</td>
+                            <td><strong>0</strong> Zero or Empty</td>
+                            <td><strong>1</strong> Single or Me</td>
                         </tr>
                         <tr>
-                            <td>0</td>
-                            <td>Zero or Empty</td>
-                            <td>1</td>
-                            <td>Single or Me</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Pair or You</td>
-                            <td>3</td>
-                            <td>Many or Them</td>
+                            <td><strong>2</strong> Pair or You</td>
+                            <td><strong>3</strong> Many or Them</td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
-
-                <p class="notation-note">
-                    Numbers are written in Arabic form (1, 2, 3...) and dates
-                    are expressed in the native language form.
+                <p class="tldr">
+                    NOTES: Amounts are expressed in Arabic number form (E.G. 1,
+                    2, 3 etc.) Dates are expressed in the native language form.
+                    Names are expressed as initials in native language.
                 </p>
+            </section>
+
+            <section id="learn">
+                <h2>Learn Two Talk</h2>
+                <div class="card">
+                    <p>
+                        This guide is designed to help you learn Two Talk in
+                        under 5 minutes.
+                    </p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--dark)">
+                        1. Core Concept
+                    </h3>
+                    <div class="rule-header-box" style="margin-bottom: 1rem">
+                        <p><strong>CATEGORY + MODIFIER = Word</strong></p>
+                        <p style="font-size: 0.9rem">
+                            1st symbol = WHAT (Category) | 2nd symbol = HOW
+                            (Modifier)
+                        </p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--dark)">
+                        2. Building Words
+                    </h3>
+                    <p
+                        style="
+                            margin-bottom: 1rem;
+                            font-size: 0.9rem;
+                            font-style: italic;
+                        "
+                    >
+                        Combine categories and modifiers logically:
+                    </p>
+                    <table class="rule-table">
+                        <tbody>
+                            <tr>
+                                <td><strong>Self/Me</strong></td>
+                                <td>
+                                    @ (Life) + 1 (Single) = <strong>@1</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Friend</strong></td>
+                                <td>
+                                    @ (Life) + + (Positive) =
+                                    <strong>@+</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enemy</strong></td>
+                                <td>
+                                    @ (Life) + - (Negative) =
+                                    <strong>@-</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leader</strong></td>
+                                <td>
+                                    @ (Life) + ! (Great) = <strong>@!</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="margin-top: 2rem; color: var(--dark)">
+                        3. Building Sentences
+                    </h3>
+                    <p
+                        style="
+                            margin-bottom: 1rem;
+                            font-size: 0.9rem;
+                            font-style: italic;
+                        "
+                    >
+                        No grammar rules—just chain meaning blocks together:
+                    </p>
+                    <table class="rule-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Two Talk Chain</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    "The boss shared a good idea" / "Leadership
+                                    communication was positive"
+                                </td>
+                                <td>
+                                    <strong>@! " +^</strong> <br />
+                                    <small
+                                        >(Leader + Communicate +
+                                        Good-idea)</small
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    "Work on the important project" / "High
+                                    priority task"
+                                </td>
+                                <td>
+                                    <strong>#! !#</strong> <br />
+                                    <small>(Work + Important-object)</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    "We need to discuss the budget" / "Money
+                                    question"
+                                </td>
+                                <td>
+                                    <strong>%# ?#</strong> <br />
+                                    <small
+                                        >(Value/Money + Question-object)</small
+                                    >
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="margin-top: 2rem; color: var(--dark)">
+                        4. Meeting Essentials Cheat Sheet
+                    </h3>
+                    <p
+                        style="
+                            margin-bottom: 1rem;
+                            font-size: 0.9rem;
+                            font-style: italic;
+                        "
+                    >
+                        Commonly used Two Talk words for quick meeting capture:
+                    </p>
+                    <table class="rule-table">
+                        <tbody>
+                            <tr>
+                                <td><strong>@3</strong> Attendees/Team</td>
+                                <td><strong>#)</strong> Deliverable/Result</td>
+                                <td><strong>:!</strong> Deadline/Now</td>
+                                <td><strong>?#</strong> Topic/Agenda</td>
+                            </tr>
+                            <tr>
+                                <td><strong>!=</strong> Decision/Confirmed</td>
+                                <td><strong>/!</strong> Cancelled/No</td>
+                                <td><strong>=+</strong> Agreement</td>
+                                <td><strong>%#</strong> Budget/Cost</td>
+                            </tr>
+                            <tr>
+                                <td><strong>>(</strong> Next Step/Start</td>
+                                <td><strong>~></strong> In Progress</td>
+                                <td><strong>")</strong> Report/Summary</td>
+                                <td><strong>*!</strong> Tech/System</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="notation-note">
+                        See the pattern? You're thinking logically, not
+                        memorizing. The order and context make the meaning
+                        clear.
+                    </div>
+                </div>
 
                 <button class="btn-print" onclick="window.print()">
-                    Print to PDF Guide
+                    Print PDF Guide
                 </button>
             </section>
 
             <section id="dictionary">
                 <h2>Words</h2>
-                <p class="notation-note">
-                    The dictionary below contains suggested mappings for common
-                    words. Because Two Talk is a semantic system, you can (and
-                    should) invent your own word-blocks based on the symbol
-                    meanings in the Rules section above.
-                </p>
-                <br />
+                <div
+                    class="card"
+                    style="
+                        border-left-color: var(--dark);
+                        background: #f9f9f9;
+                        padding: 1rem;
+                    "
+                >
+                    <p style="font-size: 0.9rem">
+                        The dictionary below contains suggested mappings for
+                        common words. Because Two Talk is a semantic system, you
+                        can (and should) invent your own word-blocks based on
+                        the symbol meanings in the Rules section above.
+                    </p>
+                </div>
                 <input
                     type="text"
                     id="search"
@@ -509,8 +654,8 @@
 
         <script>
             const dictionary = {
-                "me/I": ["1", "Self"],
-                you: ["2", "Other person"],
+                "me/I": ["@1", "Self"],
+                you: ["@2", "Other person"],
                 "he/him": ["@1", "Person single"],
                 "she/her": ["@2", "Person pair (other)"],
                 "we/us": ["1@", "Me-person"],
@@ -623,10 +768,6 @@
                 one: ["1", "Single"],
                 two: ["2", "Pair"],
                 three: ["3", "Many"],
-                four: ["3+", "3 + 1"],
-                five: ["3=", "Hand/Full"],
-                six: ["32", "3x2"],
-                ten: ["33", "Many many"],
                 number: ["%1", "Value single"],
                 all: ["!3", "Fact many"],
                 each: ["1=", "Single same"],
@@ -661,35 +802,40 @@
                     .value.toLowerCase();
                 const tbody = document.getElementById("wordTableBody");
                 tbody.innerHTML = "";
-
-                Object.keys(dictionary).forEach((word) => {
-                    const [code, logic] = dictionary[word];
-                    if (
-                        word.toLowerCase().includes(query) ||
-                        code.includes(query)
-                    ) {
-                        const row = document.createElement("tr");
-
-                        // Create the symbol cell
-                        const symCell = document.createElement("td");
-                        symCell.className = "sym-cell";
-                        symCell.textContent = code; // Using textContent fixes the < symbol issue
-
-                        // Create the info cell
-                        const infoCell = document.createElement("td");
-                        infoCell.className = "cluster-cell";
-                        infoCell.innerHTML = `
-                            <div><span class="label">WORD:</span> <strong>${word}</strong></div>
-                            <div><span class="label">LOGIC:</span> ${logic}</div>
-                        `;
-
-                        row.appendChild(symCell);
-                        row.appendChild(infoCell);
-                        tbody.appendChild(row);
-                    }
-                });
+                Object.keys(dictionary)
+                    .sort()
+                    .forEach((word) => {
+                        const [code, logic] = dictionary[word];
+                        if (
+                            word.toLowerCase().includes(query) ||
+                            code.includes(query)
+                        ) {
+                            const row = document.createElement("tr");
+                            const symCell = document.createElement("td");
+                            symCell.className = "sym-cell";
+                            symCell.textContent = code;
+                            const infoCell = document.createElement("td");
+                            infoCell.className = "cluster-cell";
+                            infoCell.innerHTML = `<div><span class="label">WORD:</span> <strong>${word}</strong></div>
+                                              <div><span class="label">LOGIC:</span> ${logic}</div>`;
+                            row.appendChild(symCell);
+                            row.appendChild(infoCell);
+                            tbody.appendChild(row);
+                        }
+                    });
             }
             render();
         </script>
+        <footer class="site-footer">
+            <p>
+                <strong>Two Talk</strong> and
+                <a href="https://www.twotalk.org" target="_blank"
+                    >twotalk.org</a
+                >
+                were created by Barney Matthews. Find him on the web at
+                <a href="https://www.barney.me" target="_blank">www.barney.me</a
+                >.
+            </p>
+        </footer>
     </body>
 </html>
