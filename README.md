@@ -12,19 +12,23 @@ journaling and brain dumping.
 ```
 TLDR: Two Talk is a concise digital notation system.
 ```
-
 #### KEY FEATURES
 
-##### FIXED ARITY
+##### FIXED LENGTH
 
+```
 Every word is exactly two symbols long.
-
-**SEMANTIC CALCULUS**
-Translates concepts, not letters.
-
-**CHAINING**
-Stack blocks for complex thoughts.
-
+```
+```
+CONCEPT MAPPING
+Translates the meaning of a thought rather
+than the spelling of a word.
+```
+```
+IDEA STACKING
+Put word pairs together to express complex
+ideas.
+```
 #### ADVANTAGES
 
 ##### KEYBOARD READY
@@ -44,12 +48,17 @@ Invent words using logical blocks.
 
 ##### FAST
 
+```
 Strip away grammatical noise.
-
-**EASY**
+```
+```
+EASY
 Proficient in hours, not months.
+```
+```
+READABLE
+```
 
-**READABLE**
 Remains clear over time.
 
 
