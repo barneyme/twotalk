@@ -72,7 +72,8 @@ Every word = [Category] + [Modifier].
 #### TWO WORD RULE
 
 ```
-Chain symbol pairs to build complex words. [Subject] + [Action/Detail].
+Chain 2 Two Talk words with a pipe (|) to build complex words. [Subject Word] |
+[Action/Detail Word].
 ```
 ### SYMBOLS:
 
@@ -99,10 +100,7 @@ Unknown
 ```
 ```
 < Get / Come /
-Before
-```
-```
-> Give / Go / After " Communicate ( Start or Begin
+Before >^ Give^ /^ Go^ /^ After "^ Communicate (^ Start^ or^ Begin
 ```
 ```
 ) Stop or End [ Inside or Close ] O^ Opeutsnide^ or
@@ -148,41 +146,135 @@ Deadline : (Time) + # (Object/Work) = :#
 ```
 Grateful + (Positive) + * (Energy) = +*
 ```
-### 3. Tasks & Productivity
+### 2. Chaining Words (Piping)
 
 ```
-Track your workflow by modifying Objects (#) or Paths (~):
+For more complex ideas, you can "chain" multiple Two Talk words together using a | (pipe)
+to create a single compound concept:
 ```
 ```
-STATUS LOGIC TWO TALK
+COMPLEX
+WORD CHAIN^ LOGIC
 ```
 ```
-To-do / Pending Object + Question #?
+TWO
+TALK
 ```
 ```
-In Progress Path + Energy ~*
+Strategy Logic^ +^ Path^ |^ Time^ +^ Give^ (Forward
+Logic)
 ```
 ```
-Done / Complete Object + Stop #)
+!~|:>
 ```
 ```
-Urgent Fact + Positive + Path !+~
+Investment VVaaluluee^ )+^ Energy^ |^ Time^ +^ Give^ (Future %*|:>
 ```
 
-### 4. Bullet Journaling
+```
+COMPLEX
+WORD CHAIN^ LOGIC
+```
+```
+TWO
+TALK
+```
+```
+Collaboration PFelowrson)^ +^ Many^ |^ Path^ +^ Same^ (Team @3|~=
+```
+```
+Audit Value + Fact | Fact + Get (Verify Value) %!|!<
+```
+```
+Think of the | pipe as a "glue" for your thoughts. It allows you to build specific
+vocabulary while keeping the two symbol rhythm.
+```
+### 3. Tasks & Meeting Capture
 
-_Summarize your day or mindset using Category + Modifier:_
+_Use these shorthand essentials to capture actions, decisions, and statuses in real-time:_
 
 ```
-"I am feeling focused" @1 !! (Person + Fact-Fact)
+CONCEPT LOGIC TWO TALK
 ```
 ```
-"I am tired and have low energy" @1 *- (Person + Energy-Negative)
+Topic Question + Object ?#
 ```
 ```
-"I am grateful for a win" +* !+ (Gratitude + Success)
+Date Time + Single :
+```
+```
+Attendees Person + Many @
+```
+```
+Agenda Question + Object ?#
+```
+```
+Updates Communicate + Path "~
+```
+```
+Tasks Object + Question #?
+```
+```
+Deadlines Time + Object :#
+```
+```
+Started Path + Start ~(
+```
+```
+Completed Object + Stop #)
+```
+```
+New Tasks Object + Question #?
+```
+
+```
+CONCEPT LOGIC TWO TALK
+```
+```
+Next Meeting Time + Give :>
+```
+```
+Notes Fact + Object !#
+```
+### 4. Bullet Journaling Essentials
+
+_Track your personal growth, habits, and mindset using these common mappings:_
+
+```
+CONCEPT LOGIC TWO TALK
+```
+```
+Health / Wellness Person + Energy @*
+```
+```
+Exercise / Move Path + Energy ~*
+```
+```
+Reflection / Journal Fact + Person !@
+```
+```
+Idea / Spark Fact + Question !?
+```
+```
+Mood / Feeling Energy + Question *?
+```
+```
+Habit / Routine Path + Same ~=
+```
+```
+Home / Space Place + Object ^#
+```
+```
+Rest / Sleep Time + Stop :)
+```
+```
+Gratitude / Win Positive + Energy +*
+```
+```
+Goal / Target Object + Fact #!
 ```
 ### 5. Example Sentences
+
 
 ```
 SCENARIO TWO TALK CHAIN
@@ -194,19 +286,19 @@ SCENARIO TWO TALK CHAIN
 "We need to have a meeting about budget" @3 (Tea^ m :"^ + % M! e^? et # ing + Audit + Topic)
 ```
 ```
-"I am blocked on the task and need help" # (B / lo^ @< cke^ d ?~ + Get + Path/How)
+"I am blocked on the task and need help" #/^ @<^ ?~
+(Blocked + Get + Path/How)
 ```
-```
-The beauty of Two Talk is flexibility. If a symbol pair makes sense to you logically, it's a
-valid word.
-```
+_The beauty of Two Talk is its flexibility. If a symbol pair makes sense to you logically, it's
+a valid word._
+
 
 # WORDS
 
 ```
-The dictionary below contains suggested mappings for common words. Because Two Talk is a
-semantic system, you can (and should) invent your own word-blocks based on the symbol
-meanings in the Rules section above.
+The list below contains suggested mappings for common words. Because Two Talk is a semantic
+system, you can (and should) invent your own word-blocks based on the symbol meanings in the
+Rules section above.
 ```
 ## *"
 
@@ -219,12 +311,6 @@ LOGIC: Energy + Communicate
 ```
 WORD: all
 LOGIC: Fact + Many
-```
-## "+
-
-```
-WORD: amplify / praise
-LOGIC: Communicate + Positive
 ```
 ## +=
 
@@ -256,13 +342,13 @@ LOGIC: Fact + Positive
 WORD: ask / query
 LOGIC: Communicate + Question
 ```
-
 ## -
 
 ```
 WORD: bad / error
 LOGIC: Negative + Single
 ```
+
 ## ~(
 
 ```
@@ -296,7 +382,7 @@ LOGIC: Object + Inside
 ## "^
 
 ```
-WORD: broadcast / site
+WORD: broadcast / website
 LOGIC: Communicate + Place
 ```
 ## %!
@@ -317,12 +403,18 @@ LOGIC: Communicate + Time
 WORD: calm / relaxed
 LOGIC: Person + Same
 ```
-
 ## !!
 
 ```
 WORD: certainty / core
 LOGIC: Fact + Fact
+```
+
+## "~
+
+```
+WORD: chat / email
+LOGIC: Communicate + Path
 ```
 ## %-
 
@@ -334,12 +426,12 @@ LOGIC: Value + Negative
 
 ```
 WORD: child / assistant
-LOGIC: Person + Get
+LOGIC: Person + Before
 ```
 ## @=
 
 ```
-WORD: colleague
+WORD: colleague / peer
 LOGIC: Person + Same
 ```
 ## ~<
@@ -369,7 +461,7 @@ LOGIC: Negative + Negative
 ## "@
 
 ```
-WORD: dialogue / SME
+WORD: dialogue / conversation
 LOGIC: Communicate + Person
 ```
 ## /=
@@ -388,7 +480,7 @@ LOGIC: Object + Communicate
 ## #)
 
 ```
-WORD: done
+WORD: done / complete
 LOGIC: Object + Stop
 ```
 ## *-
@@ -421,6 +513,12 @@ LOGIC: Single + Same
 WORD: effort / labor
 LOGIC: Energy + Person
 ```
+## "+
+
+```
+WORD: encourage / praise
+LOGIC: Communicate + Positive
+```
 ## :^
 
 ```
@@ -430,16 +528,16 @@ LOGIC: Time + Place
 ## :)
 
 ```
-WORD: evening
+WORD: evening / night
 LOGIC: Time + Stop
 ```
+
 ## *+
 
 ```
 WORD: excited
 LOGIC: Energy + Positive
 ```
-
 ## %+
 
 ```
@@ -494,13 +592,13 @@ LOGIC: Positive + Single
 WORD: gratitude / grateful
 LOGIC: Positive + Energy
 ```
+
 ## *+
 
 ```
 WORD: grow / charge
 LOGIC: Energy + Positive
 ```
-
 ## *+
 
 ```
@@ -555,13 +653,13 @@ LOGIC: Object + Many
 WORD: investment / ROI
 LOGIC: Value + Energy
 ```
+
 ## !=
 
 ```
 WORD: is / be / are
 LOGIC: Fact + Same
 ```
-
 ## ##
 
 ```
@@ -574,11 +672,11 @@ LOGIC: Object + Object
 WORD: late / delay
 LOGIC: Time + Negative
 ```
-## @+
+## @>
 
 ```
 WORD: leader / manager
-LOGIC: Person + Positive
+LOGIC: Person + After
 ```
 ## !<
 
@@ -589,7 +687,7 @@ LOGIC: Fact + Get
 ## !~
 
 ```
-WORD: logic / SOP
+WORD: logic / process
 LOGIC: Fact + Path
 ```
 ## *#
@@ -613,16 +711,16 @@ LOGIC: Time + Communicate
 ## @[
 
 ```
-WORD: member
+WORD: member / attendee
 LOGIC: Person + Inside
 ```
+
 ## !:
 
 ```
 WORD: memory / archive
 LOGIC: Fact + Time
 ```
-
 ## "~
 
 ```
@@ -644,7 +742,7 @@ LOGIC: Energy + Path
 ## :(
 
 ```
-WORD: morning
+WORD: morning / schedule
 LOGIC: Time + Start
 ```
 ## ~
@@ -677,13 +775,13 @@ LOGIC: Object + Zero
 WORD: now / live
 LOGIC: Time + Fact
 ```
+
 ## 1
 
 ```
 WORD: one / unit
 LOGIC: Single
 ```
-
 ## ?=
 
 ```
@@ -693,7 +791,7 @@ LOGIC: Question + Same
 ## @]
 
 ```
-WORD: outsider
+WORD: outsider / stranger
 LOGIC: Person + Outside
 ```
 ## @#
@@ -738,13 +836,13 @@ LOGIC: Communicate + Inside
 WORD: property / hardware
 LOGIC: Object + Person
 ```
+
 ## "]
 
 ```
 WORD: public / news
 LOGIC: Communicate + Outside
 ```
-
 ## %:
 
 ```
@@ -799,13 +897,13 @@ LOGIC: Value + Question
 WORD: run / active
 LOGIC: Path + Energy
 ```
+
 ## %@
 
 ```
 WORD: salary / payroll
 LOGIC: Value + Person
 ```
-
 ## =
 
 ```
@@ -860,13 +958,13 @@ LOGIC: Value + Give
 WORD: stamina / uptime
 LOGIC: Energy + Time
 ```
+
 ## #!
 
 ```
 WORD: statistic / data
 LOGIC: Object + Fact
 ```
-
 ## ~=
 
 ```
@@ -921,13 +1019,13 @@ LOGIC: Person + Many
 WORD: think / thought
 LOGIC: Fact + Person
 ```
+
 ## 3
 
 ```
 WORD: three / many
 LOGIC: Many
 ```
-
 ## *-
 
 ```
@@ -940,16 +1038,16 @@ LOGIC: Energy + Negative
 WORD: to / advance
 LOGIC: Path + Give
 ```
-## :
+## :1
 
 ```
-WORD: today
+WORD: today / now
 LOGIC: Time + Single
 ```
 ## #?
 
 ```
-WORD: todo
+WORD: todo / task
 LOGIC: Object + Question
 ```
 ## %~
@@ -982,13 +1080,13 @@ LOGIC: Pair
 WORD: upcoming / next
 LOGIC: Time + Give
 ```
-## !+~
+
+## !+
 
 ```
 WORD: urgent
-LOGIC: Fact + Positive + Path
+LOGIC: Fact + Positive
 ```
-
 ## %*
 
 ```
@@ -1007,7 +1105,7 @@ LOGIC: Object + Path
 WORD: walk / visit
 LOGIC: Path + Person
 ```
-## @
+## @3
 
 ```
 WORD: we / us
@@ -1043,13 +1141,13 @@ LOGIC: Question + Place
 WORD: who
 LOGIC: Question + Person
 ```
+
 ## ?!
 
 ```
 WORD: why
 LOGIC: Question + Fact
 ```
-
 ## !+
 
 ```
@@ -1080,6 +1178,7 @@ LOGIC: Person + Pair
 WORD: zero / none
 LOGIC: Zero
 ```
-**Two Talk** and twotalk.org were created by Barney Matthews. Find him on the web at [http://www.barney.me.](http://www.barney.me.)
-
+```
+Two Talk was created by Barney Matthews. Also find Twotalk on Github.
+```
 
