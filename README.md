@@ -137,74 +137,68 @@ CATEGORY + MODIFIER = Word
 Combine categories and modifiers logically:
 ```
 ```
-Self/Me @ (Life) + 1 (Single) = @
+Self (Me) @ (Person) + 1 (Single) = @
 ```
 ```
-Friend @ (Life) + + (Positive) = @+
+Manager @ (Person) + + (Positive/Leader) = @+
 ```
 ```
-Enemy @ (Life) + - (Negative) = @-
+Deadline : (Time) + # (Object/Work) = :#
 ```
 ```
-Leader @ (Life) +! (Great) = @!
+Grateful + (Positive) + * (Energy) = +*
 ```
-### 3. Building Sentences
+### 3. Tasks & Productivity
 
 ```
-No grammar rules—just chain meaning blocks together:
+Track your workflow by modifying Objects (#) or Paths (~):
 ```
+```
+STATUS LOGIC TWO TALK
+```
+```
+To-do / Pending Object + Question #?
+```
+```
+In Progress Path + Energy ~*
+```
+```
+Done / Complete Object + Stop #)
+```
+```
+Urgent Fact + Positive + Path !+~
+```
+
+### 4. Bullet Journaling
+
+_Summarize your day or mindset using Category + Modifier:_
+
+```
+"I am feeling focused" @1 !! (Person + Fact-Fact)
+```
+```
+"I am tired and have low energy" @1 *- (Person + Energy-Negative)
+```
+```
+"I am grateful for a win" +* !+ (Gratitude + Success)
+```
+### 5. Example Sentences
+
 ```
 SCENARIO TWO TALK CHAIN
 ```
 ```
-"The boss shared a good idea" / "Leadership
-communication was positive"
+"The manager sent the urgent file" @+ (Lea^ d "> er^ + #! G^ !+~ ive + Data + Urgent)
 ```
 ```
-@! " +^
-(Leader + Communicate +
-Good-idea)
+"We need to have a meeting about budget" @3 (Tea^ m :"^ + % M! e^? et # ing + Audit + Topic)
 ```
 ```
-"Work on the important project" / "High priority task"
+"I am blocked on the task and need help" # (B / lo^ @< cke^ d ?~ + Get + Path/How)
 ```
 ```
-#! !#
-(Work + Important-object)
-```
-
-```
-SCENARIO TWO TALK CHAIN
-```
-```
-"We need to discuss the budget" / "Money question"
-```
-```
-%# ?#
-(Value/Money + Question-
-object)
-```
-### 4. Meeting Essentials Cheat Sheet
-
-_Commonly used Two Talk words for quick meeting capture:_
-
-```
-@3 Attendees/Team # D ) eliverable/Result :! Deadline/Now? T # opic/Agenda
-```
-```
-!=
-Decision/Confirmed /!^ Cancelled/No =+^ Agreement
-```
-```
-%#
-Budget/Cost
-```
-```
->( Next Step/Start ~> In Progress ") Report/Summary *! Tech/System
-```
-```
-See the pattern? You're thinking logically, not memorizing. The order and context make
-the meaning clear.
+The beauty of Two Talk is flexibility. If a symbol pair makes sense to you logically, it's a
+valid word.
 ```
 
 # WORDS
