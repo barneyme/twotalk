@@ -313,15 +313,16 @@
                 <div class="card">
                     <p>
                         <strong>Two Talk</strong> is a semantic micro-notation
-                        system designed for the speed of the digital age. While
+                        system designed for speed in the digital age. While
                         traditional shorthand systems require years of practice
                         and a physical pen, Two Talk uses the universal symbols
                         already on your keyboard to map out meaning rather than
-                        sounds. It's 60% faster than English, works across
+                        sounds. It's 60% more concise than English, works across
                         language barriers, and is built to help you capture the
                         "essence" of a thought before it escapes your brain. Two
                         Talk is great for meeting notetaking, task tracking,
-                        bullet journaling and brain dumping.
+                        bullet journaling and brain dumping in personal
+                        knowledge management systems.
                     </p>
                     <p class="tldr">
                         TLDR: Two Talk is a concise digital notation system.
@@ -391,7 +392,7 @@
                         + [Modifier].
                     </div>
                     <div class="rule-item">
-                        <strong>Two Word Rule</strong> Chain symbols pairs to
+                        <strong>Two Word Rule</strong> Chain symbol pairs to
                         build complex words. [Subject] + [Action/Detail].
                     </div>
                 </div>
@@ -456,9 +457,9 @@
                     </tbody>
                 </table>
                 <p class="tldr">
-                    NOTES: Amounts are expressed in Arabic number form (E.G. 1,
-                    2, 3 etc.) Dates are expressed in the native language form.
-                    Names are expressed as initials in native language.
+                    Amounts are expressed in Arabic numeral form. Dates are
+                    expressed in the native language form. Names are expressed
+                    as initials in the native language.
                 </p>
             </section>
 
@@ -660,146 +661,170 @@
 
         <script>
             const dictionary = {
-                "me/I": ["@1", "Self"],
-                you: ["@2", "Other person"],
-                "he/him": ["@1", "Person single"],
-                "she/her": ["@2", "Person pair (other)"],
-                "we/us": ["1@", "Me-person"],
-                "they/them": ["@3", "Person many"],
-                it: ["#1", "Object single"],
-                the: ["!1", "Known single"],
-                "a/an": ["?1", "Unknown single"],
-                of: ["[#", "Inside object"],
-                to: [">~", "Give path"],
-                and: ["+=", "Positive same"],
-                in: ["[^", "Inside place"],
-                is: ["=!", "Same fact"],
-                at: ["^:", "Place time"],
-                or: ["?=", "Question same"],
-                go: [">~", "Give path"],
-                come: ["<~", "Get path"],
-                move: ["~>", "Path give"],
-                run: ["~*", "Path energy"],
-                walk: ["~@", "Path person"],
-                turn: ["~/", "Path stop"],
-                pass: ["~>", "Path give (traverse)"],
-                follow: ["<~", "Get path (after)"],
-                lead: [">~", "Give path (first)"],
-                travel: ["~^", "Path place"],
-                drive: ["~#", "Path object"],
-                fly: ["~]", "Path outside"],
-                stand: ["@/", "Person stop"],
-                sit: ["@[", "Person inside"],
-                lay: ["@-", "Person decrease"],
-                fall: ["-~", "Decrease path"],
-                jump: ["+~", "Increase path"],
-                climb: ["+^", "Increase place"],
-                say: ['"1', "Talk me"],
-                tell: ['">', "Talk give"],
-                talk: ['"@', "Talk person"],
-                ask: ['"?', "Talk question"],
-                call: ['"<', "Talk get"],
-                answer: ['"!', "Talk fact"],
-                write: ['"#', "Talk object"],
-                read: ['<"', "Get talk"],
-                spell: ['"=', "Talk same"],
-                speak: ['"2', "Talk you"],
-                see: ["<!", "Get fact (visual)"],
-                look: ["<?", "Get question"],
-                watch: ["<:", "Get time"],
-                hear: ['<"', "Get talk (audio)"],
-                listen: ["<@", "Get person-talk"],
-                feel: ["<*", "Get energy"],
-                show: ['>"', "Give talk"],
-                think: ["!@", "Fact person"],
-                know: ["!1", "Fact me"],
-                learn: ["<!", "Get fact"],
-                study: ["<#", "Get object-fact"],
-                remember: ["!:", "Fact time"],
-                forget: ["/!", "Stop fact"],
-                understand: ['!"', "Fact talk"],
-                wonder: ["?*", "Question energy"],
-                believe: ["!?", "Fact question"],
-                decide: ["!>", "Fact give"],
-                take: ["<#", "Get object"],
-                get: ["<1", "Get me"],
-                give: [">2", "Give you"],
-                put: [">#", "Give object"],
-                make: ["(#", "Start object"],
-                build: ["^#", "Place object"],
-                produce: ["#>", "Object give"],
-                create: ["(*", "Start energy"],
-                hold: ["[#", "Inside object"],
-                carry: ["~#", "Path object"],
-                bring: ["<#", "Get object (toward)"],
-                send: [">#", "Give object (away)"],
-                pull: ["<~", "Get path"],
-                push: [">~", "Give path"],
-                cut: [")#", "Stop object"],
-                break: ["-#", "Decrease object"],
-                open: ["]#", "Outside object"],
-                close: ["[#", "Inside object"],
-                cover: ["[>", "Inside give"],
-                fill: ["+[", "Increase inside"],
-                contain: ["[#", "Inside object"],
-                "be/are/is": ["=!", "Same fact"],
-                have: ["<#", "Get object"],
-                do: [">#", "Give object"],
-                will: [":>", "Time after"],
-                can: ["+!", "Positive fact"],
-                may: ["?+", "Question positive"],
-                must: ["!>", "Fact give"],
-                should: ["?>", "Question give"],
-                would: [":?", "Time question"],
-                could: ["?+", "Question positive"],
-                seem: ["?=", "Question same"],
-                become: [">+", "Give increase"],
-                happen: ["(!", "Start fact"],
-                begin: ["(1", "Start me"],
-                stop: [")1", "Stop me"],
-                continue: [">:", "Give time"],
-                change: [">/", "Give stop"],
-                grow: ["+*", "Increase energy"],
-                develop: ["(*", "Start energy"],
-                increase: ["++", "Positive positive"],
-                decrease: ["--", "Negative negative"],
-                what: ["?#", "Question object"],
-                who: ["?@", "Question person"],
-                where: ["?^", "Question place"],
-                when: ["?:", "Question time"],
-                why: ["?!", "Question fact"],
-                how: ["?~", "Question path"],
-                which: ["?=", "Question same"],
-                zero: ["0", "Zero"],
-                one: ["1", "Single"],
-                two: ["2", "Pair"],
-                three: ["3", "Many"],
-                number: ["%1", "Value single"],
-                all: ["!3", "Fact many"],
-                each: ["1=", "Single same"],
-                every: ["13", "Single many"],
-                some: ["?3", "Question many"],
-                most: ["+3", "Increase many"],
-                more: ["+>", "Increase give"],
-                less: ["-<", "Decrease get"],
-                same: ["=1", "Same single"],
-                different: ["/=", "Stop same"],
-                good: ["+1", "Positive single"],
-                bad: ["-1", "Negative single"],
-                big: ["+#", "Increase object"],
-                small: ["-#", "Decrease object"],
-                fast: ["+~", "Increase path"],
-                slow: ["-~", "Decrease path"],
-                new: ["(1", "Start single"],
-                old: ["):", "Stop time"],
-                true: ["!=", "Fact same"],
-                false: ["/!", "Stop fact"],
-                now: [":!", "Time fact"],
-                today: [":1", "Time single"],
-                home: ["^@", "Place person"],
-                water: ["*[", "Energy inside"],
-                fire: ["*+", "Energy positive"],
-                food: ["#%", "Object value"],
+                // 1. AGENTS (@) - People, Roles, & Identities
+                "me / I": ["@1", "Person + Single"],
+                you: ["@2", "Person + Pair"],
+                "he / him": ["@1", "Person + Single"],
+                "she / her": ["@1", "Person + Single"],
+                "we / us": ["@3", "Person + Many"],
+                "they / them": ["@3", "Person + Many"],
+                owner: ["@#", "Person + Object"],
+                "worker / employee": ["@#", "Person + Object"],
+                colleague: ["@=", "Person + Same"],
+                "resident / local": ["@^", "Person + Place"],
+                "expert / SME": ["@!", "Person + Fact"],
+                "leader / manager": ["@+", "Person + Positive"],
+                parent: ["@+", "Person + Positive"],
+                "student / client": ["@<", "Person + Get"],
+                "child / assistant": ["@<", "Person + Get"],
+                "peer / sibling": ["@=", "Person + Same"],
+                "teacher / vendor": ["@>", "Person + Give"],
+                member: ["@[", "Person + Inside"],
+                outsider: ["@]", "Person + Outside"],
+
+                // 2. OBJECTS (#) - Physical Things, Tools, & Deliverables
+                it: ["##", "Object + Object"],
+                "property / hardware": ["#@", "Object + Person"],
+                "site / structure": ["#^", "Object + Place"],
+                "vehicle / workflow-tool": ["#~", "Object + Path"],
+                "document / file": ['#"', "Object + Communicate"],
+                "statistic / data": ["#!", "Object + Fact"],
+                "mystery / backlog": ["#?", "Object + Question"],
+                "box / container": ["#[", "Object + Inside"],
+                "inventory / batch": ["#3", "Object + Many"],
+                "nothing / void": ["#0", "Object + Zero"],
+
+                // 3. PATHS (~) - Movement, Process, & Operations
+                "to / advance": ["~>", "Path + Give"],
+                "from / return": ["~<", "Path + Get"],
+                "go / push": ["~>", "Path + Give"],
+                "come / pull": ["~<", "Path + Get"],
+                "move / step": ["~1", "Path + Single"],
+                "run / active": ["~*", "Path + Energy"],
+                "walk / visit": ["~@", "Path + Person"],
+                "travel / remote": ["~^", "Path + Place"],
+                "drive / ship": ["~#", "Path + Object"],
+                "begin / launch": ["~(", "Path + Start"],
+                "stop / halt": ["~)", "Path + Stop"],
+                "turn / block": ["~/", "Path + No"],
+                "steady / flow": ["~=", "Path + Same"],
+
+                // 4. TIME (:) - Scheduling, History, & Milestones
+                "deadline / sprint": [":#", "Time + Object"],
+                "era / season": [":^", "Time + Place"],
+                "duration / span": ["::", "Time + Time"],
+                "meeting / sync": [':"', "Time + Communicate"],
+                "now / live": [":!", "Time + Fact"],
+                "when / future": [":?", "Time + Question"],
+                "soon / early": [":+", "Time + Positive"],
+                "late / delay": [":-", "Time + Negative"],
+                "past / backlog": [":<", "Time + Get"],
+                "upcoming / next": [":>", "Time + Give"],
+                today: [":1", "Time + Single"],
+                morning: [":(", "Time + Start"],
+                evening: [":)", "Time + Stop"],
+
+                // 5. VALUE (%) - Finance, KPI, & Importance
+                "salary / payroll": ["%@", "Value + Person"],
+                "price / cost": ["%#", "Value + Object"],
+                "rent / property": ["%^", "Value + Place"],
+                "transaction / burn": ["%~", "Value + Path"],
+                "rate / fee": ["%:", "Value + Time"],
+                "investment / ROI": ["%*", "Value + Energy"],
+                value: ["%*", "Value + Energy"],
+                benefit: ["%*", "Value + Energy"],
+                "budget / audit": ["%!", "Value + Fact"],
+                "risk / variance": ["%?", "Value + Question"],
+                "expensive / luxury": ["%+", "Value + Positive"],
+                "cheap / discount": ["%-", "Value + Negative"],
+                "income / revenue": ["%<", "Value + Get"],
+                "spend / overhead": ["%>", "Value + Give"],
+                "free / zero-cost": ["%/", "Value + No"],
+
+                // 6. COMMUNICATION (") - Messages, Media, & Data
+                "talk / speak": ['">', "Communicate + Give"],
+                "write / post": ['"#', "Communicate + Object"],
+                "broadcast / site": ['"^', "Communicate + Place"],
+                "message / mail": ['"~', "Communicate + Path"],
+                "call / chat": ['":', "Communicate + Time"],
+                "dialogue / SME": ['"@', "Communicate + Person"],
+                "answer / FYI": ['"!', "Communicate + Fact"],
+                "ask / query": ['"?', "Communicate + Question"],
+                "amplify / praise": ['"+', "Communicate + Positive"],
+                "mute / private": ['"-', "Communicate + Negative"],
+                "hear / read": ['"<', "Communicate + Get"],
+                "private / internal": ['"[', "Communicate + Inside"],
+                "public / news": ['"]', "Communicate + Outside"],
+
+                // 7. FACT / LOGIC (!) - Knowledge, Truth, & Strategy
+                "think / thought": ["!@", "Fact + Person"],
+                "record / log": ["!#", "Fact + Object"],
+                "logic / SOP": ["!~", "Fact + Path"],
+                "memory / archive": ["!:", "Fact + Time"],
+                "metric / target": ["!%", "Fact + Value"],
+                "certainty / core": ["!!", "Fact + Fact"],
+                "theory / mystery": ["!?", "Fact + Question"],
+                "approve / verify": ["!+", "Fact + Positive"],
+                "reject / deny": ["!-", "Fact + Negative"],
+                "learn / study": ["!<", "Fact + Get"],
+                "decide / command": ["!>", "Fact + Give"],
+                "insight / secret": ["![", "Fact + Inside"],
+                "is / be / are": ["!=", "Fact + Same"],
+
+                // 8. ENERGY (*) - Power, Growth, & Intensity
+                "effort / labor": ["*@", "Energy + Person"],
+                "machine / server": ["*#", "Energy + Object"],
+                "momentum / active": ["*~", "Energy + Path"],
+                "stamina / uptime": ["*:", "Energy + Time"],
+                "resource / fuel": ["*%", "Energy + Value"],
+                "alert / alarm": ['*"', "Energy + Communicate"],
+                "system / science": ["*!", "Energy + Fact"],
+                "grow / charge": ["*+", "Energy + Positive"],
+                "drain / discharge": ["*-", "Energy + Negative"],
+
+                // 9. MODIFIERS & QUANTITIES (+ / - / ? / =)
+                "and / plus": ["+=", "Positive + Same"],
+                "increase / gain": ["++", "Positive + Positive"],
+                "decrease / loss": ["--", "Negative + Negative"],
+                "or / choice": ["?=", "Question + Same"],
+                what: ["?#", "Question + Object"],
+                who: ["?@", "Question + Person"],
+                where: ["?^", "Question + Place"],
+                when: ["?:", "Question + Time"],
+                why: ["?!", "Question + Fact"],
+                how: ["?~", "Question + Path"],
+                "zero / none": ["0", "Zero"],
+                "one / unit": ["1", "Single"],
+                "two / pair": ["2", "Pair"],
+                "three / many": ["3", "Many"],
+                all: ["!3", "Fact + Many"],
+                each: ["1=", "Single + Same"],
+                "same / match": ["=1", "Same + Single"],
+                different: ["/=", "No + Same"],
+                "good / valid": ["+1", "Positive + Single"],
+                "bad / error": ["-1", "Negative + Single"],
+                "big / major": ["+#", "Positive + Object"],
+                "small / minor": ["-#", "Negative + Object"],
+                "fast / urgent": ["+~", "Positive + Path"],
+                "slow / delayed": ["-~", "Negative + Path"],
+
+                // 10. TASKS & TODOS
+                todo: ["#?", "Object + Question"],
+                done: ["#)", "Object + Stop"],
+                blocked: ["#/", "Object + No"],
+                urgent: ["!+~", "Fact + Positive + Path"],
+                review: ["!<", "Fact + Get"],
+
+                // 11. REFLECTION & FEELINGS
+                "gratitude / grateful": ["+*", "Positive + Energy"],
+                "win / accomplish": ["!+", "Fact + Positive"],
+                happy: ["*+", "Energy + Positive"],
+                tired: ["*-", "Energy + Negative"],
+                excited: ["*+", "Energy + Positive"],
+                "scared / worried": ["*-", "Energy + Negative"],
+                "calm / relaxed": ["@=", "Person + Same"],
+                focused: ["!!", "Fact + Fact"],
+                "anxious / worried": ["*?", "Energy + Question"],
             };
 
             function render() {
@@ -808,6 +833,7 @@
                     .value.toLowerCase();
                 const tbody = document.getElementById("wordTableBody");
                 tbody.innerHTML = "";
+
                 Object.keys(dictionary)
                     .sort()
                     .forEach((word) => {
@@ -830,8 +856,10 @@
                         }
                     });
             }
+            // Initialize
             render();
         </script>
+
         <footer class="site-footer">
             <p>
                 <strong>Two Talk</strong> and
@@ -843,5 +871,12 @@
                 >.
             </p>
         </footer>
+        <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+            integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+            data-cf-beacon='{"version":"2024.11.0","token":"9798d9ad12ec4068835f3281e184a73b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>
