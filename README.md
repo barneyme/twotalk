@@ -1,13 +1,13 @@
 # ABOUT
 
 ```
-Two Talk is a semantic micro-notation system designed for the speed of the digital
-age. While traditional shorthand systems require years of practice and a physical
-pen, Two Talk uses the universal symbols already on your keyboard to map out
-meaning rather than sounds. It's 60 % faster than English, works across language
+Two Talk is a semantic micro-notation system designed for speed in the digital age.
+While traditional shorthand systems require years of practice and a physical pen,
+Two Talk uses the universal symbols already on your keyboard to map out meaning
+rather than sounds. It's 60 % more concise than English, works across language
 barriers, and is built to help you capture the "essence" of a thought before it
 escapes your brain. Two Talk is great for meeting notetaking, task tracking, bullet
-journaling and brain dumping.
+journaling and brain dumping in personal knowledge management systems.
 ```
 ```
 TLDR: Two Talk is a concise digital notation system.
@@ -72,7 +72,7 @@ Every word = [Category] + [Modifier].
 #### TWO WORD RULE
 
 ```
-Chain symbols pairs to build complex words. [Subject] + [Action/Detail].
+Chain symbol pairs to build complex words. [Subject] + [Action/Detail].
 ```
 ### SYMBOLS:
 
@@ -116,9 +116,8 @@ Before
 2 Pair or You 3 Many or Them
 ```
 
-**NOTES: Amounts are expressed in Arabic number form (E.G. 1, 2, 3 etc.) Dates are
-expressed in the native language form. Names are expressed as initials in native
-language.**
+**Amounts are expressed in Arabic numeral form. Dates are expressed in the native
+language form. Names are expressed as initials in the native language.**
 
 
 # LEARN TWO TALK
@@ -215,858 +214,876 @@ The dictionary below contains suggested mappings for common words. Because Two T
 semantic system, you can (and should) invent your own word-blocks based on the symbol
 meanings in the Rules section above.
 ```
-## ?
+## *"
 
 ```
-WORD: a/an
-LOGIC: Unknown single
+WORD: alert / alarm
+LOGIC: Energy + Communicate
 ```
 ## !
 
 ```
 WORD: all
-LOGIC: Fact many
+LOGIC: Fact + Many
+```
+## "+
+
+```
+WORD: amplify / praise
+LOGIC: Communicate + Positive
 ```
 ## +=
 
 ```
-WORD: and
-LOGIC: Positive same
+WORD: and / plus
+LOGIC: Positive + Same
 ```
 ## "!
 
 ```
-WORD: answer
-LOGIC: Talk fact
+WORD: answer / FYI
+LOGIC: Communicate + Fact
+```
+## *?
+
+```
+WORD: anxious / worried
+LOGIC: Energy + Question
+```
+## !+
+
+```
+WORD: approve / verify
+LOGIC: Fact + Positive
 ```
 ## "?
 
 ```
-WORD: ask
-LOGIC: Talk question
+WORD: ask / query
+LOGIC: Communicate + Question
 ```
-## ^:
 
-```
-WORD: at
-LOGIC: Place time
-```
 ## -
 
 ```
-WORD: bad
-LOGIC: Negative single
+WORD: bad / error
+LOGIC: Negative + Single
 ```
-## =!
+## ~(
 
 ```
-WORD: be/are/is
-LOGIC: Same fact
+WORD: begin / launch
+LOGIC: Path + Start
 ```
-
-## >+
-
-```
-WORD: become
-LOGIC: Give increase
-```
-## (
+## %*
 
 ```
-WORD: begin
-LOGIC: Start me
-```
-## !?
-
-```
-WORD: believe
-LOGIC: Fact question
+WORD: benefit
+LOGIC: Value + Energy
 ```
 ## +#
 
 ```
-WORD: big
-LOGIC: Increase object
+WORD: big / major
+LOGIC: Positive + Object
 ```
-## -#
+## #/
 
 ```
-WORD: break
-LOGIC: Decrease object
+WORD: blocked
+LOGIC: Object + No
 ```
-## <#
+## #[
 
 ```
-WORD: bring
-LOGIC: Get object (toward)
+WORD: box / container
+LOGIC: Object + Inside
 ```
-## ^#
+## "^
 
 ```
-WORD: build
-LOGIC: Place object
+WORD: broadcast / site
+LOGIC: Communicate + Place
 ```
-## "<
+## %!
 
 ```
-WORD: call
-LOGIC: Talk get
+WORD: budget / audit
+LOGIC: Value + Fact
 ```
-## +!
+## ":
 
 ```
-WORD: can
-LOGIC: Positive fact
+WORD: call / chat
+LOGIC: Communicate + Time
 ```
-## ~#
+## @=
 
 ```
-WORD: carry
-LOGIC: Path object
+WORD: calm / relaxed
+LOGIC: Person + Same
 ```
 
-## >/
+## !!
 
 ```
-WORD: change
-LOGIC: Give stop
+WORD: certainty / core
+LOGIC: Fact + Fact
 ```
-## +^
+## %-
 
 ```
-WORD: climb
-LOGIC: Increase place
+WORD: cheap / discount
+LOGIC: Value + Negative
 ```
-## [#
+## @<
 
 ```
-WORD: close
-LOGIC: Inside object
+WORD: child / assistant
+LOGIC: Person + Get
 ```
-## <~
+## @=
 
 ```
-WORD: come
-LOGIC: Get path
+WORD: colleague
+LOGIC: Person + Same
 ```
-## [#
+## ~<
 
 ```
-WORD: contain
-LOGIC: Inside object
+WORD: come / pull
+LOGIC: Path + Get
 ```
-## >:
+## :#
 
 ```
-WORD: continue
-LOGIC: Give time
+WORD: deadline / sprint
+LOGIC: Time + Object
 ```
-## ?+
-
-```
-WORD: could
-LOGIC: Question positive
-```
-## [>
-
-```
-WORD: cover
-LOGIC: Inside give
-```
-## (*
-
-```
-WORD: create
-LOGIC: Start energy
-```
-## )#
-
-```
-WORD: cut
-LOGIC: Stop object
-```
-
 ## !>
 
 ```
-WORD: decide
-LOGIC: Fact give
+WORD: decide / command
+LOGIC: Fact + Give
 ```
 ## --
 
 ```
-WORD: decrease
-LOGIC: Negative negative
+WORD: decrease / loss
+LOGIC: Negative + Negative
 ```
-## (*
+## "@
 
 ```
-WORD: develop
-LOGIC: Start energy
+WORD: dialogue / SME
+LOGIC: Communicate + Person
 ```
 ## /=
 
 ```
 WORD: different
-LOGIC: Stop same
+LOGIC: No + Same
 ```
-## >#
+
+## #"
 
 ```
-WORD: do
-LOGIC: Give object
+WORD: document / file
+LOGIC: Object + Communicate
+```
+## #)
+
+```
+WORD: done
+LOGIC: Object + Stop
+```
+## *-
+
+```
+WORD: drain / discharge
+LOGIC: Energy + Negative
 ```
 ## ~#
 
 ```
-WORD: drive
-LOGIC: Path object
+WORD: drive / ship
+LOGIC: Path + Object
+```
+## ::
+
+```
+WORD: duration / span
+LOGIC: Time + Time
 ```
 ## 1=
 
 ```
 WORD: each
-LOGIC: Single same
+LOGIC: Single + Same
 ```
-## 13
+## *@
 
 ```
-WORD: every
-LOGIC: Single many
+WORD: effort / labor
+LOGIC: Energy + Person
 ```
-## -~
+## :^
 
 ```
-WORD: fall
-LOGIC: Decrease path
+WORD: era / season
+LOGIC: Time + Place
 ```
-## /!
+## :)
 
 ```
-WORD: false
-LOGIC: Stop fact
-```
-
-## +~
-
-```
-WORD: fast
-LOGIC: Increase path
-```
-## <*
-
-```
-WORD: feel
-LOGIC: Get energy
-```
-## +[
-
-```
-WORD: fill
-LOGIC: Increase inside
+WORD: evening
+LOGIC: Time + Stop
 ```
 ## *+
 
 ```
-WORD: fire
-LOGIC: Energy positive
-```
-## ~]
-
-```
-WORD: fly
-LOGIC: Path outside
-```
-## <~
-
-```
-WORD: follow
-LOGIC: Get path (after)
-```
-## #%
-
-```
-WORD: food
-LOGIC: Object value
-```
-## /!
-
-```
-WORD: forget
-LOGIC: Stop fact
-```
-## <
-
-```
-WORD: get
-LOGIC: Get me
-```
-## >
-
-```
-WORD: give
-LOGIC: Give you
+WORD: excited
+LOGIC: Energy + Positive
 ```
 
-## >~
+## %+
 
 ```
-WORD: go
-LOGIC: Give path
+WORD: expensive / luxury
+LOGIC: Value + Positive
+```
+## @!
+
+```
+WORD: expert / SME
+LOGIC: Person + Fact
+```
+## +~
+
+```
+WORD: fast / urgent
+LOGIC: Positive + Path
+```
+## !!
+
+```
+WORD: focused
+LOGIC: Fact + Fact
+```
+## %/
+
+```
+WORD: free / zero-cost
+LOGIC: Value + No
+```
+## ~<
+
+```
+WORD: from / return
+LOGIC: Path + Get
+```
+## ~>
+
+```
+WORD: go / push
+LOGIC: Path + Give
 ```
 ## +
 
 ```
-WORD: good
-LOGIC: Positive single
+WORD: good / valid
+LOGIC: Positive + Single
 ```
 ## +*
 
 ```
-WORD: grow
-LOGIC: Increase energy
+WORD: gratitude / grateful
+LOGIC: Positive + Energy
 ```
-## (!
+## *+
 
 ```
-WORD: happen
-LOGIC: Start fact
+WORD: grow / charge
+LOGIC: Energy + Positive
 ```
-## <#
+
+## *+
 
 ```
-WORD: have
-LOGIC: Get object
+WORD: happy
+LOGIC: Energy + Positive
 ```
 ## @
 
 ```
-WORD: he/him
-LOGIC: Person single
+WORD: he / him
+LOGIC: Person + Single
 ```
-## <"
+## "<
 
 ```
-WORD: hear
-LOGIC: Get talk (audio)
-```
-## [#
-
-```
-WORD: hold
-LOGIC: Inside object
-```
-## ^@
-
-```
-WORD: home
-LOGIC: Place person
+WORD: hear / read
+LOGIC: Communicate + Get
 ```
 ## ?~
 
 ```
 WORD: how
-LOGIC: Question path
+LOGIC: Question + Path
 ```
-
-## [^
+## %<
 
 ```
-WORD: in
-LOGIC: Inside place
+WORD: income / revenue
+LOGIC: Value + Get
 ```
 ## ++
 
 ```
-WORD: increase
-LOGIC: Positive positive
+WORD: increase / gain
+LOGIC: Positive + Positive
 ```
-## =!
+## ![
 
 ```
-WORD: is
-LOGIC: Same fact
+WORD: insight / secret
+LOGIC: Fact + Inside
 ```
 ## #
 
 ```
-WORD: it
-LOGIC: Object single
+WORD: inventory / batch
+LOGIC: Object + Many
 ```
-## +~
+## %*
 
 ```
-WORD: jump
-LOGIC: Increase path
-```
-## !
-
-```
-WORD: know
-LOGIC: Fact me
-```
-## @-
-
-```
-WORD: lay
-LOGIC: Person decrease
-```
-## >~
-
-```
-WORD: lead
-LOGIC: Give path (first)
-```
-## <!
-
-```
-WORD: learn
-LOGIC: Get fact
-```
-## -<
-
-```
-WORD: less
-LOGIC: Decrease get
-```
-
-## <@
-
-```
-WORD: listen
-LOGIC: Get person-talk
-```
-## <?
-
-```
-WORD: look
-LOGIC: Get question
-```
-## (#
-
-```
-WORD: make
-LOGIC: Start object
-```
-## ?+
-
-```
-WORD: may
-LOGIC: Question positive
-```
-## @
-
-```
-WORD: me/I
-LOGIC: Self
-```
-## +>
-
-```
-WORD: more
-LOGIC: Increase give
-```
-## +
-
-```
-WORD: most
-LOGIC: Increase many
-```
-## ~>
-
-```
-WORD: move
-LOGIC: Path give
-```
-## !>
-
-```
-WORD: must
-LOGIC: Fact give
-```
-## (
-
-```
-WORD: new
-LOGIC: Start single
-```
-
-## :!
-
-```
-WORD: now
-LOGIC: Time fact
-```
-## %
-
-```
-WORD: number
-LOGIC: Value single
-```
-## [#
-
-```
-WORD: of
-LOGIC: Inside object
-```
-## ):
-
-```
-WORD: old
-LOGIC: Stop time
-```
-## 1
-
-```
-WORD: one
-LOGIC: Single
-```
-## ]#
-
-```
-WORD: open
-LOGIC: Outside object
-```
-## ?=
-
-```
-WORD: or
-LOGIC: Question same
-```
-## ~>
-
-```
-WORD: pass
-LOGIC: Path give (traverse)
-```
-## #>
-
-```
-WORD: produce
-LOGIC: Object give
-```
-## <~
-
-```
-WORD: pull
-LOGIC: Get path
-```
-
-## >~
-
-```
-WORD: push
-LOGIC: Give path
-```
-## >#
-
-```
-WORD: put
-LOGIC: Give object
-```
-## <"
-
-```
-WORD: read
-LOGIC: Get talk
-```
-## !:
-
-```
-WORD: remember
-LOGIC: Fact time
-```
-## ~*
-
-```
-WORD: run
-LOGIC: Path energy
-```
-## =
-
-```
-WORD: same
-LOGIC: Same single
-```
-## "
-
-```
-WORD: say
-LOGIC: Talk me
-```
-## <!
-
-```
-WORD: see
-LOGIC: Get fact (visual)
-```
-## ?=
-
-```
-WORD: seem
-LOGIC: Question same
-```
-## >#
-
-```
-WORD: send
-LOGIC: Give object (away)
-```
-
-## @
-
-```
-WORD: she/her
-LOGIC: Person pair (other)
-```
-## ?>
-
-```
-WORD: should
-LOGIC: Question give
-```
-## >"
-
-```
-WORD: show
-LOGIC: Give talk
-```
-## @[
-
-```
-WORD: sit
-LOGIC: Person inside
-```
-## -~
-
-```
-WORD: slow
-LOGIC: Decrease path
-```
-## -#
-
-```
-WORD: small
-LOGIC: Decrease object
-```
-## ?
-
-```
-WORD: some
-LOGIC: Question many
-```
-## "
-
-```
-WORD: speak
-LOGIC: Talk you
-```
-## "=
-
-```
-WORD: spell
-LOGIC: Talk same
-```
-## @/
-
-```
-WORD: stand
-LOGIC: Person stop
-```
-
-## )
-
-```
-WORD: stop
-LOGIC: Stop me
-```
-## <#
-
-```
-WORD: study
-LOGIC: Get object-fact
-```
-## <#
-
-```
-WORD: take
-LOGIC: Get object
-```
-## "@
-
-```
-WORD: talk
-LOGIC: Talk person
-```
-## ">
-
-```
-WORD: tell
-LOGIC: Talk give
-```
-## !
-
-```
-WORD: the
-LOGIC: Known single
-```
-## @
-
-```
-WORD: they/them
-LOGIC: Person many
-```
-## !@
-
-```
-WORD: think
-LOGIC: Fact person
-```
-## 3
-
-```
-WORD: three
-LOGIC: Many
-```
-## >~
-
-```
-WORD: to
-LOGIC: Give path
-```
-
-## :
-
-```
-WORD: today
-LOGIC: Time single
-```
-## ~^
-
-```
-WORD: travel
-LOGIC: Path place
+WORD: investment / ROI
+LOGIC: Value + Energy
 ```
 ## !=
 
 ```
-WORD: true
-LOGIC: Fact same
+WORD: is / be / are
+LOGIC: Fact + Same
+```
+
+## ##
+
+```
+WORD: it
+LOGIC: Object + Object
+```
+## :-
+
+```
+WORD: late / delay
+LOGIC: Time + Negative
+```
+## @+
+
+```
+WORD: leader / manager
+LOGIC: Person + Positive
+```
+## !<
+
+```
+WORD: learn / study
+LOGIC: Fact + Get
+```
+## !~
+
+```
+WORD: logic / SOP
+LOGIC: Fact + Path
+```
+## *#
+
+```
+WORD: machine / server
+LOGIC: Energy + Object
+```
+## @
+
+```
+WORD: me / I
+LOGIC: Person + Single
+```
+## :"
+
+```
+WORD: meeting / sync
+LOGIC: Time + Communicate
+```
+## @[
+
+```
+WORD: member
+LOGIC: Person + Inside
+```
+## !:
+
+```
+WORD: memory / archive
+LOGIC: Fact + Time
+```
+
+## "~
+
+```
+WORD: message / mail
+LOGIC: Communicate + Path
+```
+## !%
+
+```
+WORD: metric / target
+LOGIC: Fact + Value
+```
+## *~
+
+```
+WORD: momentum / active
+LOGIC: Energy + Path
+```
+## :(
+
+```
+WORD: morning
+LOGIC: Time + Start
+```
+## ~
+
+```
+WORD: move / step
+LOGIC: Path + Single
+```
+## "-
+
+```
+WORD: mute / private
+LOGIC: Communicate + Negative
+```
+## #?
+
+```
+WORD: mystery / backlog
+LOGIC: Object + Question
+```
+## #
+
+```
+WORD: nothing / void
+LOGIC: Object + Zero
+```
+## :!
+
+```
+WORD: now / live
+LOGIC: Time + Fact
+```
+## 1
+
+```
+WORD: one / unit
+LOGIC: Single
+```
+
+## ?=
+
+```
+WORD: or / choice
+LOGIC: Question + Same
+```
+## @]
+
+```
+WORD: outsider
+LOGIC: Person + Outside
+```
+## @#
+
+```
+WORD: owner
+LOGIC: Person + Object
+```
+## @+
+
+```
+WORD: parent
+LOGIC: Person + Positive
+```
+## :<
+
+```
+WORD: past / backlog
+LOGIC: Time + Get
+```
+## @=
+
+```
+WORD: peer / sibling
+LOGIC: Person + Same
+```
+## %#
+
+```
+WORD: price / cost
+LOGIC: Value + Object
+```
+## "[
+
+```
+WORD: private / internal
+LOGIC: Communicate + Inside
+```
+## #@
+
+```
+WORD: property / hardware
+LOGIC: Object + Person
+```
+## "]
+
+```
+WORD: public / news
+LOGIC: Communicate + Outside
+```
+
+## %:
+
+```
+WORD: rate / fee
+LOGIC: Value + Time
+```
+## !#
+
+```
+WORD: record / log
+LOGIC: Fact + Object
+```
+## !-
+
+```
+WORD: reject / deny
+LOGIC: Fact + Negative
+```
+## %^
+
+```
+WORD: rent / property
+LOGIC: Value + Place
+```
+## @^
+
+```
+WORD: resident / local
+LOGIC: Person + Place
+```
+## *%
+
+```
+WORD: resource / fuel
+LOGIC: Energy + Value
+```
+## !<
+
+```
+WORD: review
+LOGIC: Fact + Get
+```
+## %?
+
+```
+WORD: risk / variance
+LOGIC: Value + Question
+```
+## ~*
+
+```
+WORD: run / active
+LOGIC: Path + Energy
+```
+## %@
+
+```
+WORD: salary / payroll
+LOGIC: Value + Person
+```
+
+## =
+
+```
+WORD: same / match
+LOGIC: Same + Single
+```
+## *-
+
+```
+WORD: scared / worried
+LOGIC: Energy + Negative
+```
+## @
+
+```
+WORD: she / her
+LOGIC: Person + Single
+```
+## #^
+
+```
+WORD: site / structure
+LOGIC: Object + Place
+```
+## -~
+
+```
+WORD: slow / delayed
+LOGIC: Negative + Path
+```
+## -#
+
+```
+WORD: small / minor
+LOGIC: Negative + Object
+```
+## :+
+
+```
+WORD: soon / early
+LOGIC: Time + Positive
+```
+## %>
+
+```
+WORD: spend / overhead
+LOGIC: Value + Give
+```
+## *:
+
+```
+WORD: stamina / uptime
+LOGIC: Energy + Time
+```
+## #!
+
+```
+WORD: statistic / data
+LOGIC: Object + Fact
+```
+
+## ~=
+
+```
+WORD: steady / flow
+LOGIC: Path + Same
+```
+## ~)
+
+```
+WORD: stop / halt
+LOGIC: Path + Stop
+```
+## @<
+
+```
+WORD: student / client
+LOGIC: Person + Get
+```
+## *!
+
+```
+WORD: system / science
+LOGIC: Energy + Fact
+```
+## ">
+
+```
+WORD: talk / speak
+LOGIC: Communicate + Give
+```
+## @>
+
+```
+WORD: teacher / vendor
+LOGIC: Person + Give
+```
+## !?
+
+```
+WORD: theory / mystery
+LOGIC: Fact + Question
+```
+## @
+
+```
+WORD: they / them
+LOGIC: Person + Many
+```
+## !@
+
+```
+WORD: think / thought
+LOGIC: Fact + Person
+```
+## 3
+
+```
+WORD: three / many
+LOGIC: Many
+```
+
+## *-
+
+```
+WORD: tired
+LOGIC: Energy + Negative
+```
+## ~>
+
+```
+WORD: to / advance
+LOGIC: Path + Give
+```
+## :
+
+```
+WORD: today
+LOGIC: Time + Single
+```
+## #?
+
+```
+WORD: todo
+LOGIC: Object + Question
+```
+## %~
+
+```
+WORD: transaction / burn
+LOGIC: Value + Path
+```
+## ~^
+
+```
+WORD: travel / remote
+LOGIC: Path + Place
 ```
 ## ~/
 
 ```
-WORD: turn
-LOGIC: Path stop
+WORD: turn / block
+LOGIC: Path + No
 ```
 ## 2
 
 ```
-WORD: two
+WORD: two / pair
 LOGIC: Pair
 ```
-## !"
+## :>
 
 ```
-WORD: understand
-LOGIC: Fact talk
+WORD: upcoming / next
+LOGIC: Time + Give
+```
+## !+~
+
+```
+WORD: urgent
+LOGIC: Fact + Positive + Path
+```
+
+## %*
+
+```
+WORD: value
+LOGIC: Value + Energy
+```
+## #~
+
+```
+WORD: vehicle / workflow-tool
+LOGIC: Object + Path
 ```
 ## ~@
 
 ```
-WORD: walk
-LOGIC: Path person
+WORD: walk / visit
+LOGIC: Path + Person
 ```
-## <:
+## @
 
 ```
-WORD: watch
-LOGIC: Get time
+WORD: we / us
+LOGIC: Person + Many
 ```
-## *[
-
-```
-WORD: water
-LOGIC: Energy inside
-```
-## 1@
-
-```
-WORD: we/us
-LOGIC: Me-person
-```
-
 ## ?#
 
 ```
 WORD: what
-LOGIC: Question object
+LOGIC: Question + Object
 ```
 ## ?:
 
 ```
 WORD: when
-LOGIC: Question time
+LOGIC: Question + Time
+```
+## :?
+
+```
+WORD: when / future
+LOGIC: Time + Question
 ```
 ## ?^
 
 ```
 WORD: where
-LOGIC: Question place
-```
-## ?=
-
-```
-WORD: which
-LOGIC: Question same
+LOGIC: Question + Place
 ```
 ## ?@
 
 ```
 WORD: who
-LOGIC: Question person
+LOGIC: Question + Person
 ```
 ## ?!
 
 ```
 WORD: why
-LOGIC: Question fact
+LOGIC: Question + Fact
 ```
-## :>
+
+## !+
 
 ```
-WORD: will
-LOGIC: Time after
+WORD: win / accomplish
+LOGIC: Fact + Positive
 ```
-## ?*
+## @#
 
 ```
-WORD: wonder
-LOGIC: Question energy
-```
-## :?
-
-```
-WORD: would
-LOGIC: Time question
+WORD: worker / employee
+LOGIC: Person + Object
 ```
 ## "#
 
 ```
-WORD: write
-LOGIC: Talk object
+WORD: write / post
+LOGIC: Communicate + Object
 ```
-
 ## @2
 
 ```
 WORD: you
-LOGIC: Other person
+LOGIC: Person + Pair
 ```
 ## 0
 
 ```
-WORD: zero
+WORD: zero / none
 LOGIC: Zero
 ```
 **Two Talk** and twotalk.org were created by Barney Matthews. Find him on the web at [http://www.barney.me.](http://www.barney.me.)
