@@ -64,20 +64,20 @@ Remains clear over time.
 
 # RULES
 
-#### TWO SYMBOL RULE
+#### TWO SYMBOL RULE:
 
 ```
 Every word = [Category] + [Modifier].
 ```
-#### TWO WORD RULE
+#### TWO WORD RULE:
 
 ```
-Chain 2 Two Talk words with a pipe (|) to build complex words. [Subject Word] |
+Connect 2 Two Talk words with a dot (.) to build complex words. [Subject Word].
 [Action/Detail Word].
 ```
-### SYMBOLS:
+### TWO TALK SYMBOLS:
 
-### Objects
+### Objects.
 
 ```
 @ Person or Animal # Object or Work ^ Place or Space ~ Path or Move
@@ -85,7 +85,7 @@ Chain 2 Two Talk words with a pipe (|) to build complex words. [Subject Word] |
 ```
 : Time % Value or Reward * Energy or Grow
 ```
-### Ideas and Actions
+### Ideas and Actions.
 
 ```
 + Positive or
@@ -105,7 +105,7 @@ Before >^ Give^ /^ Go^ /^ After "^ Communicate (^ Start^ or^ Begin
 ```
 ) Stop or End [ Inside or Close ] O^ Opeutsnide^ or
 ```
-### Numbers
+### Numbers.
 
 ```
 = Same / Stop or No 0 Zero or Empty 1 Single or Me
@@ -113,9 +113,14 @@ Before >^ Give^ /^ Go^ /^ After "^ Communicate (^ Start^ or^ Begin
 ```
 2 Pair or You 3 Many or Them
 ```
+### Amounts. Dates. Names.
 
-**Amounts are expressed in Arabic numeral form. Dates are expressed in the native
-language form. Names are expressed as initials in the native language.**
+
+**Amounts:** Use Arabic numerals (1, 2, 3) to express amounts.
+
+**Dates:** Express dates in your native format.
+
+**Names:** Use native language initials to express peoples names.
 
 
 # LEARN TWO TALK
@@ -123,16 +128,16 @@ language form. Names are expressed as initials in the native language.**
 ```
 This guide is designed to help you learn Two Talk in under 5 minutes.
 ```
-### 1. Core Concept
+### 1. Core concept.
 
 ```
 CATEGORY + MODIFIER = Word
 1 st symbol = WHAT (Category) | 2 nd symbol = HOW (Modifier)
 ```
-### 2. Building Words
+### 2. Building words.
 
 ```
-Combine categories and modifiers logically:
+Combine a category and a modifier logically:
 ```
 ```
 Self (Me) @ (Person) + 1 (Single) = @
@@ -146,50 +151,50 @@ Deadline : (Time) + # (Object/Work) = :#
 ```
 Grateful + (Positive) + * (Energy) = +*
 ```
-### 2. Chaining Words (Piping)
+### 3. Combining words.
 
 ```
-For more complex ideas, you can "chain" multiple Two Talk words together using a | (pipe)
-to create a single compound concept:
+For more complex ideas, you can combine 2 Two Talk words using a dot (.) to create a single
+compound concept:
 ```
 ```
 COMPLEX
-WORD CHAIN^ LOGIC
+WORD LOGIC
 ```
 ```
 TWO
 TALK
 ```
 ```
-Strategy Logic^ +^ Path^ |^ Time^ +^ Give^ (Forward
+Strategy Logic^ +^ Path^.^ Time^ +^ Give^ (Forward
 Logic)
 ```
 ```
-!~|:>
+!~.:>
 ```
 ```
-Investment VVaaluluee^ )+^ Energy^ |^ Time^ +^ Give^ (Future %*|:>
+Investment VVaaluluee^ )+^ Energy^.^ Time^ +^ Give^ (Future %*.:>
 ```
 
 ```
 COMPLEX
-WORD CHAIN^ LOGIC
+WORD LOGIC
 ```
 ```
 TWO
 TALK
 ```
 ```
-Collaboration PFelowrson)^ +^ Many^ |^ Path^ +^ Same^ (Team @3|~=
+Collaboration PFelowrson)^ +^ Many^.^ Path^ +^ Same^ (Team @3.~=
 ```
 ```
-Audit Value + Fact | Fact + Get (Verify Value) %!|!<
+Audit Value + Fact. Fact + Get (Verify Value) %.!<
 ```
-```
-Think of the | pipe as a "glue" for your thoughts. It allows you to build specific
-vocabulary while keeping the two symbol rhythm.
-```
-### 3. Tasks & Meeting Capture
+### 4. Sentences.
+
+_Start each sentence on a new line._
+
+### 5. Tasks and meeting notes.
 
 _Use these shorthand essentials to capture actions, decisions, and statuses in real-time:_
 
@@ -236,7 +241,7 @@ Next Meeting Time + Give :>
 ```
 Notes Fact + Object !#
 ```
-### 4. Bullet Journaling Essentials
+### 6. Bullet Journaling essentials.
 
 _Track your personal growth, habits, and mindset using these common mappings:_
 
@@ -273,7 +278,7 @@ Gratitude / Win Positive + Energy +*
 ```
 Goal / Target Object + Fact #!
 ```
-### 5. Example Sentences
+### 7. Example sentences.
 
 
 ```
@@ -663,7 +668,7 @@ LOGIC: Fact + Same
 ## ##
 
 ```
-WORD: it
+WORD: it / thing
 LOGIC: Object + Object
 ```
 ## :-
