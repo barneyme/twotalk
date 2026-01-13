@@ -1192,6 +1192,5 @@ WORD: zero / none
 LOGIC: Zero
 ```
 ```
-Two Talk was created by Barney Matthews. Also find Twotalk on Github.
+Two Talk (www.twotalk.org) was created by Barney Matthews (www.barney.me). Also find Twotalk on Github (https://github.com/barneyme/twotalk/).
 ```
-
