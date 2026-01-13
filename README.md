@@ -59,25 +59,16 @@ Proficient in hours, not months.
 READABLE
 ```
 
+```
 Remains clear over time.
-
-
-# RULES
-
-#### TWO SYMBOL RULE:
+```
+# SYMBOLS
 
 ```
-Every word = [Category] + [Modifier].
+These are the foundational building blocks of Two Talk. Memorizing these 20+
+symbols allows you to decode or create any word.
 ```
-#### TWO WORD RULE:
-
-```
-Connect 2 Two Talk words with a dot (.) to build complex words. [Subject Word].
-[Action/Detail Word].
-```
-### TWO TALK SYMBOLS:
-
-### Objects.
+### Objects
 
 ```
 @ Person or Animal # Object or Work ^ Place or Space ~ Path or Move
@@ -85,7 +76,7 @@ Connect 2 Two Talk words with a dot (.) to build complex words. [Subject Word].
 ```
 : Time % Value or Reward * Energy or Grow
 ```
-### Ideas and Actions.
+### Ideas and Actions
 
 ```
 + Positive or
@@ -103,9 +94,13 @@ Unknown
 Before >^ Give^ /^ Go^ /^ After "^ Communicate (^ Start^ or^ Begin
 ```
 ```
-) Stop or End [ Inside or Close ] O^ Opeutsnide^ or
+) Stop or End [ Inside or Close
 ```
-### Numbers.
+```
+] Outside or
+Open
+```
+### Numbers
 
 ```
 = Same / Stop or No 0 Zero or Empty 1 Single or Me
@@ -113,15 +108,27 @@ Before >^ Give^ /^ Go^ /^ After "^ Communicate (^ Start^ or^ Begin
 ```
 2 Pair or You 3 Many or Them
 ```
+
+# RULES
+
+#### TWO SYMBOL RULE
+
+```
+Every word = [Category] + [Modifier].
+```
+#### TWO WORD RULE
+
+```
+Join 2 Two Talk words with a dot (.) to build complex words. [Subject Word].
+[Action/Detail Word].
+```
 ### Amounts. Dates. Names.
 
-
-**Amounts:** Use Arabic numerals (1, 2, 3) to express amounts.
-
-**Dates:** Express dates in your native format.
-
-**Names:** Use native language initials to express peoples names.
-
+```
+Amounts: Use Arabic numerals (1, 2, 3) to express amounts.
+Dates: Express dates in your native format.
+Names: Use native language initials for people (e.g., JB for James Bond).
+```
 
 # LEARN TWO TALK
 
@@ -137,7 +144,7 @@ CATEGORY + MODIFIER = Word
 ### 2. Building words.
 
 ```
-Combine a category and a modifier logically:
+Combine categories and modifiers logically:
 ```
 ```
 Self (Me) @ (Person) + 1 (Single) = @
@@ -151,11 +158,11 @@ Deadline : (Time) + # (Object/Work) = :#
 ```
 Grateful + (Positive) + * (Energy) = +*
 ```
-### 3. Combining words.
+### 3. Complex words.
 
 ```
-For more complex ideas, you can combine 2 Two Talk words using a dot (.) to create a single
-compound concept:
+For more complex ideas, you can join 2 Two Talk words together using a dot (.) to create a
+single compound concept:
 ```
 ```
 COMPLEX
@@ -192,7 +199,7 @@ Audit Value + Fact. Fact + Get (Verify Value) %.!<
 ```
 ### 4. Sentences.
 
-_Start each sentence on a new line._
+_Use two spaces to separate sentences on the same line._
 
 ### 5. Tasks and meeting notes.
 
@@ -241,9 +248,10 @@ Next Meeting Time + Give :>
 ```
 Notes Fact + Object !#
 ```
-### 6. Bullet Journaling essentials.
+### 6. Bullet Journaling.
 
-_Track your personal growth, habits, and mindset using these common mappings:_
+_Track your personal growth, habits, and mindset in a digital Bullet Journal using these
+common mappings:_
 
 ```
 CONCEPT LOGIC TWO TALK
@@ -282,7 +290,7 @@ Goal / Target Object + Fact #!
 
 
 ```
-SCENARIO TWO TALK CHAIN
+SCENARIO TWO TALK
 ```
 ```
 "The manager sent the urgent file" @+ (Lea^ d "> er^ + #! G^ !+~ ive + Data + Urgent)
@@ -1043,7 +1051,7 @@ LOGIC: Energy + Negative
 WORD: to / advance
 LOGIC: Path + Give
 ```
-## :1
+## :
 
 ```
 WORD: today / now
