@@ -1,1093 +1,536 @@
 <!doctype html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Two Talk</title>
         <link
             rel="icon"
-            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-family='monospace' font-weight='bold' fill='%23e67e22'>@%22</text></svg>"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='70' fill='%23cc5500' font-family='Courier New, monospace' font-weight='bold'>TT</text></svg>"
         />
-
         <style>
-            :root {
-                --dark: #1a2a3a;
-                --accent: #e67e22;
-                --accent-light: #fef5ed;
-                --light: #f4f7f6;
-                --white: #ffffff;
-                --border: #d1d8e0;
-                --radius: 12px;
-            }
-
             * {
                 box-sizing: border-box;
-                margin: 0;
-                padding: 0;
             }
-
+            
             body {
-                font-family:
-                    "Segoe UI",
-                    system-ui,
-                    -apple-system,
-                    sans-serif;
+                font-family: "Courier New", monospace;
+                background: #fdfdfd;
+                color: #222;
+                padding: 20px;
+                max-width: 800px;
+                margin: auto;
                 line-height: 1.6;
-                color: #333;
-                background: var(--light);
             }
-
-            .hero {
-                background: linear-gradient(
-                    135deg,
-                    var(--dark) 0%,
-                    #2c3e50 100%
-                );
-                color: white;
-                padding: 3rem 2rem 2rem;
-                text-align: center;
-                border-bottom: 6px solid var(--accent);
-            }
-
-            .hero h1 {
-                font-size: clamp(2.5rem, 8vw, 4rem);
-                text-transform: uppercase;
-                letter-spacing: 8px;
-                margin-bottom: 0.5rem;
-            }
-
-            nav {
-                background: white;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                position: sticky;
-                top: 0;
-                z-index: 100;
-            }
-
-            nav ul {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 10px;
-            }
-            nav a {
-                display: block;
-                padding: 1.2rem 2rem;
-                color: var(--dark);
-                text-decoration: none;
-                font-weight: 600;
-                transition: all 0.3s;
-                border-bottom: 3px solid transparent;
-            }
-            nav a:hover {
-                background: var(--accent-light);
-                border-bottom-color: var(--accent);
-            }
-
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 3rem 2rem;
-            }
-            section {
-                margin-bottom: 4rem;
-                scroll-margin-top: 80px;
-            }
-            section h2 {
-                font-size: 2rem;
-                color: var(--dark);
-                margin-bottom: 1.5rem;
-                padding-bottom: 0.5rem;
-                border-bottom: 3px solid var(--accent);
-                text-transform: uppercase;
-            }
-
-            .card {
-                background: white;
-                padding: 2rem;
-                border-radius: var(--radius);
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-                border-left: 4px solid var(--accent);
-                margin-bottom: 2rem;
-            }
-
-            .tldr {
+            
+            h1 {
                 font-weight: bold;
-                color: var(--dark);
-                margin: 1rem 0;
-                border-top: 1px solid var(--border);
-                border-bottom: 1px solid var(--border);
-                padding: 0.5rem 0;
-                text-align: center;
-            }
-
-            .about-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-                margin-top: 2rem;
-            }
-            .about-cat h3 {
-                font-size: 1.1rem;
-                color: var(--dark);
-                margin-bottom: 1rem;
-                text-transform: uppercase;
-                border-bottom: 1px solid var(--border);
-                padding-bottom: 5px;
-            }
-            .about-item {
-                margin-bottom: 1rem;
-            }
-            .about-item strong {
-                color: var(--accent);
-                display: block;
-                font-size: 1rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-            .about-item p {
-                font-size: 0.9rem;
-                color: #555;
-            }
-
-            .rule-header-box {
-                background: var(--accent-light);
-                border: 2px solid var(--accent);
-                padding: 1.5rem;
-                border-radius: var(--radius);
-                margin-bottom: 2rem;
-            }
-            .rule-item {
-                margin-bottom: 1rem;
-            }
-            .rule-item strong {
-                color: var(--dark);
-                display: block;
-                font-size: 1.1rem;
-                text-transform: uppercase;
+                color: darkorange;
+                margin-bottom: 0.5em;
                 letter-spacing: 1px;
+                font-size: 2em;
             }
-
-            .rule-table {
-                width: 100%;
-                border-collapse: collapse;
-                margin: 1rem 0;
-                background: white;
-                border-radius: var(--radius);
-                overflow: hidden;
-            }
-            .rule-table th {
-                text-align: left;
-                background: #f8f9fa;
-                padding: 0.8rem;
-                font-size: 0.8rem;
-                text-transform: uppercase;
-                color: #666;
-                border-bottom: 2px solid var(--border);
-            }
-            .rule-table td {
-                padding: 0.8rem;
-                border-bottom: 1px solid var(--border);
-                font-size: 0.95rem;
-            }
-            .rule-table tr:last-child td {
-                border-bottom: none;
-            }
-
-            .notation-note {
-                font-style: italic;
-                color: #555;
-                margin: 1rem 0 2rem;
-                text-align: center;
-                font-size: 0.95rem;
-            }
-
-            #search {
-                width: 100%;
-                padding: 1rem 1.5rem;
-                border-radius: var(--radius);
-                border: 2px solid var(--border);
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
-                outline: none;
-            }
-
-            .dict-table {
-                width: 100%;
-                background: white;
-                border-radius: var(--radius);
-                overflow: hidden;
-                border-collapse: collapse;
-            }
-            .sym-cell {
-                font-family: monospace;
-                font-size: 1.8rem;
+            
+            h2 {
                 font-weight: bold;
-                color: var(--accent);
-                width: 140px;
-                text-align: center;
-                padding: 1.5rem;
-                border-bottom: 1px solid var(--border);
+                color: darkorange;
+                margin-top: 1.5em;
+                margin-bottom: 0.5em;
+                font-size: 1.5em;
             }
-            .cluster-cell {
-                padding: 1rem;
-                border-bottom: 1px solid var(--border);
+            
+            h3 {
+                font-weight: bold;
+                color: darkorange;
+                margin-top: 1.5em;
+                margin-bottom: 0.5em;
+                font-size: 1.2em;
             }
-            .label {
-                font-size: 0.7rem;
-                color: var(--accent);
-                text-transform: uppercase;
-                font-weight: 900;
-                min-width: 60px;
-                display: inline-block;
+            
+            hr {
+                border: none;
+                border-top: 2px solid #e8e8e8;
+                margin: 2em 0;
             }
-
-            .btn-print {
-                background: var(--accent);
+            
+            input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                font-family: inherit;
+                font-size: 14px;
+                border: 2px solid #ddd;
+                background: #fff;
+                border-radius: 4px;
+                transition: border-color 0.2s;
+            }
+            
+            input:focus {
+                outline: none;
+                border-color: darkorange;
+            }
+            
+            pre {
+                background: #f9f9f9;
+                padding: 14px;
+                border: 1px solid #e0e0e0;
+                border-left: 3px solid darkorange;
+                overflow-x: auto;
+                border-radius: 4px;
+                font-size: 13px;
+                word-wrap: break-word;
+                white-space: pre-wrap;
+            }
+            
+            button {
+                padding: 10px 16px;
+                font-family: inherit;
+                background: darkorange;
                 color: white;
                 border: none;
-                padding: 1rem 2rem;
-                font-size: 1rem;
-                font-weight: bold;
-                border-radius: var(--radius);
                 cursor: pointer;
-                text-transform: uppercase;
-                display: block;
-                margin: 2rem auto;
+                margin-top: 10px;
+                border-radius: 4px;
+                font-weight: bold;
+                transition: background 0.2s;
+                width: 100%;
+                font-size: 14px;
             }
-
-            @media print {
-                nav,
-                .btn-print,
-                #search,
-                .hero {
-                    display: none !important;
-                }
+            
+            button:hover {
+                background: #b34700;
+            }
+            
+            .stats {
+                background: #fff3e6;
+                padding: 12px;
+                border-radius: 4px;
+                margin: 1em 0;
+                border-left: 3px solid darkorange;
+                font-size: 14px;
+            }
+            
+            /* Mobile Responsive Styles */
+            @media (max-width: 768px) {
                 body {
-                    background: white;
+                    padding: 15px;
+                    font-size: 14px;
+                    line-height: 1.5;
                 }
-                section {
-                    page-break-inside: avoid;
+                
+                h1 {
+                    font-size: 1.75em;
+                    letter-spacing: 0.5px;
+                }
+                
+                h2 {
+                    font-size: 1.3em;
+                    margin-top: 1.2em;
+                }
+                
+                h3 {
+                    font-size: 1.1em;
+                }
+                
+                hr {
+                    margin: 1.5em 0;
+                }
+                
+                pre {
+                    padding: 12px;
+                    font-size: 12px;
+                    border-left-width: 2px;
+                }
+                
+                input {
+                    padding: 12px;
+                    font-size: 16px; /* Prevents zoom on iOS */
+                }
+                
+                button {
+                    padding: 12px 16px;
+                    font-size: 16px;
+                }
+                
+                .stats {
+                    padding: 10px;
+                    font-size: 13px;
+                    line-height: 1.6;
                 }
             }
-            .site-footer {
-                background: var(--dark);
-                color: #ddd;
-                text-align: center;
-                padding: 2rem 1.5rem;
-                font-size: 0.85rem;
-                border-top: 4px solid var(--accent);
-            }
-
-            .site-footer a {
-                color: var(--accent);
-                text-decoration: none;
-                font-weight: 600;
-            }
-
-            .site-footer a:hover {
-                text-decoration: underline;
+            
+            @media (max-width: 480px) {
+                body {
+                    padding: 12px;
+                    font-size: 13px;
+                }
+                
+                h1 {
+                    font-size: 1.5em;
+                }
+                
+                h2 {
+                    font-size: 1.2em;
+                }
+                
+                h3 {
+                    font-size: 1em;
+                }
+                
+                pre {
+                    padding: 10px;
+                    font-size: 11px;
+                }
+                
+                .stats {
+                    padding: 8px;
+                    font-size: 12px;
+                }
             }
         </style>
     </head>
     <body>
-        <div class="hero">
-            <h1>TWO TALK</h1>
-            <p>SMALL WORDS. BIG MEANING.</p>
+        <h1>Two Talk</h1>
+
+        <h2>About:</h2>
+        <p>
+            Two Talk is a concise semantic shorthand system designed for fast,
+            structured notetaking, clear todo lists, and simple digital bullet
+            journals. Every "word" is exactly two symbols long, one category and
+            one modifier, giving you a compact, keyboard-native way to capture
+            ideas quickly without losing meaning.
+        </p>
+
+        <div class="stats">
+            <strong>What:</strong> A keyboard-native shorthand using two symbols per word.<br>
+            <strong>Why:</strong> Fast, flexible, and works the same regardless of your native language.<br>
+            <strong>Uses:</strong> Meeting notes, todo lists, daily journals, and quick capture.
         </div>
 
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#symbols">Symbols</a></li>
-                <li><a href="#rules">Rules</a></li>
-                <li><a href="#learn">Learn</a></li>
-                <li><a href="#words">Words</a></li>
-            </ul>
-        </nav>
+        <hr />
 
-        <div class="container">
-            <section id="about">
-                <h2>About</h2>
-                <div class="card">
-                    <p>
-                        <strong>Two Talk</strong> is a semantic micro-notation
-                        system designed for speed in the digital age. While
-                        traditional shorthand systems require years of practice
-                        and a physical pen, Two Talk uses the universal symbols
-                        already on your keyboard to map out meaning rather than
-                        sounds. It's 60% more concise than English, works across
-                        language barriers, and is built to help you capture the
-                        "essence" of a thought before it escapes your brain. Two
-                        Talk is great for meeting notetaking, task tracking,
-                        bullet journaling and brain dumping in personal
-                        knowledge management systems.
-                    </p>
-                    <p class="tldr">
-                        TLDR: Two Talk is a concise digital notation system.
-                    </p>
+        <p>Two Talk words are built by combining <b>two symbols</b>:</p>
 
-                    <div class="about-grid">
-                        <div class="about-cat">
-                            <h3>Key Features</h3>
-                            <div class="about-item">
-                                <strong>Fixed Length</strong>
-                                <p>Every word is exactly two symbols long.</p>
-                            </div>
-                            <div class="about-item">
-                                <strong>Concept Mapping</strong>
-                                <p>
-                                    Translates the meaning of a thought rather
-                                    than the spelling of a word.
-                                </p>
-                            </div>
-                            <div class="about-item">
-                                <strong>Idea Stacking</strong>
-                                <p>
-                                    Put word pairs together to express complex
-                                    ideas.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="about-cat">
-                            <h3>Advantages</h3>
-                            <div class="about-item">
-                                <strong>Keyboard Ready</strong>
-                                <p>Works on any device instantly.</p>
-                            </div>
-                            <div class="about-item">
-                                <strong>Universal</strong>
-                                <p>Bypasses language barriers.</p>
-                            </div>
-                            <div class="about-item">
-                                <strong>Deductive</strong>
-                                <p>Invent words using logical blocks.</p>
-                            </div>
-                        </div>
-                        <div class="about-cat">
-                            <h3>Benefits</h3>
-                            <div class="about-item">
-                                <strong>Fast</strong>
-                                <p>Strip away grammatical noise.</p>
-                            </div>
-                            <div class="about-item">
-                                <strong>Easy</strong>
-                                <p>Proficient in hours, not months.</p>
-                            </div>
-                            <div class="about-item">
-                                <strong>Readable</strong>
-                                <p>Remains clear over time.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="symbols">
-                <h2>Symbols</h2>
-                <div class="card">
-                    <p style="margin-bottom: 1.5rem">
-                        These are the foundational building blocks of Two Talk.
-                        Memorizing these 20+ symbols allows you to decode or
-                        create any word.
-                    </p>
+        <pre>
+1st symbol = <b>Category</b> (the "what")
+2nd symbol = <b>Modifier</b> (the "detail")
+</pre>
 
-                    <h3>Objects</h3>
-                    <table class="rule-table">
-                        <tbody>
-                            <tr>
-                                <td><strong>@</strong> Person or Animal</td>
-                                <td><strong>#</strong> Object or Work</td>
-                                <td><strong>^</strong> Place or Space</td>
-                                <td><strong>~</strong> Path or Move</td>
-                            </tr>
-                            <tr>
-                                <td><strong>:</strong> Time</td>
-                                <td><strong>%</strong> Value or Reward</td>
-                                <td><strong>*</strong> Energy or Grow</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <hr />
 
-                    <h3>Ideas and Actions</h3>
-                    <table class="rule-table">
-                        <tbody>
-                            <tr>
-                                <td><strong>+</strong> Positive or Increase</td>
-                                <td><strong>-</strong> Negative or Decrease</td>
-                                <td><strong>!</strong> Fact or Known</td>
-                                <td><strong>?</strong> Question or Unknown</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>&lt;</strong> Get / Come / Before
-                                </td>
-                                <td><strong>&gt;</strong> Give / Go / After</td>
-                                <td><strong>"</strong> Communicate</td>
-                                <td><strong>(</strong> Start or Begin</td>
-                            </tr>
-                            <tr>
-                                <td><strong>)</strong> Stop or End</td>
-                                <td><strong>[</strong> Inside or Close</td>
-                                <td><strong>]</strong> Outside or Open</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <h2>Categories:</h2>
+        <pre id="categoryList"></pre>
 
-                    <h3>Numbers</h3>
-                    <table class="rule-table">
-                        <tbody>
-                            <tr>
-                                <td><strong>=</strong> Same</td>
-                                <td><strong>/</strong> Stop or No</td>
-                                <td><strong>0</strong> Zero or Empty</td>
-                                <td><strong>1</strong> Single or Me</td>
-                            </tr>
-                            <tr>
-                                <td><strong>2</strong> Pair or You</td>
-                                <td><strong>3</strong> Many or Them</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+        <h2>Modifiers:</h2>
+        <pre id="modifierList"></pre>
 
-            <section id="rules">
-                <h2>Rules</h2>
+        <hr />
 
-                <div class="rule-header-box">
-                    <div class="rule-item">
-                        <strong>Two Symbol Rule</strong> Every word = [Category]
-                        + [Modifier].
-                    </div>
-                    <div class="rule-item" style="margin-bottom: 0">
-                        <strong>Two Word Rule</strong> Join 2 Two Talk words
-                        with a dot (.) to build complex words. [Subject Word] .
-                        [Action/Detail Word].
-                    </div>
-                </div>
+        <h2>Literals:</h2>
+        <pre id="literalsList"></pre>
 
-                <div class="card" style="border-left: 4px solid var(--dark)">
-                    <h3>Amounts. Dates. Names.</h3>
-                    <ul style="list-style: none; font-size: 0.95rem">
-                        <li style="margin-bottom: 0.8rem">
-                            <strong>Amounts:</strong> Use Arabic numerals (1, 2,
-                            3) to express amounts.
-                        </li>
-                        <li style="margin-bottom: 0.8rem">
-                            <strong>Dates:</strong> Express dates in your native
-                            format.
-                        </li>
-                        <li style="margin-bottom: 0.8rem">
-                            <strong>Names:</strong> Use native language initials
-                            for people (e.g., JB for James Bond).
-                        </li>
-                    </ul>
-                </div>
-            </section>
+        <hr />
 
-            <section id="learn">
-                <h2>Learn Two Talk</h2>
-                <div class="card">
-                    <p>
-                        This guide is designed to help you learn Two Talk in
-                        under 5 minutes.
-                    </p>
+        <h2>Getting started.</h2>
+        <pre id="onboarding"></pre>
 
-                    <h3 style="margin-top: 1.5rem; color: var(--dark)">
-                        1. Core concept.
-                    </h3>
-                    <div class="rule-header-box" style="margin-bottom: 1rem">
-                        <p><strong>CATEGORY + MODIFIER = Word</strong></p>
-                        <p style="font-size: 0.9rem">
-                            1st symbol = WHAT (Category) | 2nd symbol = HOW
-                            (Modifier)
-                        </p>
-                    </div>
+        <hr />
 
-                    <h3 style="margin-top: 2rem; color: var(--dark)">
-                        2. Building words.
-                    </h3>
-                    <p
-                        style="
-                            margin-bottom: 1rem;
-                            font-size: 0.9rem;
-                            font-style: italic;
-                        "
-                    >
-                        Combine categories and modifiers logically:
-                    </p>
-                    <table class="rule-table">
-                        <tbody>
-                            <tr>
-                                <td><strong>Self (Me)</strong></td>
-                                <td>
-                                    @ (Person) + 1 (Single) =
-                                    <strong>@1</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Manager</strong></td>
-                                <td>
-                                    @ (Person) + + (Positive/Leader) =
-                                    <strong>@+</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Deadline</strong></td>
-                                <td>
-                                    : (Time) + # (Object/Work) =
-                                    <strong>:#</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Grateful</strong></td>
-                                <td>
-                                    + (Positive) + * (Energy) =
-                                    <strong>+*</strong>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h3 style="margin-top: 2rem; color: var(--dark)">
-                        3. Complex words.
-                    </h3>
-                    <p
-                        style="
-                            margin-bottom: 1rem;
-                            font-size: 0.9rem;
-                            font-style: italic;
-                        "
-                    >
-                        For more complex ideas, you can join 2 Two Talk words
-                        together using a dot (.) to create a single compound
-                        concept:
-                    </p>
-                    <div
-                        class="card"
-                        style="
-                            background: var(--accent-light);
-                            border-left: 4px solid var(--accent);
-                        "
-                    >
-                        <table
-                            class="rule-table"
-                            style="background: transparent; margin: 0"
-                        >
-                            <thead>
-                                <tr>
-                                    <th>Complex Word</th>
-                                    <th>Logic</th>
-                                    <th>Two Talk</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Strategy</strong></td>
-                                    <td>
-                                        Logic + Path . Time + Give (Forward
-                                        Logic)
-                                    </td>
-                                    <td><strong>!~.:></strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Investment</strong></td>
-                                    <td>
-                                        Value + Energy . Time + Give (Future
-                                        Value)
-                                    </td>
-                                    <td><strong>%*.:></strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Collaboration</strong></td>
-                                    <td>
-                                        Person + Many . Path + Same (Team Flow)
-                                    </td>
-                                    <td><strong>@3.~=</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Audit</strong></td>
-                                    <td>
-                                        Value + Fact . Fact + Get (Verify Value)
-                                    </td>
-                                    <td><strong>%.!<</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <h3 style="margin-top: 2rem; color: var(--dark)">
-                        4. Sentences.
-                    </h3>
-                    <p
-                        style="
-                            margin-bottom: 1rem;
-                            font-size: 0.9rem;
-                            font-style: italic;
-                        "
-                    >
-                        Use two spaces to separate sentences on the same line.
-                    </p>
+        <h2>Quick Reference.</h2>
+        <p>These 14 pairs cover 80% of daily notetaking needs:</p>
+        <pre id="cheatList"></pre>
 
-                    <h3 style="margin-top: 2rem; color: var(--dark)">
-                        5. Tasks and meeting notes.
-                    </h3>
-                    <p
-                        style="
-                            margin-bottom: 1rem;
-                            font-size: 0.9rem;
-                            font-style: italic;
-                        "
-                    >
-                        Use these shorthand essentials to capture actions,
-                        decisions, and statuses in real-time:
-                    </p>
-                    <table class="rule-table">
-                        <thead>
-                            <tr>
-                                <th>Concept</th>
-                                <th>Logic</th>
-                                <th>Two Talk</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Topic</strong></td>
-                                <td>Question + Object</td>
-                                <td><strong>?#</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Date</strong></td>
-                                <td>Time + Single</td>
-                                <td><strong>:1</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Attendees</strong></td>
-                                <td>Person + Many</td>
-                                <td><strong>@3</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Agenda</strong></td>
-                                <td>Question + Object</td>
-                                <td><strong>?#</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Updates</strong></td>
-                                <td>Communicate + Path</td>
-                                <td><strong>"~</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tasks</strong></td>
-                                <td>Object + Question</td>
-                                <td><strong>#?</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Deadlines</strong></td>
-                                <td>Time + Object</td>
-                                <td><strong>:#</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Started</strong></td>
-                                <td>Path + Start</td>
-                                <td><strong>~(</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Completed</strong></td>
-                                <td>Object + Stop</td>
-                                <td><strong>#)</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>New Tasks</strong></td>
-                                <td>Object + Question</td>
-                                <td><strong>#?</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Next Meeting</strong></td>
-                                <td>Time + Give</td>
-                                <td><strong>:></strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Notes</strong></td>
-                                <td>Fact + Object</td>
-                                <td><strong>!#</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <hr />
 
-                    <h3 style="margin-top: 2rem; color: var(--dark)">
-                        6. Bullet Journaling.
-                    </h3>
-                    <p
-                        style="
-                            margin-bottom: 1rem;
-                            font-size: 0.9rem;
-                            font-style: italic;
-                        "
-                    >
-                        Track your personal growth, habits, and mindset in a
-                        digital Bullet Journal using these common mappings:
-                    </p>
-                    <table class="rule-table">
-                        <thead>
-                            <tr>
-                                <th>Concept</th>
-                                <th>Logic</th>
-                                <th>Two Talk</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Health / Wellness</strong></td>
-                                <td>Person + Energy</td>
-                                <td><strong>@*</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Exercise / Move</strong></td>
-                                <td>Path + Energy</td>
-                                <td><strong>~*</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Reflection / Journal</strong></td>
-                                <td>Fact + Person</td>
-                                <td><strong>!@</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Idea / Spark</strong></td>
-                                <td>Fact + Question</td>
-                                <td><strong>!?</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Mood / Feeling</strong></td>
-                                <td>Energy + Question</td>
-                                <td><strong>*?</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Habit / Routine</strong></td>
-                                <td>Path + Same</td>
-                                <td><strong>~=</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Home / Space</strong></td>
-                                <td>Place + Object</td>
-                                <td><strong>^#</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Rest / Sleep</strong></td>
-                                <td>Time + Stop</td>
-                                <td><strong>:)</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Gratitude / Win</strong></td>
-                                <td>Positive + Energy</td>
-                                <td><strong>+*</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Goal / Target</strong></td>
-                                <td>Object + Fact</td>
-                                <td><strong>#!</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h3 style="margin-top: 2rem; color: var(--dark)">
-                        7. Example sentences.
-                    </h3>
-                    <table class="rule-table">
-                        <thead>
-                            <tr>
-                                <th>Scenario</th>
-                                <th>Two Talk</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>"The manager sent the urgent file"</td>
-                                <td>
-                                    <strong>@+ "> #! !+~</strong> <br />
-                                    <small
-                                        >(Leader + Give + Data + Urgent)</small
-                                    >
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    "We need to have a meeting about budget"
-                                </td>
-                                <td>
-                                    <strong>@3 :" %! ?#</strong> <br />
-                                    <small
-                                        >(Team + Meeting + Audit + Topic)</small
-                                    >
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    "I am blocked on the task and need help"
-                                </td>
-                                <td>
-                                    <strong>#/ @< ?~</strong> <br />
-                                    <small>(Blocked + Get + Path/How)</small>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <h2>Word list.</h2>
+        <p>
+            Two Talk is a semantic shorthand system and you can (and should)
+            assign meanings to symbol pairs that make sense to you.
+        </p>
+        <input id="search" placeholder="Search symbol pairs or meanings..." />
+        <pre id="wordList"></pre>
 
-                    <div class="notation-note">
-                        The beauty of Two Talk is its flexibility. If a symbol
-                        pair makes sense to you logically, it's a valid word.
-                    </div>
-                </div>
+        <button onclick="exportMarkdown()">Export as Markdown</button>
 
-                <button class="btn-print" onclick="window.print()">
-                    Print PDF Guide
-                </button>
-            </section>
-
-            <section id="words">
-                <h2>Words</h2>
-                <div
-                    class="card"
-                    style="
-                        border-left-color: var(--dark);
-                        background: #f9f9f9;
-                        padding: 1rem;
-                    "
-                >
-                    <p style="font-size: 0.9rem">
-                        The list below contains suggested mappings for common
-                        words. Because Two Talk is a semantic system, you can
-                        (and should) invent your own word-blocks based on the
-                        symbol meanings in the Rules section above.
-                    </p>
-                </div>
-                <input
-                    type="text"
-                    id="search"
-                    placeholder="Search 300+ words..."
-                    onkeyup="render()"
-                />
-                <table class="dict-table">
-                    <tbody id="wordTableBody"></tbody>
-                </table>
-            </section>
-        </div>
+        <p style="margin-top: 2em; font-size: 14px; color: #666;">
+            Two Talk was created by Barney Matthews. Find him on the web at 
+            <a href="https://www.barney.me" target="_blank" rel="noopener" style="color: darkorange; text-decoration: none; font-weight: bold;">www.barney.me</a>.
+        </p>
 
         <script>
-            const dictionary = {
-                // 1. AGENTS (@) - People, Roles, & Identities
-                "me / I": ["@1", "Person + Single"],
-                you: ["@2", "Person + Pair"],
-                "he / him": ["@1", "Person + Single"],
-                "she / her": ["@1", "Person + Single"],
-                "we / us": ["@3", "Person + Many"],
-                "they / them": ["@3", "Person + Many"],
-                owner: ["@#", "Person + Object"],
-                "worker / employee": ["@#", "Person + Object"],
-                "colleague / peer": ["@=", "Person + Same"],
-                "resident / local": ["@^", "Person + Place"],
-                "expert / SME": ["@!", "Person + Fact"],
-                "leader / manager": ["@>", "Person + After"],
-                parent: ["@+", "Person + Positive"],
-                "student / client": ["@<", "Person + Get"],
-                "child / assistant": ["@<", "Person + Before"],
-                "peer / sibling": ["@=", "Person + Same"],
-                "teacher / vendor": ["@>", "Person + Give"],
-                "member / attendee": ["@[", "Person + Inside"],
-                "outsider / stranger": ["@]", "Person + Outside"],
+            // ------------------------------
+            // DATA DEFINITIONS (easy to edit)
+            // ------------------------------
 
-                // 2. OBJECTS (#) - Physical Things, Tools, & Deliverables
-                "it / thing": ["##", "Object + Object"],
-                "property / hardware": ["#@", "Object + Person"],
-                "site / structure": ["#^", "Object + Place"],
-                "vehicle / workflow-tool": ["#~", "Object + Path"],
-                "document / file": ['#"', "Object + Communicate"],
-                "statistic / data": ["#!", "Object + Fact"],
-                "mystery / backlog": ["#?", "Object + Question"],
-                "box / container": ["#[", "Object + Inside"],
-                "inventory / batch": ["#3", "Object + Many"],
-                "nothing / void": ["#0", "Object + Zero"],
+            const onboarding = [
+                "1. Pick 5 - 10 symbol pairs you'll use daily from the Quick Reference.",
+                "2. Use Two Talk only for tasks, notes, and meetings at first.",
+                "3. Don't try to memorize everything at once.",
+                "4. Let patterns emerge naturally over 1 - 2 weeks.",
+                "5. Customize meanings to match your workflow.",
+            ];
 
-                // 3. PATHS (~) - Movement, Process, & Operations
-                "to / advance": ["~>", "Path + Give"],
-                "from / return": ["~<", "Path + Get"],
-                "go / push": ["~>", "Path + Give"],
-                "come / pull": ["~<", "Path + Get"],
-                "move / step": ["~1", "Path + Single"],
-                "run / active": ["~*", "Path + Energy"],
-                "walk / visit": ["~@", "Path + Person"],
-                "travel / remote": ["~^", "Path + Place"],
-                "drive / ship": ["~#", "Path + Object"],
-                "begin / launch": ["~(", "Path + Start"],
-                "stop / halt": ["~)", "Path + Stop"],
-                "turn / block": ["~/", "Path + No"],
-                "steady / flow": ["~=", "Path + Same"],
-
-                // 4. TIME (:) - Scheduling, History, & Milestones
-                "deadline / sprint": [":#", "Time + Object"],
-                "era / season": [":^", "Time + Place"],
-                "duration / span": ["::", "Time + Time"],
-                "meeting / sync": [':"', "Time + Communicate"],
-                "now / live": [":!", "Time + Fact"],
-                "when / future": [":?", "Time + Question"],
-                "soon / early": [":+", "Time + Positive"],
-                "late / delay": [":-", "Time + Negative"],
-                "past / backlog": [":<", "Time + Get"],
-                "upcoming / next": [":>", "Time + Give"],
-                "today / now": [":1", "Time + Single"],
-                "morning / schedule": [":(", "Time + Start"],
-                "evening / night": [":)", "Time + Stop"],
-
-                // 5. VALUE (%) - Finance, KPI, & Importance
-                "salary / payroll": ["%@", "Value + Person"],
-                "price / cost": ["%#", "Value + Object"],
-                "rent / property": ["%^", "Value + Place"],
-                "transaction / burn": ["%~", "Value + Path"],
-                "rate / fee": ["%:", "Value + Time"],
-                "investment / ROI": ["%*", "Value + Energy"],
-                value: ["%*", "Value + Energy"],
-                benefit: ["%*", "Value + Energy"],
-                "budget / audit": ["%!", "Value + Fact"],
-                "risk / variance": ["%?", "Value + Question"],
-                "expensive / luxury": ["%+", "Value + Positive"],
-                "cheap / discount": ["%-", "Value + Negative"],
-                "income / revenue": ["%<", "Value + Get"],
-                "spend / overhead": ["%>", "Value + Give"],
-                "free / zero-cost": ["%/", "Value + No"],
-
-                // 6. COMMUNICATION (") - Messages, Media, & Data
-                "talk / speak": ['">', "Communicate + Give"],
-                "write / post": ['"#', "Communicate + Object"],
-                "broadcast / website": ['"^', "Communicate + Place"],
-                "message / mail": ['"~', "Communicate + Path"],
-                "chat / email": ['"~', "Communicate + Path"],
-                "call / chat": ['":', "Communicate + Time"],
-                "dialogue / conversation": ['"@', "Communicate + Person"],
-                "answer / FYI": ['"!', "Communicate + Fact"],
-                "ask / query": ['"?', "Communicate + Question"],
-                "encourage / praise": ['"+', "Communicate + Positive"],
-                "mute / private": ['"-', "Communicate + Negative"],
-                "hear / read": ['"<', "Communicate + Get"],
-                "private / internal": ['"[', "Communicate + Inside"],
-                "public / news": ['"]', "Communicate + Outside"],
-
-                // 7. FACT / LOGIC (!) - Knowledge, Truth, & Strategy
-                "think / thought": ["!@", "Fact + Person"],
-                "record / log": ["!#", "Fact + Object"],
-                "logic / process": ["!~", "Fact + Path"],
-                "memory / archive": ["!:", "Fact + Time"],
-                "metric / target": ["!%", "Fact + Value"],
-                "certainty / core": ["!!", "Fact + Fact"],
-                "theory / mystery": ["!?", "Fact + Question"],
-                "approve / verify": ["!+", "Fact + Positive"],
-                "reject / deny": ["!-", "Fact + Negative"],
-                "learn / study": ["!<", "Fact + Get"],
-                "decide / command": ["!>", "Fact + Give"],
-                "insight / secret": ["![", "Fact + Inside"],
-                "is / be / are": ["!=", "Fact + Same"],
-
-                // 8. ENERGY (*) - Power, Growth, & Intensity
-                "effort / labor": ["*@", "Energy + Person"],
-                "machine / server": ["*#", "Energy + Object"],
-                "momentum / active": ["*~", "Energy + Path"],
-                "stamina / uptime": ["*:", "Energy + Time"],
-                "resource / fuel": ["*%", "Energy + Value"],
-                "alert / alarm": ['*"', "Energy + Communicate"],
-                "system / science": ["*!", "Energy + Fact"],
-                "grow / charge": ["*+", "Energy + Positive"],
-                "drain / discharge": ["*-", "Energy + Negative"],
-
-                // 9. MODIFIERS & QUANTITIES (+ / - / ? / =)
-                "and / plus": ["+=", "Positive + Same"],
-                "increase / gain": ["++", "Positive + Positive"],
-                "decrease / loss": ["--", "Negative + Negative"],
-                "or / choice": ["?=", "Question + Same"],
-                what: ["?#", "Question + Object"],
-                who: ["?@", "Question + Person"],
-                where: ["?^", "Question + Place"],
-                when: ["?:", "Question + Time"],
-                why: ["?!", "Question + Fact"],
-                how: ["?~", "Question + Path"],
-                "zero / none": ["0", "Zero"],
-                "one / unit": ["1", "Single"],
-                "two / pair": ["2", "Pair"],
-                "three / many": ["3", "Many"],
-                all: ["!3", "Fact + Many"],
-                each: ["1=", "Single + Same"],
-                "same / match": ["=1", "Same + Single"],
-                different: ["/=", "No + Same"],
-                "good / valid": ["+1", "Positive + Single"],
-                "bad / error": ["-1", "Negative + Single"],
-                "big / major": ["+#", "Positive + Object"],
-                "small / minor": ["-#", "Negative + Object"],
-                "fast / urgent": ["+~", "Positive + Path"],
-                "slow / delayed": ["-~", "Negative + Path"],
-
-                // 10. TASKS & TODOS
-                "todo / task": ["#?", "Object + Question"],
-                "done / complete": ["#)", "Object + Stop"],
-                blocked: ["#/", "Object + No"],
-                urgent: ["!+", "Fact + Positive"],
-                review: ["!<", "Fact + Get"],
-
-                // 11. REFLECTION & FEELINGS
-                "gratitude / grateful": ["+*", "Positive + Energy"],
-                "win / accomplish": ["!+", "Fact + Positive"],
-                happy: ["*+", "Energy + Positive"],
-                tired: ["*-", "Energy + Negative"],
-                excited: ["*+", "Energy + Positive"],
-                "scared / worried": ["*-", "Energy + Negative"],
-                "calm / relaxed": ["@=", "Person + Same"],
-                focused: ["!!", "Fact + Fact"],
-                "anxious / worried": ["*?", "Energy + Question"],
+            const categories = {
+                "@": "People / Role",
+                "#": "Thing / Task",
+                "^": "Place / Context",
+                ":": "Time",
+                "~": "Action / Movement",
+                "*": "Status / Energy",
+                "%": "Value / Money",
+                '"': "Communicate / Message",
             };
 
-            function render() {
-                const query = document
-                    .getElementById("search")
-                    .value.toLowerCase();
-                const tbody = document.getElementById("wordTableBody");
-                tbody.innerHTML = "";
+            const modifiers = {
+                ">": "Send / To / After",
+                "<": "Receive / From / Before",
+                "!": "Done / Confirmed",
+                "?": "Ask / Question / Unknown",
+                "+": "Start / Big / More",
+                "-": "Stop / Small / Less",
+                "=": "Continue / Same / Equal",
+            };
 
-                Object.keys(dictionary)
-                    .sort()
-                    .forEach((word) => {
-                        const [code, logic] = dictionary[word];
-                        if (
-                            word.toLowerCase().includes(query) ||
-                            code.includes(query)
-                        ) {
-                            const row = document.createElement("tr");
-                            const symCell = document.createElement("td");
-                            symCell.className = "sym-cell";
-                            symCell.textContent = code;
-                            const infoCell = document.createElement("td");
-                            infoCell.className = "cluster-cell";
-                            infoCell.innerHTML = `<div><span class="label">WORD:</span> <strong>${word}</strong></div>
-                                              <div><span class="label">LOGIC:</span> ${logic}</div>`;
-                            row.appendChild(symCell);
-                            row.appendChild(infoCell);
-                            tbody.appendChild(row);
-                        }
-                    });
+            // ------------------------------
+            // LITERALS SECTION
+            // ------------------------------
+            const literals = [
+                "Amounts: Use Arabic numerals (1, 2, 3) to express amounts.",
+                "Dates: Express dates in your native language numeric format.",
+                "Names: Use native language initials for people (e.g. JB for Jamie Bond).",
+                "Compound: Join two words with a dot (.) for complex concepts (e.g. @3.~= = team collaboration).",
+            ];
+
+            // ------------------------------
+            // QUICK REFERENCE CHEAT SHEET
+            // ------------------------------
+
+            const cheatsheet = {
+                // Most Essential Pairs - Start Here
+                "@@": "self; me; I",
+                "@+": "manager; boss; lead",
+                "#!": "task done; completed",
+                "#?": "task; todo; assignment",
+                ":!": "deadline; urgent",
+                ":>": "later; future; postpone",
+                "~!": "action completed; done",
+                "~>": "follow-up; chase; next step",
+                '">': "send message; email; tell",
+                '"?': "ask question; request",
+                "%!": "budget; price; cost",
+                "%-": "expense; spending",
+                "*!": "critical; important; urgent",
+                "*?": "risk; decision; uncertain",
+            };
+
+            // ---------
+            // WORD LIST
+            // ---------
+
+            const words = {
+                // @ - People / Role
+                "@@": "self; me; owner; myself; I; personal",
+                "@>": "delegate; assignee; handoff; send to person; assign",
+                "@<": "from person; source; sender; client; receive from",
+                "@!": "confirmed person; teammate; stakeholder; verified; known",
+                "@?": "unknown person; unassigned; who?; uncertain; TBD person",
+                "@+": "manager; boss; lead; superior; director; head",
+                "@-": "blocker; opposition; problem person; junior; subordinate",
+                "@=": "peer; colleague; equal; partner; teammate; coworker",
+
+                // # - Thing / Task
+                "##": "item; thing; task; object; stuff; work item",
+                "#>": "deliverable; output; ship; result; product; completion",
+                "#<": "input; requirement; need; dependency; prerequisite",
+                "#!": "done task; completed; finished; closed; resolved",
+                "#?": "unclear task; what?; unknown item; question; uncertain work",
+                "#+": "new task; add; resource; more; additional; increase",
+                "#-": "canceled task; cut; remove; delete; eliminated",
+                "#=": "document; file; ongoing; backlog; current; existing",
+
+                // ^ - Place / Context
+                "^^": "location; place; site; venue; area; spot",
+                "^>": "destination; going to; outbound; target location; headed",
+                "^<": "origin; from location; inbound; source place; coming from",
+                "^!": "arrived; onsite; here; present; at location",
+                "^?": "unknown location; where?; uncertain place; TBD location",
+                "^+": "office; workspace; onsite; headquarters; main location",
+                "^-": "remote; home; offsite; away; external; distributed",
+                "^=": "staying; here; static; current location; same place",
+
+                // : - Time
+                "::": "time; when; timing; duration; schedule; period",
+                ":>": "future; later; postpone; upcoming; next; after",
+                ":<": "past; earlier; before; previous; history; ago",
+                ":!": "deadline; now; urgent; today; immediate; due",
+                ":?": "unscheduled; TBD time; when?; uncertain timing; flexible",
+                ":+": "soon; upcoming; starting; beginning; near; approaching",
+                ":-": "late; delayed; overdue; behind; missed; slow",
+                ":=": "recurring; regular; routine; ongoing; repeated; scheduled",
+
+                // ~ - Action / Movement
+                "~~": "activity; doing; work; action; execute; perform",
+                "~>": "push; send; ship; follow-up; chase; advance; forward",
+                "~<": "pull; get; fetch; review; receive; retrieve; backward",
+                "~!": "done action; success; completed; achieved; finished",
+                "~?": "maybe action; proposed; how?; uncertain; consider; explore",
+                "~+": "start; begin; launch; initiate; create; open",
+                "~-": "stop; pause; blocked; waiting; halt; end; close",
+                "~=": "continue; keep; maintain; flow; sustain; persist",
+
+                // * - Status / Energy
+                "**": "status; state; condition; mode; level; situation",
+                "*>": "improving; up; rising; better; increasing; growing",
+                "*<": "declining; down; falling; worse; decreasing; shrinking",
+                "*!": "critical; important; urgent; priority; key; essential",
+                "*?": "risk; uncertain; decision; why?; unknown status; variable",
+                "*+": "good; energized; win; happy; positive; high; strong",
+                "*-": "bad; tired; problem; sad; negative; low; weak",
+                "*=": "stable; steady; neutral; normal; balanced; consistent",
+
+                // % - Value / Money
+                "%%": "money; value; cost; price; amount; financial",
+                "%>": "payment out; expense; spend; outflow; paying; cost",
+                "%<": "payment in; revenue; income; inflow; receiving; earning",
+                "%!": "budget; confirmed cost; price; fixed amount; approved",
+                "%?": "unknown cost; pricing question; estimate; TBD cost; uncertain",
+                "%+": "profit; gain; expensive; valuable; premium; high value",
+                "%-": "loss; cheap; discount; affordable; low cost; markdown",
+                "%=": "same price; break-even; flat; unchanged; neutral cost",
+
+                // " - Communicate / Message
+                '""': "message; communication; chat; conversation; dialogue; talk",
+                '">': "send message; tell; inform; speak; transmit; announce",
+                '"<': "receive message; hear; listen; read; get; understand",
+                '"!': "confirmed info; announcement; reply; answer; verified; stated",
+                '"?': "ask; question; query; unclear; request; inquire",
+                '"+': "praise; encourage; good news; thanks; positive; appreciation",
+                '"-': "criticism; mute; confidential; secret; private; negative",
+                '"=': "ongoing chat; same message; routine; standard; usual; normal",
+            };
+
+            // ------------------------------
+            // RENDERING
+            // ------------------------------
+
+            function renderOnboarding() {
+                let out = "";
+                onboarding.forEach((line) => (out += line + "\n"));
+                document.getElementById("onboarding").textContent = out;
             }
-            // Initialize
-            render();
-        </script>
 
-        <footer class="site-footer">
-            <p>
-                <a href="https://www.twotalk.org" target="_blank">Two Talk</a>
-                was created by
-                <a href="https://www.barney.me" target="_blank"
-                    >Barney Matthews</a
-                >. Also find Twotalk on
-                <a href="https://github.com/barneyme/twotalk" target="_blank"
-                    >Github</a
-                >.
-            </p>
-        </footer>
+            function renderCategories() {
+                let out = "";
+                for (const [sym, meaning] of Object.entries(categories)) {
+                    out += `<b>${sym}</b> = ${meaning}\n`;
+                }
+                document.getElementById("categoryList").innerHTML = out;
+            }
+
+            function renderModifiers() {
+                let out = "";
+                for (const [sym, meaning] of Object.entries(modifiers)) {
+                    out += `<b>${sym}</b> = ${meaning}\n`;
+                }
+                document.getElementById("modifierList").innerHTML = out;
+            }
+
+            function renderLiterals() {
+                let out = "";
+                literals.forEach((line) => (out += line + "\n"));
+                document.getElementById("literalsList").textContent = out;
+            }
+
+            function renderCheatsheet() {
+                let out = "";
+                for (const [pair, meaning] of Object.entries(cheatsheet)) {
+                    out += `${pair} = ${meaning}\n`;
+                }
+                document.getElementById("cheatList").textContent = out;
+            }
+
+            function renderWords(filter = "") {
+                let out = "";
+                const f = filter.toLowerCase();
+
+                for (const [pair, meaning] of Object.entries(words)) {
+                    if (
+                        pair.toLowerCase().includes(f) ||
+                        meaning.toLowerCase().includes(f)
+                    ) {
+                        out += `${pair} = ${meaning}\n`;
+                    }
+                }
+                document.getElementById("wordList").textContent = out;
+            }
+
+            document.getElementById("search").addEventListener("input", (e) => {
+                renderWords(e.target.value);
+            });
+
+            // ------------------------------
+            // EXPORT TO MARKDOWN
+            // ------------------------------
+
+            function exportMarkdown() {
+                let md = "# Two Talk\n\n";
+
+                md += "## About\n";
+                md +=
+                    "Two Talk is a concise semantic shorthand system for notetaking, todo lists, and digital bullet journals.\n\n";
+                md += "Words are built by combining two symbols.\n\n";
+
+                md += "## Getting started\n";
+                onboarding.forEach((line) => (md += "- " + line + "\n"));
+                md += "\n";
+
+                md += "## Rules\n";
+                md +=
+                    "- Words are built from two symbols: category + modifier.\n";
+                md += "- First symbol = category (what)\n";
+                md += "- Second symbol = modifier (how)\n\n";
+
+                md += "## Categories\n";
+                for (const [sym, meaning] of Object.entries(categories)) {
+                    md += `- \`${sym}\` = ${meaning}\n`;
+                }
+
+                md += "\n## Modifiers\n";
+                for (const [sym, meaning] of Object.entries(modifiers)) {
+                    md += `- \`${sym}\` = ${meaning}\n`;
+                }
+
+                md += "\n## Literals\n";
+                literals.forEach((line) => (md += "- " + line + "\n"));
+
+                md += "\n## Quick Reference\n";
+                for (const [pair, meaning] of Object.entries(cheatsheet)) {
+                    md += `- \`${pair}\` = ${meaning}\n`;
+                }
+
+                md += "\n## Word List\n";
+                for (const [pair, meaning] of Object.entries(words)) {
+                    md += `- \`${pair}\` = ${meaning}\n`;
+                }
+
+                const blob = new Blob([md], { type: "text/markdown" });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "twotalk.md";
+                a.click();
+
+                URL.revokeObjectURL(url);
+            }
+
+            // Initial render
+            renderOnboarding();
+            renderCategories();
+            renderModifiers();
+            renderLiterals();
+            renderCheatsheet();
+            renderWords();
+        </script>
     </body>
 </html>
