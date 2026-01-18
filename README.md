@@ -1,125 +1,192 @@
 # Two Talk
 
 ## About
-Two Talk is a concise semantic shorthand system for notetaking, todo lists, and digital bullet journals.
+Two Talk is a compact semantic shorthand system built for fast, structured notetaking, clear task lists, and lightweight digital bullet journals. It turns everyday notes into tiny, consistent building blocks you can type at the speed of thought.
 
-Words are built by combining two symbols.
+- **What:** A keyboard native micro language where every word is made from two symbols, each contributing meaning.
+- **Why:** Fast, flexible, and language agnostic. Once you learn the 12 base symbols, you can decode any pair.
+- **How:** 1st Symbol = Object. 2nd Symbol = Idea and Action.
 
-## Getting started
-- 1. Pick 5-10 symbol pairs you'll use daily from the Quick Reference.
-- 2. Use Two Talk only for tasks, notes, and meetings at first.
-- 3. Don't try to memorize everything at once.
-- 4. Let patterns emerge naturally over 1-2 weeks.
-- 5. Customize meanings to match your workflow.
+## Symbols
+- @ = person / role / assign
+- \# = item / structure / build
+- ~ = process / method / execute
+- : = time / schedule / plan
+- ^ = place / context / locate
+- " = message / information / communicate
+- % = resource / value / allocate
+- * = state / quality / adjust
+- ? = unknown / ambiguity / explore
+- > = outcome / progress / advance
+- < = issue / constraint / reduce
+- = = baseline / consistency / maintain
 
-## Rules
-- Words are built from two symbols: category + modifier.
-- First symbol = category (what)
-- Second symbol = modifier (how)
-
-## Categories
-- `@` = People / Role
-- `#` = Thing / Task
-- `^` = Place / Context
-- `:` = Time
-- `~` = Action / Movement
-- `*` = Status / Energy
-- `%` = Value / Money
-- `"` = Communicate / Message
-
-## Modifiers
-- `>` = Send / To / After
-- `<` = Receive / From / Before
-- `!` = Done / Confirmed
-- `?` = Ask / Question / Unknown
-- `+` = Start / Big / More
-- `-` = Stop / Small / Less
-- `=` = Continue / Same / Equal
-
-## Literals
-- Amounts: Use Arabic numerals (1, 2, 3) to express amounts.
-- Dates: Express dates in your native language numeric format.
-- Names: Use native language initials for people (e.g. JB for Jamie Bond).
-- Compound: Join two words with a dot (.) for complex concepts (e.g. @3.~= = team collaboration).
+## Tips
+- **Subjects:** Start lines with the subject for easy scanning (EG @# vs #@).
+- **Triplets:** Use the 1st word for Nouns, 2nd for Status, and 3rd for Actions.
+- **Directions:** Use < for origins/inputs/past and > for goals/outputs/future.
+- **Mirrors:** Swap order to change context (EG ~# vs #~).
+- **Literals:** Use Arabic numerals for counts, initials for names, and number formats for dates.
+- **Doubles:** Use double symbols (@@, ##) for your most frequent, recurring items.
 
 ## Quick Reference
-- `@@` = self; me; I
-- `@+` = manager; boss; lead
-- `#!` = task done; completed
-- `#?` = task; todo; assignment
-- `:!` = deadline; urgent
-- `:>` = later; future; postpone
-- `~!` = action completed; done
-- `~>` = follow-up; chase; next step
-- `">` = send message; email; tell
-- `"?` = ask question; request
-- `%!` = budget; price; cost
-- `%-` = expense; spending
-- `*!` = critical; important; urgent
-- `*?` = risk; decision; uncertain
+- @@ = person; role; assign
+- @> = leader; progress; advance
+- \#@ = item; role; assign
+- \#= = template; consistency; maintain
+- \#? = asset; ambiguity; explore
+- :> = horizon; progress; advance
+- =: = today; schedule; plan
+- ~> = review; progress; advance
+- "> = alert; progress; advance
+- "< = reply; constraint; reduce
+- %> = profit; progress; advance
+- %< = loss; constraint; reduce
+- *> = boost; progress; advance
+- *? = risk; ambiguity; explore
 
-## Word List
-- `@@` = self; me; owner; myself; I; personal
-- `@>` = delegate; assignee; handoff; send to person; assign
-- `@<` = from person; source; sender; client; receive from
-- `@!` = confirmed person; teammate; stakeholder; verified; known
-- `@?` = unknown person; unassigned; who?; uncertain; TBD person
-- `@+` = manager; boss; lead; superior; director; head
-- `@-` = blocker; opposition; problem person; junior; subordinate
-- `@=` = peer; colleague; equal; partner; teammate; coworker
-- `##` = item; thing; task; object; stuff; work item
-- `#>` = deliverable; output; ship; result; product; completion
-- `#<` = input; requirement; need; dependency; prerequisite
-- `#!` = done task; completed; finished; closed; resolved
-- `#?` = unclear task; what?; unknown item; question; uncertain work
-- `#+` = new task; add; resource; more; additional; increase
-- `#-` = canceled task; cut; remove; delete; eliminated
-- `#=` = document; file; ongoing; backlog; current; existing
-- `^^` = location; place; site; venue; area; spot
-- `^>` = destination; going to; outbound; target location; headed
-- `^<` = origin; from location; inbound; source place; coming from
-- `^!` = arrived; onsite; here; present; at location
-- `^?` = unknown location; where?; uncertain place; TBD location
-- `^+` = office; workspace; onsite; headquarters; main location
-- `^-` = remote; home; offsite; away; external; distributed
-- `^=` = staying; here; static; current location; same place
-- `::` = time; when; timing; duration; schedule; period
-- `:>` = future; later; postpone; upcoming; next; after
-- `:<` = past; earlier; before; previous; history; ago
-- `:!` = deadline; now; urgent; today; immediate; due
-- `:?` = unscheduled; TBD time; when?; uncertain timing; flexible
-- `:+` = soon; upcoming; starting; beginning; near; approaching
-- `:-` = late; delayed; overdue; behind; missed; slow
-- `:=` = recurring; regular; routine; ongoing; repeated; scheduled
-- `~~` = activity; doing; work; action; execute; perform
-- `~>` = push; send; ship; follow-up; chase; advance; forward
-- `~<` = pull; get; fetch; review; receive; retrieve; backward
-- `~!` = done action; success; completed; achieved; finished
-- `~?` = maybe action; proposed; how?; uncertain; consider; explore
-- `~+` = start; begin; launch; initiate; create; open
-- `~-` = stop; pause; blocked; waiting; halt; end; close
-- `~=` = continue; keep; maintain; flow; sustain; persist
-- `**` = status; state; condition; mode; level; situation
-- `*>` = improving; up; rising; better; increasing; growing
-- `*<` = declining; down; falling; worse; decreasing; shrinking
-- `*!` = critical; important; urgent; priority; key; essential
-- `*?` = risk; uncertain; decision; why?; unknown status; variable
-- `*+` = good; energized; win; happy; positive; high; strong
-- `*-` = bad; tired; problem; sad; negative; low; weak
-- `*=` = stable; steady; neutral; normal; balanced; consistent
-- `%%` = money; value; cost; price; amount; financial
-- `%>` = payment out; expense; spend; outflow; paying; cost
-- `%<` = payment in; revenue; income; inflow; receiving; earning
-- `%!` = budget; confirmed cost; price; fixed amount; approved
-- `%?` = unknown cost; pricing question; estimate; TBD cost; uncertain
-- `%+` = profit; gain; expensive; valuable; premium; high value
-- `%-` = loss; cheap; discount; affordable; low cost; markdown
-- `%=` = same price; break-even; flat; unchanged; neutral cost
-- `""` = message; communication; chat; conversation; dialogue; talk
-- `">` = send message; tell; inform; speak; transmit; announce
-- `"<` = receive message; hear; listen; read; get; understand
-- `"!` = confirmed info; announcement; reply; answer; verified; stated
-- `"?` = ask; question; query; unclear; request; inquire
-- `"+` = praise; encourage; good news; thanks; positive; appreciation
-- `"-` = criticism; mute; confidential; secret; private; negative
-- `"=` = ongoing chat; same message; routine; standard; usual; normal
+## Full Word List (Object; Idea; Action)
+- "" = report; information; communicate
+- "\# = note; structure; build
+- "% = caption; value; allocate
+- "* = comment; quality; adjust
+- ": = prompt; schedule; plan
+- "< = reply; constraint; reduce
+- "= = fact; consistency; maintain
+- "> = alert; progress; advance
+- "? = query; ambiguity; explore
+- "@ = message; role; assign
+- "^ = log; context; locate
+- "~ = file; method; execute
+- \#" = package; information; communicate
+- \## = tool; structure; build
+- \#% = file; value; allocate
+- \#* = draft; quality; adjust
+- \#: = task; schedule; plan
+- \#< = input; constraint; reduce
+- \#= = template; consistency; maintain
+- \#> = output; progress; advance
+- \#? = asset; ambiguity; explore
+- \#@ = item; role; assign
+- \#^ = module; context; locate
+- \#~ = document; method; execute
+- %" = metric; information; communicate
+- %\# = supply; structure; build
+- %% = value; value; allocate
+- %* = level; quality; adjust
+- %: = budget; schedule; plan
+- %< = loss; constraint; reduce
+- %= = balance; consistency; maintain
+- %> = profit; progress; advance
+- %? = estimate; ambiguity; explore
+- %@ = resource; role; assign
+- %^ = wallet; context; locate
+- %~ = expense; method; execute
+- *" = style; information; communicate
+- *\# = tier; structure; build
+- *% = intensity; value; allocate
+- ** = baseline; quality; adjust
+- *: = pressure; schedule; plan
+- *< = slump; constraint; reduce
+- *= = hold; consistency; maintain
+- *> = boost; progress; advance
+- *? = risk; ambiguity; explore
+- *@ = state; role; assign
+- *^ = setting; context; locate
+- *~ = performance; method; execute
+- :" = interval; information; communicate
+- :\# = slot; structure; build
+- :% = moment; value; allocate
+- :* = date; quality; adjust
+- :: = period; schedule; plan
+- :< = delay; constraint; reduce
+- := = cadence; consistency; maintain
+- :> = horizon; progress; advance
+- :? = cycle; ambiguity; explore
+- :@ = time; role; assign
+- :^ = window; context; locate
+- :~ = phase; method; execute
+- <" = complaint; information; communicate
+- <\# = defect; structure; build
+- <% = drain; value; allocate
+- <* = failure; quality; adjust
+- <: = delay; schedule; plan
+- << = crash; constraint; reduce
+- <= = block; consistency; maintain
+- <> = clash; progress; advance
+- <? = suspicion; ambiguity; explore
+- <@ = issue; role; assign
+- <^ = root; context; locate
+- <~ = retreat; method; execute
+- =" = proof; information; communicate
+- =\# = template; structure; build
+- =% = parity; value; allocate
+- =* = average; quality; adjust
+- =: = today; schedule; plan
+- =< = retention; constraint; reduce
+- == = match; consistency; maintain
+- => = continuation; progress; advance
+- =? = check; ambiguity; explore
+- =@ = baseline; role; assign
+- =^ = level; context; locate
+- =~ = routine; method; execute
+- >" = praise; information; communicate
+- >\# = upgrade; structure; build
+- >% = surplus; value; allocate
+- >* = peak; quality; adjust
+- >: = approach; schedule; plan
+- >< = transition; constraint; reduce
+- >= = success; consistency; maintain
+- >> = expansion; progress; advance
+- >? = prospect; ambiguity; explore
+- >@ = outcome; role; assign
+- >^ = goal; context; locate
+- >~ = launch; method; execute
+- ?" = rumor; information; communicate
+- ?\# = variable; structure; build
+- ?% = estimate; value; allocate
+- ?* = threat; quality; adjust
+- ?: = guess; schedule; plan
+- ?< = anomaly; constraint; reduce
+- ?= = pending; consistency; maintain
+- ?> = doubt; progress; advance
+- ?? = option; ambiguity; explore
+- ?@ = unknown; role; assign
+- ?^ = mystery; context; locate
+- ?~ = trial; method; execute
+- @" = speaker; information; communicate
+- @\# = member; structure; build
+- @% = owner; value; allocate
+- @* = reviewer; quality; adjust
+- @: = attendee; schedule; plan
+- @< = follower; constraint; reduce
+- @= = peer; consistency; maintain
+- @> = leader; progress; advance
+- @? = contact; ambiguity; explore
+- @@ = person; role; assign
+- @^ = visitor; context; locate
+- @~ = worker; method; execute
+- ^" = region; information; communicate
+- ^\# = room; structure; build
+- ^% = venue; value; allocate
+- ^* = station; quality; adjust
+- ^: = area; schedule; plan
+- ^< = boundary; constraint; reduce
+- ^= = anchor; consistency; maintain
+- ^> = destination; progress; advance
+- ^? = origin; ambiguity; explore
+- ^@ = place; role; assign
+- ^^ = zone; context; locate
+- ^~ = site; method; execute
+- ~" = sequence; information; communicate
+- ~\# = workflow; structure; build
+- ~% = procedure; value; allocate
+- ~* = method; quality; adjust
+- ~: = routine; schedule; plan
+- ~< = sprint; constraint; reduce
+- ~= = maintenance; consistency; maintain
+- ~> = review; progress; advance
+- ~? = iteration; ambiguity; explore
+- ~@ = process; role; assign
+- ~^ = cycle; context; locate
+- ~~ = operation; method; execute
