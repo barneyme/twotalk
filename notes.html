@@ -1,0 +1,503 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Two Talk Notes</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='70' fill='%23cc5500' font-family='Courier New, monospace' font-weight='bold'>TT</text></svg>"
+        />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Courier New", monospace;
+                background: #fdfdfd;
+                color: #222;
+                padding: 15px;
+                max-width: 900px;
+                margin: auto;
+                line-height: 1.6;
+            }
+            h1 {
+                font-weight: bold;
+                color: darkorange;
+                margin-bottom: 0.2em;
+                letter-spacing: 1px;
+            }
+            .subtitle {
+                color: #666;
+                font-size: 14px;
+                margin-bottom: 1.5em;
+            }
+            label {
+                display: block;
+                font-weight: bold;
+                color: darkorange;
+                margin-bottom: 0.5em;
+            }
+
+            .palette {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+                gap: 8px;
+                margin-bottom: 20px;
+                background: #f0f0f0;
+                padding: 12px;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+            }
+            .symbol-btn {
+                height: 45px;
+                font-family: inherit;
+                font-size: 20px;
+                font-weight: bold;
+                background: white;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.1s;
+                color: #333;
+                touch-action: manipulation;
+            }
+            .symbol-btn:active {
+                background: darkorange;
+                color: white;
+                transform: scale(0.95);
+            }
+            .symbol-btn.category {
+                border-bottom: 3px solid darkorange;
+            }
+
+            textarea {
+                width: 100%;
+                padding: 15px;
+                font-family: "Courier New", monospace;
+                font-size: 18px;
+                border: 2px solid #ddd;
+                border-radius: 4px;
+                min-height: 120px;
+                margin-bottom: 20px;
+            }
+
+            .sentence-container {
+                background: #fff3e6;
+                padding: 20px;
+                border: 2px solid darkorange;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #333;
+                min-height: 60px;
+            }
+
+            .translation-container {
+                background: #f9f9f9;
+                padding: 15px;
+                border: 1px solid #e0e0e0;
+                border-left: 5px solid darkorange;
+                border-radius: 4px;
+                min-height: 100px;
+                margin-bottom: 20px;
+            }
+            .pair-row {
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 1px dashed #ddd;
+            }
+            .pair-label {
+                font-weight: bold;
+                color: darkorange;
+                font-size: 1.2em;
+            }
+            .chip-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 8px;
+            }
+
+            .meaning-chip {
+                background: white;
+                border: 1px solid #bbb;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .meaning-chip.selected {
+                background: darkorange;
+                color: white;
+                border-color: darkorange;
+            }
+            .placeholder-text {
+                color: #888;
+                font-style: italic;
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+            /* English to Shorthand Suggestions */
+            .suggestion-box {
+                background: #eef6ff;
+                border: 1px solid #b6d4fe;
+                border-radius: 4px;
+                padding: 12px;
+                margin-bottom: 20px;
+            }
+            .suggest-chip {
+                display: inline-block;
+                background: #fff;
+                border: 1px solid #0d6efd;
+                color: #0d6efd;
+                padding: 4px 10px;
+                border-radius: 4px;
+                margin: 4px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            .suggest-chip:hover {
+                background: #0d6efd;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Two Talk Notes</h1>
+        <div class="subtitle">
+            Translate Two Talk to English & English to Two Talk
+        </div>
+
+        <div class="palette" id="palette"></div>
+
+        <label for="noteInput">Input (Two Talk or English)</label>
+        <textarea
+            id="noteInput"
+            placeholder="Try typing 'person' or 'plan'..."
+        ></textarea>
+
+        <div id="englishToTalk" class="suggestion-box" style="display: none">
+            <label style="color: #0d6efd; font-size: 14px"
+                >Two Talk suggestions (click to add):</label
+            >
+            <div id="suggestionList"></div>
+        </div>
+
+        <label>Translated Sentence</label>
+        <div id="sentenceBox" class="sentence-container">
+            <span class="placeholder-text"
+                >Your sentence will appear here...</span
+            >
+        </div>
+
+        <label>Refine Meanings</label>
+        <div id="translationBox" class="translation-container">
+            <span class="placeholder-text">Waiting for symbols...</span>
+        </div>
+
+        <script>
+            const dictionary = {
+                "@@": "person; role; assign",
+                "@#": "member; structure; build",
+                "@~": "worker; method; execute",
+                "@:": "attendee; schedule; plan",
+                "@^": "visitor; context; locate",
+                '@"': "speaker; information; communicate",
+                "@%": "owner; value; allocate",
+                "@*": "reviewer; quality; adjust",
+                "@?": "contact; ambiguity; explore",
+                "@>": "leader; progress; advance",
+                "@<": "follower; constraint; reduce",
+                "@=": "peer; consistency; maintain",
+                "#@": "item; role; assign",
+                "##": "tool; structure; build",
+                "#~": "document; method; execute",
+                "#:": "task; schedule; plan",
+                "#^": "module; context; locate",
+                '#"': "package; information; communicate",
+                "#%": "file; value; allocate",
+                "#*": "draft; quality; adjust",
+                "#?": "asset; ambiguity; explore",
+                "#>": "output; progress; advance",
+                "#<": "input; constraint; reduce",
+                "#=": "template; consistency; maintain",
+                "~@": "process; role; assign",
+                "~#": "workflow; structure; build",
+                "~~": "operation; method; execute",
+                "~:": "routine; schedule; plan",
+                "~^": "cycle; context; locate",
+                '~"': "sequence; information; communicate",
+                "~%": "procedure; value; allocate",
+                "~*": "method; quality; adjust",
+                "~?": "iteration; ambiguity; explore",
+                "~>": "review; progress; advance",
+                "~<": "sprint; constraint; reduce",
+                "~=": "maintenance; consistency; maintain",
+                ":@": "time; role; assign",
+                ":#": "slot; structure; build",
+                ":~": "phase; method; execute",
+                "::": "period; schedule; plan",
+                ":^": "window; context; locate",
+                ':"': "interval; information; communicate",
+                ":%": "moment; value; allocate",
+                ":*": "date; quality; adjust",
+                ":?": "cycle; ambiguity; explore",
+                ":>": "horizon; progress; advance",
+                ":<": "delay; constraint; reduce",
+                ":=": "cadence; consistency; maintain",
+                "^@": "place; role; assign",
+                "^#": "room; structure; build",
+                "^~": "site; method; execute",
+                "^:": "area; schedule; plan",
+                "^^": "zone; context; locate",
+                '^"': "region; information; communicate",
+                "^%": "venue; value; allocate",
+                "^*": "station; quality; adjust",
+                "^?": "origin; ambiguity; explore",
+                "^>": "destination; progress; advance",
+                "^<": "boundary; constraint; reduce",
+                "^=": "anchor; consistency; maintain",
+                '"@': "message; role; assign",
+                '"#': "note; structure; build",
+                '"~': "file; method; execute",
+                '":': "prompt; schedule; plan",
+                '"^': "log; context; locate",
+                '""': "report; information; communicate",
+                '"%': "caption; value; allocate",
+                '"*': "comment; quality; adjust",
+                '"?': "query; ambiguity; explore",
+                '">': "alert; progress; advance",
+                '"<': "reply; constraint; reduce",
+                '"=': "fact; consistency; maintain",
+                "%@": "resource; role; assign",
+                "%#": "supply; structure; build",
+                "%~": "expense; method; execute",
+                "%:": "budget; schedule; plan",
+                "%^": "wallet; context; locate",
+                '%"': "metric; information; communicate",
+                "%%": "value; value; allocate",
+                "%*": "level; quality; adjust",
+                "%?": "estimate; ambiguity; explore",
+                "%>": "profit; progress; advance",
+                "%<": "loss; constraint; reduce",
+                "%=": "balance; consistency; maintain",
+                "*@": "state; role; assign",
+                "*#": "tier; structure; build",
+                "*~": "performance; method; execute",
+                "*:": "pressure; schedule; plan",
+                "*^": "setting; context; locate",
+                '*"': "style; information; communicate",
+                "*%": "intensity; value; allocate",
+                "**": "baseline; quality; adjust",
+                "*?": "risk; ambiguity; explore",
+                "*>": "boost; progress; advance",
+                "*<": "slump; constraint; reduce",
+                "*=": "hold; consistency; maintain",
+                "?@": "unknown; role; assign",
+                "?#": "variable; structure; build",
+                "?~": "trial; method; execute",
+                "?:": "guess; schedule; plan",
+                "?^": "mystery; context; locate",
+                '?"': "rumor; information; communicate",
+                "?%": "estimate; value; allocate",
+                "?*": "threat; quality; adjust",
+                "??": "option; ambiguity; explore",
+                "?>": "doubt; progress; advance",
+                "?<": "anomaly; constraint; reduce",
+                "?=": "pending; consistency; maintain",
+                ">@": "outcome; role; assign",
+                ">#": "upgrade; structure; build",
+                ">~": "launch; method; execute",
+                ">:": "approach; schedule; plan",
+                ">^": "goal; context; locate",
+                '>"': "praise; information; communicate",
+                ">%": "surplus; value; allocate",
+                ">*": "peak; quality; adjust",
+                ">?": "prospect; ambiguity; explore",
+                ">>": "expansion; progress; advance",
+                "><": "transition; constraint; reduce",
+                ">=": "success; consistency; maintain",
+                "<@": "issue; role; assign",
+                "<#": "defect; structure; build",
+                "<~": "retreat; method; execute",
+                "<:": "delay; schedule; plan",
+                "<^": "root; context; locate",
+                '<"': "complaint; information; communicate",
+                "<%": "drain; value; allocate",
+                "<*": "failure; quality; adjust",
+                "<?": "suspicion; ambiguity; explore",
+                "<>": "clash; progress; advance",
+                "<<": "crash; constraint; reduce",
+                "<=": "block; consistency; maintain",
+                "=@": "baseline; role; assign",
+                "=#": "template; structure; build",
+                "=~": "routine; method; execute",
+                "=:": "today; schedule; plan",
+                "=^": "level; context; locate",
+                '="': "proof; information; communicate",
+                "=%": "parity; value; allocate",
+                "=*": "average; quality; adjust",
+                "=?": "check; ambiguity; explore",
+                "=>": "continuation; progress; advance",
+                "=<": "retention; constraint; reduce",
+                "==": "match; consistency; maintain",
+            };
+
+            const subjects = [
+                "@",
+                "#",
+                "~",
+                ":",
+                "^",
+                '"',
+                "%",
+                "*",
+                "?",
+                ">",
+                "<",
+                "=",
+            ];
+            const states = [
+                "@",
+                "#",
+                "~",
+                ":",
+                "^",
+                '"',
+                "%",
+                "*",
+                "?",
+                ">",
+                "<",
+                "=",
+            ];
+            const selections = {};
+
+            const palette = document.getElementById("palette");
+            const input = document.getElementById("noteInput");
+
+            // Setup palette - now uses the full 12-symbol set
+            subjects.forEach((s) => {
+                const btn = document.createElement("button");
+                btn.className = "symbol-btn category";
+                btn.textContent = s;
+                btn.onclick = () => insertAtCursor(s);
+                palette.appendChild(btn);
+            });
+
+            function insertAtCursor(text) {
+                const start = input.selectionStart;
+                input.value =
+                    input.value.substring(0, start) +
+                    text +
+                    input.value.substring(input.selectionEnd);
+                input.selectionStart = input.selectionEnd = start + text.length;
+                input.focus();
+                runTranslation();
+            }
+
+            function runTranslation() {
+                const text = input.value;
+                const container = document.getElementById("translationBox");
+                const sentenceBox = document.getElementById("sentenceBox");
+                const suggestBox = document.getElementById("englishToTalk");
+                const suggestList = document.getElementById("suggestionList");
+
+                // Updated Regex to handle any two of the 12 core symbols
+                const regex = /[@#~:^"%*?><=]{2}/g;
+                const matches = text.match(regex) || [];
+
+                if (matches.length === 0) {
+                    container.innerHTML =
+                        '<span class="placeholder-text">Waiting for symbols...</span>';
+                    sentenceBox.innerHTML =
+                        '<span class="placeholder-text">Your sentence will appear here...</span>';
+                } else {
+                    container.innerHTML = "";
+                    let sentenceParts = [];
+                    matches.forEach((pair, index) => {
+                        if (!dictionary[pair]) return;
+                        const selectionId = `${index}_${pair}`;
+                        const row = document.createElement("div");
+                        row.className = "pair-row";
+                        row.innerHTML = `<div class="pair-label">${pair}</div>`;
+                        const chipContainer = document.createElement("div");
+                        chipContainer.className = "chip-container";
+                        const meanings = dictionary[pair]
+                            .split(";")
+                            .map((m) => m.trim());
+                        meanings.forEach((m) => {
+                            const chip = document.createElement("div");
+                            chip.className =
+                                "meaning-chip" +
+                                (selections[selectionId] === m
+                                    ? " selected"
+                                    : "");
+                            chip.textContent = m;
+                            chip.onclick = () => {
+                                selections[selectionId] =
+                                    selections[selectionId] === m ? null : m;
+                                runTranslation();
+                            };
+                            if (
+                                !selections[selectionId] ||
+                                selections[selectionId] === m
+                            )
+                                chipContainer.appendChild(chip);
+                        });
+                        sentenceParts.push(
+                            selections[selectionId] || `[${pair}]`,
+                        );
+                        row.appendChild(chipContainer);
+                        container.appendChild(row);
+                    });
+                    sentenceBox.textContent = sentenceParts.join(" ");
+                }
+
+                // English to Shorthand Suggestions
+                suggestList.innerHTML = "";
+                const words = text.toLowerCase().split(/\W+/);
+                const matchesSuggestions = [];
+
+                Object.entries(dictionary).forEach(([pair, meaningString]) => {
+                    const meanings = meaningString
+                        .split(/[;,\s]+/)
+                        .map((m) => m.trim().toLowerCase());
+                    words.forEach((w) => {
+                        if (w.length > 2 && meanings.includes(w)) {
+                            matchesSuggestions.push({ pair, word: w });
+                        }
+                    });
+                });
+
+                if (matchesSuggestions.length > 0) {
+                    suggestBox.style.display = "block";
+                    const uniqueSuggestions = matchesSuggestions.filter(
+                        (v, i, a) =>
+                            a.findIndex((t) => t.pair === v.pair) === i,
+                    );
+                    uniqueSuggestions.forEach((s) => {
+                        const chip = document.createElement("span");
+                        chip.className = "suggest-chip";
+                        chip.textContent = `${s.pair} (${s.word})`;
+                        chip.onclick = () => {
+                            insertAtCursor(" " + s.pair + " ");
+                        };
+                        suggestList.appendChild(chip);
+                    });
+                } else {
+                    suggestBox.style.display = "none";
+                }
+            }
+
+            input.addEventListener("input", runTranslation);
+        </script>
+    </body>
+</html>
