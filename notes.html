@@ -143,7 +143,6 @@
                 font-size: 16px;
             }
 
-            /* English to Shorthand Suggestions */
             .suggestion-box {
                 background: #eef6ff;
                 border: 1px solid #b6d4fe;
@@ -166,6 +165,24 @@
             .suggest-chip:hover {
                 background: #0d6efd;
                 color: white;
+            }
+
+            .action-btn {
+                padding: 12px 20px;
+                color: white;
+                background: darkorange;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                font-family: inherit;
+                font-size: 16px;
+                width: 100%;
+                margin-top: 10px;
+                transition: 0.2s;
+            }
+            .action-btn:hover {
+                background: #d35400;
             }
         </style>
     </head>
@@ -202,11 +219,54 @@
             <span class="placeholder-text">Waiting for symbols...</span>
         </div>
 
+        <button class="action-btn" onclick="saveNote()">
+            Save Note (.txt)
+        </button>
+
         <script>
+            const symbols = [
+                "@",
+                "#",
+                "/",
+                ":",
+                "^",
+                '"',
+                "%",
+                "*",
+                "!",
+                "?",
+                ">",
+                "<",
+                "=",
+                "+",
+                "-",
+                "\\",
+            ];
+
             const dictionary = {
+                // ! (Priority)
+                "!!": "emergency; urgent; trigger",
+                "!@": "vip; role; assign",
+                "!#": "requirement; structure; build",
+                "!/": "critical path; method; execute",
+                "!:": "deadline; schedule; plan",
+                "!^": "hotspot; context; locate",
+                '!"': "alarm; information; communicate",
+                "!%": "key value; value; allocate",
+                "!*": "highlight; quality; adjust",
+                "!?": "warning; ambiguity; explore",
+                "!>": "goal; progress; advance",
+                "!<": "bottleneck; constraint; reduce",
+                "!=": "mandate; consistency; maintain",
+                "!+": "bonus; addition; increase",
+                "!-": "risk; subtraction; remove",
+                "!\\": "safety net; support; underlay",
+
+                // @ (Person)
+                "@!": "stakeholder; urgent; trigger",
                 "@@": "person; role; assign",
                 "@#": "member; structure; build",
-                "@~": "worker; method; execute",
+                "@/": "worker; method; execute",
                 "@:": "attendee; schedule; plan",
                 "@^": "visitor; context; locate",
                 '@"': "speaker; information; communicate",
@@ -216,9 +276,15 @@
                 "@>": "leader; progress; advance",
                 "@<": "follower; constraint; reduce",
                 "@=": "peer; consistency; maintain",
-                "#@": "item; role; assign",
+                "@+": "recruit; addition; join",
+                "@-": "departure; subtraction; remove",
+                "@\\": "assistant; support; underlay",
+
+                // # (Item)
+                "#!": "essential; urgent; trigger",
+                "#@": "user; role; assign",
                 "##": "tool; structure; build",
-                "#~": "document; method; execute",
+                "#/": "document; method; execute",
                 "#:": "task; schedule; plan",
                 "#^": "module; context; locate",
                 '#"': "package; information; communicate",
@@ -228,21 +294,33 @@
                 "#>": "output; progress; advance",
                 "#<": "input; constraint; reduce",
                 "#=": "template; consistency; maintain",
-                "~@": "process; role; assign",
-                "~#": "workflow; structure; build",
-                "~~": "operation; method; execute",
-                "~:": "routine; schedule; plan",
-                "~^": "cycle; context; locate",
-                '~"': "sequence; information; communicate",
-                "~%": "procedure; value; allocate",
-                "~*": "method; quality; adjust",
-                "~?": "iteration; ambiguity; explore",
-                "~>": "review; progress; advance",
-                "~<": "sprint; constraint; reduce",
-                "~=": "maintenance; consistency; maintain",
-                ":@": "time; role; assign",
+                "#+": "add-on; addition; increase",
+                "#-": "component; subtraction; remove",
+                "#\\": "infrastructure; support; underlay",
+
+                // / (Method)
+                "/!": "flashpoint; urgent; trigger",
+                "/@": "process; role; assign",
+                "/#": "workflow; structure; build",
+                "//": "operation; method; execute",
+                "/:": "routine; schedule; plan",
+                "/^": "cycle; context; locate",
+                '/"': "sequence; information; communicate",
+                "/%": "procedure; value; allocate",
+                "/*": "method; quality; adjust",
+                "/?": "iteration; ambiguity; explore",
+                "/>": "review; progress; advance",
+                "/<": "sprint; constraint; reduce",
+                "/=": "maintenance; consistency; maintain",
+                "/+": "pipeline; addition; increase",
+                "/-": "shortcut; subtraction; simplify",
+                "/\\": "backup; support; revert",
+
+                // : (Time)
+                ":!": "instancy; urgent; trigger",
+                ":@": "shift; role; assign",
                 ":#": "slot; structure; build",
-                ":~": "phase; method; execute",
+                ":/": "phase; method; execute",
                 "::": "period; schedule; plan",
                 ":^": "window; context; locate",
                 ':"': "interval; information; communicate",
@@ -252,9 +330,15 @@
                 ":>": "horizon; progress; advance",
                 ":<": "delay; constraint; reduce",
                 ":=": "cadence; consistency; maintain",
-                "^@": "place; role; assign",
+                ":+": "extension; addition; increase",
+                ":-": "cutoff; subtraction; remove",
+                ":\\": "history; support; revert",
+
+                // ^ (Place)
+                "^!": "stage; urgent; trigger",
+                "^@": "host; role; assign",
                 "^#": "room; structure; build",
-                "^~": "site; method; execute",
+                "^/": "site; method; execute",
                 "^:": "area; schedule; plan",
                 "^^": "zone; context; locate",
                 '^"': "region; information; communicate",
@@ -264,21 +348,33 @@
                 "^>": "destination; progress; advance",
                 "^<": "boundary; constraint; reduce",
                 "^=": "anchor; consistency; maintain",
-                '"@': "message; role; assign",
-                '"#': "note; structure; build",
-                '"~': "file; method; execute",
-                '":': "prompt; schedule; plan",
-                '"^': "log; context; locate",
-                '""': "report; information; communicate",
-                '"%': "caption; value; allocate",
-                '"*': "comment; quality; adjust",
+                "^+": "annex; addition; increase",
+                "^-": "void; subtraction; remove",
+                "^\\": "basement; support; underlay",
+
+                // " (Message)
+                '"!': "alert; urgent; trigger",
+                '"@': "profile; role; assign",
+                '"#': "report; structure; build",
+                '"/': "stream; method; execute",
+                '":': "log; schedule; plan",
+                '"^': "metadata; context; locate",
+                '""': "message; information; communicate",
+                '"%': "data; value; allocate",
+                '"*': "feedback; quality; adjust",
                 '"?': "query; ambiguity; explore",
-                '">': "alert; progress; advance",
-                '"<': "reply; constraint; reduce",
-                '"=': "fact; consistency; maintain",
-                "%@": "resource; role; assign",
+                '">': "brief; progress; advance",
+                '"<': "note; constraint; reduce",
+                '"=': "standard; consistency; maintain",
+                '"+': "appendix; addition; increase",
+                '"-': "summary; subtraction; remove",
+                '"\\': "footnote; support; underlay",
+
+                // % (Resource)
+                "%!": "debt; urgent; trigger",
+                "%@": "personnel; role; assign",
                 "%#": "supply; structure; build",
-                "%~": "expense; method; execute",
+                "%/": "expense; method; execute",
                 "%:": "budget; schedule; plan",
                 "%^": "wallet; context; locate",
                 '%"': "metric; information; communicate",
@@ -288,103 +384,161 @@
                 "%>": "profit; progress; advance",
                 "%<": "loss; constraint; reduce",
                 "%=": "balance; consistency; maintain",
-                "*@": "state; role; assign",
-                "*#": "tier; structure; build",
-                "*~": "performance; method; execute",
-                "*:": "pressure; schedule; plan",
-                "*^": "setting; context; locate",
-                '*"': "style; information; communicate",
-                "*%": "intensity; value; allocate",
-                "**": "baseline; quality; adjust",
+                "%+": "revenue; addition; increase",
+                "%-": "cost; subtraction; remove",
+                "%\\": "reserve; support; underlay",
+
+                // * (State)
+                "*!": "alarm; urgent; trigger",
+                "*@": "expert; role; assign",
+                "*#": "build; structure; build",
+                "*/": "performance; method; execute",
+                "*:": "maturity; schedule; plan",
+                "*^": "environment; context; locate",
+                '*"': "status; information; communicate",
+                "*%": "health; value; allocate",
+                "**": "state; quality; adjust",
                 "*?": "risk; ambiguity; explore",
-                "*>": "boost; progress; advance",
-                "*<": "slump; constraint; reduce",
-                "*=": "hold; consistency; maintain",
-                "?@": "unknown; role; assign",
-                "?#": "variable; structure; build",
-                "?~": "trial; method; execute",
+                "*>": "growth; progress; advance",
+                "*<": "decline; constraint; reduce",
+                "*=": "stability; consistency; maintain",
+                "*+": "improving; addition; increase",
+                "*-": "wear; subtraction; remove",
+                "*\\": "foundation; support; underlay",
+
+                // ? (Unknown)
+                "?!": "crisis; urgent; trigger",
+                "?@": "stranger; role; assign",
+                "?#": "mystery; structure; build",
+                "?/": "experiment; method; execute",
                 "?:": "guess; schedule; plan",
-                "?^": "mystery; context; locate",
+                "?^": "hidden; context; locate",
                 '?"': "rumor; information; communicate",
-                "?%": "estimate; value; allocate",
+                "?%": "gamble; value; allocate",
                 "?*": "threat; quality; adjust",
-                "??": "option; ambiguity; explore",
-                "?>": "doubt; progress; advance",
+                "??": "question; ambiguity; explore",
+                "?>": "hypothesis; progress; advance",
                 "?<": "anomaly; constraint; reduce",
                 "?=": "pending; consistency; maintain",
-                ">@": "outcome; role; assign",
-                ">#": "upgrade; structure; build",
-                ">~": "launch; method; execute",
-                ">:": "approach; schedule; plan",
+                "?+": "curiosity; addition; increase",
+                "?-": "absence; subtraction; remove",
+                "?\\": "theory; support; underlay",
+
+                // > (Outcome)
+                ">!": "target; urgent; trigger",
+                ">@": "successor; role; assign",
+                ">#": "product; structure; build",
+                ">/": "delivery; method; execute",
+                ">:": "milestone; schedule; plan",
                 ">^": "goal; context; locate",
-                '>"': "praise; information; communicate",
-                ">%": "surplus; value; allocate",
-                ">*": "peak; quality; adjust",
-                ">?": "prospect; ambiguity; explore",
-                ">>": "expansion; progress; advance",
-                "><": "transition; constraint; reduce",
-                ">=": "success; consistency; maintain",
-                "<@": "issue; role; assign",
-                "<#": "defect; structure; build",
-                "<~": "retreat; method; execute",
+                '>"': "report; information; communicate",
+                ">%": "return; value; allocate",
+                ">*": "impact; quality; adjust",
+                ">?": "upside; ambiguity; explore",
+                ">>": "outcome; progress; advance",
+                "><": "result; constraint; reduce",
+                ">=": "yield; consistency; maintain",
+                ">+": "surplus; addition; increase",
+                ">-": "exit; subtraction; remove",
+                ">\\": "legacy; support; underlay",
+
+                // < (Issue)
+                "<!": "incident; urgent; trigger",
+                "<@": "culprit; role; assign",
+                "<#": "bug; structure; build",
+                "</": "error; method; execute",
                 "<:": "delay; schedule; plan",
-                "<^": "root; context; locate",
+                "<^": "barrier; context; locate",
                 '<"': "complaint; information; communicate",
-                "<%": "drain; value; allocate",
-                "<*": "failure; quality; adjust",
-                "<?": "suspicion; ambiguity; explore",
-                "<>": "clash; progress; advance",
-                "<<": "crash; constraint; reduce",
-                "<=": "block; consistency; maintain",
-                "=@": "baseline; role; assign",
-                "=#": "template; structure; build",
-                "=~": "routine; method; execute",
-                "=:": "today; schedule; plan",
-                "=^": "level; context; locate",
-                '="': "proof; information; communicate",
+                "<%": "shortfall; value; allocate",
+                "<*": "defect; quality; adjust",
+                "<?": "doubt; ambiguity; explore",
+                "<>": "conflict; progress; advance",
+                "<<": "issue; constraint; reduce",
+                "<=": "drag; consistency; maintain",
+                "<+": "inflation; addition; increase",
+                "<-": "reduction; subtraction; remove",
+                "<\\": "debt; support; underlay",
+
+                // = (Baseline)
+                "=!": "rule; urgent; trigger",
+                "=@": "peer; role; assign",
+                "=#": "pattern; structure; build",
+                "=/": "habit; method; execute",
+                "=:": "cadence; schedule; plan",
+                "=^": "base; context; locate",
+                '="': "fact; information; communicate",
                 "=%": "parity; value; allocate",
-                "=*": "average; quality; adjust",
-                "=?": "check; ambiguity; explore",
-                "=>": "continuation; progress; advance",
-                "=<": "retention; constraint; reduce",
-                "==": "match; consistency; maintain",
+                "=*": "norm; quality; adjust",
+                "=?": "neutral; ambiguity; explore",
+                "=>": "standard; progress; advance",
+                "=<": "limit; constraint; reduce",
+                "==": "baseline; consistency; maintain",
+                "=+": "stock; addition; increase",
+                "=-": "average; subtraction; remove",
+                "=\\": "basis; support; underlay",
+
+                // + (Addition)
+                "+!": "urgent; urgent; trigger",
+                "+@": "hire; role; assign",
+                "+#": "asset; structure; build",
+                "+/": "intake; method; execute",
+                "+:": "extension; schedule; plan",
+                "+^": "expansion; context; locate",
+                '+"': "update; information; communicate",
+                "+%": "profit; value; allocate",
+                "+*": "upgrade; quality; adjust",
+                "+?": "opportunity; ambiguity; explore",
+                "+>": "growth; progress; advance",
+                "+<": "buffer; constraint; reduce",
+                "+=": "accrual; consistency; maintain",
+                "++": "addition; addition; increase",
+                "+-": "swap; subtraction; adjust",
+                "+\\": "reinforcement; support; underlay",
+
+                // - (Subtraction)
+                "-!": "cut; urgent; trigger",
+                "-@": "exit; role; assign",
+                "-#": "deletion; structure; build",
+                "-/": "shortcut; method; execute",
+                "-:": "deadline; schedule; plan",
+                "-^": "narrowing; context; locate",
+                '-"': "summary; information; communicate",
+                "-%": "expense; value; allocate",
+                "-*": "decay; quality; adjust",
+                "-?": "loss; ambiguity; explore",
+                "->": "result; progress; advance",
+                "-<": "minimum; constraint; reduce",
+                "-=": "average; consistency; maintain",
+                "-+": "offset; addition; increase",
+                "--": "subtraction; subtraction; remove",
+                "-\\": "stripping; support; underlay",
+
+                // \ (Support)
+                "\\!": "fix; urgent; trigger",
+                "\\@": "mentor; role; assign",
+                "\\#": "chassis; structure; build",
+                "\\/": "automation; method; execute",
+                "\\:": "archive; schedule; plan",
+                "\\^": "foundation; context; locate",
+                '\\"': "reference; information; communicate",
+                "\\%": "subsidy; value; allocate",
+                "\\*": "standard; quality; adjust",
+                "\\?": "theory; ambiguity; explore",
+                "\\>": "legacy; progress; advance",
+                "\\<": "guardrail; constraint; reduce",
+                "\\=": "basic; consistency; maintain",
+                "\\+": "underpinning; addition; increase",
+                "\\-": "erosion; subtraction; remove",
+                "\\\\": "support; support; underlay",
             };
 
-            const subjects = [
-                "@",
-                "#",
-                "~",
-                ":",
-                "^",
-                '"',
-                "%",
-                "*",
-                "?",
-                ">",
-                "<",
-                "=",
-            ];
-            const states = [
-                "@",
-                "#",
-                "~",
-                ":",
-                "^",
-                '"',
-                "%",
-                "*",
-                "?",
-                ">",
-                "<",
-                "=",
-            ];
             const selections = {};
-
             const palette = document.getElementById("palette");
             const input = document.getElementById("noteInput");
 
-            // Setup palette - now uses the full 12-symbol set
-            subjects.forEach((s) => {
+            // Setup palette with 16 symbols
+            symbols.forEach((s) => {
                 const btn = document.createElement("button");
                 btn.className = "symbol-btn category";
                 btn.textContent = s;
@@ -410,8 +564,8 @@
                 const suggestBox = document.getElementById("englishToTalk");
                 const suggestList = document.getElementById("suggestionList");
 
-                // Updated Regex to handle any two of the 12 core symbols
-                const regex = /[@#~:^"%*?><=]{2}/g;
+                // Regex updated for 16 symbols
+                const regex = /[@#\/:^"%*!><=+\-\\]{2}/g;
                 const matches = text.match(regex) || [];
 
                 if (matches.length === 0) {
@@ -467,11 +621,11 @@
                 const matchesSuggestions = [];
 
                 Object.entries(dictionary).forEach(([pair, meaningString]) => {
-                    const meanings = meaningString
-                        .split(/[;,\s]+/)
+                    const meaningsArray = meaningString
+                        .split(";")
                         .map((m) => m.trim().toLowerCase());
                     words.forEach((w) => {
-                        if (w.length > 2 && meanings.includes(w)) {
+                        if (w.length > 2 && meaningsArray.includes(w)) {
                             matchesSuggestions.push({ pair, word: w });
                         }
                     });
@@ -495,6 +649,25 @@
                 } else {
                     suggestBox.style.display = "none";
                 }
+            }
+
+            function saveNote() {
+                const inputContent = document.getElementById("noteInput").value;
+                const translationContent =
+                    document.getElementById("sentenceBox").innerText;
+
+                if (!inputContent.trim()) {
+                    alert("Write something before saving!");
+                    return;
+                }
+
+                const content = `TWO TALK NOTE\nCreated: ${new Date().toLocaleString()}\n\nINPUT:\n${inputContent}\n\nTRANSLATION:\n${translationContent}`;
+
+                const blob = new Blob([content], { type: "text/plain" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = `twotalk_note_${new Date().toISOString().split("T")[0]}.txt`;
+                a.click();
             }
 
             input.addEventListener("input", runTranslation);
