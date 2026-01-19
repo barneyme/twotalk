@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Two Talk | Masterclass</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='70' fill='%23cc5500' font-family='Courier New, monospace' font-weight='bold'>TT</text></svg>"
+        />
+        <style>
+            :root {
+                --brand: #e67e22;
+                --bg: #f8f9fa;
+                --dark: #2d3436;
+            }
+            body {
+                font-family: "Courier New", monospace;
+                background: var(--bg);
+                color: var(--dark);
+                padding: 20px;
+                max-width: 900px;
+                margin: auto;
+                line-height: 1.6;
+            }
+            .nav {
+                margin-bottom: 20px;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+            }
+            .nav a {
+                color: var(--brand);
+                text-decoration: none;
+                font-weight: bold;
+            }
+            h1 {
+                color: var(--brand);
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+            h2 {
+                color: var(--brand);
+                border-left: 5px solid var(--brand);
+                padding-left: 15px;
+                margin-top: 40px;
+            }
+            .meta {
+                font-style: italic;
+                color: #666;
+                margin-bottom: 30px;
+            }
+
+            .lesson-card {
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                border: 1px solid #e0e0e0;
+                margin-bottom: 25px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            }
+            .symbol-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 15px;
+                margin: 20px 0;
+            }
+            .symbol-item {
+                background: #f1f1f1;
+                padding: 10px;
+                border-radius: 6px;
+                font-size: 0.9em;
+            }
+            .symbol {
+                background: var(--brand);
+                color: white;
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-weight: bold;
+                margin-right: 5px;
+            }
+            .formula {
+                background: #fff3e6;
+                padding: 15px;
+                border-radius: 8px;
+                font-weight: bold;
+                text-align: center;
+                font-size: 1.2em;
+                margin: 20px 0;
+                border: 2px dashed var(--brand);
+            }
+            .example-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+            .example-table td {
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+            }
+            .twotalk-code {
+                color: var(--brand);
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+            .quiz-box {
+                background: #2d3436;
+                color: #fab1a0;
+                padding: 20px;
+                border-radius: 8px;
+            }
+            .badge {
+                background: #27ae60;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 10px;
+                font-size: 0.7em;
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <a href="index.html">← Home</a> |
+            <a href="notes.html">Go to Notebook</a>
+        </div>
+
+        <h1>The 15-Minute Masterclass</h1>
+        <div class="meta">
+            Estimated time: 15 minutes. Outcome: Fluency in Two Talk.
+        </div>
+
+        <section class="lesson-card">
+            <h2>01. The Architecture</h2>
+            <p>
+                Two Talk is a <b>Positional Language</b>. Meaning is created by
+                where a symbol sits in a pair.
+            </p>
+            <div class="formula">[OBJECT] + [ACTION/IDEA] = MEANING</div>
+            <p>
+                Think of it like <i>Subject + Verb</i>. If you see
+                <span class="symbol">@</span> (Person) followed by
+                <span class="symbol">:</span> (Time), you are describing a
+                person's time — an <b>Attendee</b> or <b>Schedule</b>.
+            </p>
+        </section>
+
+        <section class="lesson-card">
+            <h2>02. The Core 16 Symbols</h2>
+            <p>Learn these 16 categories. They are the "DNA" of every note.</p>
+            <div class="symbol-grid">
+                <div class="symbol-item">
+                    <span class="symbol">@</span> Person
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">#</span> Item/Tool
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">/</span> Method/Flow
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">:</span> Time
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">^</span> Place/Context
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">"</span> Message/Data
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">%</span> Resource
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">*</span> State/Quality
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">!</span> Priority
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">?</span> Unknown/Risk
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">&gt;</span> Outcome
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">&lt;</span> Issue
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">=</span> Baseline
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">+</span> Addition
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">-</span> Subtraction
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">\</span> Support
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>03. Doubling Up</h2>
+            <p>
+                When you repeat a symbol (e.g., <code>@@</code>), you are
+                describing the <b>Purest Form</b> of that category.
+            </p>
+            <table class="example-table">
+                <tr>
+                    <td class="twotalk-code">@@</td>
+                    <td>A specific human (Person).</td>
+                </tr>
+                <tr>
+                    <td class="twotalk-code">##</td>
+                    <td>The primary instrument (Tool).</td>
+                </tr>
+                <tr>
+                    <td class="twotalk-code">!!</td>
+                    <td>A critical situation (Emergency).</td>
+                </tr>
+                <tr>
+                    <td class="twotalk-code">\\</td>
+                    <td>The ultimate foundation (Support).</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="lesson-card">
+            <h2>04. The "Action" Modifiers</h2>
+            <p>
+                The second symbol modifies the first. Look at how
+                <span class="symbol">+</span> (Add) and
+                <span class="symbol">-</span> (Remove) change things:
+            </p>
+            <table class="example-table">
+                <tr>
+                    <td class="twotalk-code">@+</td>
+                    <td>Recruit / New Hire (Person + Add)</td>
+                </tr>
+                <tr>
+                    <td class="twotalk-code">@-</td>
+                    <td>Resignation / Departure (Person - Remove)</td>
+                </tr>
+                <tr>
+                    <td class="twotalk-code">%+</td>
+                    <td>Revenue / Income (Resource + Add)</td>
+                </tr>
+                <tr>
+                    <td class="twotalk-code">%-</td>
+                    <td>Expense / Cost (Resource - Remove)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="lesson-card">
+            <h2>05. Grammar & Linking</h2>
+            <p>
+                To write complex thoughts, use <b>Actor → Action → Target</b>.
+                Link pairs with dots for compound modifiers.
+            </p>
+            <p><b>Scenario:</b> "The manager updated the project file."</p>
+            <div class="formula">@> "+ #%</div>
+            <p><i>(Leader) (Message-Update) (Item-File)</i></p>
+        </section>
+
+        <section class="lesson-card">
+            <h2>Final Exam: Decode this Note</h2>
+            <p>
+                Read the following Two Talk string and try to translate it in
+                your head:
+            </p>
+            <div class="quiz-box">
+                <b
+                    >!! :! @# /# <br />
+                    <br />
+                    <span style="color: white; font-size: 0.8em"
+                        >(Hover/Tap below for the answer)</span
+                    ></b
+                >
+                <details
+                    style="margin-top: 10px; color: #27ae60; cursor: pointer"
+                >
+                    <summary>Show Translation</summary>
+                    "Emergency: Immediate (instancy) team member (member)
+                    workflow (workflow)."
+                </details>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-bottom: 50px">
+            <p>Congratulations! You are now a Two Talk practitioner.</p>
+            <button
+                onclick="location.href='notes.html'"
+                style="
+                    padding: 15px 30px;
+                    background: var(--brand);
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    cursor: pointer;
+                "
+            >
+                Open Your Notebook
+            </button>
+        </div>
+    </body>
+</html>
