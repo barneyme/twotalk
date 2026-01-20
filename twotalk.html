@@ -12,6 +12,8 @@
             :root {
                 --brand: #e67e22;
                 --brand-dark: #d35400;
+                --brand-light: #ffb366;
+                --brand-light-hover: #ffa347;
                 --dark: #2d3436;
                 --bg: #f8f9fa;
                 --radius: 12px;
@@ -34,8 +36,7 @@
 
             h1,
             h2,
-            h3,
-            .comparison-header {
+            h3 {
                 font-weight: 800;
                 color: var(--brand);
                 margin-bottom: 0.5em;
@@ -68,85 +69,173 @@
                 box-shadow: var(--shadow);
             }
 
-            /* Comparison Grid - 70/30 Split */
-            .comparison-header {
-                display: flex;
-                align-items: center;
-                text-align: center;
-                font-size: 0.9em;
-                text-transform: uppercase;
-                margin-top: 20px;
+            .step-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                margin-top: 15px;
             }
 
-            .comparison-header::before,
-            .comparison-header::after {
-                content: "";
-                flex: 1;
-                border-bottom: 1px solid #eee;
-                margin: 0 15px;
+            .step {
+                background: var(--bg);
+                padding: 12px;
+                border-radius: 8px;
+                border-left: 3px solid var(--brand);
+                font-size: 0.9em;
+            }
+
+            .step b {
+                color: var(--brand);
+                display: block;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                font-size: 0.8em;
+            }
+
+            .highlight-label {
+                color: var(--brand);
+                font-weight: bold;
+                font-size: 0.95em;
+            }
+
+            .complex-box {
+                background: #fff;
+                border: 2px dashed var(--brand);
+                padding: 12px;
+                border-radius: 8px;
+                margin-top: 20px;
+                text-align: center;
+                font-size: 0.95em;
+                font-weight: bold;
+                color: var(--dark);
+            }
+
+            .btn-orange {
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 20px auto;
+                padding: 15px;
+                background: var(--brand);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .btn-orange:hover {
+                background: var(--brand-dark);
+            }
+
+            .btn-light-orange {
+                background: var(--brand-light);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                display: block;
+                width: 100%;
+                max-width: 200px;
+                margin: 20px auto;
+                padding: 10px;
+                font-size: 0.8em;
+            }
+
+            .btn-light-orange:hover {
+                background: var(--brand-light-hover);
+            }
+
+            .comparison-box {
+                background: #fff;
+                color: var(--dark);
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                font-size: 0.9em;
+                border: 1px solid #eee;
             }
 
             .comparison-grid {
-                display: flex;
-                gap: 12px;
-                margin: 15px 0;
-                align-items: stretch;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                margin-top: 10px;
             }
 
-            .example-box.english {
-                flex: 2.3;
-            }
-            .example-box.twotalk {
-                flex: 1;
-            }
-
-            .example-box label {
-                font-weight: bold;
+            .comparison-col label {
                 color: var(--brand);
-                text-transform: uppercase;
-                font-size: 0.75em;
+                font-weight: bold;
                 display: block;
-                margin-bottom: 4px;
+                margin-bottom: 5px;
+                font-size: 0.75em;
+                text-transform: uppercase;
             }
 
-            pre {
-                background: #ffffff;
-                color: var(--dark);
-                padding: 12px;
+            .symbol-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                background: #fff;
+                padding: 15px;
                 border: 1px solid #e0e0e0;
-                border-radius: 8px;
-                white-space: pre; /* Keeps your manual spacing */
-                font-size: 13px;
-                line-height: 1.4;
-                border-left: 5px solid var(--brand);
-                margin: 0;
-                overflow-x: auto;
-                text-align: left; /* Forces left alignment */
-                display: block;   /* Ensures it behaves as a full-width container */
-                width: 100%;      /* Takes up the full space of the comparison box */
+                border-radius: var(--radius);
+                margin-top: 10px;
             }
 
-            /* Word List UI */
+            .symbol-col h4 {
+                margin: 0 0 10px 0;
+                font-size: 0.8em;
+                text-transform: uppercase;
+                color: #888;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 5px;
+            }
+
+            .symbol-row-small {
+                display: flex;
+                gap: 10px;
+                font-size: 14px;
+                padding: 2px 0;
+            }
+
+            .symbol-row-small b {
+                color: var(--brand);
+                width: 15px;
+            }
+
             .word-row {
                 display: flex;
                 align-items: center;
-                padding: 4px 10px;
+                padding: 6px 10px;
                 border-radius: 6px;
+                gap: 8px;
             }
+
             .word-row:hover {
                 background: #fffaf0;
             }
+
             .symbol-label {
                 font-weight: bold;
                 color: var(--brand);
-                width: 50px;
+                width: 45px;
                 background: #eee;
                 padding: 2px 4px;
                 border-radius: 4px;
                 text-align: center;
-                margin-right: 10px;
                 cursor: pointer;
             }
+
             .meaning-edit {
                 flex-grow: 1;
                 border: none;
@@ -155,7 +244,9 @@
                 font-family: inherit;
                 font-size: 14px;
                 background: transparent;
+                width: 100%;
             }
+
             .meaning-edit:focus {
                 border-bottom-color: var(--brand);
                 outline: none;
@@ -168,765 +259,361 @@
                 border: 1px solid #ddd;
                 border-radius: 8px;
                 margin-bottom: 15px;
-                outline: none;
                 font-family: inherit;
             }
-            #search:focus {
-                border-color: var(--brand);
-            }
 
-            .filter-bar {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                padding: 8px;
-                background: #f1f1f1;
-                border-radius: 8px;
-                margin-bottom: 15px;
-            }
-            .filter-btn {
-                padding: 4px 10px;
-                border: none;
-                background: transparent;
-                border-radius: 4px;
-                font-weight: bold;
-                color: #666;
-                cursor: pointer;
-                font-size: 13px;
-                font-family: inherit;
-            }
-            .filter-btn.active {
-                background: var(--brand);
-                color: white;
-            }
-
-            .dl-links {
-                font-weight: bold;
-                color: var(--brand);
-                font-size: 0.8em;
-                text-transform: uppercase;
-                margin-top: 10px;
-            }
-            .dl-links a {
-                background: #fff3e6;
-                color: var(--brand);
-                padding: 4px 8px;
-                border-radius: 6px;
-                margin-left: 5px;
-                text-decoration: none;
-                display: inline-block;
-            }
-
-            .action-btn {
-                padding: 10px 20px;
-                color: white;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                font-weight: bold;
-                font-family: inherit;
-                transition: 0.2s;
-            }
-            .action-btn.reset {
-                background: var(--brand-dark);
-                margin-top: 20px;
-            }
-
-            .creator-footer {
+            .footer {
                 margin-top: 50px;
+                padding: 20px;
+                text-align: center;
                 border-top: 1px solid #eee;
-                padding-top: 20px;
                 font-size: 14px;
-                color: #b2bec3;
+                color: #666;
             }
 
-            @media (max-width: 750px) {
+            .footer a {
+                color: var(--brand);
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            @media (max-width: 650px) {
+                .step-grid,
+                .symbol-grid,
                 .comparison-grid {
-                    flex-direction: column;
-                }
-                pre {
-                    white-space: pre-wrap;
+                    grid-template-columns: 1fr;
                 }
             }
         </style>
     </head>
     <body>
-        <h1>Two Talk <span>Small Symbols. Big Meaning.</span></h1>
+        <h1>Two Talk <span>"Shorthand, Simplified."</span></h1>
 
-        <div class="section" id="aboutSection">
-            <h2>About</h2>
-            <p style="font-size: 0.9em; margin-bottom: 10px">
-                Two Talk is a compact semantic shorthand system built for fast,
-                structured notes, task lists, and digital bullet journals. It
-                turns everyday notes into tiny, consistent building blocks you
-                can type at the speed of thought. Two Talk is great for knowledge workers, project managers, note takers digital minimalists, developers, researchers, PKM users and anyone who prefers structure over prose!
+        <div class="section">
+            <h2>What is Two Talk?</h2>
+            <p>
+                Two Talk simple way to write quickly. Each word uses only 2
+                symbols. The first symbol is the <b>Subject</b> (The Thing) and
+                the second is the <b>State</b> (The Way it is).
             </p>
-            <ul style="font-size: 0.9em">
-                <li>
-                    <b>What:</b> A symantic keyboard native micro language where
-                    every word is made from two symbols, each contributing
-                    meaning.
-                </li>
-                <li>
-                    <b>Why:</b> Fast to learn and use, flexible, and language
-                    agnostic. Once you learn the 16 symbols, you can decode any
-                    pair — even ones you’ve never seen.
-                </li>
-                <li>
-                    <b>How:</b> 1st Symbol = Object. 2nd Symbol = Idea and
-                    Action.
-                </li>
-            </ul>
-            <p style="font-size: 0.9em">
-                <b>TLDR:</b> A tiny, keyboard native shorthand system that turns
-                two symbols into fast, predictable meaning for notes, tasks, and
-                journaling.
-            </p>
-            <div class="dl-links">
-                Learn:
-                <a href="tutorial.html">Start Tutorial</a>
-                | Download Guide:
-                <a href="#" onclick="exportMarkdown()">.MD</a>
-                <a href="#" onclick="window.print()">.PDF</a>
+            <div class="step-grid">
+                <div class="step">
+                    <b>Two symbols</b>
+                    <span class="highlight-label">First symbol</span>: What are
+                    we talking about?
+                    <span class="highlight-label">Second symbol</span>: What is
+                    its current condition?
+                </div>
+                <div class="step">
+                    <b>Three Choices</b>
+                    Each pair can be a
+                    <span class="highlight-label">Thing</span> (Noun), an
+                    <span class="highlight-label">Idea</span> (Feeling), or an
+                    <span class="highlight-label">Action</span> (Verb).
+                </div>
             </div>
 
-        <h3 class="comparison-header">English vs Two Talk</h3>
-        <div class="comparison-grid">
-            <div class="example-box english">
-                <label>English Notes</label>
-                <pre>
-        Status: Project is currently on hold.
-        Owner: Sarah Brown (Lead) needs to call client.
-        Issue: Budget is blocked by the finance team.
-        Action: Finalize the contract by February 10th.
-        Risk: Competitor might launch a similar product.</pre
-                >
+            <div class="complex-box">
+                Make complex words by joining symbol pairs with a dot (.)
             </div>
-            <div class="example-box twotalk">
-                <label>Two Talk Notes</label>
-                <pre>
-        *= project
-        @&gt; SB @" client
-        &lt;= finance team %: budget
-        &gt;! contract !: 02-10
-        *? competitor &gt;/ product</pre
-                >
+
+            <button class="btn-orange" onclick="exportMarkdown()">
+                Download Guide (.MD)
+            </button>
+
+            <div class="comparison-box">
+                <h2>English vs Two Talk</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-col">
+                        <label>English Notes</label>
+                        Meeting with Boss today.<br />
+                        Need to find the gift.<br />
+                        Check the office for tools.
+                    </div>
+                    <div class="comparison-col">
+                        <label>Two Talk</label>
+                        @^ :!<br />
+                        !? #><br />
+                        ?! ^# #+
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="section">
             <h2>Symbols</h2>
-            <p>Symbol = Object | Idea and Action.</p>
-            <pre
-                id="coreList"
-                style="
-                    background: transparent;
-                    border: none;
-                    color: var(--dark);
-                    padding: 0;
-                "
-            ></pre>
-        </div>
-
-        <div class="section" id="tipsSection">
-            <h2>Syntax</h2>
-            <p style="font-size: 0.9em">Two Talk syntax:</p>
-            <ul style="font-size: 0.9em">
-                <li>
-                    <b>Subjects:</b> Start lines with the subject to make lists
-                    easy to read at a glance (e.g., <b>@#</b> for a Team Member
-                    vs. <b>#@</b> for a User).
-                </li>
-                <li>
-                    <b>Order:</b> Arrange notes by
-                    <b>Actor → Action → Target</b> (e.g., <b>@@</b> Sarah
-                    <b>@"</b> "Call client").
-                </li>
-                <li>
-                    <b>Chronology:</b> Use <b>&lt;</b> for things in the past,
-                    issues, or inputs, and <b>&gt;</b>
-                    for things in the future, goals, or outcomes.
-                </li>
-                <li>
-                    <b>Mirroring:</b> Swapping symbols flips the focus.
-                    <b>/#</b> is a <i>Workflow</i> (Process-led), while
-                    <b>#/</b> is a <i>Document</i> (Item-led).
-                </li>
-                <li>
-                    <b>Literals:</b> Use standard digits for counts (5),
-                    initials for names (JD), and ISO formats for dates
-                    (2024-05-12).
-                </li>
-                <li>
-                    <b>Doubles:</b> Use double symbols for the "Pure" or
-                    "Intense" version of a category (e.g., <b>!!</b> for an
-                    Emergency or <b>##</b> for a primary Tool).
-                </li>
-                <li>
-                    <b>Compounds:</b> For complex ideas, link two pairs with a
-                    dot. (e.g., <b>#@.*</b> for a User-Adjusted setting).
-                </li>
-            </ul>
+            <div class="symbol-grid">
+                <div class="symbol-col">
+                    <h4>1st: Subject (The What)</h4>
+                    <div id="subjectList"></div>
+                </div>
+                <div class="symbol-col">
+                    <h4>2nd: State (The How)</h4>
+                    <div id="stateList"></div>
+                </div>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Quick reference</h2>
-            <p style="font-size: 0.9em">
-                These pairs cover 80% of daily notetaking needs:
-            </p>
-            <pre
-                id="cheatList"
+            <h2>Word List</h2>
+            <p
                 style="
-                    background: transparent;
-                    border: none;
-                    color: var(--dark);
-                    padding: 0;
+                    font-size: 0.85em;
+                    color: #666;
+                    font-style: italic;
+                    margin-bottom: 15px;
                 "
-            ></pre>
-        </div>
-
-        <div class="section">
-            <h2>Word list</h2>
-            <p style="font-size: 0.85em">
-                Two Talk is a semantic system and you can (and should) assign
-                meanings to symbol pairs that makes sense to you. Click a
-                meaning to edit. Click a symbol to copy it.
+            >
+                Two talk is a semantic system and you can (and should) assign
+                meanings to symbol pairs that make sense to you. Click on a
+                meaning to edit it.
             </p>
             <input
                 type="text"
                 id="search"
-                placeholder="Search (Object; Idea; Action)..."
+                placeholder="Search (Work, Home, Boss)..."
             />
-            <div id="filterBar" class="filter-bar"></div>
             <div id="wordListContainer"></div>
-
-            <button class="action-btn reset" onclick="resetToDefaults()">
+            <button class="btn-light-orange" onclick="resetToDefaults()">
                 Reset words
             </button>
+        </div>
 
-            <div class="creator-footer">
-                Two Talk was created by <strong>Barney Matthews</strong>. Find
-                him on the web at
-                <a
-                    href="https://www.barney.me"
-                    style="color: var(--brand); text-decoration: none"
-                    >www.barney.me</a
-                >
-            </div>
+        <div class="footer">
+            Two Talk (www.twotalk.org) was created by <b>Barney Matthews</b>.
+            Find him on the web at
+            <a href="http://www.barney.me" target="_blank">www.barney.me</a>
         </div>
 
         <script>
-            const symbols = [
-                "@",
-                "#",
-                "/",
-                ":",
-                "^",
-                '"',
-                "%",
-                "*",
-                "!",
-                "?",
-                ">",
-                "<",
-                "=",
-                "+",
-                "-",
-                "\\",
-            ];
-
-            const symbolMeanings = {
-                "@": "Person / Role | Assign / Delegate",
-                "#": "Item / Tool | Build / Structure",
-                "/": "Method / Flow | Execute / Run",
-                ":": "Time / Schedule | Plan / Sequence",
-                "^": "Place / Context | Locate / Anchor",
-                '"': "Message / Data | Communicate / Signal",
-                "%": "Resource / Value | Allocate / Weigh",
-                "*": "State / Quality | Adjust / Refine",
-                "!": "Priority / Alert | Trigger / Warn",
-                "?": "Unknown / Risk | Explore / Question",
-                ">": "Outcome / Future | Advance / Expand",
-                "<": "Issue / Past | Reduce / Restrict",
-                "=": "Baseline / Standard | Maintain / Match",
-                "+": "Addition / Gain | Increase / Join",
-                "-": "Subtraction / Gap | Remove / Simplify",
-                "\\": "Support / Base | Underlay / Revert",
+            const symbols = ["@", "#", "^", ":", "!", "?", ">", "<", "+", "-"];
+            const subjects = {
+                "@": "Person/Entity",
+                "#": "Tool/Resource",
+                "^": "Place/Site",
+                ":": "Time/Schedule",
+                "!": "Alert/Need",
+                "?": "Choice/Risk",
+                ">": "Gain/Growth",
+                "<": "Loss/Debt",
+                "+": "Plenty/Extra",
+                "-": "Empty/Gap",
             };
-
-            const cheatsheet = {
-                // Top 20 Productivity Pairings
-                "!!": "Emergency; Urgent; Trigger", // Critical tasks/alarms
-                "!:": "Deadline; Schedule; Plan", // Hard due dates
-                "!>": "Goal; Progress; Advance", // High-level objectives
-                "@@": "Person; Role; Assign", // Primary actor/assignee
-                '@"': "Speaker; Information; Communicate", // Meeting notes: "who said this"
-                "#:": "Task; Schedule; Plan", // Standard to-do items
-                "#!": "Essential; Urgent; Trigger", // Must-have items/tools
-                "#/": "Document; Method; Execute", // Attached files or links
-                "//": "Operation; Method; Execute", // Current work in progress
-                "::": "Period; Schedule; Plan", // Time blocks/Meetings
-                "^#": "Room; Structure; Build", // Meeting location/Platform
-                '""': "Message; Information; Communicate", // Key insight/Announcement
-                '"<': "Note; Constraint; Reduce", // Side-notes/Marginalia
-                "*!": "Alarm; Urgent; Trigger", // Status: Critical risk
-                "**": "State; Quality; Adjust", // Daily mood/Setting/Health
-                "??": "Question; Ambiguity; Explore", // Unresolved/Clarification needed
-                ">>": "Outcome; Progress; Advance", // Success/Results
-                "<<": "Issue; Constraint; Reduce", // Blockers/Past failures
-                "==": "Baseline; Consistency; Maintain", // Done/Standardized
-                "+:": "Extension; Schedule; Plan", // New appointments/Follow-ups
+            const states = {
+                "@": "Social/Private",
+                "#": "Logic/Design",
+                "^": "Static/Local",
+                ":": "Active/Step",
+                "!": "Urgent/Vital",
+                "?": "Unclear/Odd",
+                ">": "Positive/Upper",
+                "<": "Negative/Lower",
+                "+": "Major/Scale",
+                "-": "Minor/Small",
             };
 
             const defaultWords = {
-                // ! (Priority)
-                "!!": "Emergency; Urgent; Trigger",
-                "!@": "VIP; Role; Assign",
-                "!#": "Requirement; Structure; Build",
-                "!/": "Critical Path; Method; Execute",
-                "!:": "Deadline; Schedule; Plan",
-                "!^": "Hotspot; Context; Locate",
-                '!"': "Alarm; Information; Communicate",
-                "!%": "Key Value; Value; Allocate",
-                "!*": "Highlight; Quality; Adjust",
-                "!?": "Warning; Ambiguity; Explore",
-                "!>": "Goal; Progress; Advance",
-                "!<": "Bottleneck; Constraint; Reduce",
-                "!=": "Mandate; Consistency; Maintain",
-                "!+": "Bonus; Addition; Increase",
-                "!-": "Risk; Subtraction; Remove",
-                "!\\": "Safety Net; Support; Underlay",
-
-                // @ (Person)
-                "@!": "Stakeholder; Urgent; Trigger",
-                "@@": "Person; Role; Assign",
-                "@#": "Member; Structure; Build",
-                "@/": "Worker; Method; Execute",
-                "@:": "Attendee; Schedule; Plan",
-                "@^": "Visitor; Context; Locate",
-                '@"': "Speaker; Information; Communicate",
-                "@%": "Owner; Value; Allocate",
-                "@*": "Reviewer; Quality; Adjust",
-                "@?": "Contact; Ambiguity; Explore",
-                "@>": "Leader; Progress; Advance",
-                "@<": "Follower; Constraint; Reduce",
-                "@=": "Peer; Consistency; Maintain",
-                "@+": "Recruit; Addition; Join",
-                "@-": "Departure; Subtraction; Remove",
-                "@\\": "Assistant; Support; Underlay",
-
-                // # (Item)
-                "#!": "Essential; Urgent; Trigger",
-                "#@": "User; Role; Assign",
-                "##": "Tool; Structure; Build",
-                "#/": "Document; Method; Execute",
-                "#:": "Task; Schedule; Plan",
-                "#^": "Module; Context; Locate",
-                '#"': "Package; Information; Communicate",
-                "#%": "File; Value; Allocate",
-                "#*": "Draft; Quality; Adjust",
-                "#?": "Asset; Ambiguity; Explore",
-                "#>": "Output; Progress; Advance",
-                "#<": "Input; Constraint; Reduce",
-                "#=": "Template; Consistency; Maintain",
-                "#+": "Add-on; Addition; Increase",
-                "#-": "Component; Subtraction; Remove",
-                "#\\": "Infrastructure; Support; Underlay",
-
-                // / (Method)
-                "/!": "Flashpoint; Urgent; Trigger",
-                "/@": "Process; Role; Assign",
-                "/#": "Workflow; Structure; Build",
-                "//": "Operation; Method; Execute",
-                "/:": "Routine; Schedule; Plan",
-                "/^": "Cycle; Context; Locate",
-                '/"': "Sequence; Information; Communicate",
-                "/%": "Procedure; Value; Allocate",
-                "/*": "Method; Quality; Adjust",
-                "/?": "Iteration; Ambiguity; Explore",
-                "/>": "Review; Progress; Advance",
-                "/<": "Sprint; Constraint; Reduce",
-                "/=": "Maintenance; Consistency; Maintain",
-                "/+": "Pipeline; Addition; Increase",
-                "/-": "Shortcut; Subtraction; Simplify",
-                "/\\": "Backup; Support; Revert",
-
-                // : (Time)
-                ":!": "Instancy; Urgent; Trigger",
-                ":@": "Shift; Role; Assign",
-                ":#": "Slot; Structure; Build",
-                ":/": "Phase; Method; Execute",
-                "::": "Period; Schedule; Plan",
-                ":^": "Window; Context; Locate",
-                ':"': "Interval; Information; Communicate",
-                ":%": "Moment; Value; Allocate",
-                ":*": "Date; Quality; Adjust",
-                ":?": "Cycle; Ambiguity; Explore",
-                ":>": "Horizon; Progress; Advance",
-                ":<": "Delay; Constraint; Reduce",
-                ":=": "Cadence; Consistency; Maintain",
-                ":+": "Extension; Addition; Increase",
-                ":-": "Cutoff; Subtraction; Remove",
-                ":\\": "History; Support; Revert",
-
-                // ^ (Place)
-                "^!": "Stage; Urgent; Trigger",
-                "^@": "Host; Role; Assign",
-                "^#": "Room; Structure; Build",
-                "^/": "Site; Method; Execute",
-                "^:": "Area; Schedule; Plan",
-                "^^": "Zone; Context; Locate",
-                '^"': "Region; Information; Communicate",
-                "^%": "Venue; Value; Allocate",
-                "^*": "Station; Quality; Adjust",
-                "^?": "Origin; Ambiguity; Explore",
-                "^>": "Destination; Progress; Advance",
-                "^<": "Boundary; Constraint; Reduce",
-                "^=": "Anchor; Consistency; Maintain",
-                "^+": "Annex; Addition; Increase",
-                "^-": "Void; Subtraction; Remove",
-                "^\\": "Basement; Support; Underlay",
-
-                // " (Message)
-                '"!': "Alert; Urgent; Trigger",
-                '"@': "Profile; Role; Assign",
-                '"#': "Report; Structure; Build",
-                '"/': "Stream; Method; Execute",
-                '":': "Log; Schedule; Plan",
-                '"^': "Metadata; Context; Locate",
-                '""': "Message; Information; Communicate",
-                '"%': "Data; Value; Allocate",
-                '"*': "Feedback; Quality; Adjust",
-                '"?': "Query; Ambiguity; Explore",
-                '">': "Brief; Progress; Advance",
-                '"<': "Note; Constraint; Reduce",
-                '"=': "Standard; Consistency; Maintain",
-                '"+': "Appendix; Addition; Increase",
-                '"-': "Summary; Subtraction; Remove",
-                '"\\': "Footnote; Support; Underlay",
-
-                // % (Resource)
-                "%!": "Debt; Urgent; Trigger",
-                "%@": "Personnel; Role; Assign",
-                "%#": "Supply; Structure; Build",
-                "%/": "Expense; Method; Execute",
-                "%:": "Budget; Schedule; Plan",
-                "%^": "Wallet; Context; Locate",
-                '%"': "Metric; Information; Communicate",
-                "%%": "Value; Value; Allocate",
-                "%*": "Level; Quality; Adjust",
-                "%?": "Estimate; Ambiguity; Explore",
-                "%>": "Profit; Progress; Advance",
-                "%<": "Loss; Constraint; Reduce",
-                "%=": "Balance; Consistency; Maintain",
-                "%+": "Revenue; Addition; Increase",
-                "%-": "Cost; Subtraction; Remove",
-                "%\\": "Reserve; Support; Underlay",
-
-                // * (State)
-                "*!": "Alarm; Urgent; Trigger",
-                "*@": "Expert; Role; Assign",
-                "*#": "Build; Structure; Build",
-                "*/": "Performance; Method; Execute",
-                "*:": "Maturity; Schedule; Plan",
-                "*^": "Environment; Context; Locate",
-                '*"': "Status; Information; Communicate",
-                "*%": "Health; Value; Allocate",
-                "**": "State; Quality; Adjust",
-                "*?": "Risk; Ambiguity; Explore",
-                "*>": "Growth; Progress; Advance",
-                "*<": "Decline; Constraint; Reduce",
-                "*=": "Stability; Consistency; Maintain",
-                "*+": "Improving; Addition; Increase",
-                "*-": "Wear; Subtraction; Remove",
-                "*\\": "Foundation; Support; Underlay",
-
-                // ? (Unknown)
-                "?!": "Crisis; Urgent; Trigger",
-                "?@": "Stranger; Role; Assign",
-                "?#": "Mystery; Structure; Build",
-                "?/": "Experiment; Method; Execute",
-                "?:": "Guess; Schedule; Plan",
-                "?^": "Hidden; Context; Locate",
-                '?"': "Rumor; Information; Communicate",
-                "?%": "Gamble; Value; Allocate",
-                "?*": "Threat; Quality; Adjust",
-                "??": "Question; Ambiguity; Explore",
-                "?>": "Hypothesis; Progress; Advance",
-                "?<": "Anomaly; Constraint; Reduce",
-                "?=": "Pending; Consistency; Maintain",
-                "?+": "Curiosity; Addition; Increase",
-                "?-": "Absence; Subtraction; Remove",
-                "?\\": "Theory; Support; Underlay",
-
-                // > (Outcome)
-                ">!": "Target; Urgent; Trigger",
-                ">@": "Successor; Role; Assign",
-                ">#": "Product; Structure; Build",
-                ">/": "Delivery; Method; Execute",
-                ">:": "Milestone; Schedule; Plan",
-                ">^": "Goal; Context; Locate",
-                '>"': "Report; Information; Communicate",
-                ">%": "Return; Value; Allocate",
-                ">*": "Impact; Quality; Adjust",
-                ">?": "Upside; Ambiguity; Explore",
-                ">>": "Outcome; Progress; Advance",
-                "><": "Result; Constraint; Reduce",
-                ">=": "Yield; Consistency; Maintain",
-                ">+": "Surplus; Addition; Increase",
-                ">-": "Exit; Subtraction; Remove",
-                ">\\": "Legacy; Support; Underlay",
-
-                // < (Issue)
-                "<!": "Incident; Urgent; Trigger",
-                "<@": "Culprit; Role; Assign",
-                "<#": "Bug; Structure; Build",
-                "</": "Error; Method; Execute",
-                "<:": "Delay; Schedule; Plan",
-                "<^": "Barrier; Context; Locate",
-                '<"': "Complaint; Information; Communicate",
-                "<%": "Shortfall; Value; Allocate",
-                "<*": "Defect; Quality; Adjust",
-                "<?": "Doubt; Ambiguity; Explore",
-                "<>": "Conflict; Progress; Advance",
-                "<<": "Issue; Constraint; Reduce",
-                "<=": "Drag; Consistency; Maintain",
-                "<+": "Inflation; Addition; Increase",
-                "<-": "Reduction; Subtraction; Remove",
-                "<\\": "Debt; Support; Underlay",
-
-                // = (Baseline)
-                "=!": "Rule; Urgent; Trigger",
-                "=@": "Peer; Role; Assign",
-                "=#": "Pattern; Structure; Build",
-                "=/": "Habit; Method; Execute",
-                "=:": "Cadence; Schedule; Plan",
-                "=^": "Base; Context; Locate",
-                '="': "Fact; Information; Communicate",
-                "=%": "Parity; Value; Allocate",
-                "=*": "Norm; Quality; Adjust",
-                "=?": "Neutral; Ambiguity; Explore",
-                "=>": "Standard; Progress; Advance",
-                "=<": "Limit; Constraint; Reduce",
-                "==": "Baseline; Consistency; Maintain",
-                "=+": "Stock; Addition; Increase",
-                "=-": "Average; Subtraction; Remove",
-                "=\\": "Basis; Support; Underlay",
-
-                // + (Addition)
-                "+!": "Urgent; Urgent; Trigger",
-                "+@": "Hire; Role; Assign",
-                "+#": "Asset; Structure; Build",
-                "+/": "Intake; Method; Execute",
-                "+:": "Extension; Schedule; Plan",
-                "+^": "Expansion; Context; Locate",
-                '+"': "Update; Information; Communicate",
-                "+%": "Profit; Value; Allocate",
-                "+*": "Upgrade; Quality; Adjust",
-                "+?": "Opportunity; Ambiguity; Explore",
-                "+>": "Growth; Progress; Advance",
-                "+<": "Buffer; Constraint; Reduce",
-                "+=": "Accrual; Consistency; Maintain",
-                "++": "Addition; Addition; Increase",
-                "+-": "Swap; Subtraction; Adjust",
-                "+\\": "Reinforcement; Support; Underlay",
-
-                // - (Subtraction)
-                "-!": "Cut; Urgent; Trigger",
-                "-@": "Exit; Role; Assign",
-                "-#": "Deletion; Structure; Build",
-                "-/": "Shortcut; Method; Execute",
-                "-:": "Deadline; Schedule; Plan",
-                "-^": "Narrowing; Context; Locate",
-                '-"': "Summary; Information; Communicate",
-                "-%": "Expense; Value; Allocate",
-                "-*": "Decay; Quality; Adjust",
-                "-?": "Loss; Ambiguity; Explore",
-                "->": "Result; Progress; Advance",
-                "-<": "Minimum; Constraint; Reduce",
-                "-=": "Average; Consistency; Maintain",
-                "-+": "Offset; Addition; Increase",
-                "--": "Subtraction; Subtraction; Remove",
-                "-\\": "Stripping; Support; Underlay",
-
-                // \ (Support)
-                "\\!": "Fix; Urgent; Trigger",
-                "\\@": "Mentor; Role; Assign",
-                "\\#": "Chassis; Structure; Build",
-                "\\/": "Automation; Method; Execute",
-                "\\:": "Archive; Schedule; Plan",
-                "\\^": "Foundation; Context; Locate",
-                '\\"': "Reference; Information; Communicate",
-                "\\%": "Subsidy; Value; Allocate",
-                "\\*": "Standard; Quality; Adjust",
-                "\\?": "Theory; Ambiguity; Explore",
-                "\\>": "Legacy; Progress; Advance",
-                "\\<": "Guardrail; Constraint; Reduce",
-                "\\=": "Basic; Consistency; Maintain",
-                "\\+": "Underpinning; Addition; Increase",
-                "\\-": "Erosion; Subtraction; Remove",
-                "\\\\": "Support; Support; Underlay",
+                "@@": "Self; Personal; Focus",
+                "@#": "Colleague; Professional; Collaborate",
+                "@^": "Leader; Authority; Direct",
+                "@:": "Partner; Peer; Discuss",
+                "@!": "Expert; Critical Role; Command",
+                "@?": "Contact; Stranger; Verify",
+                "@>": "Mentor; Support; Guide",
+                "@<": "User; Client; Serve",
+                "@+": "Team; Group; Organize",
+                "@-": "Individual; Unit; Identify",
+                "##": "System; Process; Execute",
+                "#@": "Interface; Social Media; Communicate",
+                "#^": "Station; Hardware; Install",
+                "#:": "Workflow; Iteration; Repeat",
+                "#!": "Key; Essential; Secure",
+                "#?": "Variable; Unknown; Debug",
+                "#>": "Asset; Output; Produce",
+                "#<": "Liabilities; Input; Consume",
+                "#+": "Infrastructure; Large Scale; Expand",
+                "#-": "Component; Detail; Refine",
+                "^^": "Headquarters; Primary; Stay",
+                "^@": "Social Space; Home; Relax",
+                "^#": "Workplace; Office; Build",
+                "^:": "Route; Path; Navigate",
+                "^!": "Crisis Zone; Alert; Evacuate",
+                "^?": "Hidden; Private; Conceal",
+                "^>": "Growth Area; Goal; Reach",
+                "^<": "Problem Area; Issue; Avoid",
+                "^+": "Urban; Public; Visit",
+                "^-": "Remote; Local; Settle",
+                "::": "Timeline; Duration; Measure",
+                ":@": "Appointment; Meeting; Sync",
+                ":#": "Method; Pattern; Switch",
+                ":^": "Deadline; Milestone; Mark",
+                ":!": "Immediate; Current; Act",
+                ":?": "Delay; Pending; Pause",
+                ":>": "Future; Launch; Start",
+                ":<": "Past; History; Archive",
+                ":+": "Long-term; Period; Sustain",
+                ":-": "Short-term; Moment; Cut",
+                "!!": "Emergency; Danger; Halt",
+                "!@": "Requirement; Human Need; Help",
+                "!#": "Specification; Logic Need; Patch",
+                "!^": "Signal; Beacon; Notify",
+                "!:": "Sprint; Priority; Hurry",
+                "!?": "Anomaly; Suspicion; Investigate",
+                "!>": "Achievement; Success; Celebrate",
+                "!<": "Failure; Error; Rectify",
+                "!+": "Overflow; Maximum; Limit",
+                "!-": "Deficit; Minimum; Restock",
+                "??": "Mystery; Problem; Solve",
+                "?@": "Inquiry; Question; Interview",
+                "?#": "Research; Information; Analyze",
+                "?^": "Discovery; Location; Find",
+                "?:": "Estimation; Probability; Forecast",
+                "?!": "Disruption; Conflict; Challenge",
+                "?>": "Opportunity; Reward; Seek",
+                "?<": "Threat; Risk; Mitigate",
+                "?+": "Complexity; Multi-factor; Sort",
+                "?-": "Obscurity; Nuance; Uncover",
+                ">>": "Outcome; Benefit; Gain",
+                ">@": "Community; Alignment; Join",
+                ">#": "Utility; Efficient; Optimize",
+                ">^": "Expansion; Market/New Site; Scale",
+                ">:": "Progress; Momentum; Advance",
+                ">!": "Standard; Quality; Verify",
+                ">?": "Innovation; Pivot; Discover",
+                "><": "Improvement; Recovery; Repair",
+                ">+": "Surplus; Wealth; Accumulate",
+                ">-": "Efficiency; Lean; Trim",
+                "<<": "Damage; Decline; Breakdown",
+                "<@": "Competitor; Opponent; Shield",
+                "<#": "Obsolescence; Waste; Clear",
+                "<^": "Bottleneck; Constraint; Bypass",
+                "<:": "Lag; Slowdown; Accelerate",
+                "<!": "Impact; Incident; Fix",
+                "<?": "Leak; Vulnerability; Patch",
+                "<>": "Correction; Balance; Adjust",
+                "<+": "Inflation; Bloat; Reduce",
+                "<-": "Erosion; Depletion; Refill",
+                "++": "Container; Storage; Save",
+                "+@": "Advocate; Member; Recruit",
+                "+#": "Repository; Data; Catalog",
+                "+^": "Environment; Landscape; Map",
+                "+:": "Sequence; Queue; Order",
+                "+!": "Peak; Intensity; Boost",
+                "+?": "Abundance; Diversity; Categorize",
+                "+>": "Revenue; Investment; Fund",
+                "+<": "Expense; Budget; Spend",
+                "+-": "Variance; Exchange; Swap",
+                "--": "Void; Absence; Remove",
+                "-@": "Anonymous; Background; Fade",
+                "-#": "Fragment; Segment; Divide",
+                "-^": "Base; Foundation; Support",
+                "-:": "Interval; Gap; Fill",
+                "-!": "Note; Brief; Record",
+                "-?": "Hypothesis; Seed; Test",
+                "->": "Door; Out; Leave",
+                "-<": "Residue; Trace; Clean",
+                "-+": "Patch; Minimal; Repair",
             };
 
-            let currentFilter = "all";
-            let words = JSON.parse(
-                localStorage.getItem("twoTalkExhaustive"),
-            ) || { ...defaultWords };
+            let words = JSON.parse(localStorage.getItem("twoTalkWorkHome")) || {
+                ...defaultWords,
+            };
 
-            function resetToDefaults() {
-                if (confirm("Erase all custom meanings?")) {
-                    words = { ...defaultWords };
-                    localStorage.removeItem("twoTalkExhaustive");
-                    render();
-                }
-            }
-
-            function copyToClipboard(text) {
-                navigator.clipboard.writeText(text);
-            }
-
-            function updateWord(pair, val) {
-                words[pair] = val;
-                localStorage.setItem(
-                    "twoTalkExhaustive",
-                    JSON.stringify(words),
-                );
-            }
-
-            function setFilter(sub) {
-                currentFilter = sub;
-                render();
+            function escapeHTML(str) {
+                return str.replace(/[&<>"']/g, function (m) {
+                    return {
+                        "&": "&amp;",
+                        "<": "&lt;",
+                        ">": "&gt;",
+                        '"': "&quot;",
+                        "'": "&#039;",
+                    }[m];
+                });
             }
 
             function render() {
-                document.getElementById("coreList").textContent =
-                    Object.entries(symbolMeanings)
-                        .map(([s, m]) => `${s} = ${m}`)
-                        .join("\n");
-                document.getElementById("cheatList").textContent =
-                    Object.entries(cheatsheet)
-                        .map(([p, m]) => `${p} = ${m}`)
-                        .join("\n");
-                const fb = document.getElementById("filterBar");
-                fb.innerHTML = "";
-                const allBtn = document.createElement("button");
-                allBtn.className = `filter-btn ${currentFilter === "all" ? "active" : ""}`;
-                allBtn.textContent = "All";
-                allBtn.onclick = () => setFilter("all");
-                fb.appendChild(allBtn);
-                symbols.forEach((s) => {
-                    const btn = document.createElement("button");
-                    btn.className = `filter-btn ${currentFilter === s ? "active" : ""}`;
-                    btn.textContent = s;
-                    btn.onclick = () => setFilter(s);
-                    fb.appendChild(btn);
-                });
+                document.getElementById("subjectList").innerHTML =
+                    Object.entries(subjects)
+                        .map(
+                            ([s, m]) =>
+                                `<div class="symbol-row-small"><b>${escapeHTML(s)}</b><span>${escapeHTML(m)}</span></div>`,
+                        )
+                        .join("");
+                document.getElementById("stateList").innerHTML = Object.entries(
+                    states,
+                )
+                    .map(
+                        ([s, m]) =>
+                            `<div class="symbol-row-small"><b>${escapeHTML(s)}</b><span>${escapeHTML(m)}</span></div>`,
+                    )
+                    .join("");
                 renderWords();
             }
 
             function renderWords() {
                 const container = document.getElementById("wordListContainer");
                 container.innerHTML = "";
-                const searchVal = document
+                const search = document
                     .getElementById("search")
                     .value.toLowerCase();
                 Object.entries(words)
                     .sort()
                     .forEach(([p, m]) => {
                         if (
-                            (currentFilter === "all" ||
-                                p.startsWith(currentFilter)) &&
-                            (p.includes(searchVal) ||
-                                m.toLowerCase().includes(searchVal))
+                            p.includes(search) ||
+                            m.toLowerCase().includes(search)
                         ) {
                             const row = document.createElement("div");
                             row.className = "word-row";
-                            const label = document.createElement("span");
-                            label.className = "symbol-label";
-                            label.textContent = p;
-                            label.onclick = () => copyToClipboard(p);
-                            const input = document.createElement("input");
-                            input.className = "meaning-edit";
-                            input.value = m;
-                            input.oninput = (e) =>
-                                updateWord(p, e.target.value);
-                            row.appendChild(label);
-                            row.appendChild(document.createTextNode(" = "));
-                            row.appendChild(input);
+                            row.innerHTML = `<span class="symbol-label" onclick="navigator.clipboard.writeText('${escapeHTML(p)}')">${escapeHTML(p)}</span><input class="meaning-edit" value="${escapeHTML(m)}" oninput="updateWord('${p}', this.value)">`;
                             container.appendChild(row);
                         }
                     });
             }
 
+            function updateWord(p, v) {
+                words[p] = v;
+                localStorage.setItem("twoTalkWorkHome", JSON.stringify(words));
+            }
+
+            function resetToDefaults() {
+                if (confirm("Reset all words?")) {
+                    words = { ...defaultWords };
+                    localStorage.removeItem("twoTalkWorkHome");
+                    render();
+                }
+            }
+
             function exportMarkdown() {
-                // Start with a fresh string to prevent duplication
-                let md = "# Two Talk\n\n";
-
-                // 1. HEADER & ABOUT: Targets only the text, excluding the 'Learn' buttons
-                const aboutSection = document.getElementById("aboutSection");
-                if (aboutSection) {
-                    // Grab the H2 and all paragraphs/lists inside aboutSection
-                    const title = aboutSection.querySelector("h2") ? "## " + aboutSection.querySelector("h2").innerText + "\n" : "";
-                    const intro = aboutSection.querySelector("p") ? aboutSection.querySelector("p").innerText + "\n\n" : "";
-
-                    // Use a cleaner way to get the bullet points without the 'Learn' div
-                    let aboutBullets = "";
-                    aboutSection.querySelectorAll("ul li").forEach(li => {
-                        aboutBullets += `- ${li.innerText}\n`;
+                let md = "# Two Talk: Shorthand Guide\n\n";
+                md +=
+                    "## What is Two Talk?\nA simple way to write fast. Each word uses only 2 symbols. The first symbol is the Subject (The Thing) and the second is the State (The Way it is).\n\n";
+                md +=
+                    "### Rules\n1. **Two Symbols**: First symbol is the What, second symbol is the Condition.\n2. **Three Choices**: Each pair can be a Noun, Idea, or Verb.\n3. **Complex Words**: Make complex words by joining symbol pairs with a dot (.).\n\n";
+                md +=
+                    "## Symbol Keys\n| Sym | Subject (1st) | State (2nd) |\n|---|---|---|\n";
+                symbols.forEach((s) => {
+                    md += `| ${s} | ${subjects[s]} | ${states[s]} |\n`;
+                });
+                md += "\n## Word List\n";
+                Object.entries(words)
+                    .sort()
+                    .forEach(([p, m]) => {
+                        const escapedP = p
+                            .replace(/>/g, "\\>")
+                            .replace(/</g, "\\<");
+                        md += `- **${escapedP}**: ${m}\n`;
                     });
 
-                    md += title + intro + aboutBullets + "\n";
-                }
+                md += "\n---\n";
+                md +=
+                    "Two Talk (www.twotalk.org) was created by **Barney Matthews**. Find him on the web at [www.barney.me](http://www.barney.me)";
 
-                // 2. SYMBOLS REFERENCE
-                const coreList = document.getElementById("coreList");
-                if (coreList) {
-                    md += "## Symbols\n" + coreList.innerText.trim() + "\n\n";
-                }
-
-                // 3. SYNTAX & TIPS
-                const tipsSection = document.getElementById("tipsSection");
-                if (tipsSection) {
-                    md += "## Syntax\n" + tipsSection.innerText.trim() + "\n\n";
-                }
-
-                // 4. QUICK REFERENCE
-                const cheatList = document.getElementById("cheatList");
-                if (cheatList) {
-                    md += "## Quick Reference\n" + cheatList.innerText.trim() + "\n\n";
-                }
-
-                // 5. THE WORD LIST: Uses a 'Guard' to prevent single-symbol buttons
-                md += "## Full Word List\n";
-                const wordRows = document.querySelectorAll("#wordListContainer .word-row");
-
-                wordRows.forEach((row) => {
-                    const labelEl = row.querySelector(".symbol-label");
-                    const inputEl = row.querySelector(".meaning-edit");
-
-                    if (labelEl && inputEl) {
-                        const pair = labelEl.innerText.trim();
-                        const meaning = inputEl.value.trim();
-
-                        // STRICT GUARD:
-                        // 1. Pair must be exactly 2 characters (Blocks the 'All', '@', '#' filter buttons)
-                        // 2. Meaning must not be empty
-                        if (pair.length === 2 && meaning !== "" && meaning !== "=") {
-                            // Escape characters for Markdown safety
-                            const escapedPair = pair.replace("#", "\\#").replace("\\", "\\\\");
-                            md += `- ${escapedPair} = ${meaning}\n`;
-                        }
-                    }
-                });
-
-                // 6. GENERATE FILE
                 const blob = new Blob([md], { type: "text/markdown" });
                 const a = document.createElement("a");
                 a.href = URL.createObjectURL(blob);
                 a.download = "twotalk.md";
-                document.body.appendChild(a); // Append to body to ensure it works in all browsers
                 a.click();
-                document.body.removeChild(a);
             }
 
             document
