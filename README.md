@@ -6,123 +6,120 @@ A simple way to write fast. Each word uses only 2 symbols. The first symbol is t
 ### Rules
 1. **Two Symbols**: First symbol is the What, second symbol is the Condition.
 2. **Three Choices**: Each pair can be a Noun, Idea, or Verb.
-3. **Complex Words**: Make complex words by joining symbol pairs with a dot (.).
+3. **Literals\Complex Words**: Use numbers for amounts, initials for names and ISO formats for dates and times. Create complex words by joining symbol pairs with a dot (.)
 
 ## Symbol Keys
 | Sym | Subject (1st) | State (2nd) |
 |---|---|---|
-| @ | Person/Entity | Social/Private |
-| # | Tool/Resource | Logic/Design |
-| ^ | Place/Site | Static/Local |
-| : | Time/Schedule | Active/Step |
-| ! | Alert/Need | Urgent/Vital |
-| ? | Choice/Risk | Unclear/Odd |
-| > | Gain/Growth | Positive/Upper |
-| < | Loss/Debt | Negative/Lower |
-| + | Plenty/Extra | Major/Scale |
-| - | Empty/Gap | Minor/Small |
+| @ | Person; Someone; Group | Private; Hidden; Inside |
+| # | Tool; Machine; Money | Logic; Gradual; Fixed |
+| ^ | Place; Room; Setting | Steady; Local; Sticking |
+| : | Time; Date; Event | Moving; Busy; Changing |
+| ! | Need; Must; Warning | Big; Loud; Vital |
+| ? | Maybe; Question; Risk | Weird; Unclear; Guess |
+| > | Win; Gain; Growth | Good; Up; Better |
+| < | Loss; Problem; Drop | Bad; Down; Worse |
+| + | Lots; Pile; Whole | Many; Team; Wide |
+| - | Part; Little; Empty | Small; Single; Easy |
 
 ## Word List
-- **!!**: Emergency; Danger; Halt
-- **!#**: Specification; Logic Need; Patch
-- **!+**: Overflow; Maximum; Limit
-- **!-**: Deficit; Minimum; Restock
-- **!:**: Sprint; Priority; Hurry
-- **!\<**: Failure; Error; Rectify
-- **!\>**: Achievement; Success; Celebrate
-- **!?**: Anomaly; Suspicion; Investigate
-- **!@**: Requirement; Human Need; Help
-- **!^**: Signal; Beacon; Notify
-- **#!**: Key; Essential; Secure
-- **##**: System; Process; Execute
-- **#+**: Infrastructure; Large Scale; Expand
-- **#-**: Component; Detail; Refine
-- **#:**: Workflow; Iteration; Repeat
-- **#\<**: Liabilities; Input; Consume
-- **#\>**: Asset; Output; Produce
-- **#?**: Variable; Unknown; Debug
-- **#@**: Interface; Social Media; Communicate
-- **#^**: Station; Hardware; Install
-- **+!**: Peak; Intensity; Boost
-- **+#**: Repository; Data; Catalog
-- **++**: Container; Storage; Save
-- **+-**: Variance; Exchange; Swap
-- **+:**: Sequence; Queue; Order
-- **+\<**: Expense; Budget; Spend
-- **+\>**: Revenue; Investment; Fund
-- **+?**: Abundance; Diversity; Categorize
-- **+@**: Advocate; Member; Recruit
-- **+^**: Environment; Landscape; Map
-- **-!**: Note; Brief; Record
-- **-#**: Fragment; Segment; Divide
-- **-+**: Patch; Minimal; Repair
-- **--**: Void; Absence; Remove
-- **-:**: Interval; Gap; Fill
-- **-\<**: Residue; Trace; Clean
-- **-\>**: Door; Out; Leave
-- **-?**: Hypothesis; Seed; Test
-- **-@**: Anonymous; Background; Fade
-- **-^**: Base; Foundation; Support
-- **:!**: Immediate; Current; Act
-- **:#**: Method; Pattern; Switch
-- **:+**: Long-term; Period; Sustain
-- **:-**: Short-term; Moment; Cut
-- **::**: Timeline; Duration; Measure
-- **:\<**: Past; History; Archive
-- **:\>**: Future; Launch; Start
-- **:?**: Delay; Pending; Pause
-- **:@**: Appointment; Meeting; Sync
-- **:^**: Deadline; Milestone; Mark
-- **\<!**: Impact; Incident; Fix
-- **\<#**: Obsolescence; Waste; Clear
-- **\<+**: Inflation; Bloat; Reduce
-- **\<-**: Erosion; Depletion; Refill
-- **\<:**: Lag; Slowdown; Accelerate
-- **\<\<**: Damage; Decline; Breakdown
-- **\<\>**: Correction; Balance; Adjust
-- **\<?**: Leak; Vulnerability; Patch
-- **\<@**: Competitor; Opponent; Shield
-- **\<^**: Bottleneck; Constraint; Bypass
-- **\>!**: Standard; Quality; Verify
-- **\>#**: Utility; Efficient; Optimize
-- **\>+**: Surplus; Wealth; Accumulate
-- **\>-**: Efficiency; Lean; Trim
-- **\>:**: Progress; Momentum; Advance
-- **\>\<**: Improvement; Recovery; Repair
-- **\>\>**: Outcome; Benefit; Gain
-- **\>?**: Innovation; Pivot; Discover
-- **\>@**: Community; Alignment; Join
-- **\>^**: Expansion; Market/New Site; Scale
-- **?!**: Disruption; Conflict; Challenge
-- **?#**: Research; Information; Analyze
-- **?+**: Complexity; Multi-factor; Sort
-- **?-**: Obscurity; Nuance; Uncover
-- **?:**: Estimation; Probability; Forecast
-- **?\<**: Threat; Risk; Mitigate
-- **?\>**: Opportunity; Reward; Seek
-- **??**: Mystery; Problem; Solve
-- **?@**: Inquiry; Question; Interview
-- **?^**: Discovery; Location; Find
-- **@!**: Expert; Critical Role; Command
-- **@#**: Colleague; Professional; Collaborate
-- **@+**: Team; Group; Organize
-- **@-**: Individual; Unit; Identify
-- **@:**: Partner; Peer; Discuss
-- **@\<**: User; Client; Serve
-- **@\>**: Mentor; Support; Guide
-- **@?**: Contact; Stranger; Verify
-- **@@**: Self; Personal; Focus
-- **@^**: Leader; Authority; Direct
-- **^!**: Crisis Zone; Alert; Evacuate
-- **^#**: Workplace; Office; Build
-- **^+**: Urban; Public; Visit
-- **^-**: Remote; Local; Settle
-- **^:**: Route; Path; Navigate
-- **^\<**: Problem Area; Issue; Avoid
-- **^\>**: Growth Area; Goal; Reach
-- **^?**: Hidden; Private; Conceal
-- **^@**: Social Space; Home; Relax
-- **^^**: Headquarters; Primary; Stay
-
----
-Two Talk (www.twotalk.org) was created by **Barney Matthews**. Find him on the web at [www.barney.me](http://www.barney.me)
+- **!!**: Bell; Scary; Stop
+- **!#**: Law; Must; Force
+- **!+**: Duty; Hard; Work
+- **!-**: Match; New; Start
+- **!:**: Race; Fast; Run
+- **!\<**: Mistake; Bad; Fix
+- **!\>**: Win; Proud; Beat
+- **!?**: Odd; Shady; Check
+- **!@**: Heart; Right; Give
+- **!^**: Home; Safe; Hide
+- **#!**: Weapon; Danger; Strike
+- **##**: Robot; Fast; Auto-run
+- **#+**: Store; Plenty; Fill
+- **#-**: Tool; Handy; Fix
+- **#:**: Car; Speed; Drive
+- **#\<**: Debt; Heavy; Owe
+- **#\>**: Savings; Wealth; Get
+- **#?**: Test; Maybe; Try
+- **#@**: Diary; Private; Write
+- **#^**: Base; Strong; Hold
+- **+!**: Power; Strong; Push
+- **+#**: Book; Knowledge; Read
+- **++**: Space; Forever; Rise
+- **+-**: Bit; Middle; Pick
+- **+:**: Line; Order; Sort
+- **+\<**: Trash; Too much; Throw
+- **+\>**: Extra; Fun; Spend
+- **+?**: Idea; Deep; Think
+- **+@**: Team; Friend; Join
+- **+^**: Map; Mine; Draw
+- **-!**: Seed; Life; Live
+- **-#**: Speck; Smart; Split
+- **-+**: Piece; Not done; Add
+- **--**: Zero; None; Wipe
+- **-:**: Gap; Quiet; Wait
+- **-\<**: Mark; Left-over; Fade
+- **-\>**: Door; Free; Leave
+- **-?**: Bud; Maybe; Grow
+- **-@**: Ghost; Gone; Hide
+- **-^**: Dot; Exact; Point
+- **:!**: Crash; Fear; Act
+- **:#**: Plan; Rules; Finish
+- **:+**: Age; Huge; Last
+- **:-**: Second; Quick; Snap
+- **::**: Habit; Again; Repeat
+- **:\<**: Back; Sad; Keep
+- **:\>**: Next; Happy; Start
+- **:?**: Wait; Not sure; Stop
+- **:@**: Birthday; Past; Party
+- **:^**: Marker; Always; Stay
+- **\<!**: Hurt; Pain; Cry
+- **\<#**: Bug; Broken; Break
+- **\<+**: Debt; Full; Sink
+- **\<-**: Leak; Gone; Run out
+- **\<:**: Wait; Slow; Wait
+- **\<\<**: Loss; Done; Quit
+- **\<\>**: Swap; Okay; Trade
+- **\<?**: Lie; Fake; Cheat
+- **\<@**: Foe; Angry; Hate
+- **\<^**: Junk; Old; Rot
+- **\>!**: Prize; Great; Pass
+- **\>#**: Gear; Useful; Use
+- **\>+**: Land; Big; Grow
+- **\>-**: Gift; Nice; Give
+- **\>:**: Step; Forward; Go
+- **\>\<**: Cure; Tough; Heal
+- **\>\>**: Money; Rich; Gain
+- **\>?**: Dream; Fresh; Think
+- **\>@**: Family; Love; Care
+- **\>^**: Farm; Growth; Plant
+- **?!**: Threat; Scared; Warn
+- **?#**: Lock; Hard; Open
+- **?+**: Mess; Crazy; Mix
+- **?-**: Hint; Small; Show
+- **?:**: Luck; Random; Play
+- **?\<**: Trap; Watch out; Skip
+- **?\>**: Win; Hope; Bet
+- **??**: Knot; Dunno; Solve
+- **?@**: Mask; Gut-feeling; Guess
+- **?^**: Far-away; Out there; Look
+- **@!**: Boss; Power; Lead
+- **@#**: Worker; Skill; Work
+- **@+**: Crowd; Together; Gather
+- **@-**: Loner; Alone; Leave
+- **@:**: Traveler; Flow; Move
+- **@\<**: Enemy; Hate; Fight
+- **@\>**: Teacher; Hope; Help
+- **@?**: Stranger; Secret; Ask
+- **@@**: Me; Self; Look inside
+- **@^**: Neighbor; Home-town; Stay
+- **^!**: Hot-spot; Hurry; Wake
+- **^#**: Shop; Clean; Build
+- **^+**: City; Public; Join
+- **^-**: Box; Tiny; Shut
+- **^:**: Path; Change; Cross
+- **^\<**: Hole; Worst; Fall
+- **^\>**: Peak; Best; Climb
+- **^?**: Maze; Lost; Walk
+- **^@**: Home; Cozy; Rest
+- **^^**: Wall; Safe; Guard
