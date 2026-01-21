@@ -16,10 +16,10 @@ A simple way to write fast. Each word uses only 2 symbols. The first symbol is t
 | ^ | Place; Room; Setting | Steady; Local; Sticking |
 | : | Time; Date; Event | Moving; Busy; Changing |
 | ! | Need; Must; Warning | Big; Loud; Vital |
-| ? | Maybe; Question; Risk | Weird; Unclear; Guess |
+| ? | Maybe; Question; Risk | Vague; Unclear; Guess |
 | > | Win; Gain; Growth | Good; Up; Better |
 | < | Loss; Problem; Drop | Bad; Down; Worse |
-| + | Lots; Pile; Whole | Many; Team; Wide |
+| + | Lots; Total; Whole | Many; Team; Wide |
 | - | Part; Little; Empty | Small; Single; Easy |
 
 ## Word List
