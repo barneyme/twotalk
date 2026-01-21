@@ -104,31 +104,54 @@
                 padding: 12px;
                 border-radius: 8px;
                 margin-top: 20px;
-                text-align: center;
+                text-align: left;
                 font-size: 0.95em;
-                font-weight: bold;
+                font-weight: normal;
                 color: var(--dark);
             }
 
-            .btn-orange {
-                display: block;
-                width: 100%;
-                max-width: 300px;
-                margin: 20px auto;
-                padding: 15px;
+            .resource-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .resource-row:last-child {
+                border-bottom: none;
+            }
+
+            .resource-label {
+                font-weight: bold;
+                font-size: 0.9em;
+            }
+
+            .resource-actions {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .btn-orange-small {
+                padding: 8px 16px;
                 background: var(--brand);
                 color: white;
                 border: none;
-                border-radius: 8px;
+                border-radius: 6px;
                 font-weight: bold;
                 cursor: pointer;
                 transition: background 0.2s;
                 text-align: center;
                 text-transform: uppercase;
                 letter-spacing: 1px;
+                font-size: 0.75em;
+                text-decoration: none;
+                display: inline-block;
             }
 
-            .btn-orange:hover {
+            .btn-orange-small:hover {
                 background: var(--brand-dark);
             }
 
@@ -149,10 +172,6 @@
                 margin: 20px auto;
                 padding: 10px;
                 font-size: 0.8em;
-            }
-
-            .btn-light-orange:hover {
-                background: var(--brand-light-hover);
             }
 
             .comparison-box {
@@ -277,11 +296,42 @@
                 font-weight: bold;
             }
 
+            @media print {
+                body {
+                    background: white;
+                    padding: 0;
+                }
+                .resource-actions,
+                #search,
+                .btn-light-orange,
+                .footer,
+                .no-print {
+                    display: none !important;
+                }
+                .section {
+                    box-shadow: none;
+                    border: 1px solid #eee;
+                    page-break-inside: avoid;
+                }
+                input.meaning-edit {
+                    border: none;
+                    background: none;
+                }
+            }
+
             @media (max-width: 650px) {
                 .step-grid,
                 .symbol-grid,
                 .comparison-grid {
                     grid-template-columns: 1fr;
+                }
+                .resource-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+                .resource-actions {
+                    justify-content: flex-start;
                 }
             }
         </style>
@@ -292,36 +342,17 @@
         <div class="section">
             <h2>What is Two Talk?</h2>
             <p>
-                Two Talk simple way to write quickly. Each word uses only 2
-                symbols. The first symbol is the <b>Subject</b> (The Thing) and
-                the second is the <b>State</b> (The Way it is).
+                Two Talk is a compact semantic shorthand system built for fast,
+                structured notes, task lists, digital bullet journals, and
+                personal logs. It turns everyday notes into tiny, consistent
+                building blocks you can type at the speed of thought. Two Talk
+                is great for knowledge workers, developers, and digital
+                minimalists who prefer structure over prose. Each word uses only
+                2 symbols. The first symbol is the <b>Subject</b> (The Thing)
+                and the second is the <b>State</b> (The Way it is).
             </p>
-            <div class="step-grid">
-                <div class="step">
-                    <b>Two symbols</b>
-                    <span class="highlight-label">First symbol</span>: What are
-                    we talking about?
-                    <span class="highlight-label">Second symbol</span>: What is
-                    its current condition?
-                </div>
-                <div class="step">
-                    <b>Three Choices</b>
-                    Each pair can be a
-                    <span class="highlight-label">Thing</span> (Noun), an
-                    <span class="highlight-label">Idea</span> (Feeling), or an
-                    <span class="highlight-label">Action</span> (Verb).
-                </div>
-            </div>
 
-            <div class="complex-box">
-                Make complex words by joining symbol pairs with a dot (.)
-            </div>
-
-            <button class="btn-orange" onclick="exportMarkdown()">
-                Download Guide (.MD)
-            </button>
-
-            <div class="comparison-box">
+            <div class="comparison-box" style="margin-top: 20px">
                 <h2>English vs Two Talk</h2>
                 <div class="comparison-grid">
                     <div class="comparison-col">
@@ -342,6 +373,33 @@
 
         <div class="section">
             <h2>Symbols</h2>
+            <p>
+                Two Talk words are created by combining a "subject" symbol and a
+                "state" symbol to create a symbol pair "word".
+            </p>
+            <div class="step-grid">
+                <div class="step">
+                    <b>Two symbols</b>
+                    <span class="highlight-label">First symbol</span>: What are
+                    we talking about?
+                    <span class="highlight-label">Second symbol</span>: What is
+                    its current condition?
+                </div>
+                <div class="step">
+                    <b>Three Choices</b>
+                    Each pair can be a
+                    <span class="highlight-label">Thing</span> (Noun), an
+                    <span class="highlight-label">Idea</span> (Feeling), or an
+                    <span class="highlight-label">Action</span> (Verb).
+                </div>
+            </div>
+
+            <div class="complex-box">
+                Use numbers for amounts, initials for names and ISO formats for
+                dates and times. Create complex words by joining symbol pairs
+                with a dot (.)
+            </div>
+            <p>Symbols:</p>
             <div class="symbol-grid">
                 <div class="symbol-col">
                     <h4>1st: Subject (The What)</h4>
@@ -355,8 +413,36 @@
         </div>
 
         <div class="section">
+            <h2>Resources</h2>
+            <div class="resource-row">
+                <span class="resource-label">Two Talk Guide</span>
+                <div class="resource-actions">
+                    <button class="btn-orange-small" onclick="exportMarkdown()">
+                        .TXT
+                    </button>
+                    <button class="btn-orange-small" onclick="window.print()">
+                        Print
+                    </button>
+                </div>
+            </div>
+            <div class="resource-row">
+                <span class="resource-label">Useful phrases</span>
+                <div class="resource-actions">
+                    <a href="useful.pdf" class="btn-orange-small">.PDF</a>
+                </div>
+            </div>
+            <div class="resource-row">
+                <span class="resource-label">Getting started</span>
+                <div class="resource-actions">
+                    <a href="start.pdf" class="btn-orange-small">.PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
             <h2>Word List</h2>
             <p
+                class="no-print"
                 style="
                     font-size: 0.85em;
                     color: #666;
@@ -388,131 +474,151 @@
         <script>
             const symbols = ["@", "#", "^", ":", "!", "?", ">", "<", "+", "-"];
             const subjects = {
-                "@": "Person/Entity",
-                "#": "Tool/Resource",
-                "^": "Place/Site",
-                ":": "Time/Schedule",
-                "!": "Alert/Need",
-                "?": "Choice/Risk",
-                ">": "Gain/Growth",
-                "<": "Loss/Debt",
-                "+": "Plenty/Extra",
-                "-": "Empty/Gap",
+                "@": "Person; Someone; Group",
+                "#": "Tool; Machine; Money",
+                "^": "Place; Room; Setting",
+                ":": "Time; Date; Event",
+                "!": "Need; Must; Warning",
+                "?": "Maybe; Question; Risk",
+                ">": "Win; Gain; Growth",
+                "<": "Loss; Problem; Drop",
+                "+": "Lots; Pile; Whole",
+                "-": "Part; Little; Empty",
             };
+
             const states = {
-                "@": "Social/Private",
-                "#": "Logic/Design",
-                "^": "Static/Local",
-                ":": "Active/Step",
-                "!": "Urgent/Vital",
-                "?": "Unclear/Odd",
-                ">": "Positive/Upper",
-                "<": "Negative/Lower",
-                "+": "Major/Scale",
-                "-": "Minor/Small",
+                "@": "Private; Hidden; Inside",
+                "#": "Logic; Gradual; Fixed",
+                "^": "Steady; Local; Sticking",
+                ":": "Moving; Busy; Changing",
+                "!": "Big; Loud; Vital",
+                "?": "Weird; Unclear; Guess",
+                ">": "Good; Up; Better",
+                "<": "Bad; Down; Worse",
+                "+": "Many; Team; Wide",
+                "-": "Small; Single; Easy",
             };
 
             const defaultWords = {
-                "@@": "Self; Personal; Focus",
-                "@#": "Colleague; Professional; Collaborate",
-                "@^": "Leader; Authority; Direct",
-                "@:": "Partner; Peer; Discuss",
-                "@!": "Expert; Critical Role; Command",
-                "@?": "Contact; Stranger; Verify",
-                "@>": "Mentor; Support; Guide",
-                "@<": "User; Client; Serve",
-                "@+": "Team; Group; Organize",
-                "@-": "Individual; Unit; Identify",
-                "##": "System; Process; Execute",
-                "#@": "Interface; Social Media; Communicate",
-                "#^": "Station; Hardware; Install",
-                "#:": "Workflow; Iteration; Repeat",
-                "#!": "Key; Essential; Secure",
-                "#?": "Variable; Unknown; Debug",
-                "#>": "Asset; Output; Produce",
-                "#<": "Liabilities; Input; Consume",
-                "#+": "Infrastructure; Large Scale; Expand",
-                "#-": "Component; Detail; Refine",
-                "^^": "Headquarters; Primary; Stay",
-                "^@": "Social Space; Home; Relax",
-                "^#": "Workplace; Office; Build",
-                "^:": "Route; Path; Navigate",
-                "^!": "Crisis Zone; Alert; Evacuate",
-                "^?": "Hidden; Private; Conceal",
-                "^>": "Growth Area; Goal; Reach",
-                "^<": "Problem Area; Issue; Avoid",
-                "^+": "Urban; Public; Visit",
-                "^-": "Remote; Local; Settle",
-                "::": "Timeline; Duration; Measure",
-                ":@": "Appointment; Meeting; Sync",
-                ":#": "Method; Pattern; Switch",
-                ":^": "Deadline; Milestone; Mark",
-                ":!": "Immediate; Current; Act",
-                ":?": "Delay; Pending; Pause",
-                ":>": "Future; Launch; Start",
-                ":<": "Past; History; Archive",
-                ":+": "Long-term; Period; Sustain",
-                ":-": "Short-term; Moment; Cut",
-                "!!": "Emergency; Danger; Halt",
-                "!@": "Requirement; Human Need; Help",
-                "!#": "Specification; Logic Need; Patch",
-                "!^": "Signal; Beacon; Notify",
-                "!:": "Sprint; Priority; Hurry",
-                "!?": "Anomaly; Suspicion; Investigate",
-                "!>": "Achievement; Success; Celebrate",
-                "!<": "Failure; Error; Rectify",
-                "!+": "Overflow; Maximum; Limit",
-                "!-": "Deficit; Minimum; Restock",
-                "??": "Mystery; Problem; Solve",
-                "?@": "Inquiry; Question; Interview",
-                "?#": "Research; Information; Analyze",
-                "?^": "Discovery; Location; Find",
-                "?:": "Estimation; Probability; Forecast",
-                "?!": "Disruption; Conflict; Challenge",
-                "?>": "Opportunity; Reward; Seek",
-                "?<": "Threat; Risk; Mitigate",
-                "?+": "Complexity; Multi-factor; Sort",
-                "?-": "Obscurity; Nuance; Uncover",
-                ">>": "Outcome; Benefit; Gain",
-                ">@": "Community; Alignment; Join",
-                ">#": "Utility; Efficient; Optimize",
-                ">^": "Expansion; Market/New Site; Scale",
-                ">:": "Progress; Momentum; Advance",
-                ">!": "Standard; Quality; Verify",
-                ">?": "Innovation; Pivot; Discover",
-                "><": "Improvement; Recovery; Repair",
-                ">+": "Surplus; Wealth; Accumulate",
-                ">-": "Efficiency; Lean; Trim",
-                "<<": "Damage; Decline; Breakdown",
-                "<@": "Competitor; Opponent; Shield",
-                "<#": "Obsolescence; Waste; Clear",
-                "<^": "Bottleneck; Constraint; Bypass",
-                "<:": "Lag; Slowdown; Accelerate",
-                "<!": "Impact; Incident; Fix",
-                "<?": "Leak; Vulnerability; Patch",
-                "<>": "Correction; Balance; Adjust",
-                "<+": "Inflation; Bloat; Reduce",
-                "<-": "Erosion; Depletion; Refill",
-                "++": "Container; Storage; Save",
-                "+@": "Advocate; Member; Recruit",
-                "+#": "Repository; Data; Catalog",
-                "+^": "Environment; Landscape; Map",
-                "+:": "Sequence; Queue; Order",
-                "+!": "Peak; Intensity; Boost",
-                "+?": "Abundance; Diversity; Categorize",
-                "+>": "Revenue; Investment; Fund",
-                "+<": "Expense; Budget; Spend",
-                "+-": "Variance; Exchange; Swap",
-                "--": "Void; Absence; Remove",
-                "-@": "Anonymous; Background; Fade",
-                "-#": "Fragment; Segment; Divide",
-                "-^": "Base; Foundation; Support",
-                "-:": "Interval; Gap; Fill",
-                "-!": "Note; Brief; Record",
-                "-?": "Hypothesis; Seed; Test",
-                "->": "Door; Out; Leave",
-                "-<": "Residue; Trace; Clean",
-                "-+": "Patch; Minimal; Repair",
+                // @ (PERSON) PAIRS
+                "@@": "Me; Self; Look inside",
+                "@#": "Worker; Skill; Work",
+                "@^": "Neighbor; Home-town; Stay",
+                "@:": "Traveler; Flow; Move",
+                "@!": "Boss; Power; Lead",
+                "@?": "Stranger; Secret; Ask",
+                "@>": "Teacher; Hope; Help",
+                "@<": "Enemy; Hate; Fight",
+                "@+": "Crowd; Together; Gather",
+                "@-": "Loner; Alone; Leave",
+
+                // # (TOOL/MONEY) PAIRS
+                "#@": "Diary; Private; Write",
+                "##": "Robot; Fast; Auto-run",
+                "#^": "Base; Strong; Hold",
+                "#:": "Car; Speed; Drive",
+                "#!": "Weapon; Danger; Strike",
+                "#?": "Test; Maybe; Try",
+                "#>": "Savings; Wealth; Get",
+                "#<": "Debt; Heavy; Owe",
+                "#+": "Store; Plenty; Fill",
+                "#-": "Tool; Handy; Fix",
+
+                // ^ (PLACE) PAIRS
+                "^@": "Home; Cozy; Rest",
+                "^#": "Shop; Clean; Build",
+                "^^": "Wall; Safe; Guard",
+                "^:": "Path; Change; Cross",
+                "^!": "Hot-spot; Hurry; Wake",
+                "^?": "Maze; Lost; Walk",
+                "^>": "Peak; Best; Climb",
+                "^<": "Hole; Worst; Fall",
+                "^+": "City; Public; Join",
+                "^-": "Box; Tiny; Shut",
+
+                // : (TIME) PAIRS
+                ":@": "Birthday; Past; Party",
+                ":#": "Plan; Rules; Finish",
+                ":^": "Marker; Always; Stay",
+                "::": "Habit; Again; Repeat",
+                ":!": "Crash; Fear; Act",
+                ":?": "Wait; Not sure; Stop",
+                ":>": "Next; Happy; Start",
+                ":<": "Back; Sad; Keep",
+                ":+": "Age; Huge; Last",
+                ":-": "Second; Quick; Snap",
+
+                // ! (NEED) PAIRS
+                "!@": "Heart; Right; Give",
+                "!#": "Law; Must; Force",
+                "!^": "Home; Safe; Hide",
+                "!:": "Race; Fast; Run",
+                "!!": "Bell; Scary; Stop",
+                "!?": "Odd; Shady; Check",
+                "!>": "Win; Proud; Beat",
+                "!<": "Mistake; Bad; Fix",
+                "!+": "Duty; Hard; Work",
+                "!-": "Match; New; Start",
+
+                // ? (UNKNOWN) PAIRS
+                "?@": "Mask; Gut-feeling; Guess",
+                "?#": "Lock; Hard; Open",
+                "?^": "Far-away; Out there; Look",
+                "?:": "Luck; Random; Play",
+                "?!": "Threat; Scared; Warn",
+                "??": "Knot; Dunno; Solve",
+                "?>": "Win; Hope; Bet",
+                "?<": "Trap; Watch out; Skip",
+                "?+": "Mess; Crazy; Mix",
+                "?-": "Hint; Small; Show",
+
+                // > (GAIN) PAIRS
+                ">@": "Family; Love; Care",
+                ">#": "Gear; Useful; Use",
+                ">^": "Farm; Growth; Plant",
+                ">:": "Step; Forward; Go",
+                ">!": "Prize; Great; Pass",
+                ">?": "Dream; Fresh; Think",
+                ">>": "Money; Rich; Gain",
+                "><": "Cure; Tough; Heal",
+                ">+": "Land; Big; Grow",
+                ">-": "Gift; Nice; Give",
+
+                // < (LOSS) PAIRS
+                "<@": "Foe; Angry; Hate",
+                "<#": "Bug; Broken; Break",
+                "<^": "Junk; Old; Rot",
+                "<:": "Wait; Slow; Wait",
+                "<!": "Hurt; Pain; Cry",
+                "<?": "Lie; Fake; Cheat",
+                "<>": "Swap; Okay; Trade",
+                "<<": "Loss; Done; Quit",
+                "<+": "Debt; Full; Sink",
+                "<-": "Leak; Gone; Run out",
+
+                // + (LOTS) PAIRS
+                "+@": "Team; Friend; Join",
+                "+#": "Book; Knowledge; Read",
+                "+^": "Map; Mine; Draw",
+                "+:": "Line; Order; Sort",
+                "+!": "Power; Strong; Push",
+                "+?": "Idea; Deep; Think",
+                "+>": "Extra; Fun; Spend",
+                "+<": "Trash; Too much; Throw",
+                "++": "Space; Forever; Rise",
+                "+-": "Bit; Middle; Pick",
+
+                // - (LITTLE/EMPTY) PAIRS
+                "-@": "Ghost; Gone; Hide",
+                "-#": "Speck; Smart; Split",
+                "-^": "Dot; Exact; Point",
+                "-:": "Gap; Quiet; Wait",
+                "-!": "Seed; Life; Live",
+                "-?": "Bud; Maybe; Grow",
+                "->": "Door; Free; Leave",
+                "-<": "Mark; Left-over; Fade",
+                "-+": "Piece; Not done; Add",
+                "--": "Zero; None; Wipe",
             };
 
             let words = JSON.parse(localStorage.getItem("twoTalkWorkHome")) || {
@@ -520,15 +626,17 @@
             };
 
             function escapeHTML(str) {
-                return str.replace(/[&<>"']/g, function (m) {
-                    return {
-                        "&": "&amp;",
-                        "<": "&lt;",
-                        ">": "&gt;",
-                        '"': "&quot;",
-                        "'": "&#039;",
-                    }[m];
-                });
+                return str.replace(
+                    /[&<>"']/g,
+                    (m) =>
+                        ({
+                            "&": "&amp;",
+                            "<": "&lt;",
+                            ">": "&gt;",
+                            '"': "&quot;",
+                            "'": "&#039;",
+                        })[m],
+                );
             }
 
             function render() {
@@ -589,7 +697,7 @@
                 md +=
                     "## What is Two Talk?\nA simple way to write fast. Each word uses only 2 symbols. The first symbol is the Subject (The Thing) and the second is the State (The Way it is).\n\n";
                 md +=
-                    "### Rules\n1. **Two Symbols**: First symbol is the What, second symbol is the Condition.\n2. **Three Choices**: Each pair can be a Noun, Idea, or Verb.\n3. **Complex Words**: Make complex words by joining symbol pairs with a dot (.).\n\n";
+                    "### Rules\n1. **Two Symbols**: First symbol is the What, second symbol is the Condition.\n2. **Three Choices**: Each pair can be a Noun, Idea, or Verb.\n3. **Literals\\Complex Words**: Use numbers for amounts, initials for names and ISO formats for dates and times. Create complex words by joining symbol pairs with a dot (.)\n\n";
                 md +=
                     "## Symbol Keys\n| Sym | Subject (1st) | State (2nd) |\n|---|---|---|\n";
                 symbols.forEach((s) => {
@@ -604,15 +712,10 @@
                             .replace(/</g, "\\<");
                         md += `- **${escapedP}**: ${m}\n`;
                     });
-
-                md += "\n---\n";
-                md +=
-                    "Two Talk (www.twotalk.org) was created by **Barney Matthews**. Find him on the web at [www.barney.me](http://www.barney.me)";
-
                 const blob = new Blob([md], { type: "text/markdown" });
                 const a = document.createElement("a");
                 a.href = URL.createObjectURL(blob);
-                a.download = "twotalk.md";
+                a.download = "twotalk.txt";
                 a.click();
             }
 
@@ -621,5 +724,12 @@
                 .addEventListener("input", renderWords);
             render();
         </script>
+        <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+            integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+            data-cf-beacon='{"version":"2024.11.0","token":"9798d9ad12ec4068835f3281e184a73b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>
