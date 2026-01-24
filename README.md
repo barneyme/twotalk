@@ -39,9 +39,13 @@ While Two Talk is visually represented by 14 symbols, it is a fully spoken langu
 
 ## 2. Dictionary
 !! | Truth / Reality / Verified-State
+
 !" | Proof / Fact-Data / Report / Census
+
 !# | Evidence / Fact-Matter / Inventory / Metric
+
 !& | Definition / Axiom / Principle
+
 !* | Force / Fact-Action / Execution
 !+ | Benefit / Fact-Gain / Advantage
 !- | Risk / Fact-Loss / Danger
