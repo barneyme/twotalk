@@ -67,4 +67,4 @@ Both versions of Two Talk share the same semantic foundation:
 
 ---
 Created by [Barney Matthews](http://www.barney.me).  
-[Two Talk Website](http://www.twotalk.org) | [Complete Conlang Guide](http://www.twotalk.org/conlang)
+[Two Talk Website](http://www.twotalk.org) | [Complete Conlang Guide](http://www.twotalk.org/complete)
