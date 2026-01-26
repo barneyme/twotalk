@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Two Talk</title>
+        <style>
+            :root {
+                --orange: #cc5500;
+                --bg: #fdfdfd;
+                --text: #222;
+                --gray: #f4f4f4;
+                --border: #ddd;
+            }
+
+            body {
+                font-family: "Courier New", monospace;
+                background: var(--bg);
+                color: var(--text);
+                padding: 15px;
+                max-width: 1200px;
+                margin: auto;
+                line-height: 1.5;
+            }
+            /* Update existing header-container or add this below it */
+            .header-container {
+                display: flex;
+                justify-content: space-between; /* This pushes the H1 left and the links div right */
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            /* New class to group the buttons */
+            .header-links {
+                display: flex;
+                gap: 10px; /* Adds space between the two buttons */
+            }
+
+            .basic-link {
+                color: var(--orange);
+                text-decoration: none;
+                font-weight: bold;
+                border: 1px solid var(--border);
+                padding: 4px 12px;
+                border-radius: 4px;
+            }
+
+            .basic-link:hover {
+                background: var(--gray);
+            }
+            h1,
+            h3 {
+                color: var(--orange);
+                font-weight: bold;
+            }
+
+            .top-row {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+            }
+
+            .box {
+                flex: 1;
+                min-width: 300px;
+                background: var(--gray);
+                padding: 15px;
+                border: 1px solid var(--border);
+                border-radius: 4px;
+            }
+
+            .symbol-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 5px 30px;
+                font-size: 0.95em;
+            }
+
+            .grid-header {
+                font-weight: bold;
+                color: var(--orange);
+                border-bottom: 1px solid var(--border);
+                margin-bottom: 5px;
+            }
+
+            #onboarding {
+                white-space: pre-wrap;
+                font-size: 0.95em;
+                margin: 0;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid var(--border);
+            }
+
+            .word-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 5px;
+            }
+
+            .word-item {
+                padding: 5px 10px;
+                background: white;
+                border: 1px solid var(--border);
+                font-size: 0.9em;
+            }
+
+            footer {
+                margin-top: 40px;
+                padding: 20px 0;
+                border-top: 1px solid var(--border);
+                font-size: 0.85em;
+                color: #666;
+                text-align: center;
+            }
+            footer a {
+                color: var(--orange);
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header-container">
+            <h1>Two Talk</h1>
+            <div class="header-links">
+                <a href="http://www.twotalk.org/Guide.pdf" class="basic-link"
+                    >Guide</a
+                >
+                <a href="http://www.twotalk.org/complete" class="basic-link"
+                    >Complete</a
+                >
+            </div>
+        </div>
+        <p>
+            A minimalist shorthand system for personal notetaking. It uses 8
+            core symbols to record who, what, where, and when with maximum
+            speed. Read more in the Two Talk
+            <a href="http://www.twotalk.org/Guide.pdf">guide</a>.
+        </p>
+
+        <div class="top-row">
+            <div class="box">
+                <h3>Symbols</h3>
+                <div id="categoryList"></div>
+            </div>
+            <div class="box">
+                <h3>Notes Rules</h3>
+                <pre id="onboarding"></pre>
+            </div>
+        </div>
+
+        <input type="text" id="search" placeholder="Search shorthand..." />
+        <div class="word-list" id="wordList"></div>
+
+        <script>
+            const categories = {
+                "@": "Person",
+                "#": "Object",
+                ":": "Time",
+                "^": "Place",
+                "*": "Action",
+                '"': "Data",
+                "!": "Fact",
+                "?": "Query",
+            };
+
+            const rules = [
+                "<b>Pairs</b>: Every word is built with [Symbol]+[Symbol].",
+                "<b>Context</b>: Set context using ** (** DONUT).",
+                "<b>Simplicity</b>: Skip complex grammar; record raw data.",
+                "<b>Amounts</b>: Use Arabic numerals (123).",
+                "<b>Dates</b>: Use ISO short format (2024-06-01).",
+                "<b>Names</b>: Use initials. (JB)",
+            ];
+
+            const dictionary = {
+                // @ : Person (People & Roles)
+                "@@": "Self / Me",
+                "@#": "Availability / Leave",
+                "@:": "Management / Lead",
+                "@^": "Client / Visitor",
+                "@*": "Staff / Colleague",
+                '@"': "Contact / Point of Contact",
+                "@!": "Individual / User",
+                "@?": "Vacant Role / Hiring",
+                "@=": "Attendee / Present",
+                "@-": "Absent / Not Present",
+
+                // # : Object (Assets & Resources)
+                "#@": "External Vendor",
+                "##": "Asset / Unit",
+                "#:": "Framework / Foundation",
+                "#^": "Infrastructure / Utilities",
+                "#*": "Hardware / Equipment",
+                '#"': "File / Document",
+                "#!": "Supplies / Inventory",
+                "#?": "R&D / Prototype",
+
+                // : : Time (Schedules & Timing)
+                ":@": "Active Status / Uptime",
+                ":#": "Lifecycle / Age",
+                "::": "Current Agenda / Now",
+                ":^": "Quarter / Fiscal Term",
+                ":*": "Meeting / Event",
+                ':"': "Minutes / Archive",
+                ":!": "Deadline / Milestone",
+                ":?": "Duration / ETA",
+                ":+": "Next Meeting / Upcoming",
+
+                // ^ : Place (Location & Context)
+                "^@": "Office / Headquarters",
+                "^#": "Workspace / Desk",
+                "^:": "Remote / Off-site",
+                "^^": "Team Environment / Working Context",
+                "^*": "Workflow / Pipeline",
+                '^"': "Directory / Org Chart",
+                "^!": "Restricted Area / Secure Zone",
+                "^?": "Venue / Room Location",
+
+                // * : Action (Tasks & Work)
+                "*@": "Support / Internal Service",
+                "*#": "Development / Content Creation",
+                "*:": "Backlog / Pending Task",
+                "*^": "Deployment / Delivery",
+                "**": "Project / Primary Initiative",
+                '*"': "Presentation / Pitch",
+                "*!": "Execution / Launch",
+                "*?": "Review / Quality Control",
+                "*=": "In Progress",
+                "*+": "New Task / Added Action",
+
+                // " : Data (Information & Communication)
+                '"@': "Account / Username",
+                '"#': "Budget / Cost",
+                '":': "Timestamp / Log Entry",
+                '"^': "IP Address / URL",
+                '"*': "Procedure / SOP",
+                '""': "Internal Communication / Chat",
+                '"!': "Alert / Critical Error",
+                '"?': "Query / Analytics",
+                '*"': "Follow-up Communication",
+
+                // ! : Fact (Decisions & Governance)
+                "!@": "Executive / Decision Authority",
+                "!#": "KPIs / Metrics",
+                "!:": "Policy / Regulation",
+                "!^": "Scope / Constraint",
+                "!*": "Mandate / Direct Order",
+                '!"': "Audit Report / Census",
+                "!!": "Confirmed Fact / Approved",
+                "!+": "Decision / Resolution",
+                "!?": "Compliance Check",
+
+                // ? : Query (Uncertainty & Strategy)
+                "?@": "Stakeholder / Prospect",
+                "?#": "Risk / Liability",
+                "?:": "Scheduling Inquiry",
+                "?^": "Market Research",
+                "?*": "Pilot / Testing Phase",
+                '?"': "Feedback / FAQ",
+                "?!": "Forecast / Projection",
+                "??": "Feasibility / Open Question",
+            };
+
+            function renderCategories() {
+                const keys = Object.keys(categories);
+                let out =
+                    '<div class="symbol-grid"><div class="grid-header"> S | Meaning</div><div class="grid-header">S | Meaning</div>';
+                for (let i = 0; i < keys.length; i += 2) {
+                    out += `<div><b>${keys[i]}</b> | ${categories[keys[i]]}</div>`;
+                    out += `<div><b>${keys[i + 1]}</b> | ${categories[keys[i + 1]]}</div>`;
+                }
+                document.getElementById("categoryList").innerHTML =
+                    out + "</div>";
+            }
+
+            function renderRules() {
+                document.getElementById("onboarding").innerHTML =
+                    rules.join("\n");
+            }
+
+            function renderWords(filter = "") {
+                let out = "";
+                const f = filter.toLowerCase();
+                Object.keys(dictionary)
+                    .sort()
+                    .forEach((pair) => {
+                        if (
+                            pair.includes(f) ||
+                            dictionary[pair].toLowerCase().includes(f)
+                        ) {
+                            out += `<div class="word-item"><b>${pair}</b> ${dictionary[pair]}</div>`;
+                        }
+                    });
+                document.getElementById("wordList").innerHTML = out;
+            }
+
+            document
+                .getElementById("search")
+                .addEventListener("input", (e) => renderWords(e.target.value));
+            renderCategories();
+            renderRules();
+            renderWords();
+        </script>
+
+        <footer>
+            <a href="http://www.twotalk.org">Two Talk</a> was created by
+            <a href="http://www.barney.me">Barney Matthews</a>.
+            <a href="http://www.twotalk.org/complete">Two Talk Complete</a>
+        </footer>
+    </body>
+</html>
