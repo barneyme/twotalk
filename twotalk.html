@@ -1,0 +1,1572 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Two Talk</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2270%22 font-weight=%22bold%22 font-family=%22monospace%22 x=%2250%%22 text-anchor=%22middle%22 fill=%22%23e67e22%22>TT</text></svg>"
+        />
+        <style>
+        :root {
+            --dark: #1a2a3a;
+            --accent: #e67e22;
+            --light: #f4f7f6;
+            --border: #d1d8e0;
+            --accent-light: #fef5ed;
+        }
+
+        /* Resetting default browser margins */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: "Segoe UI", system-ui, sans-serif;
+            background: var(--light);
+            color: #333;
+            line-height: 1.5;
+            font-size: 14px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header fix: Changed width from 100vw to 100% to prevent blank print pages */
+        header.hero {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            position: relative;
+            left: 0;
+            right: 0;
+        }
+
+        header.hero h1 {
+            letter-spacing: 12px;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+
+        header.hero p {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.9;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            display: grid;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .rule-list,
+        .ex-list {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .rule-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            border-left: 2px solid #eee;
+        }
+
+        .ex-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+            font-family: monospace;
+        }
+
+        .ex-text {
+            font-family: sans-serif;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .sym-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 10px;
+            text-align: center;
+        }
+
+        .sym-box {
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+
+        .sym-char {
+            font-family: monospace;
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 1.4rem;
+            display: block;
+        }
+
+        .bar {
+            position: sticky;
+            top: 0;
+            background: var(--light);
+            padding: 1rem;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        input#search {
+            width: 60%;
+            padding: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .btn {
+            width: 20%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .btn-print {
+            background: var(--dark);
+            color: white;
+        }
+
+        .btn-reset {
+            background: #c0392b;
+            color: white;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f8f9fa;
+            text-align: left;
+            padding: 12px;
+            font-size: 0.7rem;
+            color: #666;
+            border-bottom: 2px solid #eee;
+        }
+
+        .sym-cell {
+            font-family: monospace;
+            font-weight: bold;
+            color: var(--accent);
+            width: 85px;
+            font-size: 1.25rem;
+            text-align: center;
+            background: var(--accent-light);
+        }
+
+        .edit-input {
+            width: 100%;
+            border: 1px solid transparent;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            background: transparent;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            header.hero {
+                padding: 2rem 1rem;
+            }
+
+            header.hero h1 {
+                letter-spacing: 4px;
+                font-size: 1.8rem;
+            }
+
+            .bar {
+                flex-direction: column;
+            }
+
+            input#search,
+            .btn {
+                width: 100%;
+            }
+
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sym-legend {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            }
+        }
+
+        /* NEW: Enhanced Print Logic to fix gaps and blank pages */
+        @media print {
+            body, html {
+                background: white !important;
+                overflow: visible !important;
+            }
+
+            /* Remove interactive elements that don't belong on paper */
+            .bar, #quickStartToggle, .btn-reset {
+                display: none !important;
+            }
+
+            /* Force linear layout for the container to avoid grid-based page gaps */
+            .container {
+                display: block !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Ensure Quick Start is expanded and visible */
+            #quickStartContent {
+                display: block !important;
+                margin-top: 1rem !important;
+            }
+
+            /* Prevent sections from being split across two pages */
+            section {
+                page-break-inside: avoid;
+                margin-bottom: 2rem !important;
+                box-shadow: none !important;
+                border: 1px solid #eee !important;
+            }
+
+            header.hero {
+                padding: 1.5rem !important;
+                border-bottom: 2px solid var(--accent) !important;
+            }
+        }
+        /* Container for the section */
+        .full-width-section {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .intro-text {
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text h2 {
+            width: 100%;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* The Grid System */
+        .core-grid {
+            display: grid;
+            /* This automatically adds as many columns as fit (min 200px) and stretches them */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            width: 100%;
+        }
+
+        .core-item {
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .core-badge {
+            background: var(--dark);
+            color: white;
+            font-family: monospace;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-right: 12px;
+            min-width: 42px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive adjustment for small mobile screens */
+        @media (max-width: 480px) {
+            .core-grid {
+                grid-template-columns: 1fr; /* Single column on phones */
+            }
+
+            .intro-text h2 {
+                font-size: 1.2rem;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header class="hero">
+            <h1>TWO TALK</h1>
+            <p>Concise Semantic Notation System</p>
+        </header>
+
+        <div class="container">
+            <section>
+                <h2>Introduction</h2>
+                <p
+                    style="
+                        margin-bottom: 1.5rem;
+                        color: #444;
+                        font-size: 0.95rem;
+                    "
+                >
+                    Two Talk is a semantic shorthand system that uses
+                    logic-based symbols to represent complex ideas. It is
+                    designed for rapid notetaking and task management in
+                    situations where speed and accuracy are important. Using standard ASCII symbols on the keyboard Two Talk is digital native, cross-platform, plaintext, portable, parsable, serializable and AI friendly. By
+                    focusing on meaning (semantics), notes are reduced to
+                    predictable 2 symbol pairs that can be interpreted by
+                    anyone. All you have to do is remember the 12 symbols.
+                    For example if you know that @ is Person and + is Large, you can figure out that @+ is a Leader - even if you've never seen it written down before.
+                </p>
+
+                <div class="intro-grid">
+                    <div>
+                        <h3
+                            style="
+                                font-size: 0.8rem;
+                                color: var(--accent);
+                                margin-bottom: 10px;
+                            "
+                        >
+                            RULES
+                        </h3>
+                        <ul class="rule-list">
+                            <li>
+                                <strong>Pairs:</strong> Every "word" is a
+                                two-symbol pair [Category]+[Modifier].
+                            </li>
+                            <li>
+                                <strong>Context (**):</strong> Use ** (TOPIC) to
+                                set the subject for a section.
+                            </li>
+                            <li>
+                                <strong>Compounds:</strong> Use a dot (.) to
+                                join pairs for complex words.
+                            </li>
+                            <li>
+                                <strong>Names:</strong> Use initials for names
+                                and identifiers.
+                            </li>
+                            <li>
+                                <strong>Amounts:</strong> Use numbers to show
+                                quantity.
+                            </li>
+                            <li>
+                                <strong>Dates:</strong> Write dates in ISO
+                                (YYYY-MM-DD) format.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3
+                            style="
+                                font-size: 0.8rem;
+                                color: var(--accent);
+                                margin-bottom: 10px;
+                            "
+                        >
+                            EXAMPLES
+                        </h3>
+                        <div class="ex-list">
+                            <div class="ex-item">
+                                <span class="ex-text"
+                                    >The project needs more time on the calendar:</span
+                                >
+                                <span>^^ ** #:</span>
+                            </div>
+                            <div class="ex-item">
+                                <span class="ex-text">The task is getting close to the deadline:</span>
+                                <span>## :! :?</span>
+                            </div>
+                            <div class="ex-item">
+                                <span class="ex-text">The team is assembling for the meeting starting now:</span>
+                                <span>@@ :*</span>
+                            </div>
+                            <div class="ex-item">
+                                <span class="ex-text"
+                                    >The site is far from the office:</span
+                                >
+                                <span>^* ^@ ^:</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Symbols</h2>
+                <div class="sym-legend">
+                    <div class="sym-box">
+                        <span class="sym-char">@</span>Person
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">#</span>Object
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">:</span>Time
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">^</span>Place
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">*</span>Action
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">"</span>Data
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">!</span>Fact
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">?</span>Query
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">+</span>Large
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">-</span>Small
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">=</span>Same
+                    </div>
+                    <div class="sym-box">
+                        <span class="sym-char">/</span>None
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collapsible Quick Start Guide -->
+            <section
+                style="
+                    background: linear-gradient(135deg, #fef5ed 0%, #fff 100%);
+                    border-left: 5px solid var(--accent);
+                "
+            >
+                <div
+                    style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        cursor: pointer;
+                    "
+                    onclick="toggleQuickStart()"
+                >
+                    <h2 style="color: var(--accent); margin: 0">
+                        Quick Start Guide
+                    </h2>
+                    <span
+                        id="quickStartToggle"
+                        style="
+                            font-size: 1.5rem;
+                            color: var(--accent);
+                            user-select: none;
+                        "
+                        >▼</span
+                    >
+                </div>
+                <p
+                    style="
+                        font-size: 0.95rem;
+                        color: #555;
+                        margin: 0.5rem 0 0 0;
+                    "
+                >
+                    Learn Two Talk in 5 steps.
+                </p>
+
+                <div
+                    id="quickStartContent"
+                    style="display: none; margin-top: 1.5rem"
+                >
+                    <!-- Step 1: What is Two Talk -->
+                    <div
+                        style="
+                            margin-bottom: 2rem;
+                            padding-left: 1rem;
+                            border-left: 3px solid #eee;
+                        "
+                    >
+                        <h3
+                            style="
+                                font-size: 1rem;
+                                color: var(--dark);
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            <span
+                                style="
+                                    display: inline-block;
+                                    background: var(--accent);
+                                    color: white;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    line-height: 24px;
+                                    margin-right: 8px;
+                                    font-size: 0.85rem;
+                                "
+                                >1</span
+                            >
+                            What is Two Talk?
+                        </h3>
+                        <p style="color: #666; margin-bottom: 0.5rem">
+                            Two Talk is a simple notation system that replaces words with 2 symbol pairs. Each symbol has a meaning. Every
+                            symbol pair can convey an object, idea and action. By knowing just 12 symbols and their meanings you can write everything you need.
+                        </p>
+                        <div
+                            style="
+                                background: white;
+                                padding: 1rem;
+                                border-radius: 6px;
+                                margin-top: 0.5rem;
+                            "
+                        >
+                            <div style="display: grid; gap: 0.5rem">
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                    "
+                                >
+                                    <span style="color: #666"
+                                        >English: "The manager needs to review
+                                        the budget report"</span
+                                    >
+                                    <span
+                                        style="
+                                            font-family: monospace;
+                                            font-weight: bold;
+                                            color: var(--accent);
+                                            white-space: nowrap;
+                                        "
+                                        >:@ *" #^."</span
+                                    >
+                                </div>
+                                <div
+                                    style="
+                                        font-size: 0.85rem;
+                                        color: #888;
+                                        border-top: 1px dashed #eee;
+                                        padding-top: 0.5rem;
+                                    "
+                                >
+                                    13 words → 3 symbol pairs =
+                                    <strong>77% shorter</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Learn the 12 Symbols -->
+                    <div
+                        style="
+                            margin-bottom: 2rem;
+                            padding-left: 1rem;
+                            border-left: 3px solid #eee;
+                        "
+                    >
+                        <h3
+                            style="
+                                font-size: 1rem;
+                                color: var(--dark);
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            <span
+                                style="
+                                    display: inline-block;
+                                    background: var(--accent);
+                                    color: white;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    line-height: 24px;
+                                    margin-right: 8px;
+                                    font-size: 0.85rem;
+                                "
+                                >2</span
+                            >
+                            Learn the 12 symbols.
+                        </h3>
+                        <p style="color: #666; margin-bottom: 0.75rem">
+                            Each symbol represents a category. Memorize these symbols and meanings first:
+                        </p>
+                        <div
+                            style="
+                                display: grid;
+                                grid-template-columns: repeat(
+                                    auto-fit,
+                                    minmax(140px, 1fr)
+                                );
+                                gap: 0.75rem;
+                            "
+                        >
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >@</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >PERSON (looks like a head)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >#</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >OBJECT (looks like a box)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >:</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >TIME (looks like dots on a clock)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >^</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >PLACE (looks like a roof or a peak)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >*</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >ACTION (looks like a spark)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >"</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >DATA (looks like speech quotes)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >!</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >FACT (looks like an exclaimation point)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >?</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >QUERY (looks like a question mark)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >+</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >LARGE (looks like a plus sign)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >-</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >SMALL (looks like a minus sign)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >=</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >SAME (looks like an equal sign)</span
+                                >
+                            </div>
+                            <div
+                                style="
+                                    background: white;
+                                    padding: 0.75rem;
+                                    border-radius: 6px;
+                                    text-align: center;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family: monospace;
+                                        font-weight: bold;
+                                        color: var(--accent);
+                                        font-size: 1.8rem;
+                                        display: block;
+                                    "
+                                    >/</span
+                                >
+                                <span style="font-size: 0.8rem; color: #666"
+                                    >NONE (looks like a cancel mark)</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Your First Translation -->
+                    <div
+                        style="
+                            margin-bottom: 2rem;
+                            padding-left: 1rem;
+                            border-left: 3px solid #eee;
+                        "
+                    >
+                        <h3
+                            style="
+                                font-size: 1rem;
+                                color: var(--dark);
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            <span
+                                style="
+                                    display: inline-block;
+                                    background: var(--accent);
+                                    color: white;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    line-height: 24px;
+                                    margin-right: 8px;
+                                    font-size: 0.85rem;
+                                "
+                                >3</span
+                            >
+                            Your first Two Talk notation.
+                        </h3>
+                        <p style="color: #666; margin-bottom: 0.75rem">
+                            Let's translate:
+                            <strong>"The team needs help"</strong>
+                        </p>
+                        <div
+                            style="
+                                background: white;
+                                padding: 1rem;
+                                border-radius: 6px;
+                            "
+                        >
+                            <ol
+                                style="
+                                    margin-left: 1.2rem;
+                                    color: #666;
+                                    line-height: 1.8;
+                                "
+                            >
+                                <li>
+                                    <strong>Identify concepts:</strong> team
+                                    (group of people), needs (requires), help
+                                    (assistance)
+                                </li>
+                                <li>
+                                    <strong>Pick symbols:</strong> @@ (Group),
+                                    *" (Assist/Help)
+                                </li>
+                                <li>
+                                    <strong>Drop filler:</strong> "the", "needs"
+                                    → just keep core meaning
+                                </li>
+                                <li>
+                                    <strong>Result:</strong>
+                                    <span
+                                        style="
+                                            font-family: monospace;
+                                            font-weight: bold;
+                                            color: var(--accent);
+                                            font-size: 1.1rem;
+                                        "
+                                        >@@ *"</span
+                                    >
+                                </li>
+                            </ol>
+                            <div
+                                style="
+                                    margin-top: 1rem;
+                                    padding: 0.75rem;
+                                    background: var(--accent-light);
+                                    border-left: 3px solid var(--accent);
+                                    border-radius: 4px;
+                                "
+                            >
+                                <span style="color: #666"
+                                    >Use the word list below to find a
+                                    symbol pair suggestion for any concept.</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Taking Meeting Notes -->
+                    <div
+                        style="
+                            margin-bottom: 2rem;
+                            padding-left: 1rem;
+                            border-left: 3px solid #eee;
+                        "
+                    >
+                        <h3
+                            style="
+                                font-size: 1rem;
+                                color: var(--dark);
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            <span
+                                style="
+                                    display: inline-block;
+                                    background: var(--accent);
+                                    color: white;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    line-height: 24px;
+                                    margin-right: 8px;
+                                    font-size: 0.85rem;
+                                "
+                                >4</span
+                            >
+                            Taking meeting notes
+                        </h3>
+                        <p style="color: #666; margin-bottom: 0.75rem">
+                            Meeting dialogue → Two Talk notes:
+                        </p>
+                        <div
+                            style="
+                                background: white;
+                                padding: 1rem;
+                                border-radius: 6px;
+                            "
+                        >
+                            <div style="margin-bottom: 1rem">
+                                <div
+                                    style="
+                                        font-size: 0.85rem;
+                                        color: #888;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    Original (87 words):
+                                </div>
+                                <div
+                                    style="
+                                        padding: 0.75rem;
+                                        background: #f9f9f9;
+                                        border-radius: 4px;
+                                        color: #555;
+                                        font-size: 0.9rem;
+                                        line-height: 1.6;
+                                    "
+                                >
+                                    "We need to launch the new website by next
+                                    Friday. The design team finished their work
+                                    yesterday. Marketing will review the content
+                                    today. The CEO wants a final demo on
+                                    Thursday. Budget approval is still pending
+                                    from finance."
+                                </div>
+                            </div>
+                            <div
+                                style="
+                                    border-top: 2px dashed #eee;
+                                    padding-top: 1rem;
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-size: 0.85rem;
+                                        color: #888;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    Two Talk (9 symbols):
+                                </div>
+                                <div
+                                    style="
+                                        padding: 0.75rem;
+                                        background: var(--accent-light);
+                                        border-radius: 4px;
+
+                                        color: var(--dark);
+                                        font-size: 0.85rem;
+                                        line-height: 1.8;
+                                    "
+                                >
+                                    ** ^".<br />
+                                    +* 2026-02-07<br />
+                                    @# :" =*<br />
+                                    @" :: *"<br />
+                                    +@ :? *"<br />
+                                    #^ ?:
+                                </div>
+                                <div
+                                    style="
+                                        margin-top: 0.75rem;
+                                        padding: 0.5rem;
+                                        background: #f0f0f0;
+                                        border-radius: 4px;
+                                        font-size: 0.85rem;
+                                        color: #666;
+                                    "
+                                >
+                                    <strong>Translation:</strong> Topic: Website
+                                    | Launch Friday | Designers yesterday
+                                    completed | Marketers today reviewing | CEO
+                                    Thursday wants demo | Budget pending
+                                </div>
+                            </div>
+                            <div
+                                style="
+                                    margin-top: 1rem;
+                                    text-align: center;
+                                    color: var(--accent);
+                                    font-weight: bold;
+                                "
+                            >
+                                90% shorter, same information!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Daily Standup Example -->
+                    <div
+                        style="
+                            margin-bottom: 1rem;
+                            padding-left: 1rem;
+                            border-left: 3px solid #eee;
+                        "
+                    >
+                        <h3
+                            style="
+                                font-size: 1rem;
+                                color: var(--dark);
+                                margin-bottom: 0.5rem;
+                            "
+                        >
+                            <span
+                                style="
+                                    display: inline-block;
+                                    background: var(--accent);
+                                    color: white;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    line-height: 24px;
+                                    margin-right: 8px;
+                                    font-size: 0.85rem;
+                                "
+                                >5</span
+                            >
+                            Real example: daily standup.
+                        </h3>
+                        <p style="color: #666; margin-bottom: 0.75rem">
+                            How a developer uses Two Talk for agile standups:
+                        </p>
+                        <div
+                            style="
+                                background: white;
+                                padding: 1rem;
+                                border-radius: 6px;
+                            "
+                        >
+                            <div
+                                style="
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    gap: 1rem;
+                                "
+                            >
+                                <div>
+                                    <div
+                                        style="
+                                            font-weight: bold;
+                                            color: var(--accent);
+                                            margin-bottom: 0.5rem;
+                                            font-size: 0.9rem;
+                                        "
+                                    >
+                                        Before:
+                                    </div>
+                                    <div
+                                        style="
+                                            padding: 0.75rem;
+                                            background: #f9f9f9;
+                                            border-radius: 4px;
+                                            color: #666;
+                                            font-size: 0.85rem;
+                                            line-height: 1.6;
+                                        "
+                                    >
+                                        "Yesterday I completed the user
+                                        authentication module and fixed three
+                                        bugs in the payment system. Today I'm
+                                        working on the dashboard API
+                                        integration. I'm blocked on getting
+                                        database credentials from DevOps."
+                                    </div>
+                                </div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-weight: bold;
+                                            color: var(--accent);
+                                            margin-bottom: 0.5rem;
+                                            font-size: 0.9rem;
+                                        "
+                                    >
+                                        After:
+                                    </div>
+                                    <div
+                                        style="
+                                            padding: 0.75rem;
+                                            background: var(--accent-light);
+                                            border-radius: 4px;
+                                            font-family: monospace;
+                                            font-weight: bold;
+                                            color: var(--dark);
+                                            font-size: 0.95rem;
+                                            line-height: 1.8;
+                                        "
+                                    >
+                                        :" @! =*<br />
+                                        :" #^ 3 *-<br />
+                                        :: ^" **<br />
+                                        !? #^ @^
+                                    </div>
+                                    <div
+                                        style="
+                                            margin-top: 0.5rem;
+                                            font-size: 0.75rem;
+                                            color: #888;
+                                        "
+                                    >
+                                        Yesterday: auth done, 3 bugs fixed<br />
+                                        Today: dashboard work<br />
+                                        Blocked: DB creds from DevOps
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                style="
+                                    margin-top: 1rem;
+                                    padding: 0.75rem;
+                                    background: #e8f5e9;
+                                    border-left: 3px solid #4caf50;
+                                    border-radius: 4px;
+                                "
+                            >
+                                <div style="margin-top: 1rem; padding: 0.75rem; background: #e8f5e9; border-left: 3px solid #4caf50; border-radius: 4px;">
+                                                        <strong style="color: #2e7d32">Result:</strong>
+                                                        <span style="color: #666">Your updates are recorded quickly. You spend more time coding, less time talking.</span>
+                                                    </div>
+                                                </div> </div> </section> <section class="full-width-section">
+                                            <div class="intro-text">
+                                                <h2>Top 20 Two Talk Words</h2>
+                                                <p>With just these 20 pairs, you can express 80% of everyday notes, tasks, and meeting updates:</p>
+                                            </div>
+                                            <div class="core-grid">
+                            <div class="core-item"><span class="core-badge">**</span> Topic / Project / Context</div>
+                            <div class="core-item"><span class="core-badge">:=</span> Date / Duration</div>
+                            <div class="core-item"><span class="core-badge">@@</span> Attendees / Team</div>
+                            <div class="core-item"><span class="core-badge">@+</span> Leader / Chairperson</div>
+                            <div class="core-item"><span class="core-badge">@*</span> Assignee / Responsible / Worker</div>
+                            <div class="core-item"><span class="core-badge">#=</span> Agenda / Deliverable</div>
+                            <div class="core-item"><span class="core-badge">*/</span> Completed task / Done</div>
+                            <div class="core-item"><span class="core-badge">=*</span> Current task / In progress</div>
+                            <div class="core-item"><span class="core-badge">:?</span> Delayed task / Pending</div>
+                            <div class="core-item"><span class="core-badge">:+</span> New task / Future action</div>
+                            <div class="core-item"><span class="core-badge">::!/span> Deadline / Goal</div>
+                            <div class="core-item"><span class="core-badge">=!</span> Decision / Agreed</div>
+                            <div class="core-item"><span class="core-badge">!?</span> Risk / Danger</div>
+                            <div class="core-item"><span class="core-badge">*"</span> Update / Feedback / Report</div>
+                            <div class="core-item"><span class="core-badge">#"</span> Document / Attachment</div>
+                            <div class="core-item"><span class="core-badge">*-</span> Bug / Issue</div>
+                            <div class="core-item"><span class="core-badge">*+</span> Launch / Milestone</div>
+                            <div class="core-item"><span class="core-badge">"+</span> Communication / Briefing</div>
+                            <div class="core-item"><span class="core-badge">!!</span> Key item / Objective</div>
+                            <div class="core-item"><span class="core-badge">^@</span> Office</div>
+                        </div>
+                    </section>
+
+            <h2>Suggested meanings</h2>
+            <p>Note: Two Talk is a semantic system and you can (and should) assign meanings to word pairs that make sense in your context. Below are suggested meanings for symbol pairs. Click a word to update it.</p>
+            <div class="bar">
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search..."
+                    onkeyup="render()"
+                />
+                <button class="btn btn-print" onclick="window.print()">
+                    Print
+                </button>
+                <button class="btn btn-reset" onclick="resetDict()">
+                    Reset
+                </button>
+            </div>
+
+            <section>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pair</th>
+                                <th>Object</th>
+                                <th>Idea</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="wordTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            // Unique Dictionary from previous steps
+            const defaultDict = {
+                "@@": ["Group", "Unified", "Meet"],
+                "@#": ["Body", "Physical", "Embody"],
+                "@:": ["Director", "Senior", "Manage"],
+                "@^": ["Traveler", "Mobile", "Roam"],
+                "@*": ["Worker", "Expert", "Perform"],
+                '@"': ["Helper", "Messenger", "Assist"],
+                "@!": ["Member", "Personal", "Identify"],
+                "@?": ["Candidate", "Subject", "Seek"],
+                "@+": ["Leader", "Influential", "Expand"],
+                "@-": ["Junior", "Little", "Shrink"],
+                "@=": ["Peer", "Equal", "Mirror"],
+                "@/": ["Hermit", "Alone", "Exclude"],
+                "#@": ["Asset", "Owned", "Assign"],
+                "##": ["Unit", "Single", "Include"],
+                "#:": ["Skeleton", "Outline", "Reinforce"],
+                "#^": ["Capital", "Financial", "Bank"],
+                "#*": ["Tool", "Utility", "Fix"],
+                '#"': ["Volume", "Manual", "Write"],
+                "#!": ["Cost", "Expense", "Pay"],
+                "#?": ["Sample", "Unknown", "Study"],
+                "#+": ["Bulk", "Abundance", "Accumulate"],
+                "#-": ["Scrap", "Limited", "Lack"],
+                "#=": ["Standard", "Level", "Match"],
+                "#/": ["Empty", "Void", "Clear"],
+                ":@": ["Schedule", "Current", "Live"],
+                ":#": ["History", "Ancient", "Endure"],
+                "::": ["Now", "Present", "Happen"],
+                ":^": ["Cycle", "Phase", "Transition"],
+                ":*": ["Event", "Active", "Occur"],
+                ':"': ["Memory", "Past", "Save"],
+                ":!": ["Deadline", "Urgent", "Trigger"],
+                ":?": ["Period", "Interval", "Wait"],
+                ":+": ["Future", "Next", "Postpone"],
+                ":-": ["Instant", "Brief", "Shorten"],
+                ":=": ["Duration", "Stable", "Hold"],
+                ":/": ["Never", "End", "Cease"],
+                "^@": ["Office", "Home", "Inhabit"],
+                "^#": ["Base", "Ground", "Stand"],
+                "^:": ["Gap", "Distance", "Divide"],
+                "^^": ["Space", "Area", "Contain"],
+                "^*": ["Site", "Direct", "Travel"],
+                '^"': ["Map", "Visual", "Guide"],
+                "^!": ["Point", "Exact", "Mark"],
+                "^?": ["Zone", "Findable", "Locate"],
+                "^+": ["Region", "Global", "Reach"],
+                "^-": ["Spot", "Specific", "Limit"],
+                "^=": ["Border", "Fixed", "Align"],
+                "^/": ["Remote", "Nowhere", "Leave"],
+                "*@": ["Support", "Kind", "Help"],
+                "*#": ["Revenue", "Earnings", "Build"],
+                "*:": ["Sequence", "Method", "Step"],
+                "*^": ["Growth", "Evolution", "Improve"],
+                "**": ["Project", "Job", "Execute"],
+                '*"': ["Report", "Feedback", "Speak"],
+                "*!": ["Impact", "Force", "Strike"],
+                "*?": ["Trial", "Strategy", "Test"],
+                "*+": ["Boost", "Major", "Accelerate"],
+                "*-": ["Glitch", "Minor", "Reduce"],
+                "*=": ["Balance", "Static", "Keep"],
+                "*/": ["Failure", "Useless", "Quit"],
+                '"@': ["Profile", "Named", "Label"],
+                '"#': ["Value", "Price", "Worth"],
+                '":': ["Date", "Timed", "Stamping"],
+                '"^': ["Link", "Address", "Navigate"],
+                '"*': ["Skill", "Capable", "Train"],
+                '""': ["Text", "Sentence", "Draft"],
+                '"!': ["Proof", "Evidence", "Confirm"],
+                '"?': ["Query", "Curious", "Search"],
+                '"+': ["Archive", "Complex", "Detail"],
+                '"-': ["Note", "Simple", "Briefing"],
+                '"=': ["File", "Template", "Copy"],
+                '"/': ["Secret", "Blank", "Delete"],
+                "!@": ["Judge", "Firm", "Rule"],
+                "!#": ["Metric", "Measured", "Check"],
+                "!:": ["Law", "Order", "Enforce"],
+                "!^": ["Lock", "Security", "Protect"],
+                "!*": ["Duty", "Real", "Operate"],
+                '!"': ["Key", "Core", "Define"],
+                "!!": ["Quality", "Certain", "Exist"],
+                "!?": ["Risk", "Danger", "Alert"],
+                "!+": ["Superior", "Extreme", "Exceed"],
+                "!-": ["Inferior", "Low", "Fail"],
+                "!=": ["Parity", "Verify", "Agree"],
+                "!/": ["False", "Wrong", "Deny"],
+                "?@": ["Stranger", "Social", "Encounter"],
+                "?#": ["Mystery", "Deep", "Look"],
+                "?:": ["Moment", "Pending", "Pause"],
+                "?^": ["Option", "Spaced", "Discover"],
+                "?*": ["Attempt", "New", "Try"],
+                '?"': ["Logic", "Unsure", "Solve"],
+                "?!": ["Choice", "Likely", "Decide"],
+                "??": ["Riddle", "Wonder", "Ask"],
+                "?+": ["Potential", "Massive", "Scale"],
+                "?-": ["Doubt", "Slight", "Filter"],
+                "?=": ["Even", "Same", "Par"],
+                "?/": ["Null", "Missing", "Ignore"],
+                "+@": ["Authority", "Influence", "Command"],
+                "+#": ["Warehouse", "Stock", "Store"],
+                "+:": ["Era", "Long", "Age"],
+                "+^": ["Empire", "Vast", "Cover"],
+                "+*": ["Launch", "Great", "Impact"],
+                '+"': ["Database", "Big", "Sort"],
+                "+!": ["Absolute", "True", "Validate"],
+                "+?": ["Enigma", "Heavy", "Question"],
+                "++": ["Maximum", "Total", "Fill"],
+                "+-": ["Majority", "Partial", "Split"],
+                "+=": ["Consensus", "Whole", "Sync"],
+                "+/": ["Overflow", "Excessive", "Burst"],
+                "-@": ["Child", "Junior", "Follow"],
+                "-#": ["Particle", "Tiny", "Lose"],
+                "-:": ["Second", "Short", "Snap"],
+                "-^": ["Niche", "Narrow", "Focus"],
+                "-*": ["Spark", "Small", "Stall"],
+                '-"': ["Snippet", "Clip", "Trim"],
+                "-!": ["Trivial", "Petty", "Dismiss"],
+                "-?": ["Nuance", "Vague", "Hint"],
+                "-+": ["Minority", "Gaining", "Rise"],
+                "--": ["Minimum", "Bit", "Dwindle"],
+                "-=": ["Fraction", "Part", "Slice"],
+                "-/": ["Atom", "Barely", "Fade"],
+                "=@": ["Friend", "Align", "Befriend"],
+                "=#": ["Component", "Solid", "Fit"],
+                "=:": ["Routine", "Fixed", "Timing"],
+                "=^": ["Grid", "System", "Map"],
+                "=*": ["Process", "Uniform", "Run"],
+                '="': ["Record", "Direct", "Replicate"],
+                "=!": ["Fact", "Same", "Verify"],
+                "=?": ["Parallel", "Checkable", "Compare"],
+                "=+": ["Duplicate", "More", "Double"],
+                "=-": ["Reduction", "Less", "Thin"],
+                "==": ["Identity", "Exact", "Is"],
+                "=/": ["Default", "Basic", "Start"],
+                "/@": ["Ghost", "Away", "Leave"],
+                "/#": ["Nothing", "Empty", "Clear"],
+                "/:": ["End", "Zero", "Stop"],
+                "/^": ["Void", "Distant", "Hide"],
+                "/*": ["Quit", "Broken", "Halt"],
+                '/"': ["Silence", "Blank", "Mute"],
+                "/!": ["Null", "False", "Deny"],
+                "/?": ["Unknown", "Hidden", "Lose"],
+                "/+": ["Deplete", "Missing", "Drain"],
+                "/-": ["Trace", "Scant", "Taper"],
+                "/=": ["Unaligned", "Skew", "Tilt"],
+                "//": ["Reset", "Blank", "Wipe"],
+            };
+
+            let dict = JSON.parse(localStorage.getItem("tt_v4")) || defaultDict;
+
+            function toggleQuickStart() {
+                const content = document.getElementById("quickStartContent");
+                const toggle = document.getElementById("quickStartToggle");
+
+                if (content.style.display === "none") {
+                    content.style.display = "block";
+                    toggle.textContent = "▲";
+                } else {
+                    content.style.display = "none";
+                    toggle.textContent = "▼";
+                }
+            }
+
+            function update(key, idx, val) {
+                dict[key][idx] = val;
+                localStorage.setItem("tt_v4", JSON.stringify(dict));
+            }
+
+            function resetDict() {
+                if (confirm("Reset to default dictionary?")) {
+                    localStorage.removeItem("tt_v4");
+                    location.reload();
+                }
+            }
+
+            function render() {
+                const q = document.getElementById("search").value.toLowerCase();
+                const tbody = document.getElementById("wordTable");
+                tbody.innerHTML = "";
+                Object.keys(dict)
+                    .sort()
+                    .forEach((key) => {
+                        const row = dict[key];
+                        if (
+                            key.includes(q) ||
+                            row.some((w) => w.toLowerCase().includes(q))
+                        ) {
+                            tbody.innerHTML += `<tr>
+                            <td class="sym-cell">${key}</td>
+                            <td><input class="edit-input" value="${row[0]}" onchange="update('${key}',0,this.value)"></td>
+                            <td><input class="edit-input" value="${row[1]}" onchange="update('${key}',1,this.value)"></td>
+                            <td><input class="edit-input" value="${row[2]}" onchange="update('${key}',2,this.value)"></td>
+                        </tr>`;
+                        }
+                    });
+            }
+            render();
+        </script>
+    </body>
+</html>
