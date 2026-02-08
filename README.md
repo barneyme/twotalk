@@ -14,10 +14,10 @@ Two Talk works in plain text and is designed to be shared, processed, and reread
 
 | Description | Two Talk |
 |-------------|----------|
-| Project needs more time | `^^ ** #:` |
-| Task nearing deadline | `## :! :?` |
-| Team assembling now | `@@ :*` |
-| Site far from office | `^* ^@ ^:` |
+| The project timeline needs to be extended | `^^ ** #:` |
+| The task is getting close to its deadline | `## :! :?` |
+| The team is getting together right now | `@@ :*` |
+| The construction site is a long way away from the office | `^* ^@ ^:` |
 
 ---
 
