@@ -1,382 +1,287 @@
-# TWO TALK
+# TWO TALK: CONCISE SEMANTIC SHORTHAND
 
-**Concise Semantic Notation System**
+## INTRODUCTION
+Two Talk is a concise semantic shorthand designed for succinct notetaking. Every word is exactly two characters: the first symbol represents a Subject (the noun or domain), and the second symbol represents a State (the state, quality, or action).
 
----
+## RULES
+- **Symbols:** Every word is exactly two characters. 1st symbol = Subject; 2nd symbol = State.
+- **Stacking:** Combine pairs with a dot (.) to narrow meaning (General + Specific). e.g., `#~.!*` (Fast Food).
+- **StateFlow:** Use `(` / `)` for positive/negative and `<` / `>` for past/future.
+- **Headers:** Start every note with `##` followed by the project or category name.
+- **Literals:** Use raw numbers for amounts/dates and capital initials for names. Use `:` to label a specific entity.
+- **Essence:** Capture meaning, not words. Use WHO + DOING + DETAIL structure.
+- **Breaks:** An empty line signals a new topic or shift in thought.
 
-## Introduction
+## SYMBOLS
+| Sym | Subject (1st) | State (2nd) |
+| :--- | :--- | :--- |
+| @ | Person | Social |
+| ! | Action | Active |
+| # | Object | Material |
+| ^ | Place | Spatial |
+| ~ | Time | Temporal |
+| & | Link | Logic |
+| % | Ratio | Relative |
+| : | Data | Mental |
+| ( | Benefit | Positive |
+| ) | Burden | Negative |
+| < | Origin | Previous |
+| > | Target | Future |
+| * | Focus | Vital |
+| ? | Doubt | Unknown |
+| | | Path | Fluid |
+| _ | Support | Basic |
+| + | Gain | Added |
+| - | Loss | Reduced |
+| $ | Value | Fiscal |
+| = | Fact | Stable |
 
-Two Talk is a concise notation system for capturing meaning, not sentences. It uses small, fixed symbol pairs where each pair always means the same thing, and meaning comes from explicit context and composition rather than grammar. It provides a faster, more structured alternative to prose when accuracy and brevity are essential, whether you're logging project updates, documenting technical systems, or organizing research and knowledge.
+## ESSENTIALS
+- **@@**: attendees
+- **!!**: tasks
+- **##**: agenda
+- **~~**: status
+- **::**: notes
+- ******: critical
+- **&&**: dependency
+- **%%**: budget
+- **??**: queries
+- **>>**: decisions
+- **))**: blockers
+- **?@**: who
+- **?#**: what
+- **?^**: where
+- **?~**: when
+- **?!**: how
+- **?&**: why
+- **&+**: yes
+- **&-**: no
+- **!=**: confirm
+- **&(**: true
+- **~<**: past
+- **~***: now
+- **~>**: future
+- **~$**: deadline
+- **@***: vip
+- **@&**: partner
+- **@!**: staff
+- **@$**: client
+- **!***: urgent
+- **!<**: give
+- **!>**: take
+- **!&**: decide
+- **)^**: risk
+- **)!**: fail
+- **%+**: max
+- **%-**: min
+- **%>**: more
+- **%<**: less
+- **>=**: milestone
 
-Two Talk works in plain text and is designed to be shared, processed, and reread reliably. It is deterministic: the same notation represents the same state no matter who writes it. This makes it useful across roles and environments - from project coordination to system tracking to standardized observation - wherever consistency across people, platforms, and time matters.
-
-### Examples
-
-| Description | Two Talk |
-|-------------|----------|
-| The project timeline needs to be extended | `^^ ** #:` |
-| The task is getting close to its deadline | `## :! :?` |
-| The team is getting together right now | `@@ :*` |
-| The construction site is a long way away from the office | `^* ^@ ^:` |
-
----
-
-## The 12 Symbols
-
-Master these 12 building blocks to generate any meaning in Two Talk.
-
-| Symbol | Name | Meaning |
-|--------|------|---------|
-| `@` | **PERSON** | agent, individual, people |
-| `#` | **THING** | object, resource, artifact |
-| `:` | **TIME** | when, duration, timing |
-| `^` | **PLACE** | where, space, location |
-| `*` | **ACTION** | change, effort, motion |
-| `"` | **INFO** | data, text, signal |
-| `!` | **CERTAINTY** | truth, rule, confidence |
-| `?` | **UNKNOWN** | question, doubt, possibility |
-| `+` | **LARGE** | more, greater, expanded |
-| `-` | **SMALL** | less, reduced, minor |
-| `=` | **SAME** | stable, equal, aligned |
-| `/` | **NONE** | absence, null, missing |
-
----
-
-## Rules
-
-- **Pairs:** Every word is a two-symbol pair.
-- **Spacing:** Words are separated by spaces or line breaks. The dot (`.`) never counts as spacing.
-- **Context (`**`):** Sets the current context. It applies until a new context is declared.
-- **Dialect (`=^`):** Sets a local meaning inside the current context. It applies until a new context or new dialect is set.
-- **Compounds:** Use a dot (`.`) to join pairs into a compound. Compounds read left to right.
-- **Order:** Meaning is interpreted in this order: Context > Dialect > Pair > Compound > Word sequence.
-- **Literals:** Use initials (JB, Q) for names or identifiers. Use numbers for quantities. Use ISO format for dates (YYYY-MM-DD).
-
----
-
-## Quick Start Guide
-
-Learn Two Talk in 6 steps.
-
-### 1. What is Two Talk?
-
-Two Talk is a concise semantic notation system that compresses meaning using two-symbol pairs. Each pair has exactly one golden canonical meaning. Grammatical role (object, idea, action) is not encoded - it emerges from context.
-
-By learning just 12 base symbols and how they combine, you can express nearly anything with extreme brevity.
-
-**Example:**
-
-```
-English: "The manager needs to review the budget report"
-Two Talk: :@ *" #^
-```
-
-13 words → 3 symbol pairs → **77% shorter**
-
-Same meaning. Less noise.
-
-### 2. Learn the 12 Base Symbols
-
-Each base symbol represents a semantic axis. These meanings never change.
-
-- `@` PERSON (agent, individual, people)
-- `#` THING (object, resource, artifact)
-- `:` TIME (when, duration, timing)
-- `^` PLACE (where, space, location)
-- `*` ACTION (change, effort, motion)
-- `"` INFORMATION (data, text, signal)
-- `!` CERTAINTY (truth, rule, confidence)
-- `?` UNCERTAINTY (question, doubt, possibility)
-- `+` LARGE (more, greater, expanded)
-- `-` SMALL (less, reduced, minor)
-- `=` SAME (stable, equal, aligned)
-- `/` NONE (absence, null, missing)
-
-Two Talk words are formed as: **[category] + [modifier]**
-
-Each resulting pair has one canonical meaning.
-
-### 3. The Rules
-
-- **Pairs:** Every word is a two-symbol pair.
-- **Spacing:** Words are separated by spaces or line breaks. The dot (`.`) never counts as spacing.
-- **Context (`**`):** Sets the current context. It applies until a new context is declared.
-- **Dialect (`=^`):** Sets a local meaning inside the current context. It applies until a new context or new dialect is set.
-- **Compounds:** Use a dot (`.`) to join pairs into a compound. Compounds read left to right.
-- **Order:** Meaning is interpreted in this order: Context > Dialect > Pair > Compound > Word sequence.
-- **Literals:** Use initials (JB, Q) for names or identifiers. Use numbers for quantities. Use ISO format for dates (YYYY-MM-DD).
-
-### 4. Your First Two Talk Notation
-
-**Translate:** "The team needs help"
-
-1. **Identify meaning**
-   - team → people acting together
-   - help → support
-
-2. **Choose symbol pairs**
-   - `@@` → group
-   - `*@` → support
-
-3. **Drop filler**
-   - Remove "the", "needs"
-
-**Result:** `@@ *@`
-
-### 5. Taking Meeting Notes
-
-**Original meeting dialogue (87 words):**
-
-> "We need to launch the new website by next Friday. The design team finished their work yesterday. Marketing will review the content today. The CEO wants a final demo on Thursday. Budget approval is still pending from finance."
-
-**Two Talk notes (9 symbols):**
-
-```
-** ^"
-*+ 2026-02-07
-@@ :" =*
-@" :: *"
-@+ :? *"
-#^ :?
-```
-
-**How to read:**
-
-- `** ^"` → Context: website
-- `*+ 2026-02-07` → expand / launch on Friday
-- `@@ :" =*` → design group completed yesterday
-- `@" :: *"` → marketing reviewing today
-- `@+ :? *"` → authority wants demo Thursday
-- `#^ :?` → capital approval pending
-
-**Result:** ~90% shorter, same information, easier to scan later.
-
-### 6. Real Example: Daily Standup
-
-**Before (spoken update):**
-
-> "Yesterday I completed the user authentication module and fixed three bugs in the payment system. Today I'm working on the dashboard API integration. I'm blocked on getting database credentials from DevOps."
-
-**After (Two Talk):**
-
-```
-:" #^ =*
-:" #- 3 *-
-:: ^" **
-!? #^ @^
-```
-
-**How to read:**
-
-- `:" #^ =*` → yesterday: core system completed
-- `:" #- 3 *-` → yesterday: 3 small fixes
-- `:: ^" **` → today: dashboard context
-- `!? #^ @^` → risk: blocked on infra team
-
-**Result:** Your updates are recorded clearly. You spend more time building, less time explaining.
-
-**Key idea:** Two Talk compresses meaning, not words. Canonical meaning is fixed. Context does the rest.
-
----
-
-## Top 20 Two Talk Words
-
-These 20 symbol pairs are enough to express roughly 80% of everyday notes - meetings, tasks, standups, and planning.
-
+## DICTIONARY
 | Pair | Meaning | Pair | Meaning |
-|------|---------|------|---------|
-| `**` | context | `=^` | system |
-| `@@` | group | `@+` | authority |
-| `@*` | worker | `*"` | report |
-| `*=` | maintain | `*/` | stop |
-| `*+` | expand | `::` | now |
-| `:"` | memory | `:!` | deadline |
-| `:?` | pending | `#"` | document |
-| `#^` | capital | `!!` | certainty |
-| `!?` | risk | `=*` | process |
-| `^@` | home | `/#` | nothing |
+| :--- | :--- | :--- | :--- |
+| `@@` | attendees | `@!` | staff |
+| `@#` | contact | `@^` | neighbor |
+| `@~` | colleague | `@&` | partner |
+| `@%` | crowd | `@:` | self |
+| `@(` | friend | `@)` | enemy |
+| `@<` | parent | `@>` | child |
+| `@*` | vip | `@?` | stranger |
+| `@+` | expert | `@-` | junior |
+| `@$` | client | `@=` | member |
+| `@|` | liaison | `@_` | sponsor |
+| `!@` | help | `!!` | tasks |
+| `!#` | use | `!^` | move |
+| `!~` | wait | `!&` | decide |
+| `!%` | count | `!:` | tell |
+| `!(` | play | `!)` | stop |
+| `!<` | give | `!>` | take |
+| `!*` | urgent | `!?` | search |
+| `!+` | grow | `!-` | drop |
+| `!$` | spend | `!=` | confirm |
+| `!|` | trigger | `!_` | setup |
+| `#@` | device | `#!` | tool |
+| `##` | agenda | `#^` | site |
+| `#~` | food | `#&` | machine |
+| `#%` | weight | `#:` | book |
+| `#(` | quality | `#)` | defect |
+| `#<` | source | `#>` | output |
+| `#*` | key | `#?` | stuff |
+| `#+` | heavy | `#-` | light |
+| `#$` | supply | `#=` | standard |
+| `#|` | conduit | `#_` | layer |
+| `^@` | home | `^!` | route |
+| `^#` | structure | `^^` | venue |
+| `^~` | zone | `^&` | map |
+| `^%` | area | `^:` | office |
+| `^(` | clean | `^)` | dirty |
+| `^<` | left | `^>` | right |
+| `^*` | peak | `^?` | somewhere |
+| `^+` | north | `^-` | south |
+| `^$` | region | `^=` | level |
+| `^|` | corridor | `^_` | ground |
+| `~@` | birth | `~!` | period |
+| `~#` | era | `~^` | phase |
+| `~~` | status | `~&` | schedule |
+| `~%` | age | `~:` | today |
+| `~(` | early | `~)` | late |
+| `~<` | past | `~>` | future |
+| `~*` | now | `~?` | whenever |
+| `~+` | always | `~-` | never |
+| `~$` | deadline | `~=` | recurring |
+| `~|` | rhythm | `~_` | epoch |
+| `&@` | liaison | `&!` | force |
+| `&#` | interface | `&^` | node |
+| `&~` | sequence | `&&` | dependency |
+| `&%` | scale | `&:` | code |
+| `&(` | true | `&)` | false |
+| `&<` | cause | `&>` | lead |
+| `&*` | must | `&?` | if |
+| `&+` | yes | `&-` | no |
+| `&$` | contract | `&=` | logic |
+| `&|` | protocol | `&_` | basis |
+| `%@` | share | `%!` | change |
+| `%#` | part | `%^` | limit |
+| `%~` | rate | `%&` | ratio |
+| `%%` | budget | `%:` | list |
+| `%(` | full | `%)` | empty |
+| `%<` | less | `%>` | more |
+| `%*` | all | `%?` | some |
+| `%+` | max | `%-` | min |
+| `%$` | cost | `%=` | total |
+| `%|` | flow | `%_` | threshold |
+| `:@` | insight | `:!` | know |
+| `:#` | read | `:^` | view |
+| `:~` | memory | `:&` | rule |
+| `:%` | data | `::` | notes |
+| `:(` | sad | `:)` | happy |
+| `:<` | learn | `:>` | teach |
+| `:*` | alert | `:?` | reason |
+| `:+` | smart | `:-` | dull |
+| `:$` | report | `:=` | record |
+| `:|` | feed | `:_` | core |
+| `*@` | hero | `*!` | strike |
+| `*#` | cipher | `*^` | peak |
+| `*~` | crisis | `*&` | power |
+| `*%` | spike | `*:` | genius |
+| `*(` | joy | `*)` | rage |
+| `*<` | shock | `*>` | push |
+| `**` | critical | `*?` | mystery |
+| `*+` | loud | `*-` | sharp |
+| `*$` | premium | `*=` | fixed |
+| `*|` | amplify | `*_` | keystone |
+| `_@` | ally | `_!` | setup |
+| `_#` | floor | `_^` | below |
+| `_~` | cycle | `_&` | framework |
+| `_%` | capacity | `_:` | index |
+| `_(` | support | `_)` | burden |
+| `_<` | start | `_>` | end |
+| `_*` | bedrock | `_?` | depth |
+| `_+` | platform | `_-` | undercut |
+| `_$` | reserve | `_=` | stable |
+| `_|` | moor | `__` | bottom |
+| `=@` | person | `=!` | act |
+| `=#` | thing | `=^` | place |
+| `=~` | time | `=&` | evidence |
+| `=%` | amount | `=:` | summary |
+| `=(` | correct | `=)` | wrong |
+| `=<` | before | `=>` | after |
+| `=*` | certain | `=?` | unknown |
+| `=+` | greater | `=-` | lesser |
+| `=$` | worth | `==` | truth |
+| `=|` | shift | `=_` | constant |
+| `(@` | kind | `(!` | succeed |
+| `(#` | gift | `(^` | safe |
+| `(~` | cure | `(&` | fair |
+| `(%` | gain | `(:` | wise |
+| `((` | wins | `()` | mercy |
+| `(<` | save | `(>` | free |
+| `(*` | best | `(?` | hope |
+| `(+` | pure | `(-` | easy |
+| `($` | yield | `(=` | valid |
+| `(|` | access | `(_` | shelter |
+| `)@` | cruel | `)!` | fail |
+| `)#` | flaw | `)^` | risk |
+| `)~` | pain | `)&` | bias |
+| `)%` | loss | `):` | fool |
+| `)(` | envy | `))` | blockers |
+| `)<` | trap | `)>` | harm |
+| `)*` | worst | `)?` | fear |
+| `)+` | toxic | `)-` | hard |
+| `)$` | debt | `)=` | error |
+| `)|` | bottleneck | `)_` | void |
+| `<@` | ancestor | `<!` | return |
+| `<#` | raw | `<^` | rear |
+| `<~` | legacy | `<&` | history |
+| `<%` | prior | `<:` | log |
+| `<(` | old | `<)` | dead |
+| `<<` | context | `<>` | transfer |
+| `<*` | fixed | `<?` | hidden |
+| `<+` | deep | `<-` | thin |
+| `<$` | spent | `<=` | baseline |
+| `<|` | upstream | `<_` | origin |
+| `>@` | target | `>!` | reach |
+| `>#` | build | `>^` | front |
+| `>~` | destiny | `>&` | aim |
+| `>%` | forecast | `>:` | signal |
+| `>(` | new | `>)` | obstacle |
+| `><` | flow | `>>` | decisions |
+| `>*` | bold | `>?` | dream |
+| `>+` | fast | `>-` | slow |
+| `>$` | income | `>=` | milestone |
+| `>|` | outflow | `>_` | foothold |
+| `?@` | who | `?!` | how |
+| `?#` | what | `?^` | where |
+| `?~` | when | `?&` | why |
+| `?%` | quantity | `?:` | test |
+| `?(` | maybe | `?)` | doubt |
+| `?<` | was | `?>` | will |
+| `?*` | danger | `??` | queries |
+| `?+` | find | `?-` | lose |
+| `?$` | estimate | `?=` | check |
+| `?|` | hazy | `?_` | abyss |
+| `|@` | network | `|!` | stream |
+| `|#` | pipe | `|^` | bridge |
+| `|~` | current | `|&` | link |
+| `|%` | throughput | `|:` | stream |
+| `|(` | clear | `|)` | blocked |
+| `|<` | input | `|>` | forward |
+| `|*` | surge | `|?` | gap |
+| `|+` | connect | `|-` | disconnect |
+| `|$` | bandwidth | `|=` | channel |
+| `||` | pipeline | `|_` | anchor |
+| `+@` | champion | `+!` | boost |
+| `+#` | bulk | `+^` | city |
+| `+~` | life | `+&` | firm |
+| `+%` | rich | `+:` | expand |
+| `+(` | holy | `+)` | pride |
+| `+<` | elder | `+>` | next |
+| `+*` | king | `+?` | vast |
+| `++` | approved | `+-` | wide |
+| `+$` | fund | `+=` | upgrade |
+| `+|` | momentum | `+_` | frame |
+| `-@` | outcast | `-!` | weak |
+| `-#` | dust | `-^` | cell |
+| `-~` | brief | `-&` | soft |
+| `-%` | poor | `-:` | minor |
+| `-(` | mild | `-)` | ugly |
+| `-<` | last | `->` | behind |
+| `-*` | tiny | `-?` | slim |
+| `-+` | narrow | `--` | tabled |
+| `-$` | cut | `-=` | small |
+| `-|` | exposure | `-_` | erosion |
+| `$@` | investor | `$!` | pay |
+| `$#` | asset | `$^` | market |
+| `$~` | cashflow | `$&` | deal |
+| `$%` | tax | `$:` | invoice |
+| `$(` | margin | `$)` | deficit |
+| `$<` | refund | `$>` | charge |
+| `$*` | price | `$?` | quote |
+| `$+` | raise | `$-` | slash |
+| `$$` | financials | `$=` | balance |
+| `$|` | transfer | `$_` | capital |
+
 
 ---
-
-## Dictionary
-
-Each symbol pair has one golden canonical meaning. Interpretation (object, idea, action) emerges from context and dialect.
-
-### ! - CERTAINTY
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `!!` | certainty |
-| `!+` | absolute |
-| `!-` | failure |
-| `!=` | verify |
-| `!/` | false |
-| `!:` | rule |
-| `!?` | risk |
-| `!@` | judgment |
-| `!^` | secure |
-| `!"` | evidence |
-| `!#` | measure |
-| `!*` | duty |
-
-### " - INFORMATION
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `""` | text |
-| `"+` | complex |
-| `"-` | brief |
-| `"=` | template |
-| `"/` | hidden |
-| `"!` | proof |
-| `"?` | query |
-| `":` | log |
-| `"^` | link |
-| `"@` | name |
-| `"#` | number |
-| `"*` | instruction |
-
-### # - THING
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `##` | unit |
-| `#+` | bulk |
-| `#-` | scrap |
-| `#=` | standard |
-| `#/` | empty |
-| `#!` | value |
-| `#?` | unknown |
-| `#:` | structure |
-| `#*` | tool |
-| `#"` | data |
-| `#@` | asset |
-| `#^` | resource |
-
-### * - ACTION
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `**` | situation |
-| `*+` | expand |
-| `*-` | reduce |
-| `*=` | maintain |
-| `*/` | stop |
-| `*!` | impact |
-| `*?` | explore |
-| `*:` | sequence |
-| `*^` | grow |
-| `*"` | signal |
-| `*@` | support |
-| `*#` | build |
-
-### / - NONE
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `//` | reset |
-| `/+` | deplete |
-| `/-` | trace |
-| `/=` | skew |
-| `/!` | deny |
-| `/:` | end |
-| `/?` | hidden |
-| `/@` | departed |
-| `/^` | void |
-| `/"` | silence |
-| `/#` | nothing |
-| `/*` | broken |
-
-### : - TIME
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `::` | now |
-| `:+` | future |
-| `:-` | instant |
-| `:=` | duration |
-| `:/` | never |
-| `:!` | deadline |
-| `:?` | pending |
-| `::` | now |
-| `:*` | event |
-| `:"` | record |
-| `:@` | schedule |
-| `:^` | cycle |
-| `:#` | history |
-
-### = - STABILITY
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `==` | identity |
-| `=+` | duplicate |
-| `=-` | reduce |
-| `=/` | default |
-| `=!` | fact |
-| `=:` | routine |
-| `=@` | align |
-| `=#` | component |
-| `=*` | process |
-| `="` | copy |
-| `=?` | alternate |
-| `=^` | system |
-
-### ? - UNCERTAINTY
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `??` | question |
-| `?+` | potential |
-| `?-` | doubt |
-| `?=` | compare |
-| `?/` | ignore |
-| `?!` | choice |
-| `?:` | pause |
-| `?@` | stranger |
-| `?^` | option |
-| `?"` | logic |
-| `?#` | mystery |
-| `?*` | attempt |
-
-### @ - PERSON
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `@@` | group |
-| `@+` | authority |
-| `@-` | junior |
-| `@=` | peer |
-| `@/` | absent |
-| `@!` | identity |
-| `@?` | unknown |
-| `@:` | availability |
-| `@*` | worker |
-| `@"` | source |
-| `@#` | body |
-| `@^` | remote |
-
-### ^ - PLACE
-
-| Pair | Canonical Meaning |
-|------|-------------------|
-| `^^` | space |
-| `^+` | region |
-| `^-` | spot |
-| `^=` | boundary |
-| `^/` | distant |
-| `^!` | point |
-| `^?` | unknown |
-| `^:` | distance |
-| `^*` | target |
-| `^"` | map |
-| `^#` | base |
-| `^@` | home |
-
----
-
-## Credits
-
-Two Talk was created by [Barney Matthews](https://barney.me).
-
-Learn more at [twotalk.org](https://twotalk.org).
+TWO TALK // v1.2 // BARNEY MATTHEWS
