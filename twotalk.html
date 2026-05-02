@@ -4,1290 +4,2610 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Two Talk</title>
-
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400;700;800&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="icon"
-            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='70' font-weight='bold' font-family='monospace' x='50%' text-anchor='middle' fill='%23e67e22'>TT</text></svg>"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23e04e00'/><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='white' stop-opacity='0.18'/><stop offset='0.6' stop-color='white' stop-opacity='0'/></linearGradient></defs><text y='72' font-size='52' font-weight='900' font-family='Arial Black,sans-serif' x='50' text-anchor='middle' fill='white' letter-spacing='-3'>TT</text></svg>"
         />
-
         <style>
-        /* ============================
-           ROOT VARIABLES
-           ============================ */
-        :root {
-          --dark: #1a2a3a;
-          --accent: #e67e22;
-          --light: #f4f7f6;
-          --border: #d1d8e0;
-          --accent-light: #fef5ed;
-        }
-
-        /* ============================
-           BASE RESET & TYPOGRAPHY
-           ============================ */
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
-
-        html, body {
-          width: 100%;
-          overflow-x: hidden;
-        }
-
-        body {
-          font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-          background: var(--light);
-          color: #333;
-          line-height: 1.6;
-          font-size: clamp(13px, 1.2vw, 15px);
-        }
-
-        /* ============================
-           HEADER / HERO
-           ============================ */
-        header.hero {
-          background: var(--dark);
-          color: #fff;
-          padding: 3rem 1rem;
-          text-align: center;
-          border-bottom: 5px solid var(--accent);
-        }
-
-        header.hero h1 {
-          letter-spacing: 12px;
-          font-size: 2.5rem;
-          margin-bottom: 0.5rem;
-        }
-
-        header.hero p {
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          opacity: 0.9;
-          font-size: 0.8rem;
-        }
-
-        /* ============================
-           LAYOUT
-           ============================ */
-        .container {
-          max-width: 1200px;
-          margin: 1.5rem auto;
-          padding: 0 1rem;
-          display: grid;
-          gap: 1.5rem;
-        }
-
-        @media (min-width: 1400px) {
-          .container {
-            max-width: 1300px;
-          }
-        }
-
-        /* ============================
-           SECTIONS
-           ============================ */
-        section {
-          background: #fff;
-          padding: 1.5rem;
-          border-radius: 8px;
-          border: 1px solid var(--border);
-          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-          font-size: 1rem;
-          text-transform: uppercase;
-          border-left: 4px solid var(--accent);
-          padding-left: 12px;
-          margin-bottom: 1.2rem;
-          letter-spacing: 1.5px;
-          font-weight: 800;
-        }
-
-        /* ============================
-           INTRO / EXAMPLES
-           ============================ */
-        .intro-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-        }
-
-        .rule-list {
-          list-style-type: none; /* This removes the bullets */
-        }
-
-        .rule-list li {
-          margin-bottom: 8px;
-          padding-left: 15px;
-          border-left: 2px solid #eee;
-        }
-
-        .ex-item {
-          display: flex;
-          justify-content: space-between;
-          padding: 5px 0;
-          border-bottom: 1px dashed #eee;
-          font-family: monospace;
-        }
-
-        .ex-text {
-          font-family: inherit;
-          color: #666;
-          font-size: 0.85rem;
-        }
-
-        /* ============================
-           SYMBOL LEGEND
-           ============================ */
-        .sym-legend {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-          gap: 10px;
-          text-align: center;
-        }
-
-        .sym-box {
-          padding: 10px;
-          background: #f9f9f9;
-          border: 1px solid #eee;
-          border-radius: 6px;
-          font-size: 0.75rem;
-        }
-
-        .sym-char {
-          font-family: monospace;
-          font-weight: bold;
-          color: var(--accent);
-          font-size: 1.4rem;
-          display: block;
-        }
-
-        /* ============================
-           TOP 20 GRID
-           ============================ */
-        .core-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 12px;
-        }
-
-        .core-item {
-          background: #fff;
-          padding: 10px 15px;
-          border-radius: 6px;
-          border: 1px solid var(--border);
-          display: flex;
-          align-items: center;
-          font-size: 0.9rem;
-        }
-
-        .core-badge {
-          background: var(--dark);
-          color: #fff;
-          font-family: monospace;
-          font-weight: bold;
-          padding: 4px 8px;
-          border-radius: 4px;
-          margin-right: 12px;
-          min-width: 42px;
-          text-align: center;
-          font-size: 1.1rem;
-        }
-
-        /* ============================
-           QUICK START STYLING
-           ============================ */
-        #quickStartContent {
-          line-height: 1.6;
-        }
-
-        #quickStartContent h3 {
-          font-size: 0.9rem;
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          color: var(--accent);
-          margin: 1.5rem 0 0.75rem;
-        }
-
-        #quickStartContent h4 {
-          font-size: 0.85rem;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          color: var(--dark);
-          margin: 1.25rem 0 0.5rem;
-        }
-
-        #quickStartContent p {
-          font-size: 0.9rem;
-          color: #444;
-          margin-bottom: 0.75rem;
-        }
-
-        #quickStartContent pre {
-          background: #f9f9f9;
-          border: 1px solid var(--border);
-          border-radius: 6px;
-          padding: 0.75rem 1rem;
-          font-size: 0.85rem;
-          overflow-x: auto;
-          margin: 0.75rem 0 1rem;
-        }
-
-        #quickStartContent code {
-          background: var(--accent-light);
-          padding: 2px 4px;
-          border-radius: 4px;
-          font-size: 0.85em;
-        }
-
-        #quickStartContent blockquote {
-          border-left: 4px solid var(--accent);
-          padding-left: 1rem;
-          margin: 0.75rem 0 1rem;
-          color: #555;
-          font-style: italic;
-        }
-
-        #quickStartContent ul {
-          margin: 0.5rem 0 1rem 1.25rem;
-        }
-
-        #quickStartContent li {
-          margin-bottom: 0.4rem;
-          font-size: 0.9rem;
-        }
-
-        /* ============================
-           DICTIONARY BAR & TABLE
-           ============================ */
-        .bar {
-          position: sticky;
-          top: 0;
-          background: var(--light);
-          padding: 1rem;
-          z-index: 1000;
-          display: flex;
-          gap: 10px;
-        }
-
-        input#search {
-          width: 60%;
-          padding: 0.9rem;
-          border: 2px solid var(--border);
-          border-radius: 8px;
-          font-size: 1rem;
-        }
-
-        .btn {
-          width: 20%;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          font-weight: bold;
-          font-size: 0.85rem;
-        }
-
-        .btn-print {
-          background: var(--dark);
-          color: #fff;
-        }
-
-        .btn-reset {
-          background: #c0392b;
-          color: #fff;
-        }
-
-        .table-container {
-          overflow-x: auto;
-        }
-
-        table {
-          width: 100%;
-          border-collapse: collapse;
-        }
-
-        th {
-          background: #f8f9fa;
-          text-align: left;
-          padding: 12px;
-          font-size: 0.7rem;
-          color: #666;
-          border-bottom: 2px solid #eee;
-        }
-
-        .sym-cell {
-          font-family: monospace;
-          font-weight: bold;
-          color: var(--accent);
-          width: 85px;
-          font-size: 1.25rem;
-          text-align: center;
-          background: var(--accent-light);
-        }
-
-        .edit-input {
-          width: 100%;
-          border: 1px solid transparent;
-          padding: 8px;
-          border-radius: 6px;
-          font-size: 0.9rem;
-          background: transparent;
-        }
-
-        /* ============================
-           FOOTER
-           ============================ */
-        .site-footer {
-          margin-top: 3rem;
-          padding: 1.5rem 1rem;
-          text-align: center;
-          font-size: 0.8rem;
-          color: #666;
-          border-top: 1px solid var(--border);
-          background: #fafafa;
-        }
-
-        .site-footer a {
-          color: var(--accent);
-          text-decoration: none;
-          font-weight: 600;
-        }
-
-        .site-footer a:hover {
-          text-decoration: underline;
-        }
-
-        /* ============================
-           RESPONSIVE — SMALL SCREENS
-           ============================ */
-        @media (max-width: 768px) {
-
-          header.hero h1 {
-            letter-spacing: 6px;
-            font-size: 1.8rem;
-          }
-
-          header.hero p {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-          }
-
-          section {
-            padding: 1rem;
-          }
-
-          .intro-grid {
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-          }
-
-          .ex-item {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 4px;
-          }
-
-          .bar {
-            flex-direction: column;
-          }
-
-          input#search,
-          .btn {
-            width: 100%;
-          }
-
-          .core-grid {
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-          }
-
-          .core-item {
-            font-size: 0.85rem;
-            padding: 8px 10px;
-          }
-
-          .core-badge {
-            font-size: 1rem;
-            min-width: 36px;
-            margin-right: 8px;
-          }
-
-          table {
-            font-size: 0.8rem;
-          }
-
-          .sym-cell {
-            width: 60px;
-            font-size: 1rem;
-          }
-
-          .edit-input {
-            font-size: 0.8rem;
-          }
-        }
-
-        /* ============================
-           RESPONSIVE — VERY SMALL
-           ============================ */
-        @media (max-width: 480px) {
-          .site-footer {
-            font-size: 0.75rem;
-            padding: 1rem 0.75rem;
-          }
-        }
-
-        /* ============================
-           PRINT
-           ============================ */
-        @media print {
-          .bar,
-          #quickStartToggle,
-          .btn-reset {
-            display: none !important;
-          }
-
-          .container {
-            display: block !important;
-          }
-
-          section {
-            page-break-inside: avoid;
-          }
-
-          #quickStartContent {
-            display: block !important;
-          }
-
-          .site-footer {
-            display: block !important;
-            font-size: 0.7rem;
-            color: #444;
-          }
-        }
-        /* Symbol Legend Styling */
-        .symbol-legend-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .symbol-grid {
-            display: grid;
-            /* Fits as many as possible (min 180px width) and fills the row */
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-        }
-
-        .symbol-card {
-            display: flex;
-            align-items: center;
-            background: var(--light);
-            padding: 1rem;
-            border-radius: 6px;
-            border: 1px solid transparent;
-            transition: all 0.2s ease;
-        }
-
-        .symbol-card:hover {
-            border-color: var(--accent);
-            background: var(--accent-light);
-            transform: translateY(-2px);
-        }
-
-        .symbol-icon {
-            font-family: monospace;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin-right: 1rem;
-            min-width: 30px;
-            text-align: center;
-        }
-
-        .symbol-info strong {
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            color: var(--dark);
-        }
-
-        .symbol-info small {
-            font-size: 0.75rem;
-            color: #777;
-            display: block;
-            line-height: 1.2;
-        }
-
-        /* Mobile Tweak */
-        @media (max-width: 480px) {
-            .symbol-grid {
-                grid-template-columns: 1fr 1fr; /* Two columns on small phones */
-            }
-            .symbol-legend-container {
-                padding: 1rem;
-            }
-        }
-        .btn-small {
-            background: #576574;
-            color: white;
-            font-size: 0.75rem;
-            padding: 5px 10px;
-            width: auto; /* Overrides your 20% width */
-            min-width: 80px;
-        }
-
-        .btn-small:hover {
-            background: var(--dark);
-        }
-        </style>
-
-    </head>
-
-    <body>
-        <header class="hero">
-            <h1>TWO TALK</h1>
-            <p>Concise Semantic Notation System</p>
-        </header>
-
-        <div class="container">
-            <!-- INTRODUCTION -->
-            <section>
-                <h2>Introduction</h2>
-                <p
-                    style="
-                        margin-bottom: 1.5rem;
-                        color: #444;
-                        font-size: 0.95rem;
-                    "
-                >
-                    Two Talk is a concise notation system for capturing meaning, not sentences. It uses small, fixed symbol pairs where each pair always means the same thing, and meaning comes from explicit context and composition rather than grammar. It provides a faster, more structured alternative to prose when accuracy and brevity are essential, whether you’re logging project updates, documenting technical systems, or organizing research and knowledge.
-                </p>
-
-                <p
-                    style="
-                        margin-bottom: 1.5rem;
-                        color: #444;
-                        font-size: 0.95rem;
-                    "
-                >
-                    Two Talk works in plain text and is designed to be shared, processed, and reread reliably. It is deterministic: the same notation represents the same state no matter who writes it. This makes it useful across roles and environments - from project coordination to system tracking to standardized observation - wherever consistency across people, platforms, and time matters.
-                </p>
-
-
-                <h3
-                    style="
-                        font-size: 0.8rem;
-                        color: var(--accent);
-                        margin-bottom: 10px;
-                    "
-                >
-                    EXAMPLES
-                </h3>
-                <div class="ex-item">
-                    <span class="ex-text">Project needs more time:</span
-                    ><span>^^ ** #:</span>
-                </div>
-                <div class="ex-item">
-                    <span class="ex-text">Task nearing deadline:</span
-                    ><span>## :! :?</span>
-                </div>
-                <div class="ex-item">
-                    <span class="ex-text">Team assembling now:</span
-                    ><span>@@ :*</span>
-                </div>
-                <div class="ex-item">
-                    <span class="ex-text">Site far from office:</span
-                    ><span>^* ^@ ^:</span>
-                </div>
-            </section>
-            <section class="symbol-legend-container">
-                <h2>The 12 Symbols</h2>
-                <p style="margin-bottom: 1.5rem; color: #666;">Master these 12 building blocks to generate any meaning in Two Talk.</p>
-
-                <div class="symbol-grid">
-                    <div class="symbol-card">
-                        <span class="symbol-icon">@</span>
-                        <div class="symbol-info"><strong>PERSON</strong><br><small>agent, individual, people</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">#</span>
-                        <div class="symbol-info"><strong>THING</strong><br><small>object, resource, artifact</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">:</span>
-                        <div class="symbol-info"><strong>TIME</strong><br><small>when, duration, timing</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">^</span>
-                        <div class="symbol-info"><strong>PLACE</strong><br><small>where, space, location</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">*</span>
-                        <div class="symbol-info"><strong>ACTION</strong><br><small>change, effort, motion</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">"</span>
-                        <div class="symbol-info"><strong>INFO</strong><br><small>data, text, signal</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">!</span>
-                        <div class="symbol-info"><strong>CERTAINTY</strong><br><small>truth, rule, confidence</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">?</span>
-                        <div class="symbol-info"><strong>UNKNOWN</strong><br><small>question, doubt, possibility</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">+</span>
-                        <div class="symbol-info"><strong>LARGE</strong><br><small>more, greater, expanded</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">-</span>
-                        <div class="symbol-info"><strong>SMALL</strong><br><small>less, reduced, minor</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">=</span>
-                        <div class="symbol-info"><strong>SAME</strong><br><small>stable, equal, aligned</small></div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-icon">/</span>
-                        <div class="symbol-info"><strong>NONE</strong><br><small>absence, null, missing</small></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- RULES SECTION -->
-            <section>
-                <h2>Rules</h2>
-                <ul class="rule-list">
-                    <li>
-                        <strong>Pairs:</strong> Every word is a two‑symbol pair.
-                    </li>
-                    <li>
-                        <strong>Spacing:</strong> Words are separated by spaces or line breaks. The dot (.) never counts as spacing.
-                    </li>
-                    <li>
-                        <strong>Context (**):</strong> Sets the current context. It applies until a new context is declared.
-                    </li>
-                    <li>
-                        <strong>Dialect (=^):</strong> sets a local meaning inside the current context. It applies until a new context or new dialect is set.
-                    </li>
-                    <li>
-                        <strong>Compounds:</strong> Use a dot (.) to join pairs into a compound. Compounds read left to right.
-                    </li>
-                    <li>
-                        <strong>Order:</strong> Meaning is interpreted in this order: Context > Dialect > Pair > Compound > Word sequence.
-                    </li>
-                    <li>
-                        <strong>Literals:</strong> Use initials (JB, Q) for names or identifiers. Use numbers for quantities. Use ISO format for dates (YYYY‑MM‑DD).
-                    </li>
-                </ul>
-            </section>
-
-            <!-- QUICK START GUIDE (FULL) -->
-            <section
-                style="
-                    background: linear-gradient(135deg, #fef5ed 0%, #fff 100%);
-                    border-left: 5px solid var(--accent);
-                "
-            >
-                <div
-                    style="
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        cursor: pointer;
-                    "
-                    onclick="toggleQuickStart()"
-                >
-                    <h2 style="color: var(--accent); margin: 0">
-                        Quick Start Guide
-                    </h2>
-                    <span
-                        id="quickStartToggle"
-                        style="font-size: 1.5rem; color: var(--accent)"
-                        >▼</span
-                    >
-                </div>
-
-                <div
-                    id="quickStartContent"
-                    style="display: none; margin-top: 1.5rem"
-                >
-                    <div class="quickstart-body">
-
-                    <p><strong>Learn Two Talk in 6 steps.</strong></p>
-
-                    <h4>1. What is Two Talk?</h4>
-                    <p>
-                        Two Talk is a concise semantic notation system that
-                        compresses meaning using
-                        <strong>two-symbol pairs</strong>. Each pair has exactly
-                        <strong>one golden canonical meaning</strong>.
-                        Grammatical role (object, idea, action) is not encoded -
-                        it emerges from context.
-                    </p>
-
-                    <p>
-                        By learning just <strong>12 base symbols</strong> and
-                        how they combine, you can express nearly anything with
-                        extreme brevity.
-                    </p>
-
-                    <p><strong>English</strong></p>
-                    <blockquote>
-                        “The manager needs to review the budget report”
-                    </blockquote>
-
-                    <p><strong>Two Talk</strong></p>
-                    <pre>
-:@ *" #^
-</pre
-                    >
-
-                    <p>
-                        13 words → 3 symbol pairs → <strong>77% shorter</strong
-                        ><br />
-                        Same meaning. Less noise.
-                    </p>
-
-                    <hr />
-
-                    <h4>2. Learn the 12 base symbols</h4>
-                    <p>
-                        Each base symbol represents a
-                        <strong>semantic axis</strong>. These meanings never
-                        change.
-                    </p>
-
-                    <pre>
-@  PERSON        (agent, individual, people)
-#  THING         (object, resource, artifact)
-:  TIME          (when, duration, timing)
-^  PLACE         (where, space, location)
-*  ACTION        (change, effort, motion)
-"  INFORMATION   (data, text, signal)
-!  CERTAINTY     (truth, rule, confidence)
-?  UNCERTAINTY   (question, doubt, possibility)
-+  LARGE         (more, greater, expanded)
--  SMALL         (less, reduced, minor)
-=  SAME          (stable, equal, aligned)
-/  NONE          (absence, null, missing)
-</pre
-                    >
-
-                    <p>Two Talk words are formed as:</p>
-
-                    <pre>
-[category] + [modifier]
-</pre
-                    >
-
-                    <p>Each resulting pair has one canonical meaning.</p>
-
-                    <hr />
-
-                    <h4>3. The Rules</h4>
-                    <ul class="rule-list">
-                        <li><strong>Pairs:</strong> Every word is a two‑symbol pair.</li>
-                        <li><strong>Spacing:</strong> Words are separated by spaces or line breaks. The dot (.) never counts as spacing.</li>
-                        <li><strong>Context (**):</strong> Sets the current context. It applies until a new context is declared.</li>
-                        <li><strong>Dialect (=^):</strong> Sets a local meaning inside the current context. It applies until a new context or new dialect is set.</li>
-                        <li><strong>Compounds:</strong> Use a dot (.) to join pairs into a compound. Compounds read left to right.</li>
-                        <li><strong>Order:</strong> Meaning is interpreted in this order: Context &gt; Dialect &gt; Pair &gt; Compound &gt; Word sequence.</li>
-                        <li><strong>Literals:</strong> Use initials (JB, Q) for names or identifiers. Use numbers for quantities. Use numbers for quantities. Use ISO format for dates (YYYY‑MM‑DD).</li>
-                    </ul>
-
-                    <hr />
-
-                    <h4>4. Your first Two Talk notation</h4>
-                    <p><strong>Translate:</strong> “The team needs help”</p>
-
-                    <p><strong>Identify meaning</strong></p>
-                    <ul>
-                        <li>team → people acting together</li>
-                        <li>help → support</li>
-                    </ul>
-
-                    <p><strong>Choose symbol pairs</strong></p>
-                    <ul>
-                        <li><code>@@</code> → group</li>
-                        <li><code>*@</code> → support</li>
-                    </ul>
-
-                    <p><strong>Drop filler</strong></p>
-                    <p>Remove “the”, “needs”</p>
-
-                    <p><strong>Result</strong></p>
-                    <pre>
-@@ *@
-</pre
-                    >
-
-                    <hr />
-
-                    <h4>5. Taking meeting notes</h4>
-                    <p><strong>Original meeting dialogue (87 words)</strong></p>
-                    <blockquote>
-                        “We need to launch the new website by next Friday. The
-                        design team finished their work yesterday. Marketing
-                        will review the content today. The CEO wants a final
-                        demo on Thursday. Budget approval is still pending from
-                        finance.”
-                    </blockquote>
-
-                    <p><strong>Two Talk notes (9 symbols)</strong></p>
-                    <pre>
-** ^"
-*+ 2026-02-07
-@@ :" =*
-@" :: *"
-@+ :? *"
-#^ :?
-</pre
-                    >
-
-                    <p><strong>How to read</strong></p>
-                    <ul>
-                        <li><code>** ^"</code> → Context: website</li>
-                        <li>
-                            <code>*+ 2026-02-07</code> → expand / launch on
-                            Friday
-                        </li>
-                        <li>
-                            <code>@@ :" =*</code> → design group completed
-                            yesterday
-                        </li>
-                        <li>
-                            <code>@" :: *"</code> → marketing reviewing today
-                        </li>
-                        <li>
-                            <code>@+ :? *"</code> → authority wants demo
-                            Thursday
-                        </li>
-                        <li><code>#^ :?</code> → capital approval pending</li>
-                    </ul>
-
-                    <p>
-                        <strong>Result:</strong> ~90% shorter, same information,
-                        easier to scan later.
-                    </p>
-
-                    <hr />
-
-                    <h4>6. Real example: daily standup</h4>
-
-                    <p><strong>Before (spoken update)</strong></p>
-                    <blockquote>
-                        “Yesterday I completed the user authentication module
-                        and fixed three bugs in the payment system. Today I'm
-                        working on the dashboard API integration. I'm blocked on
-                        getting database credentials from DevOps.”
-                    </blockquote>
-
-                    <p><strong>After (Two Talk)</strong></p>
-                    <pre>
-:" #^ =*
-:" #- 3 *-
-:: ^" **
-!? #^ @^
-</pre
-                    >
-
-                    <p><strong>How to read</strong></p>
-                    <ul>
-                        <li>
-                            <code>:" #^ =*</code> → yesterday: core system
-                            completed
-                        </li>
-                        <li>
-                            <code>:" #- 3 *-</code> → yesterday: 3 small fixes
-                        </li>
-                        <li>
-                            <code>:: ^" **</code> → today: dashboard context
-                        </li>
-                        <li>
-                            <code>!? #^ @^</code> → risk: blocked on infra team
-                        </li>
-                    </ul>
-
-                    <p>
-                        <strong>Result:</strong> Your updates are recorded
-                        clearly. You spend more time building, less time
-                        explaining.
-                    </p>
-
-                    <hr />
-
-                    <p>
-                        <strong>Key idea:</strong><br />
-                        Two Talk compresses meaning, not words. Canonical
-                        meaning is fixed. Context does the rest.
-                    </p>
-                </div>
-            </section>
-
-            <!-- TOP 20 -->
-            <section>
-              <h2>Top 20 Two Talk Words</h2>
-              <p>
-                These 20 symbol pairs are enough to express roughly
-                <strong>80% of everyday notes</strong> - meetings, tasks, standups, and planning.
-              </p>
-
-              <div class="core-grid">
-                <div class="core-item"><span class="core-badge">**</span>context</div>
-                <div class="core-item"><span class="core-badge">=^</span>system</div>
-
-                <div class="core-item"><span class="core-badge">@@</span>group</div>
-                <div class="core-item"><span class="core-badge">@+</span>authority</div>
-                <div class="core-item"><span class="core-badge">@*</span>worker</div>
-
-                <div class="core-item"><span class="core-badge">*"</span>report</div>
-                <div class="core-item"><span class="core-badge">*=</span>maintain</div>
-                <div class="core-item"><span class="core-badge">*/</span>stop</div>
-                <div class="core-item"><span class="core-badge">*+</span>expand</div>
-
-                <div class="core-item"><span class="core-badge">::</span>now</div>
-                <div class="core-item"><span class="core-badge">:"</span>memory</div>
-                <div class="core-item"><span class="core-badge">:!</span>deadline</div>
-                <div class="core-item"><span class="core-badge">:?</span>pending</div>
-
-                <div class="core-item"><span class="core-badge">#"</span>document</div>
-                <div class="core-item"><span class="core-badge">#^</span>capital</div>
-
-                <div class="core-item"><span class="core-badge">!!</span>certainty</div>
-                <div class="core-item"><span class="core-badge">!?</span>risk</div>
-
-                <div class="core-item"><span class="core-badge">=*</span>process</div>
-                <div class="core-item"><span class="core-badge">^@</span>home</div>
-                <div class="core-item"><span class="core-badge">/#</span>nothing</div>
-              </div>
-            </section>
-
-            <!-- CANONICAL DICTIONARY -->
-            <section>
-                <h2>Dictionary</h2>
-
-                <p style="font-size: 0.9rem; color: #555; margin-bottom: 1rem">
-                    Each symbol pair has one golden canonical meaning.
-                    Interpretation (object, idea, action) emerges from context
-                    and dialect. Add your own context meanings below. These are included when you print the guide.
-                </p>
-
-                <div class="bar">
-                    <input type="text" id="search" placeholder="Search symbols or meanings..." onkeyup="render()">
-                    <button class="btn btn-print" onclick="window.print()">Print</button>
-                    <button class="btn btn-reset" onclick="resetDict()">Reset</button>
-
-                    <div class="action-group" style="display: flex; gap: 5px; margin-left: auto;">
-                        <button class="btn btn-small" onclick="exportToTxt()" title="Export to .txt">↑ Export</button>
-                        <button class="btn btn-small" onclick="document.getElementById('importFile').click()" title="Import from .txt">↓ Import</button>
-                        <input type="file" id="importFile" style="display:none" onchange="importFromTxt(event)">
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Pair</th>
-                                <th>Canonical meaning</th>
-                                <th>Context meaning</th>
-                            </tr>
-                        </thead>
-                        <tbody id="wordTable"></tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-        <!-- end container -->
-
-        <script>
-            /*
-  FULL CANONICAL DICTIONARY
-  One-word golden canonical meaning per pair
-*/
-
-            const defaultDict = {
-              /* @ - PERSON */
-              "@@": ["group", ""],
-              "@+": ["authority", ""],
-              "@*": ["worker", ""],
-              "@=": ["peer", ""],
-              "@-": ["junior", ""],
-              "@/": ["absent", ""],
-              "@!": ["identity", ""],
-              "@?": ["unknown", ""],
-              "@:": ["availability", ""],
-              "@^": ["remote", ""],
-              '@"': ["source", ""],
-              "@#": ["body", ""],
-
-              /* # - OBJECT */
-              "##": ["unit", ""],
-              "#+": ["bulk", ""],
-              "#*": ["tool", ""],
-              "#=": ["standard", ""],
-              "#-": ["scrap", ""],
-              "#/": ["empty", ""],
-              "#!": ["value", ""],
-              "#?": ["unknown", ""],
-              "#:": ["structure", ""],
-              "#^": ["resource", ""],
-              '#"': ["data", ""],        // CHANGED from "record"
-              "#@": ["asset", ""],
-
-              /* : - TIME */
-              "::": ["now", ""],
-              ":+": ["future", ""],
-              ":-": ["instant", ""],
-              ":=": ["duration", ""],
-              ":/": ["never", ""],
-              ":!": ["deadline", ""],
-              ":?": ["pending", ""],
-              ':"': ["record", ""],      // KEPT (most natural for time)
-              ":#": ["history", ""],
-              ":*": ["event", ""],
-              ":^": ["cycle", ""],
-              ":@": ["schedule", ""],
-
-              /* ^ - PLACE */
-              "^^": ["space", ""],
-              "^+": ["region", ""],
-              "^-": ["spot", ""],
-              "^=": ["boundary", ""],
-              "^/": ["distant", ""],     // CHANGED from "remote"
-              "^!": ["point", ""],
-              "^?": ["unknown", ""],
-              "^:": ["distance", ""],
-              "^*": ["target", ""],
-              '^"': ["map", ""],
-              "^#": ["base", ""],
-              "^@": ["home", ""],
-
-              /* * - ACTION */
-              "**": ["situation", ""],   // CHANGED from "context"
-              "*+": ["expand", ""],
-              "*-": ["reduce", ""],
-              "*=": ["maintain", ""],
-              "*/": ["stop", ""],
-              "*!": ["impact", ""],
-              "*?": ["explore", ""],
-              "*:": ["sequence", ""],
-              "*^": ["grow", ""],
-              '*"': ["signal", ""],      // CHANGED from "transmission"
-              "*@": ["support", ""],
-              "*#": ["build", ""],
-
-              /* " - INFORMATION */
-              '""': ["text", ""],
-              '"+': ["complex", ""],
-              '"-': ["brief", ""],
-              '"=': ["template", ""],
-              '"/': ["hidden", ""],
-              '"!': ["proof", ""],
-              '"?': ["query", ""],
-              '":': ["log", ""],         // CHANGED from "record"
-              '"^': ["link", ""],
-              '"@': ["name", ""],
-              '"#': ["number", ""],      // CHANGED from "value"
-              '"*': ["instruction", ""],
-
-              /* ! - CERTAINTY */
-              "!!": ["certainty", ""],
-              "!+": ["absolute", ""],
-              "!-": ["failure", ""],
-              "!=": ["verify", ""],
-              "!/": ["false", ""],
-              "!:": ["rule", ""],
-              "!?": ["risk", ""],
-              "!@": ["judgment", ""],
-              "!^": ["secure", ""],
-              '!"': ["evidence", ""],
-              "!#": ["measure", ""],
-              "!*": ["duty", ""],
-
-              /* ? - UNCERTAINTY */
-              "??": ["question", ""],
-              "?+": ["potential", ""],
-              "?-": ["doubt", ""],
-              "?=": ["compare", ""],
-              "?/": ["ignore", ""],
-              "?!": ["choice", ""],
-              "?:": ["pause", ""],
-              "?@": ["stranger", ""],
-              "?^": ["option", ""],
-              '?"': ["logic", ""],
-              "?#": ["mystery", ""],
-              "?*": ["attempt", ""],
-
-              /* = - STABILITY */
-              "==": ["identity", ""],
-              "=+": ["duplicate", ""],
-              "=-": ["reduce", ""],
-              "=/": ["default", ""],
-              "=!": ["fact", ""],
-              "=:": ["routine", ""],
-              "=@": ["align", ""],
-              "=#": ["component", ""],
-              "=*": ["process", ""],
-              '="': ["copy", ""],        // CHANGED from "record"
-              "=?": ["alternate", ""],   // CHANGED from "parallel"
-              "=^": ["system", ""],
-
-              /* / - ABSENCE */
-              "//": ["reset", ""],
-              "/+": ["deplete", ""],
-              "/-": ["trace", ""],
-              "/=": ["skew", ""],
-              "/!": ["deny", ""],
-              "/:": ["end", ""],
-              "/?": ["hidden", ""],
-              "/@": ["departed", ""],
-              "/^": ["void", ""],
-              '/"': ["silence", ""],
-              "/#": ["nothing", ""],
-              "/*": ["broken", ""],
-            };
-
-            let dict = JSON.parse(localStorage.getItem("tt_v7")) || defaultDict;
-
-            function render() {
-                const q = document.getElementById("search").value.toLowerCase();
-                const tbody = document.getElementById("wordTable");
-                tbody.innerHTML = "";
-                Object.keys(dict)
-                    .sort()
-                    .forEach((key) => {
-                        const row = dict[key];
-                        if (
-                            key.includes(q) ||
-                            row[0].toLowerCase().includes(q) ||
-                            row[1].toLowerCase().includes(q)
-                        ) {
-                            tbody.innerHTML += `
-        <tr>
-          <td class="sym-cell">${key}</td>
-          <td>
-            <input class="edit-input"
-              value="${row[0]}"
-              onchange="update('${key}',0,this.value)">
-          </td>
-          <td>
-            <input class="edit-input"
-              value="${row[1]}"
-              onchange="update('${key}',1,this.value)">
-          </td>
-        </tr>`;
-                        }
-                    });
+            :root {
+                --bg: #eef0f3;
+                --bg2: #ffffff;
+                --bg3: #e4e7eb;
+                --fg: #141618;
+                --fg-muted: #6b7280;
+                --accent: #e04e00;
+                --accent-dim: rgba(224, 78, 0, 0.08);
+                --border: #d1d5db;
+                --border-accent: rgba(224, 78, 0, 0.3);
+                --shadow:
+                    0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+                --nav-h: 52px;
             }
 
-            function update(key, idx, val) {
-                dict[key][idx] = val;
-                localStorage.setItem("tt_v7", JSON.stringify(dict));
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
             }
 
-            function resetDict() {
-                if (confirm("Reset dictionary to canonical defaults?")) {
-                    localStorage.removeItem("tt_v7");
-                    location.reload();
+            body {
+                background-color: var(--bg);
+                color: var(--fg);
+                font-family: "Space Mono", monospace;
+                line-height: 1.65;
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+            }
+
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background-image:
+                    linear-gradient(var(--border) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+                background-size: 40px 40px;
+                opacity: 0.5;
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            /* ── STICKY NAV ── */
+            #site-nav {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: rgba(255, 255, 255, 0.88);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-bottom: 1px solid var(--border);
+                height: var(--nav-h);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 24px;
+                gap: 12px;
+            }
+
+            .nav-brand {
+                font-family: "Syne", sans-serif;
+                font-weight: 800;
+                font-size: 1rem;
+                color: var(--fg);
+                letter-spacing: -0.5px;
+                white-space: nowrap;
+            }
+            .nav-brand em {
+                color: var(--accent);
+                font-style: normal;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 4px;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+            .nav-links::-webkit-scrollbar {
+                display: none;
+            }
+
+            .nav-link {
+                font-family: "Space Mono", monospace;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                color: var(--fg-muted);
+                text-decoration: none;
+                padding: 5px 10px;
+                border-radius: 4px;
+                transition:
+                    color 0.15s,
+                    background 0.15s;
+                white-space: nowrap;
+            }
+            .nav-link:hover {
+                color: var(--accent);
+                background: var(--accent-dim);
+            }
+
+            /* ── CONTAINER ── */
+            .container {
+                max-width: 900px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 24px 80px;
+                position: relative;
+                z-index: 1;
+            }
+
+            /* ── HEADER ── */
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 40px 0 28px;
+                border-bottom: 1px solid var(--border-accent);
+                margin-bottom: 40px;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .header-brand {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .tt-logo {
+                width: 56px;
+                height: 56px;
+                background: var(--accent);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                box-shadow: 0 4px 12px rgba(224, 78, 0, 0.3);
+                position: relative;
+                overflow: hidden;
+            }
+            .tt-logo::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.18) 0%,
+                    transparent 60%
+                );
+            }
+            .tt-logo span {
+                font-family: "Syne", sans-serif;
+                font-weight: 800;
+                font-size: 1.5rem;
+                color: #fff;
+                letter-spacing: -1px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .header-text h1 {
+                font-family: "Syne", sans-serif;
+                font-weight: 800;
+                font-size: clamp(2rem, 5vw, 3.2rem);
+                color: var(--fg);
+                margin: 0;
+                letter-spacing: -1px;
+                line-height: 1;
+            }
+            .header-text h1 em {
+                color: var(--accent);
+                font-style: normal;
+            }
+            .header-text p {
+                margin: 7px 0 0;
+                font-size: 0.68rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: var(--fg-muted);
+            }
+
+            #export-btn {
+                background: transparent;
+                border: 1px solid var(--border-accent);
+                border-radius: 6px;
+                color: var(--accent);
+                padding: 10px 20px;
+                cursor: pointer;
+                font-family: "Space Mono", monospace;
+                font-size: 0.7rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+                position: relative;
+                overflow: hidden;
+            }
+            #export-btn::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: var(--accent);
+                transform: translateX(-100%);
+                transition: transform 0.2s ease;
+                z-index: -1;
+            }
+            #export-btn:hover {
+                color: #fff;
+                border-color: var(--accent);
+            }
+            #export-btn:hover::before {
+                transform: translateX(0);
+            }
+
+            /* ── TWO-COLUMN LAYOUT ── */
+            .two-col {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .two-col > .section {
+                margin-bottom: 0;
+            }
+
+            /* ── SECTIONS ── */
+            .section {
+                margin-bottom: 24px;
+                background: var(--bg2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 26px 28px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: var(--shadow);
+                animation: fadeUp 0.4s ease both;
+            }
+            .section::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 3px;
+                height: 100%;
+                background: var(--accent);
+                opacity: 0.55;
+                border-radius: 10px 0 0 10px;
+            }
+
+            h2 {
+                font-family: "Syne", sans-serif;
+                font-weight: 700;
+                color: var(--fg);
+                font-size: 1rem;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                margin: 0 0 18px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            h2 .section-num {
+                color: var(--accent);
+                font-size: 0.68rem;
+                font-family: "Space Mono", monospace;
+                font-weight: 400;
+                opacity: 0.75;
+            }
+
+            .section p {
+                font-size: 0.86rem;
+                color: var(--fg-muted);
+                margin: 0 0 12px;
+                line-height: 1.75;
+            }
+            .section p strong {
+                color: var(--fg);
+                font-weight: 700;
+            }
+
+            ul {
+                padding-left: 0;
+                list-style: none;
+                margin: 0;
+            }
+            li {
+                margin-bottom: 9px;
+                font-size: 0.86rem;
+                color: var(--fg-muted);
+                padding-left: 16px;
+                position: relative;
+                line-height: 1.7;
+            }
+            li::before {
+                content: "›";
+                position: absolute;
+                left: 0;
+                color: var(--accent);
+                font-weight: 700;
+            }
+            li b,
+            li strong {
+                color: var(--fg);
+                font-weight: 700;
+            }
+
+            code {
+                background: var(--accent-dim);
+                color: var(--accent);
+                padding: 1px 6px;
+                border: 1px solid var(--border-accent);
+                font-family: "Space Mono", monospace;
+                font-size: 0.85em;
+                border-radius: 3px;
+            }
+
+            /* ── SYMBOL TABLE ── */
+            .symbol-table-wrap {
+                overflow-x: auto;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.83rem;
+            }
+            thead tr {
+                border-bottom: 1px solid var(--border);
+            }
+            th {
+                text-align: left;
+                padding: 7px 10px;
+                font-family: "Syne", sans-serif;
+                font-size: 0.65rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--fg-muted);
+                font-weight: 600;
+            }
+            tbody tr {
+                border-bottom: 1px solid var(--border);
+                transition: background 0.15s;
+                cursor: pointer;
+            }
+            tbody tr:hover {
+                background: var(--accent-dim);
+            }
+            tbody tr.sym-active {
+                background: var(--accent-dim);
+                outline: 1px solid var(--border-accent);
+            }
+            tbody td {
+                padding: 8px 10px;
+            }
+            .td-sym {
+                font-size: 1.15rem;
+                font-weight: 700;
+                color: var(--accent);
+                width: 44px;
+                font-family: "Syne", sans-serif;
+                letter-spacing: 1px;
+            }
+            /* Specifically target the Two Talk pairs for maximum clarity */
+            .td-sym,
+            .pair,
+            .pair-badge {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-weight: 800;
+                font-size: 1.25rem; /* Slightly larger to help the ~ curve show */
+                letter-spacing: 1px;
+                display: inline-block;
+                transform: translateY(1px); /* Centers the tilde vertically */
+            }
+
+            .td-domain {
+                color: var(--fg);
+            }
+            .td-mod {
+                color: var(--fg-muted);
+            }
+
+            /* ── ESSENTIALS ── */
+            .essential-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 7px;
+            }
+            .essential-item {
+                background: var(--bg3);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                padding: 9px 11px;
+                font-size: 0.81rem;
+                display: flex;
+                align-items: baseline;
+                gap: 8px;
+                transition:
+                    border-color 0.15s,
+                    background 0.15s;
+                cursor: default;
+            }
+            .essential-item:hover {
+                border-color: var(--border-accent);
+                background: var(--accent-dim);
+            }
+            .essential-item .pair-badge {
+                color: var(--accent);
+                font-weight: 700;
+                font-size: 1rem;
+                min-width: 22px;
+                font-family: "Syne", sans-serif;
+                letter-spacing: 1px;
+            }
+            .essential-item .pair-meaning {
+                color: var(--fg-muted);
+                text-transform: lowercase;
+            }
+
+            /* ── DICTIONARY ── */
+            .search-wrap {
+                position: relative;
+                margin-bottom: 14px;
+            }
+            .search-wrap svg {
+                position: absolute;
+                left: 13px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--fg-muted);
+                pointer-events: none;
+            }
+            #search-input {
+                width: 100%;
+                padding: 12px 16px 12px 40px;
+                background: var(--bg3);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                color: var(--fg);
+                font-family: "Space Mono", monospace;
+                font-size: 0.84rem;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+            #search-input::placeholder {
+                color: var(--fg-muted);
+            }
+            #search-input:focus {
+                border-color: var(--border-accent);
+            }
+
+            .dict-toolbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+            }
+            #dict-count {
+                font-size: 0.7rem;
+                color: var(--fg-muted);
+                letter-spacing: 1px;
+            }
+            #clear-filter {
+                font-family: "Space Mono", monospace;
+                font-size: 0.65rem;
+                color: var(--accent);
+                background: none;
+                border: none;
+                cursor: pointer;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding: 2px 6px;
+                border-radius: 4px;
+                display: none;
+            }
+            #clear-filter:hover {
+                background: var(--accent-dim);
+            }
+            #clear-filter.visible {
+                display: block;
+            }
+
+            #word-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1px;
+                background: var(--border);
+                max-height: 480px;
+                overflow-y: scroll;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+            }
+            .word-item {
+                padding: 9px 13px;
+                background: var(--bg3);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px;
+                transition: background 0.12s;
+                position: relative;
+                cursor: pointer;
+            }
+            .word-item:hover {
+                background: var(--accent-dim);
+            }
+            .pair {
+                color: var(--accent);
+                font-weight: 700;
+                font-size: 1.05rem;
+                min-width: 26px;
+                font-family: "Syne", sans-serif;
+                letter-spacing: 1px;
+            }
+            .meaning {
+                text-transform: lowercase;
+                color: var(--fg-muted);
+                font-size: 0.79rem;
+                flex: 1;
+            }
+
+            /* Copy button */
+            .copy-btn {
+                display: none;
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: var(--bg2);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                color: var(--fg-muted);
+                font-family: "Space Mono", monospace;
+                font-size: 0.6rem;
+                padding: 2px 7px;
+                cursor: pointer;
+                letter-spacing: 0.5px;
+                transition: all 0.15s;
+                white-space: nowrap;
+            }
+            .word-item:hover .copy-btn {
+                display: block;
+            }
+            .copy-btn:hover {
+                background: var(--accent);
+                color: #fff;
+                border-color: var(--accent);
+            }
+            .copy-btn.copied {
+                background: #16a34a;
+                color: #fff;
+                border-color: #16a34a;
+            }
+
+            /* ── SCROLLBAR ── */
+            ::-webkit-scrollbar {
+                width: 5px;
+                height: 5px;
+            }
+            ::-webkit-scrollbar-track {
+                background: var(--bg3);
+            }
+            ::-webkit-scrollbar-thumb {
+                background: var(--border);
+                border-radius: 3px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: var(--accent);
+            }
+
+            .section h3 {
+                font-family: "Syne", sans-serif;
+                font-size: 0.7rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--fg-muted);
+                margin: 18px 0 8px;
+                font-weight: 600;
+            }
+
+            /* ── BACK TO TOP ── */
+            #back-top {
+                position: fixed;
+                bottom: 28px;
+                right: 28px;
+                width: 40px;
+                height: 40px;
+                background: var(--accent);
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 12px rgba(224, 78, 0, 0.35);
+                opacity: 0;
+                transform: translateY(12px);
+                transition:
+                    opacity 0.25s,
+                    transform 0.25s;
+                z-index: 200;
+                pointer-events: none;
+            }
+            #back-top.visible {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            #back-top:hover {
+                background: #c44200;
+            }
+            #back-top svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            /* ── FOOTER ── */
+            footer {
+                text-align: center;
+                font-size: 0.68rem;
+                color: var(--fg-muted);
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-top: 48px;
+                padding-top: 20px;
+                border-top: 1px solid var(--border);
+                opacity: 0.55;
+            }
+
+            /* ── ANIMATIONS ── */
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(14px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
                 }
             }
-            function exportToTxt() {
-                let content = "TWO TALK DICTIONARY EXPORT\n";
-                content += "===========================\n";
-                content += "LEGEND:\n";
-                content += "@:Person #:Thing ::Time ^:Place *:Action \":Info\n";
-                content += "!:Fact ?:Query +:Large -:Small =:Same /:None\n";
-                content += "===========================\n\n";
-                content += "SYMBOL | CANONICAL | CONTEXT\n";
-                content += "----------------------------\n";
+            #intro {
+                animation-delay: 0.05s;
+            }
+            #rules {
+                animation-delay: 0.1s;
+            }
+            .two-col .section:nth-child(1) {
+                animation-delay: 0.15s;
+            }
+            .two-col .section:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+            #dict-section {
+                animation-delay: 0.25s;
+            }
 
-                Object.keys(dict).sort().forEach(key => {
-                    const row = dict[key];
-                    // This takes your two context columns and joins them with a comma
-                    // if both exist, otherwise just takes the available one.
-                    const context = [row[1], row[2]].filter(Boolean).join(", ");
+            @media (max-width: 640px) {
+                .two-col {
+                    grid-template-columns: 1fr;
+                }
+                .section {
+                    padding: 18px 16px;
+                }
+                .nav-link {
+                    padding: 4px 7px;
+                    font-size: 0.6rem;
+                }
+                header {
+                    padding: 24px 0 20px;
+                }
+                #back-top {
+                    bottom: 16px;
+                    right: 16px;
+                }
+            }
+            /* ── STACKING ── */
+            .stack-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 6px;
+                margin-top: 6px;
+            }
+            .stack-card {
+                background: var(--bg3);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                padding: 8px 10px;
+                display: flex;
+                align-items: baseline;
+                gap: 10px;
+                transition:
+                    border-color 0.15s,
+                    background 0.15s;
+            }
+            .stack-card:hover {
+                border-color: var(--border-accent);
+                background: var(--accent-dim);
+            }
+            .stack-compound {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-weight: 800;
+                font-size: 1.1rem;
+                color: var(--accent);
+                letter-spacing: 1px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .stack-compound .stack-dot {
+                color: var(--fg-muted);
+                font-weight: 400;
+            }
+            .stack-meta {
+                display: flex;
+                flex-direction: column;
+                gap: 1px;
+                min-width: 0;
+            }
+            .stack-result {
+                font-size: 0.8rem;
+                font-weight: 700;
+                color: var(--fg);
+                white-space: nowrap;
+            }
+            .stack-breakdown {
+                font-size: 0.7rem;
+                color: var(--fg-muted);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            /* ── LEARN SECTION ── */
+            .learn-modes {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+            }
+            .learn-mode-btn {
+                font-family: "Space Mono", monospace;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                padding: 7px 14px;
+                border-radius: 5px;
+                border: 1px solid var(--border);
+                background: var(--bg3);
+                color: var(--fg-muted);
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .learn-mode-btn:hover {
+                border-color: var(--border-accent);
+                color: var(--accent);
+            }
+            .learn-mode-btn.active {
+                background: var(--accent);
+                color: #fff;
+                border-color: var(--accent);
+            }
 
-                    content += `${key.padEnd(6)} | ${row[0].padEnd(12)} | ${context}\n`;
+            .learn-panel {
+                display: none;
+            }
+            .learn-panel.active {
+                display: block;
+            }
+
+            /* Flash cards */
+            .flashcard-wrap {
+                perspective: 1000px;
+                margin-bottom: 18px;
+            }
+            .flashcard {
+                width: 100%;
+                min-height: 160px;
+                position: relative;
+                transform-style: preserve-3d;
+                transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+                cursor: pointer;
+            }
+            .flashcard.flipped {
+                transform: rotateY(180deg);
+            }
+            .card-face {
+                position: absolute;
+                inset: 0;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                border: 1px solid var(--border);
+                padding: 24px;
+                background: var(--bg2);
+                box-shadow: var(--shadow);
+            }
+            .card-face.back {
+                transform: rotateY(180deg);
+                background: var(--accent-dim);
+                border-color: var(--border-accent);
+            }
+            .card-symbol {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-size: 3.5rem;
+                font-weight: 800;
+                color: var(--accent);
+                letter-spacing: 4px;
+                line-height: 1;
+                margin-bottom: 12px;
+            }
+            .card-hint {
+                font-size: 0.68rem;
+                color: var(--fg-muted);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+            .card-meaning {
+                font-family: "Syne", sans-serif;
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: var(--fg);
+                margin-bottom: 8px;
+            }
+            .card-breakdown {
+                font-size: 0.78rem;
+                color: var(--fg-muted);
+                text-align: center;
+                line-height: 1.6;
+            }
+            .flashcard-controls {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                margin-top: 6px;
+            }
+            .fc-btn {
+                font-family: "Space Mono", monospace;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                padding: 8px 20px;
+                border-radius: 5px;
+                border: 1px solid var(--border);
+                background: var(--bg3);
+                color: var(--fg-muted);
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .fc-btn:hover {
+                border-color: var(--border-accent);
+                color: var(--accent);
+                background: var(--accent-dim);
+            }
+            .fc-btn.primary {
+                background: var(--accent);
+                color: #fff;
+                border-color: var(--accent);
+            }
+            .fc-btn.primary:hover {
+                background: #c44200;
+            }
+            .fc-counter {
+                font-size: 0.7rem;
+                color: var(--fg-muted);
+                font-family: "Space Mono", monospace;
+                min-width: 60px;
+                text-align: center;
+            }
+
+            /* Quiz */
+            .quiz-question {
+                text-align: center;
+                margin-bottom: 22px;
+            }
+            .quiz-prompt-label {
+                font-size: 0.68rem;
+                color: var(--fg-muted);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            }
+            .quiz-prompt-sym {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-size: 3rem;
+                font-weight: 800;
+                color: var(--accent);
+                letter-spacing: 4px;
+                line-height: 1;
+            }
+            .quiz-prompt-word {
+                font-family: "Syne", sans-serif;
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--fg);
+                letter-spacing: -0.5px;
+            }
+            .quiz-options {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+            .quiz-opt {
+                font-family: "Space Mono", monospace;
+                font-size: 0.82rem;
+                padding: 12px 14px;
+                border-radius: 7px;
+                border: 1px solid var(--border);
+                background: var(--bg3);
+                color: var(--fg);
+                cursor: pointer;
+                transition: all 0.15s;
+                text-align: left;
+            }
+            .quiz-opt:hover:not(:disabled) {
+                border-color: var(--border-accent);
+                background: var(--accent-dim);
+            }
+            .quiz-opt.correct {
+                background: rgba(22, 163, 74, 0.1);
+                border-color: #16a34a;
+                color: #16a34a;
+            }
+            .quiz-opt.wrong {
+                background: rgba(224, 78, 0, 0.08);
+                border-color: var(--accent);
+                color: var(--accent);
+            }
+            .quiz-opt:disabled {
+                cursor: default;
+            }
+            .quiz-feedback {
+                min-height: 36px;
+                text-align: center;
+                font-size: 0.82rem;
+                color: var(--fg-muted);
+                margin-bottom: 12px;
+            }
+            .quiz-score-bar {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 0.7rem;
+                color: var(--fg-muted);
+                font-family: "Space Mono", monospace;
+                margin-top: 8px;
+                letter-spacing: 0.5px;
+            }
+            .quiz-progress {
+                flex: 1;
+                height: 4px;
+                background: var(--border);
+                border-radius: 2px;
+                overflow: hidden;
+            }
+            .quiz-progress-fill {
+                height: 100%;
+                background: var(--accent);
+                border-radius: 2px;
+                transition: width 0.3s ease;
+            }
+
+            /* Translate practice */
+            .translate-prompt {
+                background: var(--bg3);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 16px 18px;
+                margin-bottom: 16px;
+            }
+            .translate-label {
+                font-size: 0.65rem;
+                color: var(--accent);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 8px;
+            }
+            .translate-text {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-size: 1rem;
+                color: var(--fg);
+                line-height: 1.6;
+            }
+            .translate-input-row {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+            #translate-input {
+                flex: 1;
+                padding: 11px 14px;
+                background: var(--bg3);
+                border: 1px solid var(--border);
+                border-radius: 7px;
+                color: var(--fg);
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-size: 1.05rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+            #translate-input:focus {
+                border-color: var(--border-accent);
+            }
+            #translate-input::placeholder {
+                font-weight: 400;
+                font-size: 0.8rem;
+                letter-spacing: 0;
+                color: var(--fg-muted);
+            }
+            .translate-answer {
+                background: var(--bg3);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 14px 18px;
+                font-size: 0.84rem;
+                color: var(--fg-muted);
+                line-height: 1.7;
+                display: none;
+            }
+            .translate-answer.visible {
+                display: block;
+            }
+            .translate-answer .ans-pair {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-weight: 800;
+                color: var(--accent);
+                font-size: 1rem;
+                margin-right: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- STICKY NAV -->
+        <nav id="site-nav">
+            <div class="nav-brand"><em>Two</em> Talk</div>
+            <div class="nav-links">
+                <a class="nav-link" href="#intro">Intro</a>
+                <a class="nav-link" href="#rules">Rules</a>
+                <a class="nav-link" href="#symbols">Symbols</a>
+                <a class="nav-link" href="#essentials">Essentials</a>
+                <a class="nav-link" href="#stacking">Stacking</a>
+                <a class="nav-link" href="#dict-section">Dictionary</a>
+                <a class="nav-link" href="#learn-section">Learn</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- HEADER -->
+            <header>
+                <div class="header-brand">
+                    <div class="tt-logo"><span>TT</span></div>
+                    <div class="header-text">
+                        <h1><em>Two</em> Talk</h1>
+                        <p>Concise Semantic Shorthand</p>
+                    </div>
+                </div>
+                <button id="export-btn">↓ Guide.txt</button>
+            </header>
+
+            <!-- INTRO -->
+            <div class="section" id="intro">
+                <h2><span class="section-num">01</span> Introduction</h2>
+                <p>
+                    <strong>Two Talk</strong> is a concise semantic shorthand
+                    system designed for rapid, objective observation. Unlike
+                    traditional shorthand, it captures
+                    <strong>meaning</strong> rather than phonetics. It is a
+                    structured micro-language that is fast to write and can be
+                    interpreted at a glance.
+                </p>
+
+                <ul>
+                    <li>
+                        <b>Clarity:</b> By mapping symbols to semantic states
+                        rather than sounds, notes are easier to scan for data
+                        points. You see the concept immediately without needing
+                        to decode phonetic representations.
+                    </li>
+                    <li>
+                        <b>Portability:</b> Designed for plaintext, it is fully
+                        compatible with tools like Obsidian, Notion, or CLI
+                        environments. No specialized fonts or hand-drawn strokes
+                        are required.
+                    </li>
+                    <li>
+                        <b>Precision:</b> The modular
+                        <b>Subject + State</b> framework provides a logical
+                        structure that eliminates the guesswork often found in
+                        minimalist languages, making old notes easy to
+                        interpret.
+                    </li>
+                </ul>
+
+                <h3>Example:</h3>
+                <div
+                    style="
+                        background: var(--bg3);
+                        padding: 15px;
+                        border-radius: 8px;
+                        border: 1px solid var(--border);
+                        margin-top: 10px;
+                    "
+                >
+                    <div style="margin-bottom: 12px">
+                        <strong
+                            style="
+                                font-size: 0.7rem;
+                                color: var(--accent);
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                            "
+                            >English:</strong
+                        >
+                        <p
+                            style="
+                                margin: 4px 0;
+                                font-family:
+                                    &quot;Atkinson Hyperlegible&quot;,
+                                    sans-serif;
+                                color: var(--fg);
+                            "
+                        >
+                            "The lead developer confirmed the project
+                            architecture is ready. We have a meeting with the
+                            client to discuss the next deployment phase."
+                        </p>
+                    </div>
+                    <div>
+                        <strong
+                            style="
+                                font-size: 0.7rem;
+                                color: var(--accent);
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                            "
+                            >Two Talk:</strong
+                        >
+                        <p
+                            style="
+                                margin: 4px 0;
+                                font-family: &quot;Space Mono&quot;, monospace;
+                                color: var(--fg);
+                                font-weight: 700;
+                                font-size: 1.1rem;
+                            "
+                        >
+                            @* != #&.=_ . @@ @$ !~ ~>.~^
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="rules">
+                <h2><span class="section-num">02</span> Rules</h2>
+                <ul>
+                    <li>
+                        <b>Symbols:</b> Every word is exactly two characters.
+                        1st symbol = <b>Subject</b> (What); 2nd symbol =
+                        <b>State</b> (How).
+                    </li>
+                    <li>
+                        <b>Stacking:</b> Combine pairs with a dot (.) to narrow
+                        meaning (General + Specific). e.g.,
+                        <code>#~.!*</code> (Food + Fast = Fast Food).
+                    </li>
+                    <li>
+                        <b>State\Flow:</b> Use <code>(</code>/<code>)</code> for
+                        positive/negative states and <code>&lt;</code>/<code
+                            >&gt;</code
+                        >
+                        for past/future timing.
+                    </li>
+                    <li>
+                        <b>Headers:</b> Start notes with
+                        <code>##</code> followed by the project or category name
+                        for immediate context.
+                    </li>
+                    <li>
+                        <b>Literals:</b> Use raw numbers for amounts/dates and
+                        capital initials for names. Use <code>:</code> after a
+                        symbol to label a specific entity.
+                    </li>
+                    <li>
+                        <b>Essence:</b> Capture meaning, not words. Use the
+                        <b>Standard Structure</b> (WHO + DOING + DETAIL) to
+                        translate intent.
+                    </li>
+                    <li>
+                        <b>Breaks:</b> An empty line signals a new topic or
+                        shift in the thought block.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SYMBOLS + ESSENTIALS side by side -->
+            <div class="two-col">
+                <div class="section" id="symbols">
+                    <h2><span class="section-num">03</span> Symbols</h2>
+                    <p
+                        style="
+                            font-size: 0.76rem;
+                            color: var(--fg-muted);
+                            margin-bottom: 10px;
+                        "
+                    >
+                        Click a row to filter the dictionary.
+                    </p>
+                    <div class="symbol-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sym</th>
+                                    <th>Subject (1st)</th>
+                                    <th>State (2nd)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="symbol-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="section" id="essentials">
+                    <h2><span class="section-num">04</span> Essentials</h2>
+                    <div class="essential-grid" id="essential-list"></div>
+                </div>
+            </div>
+            <!-- STACKING EXAMPLES -->
+            <div class="section" id="stacking">
+                <h2><span class="section-num">05</span> Stacking</h2>
+                <p>
+                    Combine two pairs with a <code>.</code> dot to build a
+                    refined meaning. This expands Two Talk from 400 standard
+                    meanings to 160,000 refined meanings. The
+                    <strong>first pair</strong> sets the broad domain, the
+                    <strong>second pair</strong> narrows it. Read as:
+                    <em>General → Specific</em>.
+                </p>
+                <div class="stack-grid" id="stack-grid"></div>
+            </div>
+
+            <!-- DICTIONARY -->
+            <div class="section" id="dict-section" style="margin-top: 24px">
+                <h2><span class="section-num">06</span> Dictionary</h2>
+                <div class="search-wrap">
+                    <svg
+                        width="15"
+                        height="15"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search pair or meaning..."
+                    />
+                </div>
+                <div class="dict-toolbar">
+                    <div id="dict-count"></div>
+                    <button id="clear-filter">✕ Clear filter</button>
+                </div>
+                <div id="word-list"></div>
+            </div>
+
+            <!-- LEARN -->
+            <div
+                class="section"
+                id="learn-section"
+                style="margin-top: 24px; animation-delay: 0.3s"
+            >
+                <h2><span class="section-num">07</span> Learn</h2>
+                <p style="margin-bottom: 16px">
+                    Practice reading and writing Two Talk. Choose a mode below.
+                </p>
+
+                <div class="learn-modes">
+                    <button
+                        class="learn-mode-btn active"
+                        data-mode="flashcards"
+                    >
+                        Flashcards
+                    </button>
+                    <button class="learn-mode-btn" data-mode="translate">
+                        Exercises
+                    </button>
+                    <button class="learn-mode-btn" data-mode="quiz">
+                        Test
+                    </button>
+                </div>
+
+                <!-- FLASHCARDS -->
+                <div class="learn-panel active" id="panel-flashcards">
+                    <div class="flashcard-wrap">
+                        <div
+                            class="flashcard"
+                            id="flashcard"
+                            title="Click to flip"
+                        >
+                            <div class="card-face front">
+                                <div class="card-symbol" id="fc-symbol"></div>
+                                <div class="card-hint">
+                                    tap to reveal meaning
+                                </div>
+                            </div>
+                            <div class="card-face back">
+                                <div class="card-meaning" id="fc-meaning"></div>
+                                <div
+                                    class="card-breakdown"
+                                    id="fc-breakdown"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flashcard-controls">
+                        <button class="fc-btn" id="fc-prev">← Prev</button>
+                        <span class="fc-counter" id="fc-counter"></span>
+                        <button class="fc-btn primary" id="fc-next">
+                            Next →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- QUIZ -->
+                <div class="learn-panel" id="panel-quiz">
+                    <div class="quiz-question">
+                        <div class="quiz-prompt-label" id="quiz-label">
+                            What does this pair mean?
+                        </div>
+                        <div id="quiz-prompt"></div>
+                    </div>
+                    <div class="quiz-options" id="quiz-options"></div>
+                    <div class="quiz-feedback" id="quiz-feedback"></div>
+                    <div class="quiz-score-bar">
+                        <span id="quiz-score-text">0 / 0</span>
+                        <div class="quiz-progress">
+                            <div
+                                class="quiz-progress-fill"
+                                id="quiz-fill"
+                                style="width: 0%"
+                            ></div>
+                        </div>
+                        <button
+                            class="fc-btn"
+                            id="quiz-restart"
+                            style="font-size: 0.6rem; padding: 4px 10px"
+                        >
+                            Restart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TRANSLATE -->
+                <div class="learn-panel" id="panel-translate">
+                    <p
+                        style="
+                            font-size: 0.82rem;
+                            color: var(--fg-muted);
+                            margin-bottom: 14px;
+                        "
+                    >
+                        Try writing an English phrase in Two Talk. Use the
+                        <strong>WHO + DOING + DETAIL</strong> structure. Tap
+                        <em>Show answer</em> to see one possible translation.
+                    </p>
+                    <div class="translate-prompt">
+                        <div class="translate-label">
+                            Translate to Two Talk:
+                        </div>
+                        <div class="translate-text" id="translate-text"></div>
+                    </div>
+                    <div class="translate-input-row">
+                        <input
+                            type="text"
+                            id="translate-input"
+                            placeholder="Type your Two Talk here…"
+                            autocomplete="off"
+                            autocorrect="off"
+                            spellcheck="false"
+                        />
+                        <button class="fc-btn primary" id="translate-show">
+                            Show answer
+                        </button>
+                    </div>
+                    <div class="translate-answer" id="translate-answer"></div>
+                    <div class="flashcard-controls" style="margin-top: 14px">
+                        <button class="fc-btn primary" id="translate-next">
+                            Next phrase →
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <footer>TWO TALK // v1.2 // BARNEY MATTHEWS</footer>
+        </div>
+
+        <!-- BACK TO TOP -->
+        <button id="back-top" title="Back to top">
+            <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+            >
+                <path d="M18 15l-6-6-6 6" />
+            </svg>
+        </button>
+
+        <script>
+            const essentialPairs = [
+                "@@", // attendees
+                "!!", // action items
+                "##", // agenda
+                "~~", // status
+                "::", // notes
+                "**", // priority
+                "&&", // dependency
+                "%%", // budget
+                "??", // open questions
+                ">>", // decisions
+                "))", // blockers
+
+                "?@", // who
+                "?#", // what
+                "?^", // where
+                "?~", // when
+                "?!", // how
+                "?&", // why
+
+                "&+", // yes
+                "&-", // no
+                "!=", // confirm
+                "&(", // true
+
+                "~<", // past
+                "~*", // now
+                "~>", // future
+                "~$", // deadline
+
+                "@*", // leader
+                "@&", // partner
+                "@!", // staff
+                "@$", // client
+
+                "!*", // urgent
+                "!<", // give
+                "!>", // take
+                "!&", // decide
+
+                ")^", // risk
+                ")!", // fail
+
+                "%+", // max
+                "%-", // min
+                "%>", // more
+                "%<", // less
+
+                ">=", // milestone
+            ];
+
+            const symbols = [
+                { s: "@", domain: "Person", mod: "Social" },
+                { s: "!", domain: "Action", mod: "Active" },
+                { s: "#", domain: "Object", mod: "Material" },
+                { s: "^", domain: "Place", mod: "Spatial" },
+                { s: "~", domain: "Time", mod: "Temporal" },
+                { s: "&", domain: "Link", mod: "Logic" },
+                { s: "%", domain: "Ratio", mod: "Relative" },
+                { s: ":", domain: "Data", mod: "Mental" },
+                { s: "(", domain: "Benefit", mod: "Positive" },
+                { s: ")", domain: "Burden", mod: "Negative" },
+                { s: "<", domain: "Origin", mod: "Previous" },
+                { s: ">", domain: "Target", mod: "Future" },
+                { s: "*", domain: "Focus", mod: "Vital" },
+                { s: "?", domain: "Doubt", mod: "Unknown" },
+                { s: "|", domain: "Path", mod: "Fluid" },
+                { s: "_", domain: "Support", mod: "Basic" },
+                { s: "+", domain: "Gain", mod: "Added" },
+                { s: "-", domain: "Loss", mod: "Reduced" },
+                { s: "$", domain: "Value", mod: "Fiscal" },
+                { s: "=", domain: "Fact", mod: "Stable" },
+            ];
+
+            const fullDictionary = {
+                // @ = PERSON / SOCIAL
+                "@@": "attendees",
+                "@!": "staff",
+                "@#": "contact",
+                "@^": "neighbor",
+                "@~": "colleague",
+                "@&": "partner",
+                "@%": "crowd",
+                "@:": "self",
+                "@(": "friend",
+                "@)": "enemy",
+                "@<": "parent",
+                "@>": "child",
+                "@*": "vip",
+                "@?": "stranger",
+                "@+": "expert",
+                "@-": "junior",
+                "@$": "client",
+                "@=": "member",
+                "@|": "liaison",
+                "@_": "sponsor",
+
+                // ! = ACTION / ACTIVE
+                "!@": "help",
+                "!!": "tasks",
+                "!#": "use",
+                "!^": "move",
+                "!~": "wait",
+                "!&": "decide",
+                "!%": "count",
+                "!:": "tell",
+                "!(": "play",
+                "!)": "stop",
+                "!<": "give",
+                "!>": "take",
+                "!*": "urgent",
+                "!?": "search",
+                "!+": "grow",
+                "!-": "drop",
+                "!$": "spend",
+                "!=": "confirm",
+                "!|": "trigger",
+                "!_": "setup",
+
+                // # = OBJECT / MATERIAL
+                "#@": "device",
+                "#!": "tool",
+                "##": "agenda",
+                "#^": "site",
+                "#~": "food",
+                "#&": "machine",
+                "#%": "weight",
+                "#:": "book",
+                "#(": "quality",
+                "#)": "defect",
+                "#<": "source",
+                "#>": "output",
+                "#*": "key",
+                "#?": "stuff",
+                "#+": "heavy",
+                "#-": "light",
+                "#$": "supply",
+                "#=": "standard",
+                "#|": "conduit",
+                "#_": "layer",
+
+                // ^ = PLACE / SPATIAL
+                "^@": "home",
+                "^!": "route",
+                "^#": "structure",
+                "^^": "venue",
+                "^~": "zone",
+                "^&": "map",
+                "^%": "area",
+                "^:": "office",
+                "^(": "clean",
+                "^)": "dirty",
+                "^<": "left",
+                "^>": "right",
+                "^*": "peak",
+                "^?": "somewhere",
+                "^+": "north",
+                "^-": "south",
+                "^$": "region",
+                "^=": "level",
+                "^|": "corridor",
+                "^_": "ground",
+
+                // ~ = TIME / TEMPORAL
+                "~@": "birth",
+                "~!": "period",
+                "~#": "era",
+                "~^": "phase",
+                "~~": "status",
+                "~&": "schedule",
+                "~%": "age",
+                "~:": "today",
+                "~(": "early",
+                "~)": "late",
+                "~<": "past",
+                "~>": "future",
+                "~*": "now",
+                "~?": "whenever",
+                "~+": "always",
+                "~-": "never",
+                "~$": "deadline",
+                "~=": "recurring",
+                "~|": "rhythm",
+                "~_": "epoch",
+
+                // & = LINK / LOGIC
+                "&@": "liaison",
+                "&!": "force",
+                "&#": "interface",
+                "&^": "node",
+                "&~": "sequence",
+                "&&": "dependency",
+                "&%": "scale",
+                "&:": "code",
+                "&(": "true",
+                "&)": "false",
+                "&<": "cause",
+                "&>": "lead",
+                "&*": "must",
+                "&?": "if",
+                "&+": "yes",
+                "&-": "no",
+                "&$": "contract",
+                "&=": "logic",
+                "&|": "protocol",
+                "&_": "basis",
+
+                // % = RATIO / RELATIVE
+                "%@": "share",
+                "%!": "change",
+                "%#": "part",
+                "%^": "limit",
+                "%~": "rate",
+                "%&": "ratio",
+                "%%": "budget",
+                "%:": "list",
+                "%(": "full",
+                "%)": "empty",
+                "%<": "less",
+                "%>": "more",
+                "%*": "all",
+                "%?": "some",
+                "%+": "max",
+                "%-": "min",
+                "%$": "cost",
+                "%=": "total",
+                "%|": "flow",
+                "%_": "threshold",
+
+                // : = DATA / MENTAL
+                ":@": "insight",
+                ":!": "know",
+                ":#": "read",
+                ":^": "view",
+                ":~": "memory",
+                ":&": "rule",
+                ":%": "data",
+                "::": "notes",
+                ":(": "sad",
+                ":)": "happy",
+                ":<": "learn",
+                ":>": "teach",
+                ":*": "alert",
+                ":?": "reason",
+                ":+": "smart",
+                ":-": "dull",
+                ":$": "report",
+                ":=": "record",
+                ":|": "feed",
+                ":_": "core",
+
+                // * = FOCUS / VITAL
+                "*@": "hero",
+                "*!": "strike",
+                "*#": "cipher",
+                "*^": "peak",
+                "*~": "crisis",
+                "*&": "power",
+                "*%": "spike",
+                "*:": "genius",
+                "*(": "joy",
+                "*)": "rage",
+                "*<": "shock",
+                "*>": "push",
+                "**": "critical",
+                "*?": "mystery",
+                "*+": "loud",
+                "*-": "sharp",
+                "*$": "premium",
+                "*=": "fixed",
+                "*|": "amplify",
+                "*_": "keystone",
+
+                // _ = SUPPORT / BASIC
+                "_@": "ally",
+                "_!": "setup",
+                "_#": "floor",
+                "_^": "below",
+                "_~": "cycle",
+                "_&": "framework",
+                "_%": "capacity",
+                "_:": "index",
+                "_(": "support",
+                "_)": "burden",
+                "_<": "start",
+                "_>": "end",
+                "_*": "bedrock",
+                "_?": "depth",
+                "_+": "platform",
+                "_-": "undercut",
+                _$: "reserve",
+                "_=": "stable",
+                "_|": "moor",
+                __: "bottom",
+
+                // = = FACT / STABLE
+                "=@": "person",
+                "=!": "act",
+                "=#": "thing",
+                "=^": "place",
+                "=~": "time",
+                "=&": "evidence",
+                "=%": "amount",
+                "=:": "summary",
+                "=(": "correct",
+                "=)": "wrong",
+                "=<": "before",
+                "=>": "after",
+                "=*": "certain",
+                "=?": "unknown",
+                "=+": "greater",
+                "=-": "lesser",
+                "=$": "worth",
+                "==": "truth",
+                "=|": "shift",
+                "=_": "constant",
+
+                // ( = BENEFIT / POSITIVE
+                "(@": "kind",
+                "(!": "succeed",
+                "(#": "gift",
+                "(^": "safe",
+                "(~": "cure",
+                "(&": "fair",
+                "(%": "gain",
+                "(:": "wise",
+                "((": "wins",
+                "()": "mercy",
+                "(<": "save",
+                "(>": "free",
+                "(*": "best",
+                "(?": "hope",
+                "(+": "pure",
+                "(-": "easy",
+                "($": "yield",
+                "(=": "valid",
+                "(|": "access",
+                "(_": "shelter",
+
+                // ) = BURDEN / NEGATIVE
+                ")@": "cruel",
+                ")!": "fail",
+                ")#": "flaw",
+                ")^": "risk",
+                ")~": "pain",
+                ")&": "bias",
+                ")%": "loss",
+                "):": "fool",
+                ")(": "envy",
+                "))": "blockers",
+                ")<": "trap",
+                ")>": "harm",
+                ")*": "worst",
+                ")?": "fear",
+                ")+": "toxic",
+                ")-": "hard",
+                ")$": "debt",
+                ")=": "error",
+                ")|": "bottleneck",
+                ")_": "void",
+
+                // < = ORIGIN / PREVIOUS
+                "<@": "ancestor",
+                "<!": "return",
+                "<#": "raw",
+                "<^": "rear",
+                "<~": "legacy",
+                "<&": "history",
+                "<%": "prior",
+                "<:": "log",
+                "<(": "old",
+                "<)": "dead",
+                "<<": "context",
+                "<>": "transfer",
+                "<*": "fixed",
+                "<?": "hidden",
+                "<+": "deep",
+                "<-": "thin",
+                "<$": "spent",
+                "<=": "baseline",
+                "<|": "upstream",
+                "<_": "origin",
+
+                // > = TARGET / FUTURE
+                ">@": "target",
+                ">!": "reach",
+                ">#": "build",
+                ">^": "front",
+                ">~": "destiny",
+                ">&": "aim",
+                ">%": "forecast",
+                ">:": "signal",
+                ">(": "new",
+                ">)": "obstacle",
+                "><": "flow",
+                ">>": "decisions",
+                ">*": "bold",
+                ">?": "dream",
+                ">+": "fast",
+                ">-": "slow",
+                ">$": "income",
+                ">=": "milestone",
+                ">|": "outflow",
+                ">_": "foothold",
+
+                // ? = DOUBT / UNKNOWN
+                "?@": "who",
+                "?!": "how",
+                "?#": "what",
+                "?^": "where",
+                "?~": "when",
+                "?&": "why",
+                "?%": "quantity",
+                "?:": "test",
+                "?(": "maybe",
+                "?)": "doubt",
+                "?<": "was",
+                "?>": "will",
+                "?*": "danger",
+                "??": "queries",
+                "?+": "find",
+                "?-": "lose",
+                "?$": "estimate",
+                "?=": "check",
+                "?|": "hazy",
+                "?_": "abyss",
+
+                // | = PATH / FLUID
+                "|@": "network",
+                "|!": "stream",
+                "|#": "pipe",
+                "|^": "bridge",
+                "|~": "current",
+                "|&": "link",
+                "|%": "throughput",
+                "|:": "stream",
+                "|(": "clear",
+                "|)": "blocked",
+                "|<": "input",
+                "|>": "forward",
+                "|*": "surge",
+                "|?": "gap",
+                "|+": "connect",
+                "|-": "disconnect",
+                "|$": "bandwidth",
+                "|=": "channel",
+                "||": "pipeline",
+                "|_": "anchor",
+
+                // + = GAIN / ADDED
+                "+@": "champion",
+                "+!": "boost",
+                "+#": "bulk",
+                "+^": "city",
+                "+~": "life",
+                "+&": "firm",
+                "+%": "rich",
+                "+:": "expand",
+                "+(": "holy",
+                "+)": "pride",
+                "+<": "elder",
+                "+>": "next",
+                "+*": "king",
+                "+?": "vast",
+                "++": "approved",
+                "+-": "wide",
+                "+$": "fund",
+                "+=": "upgrade",
+                "+|": "momentum",
+                "+_": "frame",
+
+                // - = LOSS / REDUCED
+                "-@": "outcast",
+                "-!": "weak",
+                "-#": "dust",
+                "-^": "cell",
+                "-~": "brief",
+                "-&": "soft",
+                "-%": "poor",
+                "-:": "minor",
+                "-(": "mild",
+                "-)": "ugly",
+                "-<": "last",
+                "->": "behind",
+                "-*": "tiny",
+                "-?": "slim",
+                "-+": "narrow",
+                "--": "tabled",
+                "-$": "cut",
+                "-=": "small",
+                "-|": "exposure",
+                "-_": "erosion",
+
+                // $ = VALUE / FISCAL
+                "$@": "investor",
+                "$!": "pay",
+                "$#": "asset",
+                "$^": "market",
+                "$~": "cashflow",
+                "$&": "deal",
+                "$%": "tax",
+                "$:": "invoice",
+                "$(": "margin",
+                "$)": "deficit",
+                "$<": "refund",
+                "$>": "charge",
+                "$*": "price",
+                "$?": "quote",
+                "$+": "raise",
+                "$-": "slash",
+                $$: "financials",
+                "$=": "balance",
+                "$|": "transfer",
+                $_: "capital",
+            };
+
+            let activeSymFilter = null;
+
+            // ── Symbol table ──
+            const symbolTableBody =
+                document.getElementById("symbol-table-body");
+            symbols.forEach((row) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td class="td-sym">${row.s}</td><td class="td-domain">${row.domain}</td><td class="td-mod">${row.mod}</td>`;
+                tr.addEventListener("click", () => {
+                    if (activeSymFilter === row.s) {
+                        activeSymFilter = null;
+                        tr.classList.remove("sym-active");
+                        searchInput.value = "";
+                        clearFilterBtn.classList.remove("visible");
+                        renderList("");
+                    } else {
+                        document
+                            .querySelectorAll("#symbol-table-body tr")
+                            .forEach((r) => r.classList.remove("sym-active"));
+                        activeSymFilter = row.s;
+                        tr.classList.add("sym-active");
+                        searchInput.value = "";
+                        clearFilterBtn.classList.add("visible");
+                        renderList("", row.s);
+                        document
+                            .getElementById("dict-section")
+                            .scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+                symbolTableBody.appendChild(tr);
+            });
+
+            // ── Essentials ──
+            function renderEssentials() {
+                const el = document.getElementById("essential-list");
+                el.innerHTML = "";
+                essentialPairs.forEach((pair) => {
+                    const item = document.createElement("div");
+                    item.className = "essential-item";
+                    item.innerHTML = `<span class="pair-badge">${pair}</span><span class="pair-meaning">${fullDictionary[pair]}</span>`;
+                    el.appendChild(item);
+                });
+            }
+
+            // ── Dictionary ──
+            const dictArr = Object.entries(fullDictionary).map(([p, m]) => ({
+                p,
+                m,
+            }));
+            const searchInput = document.getElementById("search-input");
+            const wordList = document.getElementById("word-list");
+            const dictCount = document.getElementById("dict-count");
+            const clearFilterBtn = document.getElementById("clear-filter");
+
+            function renderList(f = "", symFilter = null) {
+                let filtered = dictArr;
+                if (symFilter) {
+                    filtered = filtered.filter(
+                        (i) => i.p[0] === symFilter || i.p[1] === symFilter,
+                    );
+                }
+                if (f) {
+                    filtered = filtered.filter(
+                        (i) =>
+                            i.p.includes(f) ||
+                            i.m.toLowerCase().includes(f.toLowerCase()),
+                    );
+                }
+                const label = symFilter ? ` · symbol "${symFilter}"` : "";
+                dictCount.textContent = `${filtered.length} entries${label}`;
+                wordList.innerHTML = "";
+                function escHtml(s) {
+                    return s
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;");
+                }
+                filtered.forEach((i) => {
+                    const d = document.createElement("div");
+                    d.className = "word-item";
+                    d.innerHTML = `<span class="pair">${escHtml(i.p)}</span><span class="meaning">${escHtml(i.m)}</span><button class="copy-btn">copy</button>`;
+                    d.querySelector(".copy-btn").addEventListener(
+                        "click",
+                        (e) => {
+                            e.stopPropagation();
+                            const btn = e.target;
+                            navigator.clipboard.writeText(i.p).then(() => {
+                                btn.textContent = "✓";
+                                btn.classList.add("copied");
+                                setTimeout(() => {
+                                    btn.textContent = "copy";
+                                    btn.classList.remove("copied");
+                                }, 1200);
+                            });
+                        },
+                    );
+                    wordList.appendChild(d);
+                });
+            }
+
+            clearFilterBtn.addEventListener("click", () => {
+                activeSymFilter = null;
+                document
+                    .querySelectorAll("#symbol-table-body tr")
+                    .forEach((r) => r.classList.remove("sym-active"));
+                clearFilterBtn.classList.remove("visible");
+                searchInput.value = "";
+                renderList("");
+            });
+
+            searchInput.addEventListener("input", (e) => {
+                activeSymFilter = null;
+                document
+                    .querySelectorAll("#symbol-table-body tr")
+                    .forEach((r) => r.classList.remove("sym-active"));
+                clearFilterBtn.classList.remove("visible");
+                renderList(e.target.value);
+            });
+
+            // ── Back to top ──
+            const backTop = document.getElementById("back-top");
+            window.addEventListener(
+                "scroll",
+                () => {
+                    backTop.classList.toggle("visible", window.scrollY > 300);
+                },
+                { passive: true },
+            );
+            backTop.addEventListener("click", () =>
+                window.scrollTo({ top: 0, behavior: "smooth" }),
+            );
+
+            // ── Export ──
+            document.getElementById("export-btn").onclick = () => {
+                let md = "# TWO TALK: CONCISE SEMANTIC SHORTHAND\n\n";
+                md +=
+                    "## INTRODUCTION\nTwo Talk is a concise semantic shorthand designed for succinct notetaking. Every word is exactly two characters: the first symbol represents a Subject (the noun or domain), and the second symbol represents a State (the state, quality, or action).\n\n";
+                md +=
+                    "## RULES\n" +
+                    "- **Symbols:** Every word is exactly two characters. 1st symbol = Subject; 2nd symbol = State.\n" +
+                    "- **Stacking:** Combine pairs with a dot (.) to narrow meaning (General + Specific). e.g., `#~.!*` (Fast Food).\n" +
+                    "- **State\Flow:** Use `(` / `)` for positive/negative and `<` / `>` for past/future.\n" +
+                    "- **Headers:** Start every note with `##` followed by the project or category name.\n" +
+                    "- **Literals:** Use raw numbers for amounts/dates and capital initials for names. Use `:` to label a specific entity.\n" +
+                    "- **Essence:** Capture meaning, not words. Use WHO + DOING + DETAIL structure.\n" +
+                    "- **Breaks:** An empty line signals a new topic or shift in thought.\n\n";
+                md +=
+                    "## SYMBOLS\n| Sym | Subject (1st) | State (2nd) |\n| :--- | :--- | :--- |\n";
+                symbols.forEach((r) => {
+                    md += `| ${r.s} | ${r.domain} | ${r.mod} |\n`;
+                });
+                md += "\n## ESSENTIALS\n";
+                essentialPairs.forEach((pair) => {
+                    md += `- **${pair}**: ${fullDictionary[pair]}\n`;
+                });
+                md +=
+                    "\n## DICTIONARY\n| Pair | Meaning | Pair | Meaning |\n| :--- | :--- | :--- | :--- |\n";
+                const entries = Object.entries(fullDictionary);
+                for (let i = 0; i < entries.length; i += 2) {
+                    const [p1, m1] = entries[i];
+                    const se = entries[i + 1];
+                    md += `| \`${p1}\` | ${m1} | ${se ? `\`${se[0]}\`` : ""} | ${se ? se[1] : ""} |\n`;
+                }
+                md += "\n\n---\nTWO TALK // v1.2 // BARNEY MATTHEWS";
+                const blob = new Blob([md], { type: "text/markdown" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "twotalk-guide.txt";
+                a.click();
+            };
+            const stackingExamples = [
+                { compound: [">>", "!="], result: "Verdict" },
+                { compound: ["))", "~*"], result: "Deadlock" },
+                { compound: ["$$", "(("], result: "Earnings" },
+                { compound: ["@*", "@!"], result: "Leadership" },
+                { compound: ["@$", "!<"], result: "Delivery" },
+                { compound: ["~$", "~)"], result: "Overdue" },
+                { compound: [">=", "~>"], result: "Milestone" },
+                { compound: [":$", "~>"], result: "Forecast" },
+                { compound: ["&<", ")^"], result: "Liability" },
+                { compound: ["*~", "!*"], result: "Emergency" },
+            ];
+
+            function renderStacking() {
+                const grid = document.getElementById("stack-grid");
+                grid.innerHTML = "";
+                stackingExamples.forEach(({ compound, result, context }) => {
+                    const [p1, p2] = compound;
+                    const m1 = fullDictionary[p1] || "?";
+                    const m2 = fullDictionary[p2] || "?";
+
+                    function escHtml(s) {
+                        return s
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;");
+                    }
+
+                    const card = document.createElement("div");
+                    card.className = "stack-card";
+                    card.innerHTML = `
+                        <div class="stack-compound">
+                            ${escHtml(p1)}<span class="stack-dot">.</span>${escHtml(p2)}
+                        </div>
+                        <div class="stack-result">→ ${result}</div>
+                        <div class="stack-breakdown">
+                            <div class="stack-part">
+                                <span class="stack-part-pair">${escHtml(p1)}</span>
+                                <span class="stack-part-arrow">›</span>
+                                <span class="stack-part-meaning">${escHtml(m1)}</span>
+                            </div>
+                            <div class="stack-part">
+                                <span class="stack-part-pair">${escHtml(p2)}</span>
+                                <span class="stack-part-arrow">›</span>
+                                <span class="stack-part-meaning">${escHtml(m2)}</span>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+            renderStacking();
+            renderEssentials();
+            renderList();
+            // ── LEARN SECTION ──
+            (function () {
+                // Mode switching
+                document.querySelectorAll(".learn-mode-btn").forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        document
+                            .querySelectorAll(".learn-mode-btn")
+                            .forEach((b) => b.classList.remove("active"));
+                        document
+                            .querySelectorAll(".learn-panel")
+                            .forEach((p) => p.classList.remove("active"));
+                        btn.classList.add("active");
+                        document
+                            .getElementById("panel-" + btn.dataset.mode)
+                            .classList.add("active");
+                    });
                 });
 
-                const blob = new Blob([content], { type: "text/plain" });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = `twotalk_core_${new Date().toISOString().slice(0,10)}.txt`;
-                a.click();
-            }
+                // ── FLASHCARDS ──
+                const allPairs = Object.entries(fullDictionary);
+                function shuffle(arr) {
+                    for (let i = arr.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [arr[i], arr[j]] = [arr[j], arr[i]];
+                    }
+                    return arr;
+                }
+                let fcDeck = shuffle([...allPairs]);
+                let fcIdx = 0;
 
-            function importFromTxt(event) {
-                const file = event.target.files[0];
-                if (!file) return;
+                function getSymbolName(sym) {
+                    const found = symbols.find((s) => s.s === sym);
+                    return found ? found.domain : sym;
+                }
 
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const lines = e.target.result.split('\n');
-                    let newDict = JSON.parse(JSON.stringify(dict)); // Start with current defaults
-                    let count = 0;
+                function loadCard(idx) {
+                    const [pair, meaning] = fcDeck[idx];
+                    document.getElementById("fc-symbol").textContent = pair;
+                    document.getElementById("fc-meaning").textContent = meaning;
+                    const s1 = getSymbolName(pair[0]);
+                    const s2 = getSymbolName(pair[1]);
+                    document.getElementById("fc-breakdown").textContent =
+                        `${pair[0]} = ${s1}  ·  ${pair[1]} = ${s2}`;
+                    document.getElementById("fc-counter").textContent =
+                        `${idx + 1} / ${fcDeck.length}`;
+                    document
+                        .getElementById("flashcard")
+                        .classList.remove("flipped");
+                }
 
-                    lines.forEach(line => {
-                        if (line.includes('|') && !line.includes('SYMBOL |')) {
-                            const parts = line.split('|').map(p => p.trim());
-                            // Validates it is a symbol pair (usually 2 chars)
-                            if (parts.length >= 2 && parts[0].length <= 3) {
-                                const key = parts[0];
-                                const canonical = parts[1];
-                                const context = parts[2] || "";
+                loadCard(0);
 
-                                // Updates the dictionary: [Canonical, Context, (empty)]
-                                newDict[key] = [canonical, context, ""];
-                                count++;
-                            }
-                        }
+                document
+                    .getElementById("flashcard")
+                    .addEventListener("click", () => {
+                        document
+                            .getElementById("flashcard")
+                            .classList.toggle("flipped");
+                    });
+                document
+                    .getElementById("fc-next")
+                    .addEventListener("click", () => {
+                        fcIdx = (fcIdx + 1) % fcDeck.length;
+                        if (fcIdx === 0) fcDeck = shuffle([...allPairs]);
+                        loadCard(fcIdx);
+                    });
+                document
+                    .getElementById("fc-prev")
+                    .addEventListener("click", () => {
+                        fcIdx = (fcIdx - 1 + fcDeck.length) % fcDeck.length;
+                        loadCard(fcIdx);
                     });
 
-                    if (count > 0) {
-                        if (confirm(`Import ${count} symbols? This will update your current dictionary.`)) {
-                            dict = newDict;
-                            localStorage.setItem("tt_v7", JSON.stringify(dict));
-                            render();
-                        }
+                // ── QUIZ ──
+                let quizPairs = shuffle([...allPairs]);
+                let quizIdx = 0;
+                let quizCorrect = 0;
+                let quizTotal = 0;
+                let quizMode = "sym2word"; // alternate between symbol→word and word→symbol
+
+                function getQuizDistractors(correctPair, n) {
+                    const pool = allPairs.filter(([p]) => p !== correctPair);
+                    shuffle(pool);
+                    return pool.slice(0, n);
+                }
+
+                function loadQuiz() {
+                    const [pair, meaning] =
+                        quizPairs[quizIdx % quizPairs.length];
+                    quizMode = quizIdx % 3 === 2 ? "word2sym" : "sym2word";
+
+                    const promptEl = document.getElementById("quiz-prompt");
+                    const labelEl = document.getElementById("quiz-label");
+                    const optEl = document.getElementById("quiz-options");
+                    document.getElementById("quiz-feedback").textContent = "";
+                    optEl.innerHTML = "";
+
+                    const distractors = getQuizDistractors(pair, 3);
+
+                    if (quizMode === "sym2word") {
+                        labelEl.textContent = "What does this pair mean?";
+                        promptEl.innerHTML = `<div class="quiz-prompt-sym">${pair}</div>`;
+                        const opts = shuffle([[pair, meaning], ...distractors]);
+                        opts.forEach(([p, m]) => {
+                            const btn = document.createElement("button");
+                            btn.className = "quiz-opt";
+                            btn.textContent = m;
+                            btn.addEventListener("click", () =>
+                                handleQuizAnswer(
+                                    btn,
+                                    m === meaning,
+                                    meaning,
+                                    optEl,
+                                ),
+                            );
+                            optEl.appendChild(btn);
+                        });
                     } else {
-                        alert("No valid Two Talk data found. Ensure the file uses the '|' separator.");
+                        labelEl.textContent = "Which pair means this?";
+                        promptEl.innerHTML = `<div class="quiz-prompt-word">${meaning}</div>`;
+                        const opts = shuffle([[pair, meaning], ...distractors]);
+                        opts.forEach(([p, m]) => {
+                            const btn = document.createElement("button");
+                            btn.className = "quiz-opt";
+                            btn.style.fontFamily =
+                                '"Atkinson Hyperlegible", sans-serif';
+                            btn.style.fontWeight = "800";
+                            btn.style.fontSize = "1.15rem";
+                            btn.style.letterSpacing = "2px";
+                            btn.textContent = p;
+                            btn.addEventListener("click", () =>
+                                handleQuizAnswer(btn, p === pair, pair, optEl),
+                            );
+                            optEl.appendChild(btn);
+                        });
                     }
-                };
-                reader.readAsText(file);
-            }
 
-            function toggleQuickStart() {
-                const content = document.getElementById("quickStartContent");
-                const toggle = document.getElementById("quickStartToggle");
+                    updateQuizScore();
+                }
 
-                if (!content || !toggle) return;
+                function handleQuizAnswer(btn, isCorrect, correct, optEl) {
+                    optEl.querySelectorAll(".quiz-opt").forEach((b) => {
+                        b.disabled = true;
+                        const val = b.textContent;
+                        if (quizMode === "sym2word") {
+                            if (val === fullDictionary[correct])
+                                b.classList.add("correct");
+                        } else {
+                            if (val === correct) b.classList.add("correct");
+                        }
+                    });
+                    if (!isCorrect) btn.classList.add("wrong");
 
-                const isHidden =
-                    content.style.display === "none" ||
-                    content.style.display === "";
+                    quizTotal++;
+                    if (isCorrect) quizCorrect++;
+                    document.getElementById("quiz-feedback").textContent =
+                        isCorrect
+                            ? "✓ Correct!"
+                            : `✗ The answer was: ${quizMode === "sym2word" ? fullDictionary[correct] : correct}`;
+                    updateQuizScore();
 
-                content.style.display = isHidden ? "block" : "none";
-                toggle.textContent = isHidden ? "▲" : "▼";
-            }
+                    setTimeout(() => {
+                        quizIdx++;
+                        if (quizIdx >= quizPairs.length) {
+                            quizPairs = shuffle([...allPairs]);
+                            quizIdx = 0;
+                        }
+                        loadQuiz();
+                    }, 1400);
+                }
 
-            render();
+                function updateQuizScore() {
+                    document.getElementById("quiz-score-text").textContent =
+                        `${quizCorrect} / ${quizTotal}`;
+                    const pct =
+                        quizTotal > 0 ? (quizCorrect / quizTotal) * 100 : 0;
+                    document.getElementById("quiz-fill").style.width =
+                        pct + "%";
+                }
+
+                document
+                    .getElementById("quiz-restart")
+                    .addEventListener("click", () => {
+                        quizPairs = shuffle([...allPairs]);
+                        quizIdx = 0;
+                        quizCorrect = 0;
+                        quizTotal = 0;
+                        loadQuiz();
+                    });
+
+                loadQuiz();
+
+                // ── TRANSLATE ──
+                const translateExercises = [
+                    {
+                        english:
+                            "The lead developer confirmed the project is ready.",
+                        answer: [
+                            { pair: "@*", note: "lead dev (vip/leader)" },
+                            { pair: "!=", note: "confirmed" },
+                            { pair: "##", note: "project (agenda/plan)" },
+                            { pair: "~*", note: "is ready (now)" },
+                        ],
+                    },
+                    {
+                        english:
+                            "There's a budget meeting with the client next week.",
+                        answer: [
+                            { pair: "%%", note: "budget" },
+                            { pair: "@@", note: "meeting (attendees)" },
+                            { pair: "@$", note: "client" },
+                            { pair: "~>", note: "future / next week" },
+                        ],
+                    },
+                    {
+                        english:
+                            "The action items are blocked — we need a decision urgently.",
+                        answer: [
+                            { pair: "!!", note: "action items" },
+                            { pair: "))", note: "blockers" },
+                            { pair: "!&", note: "decide" },
+                            { pair: "!*", note: "urgent" },
+                        ],
+                    },
+                    {
+                        english:
+                            "Risk has been identified. The deadline is tomorrow.",
+                        answer: [
+                            { pair: ")^", note: "risk" },
+                            { pair: "!=", note: "identified (confirmed)" },
+                            { pair: "~$", note: "deadline" },
+                            { pair: "~>", note: "future / tomorrow" },
+                        ],
+                    },
+                    {
+                        english:
+                            "The partner will take the lead on the new contract.",
+                        answer: [
+                            { pair: "@&", note: "partner" },
+                            { pair: "!>", note: "take" },
+                            { pair: "@*", note: "lead (vip)" },
+                            { pair: "&$", note: "contract" },
+                            { pair: ">(", note: "new" },
+                        ],
+                    },
+                    {
+                        english:
+                            "Open questions remain — we need to find the answer.",
+                        answer: [
+                            { pair: "??", note: "open questions" },
+                            { pair: "~+", note: "remain (always ongoing)" },
+                            { pair: "!?", note: "search / find" },
+                            { pair: "==", note: "answer (truth)" },
+                        ],
+                    },
+                    {
+                        english:
+                            "Costs are over budget. We need to cut spending.",
+                        answer: [
+                            { pair: "%$", note: "cost" },
+                            { pair: "%>", note: "over (more)" },
+                            { pair: "%%", note: "budget" },
+                            { pair: "$-", note: "cut/slash" },
+                            { pair: "!$", note: "spend" },
+                        ],
+                    },
+                    {
+                        english:
+                            "The milestone was reached. Next phase starts soon.",
+                        answer: [
+                            { pair: ">=", note: "milestone" },
+                            { pair: "~<", note: "past / reached" },
+                            { pair: "~^", note: "next phase" },
+                            { pair: "_<", note: "starts" },
+                            { pair: "~>", note: "future / soon" },
+                        ],
+                    },
+                    {
+                        english:
+                            "The team is aligned. We approved the proposal.",
+                        answer: [
+                            { pair: "@@", note: "team (meeting/group)" },
+                            { pair: ":(", note: "aligned / agree" },
+                            { pair: "++", note: "approved" },
+                            { pair: "##", note: "proposal (plan)" },
+                        ],
+                    },
+                    {
+                        english:
+                            "Revenue is down. We need to find new investors.",
+                        answer: [
+                            { pair: ">$", note: "revenue / income" },
+                            { pair: "=<", note: "down / before (declining)" },
+                            { pair: "!?", note: "find / search" },
+                            { pair: ">(", note: "new" },
+                            { pair: "$@", note: "investor" },
+                        ],
+                    },
+                    {
+                        english:
+                            "The pipeline is blocked. We need to escalate.",
+                        answer: [
+                            { pair: "||", note: "pipeline" },
+                            { pair: "|)", note: "blocked" },
+                            { pair: "!^", note: "escalate / raise" },
+                        ],
+                    },
+                    {
+                        english:
+                            "We have a strong network and momentum heading into Q4.",
+                        answer: [
+                            { pair: "|@", note: "network" },
+                            { pair: "+|", note: "momentum" },
+                            { pair: "~>", note: "future / heading into" },
+                        ],
+                    },
+                    {
+                        english: "The data shows a bottleneck in the workflow.",
+                        answer: [
+                            { pair: "::", note: "data" },
+                            { pair: "=&", note: "evidence / shows" },
+                            { pair: ")|", note: "bottleneck" },
+                            { pair: "><", note: "workflow / flow" },
+                        ],
+                    },
+                    {
+                        english: "The deal was fair. Both sides gain.",
+                        answer: [
+                            { pair: "$&", note: "deal" },
+                            { pair: "(&", note: "fair" },
+                            { pair: "(%", note: "gain" },
+                        ],
+                    },
+                    {
+                        english:
+                            "We are behind schedule. The forecast looks slow.",
+                        answer: [
+                            { pair: "->", note: "behind" },
+                            { pair: "~$", note: "schedule / deadline" },
+                            { pair: ">%", note: "forecast" },
+                            { pair: ">-", note: "slow" },
+                        ],
+                    },
+                    {
+                        english:
+                            "Leadership approved the upgrade. Rollout starts next week.",
+                        answer: [
+                            { pair: "@*", note: "leadership / lead dev (vip)" },
+                            { pair: "++", note: "approved" },
+                            { pair: "+=", note: "upgrade" },
+                            { pair: "_<", note: "rollout starts" },
+                            { pair: "~>", note: "future / next week" },
+                        ],
+                    },
+                    {
+                        english: "There's a gap in the process. Who owns this?",
+                        answer: [
+                            { pair: "|?", note: "gap" },
+                            { pair: "><", note: "process / flow" },
+                            { pair: "?@", note: "who" },
+                            { pair: "!>", note: "owns / takes" },
+                        ],
+                    },
+                    {
+                        english: "Debt is rising. We need to cut costs fast.",
+                        answer: [
+                            { pair: ")$", note: "debt" },
+                            { pair: "=+", note: "rising / greater" },
+                            { pair: "$-", note: "cut" },
+                            { pair: "%$", note: "cost" },
+                            { pair: ">+", note: "fast" },
+                        ],
+                    },
+                    {
+                        english:
+                            "The team completed the sprint. Morale is high.",
+                        answer: [
+                            { pair: "@@", note: "team" },
+                            { pair: "~<", note: "completed / past" },
+                            { pair: "^!", note: "sprint / energy action" },
+                            { pair: "^+", note: "morale / spirit high" },
+                        ],
+                    },
+                ];
+
+                let txIdx = 0;
+                let txDeck = shuffle([...translateExercises]);
+
+                function loadTranslate(idx) {
+                    const ex = txDeck[idx % txDeck.length];
+                    document.getElementById("translate-text").textContent =
+                        ex.english;
+                    document.getElementById("translate-input").value = "";
+                    const ansEl = document.getElementById("translate-answer");
+                    ansEl.classList.remove("visible");
+                    ansEl.innerHTML = "";
+                }
+
+                document
+                    .getElementById("translate-show")
+                    .addEventListener("click", () => {
+                        const ex = txDeck[txIdx % txDeck.length];
+                        const ansEl =
+                            document.getElementById("translate-answer");
+                        let html =
+                            "<strong style='font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)'>One possible answer:</strong><br><br>";
+                        html += ex.answer
+                            .map(
+                                (a) =>
+                                    `<span class="ans-pair">${a.pair}</span><span style="color:var(--fg-muted);font-size:0.8rem">${fullDictionary[a.pair] || ""} <em style="opacity:0.6">(${a.note})</em></span>`,
+                            )
+                            .join("<br>");
+                        html += `<br><br><span style="font-family:'Atkinson Hyperlegible',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:3px;color:var(--fg)">${ex.answer.map((a) => a.pair).join(" ")}</span>`;
+                        ansEl.innerHTML = html;
+                        ansEl.classList.add("visible");
+                    });
+
+                document
+                    .getElementById("translate-next")
+                    .addEventListener("click", () => {
+                        txIdx++;
+                        if (txIdx >= txDeck.length)
+                            txDeck = shuffle([...translateExercises]);
+                        loadTranslate(txIdx);
+                    });
+
+                loadTranslate(0);
+            })();
         </script>
-        <footer class="site-footer">
-          <p>
-            <a href="https://twotalk.org" target="_blank" rel="noopener">Two Talk</a>
-            was created by
-            <a href="https://barney.me" target="_blank" rel="noopener">Barney Matthews</a>.
-          </p>
-        </footer>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9798d9ad12ec4068835f3281e184a73b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
+    </body>
 </html>
