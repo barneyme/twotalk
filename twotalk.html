@@ -564,17 +564,26 @@
         <main class="wrap">
             <header class="hero card">
                 <h1>Two Talk</h1>
-                <p>
-                    Two Talk is a concise semantic notation system built on the
-                    Semantic Primes - the fundamental building blocks of human
-                    thought. By mapping these primes to 2-character pairs
-                    derived from 9 core symbols, complex ideas can be expressed
-                    with absolute precision and minimal digital footprint. Two
-                    Talk is plaintext and works natively in any application
-                    including your favorite text editor and personal knowledge
-                    management system (E.G. Obsidian, Notation and Logseq).
-                </p>
+                <p>Two Talk is a semantic shorthand system for thought compression in plaintext. It is built on the Semantic Primes - the fundamental building blocks of human thought. By mapping these primes to 2-character pairs using 9 core symbols, complex ideas can be expressed concisely and precisely. Two Talk works natively in any application including your favorite text editor (E.G. Notepad++, Nano or Vim) and personal knowledge management systems (E.G. Obsidian, Notation or Logseq).</p>
             </header>
+
+            <section class="card" style="border-left-color: var(--fg-muted);">
+                <h2 style="font-size: 0.8rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Examples</h2>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--bg-alt); padding-bottom: 2px;">
+                        <span style="font-style: italic;"><strong>Journal:</strong> Life is good right now.</span>
+                        <code class="mono" style="color: var(--accent);">:@ :! !!</code>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--bg-alt); padding-bottom: 2px;">
+                        <span style="font-style: italic;"><strong>PKM:</strong> Positive Thought</span>
+                        <code class="mono" style="color: var(--accent);">#? /?>.!!</code>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-style: italic;"><strong>Todo:</strong> Review important notes before tomorrow.</span>
+                        <code class="mono" style="color: var(--accent);">?> !% :< :!</code>
+                    </div>
+                </div>
+            </section>
 
             <section class="card" id="core">
                 <h2><span class="num">01</span>Core Symbols</h2>
@@ -691,7 +700,15 @@
                                 <div class="feedback" id="feedback" aria-live="polite"></div>
                             </div>
                         </section>
-        <footer>TWO TALK // CREATED BY BARNEY MATTHEWS // 2026</footer>
+                        <section class="card" style="border-left-color: var(--fg-muted); margin-top: 2rem;">
+                                <h2 style="font-size: 0.9rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.1em;">Manifesto & License</h2>
+                                <p style="margin: 0; font-style: italic; font-size: 0.95rem;">
+                                    Two Talk is a tagging shorthand for personal notation, not a spoken language.<br>
+                                    It prioritizes semantic compression over linguistic completeness.<br>
+                                    License: MIT © 2026 Barney Matthews. Free to use, modify, and share.
+                                </p>
+                            </section>
+        <footer>TWO TALK v1.0</footer>
 
         <script>
         // 1. DATA DEFINITIONS
