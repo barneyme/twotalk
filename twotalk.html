@@ -2,2612 +2,981 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Two Talk</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400;700;800&display=swap"
-            rel="stylesheet"
-        />
         <link
             rel="icon"
             href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23e04e00'/><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='white' stop-opacity='0.18'/><stop offset='0.6' stop-color='white' stop-opacity='0'/></linearGradient></defs><text y='72' font-size='52' font-weight='900' font-family='Arial Black,sans-serif' x='50' text-anchor='middle' fill='white' letter-spacing='-3'>TT</text></svg>"
         />
         <style>
+            @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
             :root {
                 --bg: #eef0f3;
                 --bg2: #ffffff;
-                --bg3: #e4e7eb;
+                --accent: #e04e00;
                 --fg: #141618;
                 --fg-muted: #6b7280;
-                --accent: #e04e00;
-                --accent-dim: rgba(224, 78, 0, 0.08);
                 --border: #d1d5db;
-                --border-accent: rgba(224, 78, 0, 0.3);
-                --shadow:
-                    0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-                --nav-h: 52px;
+                --radius: 12px;
             }
-
-            *,
-            *::before,
-            *::after {
+            * {
                 box-sizing: border-box;
             }
-            html {
-                scroll-behavior: smooth;
-            }
-
+            html,
             body {
-                background-color: var(--bg);
-                color: var(--fg);
-                font-family: "Space Mono", monospace;
-                line-height: 1.65;
+                height: 100%;
+            }
+            body {
                 margin: 0;
-                padding: 0;
-                min-height: 100vh;
-            }
-
-            body::before {
-                content: "";
-                position: fixed;
-                inset: 0;
+                color: var(--fg);
+                background-color: var(--bg);
                 background-image:
-                    linear-gradient(var(--border) 1px, transparent 1px),
-                    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+                    linear-gradient(
+                        to right,
+                        var(--border) 1px,
+                        transparent 1px
+                    ),
+                    linear-gradient(
+                        to bottom,
+                        var(--border) 1px,
+                        transparent 1px
+                    );
                 background-size: 40px 40px;
-                opacity: 0.5;
-                pointer-events: none;
-                z-index: 0;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    Segoe UI,
+                    Roboto,
+                    Inter,
+                    sans-serif;
+                line-height: 1.5;
             }
-
-            /* ── STICKY NAV ── */
-            #site-nav {
+            a {
+                color: var(--accent);
+            }
+            .nav {
                 position: sticky;
                 top: 0;
-                z-index: 100;
-                background: rgba(255, 255, 255, 0.88);
+                z-index: 50;
                 backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
+                background: rgba(238, 240, 243, 0.75);
                 border-bottom: 1px solid var(--border);
-                height: var(--nav-h);
+            }
+            .nav-inner {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 10px 16px;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                padding: 0 24px;
                 gap: 12px;
             }
-
-            .nav-brand {
-                font-family: "Syne", sans-serif;
-                font-weight: 800;
-                font-size: 1rem;
-                color: var(--fg);
-                letter-spacing: -0.5px;
-                white-space: nowrap;
-            }
-            .nav-brand em {
-                color: var(--accent);
-                font-style: normal;
-            }
-
-            .nav-links {
-                display: flex;
-                gap: 4px;
-                overflow-x: auto;
-                scrollbar-width: none;
-            }
-            .nav-links::-webkit-scrollbar {
-                display: none;
-            }
-
-            .nav-link {
-                font-family: "Space Mono", monospace;
-                font-size: 0.65rem;
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-                color: var(--fg-muted);
-                text-decoration: none;
-                padding: 5px 10px;
-                border-radius: 4px;
-                transition:
-                    color 0.15s,
-                    background 0.15s;
-                white-space: nowrap;
-            }
-            .nav-link:hover {
-                color: var(--accent);
-                background: var(--accent-dim);
-            }
-
-            /* ── CONTAINER ── */
-            .container {
-                max-width: 900px;
-                width: 100%;
-                margin: 0 auto;
-                padding: 0 24px 80px;
-                position: relative;
-                z-index: 1;
-            }
-
-            /* ── HEADER ── */
-            header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 40px 0 28px;
-                border-bottom: 1px solid var(--border-accent);
-                margin-bottom: 40px;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-
-            .header-brand {
-                display: flex;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .tt-logo {
-                width: 56px;
-                height: 56px;
+            .logo {
+                width: 32px;
+                height: 32px;
                 background: var(--accent);
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                box-shadow: 0 4px 12px rgba(224, 78, 0, 0.3);
-                position: relative;
-                overflow: hidden;
-            }
-            .tt-logo::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(
-                    135deg,
-                    rgba(255, 255, 255, 0.18) 0%,
-                    transparent 60%
-                );
-            }
-            .tt-logo span {
-                font-family: "Syne", sans-serif;
-                font-weight: 800;
-                font-size: 1.5rem;
-                color: #fff;
-                letter-spacing: -1px;
-                position: relative;
-                z-index: 1;
-            }
-
-            .header-text h1 {
-                font-family: "Syne", sans-serif;
-                font-weight: 800;
-                font-size: clamp(2rem, 5vw, 3.2rem);
-                color: var(--fg);
-                margin: 0;
-                letter-spacing: -1px;
-                line-height: 1;
-            }
-            .header-text h1 em {
-                color: var(--accent);
-                font-style: normal;
-            }
-            .header-text p {
-                margin: 7px 0 0;
-                font-size: 0.68rem;
-                letter-spacing: 4px;
-                text-transform: uppercase;
-                color: var(--fg-muted);
-            }
-
-            #export-btn {
-                background: transparent;
-                border: 1px solid var(--border-accent);
-                border-radius: 6px;
-                color: var(--accent);
-                padding: 10px 20px;
-                cursor: pointer;
+                color: white;
+                display: grid;
+                place-items: center;
+                border-radius: 8px;
                 font-family: "Space Mono", monospace;
-                font-size: 0.7rem;
                 font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                transition: all 0.2s ease;
-                white-space: nowrap;
-                position: relative;
-                overflow: hidden;
             }
-            #export-btn::before {
-                content: "";
-                position: absolute;
-                inset: 0;
+            .title {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-weight: 700;
+                letter-spacing: 0.2px;
+            }
+            .spacer {
+                flex: 1;
+            }
+            .btn {
+                border: 1px solid var(--border);
+                background: var(--bg2);
+                padding: 8px 12px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-weight: 600;
+            }
+            .btn:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
+            .btn-primary {
                 background: var(--accent);
-                transform: translateX(-100%);
-                transition: transform 0.2s ease;
-                z-index: -1;
-            }
-            #export-btn:hover {
-                color: #fff;
+                color: white;
                 border-color: var(--accent);
             }
-            #export-btn:hover::before {
-                transform: translateX(0);
+            .btn-primary:hover {
+                filter: brightness(0.95);
+                color: white;
             }
-
-            /* ── TWO-COLUMN LAYOUT ── */
-            .two-col {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
+            .search-box {
+                position: relative;
+                width: 50%;
+                flex: 0 0 50%;
             }
-            .two-col > .section {
-                margin-bottom: 0;
+            .search-box input {
+                width: 100%;
+                padding: 8px 12px 8px 32px;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                font-size: 0.95rem;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                background: var(--bg2);
+                color: var(--fg);
             }
-
-            /* ── SECTIONS ── */
-            .section {
-                margin-bottom: 24px;
+            .search-box input:focus {
+                outline: none;
+                border-color: var(--accent);
+                box-shadow: 0 0 0 3px rgba(224, 78, 0, 0.1);
+            }
+            .search-box input::placeholder {
+                color: var(--fg-muted);
+            }
+            .search-icon {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--fg-muted);
+                pointer-events: none;
+                font-size: 0.95rem;
+            }
+            #searchResults {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
                 background: var(--bg2);
                 border: 1px solid var(--border);
-                border-radius: 10px;
-                padding: 26px 28px;
-                position: relative;
-                overflow: hidden;
-                box-shadow: var(--shadow);
-                animation: fadeUp 0.4s ease both;
+                border-top: none;
+                border-radius: 0 0 6px 6px;
+                max-height: 400px;
+                overflow-y: auto;
+                z-index: 100;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                margin-top: -1px;
             }
-            .section::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 3px;
-                height: 100%;
-                background: var(--accent);
-                opacity: 0.55;
-                border-radius: 10px 0 0 10px;
+            #searchResults.active {
+                display: block;
             }
-
-            h2 {
-                font-family: "Syne", sans-serif;
-                font-weight: 700;
-                color: var(--fg);
-                font-size: 1rem;
-                letter-spacing: 2.5px;
-                text-transform: uppercase;
-                margin: 0 0 18px;
-                padding-bottom: 12px;
+            .search-result-item {
+                padding: 10px 12px;
                 border-bottom: 1px solid var(--border);
+                cursor: pointer;
                 display: flex;
                 align-items: center;
                 gap: 10px;
             }
-            h2 .section-num {
-                color: var(--accent);
-                font-size: 0.68rem;
+            .search-result-item:hover {
+                background: var(--bg);
+            }
+            .search-result-item:last-child {
+                border-bottom: none;
+            }
+            .result-symbol {
                 font-family: "Space Mono", monospace;
-                font-weight: 400;
-                opacity: 0.75;
-            }
-
-            .section p {
-                font-size: 0.86rem;
-                color: var(--fg-muted);
-                margin: 0 0 12px;
-                line-height: 1.75;
-            }
-            .section p strong {
-                color: var(--fg);
+                color: var(--accent);
                 font-weight: 700;
+                font-size: 1rem;
+                min-width: 2ch;
             }
-
-            ul {
-                padding-left: 0;
-                list-style: none;
+            .result-content {
+                flex: 1;
+            }
+            .result-text {
+                color: var(--fg);
+                font-size: 0.9rem;
+            }
+            .result-label {
+                color: var(--fg-muted);
+                font-size: 0.75rem;
+                margin-top: 2px;
+            }
+            .wrap {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 24px 16px 80px;
+            }
+            .hero {
+                display: grid;
+                gap: 8px;
+            }
+            .hero h1 {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-size: clamp(28px, 4vw, 42px);
                 margin: 0;
+                line-height: 1.1;
             }
-            li {
-                margin-bottom: 9px;
-                font-size: 0.86rem;
+            .hero p {
+                margin: 0;
                 color: var(--fg-muted);
-                padding-left: 16px;
-                position: relative;
-                line-height: 1.7;
-            }
-            li::before {
-                content: "›";
-                position: absolute;
-                left: 0;
-                color: var(--accent);
-                font-weight: 700;
-            }
-            li b,
-            li strong {
-                color: var(--fg);
-                font-weight: 700;
-            }
 
-            code {
-                background: var(--accent-dim);
-                color: var(--accent);
-                padding: 1px 6px;
-                border: 1px solid var(--border-accent);
+            }
+            .card {
+                background: var(--bg2);
+                border: 1px solid var(--border);
+                border-left: 4px solid var(--accent);
+                border-radius: var(--radius);
+                padding: 24px;
+                margin: 24px 0;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+            }
+            h2 {
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-size: 1.5rem;
+                margin: 0 0 16px;
+                display: flex;
+                align-items: baseline;
+                gap: 10px;
+            }
+            h2 .num {
                 font-family: "Space Mono", monospace;
-                font-size: 0.85em;
-                border-radius: 3px;
+                color: var(--accent);
+                font-size: 1rem;
+                opacity: 0.9;
+                min-width: 2ch;
             }
-
-            /* ── SYMBOL TABLE ── */
-            .symbol-table-wrap {
-                overflow-x: auto;
+            .muted {
+                color: var(--fg-muted);
             }
-            table {
+            table.symbols {
                 width: 100%;
                 border-collapse: collapse;
-                font-size: 0.83rem;
+                margin-top: 8px;
+                max-width: 560px;
             }
-            thead tr {
+            table.symbols td {
+                padding: 10px 8px;
                 border-bottom: 1px solid var(--border);
+                vertical-align: top;
             }
-            th {
-                text-align: left;
-                padding: 7px 10px;
-                font-family: "Syne", sans-serif;
-                font-size: 0.65rem;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                color: var(--fg-muted);
-                font-weight: 600;
-            }
-            tbody tr {
-                border-bottom: 1px solid var(--border);
-                transition: background 0.15s;
-                cursor: pointer;
-            }
-            tbody tr:hover {
-                background: var(--accent-dim);
-            }
-            tbody tr.sym-active {
-                background: var(--accent-dim);
-                outline: 1px solid var(--border-accent);
-            }
-            tbody td {
-                padding: 8px 10px;
-            }
-            .td-sym {
-                font-size: 1.15rem;
-                font-weight: 700;
+            table.symbols td:first-child {
+                font-family: "Space Mono", monospace;
                 color: var(--accent);
-                width: 44px;
-                font-family: "Syne", sans-serif;
-                letter-spacing: 1px;
+                font-weight: 700;
+                font-size: 1.3rem;
+                width: 3.5ch;
             }
-            /* Specifically target the Two Talk pairs for maximum clarity */
-            .td-sym,
-            .pair,
-            .pair-badge {
-                font-family: "Atkinson Hyperlegible", sans-serif;
-                font-weight: 800;
-                font-size: 1.25rem; /* Slightly larger to help the ~ curve show */
-                letter-spacing: 1px;
-                display: inline-block;
-                transform: translateY(1px); /* Centers the tilde vertically */
-            }
-
-            .td-domain {
-                color: var(--fg);
-            }
-            .td-mod {
-                color: var(--fg-muted);
-            }
-
-            /* ── ESSENTIALS ── */
-            .essential-grid {
+            .dict-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 7px;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 20px;
             }
-            .essential-item {
-                background: var(--bg3);
-                border: 1px solid var(--border);
-                border-radius: 6px;
-                padding: 9px 11px;
-                font-size: 0.81rem;
-                display: flex;
-                align-items: baseline;
-                gap: 8px;
-                transition:
-                    border-color 0.15s,
-                    background 0.15s;
-                cursor: default;
-            }
-            .essential-item:hover {
-                border-color: var(--border-accent);
-                background: var(--accent-dim);
-            }
-            .essential-item .pair-badge {
-                color: var(--accent);
-                font-weight: 700;
-                font-size: 1rem;
-                min-width: 22px;
-                font-family: "Syne", sans-serif;
-                letter-spacing: 1px;
-            }
-            .essential-item .pair-meaning {
-                color: var(--fg-muted);
-                text-transform: lowercase;
-            }
-
-            /* ── DICTIONARY ── */
-            .search-wrap {
-                position: relative;
-                margin-bottom: 14px;
-            }
-            .search-wrap svg {
-                position: absolute;
-                left: 13px;
-                top: 50%;
-                transform: translateY(-50%);
-                color: var(--fg-muted);
-                pointer-events: none;
-            }
-            #search-input {
-                width: 100%;
-                padding: 12px 16px 12px 40px;
-                background: var(--bg3);
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                color: var(--fg);
+            .group h3 {
                 font-family: "Space Mono", monospace;
-                font-size: 0.84rem;
-                outline: none;
-                transition: border-color 0.2s;
-            }
-            #search-input::placeholder {
-                color: var(--fg-muted);
-            }
-            #search-input:focus {
-                border-color: var(--border-accent);
-            }
-
-            .dict-toolbar {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 10px;
-            }
-            #dict-count {
-                font-size: 0.7rem;
-                color: var(--fg-muted);
-                letter-spacing: 1px;
-            }
-            #clear-filter {
-                font-family: "Space Mono", monospace;
-                font-size: 0.65rem;
-                color: var(--accent);
-                background: none;
-                border: none;
-                cursor: pointer;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                padding: 2px 6px;
-                border-radius: 4px;
-                display: none;
-            }
-            #clear-filter:hover {
-                background: var(--accent-dim);
-            }
-            #clear-filter.visible {
-                display: block;
-            }
-
-            #word-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 1px;
-                background: var(--border);
-                max-height: 480px;
-                overflow-y: scroll;
-                border: 1px solid var(--border);
-                border-radius: 8px;
-            }
-            .word-item {
-                padding: 9px 13px;
-                background: var(--bg3);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 8px;
-                transition: background 0.12s;
-                position: relative;
-                cursor: pointer;
-            }
-            .word-item:hover {
-                background: var(--accent-dim);
-            }
-            .pair {
-                color: var(--accent);
-                font-weight: 700;
-                font-size: 1.05rem;
-                min-width: 26px;
-                font-family: "Syne", sans-serif;
-                letter-spacing: 1px;
-            }
-            .meaning {
-                text-transform: lowercase;
-                color: var(--fg-muted);
-                font-size: 0.79rem;
-                flex: 1;
-            }
-
-            /* Copy button */
-            .copy-btn {
-                display: none;
-                position: absolute;
-                right: 8px;
-                top: 50%;
-                transform: translateY(-50%);
-                background: var(--bg2);
-                border: 1px solid var(--border);
-                border-radius: 4px;
-                color: var(--fg-muted);
-                font-family: "Space Mono", monospace;
-                font-size: 0.6rem;
-                padding: 2px 7px;
-                cursor: pointer;
-                letter-spacing: 0.5px;
-                transition: all 0.15s;
-                white-space: nowrap;
-            }
-            .word-item:hover .copy-btn {
-                display: block;
-            }
-            .copy-btn:hover {
-                background: var(--accent);
-                color: #fff;
-                border-color: var(--accent);
-            }
-            .copy-btn.copied {
-                background: #16a34a;
-                color: #fff;
-                border-color: #16a34a;
-            }
-
-            /* ── SCROLLBAR ── */
-            ::-webkit-scrollbar {
-                width: 5px;
-                height: 5px;
-            }
-            ::-webkit-scrollbar-track {
-                background: var(--bg3);
-            }
-            ::-webkit-scrollbar-thumb {
-                background: var(--border);
-                border-radius: 3px;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-                background: var(--accent);
-            }
-
-            .section h3 {
-                font-family: "Syne", sans-serif;
-                font-size: 0.7rem;
-                letter-spacing: 3px;
-                text-transform: uppercase;
+                font-size: 0.85rem;
+                letter-spacing: 0.08em;
                 color: var(--fg-muted);
                 margin: 18px 0 8px;
-                font-weight: 600;
+                text-transform: uppercase;
             }
-
-            /* ── BACK TO TOP ── */
-            #back-top {
-                position: fixed;
-                bottom: 28px;
-                right: 28px;
-                width: 40px;
-                height: 40px;
-                background: var(--accent);
-                color: #fff;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
+            .pairs {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .pairs li {
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                box-shadow: 0 4px 12px rgba(224, 78, 0, 0.35);
-                opacity: 0;
-                transform: translateY(12px);
-                transition:
-                    opacity 0.25s,
-                    transform 0.25s;
-                z-index: 200;
-                pointer-events: none;
-            }
-            #back-top.visible {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
-            #back-top:hover {
-                background: #c44200;
-            }
-            #back-top svg {
-                width: 16px;
-                height: 16px;
-            }
-
-            /* ── FOOTER ── */
-            footer {
-                text-align: center;
-                font-size: 0.68rem;
-                color: var(--fg-muted);
-                letter-spacing: 3px;
-                text-transform: uppercase;
-                margin-top: 48px;
-                padding-top: 20px;
-                border-top: 1px solid var(--border);
-                opacity: 0.55;
-            }
-
-            /* ── ANIMATIONS ── */
-            @keyframes fadeUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(14px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            #intro {
-                animation-delay: 0.05s;
-            }
-            #rules {
-                animation-delay: 0.1s;
-            }
-            .two-col .section:nth-child(1) {
-                animation-delay: 0.15s;
-            }
-            .two-col .section:nth-child(2) {
-                animation-delay: 0.2s;
-            }
-            #dict-section {
-                animation-delay: 0.25s;
-            }
-
-            @media (max-width: 640px) {
-                .two-col {
-                    grid-template-columns: 1fr;
-                }
-                .section {
-                    padding: 18px 16px;
-                }
-                .nav-link {
-                    padding: 4px 7px;
-                    font-size: 0.6rem;
-                }
-                header {
-                    padding: 24px 0 20px;
-                }
-                #back-top {
-                    bottom: 16px;
-                    right: 16px;
-                }
-            }
-            /* ── STACKING ── */
-            .stack-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 6px;
-                margin-top: 6px;
-            }
-            .stack-card {
-                background: var(--bg3);
-                border: 1px solid var(--border);
-                border-radius: 6px;
-                padding: 8px 10px;
-                display: flex;
-                align-items: baseline;
                 gap: 10px;
-                transition:
-                    border-color 0.15s,
-                    background 0.15s;
+                padding: 8px 0;
+                border-bottom: 1px dashed var(--border);
             }
-            .stack-card:hover {
-                border-color: var(--border-accent);
-                background: var(--accent-dim);
-            }
-            .stack-compound {
-                font-family: "Atkinson Hyperlegible", sans-serif;
-                font-weight: 800;
-                font-size: 1.1rem;
-                color: var(--accent);
-                letter-spacing: 1px;
-                white-space: nowrap;
-                flex-shrink: 0;
-            }
-            .stack-compound .stack-dot {
-                color: var(--fg-muted);
-                font-weight: 400;
-            }
-            .stack-meta {
-                display: flex;
-                flex-direction: column;
-                gap: 1px;
-                min-width: 0;
-            }
-            .stack-result {
-                font-size: 0.8rem;
-                font-weight: 700;
-                color: var(--fg);
-                white-space: nowrap;
-            }
-            .stack-breakdown {
-                font-size: 0.7rem;
-                color: var(--fg-muted);
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            /* ── LEARN SECTION ── */
-            .learn-modes {
-                display: flex;
-                gap: 8px;
-                margin-bottom: 20px;
-                flex-wrap: wrap;
-            }
-            .learn-mode-btn {
+            .pair {
                 font-family: "Space Mono", monospace;
-                font-size: 0.65rem;
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-                padding: 7px 14px;
-                border-radius: 5px;
-                border: 1px solid var(--border);
-                background: var(--bg3);
-                color: var(--fg-muted);
-                cursor: pointer;
-                transition: all 0.15s;
-            }
-            .learn-mode-btn:hover {
-                border-color: var(--border-accent);
                 color: var(--accent);
+                font-weight: 700;
+                font-size: 1.25rem;
+                min-width: 3.2ch;
             }
-            .learn-mode-btn.active {
+            .meaning {
+                flex: 1;
+            }
+            .copy {
+                border: 1px solid var(--border);
+                background: transparent;
+                padding: 4px 8px;
+                border-radius: 6px;
+                font-size: 0.75rem;
+                cursor: pointer;
+                color: var(--fg-muted);
+                font-family: "Atkinson Hyperlegible", sans-serif;
+            }
+            .copy:hover,
+            .copy:focus {
+                border-color: var(--accent);
+                color: var(--accent);
+                outline: none;
+            }
+            .copy.copied {
                 background: var(--accent);
-                color: #fff;
+                color: white;
                 border-color: var(--accent);
             }
-
-            .learn-panel {
-                display: none;
+            .grammar-list {
+                margin: 0;
+                padding-left: 18px;
+                display: grid;
+                gap: 10px;
             }
-            .learn-panel.active {
-                display: block;
+            .grammar-list li {
+                margin: 0;
             }
-
-            /* Flash cards */
-            .flashcard-wrap {
-                perspective: 1000px;
-                margin-bottom: 18px;
+            code.mono,
+            .mono {
+                font-family: "Space Mono", monospace;
+                background: #f6f7f9;
+                border: 1px solid var(--border);
+                padding: 2px 6px;
+                border-radius: 6px;
+            }
+            .flash-wrap {
+                max-width: 720px;
+                margin: 0 auto;
+            }
+            .mode-tabs {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 12px;
+                justify-content: center;
+            }
+            .tab {
+                border: 1px solid var(--border);
+                background: var(--bg2);
+                padding: 6px 14px;
+                border-radius: 999px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+            }
+            .tab.active {
+                background: var(--accent);
+                color: white;
+                border-color: var(--accent);
             }
             .flashcard {
+                perspective: 1200px;
                 width: 100%;
-                min-height: 160px;
-                position: relative;
-                transform-style: preserve-3d;
-                transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+                max-width: 460px;
+                height: 260px;
+                margin: 0 auto;
                 cursor: pointer;
+                outline: none;
             }
-            .flashcard.flipped {
+            .flash-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.5s;
+                transform-style: preserve-3d;
+            }
+            .flashcard.flipped .flash-inner {
                 transform: rotateY(180deg);
             }
-            .card-face {
+            .face {
                 position: absolute;
                 inset: 0;
-                backface-visibility: hidden;
-                -webkit-backface-visibility: hidden;
+                background: var(--bg2);
+                border: 1px solid var(--border);
+                border-left: 4px solid var(--accent);
+                border-radius: var(--radius);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                border-radius: 10px;
-                border: 1px solid var(--border);
                 padding: 24px;
-                background: var(--bg2);
-                box-shadow: var(--shadow);
+                backface-visibility: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+                text-align: center;
             }
-            .card-face.back {
+            .face.back {
                 transform: rotateY(180deg);
-                background: var(--accent-dim);
-                border-color: var(--border-accent);
             }
-            .card-symbol {
-                font-family: "Atkinson Hyperlegible", sans-serif;
-                font-size: 3.5rem;
-                font-weight: 800;
+            .face .big {
+                font-family: "Space Mono", monospace;
                 color: var(--accent);
-                letter-spacing: 4px;
-                line-height: 1;
-                margin-bottom: 12px;
-            }
-            .card-hint {
-                font-size: 0.68rem;
-                color: var(--fg-muted);
-                letter-spacing: 2px;
-                text-transform: uppercase;
-            }
-            .card-meaning {
-                font-family: "Syne", sans-serif;
-                font-size: 1.6rem;
+                font-size: clamp(48px, 10vw, 72px);
                 font-weight: 700;
-                color: var(--fg);
-                margin-bottom: 8px;
-            }
-            .card-breakdown {
-                font-size: 0.78rem;
-                color: var(--fg-muted);
-                text-align: center;
-                line-height: 1.6;
-            }
-            .flashcard-controls {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                justify-content: center;
-                margin-top: 6px;
-            }
-            .fc-btn {
-                font-family: "Space Mono", monospace;
-                font-size: 0.65rem;
-                text-transform: uppercase;
-                letter-spacing: 1.5px;
-                padding: 8px 20px;
-                border-radius: 5px;
-                border: 1px solid var(--border);
-                background: var(--bg3);
-                color: var(--fg-muted);
-                cursor: pointer;
-                transition: all 0.15s;
-            }
-            .fc-btn:hover {
-                border-color: var(--border-accent);
-                color: var(--accent);
-                background: var(--accent-dim);
-            }
-            .fc-btn.primary {
-                background: var(--accent);
-                color: #fff;
-                border-color: var(--accent);
-            }
-            .fc-btn.primary:hover {
-                background: #c44200;
-            }
-            .fc-counter {
-                font-size: 0.7rem;
-                color: var(--fg-muted);
-                font-family: "Space Mono", monospace;
-                min-width: 60px;
-                text-align: center;
-            }
-
-            /* Quiz */
-            .quiz-question {
-                text-align: center;
-                margin-bottom: 22px;
-            }
-            .quiz-prompt-label {
-                font-size: 0.68rem;
-                color: var(--fg-muted);
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                margin-bottom: 10px;
-            }
-            .quiz-prompt-sym {
-                font-family: "Atkinson Hyperlegible", sans-serif;
-                font-size: 3rem;
-                font-weight: 800;
-                color: var(--accent);
-                letter-spacing: 4px;
                 line-height: 1;
             }
-            .quiz-prompt-word {
-                font-family: "Syne", sans-serif;
-                font-size: 2rem;
-                font-weight: 700;
-                color: var(--fg);
-                letter-spacing: -0.5px;
-            }
-            .quiz-options {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-                margin-bottom: 16px;
-            }
-            .quiz-opt {
-                font-family: "Space Mono", monospace;
-                font-size: 0.82rem;
-                padding: 12px 14px;
-                border-radius: 7px;
-                border: 1px solid var(--border);
-                background: var(--bg3);
-                color: var(--fg);
-                cursor: pointer;
-                transition: all 0.15s;
-                text-align: left;
-            }
-            .quiz-opt:hover:not(:disabled) {
-                border-color: var(--border-accent);
-                background: var(--accent-dim);
-            }
-            .quiz-opt.correct {
-                background: rgba(22, 163, 74, 0.1);
-                border-color: #16a34a;
-                color: #16a34a;
-            }
-            .quiz-opt.wrong {
-                background: rgba(224, 78, 0, 0.08);
-                border-color: var(--accent);
-                color: var(--accent);
-            }
-            .quiz-opt:disabled {
-                cursor: default;
-            }
-            .quiz-feedback {
-                min-height: 36px;
-                text-align: center;
-                font-size: 0.82rem;
-                color: var(--fg-muted);
-                margin-bottom: 12px;
-            }
-            .quiz-score-bar {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                font-size: 0.7rem;
-                color: var(--fg-muted);
-                font-family: "Space Mono", monospace;
+            .face .mean {
+                font-size: 1.5rem;
                 margin-top: 8px;
-                letter-spacing: 0.5px;
-            }
-            .quiz-progress {
-                flex: 1;
-                height: 4px;
-                background: var(--border);
-                border-radius: 2px;
-                overflow: hidden;
-            }
-            .quiz-progress-fill {
-                height: 100%;
-                background: var(--accent);
-                border-radius: 2px;
-                transition: width 0.3s ease;
-            }
-
-            /* Translate practice */
-            .translate-prompt {
-                background: var(--bg3);
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                padding: 16px 18px;
-                margin-bottom: 16px;
-            }
-            .translate-label {
-                font-size: 0.65rem;
-                color: var(--accent);
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                margin-bottom: 8px;
-            }
-            .translate-text {
                 font-family: "Atkinson Hyperlegible", sans-serif;
-                font-size: 1rem;
-                color: var(--fg);
-                line-height: 1.6;
             }
-            .translate-input-row {
+            .face .break {
+                margin-top: 6px;
+                color: var(--fg-muted);
+                font-family: "Space Mono", monospace;
+                font-size: 0.9rem;
+            }
+            .face .prompt {
+                color: var(--fg-muted);
+                font-size: 0.9rem;
+                margin-bottom: 4px;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+            }
+            .flash-controls {
                 display: flex;
-                gap: 10px;
-                margin-bottom: 14px;
+                gap: 8px;
+                justify-content: center;
+                margin-top: 14px;
+                flex-wrap: wrap;
             }
-            #translate-input {
-                flex: 1;
-                padding: 11px 14px;
-                background: var(--bg3);
-                border: 1px solid var(--border);
-                border-radius: 7px;
-                color: var(--fg);
-                font-family: "Atkinson Hyperlegible", sans-serif;
-                font-size: 1.05rem;
-                font-weight: 700;
-                letter-spacing: 2px;
-                outline: none;
-                transition: border-color 0.2s;
+            .quiz-area {
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+                margin-top: 14px;
+                flex-wrap: wrap;
             }
-            #translate-input:focus {
-                border-color: var(--border-accent);
-            }
-            #translate-input::placeholder {
-                font-weight: 400;
-                font-size: 0.8rem;
-                letter-spacing: 0;
-                color: var(--fg-muted);
-            }
-            .translate-answer {
-                background: var(--bg3);
+            .quiz-input {
+                font-family: "Space Mono", monospace;
+                padding: 10px 12px;
                 border: 1px solid var(--border);
                 border-radius: 8px;
-                padding: 14px 18px;
-                font-size: 0.84rem;
-                color: var(--fg-muted);
-                line-height: 1.7;
-                display: none;
-            }
-            .translate-answer.visible {
-                display: block;
-            }
-            .translate-answer .ans-pair {
-                font-family: "Atkinson Hyperlegible", sans-serif;
-                font-weight: 800;
-                color: var(--accent);
+                min-width: 200px;
                 font-size: 1rem;
-                margin-right: 4px;
+                background: white;
+            }
+            .quiz-input:focus {
+                outline: 2px solid var(--accent);
+                border-color: var(--accent);
+            }
+            .feedback {
+                min-height: 24px;
+                text-align: center;
+                margin-top: 8px;
+                font-weight: 600;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+            }
+            .feedback.ok {
+                color: #0a7a0a;
+            }
+            .feedback.err {
+                color: #b00020;
+            }
+            .practice-list {
+                display: grid;
+                gap: 12px;
+            }
+            .practice-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 14px 16px;
+                background: #f9fafb;
+                border: 1px solid var(--border);
+                border-radius: 10px;
+            }
+            .practice-en {
+                flex: 1;
+            }
+            .practice-actions {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .answer {
+                font-family: "Space Mono", monospace;
+                color: var(--accent);
+                font-weight: 700;
+                min-width: 14ch;
+                text-align: right;
+            }
+            .answer.hidden {
+                visibility: hidden;
+            }
+            .reveal {
+                border: 1px solid var(--border);
+                background: var(--bg2);
+                padding: 6px 10px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+            }
+            .reveal:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
+            footer {
+                max-width: 1100px;
+                margin: 40px auto 0;
+                padding: 0 16px 40px;
+                text-align: center;
+                color: var(--fg-muted);
+                font-family: "Space Mono", monospace;
+                font-size: 0.85rem;
+                letter-spacing: 0.08em;
+            }
+            @media (max-width: 640px) {
+                .card {
+                    padding: 18px;
+                }
+                .pairs li {
+                    padding: 10px 0;
+                }
+                .practice-item {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .answer {
+                    text-align: left;
+                    min-width: auto;
+                }
             }
         </style>
     </head>
     <body>
-        <!-- STICKY NAV -->
-        <nav id="site-nav">
-            <div class="nav-brand"><em>Two</em> Talk</div>
-            <div class="nav-links">
-                <a class="nav-link" href="#intro">Intro</a>
-                <a class="nav-link" href="#rules">Rules</a>
-                <a class="nav-link" href="#symbols">Symbols</a>
-                <a class="nav-link" href="#essentials">Essentials</a>
-                <a class="nav-link" href="#stacking">Stacking</a>
-                <a class="nav-link" href="#dict-section">Dictionary</a>
-                <a class="nav-link" href="#learn-section">Learn</a>
+        <nav class="nav">
+            <div class="nav-inner">
+                <div class="logo" aria-hidden="true">TT</div>
+                <div class="title">Two Talk</div>
+                <div class="spacer"></div>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search..."
+                        aria-label="Search dictionary and Swadesh"
+                    />
+                    <div id="searchResults"></div>
+                </div>
+                <button
+                    id="exportBtn"
+                    class="btn"
+                    aria-label="Export dictionary"
+                >
+                    Guide
+                </button>
             </div>
         </nav>
 
-        <div class="container">
-            <!-- HEADER -->
-            <header>
-                <div class="header-brand">
-                    <div class="tt-logo"><span>TT</span></div>
-                    <div class="header-text">
-                        <h1><em>Two</em> Talk</h1>
-                        <p>Concise Semantic Shorthand</p>
-                    </div>
-                </div>
-                <button id="export-btn">↓ Guide.txt</button>
-            </header>
-
-            <!-- INTRO -->
-            <div class="section" id="intro">
-                <h2><span class="section-num">01</span> Introduction</h2>
-                <p>
-                    <strong>Two Talk</strong> is a concise semantic shorthand
-                    system designed for rapid, objective observation. Unlike
-                    traditional shorthand, it captures
-                    <strong>meaning</strong> rather than phonetics. It is a
-                    structured micro-language that is fast to write and can be
-                    interpreted at a glance.
-                </p>
-
-                <ul>
-                    <li>
-                        <b>Clarity:</b> By mapping symbols to semantic states
-                        rather than sounds, notes are easier to scan for data
-                        points. You see the concept immediately without needing
-                        to decode phonetic representations.
-                    </li>
-                    <li>
-                        <b>Portability:</b> Designed for plaintext, it is fully
-                        compatible with tools like Obsidian, Notion, or CLI
-                        environments. No specialized fonts or hand-drawn strokes
-                        are required.
-                    </li>
-                    <li>
-                        <b>Precision:</b> The modular
-                        <b>Subject + State</b> framework provides a logical
-                        structure that eliminates the guesswork often found in
-                        minimalist languages, making old notes easy to
-                        interpret.
-                    </li>
-                </ul>
-
-                <h3>Example:</h3>
-                <div
-                    style="
-                        background: var(--bg3);
-                        padding: 15px;
-                        border-radius: 8px;
-                        border: 1px solid var(--border);
-                        margin-top: 10px;
-                    "
-                >
-                    <div style="margin-bottom: 12px">
-                        <strong
-                            style="
-                                font-size: 0.7rem;
-                                color: var(--accent);
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                            "
-                            >English:</strong
-                        >
-                        <p
-                            style="
-                                margin: 4px 0;
-                                font-family:
-                                    &quot;Atkinson Hyperlegible&quot;,
-                                    sans-serif;
-                                color: var(--fg);
-                            "
-                        >
-                            "The lead developer confirmed the project
-                            architecture is ready. We have a meeting with the
-                            client to discuss the next deployment phase."
-                        </p>
-                    </div>
-                    <div>
-                        <strong
-                            style="
-                                font-size: 0.7rem;
-                                color: var(--accent);
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                            "
-                            >Two Talk:</strong
-                        >
-                        <p
-                            style="
-                                margin: 4px 0;
-                                font-family: &quot;Space Mono&quot;, monospace;
-                                color: var(--fg);
-                                font-weight: 700;
-                                font-size: 1.1rem;
-                            "
-                        >
-                            @* != #&.=_ . @@ @$ !~ ~>.~^
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" id="rules">
-                <h2><span class="section-num">02</span> Rules</h2>
-                <ul>
-                    <li>
-                        <b>Symbols:</b> Every word is exactly two characters.
-                        1st symbol = <b>Subject</b> (What); 2nd symbol =
-                        <b>State</b> (How).
-                    </li>
-                    <li>
-                        <b>Stacking:</b> Combine pairs with a dot (.) to narrow
-                        meaning (General + Specific). e.g.,
-                        <code>#~.!*</code> (Food + Fast = Fast Food).
-                    </li>
-                    <li>
-                        <b>State\Flow:</b> Use <code>(</code>/<code>)</code> for
-                        positive/negative states and <code>&lt;</code>/<code
-                            >&gt;</code
-                        >
-                        for past/future timing.
-                    </li>
-                    <li>
-                        <b>Headers:</b> Start notes with
-                        <code>##</code> followed by the project or category name
-                        for immediate context.
-                    </li>
-                    <li>
-                        <b>Literals:</b> Use raw numbers for amounts/dates and
-                        capital initials for names. Use <code>:</code> after a
-                        symbol to label a specific entity.
-                    </li>
-                    <li>
-                        <b>Essence:</b> Capture meaning, not words. Use the
-                        <b>Standard Structure</b> (WHO + DOING + DETAIL) to
-                        translate intent.
-                    </li>
-                    <li>
-                        <b>Breaks:</b> An empty line signals a new topic or
-                        shift in the thought block.
-                    </li>
-                </ul>
-            </div>
-
-            <!-- SYMBOLS + ESSENTIALS side by side -->
-            <div class="two-col">
-                <div class="section" id="symbols">
-                    <h2><span class="section-num">03</span> Symbols</h2>
-                    <p
-                        style="
-                            font-size: 0.76rem;
-                            color: var(--fg-muted);
-                            margin-bottom: 10px;
-                        "
-                    >
-                        Click a row to filter the dictionary.
-                    </p>
-                    <div class="symbol-table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Sym</th>
-                                    <th>Subject (1st)</th>
-                                    <th>State (2nd)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="symbol-table-body"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="section" id="essentials">
-                    <h2><span class="section-num">04</span> Essentials</h2>
-                    <div class="essential-grid" id="essential-list"></div>
-                </div>
-            </div>
-            <!-- STACKING EXAMPLES -->
-            <div class="section" id="stacking">
-                <h2><span class="section-num">05</span> Stacking</h2>
-                <p>
-                    Combine two pairs with a <code>.</code> dot to build a
-                    refined meaning. This expands Two Talk from 400 standard
-                    meanings to 160,000 refined meanings. The
-                    <strong>first pair</strong> sets the broad domain, the
-                    <strong>second pair</strong> narrows it. Read as:
-                    <em>General → Specific</em>.
-                </p>
-                <div class="stack-grid" id="stack-grid"></div>
-            </div>
-
-            <!-- DICTIONARY -->
-            <div class="section" id="dict-section" style="margin-top: 24px">
-                <h2><span class="section-num">06</span> Dictionary</h2>
-                <div class="search-wrap">
-                    <svg
-                        width="15"
-                        height="15"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                    >
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="m21 21-4.35-4.35" />
-                    </svg>
-                    <input
-                        type="text"
-                        id="search-input"
-                        placeholder="Search pair or meaning..."
-                    />
-                </div>
-                <div class="dict-toolbar">
-                    <div id="dict-count"></div>
-                    <button id="clear-filter">✕ Clear filter</button>
-                </div>
-                <div id="word-list"></div>
-            </div>
-
-            <!-- LEARN -->
-            <div
-                class="section"
-                id="learn-section"
-                style="margin-top: 24px; animation-delay: 0.3s"
-            >
-                <h2><span class="section-num">07</span> Learn</h2>
-                <p style="margin-bottom: 16px">
-                    Practice reading and writing Two Talk. Choose a mode below.
-                </p>
-
-                <div class="learn-modes">
-                    <button
-                        class="learn-mode-btn active"
-                        data-mode="flashcards"
-                    >
-                        Flashcards
-                    </button>
-                    <button class="learn-mode-btn" data-mode="translate">
-                        Exercises
-                    </button>
-                    <button class="learn-mode-btn" data-mode="quiz">
-                        Test
-                    </button>
-                </div>
-
-                <!-- FLASHCARDS -->
-                <div class="learn-panel active" id="panel-flashcards">
-                    <div class="flashcard-wrap">
-                        <div
-                            class="flashcard"
-                            id="flashcard"
-                            title="Click to flip"
-                        >
-                            <div class="card-face front">
-                                <div class="card-symbol" id="fc-symbol"></div>
-                                <div class="card-hint">
-                                    tap to reveal meaning
-                                </div>
-                            </div>
-                            <div class="card-face back">
-                                <div class="card-meaning" id="fc-meaning"></div>
-                                <div
-                                    class="card-breakdown"
-                                    id="fc-breakdown"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flashcard-controls">
-                        <button class="fc-btn" id="fc-prev">← Prev</button>
-                        <span class="fc-counter" id="fc-counter"></span>
-                        <button class="fc-btn primary" id="fc-next">
-                            Next →
-                        </button>
-                    </div>
-                </div>
-
-                <!-- QUIZ -->
-                <div class="learn-panel" id="panel-quiz">
-                    <div class="quiz-question">
-                        <div class="quiz-prompt-label" id="quiz-label">
-                            What does this pair mean?
-                        </div>
-                        <div id="quiz-prompt"></div>
-                    </div>
-                    <div class="quiz-options" id="quiz-options"></div>
-                    <div class="quiz-feedback" id="quiz-feedback"></div>
-                    <div class="quiz-score-bar">
-                        <span id="quiz-score-text">0 / 0</span>
-                        <div class="quiz-progress">
-                            <div
-                                class="quiz-progress-fill"
-                                id="quiz-fill"
-                                style="width: 0%"
-                            ></div>
-                        </div>
-                        <button
-                            class="fc-btn"
-                            id="quiz-restart"
-                            style="font-size: 0.6rem; padding: 4px 10px"
-                        >
-                            Restart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- TRANSLATE -->
-                <div class="learn-panel" id="panel-translate">
-                    <p
-                        style="
-                            font-size: 0.82rem;
-                            color: var(--fg-muted);
-                            margin-bottom: 14px;
-                        "
-                    >
-                        Try writing an English phrase in Two Talk. Use the
-                        <strong>WHO + DOING + DETAIL</strong> structure. Tap
-                        <em>Show answer</em> to see one possible translation.
-                    </p>
-                    <div class="translate-prompt">
-                        <div class="translate-label">
-                            Translate to Two Talk:
-                        </div>
-                        <div class="translate-text" id="translate-text"></div>
-                    </div>
-                    <div class="translate-input-row">
-                        <input
-                            type="text"
-                            id="translate-input"
-                            placeholder="Type your Two Talk here…"
-                            autocomplete="off"
-                            autocorrect="off"
-                            spellcheck="false"
-                        />
-                        <button class="fc-btn primary" id="translate-show">
-                            Show answer
-                        </button>
-                    </div>
-                    <div class="translate-answer" id="translate-answer"></div>
-                    <div class="flashcard-controls" style="margin-top: 14px">
-                        <button class="fc-btn primary" id="translate-next">
-                            Next phrase →
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <footer>TWO TALK // v1.2 // BARNEY MATTHEWS</footer>
+        <div class="search-container">
         </div>
 
-        <!-- BACK TO TOP -->
-        <button id="back-top" title="Back to top">
-            <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                viewBox="0 0 24 24"
-            >
-                <path d="M18 15l-6-6-6 6" />
-            </svg>
-        </button>
+        <main class="wrap">
+            <header class="hero card">
+                <h1>Two Talk</h1>
+                <p>
+                    Two Talk is a concise semantic notation system built on the
+                    Semantic Primes - the fundamental building blocks of human
+                    thought. By mapping these primes to 2-character pairs
+                    derived from 9 core symbols, complex ideas can be expressed
+                    with absolute precision and minimal digital footprint. Two
+                    Talk is plaintext and works natively in any application
+                    including your favorite text editor and personal knowledge
+                    management system (E.G. Obsidian, Notation and Logseq).
+                </p>
+            </header>
+
+            <section class="card" id="core">
+                <h2><span class="num">01</span>Core Symbols</h2>
+                <p class="muted">
+                    The Two Talk system is anchored by nine core functional symbols. Each symbol represents a broad domain of human experience, such as <strong>@</strong> for person or agent, <strong>#</strong> for physical objects, and <strong>:</strong> for time. These nine symbols serve as the "roots" for every Semantic Prime in the dictionary below.
+                </p>
+                <table
+                    class="symbols"
+                    id="symbolsTable"
+                    aria-label="Core symbols"
+                ></table>
+            </section>
+
+            <section class="card" id="grammar">
+                <h2><span class="num">02</span> Grammar</h2>
+                <ol class="grammar-list">
+                    <li>
+                        <strong>Order: who → what → action</strong> -
+                        <code class="mono">@! #% &gt;&gt;</code> = I thing do
+                    </li>
+                    <li>
+                        <strong>Modifiers follow</strong> -
+                        <code class="mono">#% !!</code> = thing good = good thing
+                    </li>
+                    <li>
+                        <strong>Combine with dot</strong> -
+                        <code class="mono">#%.&gt;^</code> = thing.move = vehicle
+                    </li>
+                    <li>
+                        <strong>Literals</strong> -
+                        Use numbers for amounts (<code class="mono">123</code>), dates (<code class="mono">20250414</code>), and times (<code class="mono">1430</code>). Use initials for names (e.g., <code class="mono">BM</code>).
+                    </li>
+                    <li>
+                        <strong>Negation: &lt;! before phrase</strong> -
+                        <code class="mono">&lt;! ?!</code> = not want
+                    </li>
+                    <li>
+                        <strong>Context is king</strong> -
+                        Broad words gain precision from the situation.
+                    </li>
+                </ol>
+            </section>
+
+            <section class="card" id="dict">
+                            <h2><span class="num">03</span>Semantic Prime Dictionary</h2>
+                            <p>
+                                The Semantic Prime Dictionary is the foundation of Two Talk. It consists of approximately 65 concepts that cannot be broken down into simpler terms. By combining a <strong>Category Root</strong> core symbol with a <strong>Modifier</strong> core symbol, we create the fundamental meanings of Two Talk.
+                            </p>
+                            <p class="muted">
+                                For example, combining <strong>@ (Person)</strong> with <strong>! (Value)</strong> creates <code>@!</code> (the concept of "I"). This dictionary is the Two Talk canon grouped by first symbol.
+                            </p>
+
+                            <div id="dictGrid" class="dict-grid">
+                                </div>
+                        </section>
+
+                        <section class="card" id="swadesh">
+                            <h2><span class="num">04</span>Swadesh Stacked Vocabulary</h2>
+                            <p>
+                                The Swadesh list represents a collection of concepts found in every human culture,
+                                ranging from body parts to celestial bodies. In Two Talk, these are not unique
+                                symbols but "stacks" - logical compounds built by combining Semantic Primes.
+                                For example, <strong>Head</strong> is expressed as <code>#@.%></code>
+                                (Body.Big/Top), and <strong>Sun</strong> is <code>#^.:!</code> (Place.Now/Light).
+                                This shows how the Two Talk semantic primes can describe the entire physical world
+                                through intuitive, descriptive combinations.
+                            </p>
+                            <p class="muted">
+                                This list expands the semantic prime dictionary using stacking to express
+                                the core Swadesh vocabulary. Click any entry to copy the symbol.
+                            </p>
+
+                            <div style="overflow: auto">
+                                <table id="swadeshTable" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: left; padding: 6px; border-bottom: 1px solid var(--border);">English</th>
+                                            <th style="text-align: left; padding: 6px; border-bottom: 1px solid var(--border);">Two Talk</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section class="card" id="learn">
+                            <h2><span class="num">05</span> Learn</h2>
+                            <div class="flash-wrap">
+                                <div class="mode-tabs" role="tablist" aria-label="Learn mode">
+                                    <button class="tab active" id="tabStudy" role="tab" aria-selected="true">Study</button>
+                                    <button class="tab" id="tabQuiz" role="tab" aria-selected="false">Quiz</button>
+                                </div>
+
+                                <div class="flashcard" id="flashcard" role="button" aria-label="Flashcard, click to flip" tabindex="0">
+                                    <div class="flash-inner">
+                                        <div class="face front" id="cardFront"></div>
+                                        <div class="face back" id="cardBack"></div>
+                                    </div>
+                                </div>
+
+                                <div class="flash-controls" id="studyControls">
+                                    <button class="btn" id="prevBtn">Prev</button>
+                                    <button class="btn btn-primary" id="nextBtn">Next</button>
+                                    <button class="btn" id="shuffleBtn">Shuffle</button>
+                                </div>
+
+                                <div class="quiz-area" id="quizArea" hidden>
+                                    <input id="quizInput" class="quiz-input" autocomplete="off" placeholder="type pair, e.g. @!" aria-label="Type the pair" />
+                                    <button class="btn btn-primary" id="checkBtn">Check</button>
+                                    <button class="btn" id="skipBtn">Skip</button>
+                                </div>
+
+                                <div class="feedback" id="feedback" aria-live="polite"></div>
+                            </div>
+                        </section>
+        <footer>TWO TALK // CREATED BY BARNEY MATTHEWS // 2026</footer>
 
         <script>
-            const essentialPairs = [
-                "@@", // attendees
-                "!!", // action items
-                "##", // agenda
-                "~~", // status
-                "::", // notes
-                "**", // priority
-                "&&", // dependency
-                "%%", // budget
-                "??", // open questions
-                ">>", // decisions
-                "))", // blockers
+        // 1. DATA DEFINITIONS
+                    const coreSymbols = [
+                        { s: "@", d: "person / agent" },
+                        { s: "#", d: "thing / substance" },
+                        { s: "!", d: "value / quality" },
+                        { s: "?", d: "mind / internal" },
+                        { s: ">", d: "act / out" },
+                        { s: "<", d: "in / receive" },
+                        { s: ":", d: "time" },
+                        { s: "^", d: "space / place" },
+                        { s: "%", d: "amount / state" },
+                    ];
 
-                "?@", // who
-                "?#", // what
-                "?^", // where
-                "?~", // when
-                "?!", // how
-                "?&", // why
+                    const dictData = {
+                        "@": [
+                            ["@@", "we"], ["@!", "i"], ["@#", "person"], ["@?", "you"],
+                            ["@>", "child"], ["@<", "parent"], ["@:", "self"], ["@^", "neighbor"], ["@%", "people"],
+                        ],
+                        "#": [
+                            ["##", "object"], ["#@", "body"], ["#!", "tool"], ["#?", "idea"],
+                            ["#>", "output"], ["#<", "input"], ["#:", "stuff"], ["#^", "site"], ["#%", "thing"],
+                        ],
+                        "!": [
+                            ["!!", "good"], ["!@", "help"], ["!#", "use"], ["!?", "need"],
+                            ["!>", "give"], ["!<", "take"], ["!:", "tell"], ["!^", "change"], ["!%", "important"],
+                        ],
+                        "?": [
+                            ["??", "know"], ["?@", "hear"], ["?#", "see"], ["?!", "want"],
+                            ["?>", "think"], ["?<", "remember"], ["?:", "question"], ["?^", "learn"], ["?%", "feel"],
+                        ],
+                        ">": [
+                            [">>", "do"], [">@", "touch"], [">#", "word"], [">!", "make"],
+                            [">?", "ask"], ["><", "true"], [">:", "say"], [">^", "move"], [">%", "happen"],
+                        ],
+                        "<": [
+                            ["<<", "kind"], ["<@", "have"], ["<#", "part"], ["<!", "not"],
+                            ["<?", "maybe"], ["<>", "same"], ["<:", "cause"], ["<^", "contain"], ["<%", "can"],
+                        ],
+                        ":": [
+                            ["::", "time"], [":@", "life"], [":#", "moment"], [":!", "now"],
+                            [":?", "when"], [":>", "after"], [":<", "before"], [":^", "always"], [":%", "often"],
+                        ],
+                        "^": [
+                            ["^^", "place"], ["^@", "local"], ["^#", "location"], ["^!", "here"],
+                            ["^?", "inside"], ["^>", "outside"], ["^<", "between"], ["^:", "far"], ["^%", "near"],
+                        ],
+                        "%": [
+                            ["%%", "amount"], ["%@", "many"], ["%#", "some"], ["%!", "all"],
+                            ["%?", "few"], ["%>", "big"], ["%<", "small"], ["%:", "more"], ["%^", "less"],
+                        ],
+                    };
 
-                "&+", // yes
-                "&-", // no
-                "!=", // confirm
-                "&(", // true
+                    const swadeshData = [
+                        [46, "Above", "^.%>"],
+                        [121, "Ash", "#:.!^.:>"],
+                        [82, "Back", "#@.:<"],
+                        [47, "Below", "^.%<"],
+                        [108, "Belly", "#@.^?"],
+                        [92, "Bird", "@#.#^"],
+                        [131, "Bite", ">>.#@.#!.<:"],
+                        [128, "Black", "!.%>"],
+                        [88, "Blood", "#@.#:.>>"],
+                        [89, "Bone", "#@.#!.<#"],
+                        [83, "Breast", "#@.#<.!!"],
+                        [142, "Burn", ">>.#:.!^"],
+                        [118, "Cloud", "#^.#:.<^"],
+                        [60, "Come", ">^.^!"],
+                        [152, "Day", ":.%<"],
+                        [35, "Die", "@<.<:"],
+                        [93, "Dog", "@#.!!"],
+                        [129, "Drink", "#<.#:.<^"],
+                        [70, "Ear", "#@.?@"],
+                        [130, "Eat", "#<.#@.#:"],
+                        [102, "Egg", "#%.@>"],
+                        [71, "Eye", "#@.?#"],
+                        [90, "Fat", "#@.#:.!!"],
+                        [105, "Feather", "#@.#^"],
+                        [109, "Guts", "#@.^?.<#"],
+                        [106, "Hair", "#@.%@"],
+                        [80, "Hand", "#@.>>"],
+                        [64, "Hard", "#!"],
+                        [69, "Head", "#@.%>"],
+                        [26, "Hear", "?@"],
+                        [63, "Heavy", "%.%>"],
+                        [45, "Here", "^!"],
+                        [103, "Horn", "#@.#!.%>"],
+                        [59, "If", "<? <:"],
+                        [49, "Inside", "^?"],
+                        [134, "Kill", ">>.:@.<!"],
+                        [79, "Knee", "#@.>^.<#"],
+                        [21, "Know", "??"],
+                        [97, "Leaf", "#%.<#"],
+                        [78, "Leg", "#@.>^"],
+                        [139, "Lie", ">^.:<"],
+                        [62, "Light", "%.%<"],
+                        [132, "Sleep", ":@.<!"],
+                        [20, "Small", "%<"],
+                        [119, "Smoke", "#^.#:.!^"],
+                        [65, "Soft", "<!.#!"],
+                        [13, "Some", "%#"],
+                        [5, "Something", "#%"],
+                        [141, "Stand", ">^.%>"],
+                        [112, "Star", "#^.%?"],
+                        [115, "Stone", "#:.#!"],
+                        [110, "Sun", "#^.:!"],
+                        [135, "Swim", ">^.#:.<^"],
+                        [104, "Tail", "#@.:>"],
+                        [22, "Think", "?>"],
+                        [8, "This", "#<"],
+                        [74, "Tooth", "#@.#!.<:"],
+                        [95, "Tree", "#%.:@"],
+                        [29, "True", "><"],
+                        [12, "Two", "2"],
+                        [52, "Very", "%!"],
+                        [137, "Walk", ">^.#@.^!"],
+                        [23, "Want", "?!"],
+                        [113, "Water", "#:.<^"],
+                        [148, "What", "##:?"],
+                        [36, "When", ":?"],
+                        [44, "Where", "^^"],
+                        [127, "White", "!.%<"],
+                        [147, "Who", "@?:?"],
+                        [107, "Wing", "#@.>^.#^"],
+                        [28, "Words", ">#"],
+                        [126, "Yellow", "!.#^.:!"],
+                        [2, "You", "@?"]
+                    ];
 
-                "~<", // past
-                "~*", // now
-                "~>", // future
-                "~$", // deadline
+                    const groupNames = { "@": "PERSON", "#": "THING", "!": "VALUE", "?": "MIND", ">": "ACT", "<": "IN", ":": "TIME", "^": "SPACE", "%": "AMOUNT" };
+                    const order = ["@", "#", "!", "?", ">", "<", ":", "^", "%"];
+                    const shortMap = { "@": "person", "#": "thing", "!": "value", "?": "mind", ">": "out", "<": "in", ":": "time", "^": "space", "%": "amount" };
 
-                "@*", // leader
-                "@&", // partner
-                "@!", // staff
-                "@$", // client
+                    // 2. UTILITIES & INITIALIZATION
+                    const escapeHTML = (str) => {
+                        return str.replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
+                    };
 
-                "!*", // urgent
-                "!<", // give
-                "!>", // take
-                "!&", // decide
+                    const deckData = [];
+                    order.forEach(k => dictData[k].forEach(([p, m]) => deckData.push({ pair: p, mean: m, b: `${shortMap[p[0]]} ${shortMap[p[1]]}` })));
 
-                ")^", // risk
-                ")!", // fail
+                    // 3. RENDER CORE CONTENT
+                    const renderSystem = () => {
+                        // Symbols Table
+                        document.getElementById("symbolsTable").innerHTML = coreSymbols
+                            .map((c) => `<tr><td>${escapeHTML(c.s)}</td><td>${c.d}</td></tr>`).join("");
 
-                "%+", // max
-                "%-", // min
-                "%>", // more
-                "%<", // less
+                        // Dictionary Grid
+                        const dg = document.getElementById("dictGrid");
+                        dg.innerHTML = "";
+                        order.forEach((k) => {
+                            const items = dictData[k];
+                            const div = document.createElement("div");
+                            div.className = "group";
+                            div.innerHTML = `<h3>${k} ${groupNames[k]}</h3><ul class="pairs">${items.map(([p, m]) => `<li><code class="pair">${escapeHTML(p)}</code><span class="meaning">${m}</span><button class="copy" data-copy="${p}">copy</button></li>`).join("")}</ul>`;
+                            dg.appendChild(div);
+                        });
 
-                ">=", // milestone
-            ];
+                        // Swadesh Table
+                        const swBody = document.querySelector("#swadeshTable tbody");
+                        if (swBody) {
+                            swBody.innerHTML = swadeshData
+                                .map(([n, en, tt]) => `<tr><td style="padding:6px">${en}</td><td style="padding:6px;font-family:'Space Mono',monospace;color:var(--accent);font-weight:700">${escapeHTML(tt)}</td></tr>`).join("");
+                        }
+                    };
 
-            const symbols = [
-                { s: "@", domain: "Person", mod: "Social" },
-                { s: "!", domain: "Action", mod: "Active" },
-                { s: "#", domain: "Object", mod: "Material" },
-                { s: "^", domain: "Place", mod: "Spatial" },
-                { s: "~", domain: "Time", mod: "Temporal" },
-                { s: "&", domain: "Link", mod: "Logic" },
-                { s: "%", domain: "Ratio", mod: "Relative" },
-                { s: ":", domain: "Data", mod: "Mental" },
-                { s: "(", domain: "Benefit", mod: "Positive" },
-                { s: ")", domain: "Burden", mod: "Negative" },
-                { s: "<", domain: "Origin", mod: "Previous" },
-                { s: ">", domain: "Target", mod: "Future" },
-                { s: "*", domain: "Focus", mod: "Vital" },
-                { s: "?", domain: "Doubt", mod: "Unknown" },
-                { s: "|", domain: "Path", mod: "Fluid" },
-                { s: "_", domain: "Support", mod: "Basic" },
-                { s: "+", domain: "Gain", mod: "Added" },
-                { s: "-", domain: "Loss", mod: "Reduced" },
-                { s: "$", domain: "Value", mod: "Fiscal" },
-                { s: "=", domain: "Fact", mod: "Stable" },
-            ];
+                    // 4. SEARCH LOGIC
+                    const searchInput = document.getElementById("searchInput");
+                    const searchResults = document.getElementById("searchResults");
 
-            const fullDictionary = {
-                // @ = PERSON / SOCIAL
-                "@@": "attendees",
-                "@!": "staff",
-                "@#": "contact",
-                "@^": "neighbor",
-                "@~": "colleague",
-                "@&": "partner",
-                "@%": "crowd",
-                "@:": "self",
-                "@(": "friend",
-                "@)": "enemy",
-                "@<": "parent",
-                "@>": "child",
-                "@*": "vip",
-                "@?": "stranger",
-                "@+": "expert",
-                "@-": "junior",
-                "@$": "client",
-                "@=": "member",
-                "@|": "liaison",
-                "@_": "sponsor",
-
-                // ! = ACTION / ACTIVE
-                "!@": "help",
-                "!!": "tasks",
-                "!#": "use",
-                "!^": "move",
-                "!~": "wait",
-                "!&": "decide",
-                "!%": "count",
-                "!:": "tell",
-                "!(": "play",
-                "!)": "stop",
-                "!<": "give",
-                "!>": "take",
-                "!*": "urgent",
-                "!?": "search",
-                "!+": "grow",
-                "!-": "drop",
-                "!$": "spend",
-                "!=": "confirm",
-                "!|": "trigger",
-                "!_": "setup",
-
-                // # = OBJECT / MATERIAL
-                "#@": "device",
-                "#!": "tool",
-                "##": "agenda",
-                "#^": "site",
-                "#~": "food",
-                "#&": "machine",
-                "#%": "weight",
-                "#:": "book",
-                "#(": "quality",
-                "#)": "defect",
-                "#<": "source",
-                "#>": "output",
-                "#*": "key",
-                "#?": "stuff",
-                "#+": "heavy",
-                "#-": "light",
-                "#$": "supply",
-                "#=": "standard",
-                "#|": "conduit",
-                "#_": "layer",
-
-                // ^ = PLACE / SPATIAL
-                "^@": "home",
-                "^!": "route",
-                "^#": "structure",
-                "^^": "venue",
-                "^~": "zone",
-                "^&": "map",
-                "^%": "area",
-                "^:": "office",
-                "^(": "clean",
-                "^)": "dirty",
-                "^<": "left",
-                "^>": "right",
-                "^*": "peak",
-                "^?": "somewhere",
-                "^+": "north",
-                "^-": "south",
-                "^$": "region",
-                "^=": "level",
-                "^|": "corridor",
-                "^_": "ground",
-
-                // ~ = TIME / TEMPORAL
-                "~@": "birth",
-                "~!": "period",
-                "~#": "era",
-                "~^": "phase",
-                "~~": "status",
-                "~&": "schedule",
-                "~%": "age",
-                "~:": "today",
-                "~(": "early",
-                "~)": "late",
-                "~<": "past",
-                "~>": "future",
-                "~*": "now",
-                "~?": "whenever",
-                "~+": "always",
-                "~-": "never",
-                "~$": "deadline",
-                "~=": "recurring",
-                "~|": "rhythm",
-                "~_": "epoch",
-
-                // & = LINK / LOGIC
-                "&@": "liaison",
-                "&!": "force",
-                "&#": "interface",
-                "&^": "node",
-                "&~": "sequence",
-                "&&": "dependency",
-                "&%": "scale",
-                "&:": "code",
-                "&(": "true",
-                "&)": "false",
-                "&<": "cause",
-                "&>": "lead",
-                "&*": "must",
-                "&?": "if",
-                "&+": "yes",
-                "&-": "no",
-                "&$": "contract",
-                "&=": "logic",
-                "&|": "protocol",
-                "&_": "basis",
-
-                // % = RATIO / RELATIVE
-                "%@": "share",
-                "%!": "change",
-                "%#": "part",
-                "%^": "limit",
-                "%~": "rate",
-                "%&": "ratio",
-                "%%": "budget",
-                "%:": "list",
-                "%(": "full",
-                "%)": "empty",
-                "%<": "less",
-                "%>": "more",
-                "%*": "all",
-                "%?": "some",
-                "%+": "max",
-                "%-": "min",
-                "%$": "cost",
-                "%=": "total",
-                "%|": "flow",
-                "%_": "threshold",
-
-                // : = DATA / MENTAL
-                ":@": "insight",
-                ":!": "know",
-                ":#": "read",
-                ":^": "view",
-                ":~": "memory",
-                ":&": "rule",
-                ":%": "data",
-                "::": "notes",
-                ":(": "sad",
-                ":)": "happy",
-                ":<": "learn",
-                ":>": "teach",
-                ":*": "alert",
-                ":?": "reason",
-                ":+": "smart",
-                ":-": "dull",
-                ":$": "report",
-                ":=": "record",
-                ":|": "feed",
-                ":_": "core",
-
-                // * = FOCUS / VITAL
-                "*@": "hero",
-                "*!": "strike",
-                "*#": "cipher",
-                "*^": "peak",
-                "*~": "crisis",
-                "*&": "power",
-                "*%": "spike",
-                "*:": "genius",
-                "*(": "joy",
-                "*)": "rage",
-                "*<": "shock",
-                "*>": "push",
-                "**": "critical",
-                "*?": "mystery",
-                "*+": "loud",
-                "*-": "sharp",
-                "*$": "premium",
-                "*=": "fixed",
-                "*|": "amplify",
-                "*_": "keystone",
-
-                // _ = SUPPORT / BASIC
-                "_@": "ally",
-                "_!": "setup",
-                "_#": "floor",
-                "_^": "below",
-                "_~": "cycle",
-                "_&": "framework",
-                "_%": "capacity",
-                "_:": "index",
-                "_(": "support",
-                "_)": "burden",
-                "_<": "start",
-                "_>": "end",
-                "_*": "bedrock",
-                "_?": "depth",
-                "_+": "platform",
-                "_-": "undercut",
-                _$: "reserve",
-                "_=": "stable",
-                "_|": "moor",
-                __: "bottom",
-
-                // = = FACT / STABLE
-                "=@": "person",
-                "=!": "act",
-                "=#": "thing",
-                "=^": "place",
-                "=~": "time",
-                "=&": "evidence",
-                "=%": "amount",
-                "=:": "summary",
-                "=(": "correct",
-                "=)": "wrong",
-                "=<": "before",
-                "=>": "after",
-                "=*": "certain",
-                "=?": "unknown",
-                "=+": "greater",
-                "=-": "lesser",
-                "=$": "worth",
-                "==": "truth",
-                "=|": "shift",
-                "=_": "constant",
-
-                // ( = BENEFIT / POSITIVE
-                "(@": "kind",
-                "(!": "succeed",
-                "(#": "gift",
-                "(^": "safe",
-                "(~": "cure",
-                "(&": "fair",
-                "(%": "gain",
-                "(:": "wise",
-                "((": "wins",
-                "()": "mercy",
-                "(<": "save",
-                "(>": "free",
-                "(*": "best",
-                "(?": "hope",
-                "(+": "pure",
-                "(-": "easy",
-                "($": "yield",
-                "(=": "valid",
-                "(|": "access",
-                "(_": "shelter",
-
-                // ) = BURDEN / NEGATIVE
-                ")@": "cruel",
-                ")!": "fail",
-                ")#": "flaw",
-                ")^": "risk",
-                ")~": "pain",
-                ")&": "bias",
-                ")%": "loss",
-                "):": "fool",
-                ")(": "envy",
-                "))": "blockers",
-                ")<": "trap",
-                ")>": "harm",
-                ")*": "worst",
-                ")?": "fear",
-                ")+": "toxic",
-                ")-": "hard",
-                ")$": "debt",
-                ")=": "error",
-                ")|": "bottleneck",
-                ")_": "void",
-
-                // < = ORIGIN / PREVIOUS
-                "<@": "ancestor",
-                "<!": "return",
-                "<#": "raw",
-                "<^": "rear",
-                "<~": "legacy",
-                "<&": "history",
-                "<%": "prior",
-                "<:": "log",
-                "<(": "old",
-                "<)": "dead",
-                "<<": "context",
-                "<>": "transfer",
-                "<*": "fixed",
-                "<?": "hidden",
-                "<+": "deep",
-                "<-": "thin",
-                "<$": "spent",
-                "<=": "baseline",
-                "<|": "upstream",
-                "<_": "origin",
-
-                // > = TARGET / FUTURE
-                ">@": "target",
-                ">!": "reach",
-                ">#": "build",
-                ">^": "front",
-                ">~": "destiny",
-                ">&": "aim",
-                ">%": "forecast",
-                ">:": "signal",
-                ">(": "new",
-                ">)": "obstacle",
-                "><": "flow",
-                ">>": "decisions",
-                ">*": "bold",
-                ">?": "dream",
-                ">+": "fast",
-                ">-": "slow",
-                ">$": "income",
-                ">=": "milestone",
-                ">|": "outflow",
-                ">_": "foothold",
-
-                // ? = DOUBT / UNKNOWN
-                "?@": "who",
-                "?!": "how",
-                "?#": "what",
-                "?^": "where",
-                "?~": "when",
-                "?&": "why",
-                "?%": "quantity",
-                "?:": "test",
-                "?(": "maybe",
-                "?)": "doubt",
-                "?<": "was",
-                "?>": "will",
-                "?*": "danger",
-                "??": "queries",
-                "?+": "find",
-                "?-": "lose",
-                "?$": "estimate",
-                "?=": "check",
-                "?|": "hazy",
-                "?_": "abyss",
-
-                // | = PATH / FLUID
-                "|@": "network",
-                "|!": "stream",
-                "|#": "pipe",
-                "|^": "bridge",
-                "|~": "current",
-                "|&": "link",
-                "|%": "throughput",
-                "|:": "stream",
-                "|(": "clear",
-                "|)": "blocked",
-                "|<": "input",
-                "|>": "forward",
-                "|*": "surge",
-                "|?": "gap",
-                "|+": "connect",
-                "|-": "disconnect",
-                "|$": "bandwidth",
-                "|=": "channel",
-                "||": "pipeline",
-                "|_": "anchor",
-
-                // + = GAIN / ADDED
-                "+@": "champion",
-                "+!": "boost",
-                "+#": "bulk",
-                "+^": "city",
-                "+~": "life",
-                "+&": "firm",
-                "+%": "rich",
-                "+:": "expand",
-                "+(": "holy",
-                "+)": "pride",
-                "+<": "elder",
-                "+>": "next",
-                "+*": "king",
-                "+?": "vast",
-                "++": "approved",
-                "+-": "wide",
-                "+$": "fund",
-                "+=": "upgrade",
-                "+|": "momentum",
-                "+_": "frame",
-
-                // - = LOSS / REDUCED
-                "-@": "outcast",
-                "-!": "weak",
-                "-#": "dust",
-                "-^": "cell",
-                "-~": "brief",
-                "-&": "soft",
-                "-%": "poor",
-                "-:": "minor",
-                "-(": "mild",
-                "-)": "ugly",
-                "-<": "last",
-                "->": "behind",
-                "-*": "tiny",
-                "-?": "slim",
-                "-+": "narrow",
-                "--": "tabled",
-                "-$": "cut",
-                "-=": "small",
-                "-|": "exposure",
-                "-_": "erosion",
-
-                // $ = VALUE / FISCAL
-                "$@": "investor",
-                "$!": "pay",
-                "$#": "asset",
-                "$^": "market",
-                "$~": "cashflow",
-                "$&": "deal",
-                "$%": "tax",
-                "$:": "invoice",
-                "$(": "margin",
-                "$)": "deficit",
-                "$<": "refund",
-                "$>": "charge",
-                "$*": "price",
-                "$?": "quote",
-                "$+": "raise",
-                "$-": "slash",
-                $$: "financials",
-                "$=": "balance",
-                "$|": "transfer",
-                $_: "capital",
-            };
-
-            let activeSymFilter = null;
-
-            // ── Symbol table ──
-            const symbolTableBody =
-                document.getElementById("symbol-table-body");
-            symbols.forEach((row) => {
-                const tr = document.createElement("tr");
-                tr.innerHTML = `<td class="td-sym">${row.s}</td><td class="td-domain">${row.domain}</td><td class="td-mod">${row.mod}</td>`;
-                tr.addEventListener("click", () => {
-                    if (activeSymFilter === row.s) {
-                        activeSymFilter = null;
-                        tr.classList.remove("sym-active");
-                        searchInput.value = "";
-                        clearFilterBtn.classList.remove("visible");
-                        renderList("");
-                    } else {
-                        document
-                            .querySelectorAll("#symbol-table-body tr")
-                            .forEach((r) => r.classList.remove("sym-active"));
-                        activeSymFilter = row.s;
-                        tr.classList.add("sym-active");
-                        searchInput.value = "";
-                        clearFilterBtn.classList.add("visible");
-                        renderList("", row.s);
-                        document
-                            .getElementById("dict-section")
-                            .scrollIntoView({ behavior: "smooth" });
-                    }
-                });
-                symbolTableBody.appendChild(tr);
-            });
-
-            // ── Essentials ──
-            function renderEssentials() {
-                const el = document.getElementById("essential-list");
-                el.innerHTML = "";
-                essentialPairs.forEach((pair) => {
-                    const item = document.createElement("div");
-                    item.className = "essential-item";
-                    item.innerHTML = `<span class="pair-badge">${pair}</span><span class="pair-meaning">${fullDictionary[pair]}</span>`;
-                    el.appendChild(item);
-                });
-            }
-
-            // ── Dictionary ──
-            const dictArr = Object.entries(fullDictionary).map(([p, m]) => ({
-                p,
-                m,
-            }));
-            const searchInput = document.getElementById("search-input");
-            const wordList = document.getElementById("word-list");
-            const dictCount = document.getElementById("dict-count");
-            const clearFilterBtn = document.getElementById("clear-filter");
-
-            function renderList(f = "", symFilter = null) {
-                let filtered = dictArr;
-                if (symFilter) {
-                    filtered = filtered.filter(
-                        (i) => i.p[0] === symFilter || i.p[1] === symFilter,
-                    );
-                }
-                if (f) {
-                    filtered = filtered.filter(
-                        (i) =>
-                            i.p.includes(f) ||
-                            i.m.toLowerCase().includes(f.toLowerCase()),
-                    );
-                }
-                const label = symFilter ? ` · symbol "${symFilter}"` : "";
-                dictCount.textContent = `${filtered.length} entries${label}`;
-                wordList.innerHTML = "";
-                function escHtml(s) {
-                    return s
-                        .replace(/&/g, "&amp;")
-                        .replace(/</g, "&lt;")
-                        .replace(/>/g, "&gt;");
-                }
-                filtered.forEach((i) => {
-                    const d = document.createElement("div");
-                    d.className = "word-item";
-                    d.innerHTML = `<span class="pair">${escHtml(i.p)}</span><span class="meaning">${escHtml(i.m)}</span><button class="copy-btn">copy</button>`;
-                    d.querySelector(".copy-btn").addEventListener(
-                        "click",
-                        (e) => {
-                            e.stopPropagation();
-                            const btn = e.target;
-                            navigator.clipboard.writeText(i.p).then(() => {
-                                btn.textContent = "✓";
-                                btn.classList.add("copied");
-                                setTimeout(() => {
-                                    btn.textContent = "copy";
-                                    btn.classList.remove("copied");
-                                }, 1200);
+                    const performSearch = (query) => {
+                        if (!query.trim()) { searchResults.classList.remove("active"); return; }
+                        const q = query.toLowerCase();
+                        const results = [];
+                        Object.entries(dictData).forEach(([key, items]) => {
+                            items.forEach(([pair, meaning]) => {
+                                if (pair.includes(q) || meaning.toLowerCase().includes(q)) results.push({ symbol: pair, text: meaning, label: "Dictionary" });
                             });
-                        },
-                    );
-                    wordList.appendChild(d);
-                });
-            }
-
-            clearFilterBtn.addEventListener("click", () => {
-                activeSymFilter = null;
-                document
-                    .querySelectorAll("#symbol-table-body tr")
-                    .forEach((r) => r.classList.remove("sym-active"));
-                clearFilterBtn.classList.remove("visible");
-                searchInput.value = "";
-                renderList("");
-            });
-
-            searchInput.addEventListener("input", (e) => {
-                activeSymFilter = null;
-                document
-                    .querySelectorAll("#symbol-table-body tr")
-                    .forEach((r) => r.classList.remove("sym-active"));
-                clearFilterBtn.classList.remove("visible");
-                renderList(e.target.value);
-            });
-
-            // ── Back to top ──
-            const backTop = document.getElementById("back-top");
-            window.addEventListener(
-                "scroll",
-                () => {
-                    backTop.classList.toggle("visible", window.scrollY > 300);
-                },
-                { passive: true },
-            );
-            backTop.addEventListener("click", () =>
-                window.scrollTo({ top: 0, behavior: "smooth" }),
-            );
-
-            // ── Export ──
-            document.getElementById("export-btn").onclick = () => {
-                let md = "# TWO TALK: CONCISE SEMANTIC SHORTHAND\n\n";
-                md +=
-                    "## INTRODUCTION\nTwo Talk is a concise semantic shorthand designed for succinct notetaking. Every word is exactly two characters: the first symbol represents a Subject (the noun or domain), and the second symbol represents a State (the state, quality, or action).\n\n";
-                md +=
-                    "## RULES\n" +
-                    "- **Symbols:** Every word is exactly two characters. 1st symbol = Subject; 2nd symbol = State.\n" +
-                    "- **Stacking:** Combine pairs with a dot (.) to narrow meaning (General + Specific). e.g., `#~.!*` (Fast Food).\n" +
-                    "- **State\Flow:** Use `(` / `)` for positive/negative and `<` / `>` for past/future.\n" +
-                    "- **Headers:** Start every note with `##` followed by the project or category name.\n" +
-                    "- **Literals:** Use raw numbers for amounts/dates and capital initials for names. Use `:` to label a specific entity.\n" +
-                    "- **Essence:** Capture meaning, not words. Use WHO + DOING + DETAIL structure.\n" +
-                    "- **Breaks:** An empty line signals a new topic or shift in thought.\n\n";
-                md +=
-                    "## SYMBOLS\n| Sym | Subject (1st) | State (2nd) |\n| :--- | :--- | :--- |\n";
-                symbols.forEach((r) => {
-                    md += `| ${r.s} | ${r.domain} | ${r.mod} |\n`;
-                });
-                md += "\n## ESSENTIALS\n";
-                essentialPairs.forEach((pair) => {
-                    md += `- **${pair}**: ${fullDictionary[pair]}\n`;
-                });
-                md +=
-                    "\n## DICTIONARY\n| Pair | Meaning | Pair | Meaning |\n| :--- | :--- | :--- | :--- |\n";
-                const entries = Object.entries(fullDictionary);
-                for (let i = 0; i < entries.length; i += 2) {
-                    const [p1, m1] = entries[i];
-                    const se = entries[i + 1];
-                    md += `| \`${p1}\` | ${m1} | ${se ? `\`${se[0]}\`` : ""} | ${se ? se[1] : ""} |\n`;
-                }
-                md += "\n\n---\nTWO TALK // v1.2 // BARNEY MATTHEWS";
-                const blob = new Blob([md], { type: "text/markdown" });
-                const a = document.createElement("a");
-                a.href = URL.createObjectURL(blob);
-                a.download = "twotalk-guide.txt";
-                a.click();
-            };
-            const stackingExamples = [
-                { compound: [">>", "!="], result: "Verdict" },
-                { compound: ["))", "~*"], result: "Deadlock" },
-                { compound: ["$$", "(("], result: "Earnings" },
-                { compound: ["@*", "@!"], result: "Leadership" },
-                { compound: ["@$", "!<"], result: "Delivery" },
-                { compound: ["~$", "~)"], result: "Overdue" },
-                { compound: [">=", "~>"], result: "Milestone" },
-                { compound: [":$", "~>"], result: "Forecast" },
-                { compound: ["&<", ")^"], result: "Liability" },
-                { compound: ["*~", "!*"], result: "Emergency" },
-            ];
-
-            function renderStacking() {
-                const grid = document.getElementById("stack-grid");
-                grid.innerHTML = "";
-                stackingExamples.forEach(({ compound, result, context }) => {
-                    const [p1, p2] = compound;
-                    const m1 = fullDictionary[p1] || "?";
-                    const m2 = fullDictionary[p2] || "?";
-
-                    function escHtml(s) {
-                        return s
-                            .replace(/&/g, "&amp;")
-                            .replace(/</g, "&lt;")
-                            .replace(/>/g, "&gt;");
-                    }
-
-                    const card = document.createElement("div");
-                    card.className = "stack-card";
-                    card.innerHTML = `
-                        <div class="stack-compound">
-                            ${escHtml(p1)}<span class="stack-dot">.</span>${escHtml(p2)}
-                        </div>
-                        <div class="stack-result">→ ${result}</div>
-                        <div class="stack-breakdown">
-                            <div class="stack-part">
-                                <span class="stack-part-pair">${escHtml(p1)}</span>
-                                <span class="stack-part-arrow">›</span>
-                                <span class="stack-part-meaning">${escHtml(m1)}</span>
-                            </div>
-                            <div class="stack-part">
-                                <span class="stack-part-pair">${escHtml(p2)}</span>
-                                <span class="stack-part-arrow">›</span>
-                                <span class="stack-part-meaning">${escHtml(m2)}</span>
-                            </div>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
-            }
-            renderStacking();
-            renderEssentials();
-            renderList();
-            // ── LEARN SECTION ──
-            (function () {
-                // Mode switching
-                document.querySelectorAll(".learn-mode-btn").forEach((btn) => {
-                    btn.addEventListener("click", () => {
-                        document
-                            .querySelectorAll(".learn-mode-btn")
-                            .forEach((b) => b.classList.remove("active"));
-                        document
-                            .querySelectorAll(".learn-panel")
-                            .forEach((p) => p.classList.remove("active"));
-                        btn.classList.add("active");
-                        document
-                            .getElementById("panel-" + btn.dataset.mode)
-                            .classList.add("active");
-                    });
-                });
-
-                // ── FLASHCARDS ──
-                const allPairs = Object.entries(fullDictionary);
-                function shuffle(arr) {
-                    for (let i = arr.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [arr[i], arr[j]] = [arr[j], arr[i]];
-                    }
-                    return arr;
-                }
-                let fcDeck = shuffle([...allPairs]);
-                let fcIdx = 0;
-
-                function getSymbolName(sym) {
-                    const found = symbols.find((s) => s.s === sym);
-                    return found ? found.domain : sym;
-                }
-
-                function loadCard(idx) {
-                    const [pair, meaning] = fcDeck[idx];
-                    document.getElementById("fc-symbol").textContent = pair;
-                    document.getElementById("fc-meaning").textContent = meaning;
-                    const s1 = getSymbolName(pair[0]);
-                    const s2 = getSymbolName(pair[1]);
-                    document.getElementById("fc-breakdown").textContent =
-                        `${pair[0]} = ${s1}  ·  ${pair[1]} = ${s2}`;
-                    document.getElementById("fc-counter").textContent =
-                        `${idx + 1} / ${fcDeck.length}`;
-                    document
-                        .getElementById("flashcard")
-                        .classList.remove("flipped");
-                }
-
-                loadCard(0);
-
-                document
-                    .getElementById("flashcard")
-                    .addEventListener("click", () => {
-                        document
-                            .getElementById("flashcard")
-                            .classList.toggle("flipped");
-                    });
-                document
-                    .getElementById("fc-next")
-                    .addEventListener("click", () => {
-                        fcIdx = (fcIdx + 1) % fcDeck.length;
-                        if (fcIdx === 0) fcDeck = shuffle([...allPairs]);
-                        loadCard(fcIdx);
-                    });
-                document
-                    .getElementById("fc-prev")
-                    .addEventListener("click", () => {
-                        fcIdx = (fcIdx - 1 + fcDeck.length) % fcDeck.length;
-                        loadCard(fcIdx);
-                    });
-
-                // ── QUIZ ──
-                let quizPairs = shuffle([...allPairs]);
-                let quizIdx = 0;
-                let quizCorrect = 0;
-                let quizTotal = 0;
-                let quizMode = "sym2word"; // alternate between symbol→word and word→symbol
-
-                function getQuizDistractors(correctPair, n) {
-                    const pool = allPairs.filter(([p]) => p !== correctPair);
-                    shuffle(pool);
-                    return pool.slice(0, n);
-                }
-
-                function loadQuiz() {
-                    const [pair, meaning] =
-                        quizPairs[quizIdx % quizPairs.length];
-                    quizMode = quizIdx % 3 === 2 ? "word2sym" : "sym2word";
-
-                    const promptEl = document.getElementById("quiz-prompt");
-                    const labelEl = document.getElementById("quiz-label");
-                    const optEl = document.getElementById("quiz-options");
-                    document.getElementById("quiz-feedback").textContent = "";
-                    optEl.innerHTML = "";
-
-                    const distractors = getQuizDistractors(pair, 3);
-
-                    if (quizMode === "sym2word") {
-                        labelEl.textContent = "What does this pair mean?";
-                        promptEl.innerHTML = `<div class="quiz-prompt-sym">${pair}</div>`;
-                        const opts = shuffle([[pair, meaning], ...distractors]);
-                        opts.forEach(([p, m]) => {
-                            const btn = document.createElement("button");
-                            btn.className = "quiz-opt";
-                            btn.textContent = m;
-                            btn.addEventListener("click", () =>
-                                handleQuizAnswer(
-                                    btn,
-                                    m === meaning,
-                                    meaning,
-                                    optEl,
-                                ),
-                            );
-                            optEl.appendChild(btn);
                         });
-                    } else {
-                        labelEl.textContent = "Which pair means this?";
-                        promptEl.innerHTML = `<div class="quiz-prompt-word">${meaning}</div>`;
-                        const opts = shuffle([[pair, meaning], ...distractors]);
-                        opts.forEach(([p, m]) => {
-                            const btn = document.createElement("button");
-                            btn.className = "quiz-opt";
-                            btn.style.fontFamily =
-                                '"Atkinson Hyperlegible", sans-serif';
-                            btn.style.fontWeight = "800";
-                            btn.style.fontSize = "1.15rem";
-                            btn.style.letterSpacing = "2px";
-                            btn.textContent = p;
-                            btn.addEventListener("click", () =>
-                                handleQuizAnswer(btn, p === pair, pair, optEl),
-                            );
-                            optEl.appendChild(btn);
+                        swadeshData.forEach(([num, en, sym]) => {
+                            if (en.toLowerCase().includes(q) || sym.includes(q)) results.push({ symbol: sym, text: en, label: "Swadesh" });
                         });
-                    }
 
-                    updateQuizScore();
-                }
+                        searchResults.innerHTML = results.length ? results.slice(0, 15).map(r => `
+                            <div class="search-result-item">
+                                <div class="result-symbol">${escapeHTML(r.symbol)}</div>
+                                <div class="result-content"><div class="result-text">${r.text}</div><div class="result-label">${r.label}</div></div>
+                            </div>`).join("") : '<div style="padding:16px;text-align:center">No results</div>';
+                        searchResults.classList.add("active");
+                    };
 
-                function handleQuizAnswer(btn, isCorrect, correct, optEl) {
-                    optEl.querySelectorAll(".quiz-opt").forEach((b) => {
-                        b.disabled = true;
-                        const val = b.textContent;
-                        if (quizMode === "sym2word") {
-                            if (val === fullDictionary[correct])
-                                b.classList.add("correct");
+                    searchInput.addEventListener("input", e => performSearch(e.target.value));
+                    document.addEventListener("click", e => { if (!e.target.closest(".search-box")) searchResults.classList.remove("active"); });
+                    searchResults.addEventListener("click", e => {
+                        const item = e.target.closest(".search-result-item");
+                        if (item) { searchInput.value = item.querySelector(".result-symbol").textContent; searchResults.classList.remove("active"); }
+                    });
+
+                    // 5. FLASHCARD LOGIC
+                    const card = document.getElementById("flashcard");
+                    const front = document.getElementById("cardFront");
+                    const back = document.getElementById("cardBack");
+                    const feedback = document.getElementById("feedback");
+                    let deck = [...deckData], idx = 0, studyMode = true;
+
+                    function renderCard() {
+                        const item = deck[idx];
+                        if (studyMode) {
+                            front.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div>`;
+                            back.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div><div class="mean">${item.mean}</div><div class="break">${escapeHTML(item.pair)} = ${item.mean} = ${item.b}</div>`;
                         } else {
-                            if (val === correct) b.classList.add("correct");
+                            front.innerHTML = `<div class="prompt">pair for</div><div class="mean big" style="font-size:1.6rem;color:var(--fg)">${item.mean}</div><div class="break">${item.b}</div>`;
+                            back.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div><div class="mean">${item.mean}</div>`;
+                            document.getElementById("quizInput").value = "";
+                            feedback.textContent = "";
+                        }
+                        card.classList.remove("flipped");
+                    }
+
+                    card.onclick = () => { if (studyMode) card.classList.toggle("flipped"); };
+                    document.getElementById("nextBtn").onclick = () => { idx = (idx + 1) % deck.length; renderCard(); };
+                    document.getElementById("prevBtn").onclick = () => { idx = (idx - 1 + deck.length) % deck.length; renderCard(); };
+                    document.getElementById("shuffleBtn").onclick = () => { deck.sort(() => Math.random() - 0.5); idx = 0; renderCard(); };
+
+                    const setMode = (study) => {
+                        studyMode = study;
+                        document.getElementById("tabStudy").classList.toggle("active", study);
+                        document.getElementById("tabQuiz").classList.toggle("active", !study);
+                        document.getElementById("studyControls").hidden = !study;
+                        document.getElementById("quizArea").hidden = study;
+                        renderCard();
+                    };
+                    document.getElementById("tabStudy").onclick = () => setMode(true);
+                    document.getElementById("tabQuiz").onclick = () => setMode(false);
+
+                    document.getElementById("checkBtn").onclick = () => {
+                        const item = deck[idx];
+                        if (document.getElementById("quizInput").value.trim() === item.pair) {
+                            feedback.className = "feedback ok"; feedback.textContent = "Correct!";
+                            setTimeout(() => { idx = (idx + 1) % deck.length; renderCard(); }, 600);
+                        } else {
+                            feedback.className = "feedback err"; feedback.textContent = `${item.pair} = ${item.mean}`;
+                            card.classList.add("flipped"); setTimeout(() => card.classList.remove("flipped"), 1200);
+                        }
+                    };
+
+                    // 6. EXPORT & COPY
+                    document.getElementById("exportBtn").onclick = () => {
+                        let out = "TWO TALK SYSTEM GUIDE\n====================\n\n";
+
+                        // 1. Export Semantic Primes (Dictionary)
+                        out += "SEMANTIC PRIME DICTIONARY\n-------------------------\n";
+                        order.forEach(k => {
+                            dictData[k].forEach(([p, m]) => {
+                                out += `${p.padEnd(6)} : ${m}\n`;
+                            });
+                        });
+
+                        // 2. Export Swadesh Vocabulary (Complex Notations)
+                        out += "\nSWADESH VOCABULARY\n------------------\n";
+                        swadeshData.forEach(([id, en, tt]) => {
+                            // Pad the English word for a clean column look
+                            out += `${tt.padEnd(15)} : ${en}\n`;
+                        });
+
+                        // Create and trigger download
+                        const blob = new Blob([out], { type: "text/plain" });
+                        const a = document.createElement("a");
+                        a.href = URL.createObjectURL(blob);
+                        a.download = "twotalk-guide.txt";
+                        a.click();
+                    };
+
+                    document.getElementById("dictGrid").addEventListener("click", e => {
+                        if (e.target.classList.contains("copy")) {
+                            navigator.clipboard.writeText(e.target.dataset.copy).then(() => {
+                                const oldText = e.target.textContent;
+                                e.target.textContent = "copied"; e.target.classList.add("copied");
+                                setTimeout(() => { e.target.textContent = oldText; e.target.classList.remove("copied"); }, 1000);
+                            });
                         }
                     });
-                    if (!isCorrect) btn.classList.add("wrong");
 
-                    quizTotal++;
-                    if (isCorrect) quizCorrect++;
-                    document.getElementById("quiz-feedback").textContent =
-                        isCorrect
-                            ? "✓ Correct!"
-                            : `✗ The answer was: ${quizMode === "sym2word" ? fullDictionary[correct] : correct}`;
-                    updateQuizScore();
-
-                    setTimeout(() => {
-                        quizIdx++;
-                        if (quizIdx >= quizPairs.length) {
-                            quizPairs = shuffle([...allPairs]);
-                            quizIdx = 0;
-                        }
-                        loadQuiz();
-                    }, 1400);
-                }
-
-                function updateQuizScore() {
-                    document.getElementById("quiz-score-text").textContent =
-                        `${quizCorrect} / ${quizTotal}`;
-                    const pct =
-                        quizTotal > 0 ? (quizCorrect / quizTotal) * 100 : 0;
-                    document.getElementById("quiz-fill").style.width =
-                        pct + "%";
-                }
-
-                document
-                    .getElementById("quiz-restart")
-                    .addEventListener("click", () => {
-                        quizPairs = shuffle([...allPairs]);
-                        quizIdx = 0;
-                        quizCorrect = 0;
-                        quizTotal = 0;
-                        loadQuiz();
-                    });
-
-                loadQuiz();
-
-                // ── TRANSLATE ──
-                const translateExercises = [
-                    {
-                        english:
-                            "The lead developer confirmed the project is ready.",
-                        answer: [
-                            { pair: "@*", note: "lead dev (vip/leader)" },
-                            { pair: "!=", note: "confirmed" },
-                            { pair: "##", note: "project (agenda/plan)" },
-                            { pair: "~*", note: "is ready (now)" },
-                        ],
-                    },
-                    {
-                        english:
-                            "There's a budget meeting with the client next week.",
-                        answer: [
-                            { pair: "%%", note: "budget" },
-                            { pair: "@@", note: "meeting (attendees)" },
-                            { pair: "@$", note: "client" },
-                            { pair: "~>", note: "future / next week" },
-                        ],
-                    },
-                    {
-                        english:
-                            "The action items are blocked — we need a decision urgently.",
-                        answer: [
-                            { pair: "!!", note: "action items" },
-                            { pair: "))", note: "blockers" },
-                            { pair: "!&", note: "decide" },
-                            { pair: "!*", note: "urgent" },
-                        ],
-                    },
-                    {
-                        english:
-                            "Risk has been identified. The deadline is tomorrow.",
-                        answer: [
-                            { pair: ")^", note: "risk" },
-                            { pair: "!=", note: "identified (confirmed)" },
-                            { pair: "~$", note: "deadline" },
-                            { pair: "~>", note: "future / tomorrow" },
-                        ],
-                    },
-                    {
-                        english:
-                            "The partner will take the lead on the new contract.",
-                        answer: [
-                            { pair: "@&", note: "partner" },
-                            { pair: "!>", note: "take" },
-                            { pair: "@*", note: "lead (vip)" },
-                            { pair: "&$", note: "contract" },
-                            { pair: ">(", note: "new" },
-                        ],
-                    },
-                    {
-                        english:
-                            "Open questions remain — we need to find the answer.",
-                        answer: [
-                            { pair: "??", note: "open questions" },
-                            { pair: "~+", note: "remain (always ongoing)" },
-                            { pair: "!?", note: "search / find" },
-                            { pair: "==", note: "answer (truth)" },
-                        ],
-                    },
-                    {
-                        english:
-                            "Costs are over budget. We need to cut spending.",
-                        answer: [
-                            { pair: "%$", note: "cost" },
-                            { pair: "%>", note: "over (more)" },
-                            { pair: "%%", note: "budget" },
-                            { pair: "$-", note: "cut/slash" },
-                            { pair: "!$", note: "spend" },
-                        ],
-                    },
-                    {
-                        english:
-                            "The milestone was reached. Next phase starts soon.",
-                        answer: [
-                            { pair: ">=", note: "milestone" },
-                            { pair: "~<", note: "past / reached" },
-                            { pair: "~^", note: "next phase" },
-                            { pair: "_<", note: "starts" },
-                            { pair: "~>", note: "future / soon" },
-                        ],
-                    },
-                    {
-                        english:
-                            "The team is aligned. We approved the proposal.",
-                        answer: [
-                            { pair: "@@", note: "team (meeting/group)" },
-                            { pair: ":(", note: "aligned / agree" },
-                            { pair: "++", note: "approved" },
-                            { pair: "##", note: "proposal (plan)" },
-                        ],
-                    },
-                    {
-                        english:
-                            "Revenue is down. We need to find new investors.",
-                        answer: [
-                            { pair: ">$", note: "revenue / income" },
-                            { pair: "=<", note: "down / before (declining)" },
-                            { pair: "!?", note: "find / search" },
-                            { pair: ">(", note: "new" },
-                            { pair: "$@", note: "investor" },
-                        ],
-                    },
-                    {
-                        english:
-                            "The pipeline is blocked. We need to escalate.",
-                        answer: [
-                            { pair: "||", note: "pipeline" },
-                            { pair: "|)", note: "blocked" },
-                            { pair: "!^", note: "escalate / raise" },
-                        ],
-                    },
-                    {
-                        english:
-                            "We have a strong network and momentum heading into Q4.",
-                        answer: [
-                            { pair: "|@", note: "network" },
-                            { pair: "+|", note: "momentum" },
-                            { pair: "~>", note: "future / heading into" },
-                        ],
-                    },
-                    {
-                        english: "The data shows a bottleneck in the workflow.",
-                        answer: [
-                            { pair: "::", note: "data" },
-                            { pair: "=&", note: "evidence / shows" },
-                            { pair: ")|", note: "bottleneck" },
-                            { pair: "><", note: "workflow / flow" },
-                        ],
-                    },
-                    {
-                        english: "The deal was fair. Both sides gain.",
-                        answer: [
-                            { pair: "$&", note: "deal" },
-                            { pair: "(&", note: "fair" },
-                            { pair: "(%", note: "gain" },
-                        ],
-                    },
-                    {
-                        english:
-                            "We are behind schedule. The forecast looks slow.",
-                        answer: [
-                            { pair: "->", note: "behind" },
-                            { pair: "~$", note: "schedule / deadline" },
-                            { pair: ">%", note: "forecast" },
-                            { pair: ">-", note: "slow" },
-                        ],
-                    },
-                    {
-                        english:
-                            "Leadership approved the upgrade. Rollout starts next week.",
-                        answer: [
-                            { pair: "@*", note: "leadership / lead dev (vip)" },
-                            { pair: "++", note: "approved" },
-                            { pair: "+=", note: "upgrade" },
-                            { pair: "_<", note: "rollout starts" },
-                            { pair: "~>", note: "future / next week" },
-                        ],
-                    },
-                    {
-                        english: "There's a gap in the process. Who owns this?",
-                        answer: [
-                            { pair: "|?", note: "gap" },
-                            { pair: "><", note: "process / flow" },
-                            { pair: "?@", note: "who" },
-                            { pair: "!>", note: "owns / takes" },
-                        ],
-                    },
-                    {
-                        english: "Debt is rising. We need to cut costs fast.",
-                        answer: [
-                            { pair: ")$", note: "debt" },
-                            { pair: "=+", note: "rising / greater" },
-                            { pair: "$-", note: "cut" },
-                            { pair: "%$", note: "cost" },
-                            { pair: ">+", note: "fast" },
-                        ],
-                    },
-                    {
-                        english:
-                            "The team completed the sprint. Morale is high.",
-                        answer: [
-                            { pair: "@@", note: "team" },
-                            { pair: "~<", note: "completed / past" },
-                            { pair: "^!", note: "sprint / energy action" },
-                            { pair: "^+", note: "morale / spirit high" },
-                        ],
-                    },
-                ];
-
-                let txIdx = 0;
-                let txDeck = shuffle([...translateExercises]);
-
-                function loadTranslate(idx) {
-                    const ex = txDeck[idx % txDeck.length];
-                    document.getElementById("translate-text").textContent =
-                        ex.english;
-                    document.getElementById("translate-input").value = "";
-                    const ansEl = document.getElementById("translate-answer");
-                    ansEl.classList.remove("visible");
-                    ansEl.innerHTML = "";
-                }
-
-                document
-                    .getElementById("translate-show")
-                    .addEventListener("click", () => {
-                        const ex = txDeck[txIdx % txDeck.length];
-                        const ansEl =
-                            document.getElementById("translate-answer");
-                        let html =
-                            "<strong style='font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)'>One possible answer:</strong><br><br>";
-                        html += ex.answer
-                            .map(
-                                (a) =>
-                                    `<span class="ans-pair">${a.pair}</span><span style="color:var(--fg-muted);font-size:0.8rem">${fullDictionary[a.pair] || ""} <em style="opacity:0.6">(${a.note})</em></span>`,
-                            )
-                            .join("<br>");
-                        html += `<br><br><span style="font-family:'Atkinson Hyperlegible',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:3px;color:var(--fg)">${ex.answer.map((a) => a.pair).join(" ")}</span>`;
-                        ansEl.innerHTML = html;
-                        ansEl.classList.add("visible");
-                    });
-
-                document
-                    .getElementById("translate-next")
-                    .addEventListener("click", () => {
-                        txIdx++;
-                        if (txIdx >= txDeck.length)
-                            txDeck = shuffle([...translateExercises]);
-                        loadTranslate(txIdx);
-                    });
-
-                loadTranslate(0);
-            })();
+                    window.onload = renderSystem;
         </script>
     </body>
 </html>
