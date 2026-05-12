@@ -1,287 +1,358 @@
-# TWO TALK: CONCISE SEMANTIC SHORTHAND
+# Two Talk
 
-## INTRODUCTION
-Two Talk is a concise semantic shorthand designed for succinct notetaking. Every word is exactly two characters: the first symbol represents a Subject (the noun or domain), and the second symbol represents a State (the state, quality, or action).
+Two Talk is a concise semantic notation system built on the Semantic Primes — the fundamental building blocks of human thought.
 
-## RULES
-- **Symbols:** Every word is exactly two characters. 1st symbol = Subject; 2nd symbol = State.
-- **Stacking:** Combine pairs with a dot (.) to narrow meaning (General + Specific). e.g., `#~.!*` (Fast Food).
-- **StateFlow:** Use `(` / `)` for positive/negative and `<` / `>` for past/future.
-- **Headers:** Start every note with `##` followed by the project or category name.
-- **Literals:** Use raw numbers for amounts/dates and capital initials for names. Use `:` to label a specific entity.
-- **Essence:** Capture meaning, not words. Use WHO + DOING + DETAIL structure.
-- **Breaks:** An empty line signals a new topic or shift in thought.
+By mapping these primes to 2-character pairs derived from 9 core symbols, complex ideas can be expressed with precision and minimal digital footprint.
 
-## SYMBOLS
-| Sym | Subject (1st) | State (2nd) |
-| :--- | :--- | :--- |
-| @ | Person | Social |
-| ! | Action | Active |
-| # | Object | Material |
-| ^ | Place | Spatial |
-| ~ | Time | Temporal |
-| & | Link | Logic |
-| % | Ratio | Relative |
-| : | Data | Mental |
-| ( | Benefit | Positive |
-| ) | Burden | Negative |
-| < | Origin | Previous |
-| > | Target | Future |
-| * | Focus | Vital |
-| ? | Doubt | Unknown |
-| | | Path | Fluid |
-| _ | Support | Basic |
-| + | Gain | Added |
-| - | Loss | Reduced |
-| $ | Value | Fiscal |
-| = | Fact | Stable |
-
-## ESSENTIALS
-- **@@**: attendees
-- **!!**: tasks
-- **##**: agenda
-- **~~**: status
-- **::**: notes
-- ******: critical
-- **&&**: dependency
-- **%%**: budget
-- **??**: queries
-- **>>**: decisions
-- **))**: blockers
-- **?@**: who
-- **?#**: what
-- **?^**: where
-- **?~**: when
-- **?!**: how
-- **?&**: why
-- **&+**: yes
-- **&-**: no
-- **!=**: confirm
-- **&(**: true
-- **~<**: past
-- **~***: now
-- **~>**: future
-- **~$**: deadline
-- **@***: vip
-- **@&**: partner
-- **@!**: staff
-- **@$**: client
-- **!***: urgent
-- **!<**: give
-- **!>**: take
-- **!&**: decide
-- **)^**: risk
-- **)!**: fail
-- **%+**: max
-- **%-**: min
-- **%>**: more
-- **%<**: less
-- **>=**: milestone
-
-## DICTIONARY
-| Pair | Meaning | Pair | Meaning |
-| :--- | :--- | :--- | :--- |
-| `@@` | attendees | `@!` | staff |
-| `@#` | contact | `@^` | neighbor |
-| `@~` | colleague | `@&` | partner |
-| `@%` | crowd | `@:` | self |
-| `@(` | friend | `@)` | enemy |
-| `@<` | parent | `@>` | child |
-| `@*` | vip | `@?` | stranger |
-| `@+` | expert | `@-` | junior |
-| `@$` | client | `@=` | member |
-| `@|` | liaison | `@_` | sponsor |
-| `!@` | help | `!!` | tasks |
-| `!#` | use | `!^` | move |
-| `!~` | wait | `!&` | decide |
-| `!%` | count | `!:` | tell |
-| `!(` | play | `!)` | stop |
-| `!<` | give | `!>` | take |
-| `!*` | urgent | `!?` | search |
-| `!+` | grow | `!-` | drop |
-| `!$` | spend | `!=` | confirm |
-| `!|` | trigger | `!_` | setup |
-| `#@` | device | `#!` | tool |
-| `##` | agenda | `#^` | site |
-| `#~` | food | `#&` | machine |
-| `#%` | weight | `#:` | book |
-| `#(` | quality | `#)` | defect |
-| `#<` | source | `#>` | output |
-| `#*` | key | `#?` | stuff |
-| `#+` | heavy | `#-` | light |
-| `#$` | supply | `#=` | standard |
-| `#|` | conduit | `#_` | layer |
-| `^@` | home | `^!` | route |
-| `^#` | structure | `^^` | venue |
-| `^~` | zone | `^&` | map |
-| `^%` | area | `^:` | office |
-| `^(` | clean | `^)` | dirty |
-| `^<` | left | `^>` | right |
-| `^*` | peak | `^?` | somewhere |
-| `^+` | north | `^-` | south |
-| `^$` | region | `^=` | level |
-| `^|` | corridor | `^_` | ground |
-| `~@` | birth | `~!` | period |
-| `~#` | era | `~^` | phase |
-| `~~` | status | `~&` | schedule |
-| `~%` | age | `~:` | today |
-| `~(` | early | `~)` | late |
-| `~<` | past | `~>` | future |
-| `~*` | now | `~?` | whenever |
-| `~+` | always | `~-` | never |
-| `~$` | deadline | `~=` | recurring |
-| `~|` | rhythm | `~_` | epoch |
-| `&@` | liaison | `&!` | force |
-| `&#` | interface | `&^` | node |
-| `&~` | sequence | `&&` | dependency |
-| `&%` | scale | `&:` | code |
-| `&(` | true | `&)` | false |
-| `&<` | cause | `&>` | lead |
-| `&*` | must | `&?` | if |
-| `&+` | yes | `&-` | no |
-| `&$` | contract | `&=` | logic |
-| `&|` | protocol | `&_` | basis |
-| `%@` | share | `%!` | change |
-| `%#` | part | `%^` | limit |
-| `%~` | rate | `%&` | ratio |
-| `%%` | budget | `%:` | list |
-| `%(` | full | `%)` | empty |
-| `%<` | less | `%>` | more |
-| `%*` | all | `%?` | some |
-| `%+` | max | `%-` | min |
-| `%$` | cost | `%=` | total |
-| `%|` | flow | `%_` | threshold |
-| `:@` | insight | `:!` | know |
-| `:#` | read | `:^` | view |
-| `:~` | memory | `:&` | rule |
-| `:%` | data | `::` | notes |
-| `:(` | sad | `:)` | happy |
-| `:<` | learn | `:>` | teach |
-| `:*` | alert | `:?` | reason |
-| `:+` | smart | `:-` | dull |
-| `:$` | report | `:=` | record |
-| `:|` | feed | `:_` | core |
-| `*@` | hero | `*!` | strike |
-| `*#` | cipher | `*^` | peak |
-| `*~` | crisis | `*&` | power |
-| `*%` | spike | `*:` | genius |
-| `*(` | joy | `*)` | rage |
-| `*<` | shock | `*>` | push |
-| `**` | critical | `*?` | mystery |
-| `*+` | loud | `*-` | sharp |
-| `*$` | premium | `*=` | fixed |
-| `*|` | amplify | `*_` | keystone |
-| `_@` | ally | `_!` | setup |
-| `_#` | floor | `_^` | below |
-| `_~` | cycle | `_&` | framework |
-| `_%` | capacity | `_:` | index |
-| `_(` | support | `_)` | burden |
-| `_<` | start | `_>` | end |
-| `_*` | bedrock | `_?` | depth |
-| `_+` | platform | `_-` | undercut |
-| `_$` | reserve | `_=` | stable |
-| `_|` | moor | `__` | bottom |
-| `=@` | person | `=!` | act |
-| `=#` | thing | `=^` | place |
-| `=~` | time | `=&` | evidence |
-| `=%` | amount | `=:` | summary |
-| `=(` | correct | `=)` | wrong |
-| `=<` | before | `=>` | after |
-| `=*` | certain | `=?` | unknown |
-| `=+` | greater | `=-` | lesser |
-| `=$` | worth | `==` | truth |
-| `=|` | shift | `=_` | constant |
-| `(@` | kind | `(!` | succeed |
-| `(#` | gift | `(^` | safe |
-| `(~` | cure | `(&` | fair |
-| `(%` | gain | `(:` | wise |
-| `((` | wins | `()` | mercy |
-| `(<` | save | `(>` | free |
-| `(*` | best | `(?` | hope |
-| `(+` | pure | `(-` | easy |
-| `($` | yield | `(=` | valid |
-| `(|` | access | `(_` | shelter |
-| `)@` | cruel | `)!` | fail |
-| `)#` | flaw | `)^` | risk |
-| `)~` | pain | `)&` | bias |
-| `)%` | loss | `):` | fool |
-| `)(` | envy | `))` | blockers |
-| `)<` | trap | `)>` | harm |
-| `)*` | worst | `)?` | fear |
-| `)+` | toxic | `)-` | hard |
-| `)$` | debt | `)=` | error |
-| `)|` | bottleneck | `)_` | void |
-| `<@` | ancestor | `<!` | return |
-| `<#` | raw | `<^` | rear |
-| `<~` | legacy | `<&` | history |
-| `<%` | prior | `<:` | log |
-| `<(` | old | `<)` | dead |
-| `<<` | context | `<>` | transfer |
-| `<*` | fixed | `<?` | hidden |
-| `<+` | deep | `<-` | thin |
-| `<$` | spent | `<=` | baseline |
-| `<|` | upstream | `<_` | origin |
-| `>@` | target | `>!` | reach |
-| `>#` | build | `>^` | front |
-| `>~` | destiny | `>&` | aim |
-| `>%` | forecast | `>:` | signal |
-| `>(` | new | `>)` | obstacle |
-| `><` | flow | `>>` | decisions |
-| `>*` | bold | `>?` | dream |
-| `>+` | fast | `>-` | slow |
-| `>$` | income | `>=` | milestone |
-| `>|` | outflow | `>_` | foothold |
-| `?@` | who | `?!` | how |
-| `?#` | what | `?^` | where |
-| `?~` | when | `?&` | why |
-| `?%` | quantity | `?:` | test |
-| `?(` | maybe | `?)` | doubt |
-| `?<` | was | `?>` | will |
-| `?*` | danger | `??` | queries |
-| `?+` | find | `?-` | lose |
-| `?$` | estimate | `?=` | check |
-| `?|` | hazy | `?_` | abyss |
-| `|@` | network | `|!` | stream |
-| `|#` | pipe | `|^` | bridge |
-| `|~` | current | `|&` | link |
-| `|%` | throughput | `|:` | stream |
-| `|(` | clear | `|)` | blocked |
-| `|<` | input | `|>` | forward |
-| `|*` | surge | `|?` | gap |
-| `|+` | connect | `|-` | disconnect |
-| `|$` | bandwidth | `|=` | channel |
-| `||` | pipeline | `|_` | anchor |
-| `+@` | champion | `+!` | boost |
-| `+#` | bulk | `+^` | city |
-| `+~` | life | `+&` | firm |
-| `+%` | rich | `+:` | expand |
-| `+(` | holy | `+)` | pride |
-| `+<` | elder | `+>` | next |
-| `+*` | king | `+?` | vast |
-| `++` | approved | `+-` | wide |
-| `+$` | fund | `+=` | upgrade |
-| `+|` | momentum | `+_` | frame |
-| `-@` | outcast | `-!` | weak |
-| `-#` | dust | `-^` | cell |
-| `-~` | brief | `-&` | soft |
-| `-%` | poor | `-:` | minor |
-| `-(` | mild | `-)` | ugly |
-| `-<` | last | `->` | behind |
-| `-*` | tiny | `-?` | slim |
-| `-+` | narrow | `--` | tabled |
-| `-$` | cut | `-=` | small |
-| `-|` | exposure | `-_` | erosion |
-| `$@` | investor | `$!` | pay |
-| `$#` | asset | `$^` | market |
-| `$~` | cashflow | `$&` | deal |
-| `$%` | tax | `$:` | invoice |
-| `$(` | margin | `$)` | deficit |
-| `$<` | refund | `$>` | charge |
-| `$*` | price | `$?` | quote |
-| `$+` | raise | `$-` | slash |
-| `$$` | financials | `$=` | balance |
-| `$|` | transfer | `$_` | capital |
-
+Two Talk is plaintext and works natively in any application including your favorite text editor and personal knowledge management system (e.g. Obsidian, Notation and Logseq).
 
 ---
-TWO TALK // v1.2 // BARNEY MATTHEWS
+
+# Core Symbols
+
+The Two Talk system is anchored by nine core functional symbols.
+
+Each symbol represents a broad domain of human experience, such as `@` for person or agent, `#` for physical objects, and `:` for time.
+
+These nine symbols serve as the roots for every Semantic Prime in the dictionary below.
+
+| Symbol | Meaning |
+|---|---|
+| `@` | person / agent |
+| `#` | thing / substance |
+| `!` | value / quality |
+| `?` | mind / internal |
+| `>` | act / out |
+| `<` | in / receive |
+| `:` | time |
+| `^` | space / place |
+| `%` | amount / state |
+
+---
+
+# Grammar
+
+1. **Order: who → what → action**  
+   `@! #% >>` = I thing do
+
+2. **Modifiers follow**  
+   `#% !!` = thing good = good thing
+
+3. **Combine with dot**  
+   `#%.>^` = thing.move = vehicle
+
+4. **Literals**  
+   Use numbers for amounts (`123`), dates (`20250414`), and times (`1430`).  
+   Use initials for names (e.g. `BM`).
+
+5. **Negation: `<!` before phrase**  
+   `<! ?!` = not want
+
+6. **Context is king**  
+   Broad words gain precision from the situation.
+
+---
+
+# Semantic Prime Dictionary
+
+The Semantic Prime Dictionary is the foundation of Two Talk.
+
+It consists of approximately 65 concepts that cannot be broken down into simpler terms.
+
+By combining a **Category Root** core symbol with a **Modifier** core symbol, we create the fundamental meanings of Two Talk.
+
+For example:
+
+- `@` (Person) + `!` (Value) → `@!` = "I"
+
+This dictionary is the Two Talk canon grouped by first symbol.
+
+---
+
+## @ PERSON
+
+| Pair | Meaning |
+|---|---|
+| `@@` | we |
+| `@!` | i |
+| `@#` | person |
+| `@?` | you |
+| `@>` | child |
+| `@<` | parent |
+| `@:` | self |
+| `@^` | neighbor |
+| `@%` | people |
+
+---
+
+## # THING
+
+| Pair | Meaning |
+|---|---|
+| `##` | object |
+| `#@` | body |
+| `#!` | tool |
+| `#?` | idea |
+| `#>` | output |
+| `#<` | input |
+| `#:` | stuff |
+| `#^` | site |
+| `#%` | thing |
+
+---
+
+## ! VALUE
+
+| Pair | Meaning |
+|---|---|
+| `!!` | good |
+| `!@` | help |
+| `!#` | use |
+| `!?` | need |
+| `!>` | give |
+| `!<` | take |
+| `!:` | tell |
+| `!^` | change |
+| `!%` | important |
+
+---
+
+## ? MIND
+
+| Pair | Meaning |
+|---|---|
+| `??` | know |
+| `?@` | hear |
+| `?#` | see |
+| `?!` | want |
+| `?>` | think |
+| `?<` | remember |
+| `?:` | question |
+| `?^` | learn |
+| `?%` | feel |
+
+---
+
+## > ACT
+
+| Pair | Meaning |
+|---|---|
+| `>>` | do |
+| `>@` | touch |
+| `>#` | word |
+| `>!` | make |
+| `>?` | ask |
+| `><` | true |
+| `>:` | say |
+| `>^` | move |
+| `>%` | happen |
+
+---
+
+## < IN
+
+| Pair | Meaning |
+|---|---|
+| `<<` | kind |
+| `<@` | have |
+| `<#` | part |
+| `<!` | not |
+| `<?` | maybe |
+| `<>` | same |
+| `<:` | cause |
+| `<^` | contain |
+| `<%` | can |
+
+---
+
+## : TIME
+
+| Pair | Meaning |
+|---|---|
+| `::` | time |
+| `:@` | life |
+| `:#` | moment |
+| `:!` | now |
+| `:?` | when |
+| `:>` | after |
+| `:<` | before |
+| `:^` | always |
+| `:%` | often |
+
+---
+
+## ^ SPACE
+
+| Pair | Meaning |
+|---|---|
+| `^^` | place |
+| `^@` | local |
+| `^#` | location |
+| `^!` | here |
+| `^?` | inside |
+| `^>` | outside |
+| `^<` | between |
+| `^:` | far |
+| `^%` | near |
+
+---
+
+## % AMOUNT
+
+| Pair | Meaning |
+|---|---|
+| `%%` | amount |
+| `%@` | many |
+| `%#` | some |
+| `%!` | all |
+| `%?` | few |
+| `%>` | big |
+| `%<` | small |
+| `%:` | more |
+| `%^` | less |
+
+---
+
+# Swadesh Stacked Vocabulary
+
+The Swadesh list represents a collection of concepts found in every human culture, ranging from body parts to celestial bodies.
+
+In Two Talk, these are not unique symbols but "stacks" — logical compounds built by combining Semantic Primes.
+
+For example:
+
+- `Head` → `#@.%>` = Body.Big/Top
+- `Sun` → `#^.:!` = Place.Now/Light
+
+This demonstrates how Two Talk semantic primes can describe the physical world through intuitive combinations.
+
+| English | Two Talk |
+|---|---|
+| Above | `^.%>` |
+| Ash | `#:.!^.:>` |
+| Back | `#@.:<` |
+| Below | `^.%<` |
+| Belly | `#@.^?` |
+| Bird | `@#.#^` |
+| Bite | `>>.#@.#!.<:` |
+| Black | `!.%>` |
+| Blood | `#@.#:.>>` |
+| Bone | `#@.#!.<#` |
+| Breast | `#@.#<.!!` |
+| Burn | `>>.#:.!^` |
+| Cloud | `#^.#:.<^` |
+| Come | `>^.^!` |
+| Day | `:.%<` |
+| Die | `@<.<:` |
+| Dog | `@#.!!` |
+| Drink | `#<.#:.<^` |
+| Ear | `#@.?@` |
+| Eat | `#<.#@.#:` |
+| Egg | `#%.@>` |
+| Eye | `#@.?#` |
+| Fat | `#@.#:.!!` |
+| Feather | `#@.#^` |
+| Guts | `#@.^?.<#` |
+| Hair | `#@.%@` |
+| Hand | `#@.>>` |
+| Hard | `#!` |
+| Head | `#@.%>` |
+| Hear | `?@` |
+| Heavy | `%.%>` |
+| Here | `^!` |
+| Horn | `#@.#!.%>` |
+| If | `<? <:` |
+| Inside | `^?` |
+| Kill | `>>.:@.<!` |
+| Knee | `#@.>^.<#` |
+| Know | `??` |
+| Leaf | `#%.<#` |
+| Leg | `#@.>^` |
+| Lie | `>^.:<` |
+| Light | `%.%<` |
+| Sleep | `:@.<!` |
+| Small | `%<` |
+| Smoke | `#^.#:.!^` |
+| Soft | `<! .#!` |
+| Some | `%#` |
+| Something | `#%` |
+| Stand | `>^.%>` |
+| Star | `#^.%?` |
+| Stone | `#:.#!` |
+| Sun | `#^.:!` |
+| Swim | `>^.#:.<^` |
+| Tail | `#@.:>` |
+| Think | `?>` |
+| This | `#<` |
+| Tooth | `#@.#!.<:` |
+| Tree | `#%.:@` |
+| True | `><` |
+| Two | `2` |
+| Very | `%!` |
+| Walk | `>^.#@.^!` |
+| Want | `?!` |
+| Water | `#:.<^` |
+| What | `##:?` |
+| When | `:?` |
+| Where | `^^` |
+| White | `!.%<` |
+| Who | `@?:?` |
+| Wing | `#@.>^.#^` |
+| Words | `>#` |
+| Yellow | `!.#^.:!` |
+| You | `@?` |
+
+---
+
+# Design Principles
+
+- Minimal symbol set
+- Plaintext-first
+- Semantic composability
+- Human-readable structure
+- Greppable and searchable
+- Works offline everywhere
+- Application-independent
+- Compact enough for rapid note-taking
+- Structured enough for knowledge systems
+
+---
+
+# Example Sentences
+
+| English | Two Talk |
+|---|---|
+| I want thing | `@! #% ?!` |
+| You know | `@? ??` |
+| We help people | `@@ !@ @%` |
+| Good tool | `#! !!` |
+| Not true | `<! ><` |
+| Learn more | `?^ %:` |
+
+---
+
+# Philosophy
+
+Two Talk is not designed to replace natural language.
+
+It is designed to function as:
+
+- semantic shorthand
+- compressed notation
+- conceptual indexing system
+- machine-readable thought structure
+- plaintext knowledge layer
+
+The goal is to create a system that is:
+
+- fast to write
+- easy to parse
+- cognitively compact
+- digitally durable
+- semantically composable
+
+---
+
+# Footer
+
+**TWO TALK // CREATED BY BARNEY MATTHEWS // 2026**
