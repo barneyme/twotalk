@@ -1,162 +1,277 @@
-TWO TALK SYSTEM GUIDE
-====================
+TWO TALK GUIDE
 
-SEMANTIC PRIME DICTIONARY
--------------------------
-@@     : we
-@!     : i
-@#     : person
-@?     : you
-@>     : child
-@<     : parent
-@:     : self
-@^     : neighbor
-@%     : people
-##     : object
-#@     : body
-#!     : tool
-#?     : idea
-#>     : output
-#<     : input
-#:     : stuff
-#^     : site
-#%     : thing
-!!     : good
-!@     : help
-!#     : use
-!?     : need
-!>     : give
-!<     : take
-!:     : tell
-!^     : change
-!%     : important
-??     : know
-?@     : hear
-?#     : see
-?!     : want
-?>     : think
-?<     : remember
-?:     : question
-?^     : learn
-?%     : feel
->>     : do
->@     : touch
->#     : word
->!     : make
->?     : ask
-><     : true
->:     : say
->^     : move
->%     : happen
-<<     : kind
-<@     : have
-<#     : part
-<!     : not
-<?     : maybe
-<>     : same
-<:     : cause
-<^     : contain
-<%     : can
-::     : time
-:@     : life
-:#     : moment
-:!     : now
-:?     : when
-:>     : after
-:<     : before
-:^     : always
-:%     : often
-^^     : place
-^@     : local
-^#     : location
-^!     : here
-^?     : inside
-^>     : outside
-^<     : between
-^:     : far
-^%     : near
-%%     : amount
-%@     : many
-%#     : some
-%!     : all
-%?     : few
-%>     : big
-%<     : small
-%:     : more
-%^     : less
 
-SWADESH VOCABULARY
-------------------
-^.%>            : Above
-#:.!^.:>        : Ash
-#@.:<           : Back
-^.%<            : Below
-#@.^?           : Belly
-@#.#^           : Bird
->>.#@.#!.<:     : Bite
-!.%>            : Black
-#@.#:.>>        : Blood
-#@.#!.<#        : Bone
-#@.#<.!!        : Breast
->>.#:.!^        : Burn
-#^.#:.<^        : Cloud
->^.^!           : Come
-:.%<            : Day
-@<.<:           : Die
-@#.!!           : Dog
-#<.#:.<^        : Drink
-#@.?@           : Ear
-#<.#@.#:        : Eat
-#%.@>           : Egg
-#@.?#           : Eye
-#@.#:.!!        : Fat
-#@.#^           : Feather
-#@.^?.<#        : Guts
-#@.%@           : Hair
-#@.>>           : Hand
-#!              : Hard
-#@.%>           : Head
-?@              : Hear
-%.%>            : Heavy
-^!              : Here
-#@.#!.%>        : Horn
-<? <:           : If
-^?              : Inside
->>.:@.<!        : Kill
-#@.>^.<#        : Knee
-??              : Know
-#%.<#           : Leaf
-#@.>^           : Leg
->^.:<           : Lie
-%.%<            : Light
-:@.<!           : Sleep
-%<              : Small
-#^.#:.!^        : Smoke
-<!.#!           : Soft
-%#              : Some
-#%              : Something
->^.%>           : Stand
-#^.%?           : Star
-#:.#!           : Stone
-#^.:!           : Sun
->^.#:.<^        : Swim
-#@.:>           : Tail
-?>              : Think
-#<              : This
-#@.#!.<:        : Tooth
-#%.:@           : Tree
-><              : True
-2               : Two
-%!              : Very
->^.#@.^!        : Walk
-?!              : Want
-#:.<^           : Water
-##:?            : What
-:?              : When
-^^              : Where
-!.%<            : White
-@?:?            : Who
-#@.>^.#^        : Wing
->#              : Words
-!.#^.:!         : Yellow
-@?              : You
+CORE SYMBOLS
+------------
+Each symbol represents a broad domain of experience depending on vector position.
+
+@	 Subject: People (Who)                        State: Self (Internal)
+#	 Subject: Object (What)                       State: Solid (Tangible)
+!	 Subject: Value (Good)                        State: Max (Extra)
+?	 Subject: Mind (Why)                          State: Hidden (Thought)
+>	 Subject: Action (Push)                       State: Outward (Giving)
+<	 Subject: Limit (Pull)                        State: Inward (Taking)
+:	 Subject: Time (When)                         State: Now (Next)
+^	 Subject: Space (Where)                       State: Here (Grounded)
+%	 Subject: Scale (Status)                      State: More (Multiplied)
+
+TWO TALK DICTIONARY
+-------------------------------------
+[SEMANTIC PRIME]     @@           : self / individual                   (PERSON)
+[SEMANTIC PRIME]     @!           : i / me                              (PERSON)
+[SEMANTIC PRIME]     @?           : you                                 (PERSON)
+[SEMANTIC PRIME]     @%           : we / people                         (PERSON)
+[SEMANTIC PRIME]     @#           : person / human                      (PERSON)
+[SEMANTIC PRIME]     @>           : child / offspring                   (PERSON)
+[SEMANTIC PRIME]     @<           : parent / ancestor                   (PERSON)
+[SEMANTIC PRIME]     @^           : neighbor / other                    (PERSON)
+[SEMANTIC PRIME]     @:           : character / role                    (PERSON)
+[SEMANTIC PRIME]     ##           : object / thing                      (THING)
+[SEMANTIC PRIME]     #@           : body                                (THING)
+[SEMANTIC PRIME]     #!           : tool / asset                        (THING)
+[SEMANTIC PRIME]     #?           : artifact / document                 (THING)
+[SEMANTIC PRIME]     #>           : output / product                    (THING)
+[SEMANTIC PRIME]     #<           : input / resource                    (THING)
+[SEMANTIC PRIME]     #^           : site / structure                    (THING)
+[SEMANTIC PRIME]     #:           : substance / matter                  (THING)
+[SEMANTIC PRIME]     #%           : part / component                    (THING)
+[SEMANTIC PRIME]     !!           : good / optimal                      (VALUE)
+[SEMANTIC PRIME]     !@           : help / utility                      (VALUE)
+[SEMANTIC PRIME]     !#           : use / function                      (VALUE)
+[SEMANTIC PRIME]     !?           : need / critical                     (VALUE)
+[SEMANTIC PRIME]     !>           : important / value                   (VALUE)
+[SEMANTIC PRIME]     !<           : bad / sub-optimal                   (VALUE)
+[SEMANTIC PRIME]     !:           : true / correct                      (VALUE)
+[SEMANTIC PRIME]     !^           : change / modify                     (VALUE)
+[SEMANTIC PRIME]     !%           : all / absolute                      (VALUE)
+[SEMANTIC PRIME]     ??           : know / knowledge                    (MIND)
+[SEMANTIC PRIME]     ?@           : feel / emotion                      (MIND)
+[SEMANTIC PRIME]     ?!           : want / desire                       (MIND)
+[SEMANTIC PRIME]     ?#           : see / perceive                      (MIND)
+[SEMANTIC PRIME]     ?>           : think / reason                      (MIND)
+[SEMANTIC PRIME]     ?<           : remember / recall                   (MIND)
+[SEMANTIC PRIME]     ?:           : guess / wonder                      (MIND)
+[SEMANTIC PRIME]     ?^           : learn / focus                       (MIND)
+[SEMANTIC PRIME]     ?%           : evaluate / judge                    (MIND)
+[SEMANTIC PRIME]     >>           : do / activity                       (ACT)
+[SEMANTIC PRIME]     >:           : say / speak                         (ACT)
+[SEMANTIC PRIME]     >#           : word / language                     (ACT)
+[SEMANTIC PRIME]     >!           : make / create                       (ACT)
+[SEMANTIC PRIME]     >?           : ask / query                         (ACT)
+[SEMANTIC PRIME]     >@           : touch / experience                  (ACT)
+[SEMANTIC PRIME]     ><           : give / transfer                     (ACT)
+[SEMANTIC PRIME]     >^           : move / displace                     (ACT)
+[SEMANTIC PRIME]     >%           : happen / occur                      (ACT)
+[SEMANTIC PRIME]     <<           : kind / type                         (IN)
+[SEMANTIC PRIME]     <@           : have / possess                      (IN)
+[SEMANTIC PRIME]     <#           : contain / hold                      (IN)
+[SEMANTIC PRIME]     <>           : same / parallel                     (IN)
+[SEMANTIC PRIME]     <:           : cause / origin                      (IN)
+[SEMANTIC PRIME]     <^           : with / joint                        (IN)
+[SEMANTIC PRIME]     <%           : can / capacity                      (IN)
+[SEMANTIC PRIME]     <?           : if / conditional                    (IN)
+[SEMANTIC PRIME]     <!           : not / negation                      (IN)
+[SEMANTIC PRIME]     ::           : time / duration                     (TIME)
+[SEMANTIC PRIME]     :@           : life / era                          (TIME)
+[SEMANTIC PRIME]     :#           : moment / instant                    (TIME)
+[SEMANTIC PRIME]     :!           : now / current                       (TIME)
+[SEMANTIC PRIME]     :?           : when / interval                     (TIME)
+[SEMANTIC PRIME]     :>           : after / future                      (TIME)
+[SEMANTIC PRIME]     :<           : before / past                       (TIME)
+[SEMANTIC PRIME]     :^           : always / permanent                  (TIME)
+[SEMANTIC PRIME]     :%           : often / frequent                    (TIME)
+[SEMANTIC PRIME]     ^^           : space / room                        (SPACE)
+[SEMANTIC PRIME]     ^@           : local / native                      (SPACE)
+[SEMANTIC PRIME]     ^#           : location / point                    (SPACE)
+[SEMANTIC PRIME]     ^!           : here / present                      (SPACE)
+[SEMANTIC PRIME]     ^?           : inside / interior                   (SPACE)
+[SEMANTIC PRIME]     ^>           : outside / exterior                  (SPACE)
+[SEMANTIC PRIME]     ^<           : between / intermediate              (SPACE)
+[SEMANTIC PRIME]     ^:           : far / distant                       (SPACE)
+[SEMANTIC PRIME]     ^%           : near / close                        (SPACE)
+[SEMANTIC PRIME]     %%           : amount / metric                     (AMOUNT)
+[SEMANTIC PRIME]     %@           : many / numerous                     (AMOUNT)
+[SEMANTIC PRIME]     %#           : some / limited                      (AMOUNT)
+[SEMANTIC PRIME]     %!           : all / gross                         (AMOUNT)
+[SEMANTIC PRIME]     %?           : few / scarce                        (AMOUNT)
+[SEMANTIC PRIME]     %>           : big / macro                         (AMOUNT)
+[SEMANTIC PRIME]     %<           : small / micro                       (AMOUNT)
+[SEMANTIC PRIME]     %:           : more / increment                    (AMOUNT)
+[SEMANTIC PRIME]     %^           : less / decrement                    (AMOUNT)
+[SWADESH STACKED]    ^.%>         : Above                               (Universal)
+[SWADESH STACKED]    %!           : All                                 (Universal)
+[SWADESH STACKED]    #:.!^        : Ash                                 (Universal)
+[SWADESH STACKED]    #@.:<        : Back                                (Universal)
+[SWADESH STACKED]    ^.%<         : Below                               (Universal)
+[SWADESH STACKED]    #@.^?        : Belly                               (Universal)
+[SWADESH STACKED]    @#.#^        : Bird                                (Universal)
+[SWADESH STACKED]    >>.#@        : Bite                                (Universal)
+[SWADESH STACKED]    !.%>         : Black                               (Universal)
+[SWADESH STACKED]    #@.#:        : Blood                               (Universal)
+[SWADESH STACKED]    >^.%>        : Blow                                (Universal)
+[SWADESH STACKED]    #@.#!        : Bone                                (Universal)
+[SWADESH STACKED]    #@.#<        : Breast                              (Universal)
+[SWADESH STACKED]    >^.<#        : Breathe                             (Universal)
+[SWADESH STACKED]    >>.!^        : Burn                                (Universal)
+[SWADESH STACKED]    #^.#:        : Cloud                               (Universal)
+[SWADESH STACKED]    >^.^!        : Come                                (Universal)
+[SWADESH STACKED]    :.%<         : Day                                 (Universal)
+[SWADESH STACKED]    @<.<:        : Die                                 (Universal)
+[SWADESH STACKED]    @#.!!        : Dog                                 (Universal)
+[SWADESH STACKED]    #<.#:        : Drink                               (Universal)
+[SWADESH STACKED]    #@.?@        : Ear                                 (Universal)
+[SWADESH STACKED]    #<.#@        : Eat                                 (Universal)
+[SWADESH STACKED]    #:.^@        : Earth (soil)                        (Universal)
+[SWADESH STACKED]    #%.@>        : Egg                                 (Universal)
+[SWADESH STACKED]    #@.?#        : Eye                                 (Universal)
+[SWADESH STACKED]    #@.!!        : Fat                                 (Universal)
+[SWADESH STACKED]    #@.#^        : Feather                             (Universal)
+[SWADESH STACKED]    #:.!^        : Fire                                (Universal)
+[SWADESH STACKED]    @#.#:        : Fish                                (Universal)
+[SWADESH STACKED]    >^.#^        : Fly                                 (Universal)
+[SWADESH STACKED]    #@.^?        : Guts                                (Universal)
+[SWADESH STACKED]    ><           : Give                                (Universal)
+[SWADESH STACKED]    #@.%@        : Hair                                (Universal)
+[SWADESH STACKED]    #@.>>        : Hand                                (Universal)
+[SWADESH STACKED]    #!           : Hard                                (Universal)
+[SWADESH STACKED]    #@.%>        : Head                                (Universal)
+[SWADESH STACKED]    ?@           : Hear                                (Universal)
+[SWADESH STACKED]    #@.?%        : Heart                               (Universal)
+[SWADESH STACKED]    %.%>         : Heavy                               (Universal)
+[SWADESH STACKED]    ^!           : Here                                (Universal)
+[SWADESH STACKED]    #@.#!        : Horn                                (Universal)
+[SWADESH STACKED]    @!           : I                                   (Universal)
+[SWADESH STACKED]    <?.<:        : If                                  (Universal)
+[SWADESH STACKED]    ^?           : Inside                              (Universal)
+[SWADESH STACKED]    >>.<!        : Kill                                (Universal)
+[SWADESH STACKED]    #@.>^        : Knee                                (Universal)
+[SWADESH STACKED]    ??           : Know                                (Universal)
+[SWADESH STACKED]    #%.<#        : Leaf                                (Universal)
+[SWADESH STACKED]    #@.>^        : Leg                                 (Universal)
+[SWADESH STACKED]    >^.:<        : Lie                                 (Universal)
+[SWADESH STACKED]    %.%<         : Light                               (Universal)
+[SWADESH STACKED]    #@.<#        : Liver                               (Universal)
+[SWADESH STACKED]    %@           : Many                                (Universal)
+[SWADESH STACKED]    #^.:#        : Moon                                (Universal)
+[SWADESH STACKED]    ^#.%>        : Mountain                            (Universal)
+[SWADESH STACKED]    #@.#<        : Mouth                               (Universal)
+[SWADESH STACKED]    #@.<<        : Neck                                (Universal)
+[SWADESH STACKED]    #@.?@        : Nose                                (Universal)
+[SWADESH STACKED]    <!           : Not                                 (Universal)
+[SWADESH STACKED]    #^.#:        : Smoke                               (Universal)
+[SWADESH STACKED]    :@.<!        : Sleep                               (Universal)
+[SWADESH STACKED]    %<           : Small                               (Universal)
+[SWADESH STACKED]    <!.#!        : Soft                                (Universal)
+[SWADESH STACKED]    %#           : Some                                (Universal)
+[SWADESH STACKED]    #%           : Something                           (Universal)
+[SWADESH STACKED]    >^.%>        : Stand                               (Universal)
+[SWADESH STACKED]    #^.%?        : Star                                (Universal)
+[SWADESH STACKED]    #:.#!        : Stone                               (Universal)
+[SWADESH STACKED]    #^.:!        : Sun                                 (Universal)
+[SWADESH STACKED]    >^.#:        : Swim                                (Universal)
+[SWADESH STACKED]    #:.%<        : Sand                                (Universal)
+[SWADESH STACKED]    >:           : Say                                 (Universal)
+[SWADESH STACKED]    ?#           : See                                 (Universal)
+[SWADESH STACKED]    >^.^#        : Sit                                 (Universal)
+[SWADESH STACKED]    ^^.%>        : Sky                                 (Universal)
+[SWADESH STACKED]    #@.:>        : Tail                                (Universal)
+[SWADESH STACKED]    #<           : That                                (Universal)
+[SWADESH STACKED]    ?>           : Think                               (Universal)
+[SWADESH STACKED]    #<           : This                                (Universal)
+[SWADESH STACKED]    #@.#!        : Tooth                               (Universal)
+[SWADESH STACKED]    #@.>:        : Tongue                              (Universal)
+[SWADESH STACKED]    #%.:@        : Tree                                (Universal)
+[SWADESH STACKED]    !:           : True                                (Universal)
+[SWADESH STACKED]    %!           : Very                                (Universal)
+[SWADESH STACKED]    >^.^!        : Walk                                (Universal)
+[SWADESH STACKED]    ?!           : Want                                (Universal)
+[SWADESH STACKED]    #:.<^        : Water                               (Universal)
+[SWADESH STACKED]    @@           : We                                  (Universal)
+[SWADESH STACKED]    ##:?         : What                                (Universal)
+[SWADESH STACKED]    :?           : When                                (Universal)
+[SWADESH STACKED]    ^^           : Where                               (Universal)
+[SWADESH STACKED]    !.%<         : White                               (Universal)
+[SWADESH STACKED]    @?:?         : Who                                 (Universal)
+[SWADESH STACKED]    #@.>^        : Wing                                (Universal)
+[SWADESH STACKED]    >#           : Words                               (Universal)
+[SWADESH STACKED]    !.#^         : Yellow                              (Universal)
+[SWADESH STACKED]    @?           : You                                 (Universal)
+[DOMAIN SPECIFIC]    @!           : I / My / Me                         (Personal Pronouns)
+[DOMAIN SPECIFIC]    @?           : You                                 (Personal Pronouns)
+[DOMAIN SPECIFIC]    @@           : We                                  (Personal Pronouns)
+[DOMAIN SPECIFIC]    <^           : And / With                          (Particles & Conjunctions)
+[DOMAIN SPECIFIC]    ><           : To / For / Give                     (Particles & Conjunctions)
+[DOMAIN SPECIFIC]    ^?           : Of / In / On / At                   (Particles & Conjunctions)
+[DOMAIN SPECIFIC]    #%           : It / That / Item                    (Particles & Conjunctions)
+[DOMAIN SPECIFIC]    :<           : Was                                 (Particles & Conjunctions)
+[DOMAIN SPECIFIC]    %!           : All                                 (Quantifiers & Consensus)
+[DOMAIN SPECIFIC]    %!.%<        : Most                                (Quantifiers & Consensus)
+[DOMAIN SPECIFIC]    %@           : Many                                (Quantifiers & Consensus)
+[DOMAIN SPECIFIC]    %#.:>        : Several                             (Quantifiers & Consensus)
+[DOMAIN SPECIFIC]    %#           : Some                                (Quantifiers & Consensus)
+[DOMAIN SPECIFIC]    %?           : Few                                 (Quantifiers & Consensus)
+[DOMAIN SPECIFIC]    ::           : Time                                (Time Expressions)
+[DOMAIN SPECIFIC]    :!           : Now                                 (Time Expressions)
+[DOMAIN SPECIFIC]    :!.#:        : Today / Daily                       (Time Expressions)
+[DOMAIN SPECIFIC]    :.%<         : Day                                 (Time Expressions)
+[DOMAIN SPECIFIC]    ::.#%        : Date                                (Time Expressions)
+[DOMAIN SPECIFIC]    :.<!         : Deadline                            (Time Expressions)
+[DOMAIN SPECIFIC]    :>           : Next                                (Time Expressions)
+[DOMAIN SPECIFIC]    ??           : Know / Knowledge                    (Senses & Internal States)
+[DOMAIN SPECIFIC]    ?>           : Think                               (Senses & Internal States)
+[DOMAIN SPECIFIC]    ?%           : Feel                                (Senses & Internal States)
+[DOMAIN SPECIFIC]    ?!           : Want                                (Senses & Internal States)
+[DOMAIN SPECIFIC]    !?           : Need                                (Senses & Internal States)
+[DOMAIN SPECIFIC]    ?%.!!        : Love                                (Senses & Internal States)
+[DOMAIN SPECIFIC]    :@           : Life                                (Senses & Internal States)
+[DOMAIN SPECIFIC]    ^^.@@        : Home                                (Senses & Internal States)
+[DOMAIN SPECIFIC]    !:           : Yeah / True                         (Senses & Internal States)
+[DOMAIN SPECIFIC]    >!           : Create / Make                       (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    >!.%>        : Develop / Build                     (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    >^.>^        : Launch / Publish                    (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    >>.!^        : Rework / Edit                       (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    >>.:<        : Plan / Design                       (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    >>           : Action / Task                       (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    >>.:!        : Start                               (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    >>.:>        : Follow-up                           (Professional & Creative Actions)
+[DOMAIN SPECIFIC]    ?^.?>        : Research / Analyze                  (Intellectual & Analytical)
+[DOMAIN SPECIFIC]    ?>.!!        : Decide on / Decision                (Intellectual & Analytical)
+[DOMAIN SPECIFIC]    ><.!!        : Approved                            (Intellectual & Analytical)
+[DOMAIN SPECIFIC]    ?#.!!        : Check / Review                      (Intellectual & Analytical)
+[DOMAIN SPECIFIC]    ?#.<^        : Find / Search                       (Intellectual & Analytical)
+[DOMAIN SPECIFIC]    ?>.:<        : Reflect                             (Intellectual & Analytical)
+[DOMAIN SPECIFIC]    >!.<^        : Synthesize                          (Intellectual & Analytical)
+[DOMAIN SPECIFIC]    >>.<^        : Collaborate with                    (Collaborative & Organizational)
+[DOMAIN SPECIFIC]    >>.<>        : Coordinate / Organise               (Collaborative & Organizational)
+[DOMAIN SPECIFIC]    %!.^?        : Capture / Collect / Compile         (Collaborative & Organizational)
+[DOMAIN SPECIFIC]    %#.<^        : Sort / Classify                     (Collaborative & Organizational)
+[DOMAIN SPECIFIC]    ^?           : Gather                              (Collaborative & Organizational)
+[DOMAIN SPECIFIC]    ^?.#         : Store / Archive                     (Collaborative & Organizational)
+[DOMAIN SPECIFIC]    <!.#         : Retrieve                            (Collaborative & Organizational)
+[DOMAIN SPECIFIC]    #>           : Information / Note                  (Knowledge Management & Artifacts)
+[DOMAIN SPECIFIC]    ?!           : Idea                                (Knowledge Management & Artifacts)
+[DOMAIN SPECIFIC]    >#.:<        : Reference / Source / Agenda         (Knowledge Management & Artifacts)
+[DOMAIN SPECIFIC]    <>.%!        : Graph                               (Knowledge Management & Artifacts)
+[DOMAIN SPECIFIC]    #>.#         : Tag                                 (Knowledge Management & Artifacts)
+[DOMAIN SPECIFIC]    >>.%>        : Project                             (Knowledge Management & Artifacts)
+[DOMAIN SPECIFIC]    ^?.>>        : Inbox                               (Knowledge Management & Artifacts)
+[DOMAIN SPECIFIC]    <>           : Connection / Link / Connect         (Network & Links)
+[DOMAIN SPECIFIC]    <>.:<        : Backlink                            (Network & Links)
+[DOMAIN SPECIFIC]    >^.@@        : Share                               (Network & Links)
+[DOMAIN SPECIFIC]    >#.:!        : Email / Text / Mail                 (Communication & Admin)
+[DOMAIN SPECIFIC]    ?@.>>        : Call                                (Communication & Admin)
+[DOMAIN SPECIFIC]    >^           : Send                                (Communication & Admin)
+[DOMAIN SPECIFIC]    >#.#         : Print                               (Communication & Admin)
+[DOMAIN SPECIFIC]    ?#           : Read                                (Communication & Admin)
+[DOMAIN SPECIFIC]    ::.>!        : Schedule                            (Communication & Admin)
+[DOMAIN SPECIFIC]    >:.%>        : Promote                             (Communication & Admin)
+[DOMAIN SPECIFIC]    ^^.>>        : Meeting                             (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    @%.^^        : Attendees                           (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    >:.%@        : Discussion / Discuss                (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    >:.%@.:<     : Discussed                           (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    >#.>!        : Motion                              (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    <>.>!        : Seconded                            (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    ?%.%!        : Vote                                (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    <>.%!        : Unanimous                           (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    !>.<@        : Assigned                            (Meeting & Collaboration Governance)
+[DOMAIN SPECIFIC]    @!.<@        : Owner                               (Meeting & Collaboration Governance)
