@@ -12,40 +12,29 @@
             @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
             :root {
                 --bg: #eef0f3;
-                --bg2: #ffffff;
+                --bg2: #fff;
                 --accent: #e04e00;
                 --fg: #141618;
                 --fg-muted: #6b7280;
                 --border: #d1d5db;
                 --radius: 12px;
             }
-            * {
-                box-sizing: border-box;
-            }
-            html,
-            body {
+            html {
+                scroll-behavior: smooth;
                 height: 100%;
             }
             body {
                 margin: 0;
+                height: 100%;
                 color: var(--fg);
-                background-color: var(--bg);
-                background-image:
-                    linear-gradient(
-                        to right,
-                        var(--border) 1px,
-                        transparent 1px
-                    ),
-                    linear-gradient(
-                        to bottom,
-                        var(--border) 1px,
-                        transparent 1px
-                    );
-                background-size: 40px 40px;
+                background:
+                    #eef0f3 linear-gradient(90deg, #d1d5db 1px, 0 1px) 0 0/40px
+                        40px,
+                    linear-gradient(#d1d5db 1px, 0 1px) 0 0/40px 40px;
                 font-family:
                     system-ui,
                     -apple-system,
-                    Segoe UI,
+                    "Segoe UI",
                     Roboto,
                     Inter,
                     sans-serif;
@@ -70,11 +59,74 @@
                 align-items: center;
                 gap: 12px;
             }
+            .nav-links {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+            .nav-link {
+                border: 0;
+                background: 0;
+                padding: 6px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-weight: 500;
+                font-size: 0.9rem;
+                color: var(--fg);
+                text-decoration: none;
+                transition: all 0.2s;
+            }
+            .nav-link:hover {
+                color: var(--accent);
+                background: rgba(224, 78, 0, 0.05);
+            }
+            .menu-toggle {
+                display: none;
+                border: 0;
+                background: 0;
+                cursor: pointer;
+                padding: 8px;
+                color: var(--fg);
+                font-size: 1.2rem;
+            }
+            @media (max-width: 768px) {
+                .nav-inner {
+                    padding: 10px 12px;
+                    gap: 8px;
+                }
+                .nav-links {
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    right: 0;
+                    background: rgba(238, 240, 243, 0.95);
+                    backdrop-filter: blur(10px);
+                    flex-direction: column;
+                    gap: 4px;
+                    padding: 8px 12px;
+                    border-bottom: 1px solid var(--border);
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s;
+                }
+                .nav-links.active {
+                    max-height: 300px;
+                }
+                .nav-link {
+                    width: 100%;
+                    text-align: left;
+                }
+                .menu-toggle {
+                    display: block;
+                    margin-left: auto;
+                }
+            }
             .logo {
                 width: 32px;
                 height: 32px;
                 background: var(--accent);
-                color: white;
+                color: #fff;
                 display: grid;
                 place-items: center;
                 border-radius: 8px;
@@ -85,6 +137,8 @@
                 font-family: "Atkinson Hyperlegible", sans-serif;
                 font-weight: 700;
                 letter-spacing: 0.2px;
+                color: var(--fg);
+                margin: 0;
             }
             .spacer {
                 flex: 1;
@@ -92,11 +146,13 @@
             .btn {
                 border: 1px solid var(--border);
                 background: var(--bg2);
-                padding: 8px 12px;
-                border-radius: 8px;
+                padding: 6px 12px;
+                border-radius: 4px;
                 cursor: pointer;
+                font-size: 0.9rem;
                 font-family: "Atkinson Hyperlegible", sans-serif;
-                font-weight: 600;
+                transition: all 0.2s;
+                color: var(--fg);
             }
             .btn:hover {
                 border-color: var(--accent);
@@ -104,276 +160,229 @@
             }
             .btn-primary {
                 background: var(--accent);
-                color: white;
-                border-color: var(--accent);
+                color: #fff;
+                border: 0;
             }
             .btn-primary:hover {
-                filter: brightness(0.95);
-                color: white;
-            }
-            .search-box {
-                position: relative;
-                width: 50%;
-                flex: 0 0 50%;
-            }
-            .search-box input {
-                width: 100%;
-                padding: 8px 12px 8px 32px;
-                border: 1px solid var(--border);
-                border-radius: 6px;
-                font-size: 0.95rem;
-                font-family: "Atkinson Hyperlegible", sans-serif;
-                background: var(--bg2);
-                color: var(--fg);
-            }
-            .search-box input:focus {
-                outline: none;
-                border-color: var(--accent);
-                box-shadow: 0 0 0 3px rgba(224, 78, 0, 0.1);
-            }
-            .search-box input::placeholder {
-                color: var(--fg-muted);
-            }
-            .search-icon {
-                position: absolute;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                color: var(--fg-muted);
-                pointer-events: none;
-                font-size: 0.95rem;
-            }
-            #searchResults {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg2);
-                border: 1px solid var(--border);
-                border-top: none;
-                border-radius: 0 0 6px 6px;
-                max-height: 400px;
-                overflow-y: auto;
-                z-index: 100;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                margin-top: -1px;
-            }
-            #searchResults.active {
-                display: block;
-            }
-            .search-result-item {
-                padding: 10px 12px;
-                border-bottom: 1px solid var(--border);
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-            .search-result-item:hover {
-                background: var(--bg);
-            }
-            .search-result-item:last-child {
-                border-bottom: none;
-            }
-            .result-symbol {
-                font-family: "Space Mono", monospace;
-                color: var(--accent);
-                font-weight: 700;
-                font-size: 1rem;
-                min-width: 2ch;
-            }
-            .result-content {
-                flex: 1;
-            }
-            .result-text {
-                color: var(--fg);
-                font-size: 0.9rem;
-            }
-            .result-label {
-                color: var(--fg-muted);
-                font-size: 0.75rem;
-                margin-top: 2px;
+                background: #c93f00;
             }
             .wrap {
                 max-width: 1100px;
                 margin: 0 auto;
-                padding: 24px 16px 80px;
+                padding: 14px 16px 50px;
             }
             .hero {
                 display: grid;
-                gap: 8px;
+                gap: 4px;
             }
             .hero h1 {
                 font-family: "Atkinson Hyperlegible", sans-serif;
-                font-size: clamp(28px, 4vw, 42px);
+                font-size: clamp(24px, 3.5vw, 36px);
                 margin: 0;
                 line-height: 1.1;
             }
             .hero p {
                 margin: 0;
                 color: var(--fg-muted);
-
+                font-size: 0.95rem;
+                line-height: 1.4;
             }
             .card {
                 background: var(--bg2);
                 border: 1px solid var(--border);
                 border-left: 4px solid var(--accent);
                 border-radius: var(--radius);
-                padding: 24px;
-                margin: 24px 0;
+                padding: 16px;
+                margin: 12px 0;
                 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
             }
             h2 {
                 font-family: "Atkinson Hyperlegible", sans-serif;
-                font-size: 1.5rem;
-                margin: 0 0 16px;
+                font-size: 1.25rem;
+                margin: 0 0 10px;
                 display: flex;
                 align-items: baseline;
                 gap: 10px;
             }
-            h2 .num {
-                font-family: "Space Mono", monospace;
-                color: var(--accent);
-                font-size: 1rem;
-                opacity: 0.9;
-                min-width: 2ch;
-            }
-            .muted {
-                color: var(--fg-muted);
-            }
             table.symbols {
                 width: 100%;
                 border-collapse: collapse;
-                margin-top: 8px;
-                max-width: 560px;
+                margin-top: 4px;
+                max-width: 750px;
+            }
+            table.symbols th {
+                padding: 6px;
+                background: var(--bg);
+                font-weight: 700;
+                text-align: left;
+                font-size: 0.85rem;
+                border-bottom: 2px solid var(--border);
             }
             table.symbols td {
-                padding: 10px 8px;
+                padding: 6px;
                 border-bottom: 1px solid var(--border);
                 vertical-align: top;
+                font-size: 0.93rem;
+                line-height: 1.3;
             }
             table.symbols td:first-child {
                 font-family: "Space Mono", monospace;
                 color: var(--accent);
                 font-weight: 700;
-                font-size: 1.3rem;
-                width: 3.5ch;
+                font-size: 1.2rem;
+                width: 4ch;
+                text-align: center;
             }
-            .dict-grid {
+            .primes-table {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                gap: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 8px;
+                margin-top: 12px;
             }
-            .group h3 {
-                font-family: "Space Mono", monospace;
-                font-size: 0.85rem;
-                letter-spacing: 0.08em;
-                color: var(--fg-muted);
-                margin: 18px 0 8px;
-                text-transform: uppercase;
-            }
-            .pairs {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-            .pairs li {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                padding: 8px 0;
-                border-bottom: 1px dashed var(--border);
-            }
-            .pair {
-                font-family: "Space Mono", monospace;
-                color: var(--accent);
-                font-weight: 700;
-                font-size: 1.25rem;
-                min-width: 3.2ch;
-            }
-            .meaning {
-                flex: 1;
-            }
-            .copy {
+            .prime-item {
+                background: var(--bg2);
                 border: 1px solid var(--border);
-                background: transparent;
-                padding: 4px 8px;
                 border-radius: 6px;
-                font-size: 0.75rem;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                transition: all 0.2s;
                 cursor: pointer;
-                color: var(--fg-muted);
-                font-family: "Atkinson Hyperlegible", sans-serif;
             }
-            .copy:hover,
-            .copy:focus {
+            .prime-item:hover {
                 border-color: var(--accent);
+                box-shadow: 0 2px 8px rgba(224, 78, 0, 0.12);
+            }
+            .prime-symbol {
+                font-family: "Space Mono", monospace;
+                font-weight: 700;
+                font-size: 1.2rem;
                 color: var(--accent);
-                outline: none;
             }
-            .copy.copied {
+            .prime-meaning {
+                font-size: 0.8rem;
+                color: var(--fg);
+                font-weight: 500;
+                line-height: 1.25;
+            }
+            .section-desc {
+                color: var(--fg-muted);
+                max-width: 100%;
+                margin-bottom: 10px;
+                font-size: 0.93rem;
+                line-height: 1.4;
+            }
+            .filter-controls {
+                display: flex;
+                gap: 6px;
+                margin-bottom: 14px;
+                flex-wrap: wrap;
+            }
+            .filter-btn {
+                border: 1px solid var(--border);
+                background: var(--bg2);
+                padding: 5px 12px;
+                border-radius: 999px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                transition: all 0.2s;
+            }
+            .filter-btn.active {
                 background: var(--accent);
-                color: white;
+                color: #fff;
                 border-color: var(--accent);
             }
+            .vocab-table-wrapper {
+                height: 450px;
+                overflow-y: auto;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                margin-top: 12px;
+            }
+            .vocab-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.9rem;
+            }
+            .vocab-table th,
+            .vocab-table td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid var(--border);
+            }
+            .vocab-table th {
+                background: var(--bg);
+                font-weight: 700;
+                position: sticky;
+                top: 0;
+            }
+
             .grammar-list {
                 margin: 0;
                 padding-left: 18px;
                 display: grid;
-                gap: 10px;
+                gap: 8px;
             }
             .grammar-list li {
                 margin: 0;
+                font-size: 0.93rem;
+                line-height: 1.4;
             }
-            code.mono,
-            .mono {
-                font-family: "Space Mono", monospace;
-                background: #f6f7f9;
-                border: 1px solid var(--border);
-                padding: 2px 6px;
-                border-radius: 6px;
+            .main-section {
+                padding: 0;
+            }
+            .main-section.card {
+                padding: 16px;
+                margin: 12px 0;
+            }
+            .main-section .content {
+                width: 100%;
             }
             .flash-wrap {
-                max-width: 720px;
+                max-width: 600px;
                 margin: 0 auto;
             }
             .mode-tabs {
                 display: flex;
-                gap: 8px;
-                margin-bottom: 12px;
+                gap: 6px;
+                margin-bottom: 10px;
                 justify-content: center;
             }
             .tab {
                 border: 1px solid var(--border);
                 background: var(--bg2);
-                padding: 6px 14px;
+                padding: 5px 12px;
                 border-radius: 999px;
                 cursor: pointer;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 font-family: "Atkinson Hyperlegible", sans-serif;
+                transition: all 0.2s;
             }
             .tab.active {
                 background: var(--accent);
-                color: white;
+                color: #fff;
                 border-color: var(--accent);
             }
             .flashcard {
                 perspective: 1200px;
                 width: 100%;
-                max-width: 460px;
-                height: 260px;
+                max-width: 380px;
+                height: 220px;
                 margin: 0 auto;
                 cursor: pointer;
-                outline: none;
+                outline: 0;
+                position: relative;
             }
-            .flash-inner {
+            .flip-inner {
                 position: relative;
                 width: 100%;
                 height: 100%;
-                transition: transform 0.5s;
+                transition: transform 4s;
                 transform-style: preserve-3d;
             }
-            .flashcard.flipped .flash-inner {
+            .flashcard.flipped .flip-inner {
                 transform: rotateY(180deg);
             }
             .face {
@@ -387,7 +396,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                padding: 24px;
+                padding: 16px;
                 backface-visibility: hidden;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
                 text-align: center;
@@ -398,137 +407,306 @@
             .face .big {
                 font-family: "Space Mono", monospace;
                 color: var(--accent);
-                font-size: clamp(48px, 10vw, 72px);
+                font-size: clamp(40px, 8vw, 56px);
                 font-weight: 700;
                 line-height: 1;
             }
             .face .mean {
-                font-size: 1.5rem;
-                margin-top: 8px;
+                font-size: 1.2rem;
+                margin-top: 6px;
                 font-family: "Atkinson Hyperlegible", sans-serif;
             }
             .face .break {
-                margin-top: 6px;
+                margin-top: 4px;
                 color: var(--fg-muted);
                 font-family: "Space Mono", monospace;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
             .face .prompt {
                 color: var(--fg-muted);
-                font-size: 0.9rem;
-                margin-bottom: 4px;
+                font-size: 0.8rem;
+                margin-bottom: 3px;
                 font-family: "Atkinson Hyperlegible", sans-serif;
             }
-            .flash-controls {
-                display: flex;
-                gap: 8px;
-                justify-content: center;
-                margin-top: 14px;
-                flex-wrap: wrap;
-            }
+            .flash-controls,
             .quiz-area {
                 display: flex;
-                gap: 8px;
+                gap: 6px;
                 justify-content: center;
-                margin-top: 14px;
+                margin-top: 10px;
                 flex-wrap: wrap;
             }
             .quiz-input {
                 font-family: "Space Mono", monospace;
-                padding: 10px 12px;
+                padding: 8px 10px;
                 border: 1px solid var(--border);
-                border-radius: 8px;
-                min-width: 200px;
-                font-size: 1rem;
-                background: white;
+                border-radius: 6px;
+                min-width: 180px;
+                font-size: 0.95rem;
+                color: var(--fg);
+                background: var(--bg2);
             }
             .quiz-input:focus {
-                outline: 2px solid var(--accent);
+                outline: 0;
                 border-color: var(--accent);
+                box-shadow: 0 0 0 2px rgba(224, 78, 0, 0.1);
             }
             .feedback {
-                min-height: 24px;
+                min-height: 20px;
                 text-align: center;
-                margin-top: 8px;
+                margin-top: 6px;
                 font-weight: 600;
+                font-size: 0.9rem;
                 font-family: "Atkinson Hyperlegible", sans-serif;
             }
-            .feedback.ok {
-                color: #0a7a0a;
+            .feedback.correct {
+                color: #10b981;
             }
-            .feedback.err {
-                color: #b00020;
-            }
-            .practice-list {
-                display: grid;
-                gap: 12px;
-            }
-            .practice-item {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 12px;
-                padding: 14px 16px;
-                background: #f9fafb;
-                border: 1px solid var(--border);
-                border-radius: 10px;
-            }
-            .practice-en {
-                flex: 1;
-            }
-            .practice-actions {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-            .answer {
-                font-family: "Space Mono", monospace;
-                color: var(--accent);
-                font-weight: 700;
-                min-width: 14ch;
-                text-align: right;
-            }
-            .answer.hidden {
-                visibility: hidden;
-            }
-            .reveal {
-                border: 1px solid var(--border);
-                background: var(--bg2);
-                padding: 6px 10px;
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 0.85rem;
-                font-family: "Atkinson Hyperlegible", sans-serif;
-            }
-            .reveal:hover {
-                border-color: var(--accent);
-                color: var(--accent);
+            .feedback.incorrect {
+                color: #ef4444;
             }
             footer {
                 max-width: 1100px;
-                margin: 40px auto 0;
-                padding: 0 16px 40px;
+                margin: 30px auto 0;
+                padding: 0 16px 30px;
                 text-align: center;
                 color: var(--fg-muted);
                 font-family: "Space Mono", monospace;
-                font-size: 0.85rem;
+                font-size: 0.8rem;
                 letter-spacing: 0.08em;
             }
+
+            .search-box {
+                position: relative;
+                margin-bottom: 20px;
+                max-width: 400px;
+            }
+            .search-icon {
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--fg-muted);
+            }
+            .search-box input {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px 10px 10px 38px;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                font-size: 0.95rem;
+            }
+            #searchResults {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg2);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+                max-height: 300px;
+                overflow-y: auto;
+                display: none;
+            }
+            #searchResults.active {
+                display: block;
+            }
+            .search-result-item {
+                padding: 10px 12px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                cursor: pointer;
+                border-bottom: 1px solid var(--border);
+            }
+            .search-result-item:last-child {
+                border-bottom: none;
+            }
+            .search-result-item:hover {
+                background: rgba(224, 78, 0, 0.05);
+            }
+            .result-symbol {
+                font-family: "Space Mono", monospace;
+                font-weight: 700;
+                color: var(--accent);
+                font-size: 1.1rem;
+            }
+            .result-content {
+                display: flex;
+                flex-direction: column;
+            }
+            .result-text {
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+            .result-label {
+                font-size: 0.75rem;
+                color: var(--fg-muted);
+            }
+
             @media (max-width: 640px) {
                 .card {
-                    padding: 18px;
+                    padding: 14px;
+                    margin: 10px 0;
                 }
-                .pairs li {
-                    padding: 10px 0;
+                h2 {
+                    font-size: 1.1rem;
+                    margin-bottom: 8px;
                 }
-                .practice-item {
-                    flex-direction: column;
-                    align-items: flex-start;
+                .hero h1 {
+                    font-size: 22px;
                 }
-                .answer {
-                    text-align: left;
-                    min-width: auto;
+                .hero p {
+                    font-size: 0.9rem;
                 }
+                table.symbols th,
+                table.symbols td {
+                    padding: 5px 4px;
+                    font-size: 0.8rem;
+                }
+                table.symbols td:first-child {
+                    font-size: 1rem;
+                    width: 3ch;
+                }
+                .primes-table {
+                    grid-template-columns: repeat(
+                        auto-fill,
+                        minmax(110px, 1fr)
+                    );
+                    gap: 6px;
+                }
+                .prime-item {
+                    padding: 8px;
+                    gap: 3px;
+                }
+                .prime-symbol {
+                    font-size: 1rem;
+                }
+                .prime-meaning {
+                    font-size: 0.75rem;
+                }
+                .vocab-table {
+                    font-size: 0.8rem;
+                }
+                .vocab-table th,
+                .vocab-table td {
+                    padding: 6px 4px;
+                }
+
+                .flashcard {
+                    max-width: 100%;
+                    height: 200px;
+                }
+                .filter-controls {
+                    gap: 4px;
+                }
+                .filter-btn {
+                    padding: 4px 10px;
+                    font-size: 0.8rem;
+                }
+                .tab {
+                    padding: 5px 10px;
+                    font-size: 0.8rem;
+                }
+                .mode-tabs {
+                    gap: 4px;
+                }
+                .grammar-list {
+                    font-size: 0.9rem;
+                }
+                .search-box {
+                    max-width: 100%;
+                }
+                .section-desc {
+                    font-size: 0.9rem;
+                }
+            }
+            @media (max-width: 480px) {
+                .wrap {
+                    padding: 10px 12px 40px;
+                }
+                .hero h1 {
+                    font-size: 20px;
+                }
+                .primes-table {
+                    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+                }
+                .vocab-table-wrapper {
+                    height: 350px;
+                }
+                .logo {
+                    width: 28px;
+                    height: 28px;
+                    font-size: 0.9rem;
+                }
+                .title {
+                    font-size: 0.95rem;
+                }
+                .btn {
+                    padding: 6px 10px;
+                    font-size: 0.8rem;
+                }
+            }
+            /* Primes Matrix Grid Styles */
+            .matrix-wrapper {
+                width: 100%;
+                overflow-x: auto;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                margin-top: 12px;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+            }
+            .matrix-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.85rem;
+                min-width: 800px; /* Forces layout grid to remain rigid while scrolling */
+            }
+            .matrix-table th,
+            .matrix-table td {
+                border: 1px solid var(--border);
+                padding: 10px 6px;
+                text-align: center;
+                vertical-align: top;
+                width: 10%;
+            }
+            .matrix-table th {
+                background: var(--bg);
+                font-family: "Space Mono", monospace;
+                font-weight: 700;
+            }
+            .matrix-table th.axis-label {
+                color: var(--accent);
+                font-size: 1.1rem;
+            }
+            .matrix-table th.row-header {
+                text-align: left;
+                padding-left: 12px;
+                width: 12%;
+            }
+            .matrix-cell {
+                background: var(--bg2);
+                transition: all 0.2s;
+                cursor: pointer;
+            }
+            .matrix-cell:hover {
+                background: rgba(224, 78, 0, 0.06);
+                box-shadow: inset 0 0 0 1px var(--accent);
+            }
+            .matrix-cell .cell-symbol {
+                font-family: "Space Mono", monospace;
+                font-weight: 700;
+                color: var(--accent);
+                font-size: 1.05rem;
+                margin-bottom: 2px;
+            }
+            .matrix-cell .cell-mean {
+                font-size: 0.72rem;
+                color: var(--fg);
+                line-height: 1.2;
+                font-weight: 500;
             }
         </style>
     </head>
@@ -537,463 +715,1229 @@
             <div class="nav-inner">
                 <div class="logo" aria-hidden="true">TT</div>
                 <div class="title">Two Talk</div>
-                <div class="spacer"></div>
-                <div class="search-box">
-                    <span class="search-icon">🔍</span>
-                    <input
-                        id="searchInput"
-                        type="text"
-                        placeholder="Search..."
-                        aria-label="Search dictionary and Swadesh"
-                    />
-                    <div id="searchResults"></div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#core" class="nav-link">Symbols</a>
+                    <a href="#primes" class="nav-link">Primes</a>
+                    <a href="#grammar" class="nav-link">Grammar</a>
+                    <a href="#masterVocabSection" class="nav-link"
+                        >Dictionary</a
+                    >
+                    <a href="#learn" class="nav-link">Learn</a>
                 </div>
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Toggle menu"
+                >
+                    ☰
+                </button>
+                <div class="spacer"></div>
                 <button
                     id="exportBtn"
                     class="btn"
-                    aria-label="Export dictionary"
+                    aria-label="Export master dictionary guide"
                 >
                     Guide
                 </button>
             </div>
         </nav>
 
-        <div class="search-container">
-        </div>
-
         <main class="wrap">
             <header class="hero card">
                 <h1>Two Talk</h1>
-                <p>Two Talk is a semantic shorthand system for thought compression in plaintext. It is built on the Semantic Primes - the fundamental building blocks of human thought. By mapping these primes to 2-character pairs using 9 core symbols, complex ideas can be expressed concisely and precisely. Two Talk works natively in any application including your favorite text editor (E.G. Notepad++, Nano or Vim) and personal knowledge management systems (E.G. Obsidian, Notation or Logseq).</p>
+                <p>
+                    Two Talk is a concise semantic shorthand system for thought
+                    compression in plaintext. Instead of memorizing static
+                    vocabulary, meanings are derived by combining
+                    <strong>Subject</strong> (1st symbol) with
+                    <strong>State</strong> (2nd symbol). By learning just 9 core
+                    symbols, you can dynamically construct or decode all 65+
+                    foundational Semantic Primes on the fly. Two Talk works
+                    natively in any plaintext environment, including text
+                    editors (Vim, Nano, Notepad++) and PKM systems (Obsidian,
+                    Notion, Logseq).
+                </p>
+                <p>
+                    Two Talk is not a spoken language; it is a plaintext
+                    semantic notation system optimized for thought compression,
+                    rapid note-taking, and information density. It is built for
+                    dynamic, high-density conceptual tagging in your personal
+                    files, not for social communication, poetic nuance, or
+                    shared public documentation.
+                </p>
             </header>
 
-            <section class="card" style="border-left-color: var(--fg-muted);">
-                <h2 style="font-size: 0.8rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Examples</h2>
-                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--bg-alt); padding-bottom: 2px;">
-                        <span style="font-style: italic;"><strong>Journal:</strong> Life is good right now.</span>
-                        <code class="mono" style="color: var(--accent);">:@ :! !!</code>
+            <section class="card" style="border-left-color: var(--fg-muted)">
+                <h2
+                    style="
+                        font-size: 0.8rem;
+                        color: var(--fg-muted);
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        margin-bottom: 0.5rem;
+                    "
+                >
+                    Examples
+                </h2>
+                <div
+                    style="
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.4rem;
+                        font-size: 0.9rem;
+                    "
+                >
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            border-bottom: 1px solid var(--border);
+                            padding-bottom: 2px;
+                        "
+                    >
+                        <span style="font-style: italic"
+                            ><strong>Journal:</strong> Life is good right
+                            now.</span
+                        >
+                        <code class="mono" style="color: var(--accent)"
+                            >:@ :! !!</code
+                        >
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--bg-alt); padding-bottom: 2px;">
-                        <span style="font-style: italic;"><strong>PKM:</strong> Positive Thought</span>
-                        <code class="mono" style="color: var(--accent);">#? /?>.!!</code>
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            border-bottom: 1px solid var(--border);
+                            padding-bottom: 2px;
+                        "
+                    >
+                        <span style="font-style: italic"
+                            ><strong>PKM:</strong> Positive Thought</span
+                        >
+                        <code class="mono" style="color: var(--accent)"
+                            >?>.!!</code
+                        >
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-style: italic;"><strong>Todo:</strong> Review important notes before tomorrow.</span>
-                        <code class="mono" style="color: var(--accent);">?> !% :< :!</code>
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        "
+                    >
+                        <span style="font-style: italic"
+                            ><strong>Todo:</strong> Review important notes
+                            before tomorrow.</span
+                        >
+                        <code class="mono" style="color: var(--accent)"
+                            >?#.!! !> #> :&lt; :></code
+                        >
                     </div>
                 </div>
             </section>
 
             <section class="card" id="core">
-                <h2><span class="num">01</span>Core Symbols</h2>
+                <h2>Core Symbols</h2>
                 <p class="muted">
-                    The Two Talk system is anchored by nine core functional symbols. Each symbol represents a broad domain of human experience, such as <strong>@</strong> for person or agent, <strong>#</strong> for physical objects, and <strong>:</strong> for time. These nine symbols serve as the "roots" for every Semantic Prime in the dictionary below.
+                    The entire Two Talk system is based on nine core symbols.
+                    Each symbol holds two distinct meanings depending on its
+                    structural position: as the
+                    <strong>1st symbol (Subject)</strong>, it defines the broad
+                    domain of experience; as the
+                    <strong>2nd symbol (State)</strong>, it applies a
+                    predictable, transformational modifier to that domain.
                 </p>
                 <table
                     class="symbols"
                     id="symbolsTable"
-                    aria-label="Core symbols"
+                    aria-label="Core symbols Vector Matrix Map"
                 ></table>
             </section>
 
+            <section class="main-section card" id="primes">
+                <div class="content">
+                    <h2>Semantic Primes</h2>
+                    <p class="section-desc">
+                        Every semantic prime below is the logical combination of
+                        its two component symbols. You do not need to memorize
+                        these pairs. To decode a prime, read the first character
+                        as the subject, and the second character as it's state.
+                        For example: ? (Mind) + ^ (Space/Anchor) combined to
+                        mean a localized mind state: learn / focus. Use this
+                        matrix to calculate your primitives on the fly.
+                        Cross-reference the
+                        <strong>1st symbol (Subject Row)</strong> with the
+                        <strong>2nd symbol (State Column)</strong>.
+                    </p>
+                    <div class="matrix-wrapper">
+                        <table
+                            class="matrix-table"
+                            id="primesMatrixTable"
+                            aria-label="9x9 Semantic Prime Matrix Calculator"
+                        ></table>
+                    </div>
+                </div>
+            </section>
+
             <section class="card" id="grammar">
-                <h2><span class="num">02</span> Grammar</h2>
+                <h2>Grammar</h2>
                 <ol class="grammar-list">
                     <li>
-                        <strong>Order: who → what → action</strong> -
+                        <strong>Order:</strong> Who → What → Action
                         <code class="mono">@! #% &gt;&gt;</code> = I thing do
                     </li>
                     <li>
-                        <strong>Modifiers follow</strong> -
-                        <code class="mono">#% !!</code> = thing good = good thing
+                        <strong>Pairs:</strong> Every pair reads left → right as
+                        Subject → State. <code class="mono">?^</code> = focused
+                        mind = learn
                     </li>
                     <li>
-                        <strong>Combine with dot</strong> -
-                        <code class="mono">#%.&gt;^</code> = thing.move = vehicle
+                        <strong>Modifiers:</strong>
+                        <code class="mono">.</code> modifies the complete
+                        expression on its left.
+                        <code class="mono">?&gt;.!!</code> = good thought =
+                        decision
                     </li>
                     <li>
-                        <strong>Literals</strong> -
-                        Use numbers for amounts (<code class="mono">123</code>), dates (<code class="mono">20250414</code>), and times (<code class="mono">1430</code>). Use initials for names (e.g., <code class="mono">BM</code>).
+                        <strong>Stacking:</strong> Stacks always evaluate left →
+                        right. <code class="mono">A.B.C</code> =
+                        <code class="mono">((A.B).C)</code>
+                        <code class="mono">#%.&gt;^</code> = (thing.move) =
+                        vehicle <code class="mono">?&gt;.!!.:&lt;</code> =
+                        ((think.good).past) = reflected decision
                     </li>
                     <li>
-                        <strong>Negation: &lt;! before phrase</strong> -
-                        <code class="mono">&lt;! ?!</code> = not want
+                        <strong>Phrases:</strong> Spaces separate complete
+                        semantic phrases.
+                        <code class="mono">@! #&gt; &gt;&gt;</code> = I note act
                     </li>
                     <li>
-                        <strong>Context is king</strong> -
-                        Broad words gain precision from the situation.
+                        <strong>Literals:</strong> Use numbers for amounts
+                        (<code class="mono">123</code>), dates (<code
+                            class="mono"
+                            >2026-05-16</code
+                        >), and times (<code class="mono">1430</code>). Use
+                        initials for names (<code class="mono">BM</code>).
+                    </li>
+                    <li>
+                        <strong>Negation:</strong> Use
+                        <code class="mono">&lt;!</code> as a prefix pair,
+                        stacked with the verb using <code class="mono">.</code>
+                        <code class="mono">&lt;!.?!</code> = not want
+                    </li>
+                    <li>
+                        <strong>Sentence:</strong> Use a newline
+                        <code class="mono">[Enter key]</code> to end a clause.
+                        <code class="mono">@! #% &gt;&gt;</code>
+                        <code class="mono">@! ?!</code> = I thing do. I want.
+                    </li>
+                    <li>
+                        <strong>Precedence:</strong> Parsing order is
+                        <code class="mono">.</code> → space → newline.
+                        <code class="mono">?&gt;.!! :&lt;</code> = [decision]
+                        [past] <code class="mono">?&gt;.!!.:&lt;</code> =
+                        reflected decision
                     </li>
                 </ol>
             </section>
 
-            <section class="card" id="dict">
-                            <h2><span class="num">03</span>Semantic Prime Dictionary</h2>
-                            <p>
-                                The Semantic Prime Dictionary is the foundation of Two Talk. It consists of approximately 65 concepts that cannot be broken down into simpler terms. By combining a <strong>Category Root</strong> core symbol with a <strong>Modifier</strong> core symbol, we create the fundamental meanings of Two Talk.
-                            </p>
-                            <p class="muted">
-                                For example, combining <strong>@ (Person)</strong> with <strong>! (Value)</strong> creates <code>@!</code> (the concept of "I"). This dictionary is the Two Talk canon grouped by first symbol.
-                            </p>
+            <section class="card" id="masterVocabSection">
+                <h2>Two Talk Dictionary</h2>
+                <p>
+                    The Two Talk Dictionary is the complete integrated lexicon
+                    of Two Talk, organized into three categories.
+                </p>
+                <p class="muted">
+                    <strong>Semantic Primes</strong> form the logical foundation
+                    of Two Talk. These are universal concepts that cannot be
+                    broken down into simpler terms. By combining a Subject with
+                    a State, you "build" a primitive concept on the fly. For
+                    example, <code>@</code> (Identity) modified by
+                    <code>!</code> (Vital/Max) yields <code>@!</code> (I / Me).
+                </p>
+                <p class="muted">
+                    <strong>Swadesh Stacked</strong> vocabulary builds directly
+                    on the Semantic Primes to express physical, real-world
+                    concepts. Rather than adding new characters, these are
+                    descriptive compounds joined by a dot separator. For
+                    instance, the physical body part "Head" is naturally
+                    constructed by stacking Body and Big: <code>#@.%&gt;</code>.
+                </p>
+                <p class="muted">
+                    <strong>Domain Specific</strong> terms optimize this exact
+                    same calculation system for professional contexts (such as
+                    project or knowledge management), allowing for deep metadata
+                    tagging while preserving the core semantic logic of the
+                    primes.
+                </p>
+                <p class="muted">
+                    The Semantic Primes are canon in Two Talk and the meanings
+                    never change. The Swadesh and Domain specific meanings are
+                    based on the Semantic Primes. These are frequently used
+                    examples in language and can be changed and added to as
+                    needed. With context, future readers can determine these
+                    meanings.
+                </p>
 
-                            <div id="dictGrid" class="dict-grid">
-                                </div>
-                        </section>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search vocabulary..."
+                        aria-label="Search all lists"
+                    />
+                    <div id="searchResults"></div>
+                </div>
 
-                        <section class="card" id="swadesh">
-                            <h2><span class="num">04</span>Swadesh Stacked Vocabulary</h2>
-                            <p>
-                                The Swadesh list represents a collection of concepts found in every human culture,
-                                ranging from body parts to celestial bodies. In Two Talk, these are not unique
-                                symbols but "stacks" - logical compounds built by combining Semantic Primes.
-                                For example, <strong>Head</strong> is expressed as <code>#@.%></code>
-                                (Body.Big/Top), and <strong>Sun</strong> is <code>#^.:!</code> (Place.Now/Light).
-                                This shows how the Two Talk semantic primes can describe the entire physical world
-                                through intuitive, descriptive combinations.
-                            </p>
-                            <p class="muted">
-                                This list expands the semantic prime dictionary using stacking to express
-                                the core Swadesh vocabulary. Click any entry to copy the symbol.
-                            </p>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">
+                        All Words
+                    </button>
+                    <button class="filter-btn" data-filter="prime">
+                        Semantic Primes
+                    </button>
+                    <button class="filter-btn" data-filter="swadesh">
+                        Swadesh Stacked
+                    </button>
+                    <button class="filter-btn" data-filter="domain">
+                        Domain Specific
+                    </button>
+                </div>
 
-                            <div style="overflow: auto">
-                                <table id="swadeshTable" style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align: left; padding: 6px; border-bottom: 1px solid var(--border);">English</th>
-                                            <th style="text-align: left; padding: 6px; border-bottom: 1px solid var(--border);">Two Talk</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        </tbody>
-                                </table>
-                            </div>
-                        </section>
+                <div class="vocab-table-wrapper">
+                    <table class="vocab-table" id="vocabTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">Two Talk</th>
+                                <th style="width: 50%">English</th>
+                                <th style="width: 20%">Category</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vocabTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
 
-                        <section class="card" id="learn">
-                            <h2><span class="num">05</span> Learn</h2>
-                            <div class="flash-wrap">
-                                <div class="mode-tabs" role="tablist" aria-label="Learn mode">
-                                    <button class="tab active" id="tabStudy" role="tab" aria-selected="true">Study</button>
-                                    <button class="tab" id="tabQuiz" role="tab" aria-selected="false">Quiz</button>
-                                </div>
+            <section class="card" id="learn">
+                <h2>Learn</h2>
+                <div class="flash-wrap">
+                    <div
+                        class="mode-tabs"
+                        role="tablist"
+                        aria-label="Learn mode"
+                    >
+                        <button
+                            class="tab active"
+                            id="tabStudy"
+                            role="tab"
+                            aria-selected="true"
+                        >
+                            Study
+                        </button>
+                        <button
+                            class="tab"
+                            id="tabQuiz"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            Quiz
+                        </button>
+                    </div>
 
-                                <div class="flashcard" id="flashcard" role="button" aria-label="Flashcard, click to flip" tabindex="0">
-                                    <div class="flash-inner">
-                                        <div class="face front" id="cardFront"></div>
-                                        <div class="face back" id="cardBack"></div>
-                                    </div>
-                                </div>
+                    <div
+                        class="flashcard"
+                        id="flashcard"
+                        role="button"
+                        aria-label="Flashcard, click to flip"
+                        tabindex="0"
+                    >
+                        <div class="flash-inner">
+                            <div class="face front" id="cardFront"></div>
+                            <div class="face back" id="cardBack"></div>
+                        </div>
+                    </div>
 
-                                <div class="flash-controls" id="studyControls">
-                                    <button class="btn" id="prevBtn">Prev</button>
-                                    <button class="btn btn-primary" id="nextBtn">Next</button>
-                                    <button class="btn" id="shuffleBtn">Shuffle</button>
-                                </div>
+                    <div class="flash-controls" id="studyControls">
+                        <button class="btn" id="prevBtn">Prev</button>
+                        <button class="btn btn-primary" id="nextBtn">
+                            Next
+                        </button>
+                        <button class="btn" id="shuffleBtn">Shuffle</button>
+                    </div>
 
-                                <div class="quiz-area" id="quizArea" hidden>
-                                    <input id="quizInput" class="quiz-input" autocomplete="off" placeholder="type pair, e.g. @!" aria-label="Type the pair" />
-                                    <button class="btn btn-primary" id="checkBtn">Check</button>
-                                    <button class="btn" id="skipBtn">Skip</button>
-                                </div>
+                    <div class="quiz-area" id="quizArea" hidden>
+                        <input
+                            id="quizInput"
+                            class="quiz-input"
+                            autocomplete="off"
+                            placeholder="type pair, e.g. @!"
+                            aria-label="Type the pair"
+                        />
+                        <button class="btn btn-primary" id="checkBtn">
+                            Check
+                        </button>
+                        <button class="btn" id="skipBtn">Skip</button>
+                    </div>
 
-                                <div class="feedback" id="feedback" aria-live="polite"></div>
-                            </div>
-                        </section>
-                        <section class="card" style="border-left-color: var(--fg-muted); margin-top: 2rem;">
-                                <h2 style="font-size: 0.9rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.1em;">Manifesto & License</h2>
-                                <p style="margin: 0; font-style: italic; font-size: 0.95rem;">
-                                    Two Talk is a tagging shorthand for personal notation, not a spoken language.<br>
-                                    It prioritizes semantic compression over linguistic completeness.<br>
-                                    License: MIT © 2026 Barney Matthews. Free to use, modify, and share.
-                                </p>
-                            </section>
-        <footer>TWO TALK v1.0</footer>
+                    <div
+                        class="feedback"
+                        id="feedback"
+                        aria-live="polite"
+                    ></div>
+                </div>
+            </section>
+
+            <section
+                class="card"
+                style="border-left-color: var(--fg-muted); margin-top: 2rem"
+            >
+                <h2
+                    style="
+                        font-size: 0.9rem;
+                        color: var(--fg-muted);
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                    "
+                >
+                    Resources & License
+                </h2>
+                <p
+                    style="
+                        margin: 0 0 1rem 0;
+                        font-style: italic;
+                        font-size: 0.95rem;
+                    "
+                >
+                    Two Talk is a concise semantic shorthand for personal
+                    notation, not a spoken language. It prioritizes semantic
+                    compression over linguistic completeness.<br />
+                    License: MIT © 2026 Barney Matthews. Free to use, modify,
+                    and share.
+                </p>
+                <div
+                    style="
+                        font-size: 0.9rem;
+                        display: flex;
+                        gap: 16px;
+                        flex-wrap: wrap;
+                        border-top: 1px dashed var(--border);
+                        padding-top: 12px;
+                    "
+                >
+                    <a href="https://barney.me" target="_blank" rel="noopener"
+                        >Barney.me</a
+                    >
+                    <a
+                        href="https://github.com/barneyme/twotalk/"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub</a
+                    >
+                    <a
+                        href="https://old.reddit.com/r/twotalk"
+                        target="_blank"
+                        rel="noopener"
+                        >Reddit</a
+                    >
+                    <a
+                        href="https://twotalk.org/why.html"
+                        target="_blank"
+                        rel="noopener"
+                        >Why</a
+                    >
+                </div>
+            </section>
+        </main>
+        <footer>...</footer>
 
         <script>
-        // 1. DATA DEFINITIONS
-                    const coreSymbols = [
-                        { s: "@", d: "person / agent" },
-                        { s: "#", d: "thing / substance" },
-                        { s: "!", d: "value / quality" },
-                        { s: "?", d: "mind / internal" },
-                        { s: ">", d: "act / out" },
-                        { s: "<", d: "in / receive" },
-                        { s: ":", d: "time" },
-                        { s: "^", d: "space / place" },
-                        { s: "%", d: "amount / state" },
-                    ];
+            const coreSymbols = [
+                { s: "@", r: "People (Who)", m: "Self (Internal)" },
+                { s: "#", r: "Object (What)", m: "Solid (Tangible)" },
+                { s: "!", r: "Value (Good)", m: "Max (Extra)" },
+                { s: "?", r: "Mind (Why)", m: "Hidden (Thought)" },
+                { s: ">", r: "Action (Push)", m: "Outward (Giving)" },
+                { s: "<", r: "Limit (Pull)", m: "Inward (Taking)" },
+                { s: ":", r: "Time (When)", m: "Now (Next)" },
+                { s: "^", r: "Space (Where)", m: "Here (Grounded)" },
+                { s: "%", r: "Scale (Status)", m: "More (Multiplied)" },
+            ];
 
-                    const dictData = {
-                        "@": [
-                            ["@@", "we"], ["@!", "i"], ["@#", "person"], ["@?", "you"],
-                            ["@>", "child"], ["@<", "parent"], ["@:", "self"], ["@^", "neighbor"], ["@%", "people"],
-                        ],
-                        "#": [
-                            ["##", "object"], ["#@", "body"], ["#!", "tool"], ["#?", "idea"],
-                            ["#>", "output"], ["#<", "input"], ["#:", "stuff"], ["#^", "site"], ["#%", "thing"],
-                        ],
-                        "!": [
-                            ["!!", "good"], ["!@", "help"], ["!#", "use"], ["!?", "need"],
-                            ["!>", "give"], ["!<", "take"], ["!:", "tell"], ["!^", "change"], ["!%", "important"],
-                        ],
-                        "?": [
-                            ["??", "know"], ["?@", "hear"], ["?#", "see"], ["?!", "want"],
-                            ["?>", "think"], ["?<", "remember"], ["?:", "question"], ["?^", "learn"], ["?%", "feel"],
-                        ],
-                        ">": [
-                            [">>", "do"], [">@", "touch"], [">#", "word"], [">!", "make"],
-                            [">?", "ask"], ["><", "true"], [">:", "say"], [">^", "move"], [">%", "happen"],
-                        ],
-                        "<": [
-                            ["<<", "kind"], ["<@", "have"], ["<#", "part"], ["<!", "not"],
-                            ["<?", "maybe"], ["<>", "same"], ["<:", "cause"], ["<^", "contain"], ["<%", "can"],
-                        ],
-                        ":": [
-                            ["::", "time"], [":@", "life"], [":#", "moment"], [":!", "now"],
-                            [":?", "when"], [":>", "after"], [":<", "before"], [":^", "always"], [":%", "often"],
-                        ],
-                        "^": [
-                            ["^^", "place"], ["^@", "local"], ["^#", "location"], ["^!", "here"],
-                            ["^?", "inside"], ["^>", "outside"], ["^<", "between"], ["^:", "far"], ["^%", "near"],
-                        ],
-                        "%": [
-                            ["%%", "amount"], ["%@", "many"], ["%#", "some"], ["%!", "all"],
-                            ["%?", "few"], ["%>", "big"], ["%<", "small"], ["%:", "more"], ["%^", "less"],
-                        ],
-                    };
+            const semanticPrimes = [
+                { symbol: "@@", meaning: "self / individual" },
+                { symbol: "@!", meaning: "i / me" },
+                { symbol: "@?", meaning: "you" },
+                { symbol: "@%", meaning: "we / people" },
+                { symbol: "@#", meaning: "person / human" },
+                { symbol: "@>", meaning: "child / offspring" },
+                { symbol: "@<", meaning: "parent / ancestor" },
+                { symbol: "@^", meaning: "neighbor / other" },
+                { symbol: "@:", meaning: "character / role" },
 
-                    const swadeshData = [
-                        [46, "Above", "^.%>"],
-                        [121, "Ash", "#:.!^.:>"],
-                        [82, "Back", "#@.:<"],
-                        [47, "Below", "^.%<"],
-                        [108, "Belly", "#@.^?"],
-                        [92, "Bird", "@#.#^"],
-                        [131, "Bite", ">>.#@.#!.<:"],
-                        [128, "Black", "!.%>"],
-                        [88, "Blood", "#@.#:.>>"],
-                        [89, "Bone", "#@.#!.<#"],
-                        [83, "Breast", "#@.#<.!!"],
-                        [142, "Burn", ">>.#:.!^"],
-                        [118, "Cloud", "#^.#:.<^"],
-                        [60, "Come", ">^.^!"],
-                        [152, "Day", ":.%<"],
-                        [35, "Die", "@<.<:"],
-                        [93, "Dog", "@#.!!"],
-                        [129, "Drink", "#<.#:.<^"],
-                        [70, "Ear", "#@.?@"],
-                        [130, "Eat", "#<.#@.#:"],
-                        [102, "Egg", "#%.@>"],
-                        [71, "Eye", "#@.?#"],
-                        [90, "Fat", "#@.#:.!!"],
-                        [105, "Feather", "#@.#^"],
-                        [109, "Guts", "#@.^?.<#"],
-                        [106, "Hair", "#@.%@"],
-                        [80, "Hand", "#@.>>"],
-                        [64, "Hard", "#!"],
-                        [69, "Head", "#@.%>"],
-                        [26, "Hear", "?@"],
-                        [63, "Heavy", "%.%>"],
-                        [45, "Here", "^!"],
-                        [103, "Horn", "#@.#!.%>"],
-                        [59, "If", "<? <:"],
-                        [49, "Inside", "^?"],
-                        [134, "Kill", ">>.:@.<!"],
-                        [79, "Knee", "#@.>^.<#"],
-                        [21, "Know", "??"],
-                        [97, "Leaf", "#%.<#"],
-                        [78, "Leg", "#@.>^"],
-                        [139, "Lie", ">^.:<"],
-                        [62, "Light", "%.%<"],
-                        [132, "Sleep", ":@.<!"],
-                        [20, "Small", "%<"],
-                        [119, "Smoke", "#^.#:.!^"],
-                        [65, "Soft", "<!.#!"],
-                        [13, "Some", "%#"],
-                        [5, "Something", "#%"],
-                        [141, "Stand", ">^.%>"],
-                        [112, "Star", "#^.%?"],
-                        [115, "Stone", "#:.#!"],
-                        [110, "Sun", "#^.:!"],
-                        [135, "Swim", ">^.#:.<^"],
-                        [104, "Tail", "#@.:>"],
-                        [22, "Think", "?>"],
-                        [8, "This", "#<"],
-                        [74, "Tooth", "#@.#!.<:"],
-                        [95, "Tree", "#%.:@"],
-                        [29, "True", "><"],
-                        [12, "Two", "2"],
-                        [52, "Very", "%!"],
-                        [137, "Walk", ">^.#@.^!"],
-                        [23, "Want", "?!"],
-                        [113, "Water", "#:.<^"],
-                        [148, "What", "##:?"],
-                        [36, "When", ":?"],
-                        [44, "Where", "^^"],
-                        [127, "White", "!.%<"],
-                        [147, "Who", "@?:?"],
-                        [107, "Wing", "#@.>^.#^"],
-                        [28, "Words", ">#"],
-                        [126, "Yellow", "!.#^.:!"],
-                        [2, "You", "@?"]
-                    ];
+                { symbol: "##", meaning: "object / thing" },
+                { symbol: "#@", meaning: "body" },
+                { symbol: "#!", meaning: "tool / asset" },
+                { symbol: "#?", meaning: "artifact / document" },
+                { symbol: "#>", meaning: "output / product" },
+                { symbol: "#<", meaning: "input / resource" },
+                { symbol: "#^", meaning: "site / structure" },
+                { symbol: "#:", meaning: "substance / matter" },
+                { symbol: "#%", meaning: "part / component" },
 
-                    const groupNames = { "@": "PERSON", "#": "THING", "!": "VALUE", "?": "MIND", ">": "ACT", "<": "IN", ":": "TIME", "^": "SPACE", "%": "AMOUNT" };
-                    const order = ["@", "#", "!", "?", ">", "<", ":", "^", "%"];
-                    const shortMap = { "@": "person", "#": "thing", "!": "value", "?": "mind", ">": "out", "<": "in", ":": "time", "^": "space", "%": "amount" };
+                { symbol: "!!", meaning: "good / optimal" },
+                { symbol: "!@", meaning: "help / utility" },
+                { symbol: "!#", meaning: "use / function" },
+                { symbol: "!?", meaning: "need / critical" },
+                { symbol: "!>", meaning: "important / value" },
+                { symbol: "!<", meaning: "bad / sub-optimal" },
+                { symbol: "!:", meaning: "true / correct" },
+                { symbol: "!^", meaning: "change / modify" },
+                { symbol: "!%", meaning: "all / absolute" },
 
-                    // 2. UTILITIES & INITIALIZATION
-                    const escapeHTML = (str) => {
-                        return str.replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
-                    };
+                { symbol: "??", meaning: "know / knowledge" },
+                { symbol: "?@", meaning: "feel / emotion" },
+                { symbol: "?!", meaning: "want / desire" },
+                { symbol: "?#", meaning: "see / perceive" },
+                { symbol: "?>", meaning: "think / reason" },
+                { symbol: "?<", meaning: "remember / recall" },
+                { symbol: "?:", meaning: "guess / wonder" },
+                { symbol: "?^", meaning: "learn / focus" },
+                { symbol: "?%", meaning: "evaluate / judge" },
 
-                    const deckData = [];
-                    order.forEach(k => dictData[k].forEach(([p, m]) => deckData.push({ pair: p, mean: m, b: `${shortMap[p[0]]} ${shortMap[p[1]]}` })));
+                { symbol: ">>", meaning: "do / activity" },
+                { symbol: ">:", meaning: "say / speak" },
+                { symbol: ">#", meaning: "word / language" },
+                { symbol: ">!", meaning: "make / create" },
+                { symbol: ">?", meaning: "ask / query" },
+                { symbol: ">@", meaning: "touch / experience" },
+                { symbol: "><", meaning: "give / transfer" },
+                { symbol: ">^", meaning: "move / displace" },
+                { symbol: ">%", meaning: "happen / occur" },
 
-                    // 3. RENDER CORE CONTENT
-                    const renderSystem = () => {
-                        // Symbols Table
-                        document.getElementById("symbolsTable").innerHTML = coreSymbols
-                            .map((c) => `<tr><td>${escapeHTML(c.s)}</td><td>${c.d}</td></tr>`).join("");
+                { symbol: "<<", meaning: "kind / type" },
+                { symbol: "<@", meaning: "have / possess" },
+                { symbol: "<#", meaning: "contain / hold" },
+                { symbol: "<>", meaning: "same / parallel" },
+                { symbol: "<:", meaning: "cause / origin" },
+                { symbol: "<^", meaning: "with / joint" },
+                { symbol: "<%", meaning: "can / capacity" },
+                { symbol: "<?", meaning: "if / conditional" },
+                { symbol: "<!", meaning: "not / negation" },
 
-                        // Dictionary Grid
-                        const dg = document.getElementById("dictGrid");
-                        dg.innerHTML = "";
-                        order.forEach((k) => {
-                            const items = dictData[k];
-                            const div = document.createElement("div");
-                            div.className = "group";
-                            div.innerHTML = `<h3>${k} ${groupNames[k]}</h3><ul class="pairs">${items.map(([p, m]) => `<li><code class="pair">${escapeHTML(p)}</code><span class="meaning">${m}</span><button class="copy" data-copy="${p}">copy</button></li>`).join("")}</ul>`;
-                            dg.appendChild(div);
-                        });
+                { symbol: "::", meaning: "time / duration" },
+                { symbol: ":@", meaning: "life / era" },
+                { symbol: ":#", meaning: "moment / instant" },
+                { symbol: ":!", meaning: "now / current" },
+                { symbol: ":?", meaning: "when / interval" },
+                { symbol: ":>", meaning: "after / future" },
+                { symbol: ":<", meaning: "before / past" },
+                { symbol: ":^", meaning: "always / permanent" },
+                { symbol: ":%", meaning: "often / frequent" },
 
-                        // Swadesh Table
-                        const swBody = document.querySelector("#swadeshTable tbody");
-                        if (swBody) {
-                            swBody.innerHTML = swadeshData
-                                .map(([n, en, tt]) => `<tr><td style="padding:6px">${en}</td><td style="padding:6px;font-family:'Space Mono',monospace;color:var(--accent);font-weight:700">${escapeHTML(tt)}</td></tr>`).join("");
-                        }
-                    };
+                { symbol: "^^", meaning: "space / room" },
+                { symbol: "^@", meaning: "local / native" },
+                { symbol: "^#", meaning: "location / point" },
+                { symbol: "^!", meaning: "here / present" },
+                { symbol: "^?", meaning: "inside / interior" },
+                { symbol: "^>", meaning: "outside / exterior" },
+                { symbol: "^<", meaning: "between / intermediate" },
+                { symbol: "^:", meaning: "far / distant" },
+                { symbol: "^%", meaning: "near / close" },
 
-                    // 4. SEARCH LOGIC
-                    const searchInput = document.getElementById("searchInput");
-                    const searchResults = document.getElementById("searchResults");
+                { symbol: "%%", meaning: "amount / metric" },
+                { symbol: "%@", meaning: "many / numerous" },
+                { symbol: "%#", meaning: "some / limited" },
+                { symbol: "%!", meaning: "all / gross" },
+                { symbol: "%?", meaning: "few / scarce" },
+                { symbol: "%>", meaning: "big / macro" },
+                { symbol: "%<", meaning: "small / micro" },
+                { symbol: "%:", meaning: "more / increment" },
+                { symbol: "%^", meaning: "less / decrement" },
+            ];
 
-                    const performSearch = (query) => {
-                        if (!query.trim()) { searchResults.classList.remove("active"); return; }
-                        const q = query.toLowerCase();
-                        const results = [];
-                        Object.entries(dictData).forEach(([key, items]) => {
-                            items.forEach(([pair, meaning]) => {
-                                if (pair.includes(q) || meaning.toLowerCase().includes(q)) results.push({ symbol: pair, text: meaning, label: "Dictionary" });
-                            });
-                        });
-                        swadeshData.forEach(([num, en, sym]) => {
-                            if (en.toLowerCase().includes(q) || sym.includes(q)) results.push({ symbol: sym, text: en, label: "Swadesh" });
-                        });
+            const vocabularyData = [];
 
-                        searchResults.innerHTML = results.length ? results.slice(0, 15).map(r => `
-                            <div class="search-result-item">
-                                <div class="result-symbol">${escapeHTML(r.symbol)}</div>
-                                <div class="result-content"><div class="result-text">${r.text}</div><div class="result-label">${r.label}</div></div>
-                            </div>`).join("") : '<div style="padding:16px;text-align:center">No results</div>';
-                        searchResults.classList.add("active");
-                    };
+            const rawPrimes = [
+                ["@@", "self / individual", "PERSON"],
+                ["@!", "i / me", "PERSON"],
+                ["@?", "you", "PERSON"],
+                ["@%", "we / people", "PERSON"],
+                ["@#", "person / human", "PERSON"],
+                ["@>", "child / offspring", "PERSON"],
+                ["@<", "parent / ancestor", "PERSON"],
+                ["@^", "neighbor / other", "PERSON"],
+                ["@:", "character / role", "PERSON"],
 
-                    searchInput.addEventListener("input", e => performSearch(e.target.value));
-                    document.addEventListener("click", e => { if (!e.target.closest(".search-box")) searchResults.classList.remove("active"); });
-                    searchResults.addEventListener("click", e => {
-                        const item = e.target.closest(".search-result-item");
-                        if (item) { searchInput.value = item.querySelector(".result-symbol").textContent; searchResults.classList.remove("active"); }
+                ["##", "object / thing", "THING"],
+                ["#@", "body", "THING"],
+                ["#!", "tool / asset", "THING"],
+                ["#?", "artifact / document", "THING"],
+                ["#>", "output / product", "THING"],
+                ["#<", "input / resource", "THING"],
+                ["#^", "site / structure", "THING"],
+                ["#:", "substance / matter", "THING"],
+                ["#%", "part / component", "THING"],
+
+                ["!!", "good / optimal", "VALUE"],
+                ["!@", "help / utility", "VALUE"],
+                ["!#", "use / function", "VALUE"],
+                ["!?", "need / critical", "VALUE"],
+                ["!>", "important / value", "VALUE"],
+                ["!<", "bad / sub-optimal", "VALUE"],
+                ["!:", "true / correct", "VALUE"],
+                ["!^", "change / modify", "VALUE"],
+                ["!%", "all / absolute", "VALUE"],
+
+                ["??", "know / knowledge", "MIND"],
+                ["?@", "feel / emotion", "MIND"],
+                ["?!", "want / desire", "MIND"],
+                ["?#", "see / perceive", "MIND"],
+                ["?>", "think / reason", "MIND"],
+                ["?<", "remember / recall", "MIND"],
+                ["?:", "guess / wonder", "MIND"],
+                ["?^", "learn / focus", "MIND"],
+                ["?%", "evaluate / judge", "MIND"],
+
+                [">>", "do / activity", "ACT"],
+                [">:", "say / speak", "ACT"],
+                [">#", "word / language", "ACT"],
+                [">!", "make / create", "ACT"],
+                [">?", "ask / query", "ACT"],
+                [">@", "touch / experience", "ACT"],
+                ["><", "give / transfer", "ACT"],
+                [">^", "move / displace", "ACT"],
+                [">%", "happen / occur", "ACT"],
+
+                ["<<", "kind / type", "IN"],
+                ["<@", "have / possess", "IN"],
+                ["<#", "contain / hold", "IN"],
+                ["<>", "same / parallel", "IN"],
+                ["<:", "cause / origin", "IN"],
+                ["<^", "with / joint", "IN"],
+                ["<%", "can / capacity", "IN"],
+                ["<?", "if / conditional", "IN"],
+                ["<!", "not / negation", "IN"],
+
+                ["::", "time / duration", "TIME"],
+                [":@", "life / era", "TIME"],
+                [":#", "moment / instant", "TIME"],
+                [":!", "now / current", "TIME"],
+                [":?", "when / interval", "TIME"],
+                [":>", "after / future", "TIME"],
+                [":<", "before / past", "TIME"],
+                [":^", "always / permanent", "TIME"],
+                [":%", "often / frequent", "TIME"],
+
+                ["^^", "space / room", "SPACE"],
+                ["^@", "local / native", "SPACE"],
+                ["^#", "location / point", "SPACE"],
+                ["^!", "here / present", "SPACE"],
+                ["^?", "inside / interior", "SPACE"],
+                ["^>", "outside / exterior", "SPACE"],
+                ["^<", "between / intermediate", "SPACE"],
+                ["^:", "far / distant", "SPACE"],
+                ["^%", "near / close", "SPACE"],
+
+                ["%%", "amount / metric", "AMOUNT"],
+                ["%@", "many / numerous", "AMOUNT"],
+                ["%#", "some / limited", "AMOUNT"],
+                ["%!", "all / gross", "AMOUNT"],
+                ["%?", "few / scarce", "AMOUNT"],
+                ["%>", "big / macro", "AMOUNT"],
+                ["%<", "small / micro", "AMOUNT"],
+                ["%:", "more / increment", "AMOUNT"],
+                ["%^", "less / decrement", "AMOUNT"],
+            ];
+
+            rawPrimes.forEach((p) =>
+                vocabularyData.push({
+                    pair: p[0],
+                    mean: p[1],
+                    type: "prime",
+                    typeLabel: "Semantic Prime",
+                    cat: p[2],
+                }),
+            );
+
+            const rawSwadesh = [
+                ["Above", "^.%>"],
+                ["All", "%!"],
+                ["Ash", "#:.!^"],
+                ["Back", "#@.:<"],
+                ["Below", "^.%<"],
+                ["Belly", "#@.^?"],
+                ["Bird", "@#.#^"],
+                ["Bite", ">>.#@"],
+                ["Black", "!.%>"],
+                ["Blood", "#@.#:"],
+                ["Blow", ">^.%>"],
+                ["Bone", "#@.#!"],
+                ["Breast", "#@.#<"],
+                ["Breathe", ">^.<#"],
+                ["Burn", ">>.!^"],
+                ["Cloud", "#^.#:"],
+                ["Come", ">^.^!"],
+                ["Day", ":.%<"],
+                ["Die", "@<.<:"],
+                ["Dog", "@#.!!"],
+                ["Drink", "#<.#:"],
+                ["Ear", "#@.?@"],
+                ["Eat", "#<.#@"],
+                ["Earth (soil)", "#:.^@"],
+                ["Egg", "#%.@>"],
+                ["Eye", "#@.?#"],
+                ["Fat", "#@.!!"],
+                ["Feather", "#@.#^"],
+                ["Fire", "#:.!^"],
+                ["Fish", "@#.#:"],
+                ["Fly", ">^.#^"],
+                ["Guts", "#@.^?"],
+                ["Give", "><"],
+                ["Hair", "#@.%@"],
+                ["Hand", "#@.>>"],
+                ["Hard", "#!"],
+                ["Head", "#@.%>"],
+                ["Hear", "?@"],
+                ["Heart", "#@.?%"],
+                ["Heavy", "%.%>"],
+                ["Here", "^!"],
+                ["Horn", "#@.#!"],
+                ["I", "@!"],
+                ["If", "<?.<:"],
+                ["Inside", "^?"],
+                ["Kill", ">>.<!"],
+                ["Knee", "#@.>^"],
+                ["Know", "??"],
+                ["Leaf", "#%.<#"],
+                ["Leg", "#@.>^"],
+                ["Lie", ">^.:<"],
+                ["Light", "%.%<"],
+                ["Liver", "#@.<#"],
+                ["Many", "%@"],
+                ["Moon", "#^.:#"],
+                ["Mountain", "^#.%>"],
+                ["Mouth", "#@.#<"],
+                ["Neck", "#@.<<"],
+                ["Nose", "#@.?@"],
+                ["Not", "<!"],
+                ["Smoke", "#^.#:"],
+                ["Sleep", ":@.<!"],
+                ["Small", "%<"],
+                ["Soft", "<!.#!"],
+                ["Some", "%#"],
+                ["Something", "#%"],
+                ["Stand", ">^.%>"],
+                ["Star", "#^.%?"],
+                ["Stone", "#:.#!"],
+                ["Sun", "#^.:!"],
+                ["Swim", ">^.#:"],
+                ["Sand", "#:.%<"],
+                ["Say", ">:"],
+                ["See", "?#"],
+                ["Sit", ">^.^#"],
+                ["Sky", "^^.%>"],
+                ["Tail", "#@.:>"],
+                ["That", "#<"],
+                ["Think", "?>"],
+                ["This", "#<"],
+                ["Tooth", "#@.#!"],
+                ["Tongue", "#@.>:"],
+                ["Tree", "#%.:@"],
+                ["True", "!:"],
+                ["Very", "%!"],
+                ["Walk", ">^.^!"],
+                ["Want", "?!"],
+                ["Water", "#:.<^"],
+                ["We", "@@"],
+                ["What", "##:?"],
+                ["When", ":?"],
+                ["Where", "^^"],
+                ["White", "!.%<"],
+                ["Who", "@?:?"],
+                ["Wing", "#@.>^"],
+                ["Words", ">#"],
+                ["Yellow", "!.#^"],
+                ["You", "@?"],
+            ];
+
+            rawSwadesh.forEach((s) =>
+                vocabularyData.push({
+                    pair: s[1],
+                    mean: s[0],
+                    type: "swadesh",
+                    typeLabel: "Swadesh Stacked",
+                    cat: "Universal",
+                }),
+            );
+
+            const rawDomains = [
+                ["@!", "I / My / Me", "Personal Pronouns"],
+                ["@?", "You", "Personal Pronouns"],
+                ["@@", "We", "Personal Pronouns"],
+                ["<^", "And / With", "Particles & Conjunctions"],
+                ["><", "To / For / Give", "Particles & Conjunctions"],
+                ["^?", "Of / In / On / At", "Particles & Conjunctions"],
+                ["#%", "It / That / Item", "Particles & Conjunctions"],
+                [":<", "Was", "Particles & Conjunctions"],
+                ["%!", "All", "Quantifiers & Consensus"],
+                ["%!.%<", "Most", "Quantifiers & Consensus"],
+                ["%@", "Many", "Quantifiers & Consensus"],
+                ["%#.:>", "Several", "Quantifiers & Consensus"],
+                ["%#", "Some", "Quantifiers & Consensus"],
+                ["%?", "Few", "Quantifiers & Consensus"],
+                ["::", "Time", "Time Expressions"],
+                [":!", "Now", "Time Expressions"],
+                [":!.#:", "Today / Daily", "Time Expressions"],
+                [":.%<", "Day", "Time Expressions"],
+                ["::.#%", "Date", "Time Expressions"],
+                [":.<!", "Deadline", "Time Expressions"],
+                [":>", "Next", "Time Expressions"],
+                ["??", "Know / Knowledge", "Senses & Internal States"],
+                ["?>", "Think", "Senses & Internal States"],
+                ["?%", "Feel", "Senses & Internal States"],
+                ["?!", "Want", "Senses & Internal States"],
+                ["!?", "Need", "Senses & Internal States"],
+                ["?%.!!", "Love", "Senses & Internal States"],
+                [":@", "Life", "Senses & Internal States"],
+                ["^^.@@", "Home", "Senses & Internal States"],
+                ["!:", "Yeah / True", "Senses & Internal States"],
+                [">!", "Create / Make", "Professional & Creative Actions"],
+                [">!.%>", "Develop / Build", "Professional & Creative Actions"],
+                [
+                    ">^.>^",
+                    "Launch / Publish",
+                    "Professional & Creative Actions",
+                ],
+                [">>.!^", "Rework / Edit", "Professional & Creative Actions"],
+                [">>.:<", "Plan / Design", "Professional & Creative Actions"],
+                [">>", "Action / Task", "Professional & Creative Actions"],
+                [">>.:!", "Start", "Professional & Creative Actions"],
+                [">>.:>", "Follow-up", "Professional & Creative Actions"],
+                ["?^.?>", "Research / Analyze", "Intellectual & Analytical"],
+                ["?>.!!", "Decide on / Decision", "Intellectual & Analytical"],
+                ["><.!!", "Approved", "Intellectual & Analytical"],
+                ["?#.!!", "Check / Review", "Intellectual & Analytical"],
+                ["?#.<^", "Find / Search", "Intellectual & Analytical"],
+                ["?>.:<", "Reflect", "Intellectual & Analytical"],
+                [">!.<^", "Synthesize", "Intellectual & Analytical"],
+                [">>.<^", "Collaborate with", "Collaborative & Organizational"],
+                [
+                    ">>.<>",
+                    "Coordinate / Organise",
+                    "Collaborative & Organizational",
+                ],
+                [
+                    "%!.^?",
+                    "Capture / Collect / Compile",
+                    "Collaborative & Organizational",
+                ],
+                ["%#.<^", "Sort / Classify", "Collaborative & Organizational"],
+                ["^?", "Gather", "Collaborative & Organizational"],
+                ["^?.#", "Store / Archive", "Collaborative & Organizational"],
+                ["<!.#", "Retrieve", "Collaborative & Organizational"],
+                [
+                    "#>",
+                    "Information / Note",
+                    "Knowledge Management & Artifacts",
+                ],
+                ["?!", "Idea", "Knowledge Management & Artifacts"],
+                [
+                    ">#.:<",
+                    "Reference / Source / Agenda",
+                    "Knowledge Management & Artifacts",
+                ],
+                ["<>.%!", "Graph", "Knowledge Management & Artifacts"],
+                ["#>.#", "Tag", "Knowledge Management & Artifacts"],
+                [">>.%>", "Project", "Knowledge Management & Artifacts"],
+                ["^?.>>", "Inbox", "Knowledge Management & Artifacts"],
+                ["<>", "Connection / Link / Connect", "Network & Links"],
+                ["<>.:<", "Backlink", "Network & Links"],
+                [">^.@@", "Share", "Network & Links"],
+                [">#.:!", "Email / Text / Mail", "Communication & Admin"],
+                ["?@.>>", "Call", "Communication & Admin"],
+                [">^", "Send", "Communication & Admin"],
+                [">#.#", "Print", "Communication & Admin"],
+                ["?#", "Read", "Communication & Admin"],
+                ["::.>!", "Schedule", "Communication & Admin"],
+                [">:.%>", "Promote", "Communication & Admin"],
+                ["^^.>>", "Meeting", "Meeting & Collaboration Governance"],
+                ["@%.^^", "Attendees", "Meeting & Collaboration Governance"],
+                [
+                    ">:.%@",
+                    "Discussion / Discuss",
+                    "Meeting & Collaboration Governance",
+                ],
+                [">:.%@.:<", "Discussed", "Meeting & Collaboration Governance"],
+                [">#.>!", "Motion", "Meeting & Collaboration Governance"],
+                ["<>.>!", "Seconded", "Meeting & Collaboration Governance"],
+                ["?%.%!", "Vote", "Meeting & Collaboration Governance"],
+                ["<>.%!", "Unanimous", "Meeting & Collaboration Governance"],
+                ["!>.<@", "Assigned", "Meeting & Collaboration Governance"],
+                ["@!.<@", "Owner", "Meeting & Collaboration Governance"],
+            ];
+
+            rawDomains.forEach((d) =>
+                vocabularyData.push({
+                    pair: d[0],
+                    mean: d[1],
+                    type: "domain",
+                    typeLabel: "Domain Specific",
+                    cat: d[2],
+                }),
+            );
+
+            const escapeHTML = (str) => {
+                return str.replace(
+                    /[&<>"']/g,
+                    (m) =>
+                        ({
+                            "&": "&amp;",
+                            "<": "&lt;",
+                            ">": "&gt;",
+                            '"': "&quot;",
+                            "'": "&#39;",
+                        })[m],
+                );
+            };
+
+            const deckData = [];
+            vocabularyData.forEach((item) => {
+                if (item.type === "prime") {
+                    deckData.push({
+                        pair: item.pair,
+                        mean: item.mean,
+                        b: item.cat,
                     });
+                }
+            });
 
-                    // 5. FLASHCARD LOGIC
-                    const card = document.getElementById("flashcard");
-                    const front = document.getElementById("cardFront");
-                    const back = document.getElementById("cardBack");
-                    const feedback = document.getElementById("feedback");
-                    let deck = [...deckData], idx = 0, studyMode = true;
+            const renderSystem = () => {
+                // Render Core Symbols Glossary Map
+                document.getElementById("symbolsTable").innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>1st (Subject)</th>
+                            <th>2nd (State)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${coreSymbols
+                            .map(
+                                (c) => `
+                            <tr>
+                                <td>${escapeHTML(c.s)}</td>
+                                <td><strong>${escapeHTML(c.r)}</strong></td>
+                                <td>${escapeHTML(c.m)}</td>
+                            </tr>
+                        `,
+                            )
+                            .join("")}
+                    </tbody>
+                `;
 
-                    function renderCard() {
-                        const item = deck[idx];
-                        if (studyMode) {
-                            front.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div>`;
-                            back.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div><div class="mean">${item.mean}</div><div class="break">${escapeHTML(item.pair)} = ${item.mean} = ${item.b}</div>`;
-                        } else {
-                            front.innerHTML = `<div class="prompt">pair for</div><div class="mean big" style="font-size:1.6rem;color:var(--fg)">${item.mean}</div><div class="break">${item.b}</div>`;
-                            back.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div><div class="mean">${item.mean}</div>`;
-                            document.getElementById("quizInput").value = "";
-                            feedback.textContent = "";
-                        }
-                        card.classList.remove("flipped");
+                // Generate 9x9 Calculation Matrix Map
+                const symbolOrder = [
+                    "@",
+                    "#",
+                    "!",
+                    "?",
+                    ">",
+                    "<",
+                    ":",
+                    "^",
+                    "%",
+                ];
+                const matrixTable =
+                    document.getElementById("primesMatrixTable");
+
+                // 1. Build Header Row (States)
+                let tableHTML = `<thead><tr><th style="font-size: 0.75rem; color: var(--fg-muted);">(Subject ↓) (State →)</th>`;
+                symbolOrder.forEach((sym) => {
+                    const target = coreSymbols.find((c) => c.s === sym);
+                    const briefState = target.m.split(" ")[0]; // Extracts primary word description
+                    tableHTML += `<th class="axis-label" title="State: ${escapeHTML(target.m)}">${escapeHTML(sym)}<br><span style="font-size:0.68rem; font-weight:normal; color:var(--fg-muted); display:block; margin-top:2px;">${escapeHTML(briefState)}</span></th>`;
+                });
+                tableHTML += `</tr></thead><tbody>`;
+
+                // 2. Build Structural Row Items (Subjects)
+                symbolOrder.forEach((rowSym) => {
+                    const targetRow = coreSymbols.find((c) => c.s === rowSym);
+                    const briefSubj = targetRow.r.split(" ")[0]; // Extracts primary word description
+
+                    tableHTML += `<tr>`;
+                    tableHTML += `<th class="axis-label row-header" title="Subject: ${escapeHTML(targetRow.r)}"><span style="color:var(--accent)">${escapeHTML(rowSym)}</span> <span style="font-size:0.7rem; font-weight:normal; color:var(--fg-muted); font-family:var(--body);">${escapeHTML(briefSubj)}</span></th>`;
+
+                    // 3. Populate Row Data Columns Intersections
+                    symbolOrder.forEach((colSym) => {
+                        const currentPair = rowSym + colSym;
+                        const primeMatch = semanticPrimes.find(
+                            (p) => p.symbol === currentPair,
+                        );
+                        const displayMeaning = primeMatch
+                            ? primeMatch.meaning
+                            : "";
+
+                        tableHTML += `
+                            <td class="matrix-cell copy" data-copy="${escapeHTML(currentPair)}" title="Click to copy semantic shortcut">
+                                <div class="cell-symbol">${escapeHTML(currentPair)}</div>
+                                <div class="cell-mean">${escapeHTML(displayMeaning)}</div>
+                            </td>
+                        `;
+                    });
+                    tableHTML += `</tr>`;
+                });
+                tableHTML += `</tbody>`;
+                matrixTable.innerHTML = tableHTML;
+
+                // Render Bottom Dictionary Grid
+                renderVocabTable("all");
+            };
+
+            const renderVocabTable = (filterType) => {
+                const tbody = document.getElementById("vocabTableBody");
+                if (!tbody) return;
+
+                document.querySelectorAll(".filter-btn").forEach((btn) => {
+                    btn.classList.toggle(
+                        "active",
+                        btn.dataset.filter === filterType,
+                    );
+                });
+
+                const filteredData =
+                    filterType === "all"
+                        ? vocabularyData
+                        : vocabularyData.filter(
+                              (item) => item.type === filterType,
+                          );
+
+                tbody.innerHTML = filteredData
+                    .map(
+                        (item) => `
+                    <tr>
+                        <td style="font-family:'Space Mono', monospace; color:var(--accent); font-weight:700; font-size:1.15rem;">${escapeHTML(item.pair)}</td>
+                        <td>
+                            <div style="font-weight:600; color:var(--fg);">${escapeHTML(item.mean)}</div>
+                            <div style="font-size:0.75rem; color:var(--fg-muted); margin-top:2px;">Context: ${escapeHTML(item.cat)}</div>
+                        </td>
+                        <td><span class="mono" style="font-size:0.8rem; font-weight:600;">${escapeHTML(item.typeLabel)}</span></td>
+                    </tr>
+                `,
+                    )
+                    .join("");
+            };
+
+            document.querySelectorAll(".filter-btn").forEach((btn) => {
+                btn.addEventListener("click", () =>
+                    renderVocabTable(btn.dataset.filter),
+                );
+            });
+
+            document.addEventListener("click", (e) => {
+                if (e.target.classList.contains("copy")) {
+                    navigator.clipboard
+                        .writeText(e.target.dataset.copy)
+                        .then(() => {
+                            const oldText = e.target.textContent;
+                            e.target.textContent = "copied";
+                            e.target.classList.add("copied");
+                            setTimeout(() => {
+                                e.target.textContent = oldText;
+                                e.target.classList.remove("copied");
+                            }, 1000);
+                        });
+                }
+            });
+
+            const searchInput = document.getElementById("searchInput");
+            const searchResults = document.getElementById("searchResults");
+
+            const performSearch = (query) => {
+                if (!query.trim()) {
+                    searchResults.classList.remove("active");
+                    return;
+                }
+                const q = query.toLowerCase();
+                const results = [];
+
+                vocabularyData.forEach((item) => {
+                    if (
+                        item.pair.toLowerCase().includes(q) ||
+                        item.mean.toLowerCase().includes(q) ||
+                        item.cat.toLowerCase().includes(q)
+                    ) {
+                        results.push({
+                            symbol: item.pair,
+                            text: item.mean,
+                            label: item.typeLabel,
+                        });
                     }
+                });
 
-                    card.onclick = () => { if (studyMode) card.classList.toggle("flipped"); };
-                    document.getElementById("nextBtn").onclick = () => { idx = (idx + 1) % deck.length; renderCard(); };
-                    document.getElementById("prevBtn").onclick = () => { idx = (idx - 1 + deck.length) % deck.length; renderCard(); };
-                    document.getElementById("shuffleBtn").onclick = () => { deck.sort(() => Math.random() - 0.5); idx = 0; renderCard(); };
+                const seen = new Set();
+                const uniqueResults = results.filter((el) => {
+                    const duplicate = seen.has(el.symbol + el.text);
+                    seen.add(el.symbol + el.text);
+                    return !duplicate;
+                });
 
-                    const setMode = (study) => {
-                        studyMode = study;
-                        document.getElementById("tabStudy").classList.toggle("active", study);
-                        document.getElementById("tabQuiz").classList.toggle("active", !study);
-                        document.getElementById("studyControls").hidden = !study;
-                        document.getElementById("quizArea").hidden = study;
+                searchResults.innerHTML = uniqueResults.length
+                    ? uniqueResults
+                          .slice(0, 15)
+                          .map(
+                              (r) => `
+                    <div class="search-result-item">
+                        <div class="result-symbol">${escapeHTML(r.symbol)}</div>
+                        <div class="result-content">
+                            <div class="result-text">${escapeHTML(r.text)}</div>
+                            <div class="result-label">${escapeHTML(r.label)}</div>
+                        </div>
+                    </div>`,
+                          )
+                          .join("")
+                    : '<div style="padding:16px;text-align:center">No records match</div>';
+                searchResults.classList.add("active");
+            };
+
+            searchInput.addEventListener("input", (e) =>
+                performSearch(e.target.value),
+            );
+            document.addEventListener("click", (e) => {
+                if (!e.target.closest(".search-box"))
+                    searchResults.classList.remove("active");
+            });
+            searchResults.addEventListener("click", (e) => {
+                const item = e.target.closest(".search-result-item");
+                if (item) {
+                    searchInput.value =
+                        item.querySelector(".result-symbol").textContent;
+                    searchResults.classList.remove("active");
+                }
+            });
+
+            const card = document.getElementById("flashcard");
+            const front = document.getElementById("cardFront");
+            const back = document.getElementById("cardBack");
+            const feedback = document.getElementById("feedback");
+            let deck = [...deckData],
+                idx = 0,
+                studyMode = true;
+
+            function renderCard() {
+                if (deck.length === 0) return;
+                const item = deck[idx];
+                if (studyMode) {
+                    front.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div>`;
+                    back.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div><div class="mean">${escapeHTML(item.mean)}</div><div class="break">${escapeHTML(item.pair)} = ${escapeHTML(item.mean)} (${escapeHTML(item.b)})</div>`;
+                } else {
+                    front.innerHTML = `<div class="prompt">pair for</div><div class="mean big" style="font-size:1.6rem;color:var(--fg)">${escapeHTML(item.mean)}</div><div class="break">${escapeHTML(item.b)}</div>`;
+                    back.innerHTML = `<div class="big">${escapeHTML(item.pair)}</div><div class="mean">${escapeHTML(item.mean)}</div>`;
+                    document.getElementById("quizInput").value = "";
+                    feedback.textContent = "";
+                }
+                card.classList.remove("flipped");
+            }
+
+            card.onclick = () => {
+                if (studyMode) card.classList.toggle("flipped");
+            };
+            document.getElementById("nextBtn").onclick = () => {
+                idx = (idx + 1) % deck.length;
+                renderCard();
+            };
+            document.getElementById("prevBtn").onclick = () => {
+                idx = (idx - 1 + deck.length) % deck.length;
+                renderCard();
+            };
+            document.getElementById("shuffleBtn").onclick = () => {
+                deck.sort(() => Math.random() - 0.5);
+                idx = 0;
+                renderCard();
+            };
+
+            const setMode = (study) => {
+                studyMode = study;
+                document
+                    .getElementById("tabStudy")
+                    .classList.toggle("active", study);
+                document
+                    .getElementById("tabQuiz")
+                    .classList.toggle("active", !study);
+                document.getElementById("studyControls").hidden = !study;
+                document.getElementById("quizArea").hidden = study;
+                renderCard();
+            };
+            document.getElementById("tabStudy").onclick = () => setMode(true);
+            document.getElementById("tabQuiz").onclick = () => setMode(false);
+
+            document.getElementById("checkBtn").onclick = () => {
+                const item = deck[idx];
+                const userInput = document
+                    .getElementById("quizInput")
+                    .value.trim();
+
+                if (userInput === item.pair) {
+                    // Correct answer treatment
+                    feedback.className = "feedback correct";
+                    feedback.textContent = "Correct!";
+
+                    // Advance to next card smoothly after a brief success window
+                    setTimeout(() => {
+                        idx = (idx + 1) % deck.length;
                         renderCard();
-                    };
-                    document.getElementById("tabStudy").onclick = () => setMode(true);
-                    document.getElementById("tabQuiz").onclick = () => setMode(false);
+                    }, 800);
+                } else {
+                    // Incorrect answer treatment: displays meaning immediately underneath without flipping the card
+                    feedback.className = "feedback incorrect";
+                    feedback.innerHTML = `Incorrect! Meaning: <strong>${escapeHTML(item.mean)}</strong>`;
 
-                    document.getElementById("checkBtn").onclick = () => {
-                        const item = deck[idx];
-                        if (document.getElementById("quizInput").value.trim() === item.pair) {
-                            feedback.className = "feedback ok"; feedback.textContent = "Correct!";
-                            setTimeout(() => { idx = (idx + 1) % deck.length; renderCard(); }, 600);
-                        } else {
-                            feedback.className = "feedback err"; feedback.textContent = `${item.pair} = ${item.mean}`;
-                            card.classList.add("flipped"); setTimeout(() => card.classList.remove("flipped"), 1200);
-                        }
-                    };
+                    // Optional: clear input field to allow the user to immediately try again
+                    document.getElementById("quizInput").select();
+                }
+            };
 
-                    // 6. EXPORT & COPY
-                    document.getElementById("exportBtn").onclick = () => {
-                        let out = "TWO TALK SYSTEM GUIDE\n====================\n\n";
+            document.getElementById("exportBtn").onclick = () => {
+                let out =
+                    "TWO TALK GUIDE\n\n\nCORE SYMBOLS\n------------\nEach symbol represents a broad domain of experience depending on vector position.\n\n";
+                coreSymbols.forEach((c) => {
+                    out += `${c.s}\t Subject: ${c.r.padEnd(35)} State: ${c.m}\n`;
+                });
+                out +=
+                    "\nTWO TALK DICTIONARY\n-------------------------------------\n";
+                vocabularyData.forEach((item) => {
+                    const formattedType = `[${item.typeLabel.toUpperCase()}]`;
+                    const formattedContext = `(${item.cat})`;
+                    out += `${formattedType.padEnd(20)} ${item.pair.padEnd(12)} : ${item.mean.padEnd(35)} ${formattedContext}\n`;
+                });
 
-                        // 1. Export Semantic Primes (Dictionary)
-                        out += "SEMANTIC PRIME DICTIONARY\n-------------------------\n";
-                        order.forEach(k => {
-                            dictData[k].forEach(([p, m]) => {
-                                out += `${p.padEnd(6)} : ${m}\n`;
-                            });
-                        });
+                const blob = new Blob([out], { type: "text/plain" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "twotalk-guide.txt";
+                a.click();
+            };
 
-                        // 2. Export Swadesh Vocabulary (Complex Notations)
-                        out += "\nSWADESH VOCABULARY\n------------------\n";
-                        swadeshData.forEach(([id, en, tt]) => {
-                            // Pad the English word for a clean column look
-                            out += `${tt.padEnd(15)} : ${en}\n`;
-                        });
+            const menuToggle = document.getElementById("menuToggle");
+            const navLinks = document.getElementById("navLinks");
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+            navLinks.querySelectorAll(".nav-link").forEach((link) => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            });
+            document.addEventListener("click", (e) => {
+                if (!e.target.closest(".nav")) {
+                    navLinks.classList.remove("active");
+                }
+            });
 
-                        // Create and trigger download
-                        const blob = new Blob([out], { type: "text/plain" });
-                        const a = document.createElement("a");
-                        a.href = URL.createObjectURL(blob);
-                        a.download = "twotalk-guide.txt";
-                        a.click();
-                    };
-
-                    document.getElementById("dictGrid").addEventListener("click", e => {
-                        if (e.target.classList.contains("copy")) {
-                            navigator.clipboard.writeText(e.target.dataset.copy).then(() => {
-                                const oldText = e.target.textContent;
-                                e.target.textContent = "copied"; e.target.classList.add("copied");
-                                setTimeout(() => { e.target.textContent = oldText; e.target.classList.remove("copied"); }, 1000);
-                            });
-                        }
-                    });
-
-                    window.onload = renderSystem;
+            window.onload = renderSystem;
         </script>
     </body>
 </html>
