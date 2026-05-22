@@ -6,7 +6,7 @@
         <title>Two Talk</title>
         <link
             rel="icon"
-            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23e04e00'/><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='white' stop-opacity='0.18'/><stop offset='0.6' stop-color='white' stop-opacity='0'/></linearGradient></defs><text y='72' font-size='52' font-weight='900' font-family='Arial Black,sans-serif' x='50' text-anchor='middle' fill='white' letter-spacing='-3'>TT</text></svg>"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23e04e00'/><rect width='100' height='100' rx='22' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='white' stop-opacity='0.18'/><stop offset='0.6' stop-color='white' stop-opacity='0'/></linearGradient></defs><text y='72' font-size='52' font-weight='900' font-family='Arial Black,sans-serif' x='50' text-anchor='middle' fill='white' letter-spacing='-3'>>:</text></svg>"
         />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
@@ -713,7 +713,7 @@
     <body>
         <nav class="nav">
             <div class="nav-inner">
-                <div class="logo" aria-hidden="true">TT</div>
+                <div class="logo" aria-hidden="true">>:</div>
                 <div class="title">Two Talk</div>
                 <div class="nav-links" id="navLinks">
                     <a href="#core" class="nav-link">Symbols</a>
@@ -746,24 +746,23 @@
             <header class="hero card">
                 <h1>Two Talk</h1>
                 <p>
-                    Two Talk is a concise semantic shorthand system for thought
-                    compression in plaintext. Instead of memorizing static
-                    vocabulary, meanings are derived by combining
-                    <strong>Subject</strong> (1st symbol) with
-                    <strong>State</strong> (2nd symbol). By learning just 9 core
-                    symbols, you can dynamically construct or decode all 65+
-                    foundational Semantic Primes on the fly. Two Talk works
-                    natively in any plaintext environment, including text
-                    editors (Vim, Nano, Notepad++) and PKM systems (Obsidian,
-                    Notion, Logseq).
+                    Two Talk is a concise semantic notation system engineered
+                    for systems thinkers to map, compress, and scan information
+                    based on its underlying structural relationships. Instead of
+                    memorizing static vocabulary, meanings are derived
+                    compositionally by combining a <strong>Subject</strong> (1st
+                    symbol) with a <strong>State</strong> (2nd symbol). By
+                    learning just 9 core symbols, you can dynamically construct
+                    or decode all 81 foundational Semantic Primes on the
+                    fly—turning a page of notes into a scannable,
+                    multi-dimensional semantic map. Two Talk works natively in
+                    any plaintext environment, including text editors (Vim,
+                    Nano, Notepad++) and PKM systems (Obsidian, Notion, Logseq).
                 </p>
                 <p>
                     Two Talk is not a spoken language; it is a plaintext
                     semantic notation system optimized for thought compression,
-                    rapid note-taking, and information density. It is built for
-                    dynamic, high-density conceptual tagging in your personal
-                    files, not for social communication, poetic nuance, or
-                    shared public documentation.
+                    rapid note-taking, and information density.
                 </p>
             </header>
 
@@ -885,69 +884,51 @@
                 <h2>Grammar</h2>
                 <ol class="grammar-list">
                     <li>
-                        <strong>Order:</strong> Who → What → Action
-                        <code class="mono">@! #% &gt;&gt;</code> = I thing do
+                        <strong>Symbol Pairs:</strong> Words are made of two
+                        characters read left to right. The first symbol is the
+                        subject (main topic), and the second symbol is the state
+                        (change or description). <code class="mono">?^</code> =
+                        mind + anchor = learn
                     </li>
                     <li>
-                        <strong>Pairs:</strong> Every pair reads left → right as
-                        Subject → State. <code class="mono">?^</code> = focused
-                        mind = learn
+                        <strong>Combining Words:</strong> Use a dot
+                        <code class="mono">.</code> to stack words together to
+                        create complex words. Read them left to right. Dots
+                        group words together before spaces do.
+                        <code class="mono">#%.&gt;^</code> = (thing + move) =
+                        vehicle / <code class="mono">?&gt;.!!.:&lt;</code> =
+                        ((think + good) + past) = reflected decision
                     </li>
                     <li>
-                        <strong>Modifiers:</strong>
-                        <code class="mono">.</code> modifies the complete
-                        expression on its left.
-                        <code class="mono">?&gt;.!!</code> = good thought =
-                        decision
+                        <strong>Sentence Structure:</strong> Sentences follow
+                        the order: Who → What → Action. Use spaces between
+                        words, and use a new line (Enter key) to start a new
+                        sentence or clause.
+                        <code class="mono">@! #% &gt;&gt;</code> = I thing do.
                     </li>
                     <li>
-                        <strong>Stacking:</strong> Stacks always evaluate left →
-                        right. <code class="mono">A.B.C</code> =
-                        <code class="mono">((A.B).C)</code>
-                        <code class="mono">#%.&gt;^</code> = (thing.move) =
-                        vehicle <code class="mono">?&gt;.!!.:&lt;</code> =
-                        ((think.good).past) = reflected decision
+                        <strong>Opposites (Negation):</strong> Put
+                        <code class="mono">&lt;!</code> before a word connected
+                        with a dot to say "not" or mean the opposite of
+                        something. <code class="mono">&lt;!.?!</code> = not .
+                        want = dislike / don't want
                     </li>
                     <li>
-                        <strong>Phrases:</strong> Spaces separate complete
-                        semantic phrases.
-                        <code class="mono">@! #&gt; &gt;&gt;</code> = I note act
-                    </li>
-                    <li>
-                        <strong>Literals:</strong> Use numbers for amounts
-                        (<code class="mono">123</code>), dates (<code
+                        <strong>Numbers and Names:</strong> Use numbers for
+                        amounts (<code class="mono">123</code>), dates (<code
                             class="mono"
-                            >2026-05-16</code
-                        >), and times (<code class="mono">1430</code>). Use
-                        initials for names (<code class="mono">BM</code>).
-                    </li>
-                    <li>
-                        <strong>Negation:</strong> Use
-                        <code class="mono">&lt;!</code> as a prefix pair,
-                        stacked with the verb using <code class="mono">.</code>
-                        <code class="mono">&lt;!.?!</code> = not want
-                    </li>
-                    <li>
-                        <strong>Sentence:</strong> Use a newline
-                        <code class="mono">[Enter key]</code> to end a clause.
-                        <code class="mono">@! #% &gt;&gt;</code>
-                        <code class="mono">@! ?!</code> = I thing do. I want.
-                    </li>
-                    <li>
-                        <strong>Precedence:</strong> Parsing order is
-                        <code class="mono">.</code> → space → newline.
-                        <code class="mono">?&gt;.!! :&lt;</code> = [decision]
-                        [past] <code class="mono">?&gt;.!!.:&lt;</code> =
-                        reflected decision
+                            >2026-05-18</code
+                        >), or times (<code class="mono">1430</code>). Use
+                        capital initials for names of people, parties, places,
+                        products, or projects (<code class="mono">BM</code>).
                     </li>
                 </ol>
             </section>
-
             <section class="card" id="masterVocabSection">
-                <h2>Two Talk Dictionary</h2>
+                <h2>Dictionary</h2>
                 <p>
-                    The Two Talk Dictionary is the complete integrated lexicon
-                    of Two Talk, organized into three categories.
+                    The Two Talk dictionary is includes into three distinct
+                    categories.
                 </p>
                 <p class="muted">
                     <strong>Semantic Primes</strong> form the logical foundation
@@ -966,19 +947,24 @@
                     constructed by stacking Body and Big: <code>#@.%&gt;</code>.
                 </p>
                 <p class="muted">
-                    <strong>Domain Specific</strong> terms optimize this exact
-                    same calculation system for professional contexts (such as
-                    project or knowledge management), allowing for deep metadata
-                    tagging while preserving the core semantic logic of the
-                    primes.
+                    <strong>Ogden Core</strong> terms optimize this exact same
+                    calculation system for general and professional contexts,
+                    mapping Ogden's 850 basic words to double-pair stacks. This
+                    establishes a fully expressive, highly compressed base
+                    vocabulary right out of the box while preserving the core
+                    semantic logic of the primes.
                 </p>
                 <p class="muted">
-                    The Semantic Primes are canon in Two Talk and the meanings
-                    never change. The Swadesh and Domain specific meanings are
-                    based on the Semantic Primes. These are frequently used
-                    examples in language and can be changed and added to as
-                    needed. With context, future readers can determine these
-                    meanings.
+                    The Semantic Primes are canon in Two Talk and their meanings
+                    never change. The Swadesh Stacked and Ogden Core meanings
+                    are derived from those Semantic Primes. While these two
+                    layers provide an optimized, ready-to-use framework covering
+                    up to 80% of daily communication, they serve as established,
+                    high-frequency baselines that can be expanded or modified as
+                    specialized vocabularies require. Because the underlying
+                    geometric and semantic logic remains consistent, future
+                    readers can dynamically deduce or decode any compound
+                    meaning from context alone.
                 </p>
 
                 <div class="search-box">
@@ -986,7 +972,7 @@
                     <input
                         id="searchInput"
                         type="text"
-                        placeholder="Search vocabulary..."
+                        placeholder="Search..."
                         aria-label="Search all lists"
                     />
                     <div id="searchResults"></div>
@@ -1003,7 +989,7 @@
                         Swadesh Stacked
                     </button>
                     <button class="filter-btn" data-filter="domain">
-                        Domain Specific
+                        Ogden Core
                     </button>
                 </div>
 
@@ -1023,6 +1009,55 @@
 
             <section class="card" id="learn">
                 <h2>Learn</h2>
+                <p>
+                    Learning Two Talk is fundamentally different from
+                    traditional, phonetic-based shorthand systems. Because it is
+                    engineered as a semantic notation system for systems
+                    thinkers, your speed does not come from mimicking the sound
+                    of spoken English. Instead, it comes from structural,
+                    character-level compression and the elimination of
+                    grammatical noise.
+                </p>
+
+                <div
+                    class="learning-curve-note"
+                    style="
+                        border-left: 4px solid var(--accent);
+                        padding-left: 15px;
+                        margin: 20px 0;
+                        font-style: italic;
+                        color: var(--text-muted);
+                    "
+                >
+                    <strong>The Learning Curve:</strong> For beginners, Two Talk
+                    will feel slower at first. Writing a sentence requires a
+                    brief moment of active <em>semantic translation</em> - your
+                    brain must actively categorize a thought, find its
+                    foundational Subject row, and intersect it with a
+                    corresponding State.
+                </div>
+
+                <p>
+                    However, once you cross this initial cognitive threshold,
+                    the system triggers a powerful shift into
+                    <strong>pattern recognition and muscle memory</strong>.
+                    Because the core vocabulary layers (the Semantic Primes,
+                    Swadesh list, and Ogden Core) are completely standardized,
+                    you will quickly stop calculating symbols on the fly and
+                    start typing them as intuitive geometric shapes.
+                </p>
+
+                <p>
+                    At that point, you will gain a speed advantage because you
+                    are typing significantly fewer characters per sentence,
+                    dropping structural grammar clutter entirely, and keeping
+                    your fingers anchored to a tight, highly optimized cluster
+                    of core punctuation symbols and keys.
+                </p>
+                <p>
+                    This tool will help you learn the Two Talk symbols and
+                    meanings to get started.
+                </p>
                 <div class="flash-wrap">
                     <div
                         class="mode-tabs"
@@ -1111,9 +1146,6 @@
                         font-size: 0.95rem;
                     "
                 >
-                    Two Talk is a concise semantic shorthand for personal
-                    notation, not a spoken language. It prioritizes semantic
-                    compression over linguistic completeness.<br />
                     License: MIT © 2026 Barney Matthews. Free to use, modify,
                     and share.
                 </p>
@@ -1363,6 +1395,7 @@
             );
 
             const rawSwadesh = [
+                // --- Your Existing Mappings ---
                 ["Above", "^.%>"],
                 ["All", "%!"],
                 ["Ash", "#:.!^"],
@@ -1461,6 +1494,125 @@
                 ["Words", ">#"],
                 ["Yellow", "!.#^"],
                 ["You", "@?"],
+
+                // --- Completed Additions (The Missing 121) ---
+                ["Animal", "@#.#:"],
+                ["Bark (tree)", "#%.#:"],
+                ["Big", "%>"],
+                ["Cold", "::.%<"],
+                ["Dig", ">>.^<"],
+                ["Dirty", "!<.#:"],
+                ["Dry", "<!.#:"],
+                ["Dull", "<!.#!"],
+                ["Dust", "#:.%<"],
+                ["Father", "@<"],
+                ["Fear", "?@.!<"],
+                ["Feather", "#@.^>"],
+                ["Few", "%?"],
+                ["Fight", ">>.<!"],
+                ["Freeze", "#:.::"],
+                ["Full", "%!.<<"],
+                ["Good", "!!"],
+                ["Grass", "#%.:@"],
+                ["Green", "!.#%"],
+                ["He", "@#.:<"],
+                ["Hit", ">>.><"],
+                ["Hold", "<#"],
+                ["Hot", "::.%>"],
+                ["How", "%%:?"],
+                ["Hunt", ">>.?#"],
+                ["Husband", "@@.<<"],
+                ["Ice", "#:.::"],
+                ["Lake", "#:.^^"],
+                ["Laugh", "?@.!!"],
+                ["Left (side)", "^<.%<"],
+                ["Long", "::.%>"],
+                ["Louse", "@#.%<"],
+                ["Man", "@#.>>"],
+                ["Meat", "#@.#:"],
+                ["Mother", "@<"],
+                ["Name", ">#.:@"],
+                ["Narrow", "^^.%<"],
+                ["New", ":>.:!"],
+                ["Night", ":.%>"],
+                ["Old", ":<.:^"],
+                ["One", "1"],
+                ["Other", "@^"],
+                ["Person", "@#"],
+                ["Play", ">>.!!"],
+                ["Rain", "#:.>^"],
+                ["Red", "!.!^"],
+                ["Right (correct)", "!:"],
+                ["Right (side)", "^<.%>"],
+                ["River", "#:.>^"],
+                ["Road", "^#.>^"],
+                ["Root", "#%.^?"],
+                ["Rope", "#!.<<"],
+                ["Rotten", "!<.:<"],
+                ["Round", "##.<<"],
+                ["Rub", ">>.>@"],
+                ["Salt", "#:.!!"],
+                ["Scratch", ">>.><"],
+                ["Sea", "#:.%!"],
+                ["Seed", "#%.<:"],
+                ["Sew", ">!.#!"],
+                ["Sharp", "!!.!#"],
+                ["Short", "::.%<"],
+                ["Sing", ">:.!!"],
+                ["Sister", "@^.<<"],
+                ["Skin", "#@.^>"],
+                ["Smell", "?@.?#"],
+                ["Smooth", "!!.><"],
+                ["Snake", "@#.<>"],
+                ["Snow", "#:.%<"],
+                ["Spit", "#:.>^"],
+                ["Split", "!^.%<"],
+                ["Squeeze", "<#.%<"],
+                ["Stab", ">>.#!"],
+                ["Stick", "#!.#%"],
+                ["Straight", "<>.!!"],
+                ["Suck", "#<.<#"],
+                ["Swell", "%:.%>"],
+                ["Tail", "#@.:>"],
+                ["They", "@%"],
+                ["Thick", "##.%>"],
+                ["Thin", "##.%<"],
+                ["Three", "3"],
+                ["Throw", ">^.><"],
+                ["Tie", "<#.#!"],
+                ["Turn", ">^.!^"],
+                ["Two", "2"],
+                ["Vomit", ">^.<!"],
+                ["Warm", "::.%#"],
+                ["Wash", "!^.#:"],
+                ["Wet", "<^.#:"],
+                ["Wide", "^^.%>"],
+                ["Wife", "@@.<<"],
+                ["Wind", ">^.%>"],
+                ["Wipe", ">>.<!"],
+                ["Woman", "@#.<#"],
+                ["Woods", "#^.:@"],
+                ["Worm", "@#.%<"],
+                ["Year", "::.%!"],
+                ["And", "<^"],
+                ["At", "^#"],
+                ["Because", "<:"],
+                ["Far", "^:"],
+                ["In", "^?"],
+                ["Near", "^%"],
+                ["With", "<^"],
+                ["Child", "@>"],
+                ["Brother", "@^.<<"],
+                ["Clothing", "##.#@"],
+                ["Cook", ">!.!^"],
+                ["Choose", "?%"],
+                ["Cut", ">>.#!"],
+                ["Flow", ">^.#:"],
+                ["Fruit", "#>.#%"],
+                ["Insects", "@#.%<"],
+                ["Learn", "?^"],
+                ["Match/Equal", "<>"],
+                ["Mix", "<^.<!"],
             ];
 
             rawSwadesh.forEach((s) =>
@@ -1474,109 +1626,568 @@
             );
 
             const rawDomains = [
-                ["@!", "I / My / Me", "Personal Pronouns"],
-                ["@?", "You", "Personal Pronouns"],
-                ["@@", "We", "Personal Pronouns"],
-                ["<^", "And / With", "Particles & Conjunctions"],
-                ["><", "To / For / Give", "Particles & Conjunctions"],
-                ["^?", "Of / In / On / At", "Particles & Conjunctions"],
-                ["#%", "It / That / Item", "Particles & Conjunctions"],
-                [":<", "Was", "Particles & Conjunctions"],
-                ["%!", "All", "Quantifiers & Consensus"],
-                ["%!.%<", "Most", "Quantifiers & Consensus"],
-                ["%@", "Many", "Quantifiers & Consensus"],
-                ["%#.:>", "Several", "Quantifiers & Consensus"],
-                ["%#", "Some", "Quantifiers & Consensus"],
-                ["%?", "Few", "Quantifiers & Consensus"],
-                ["::", "Time", "Time Expressions"],
-                [":!", "Now", "Time Expressions"],
-                [":!.#:", "Today / Daily", "Time Expressions"],
-                [":.%<", "Day", "Time Expressions"],
-                ["::.#%", "Date", "Time Expressions"],
-                [":.<!", "Deadline", "Time Expressions"],
-                [":>", "Next", "Time Expressions"],
-                ["??", "Know / Knowledge", "Senses & Internal States"],
-                ["?>", "Think", "Senses & Internal States"],
-                ["?%", "Feel", "Senses & Internal States"],
-                ["?!", "Want", "Senses & Internal States"],
-                ["!?", "Need", "Senses & Internal States"],
-                ["?%.!!", "Love", "Senses & Internal States"],
-                [":@", "Life", "Senses & Internal States"],
-                ["^^.@@", "Home", "Senses & Internal States"],
-                ["!:", "Yeah / True", "Senses & Internal States"],
-                [">!", "Create / Make", "Professional & Creative Actions"],
-                [">!.%>", "Develop / Build", "Professional & Creative Actions"],
-                [
-                    ">^.>^",
-                    "Launch / Publish",
-                    "Professional & Creative Actions",
-                ],
-                [">>.!^", "Rework / Edit", "Professional & Creative Actions"],
-                [">>.:<", "Plan / Design", "Professional & Creative Actions"],
-                [">>", "Action / Task", "Professional & Creative Actions"],
-                [">>.:!", "Start", "Professional & Creative Actions"],
-                [">>.:>", "Follow-up", "Professional & Creative Actions"],
-                ["?^.?>", "Research / Analyze", "Intellectual & Analytical"],
-                ["?>.!!", "Decide on / Decision", "Intellectual & Analytical"],
-                ["><.!!", "Approved", "Intellectual & Analytical"],
-                ["?#.!!", "Check / Review", "Intellectual & Analytical"],
-                ["?#.<^", "Find / Search", "Intellectual & Analytical"],
-                ["?>.:<", "Reflect", "Intellectual & Analytical"],
-                [">!.<^", "Synthesize", "Intellectual & Analytical"],
-                [">>.<^", "Collaborate with", "Collaborative & Organizational"],
-                [
-                    ">>.<>",
-                    "Coordinate / Organise",
-                    "Collaborative & Organizational",
-                ],
-                [
-                    "%!.^?",
-                    "Capture / Collect / Compile",
-                    "Collaborative & Organizational",
-                ],
-                ["%#.<^", "Sort / Classify", "Collaborative & Organizational"],
-                ["^?", "Gather", "Collaborative & Organizational"],
-                ["^?.#", "Store / Archive", "Collaborative & Organizational"],
-                ["<!.#", "Retrieve", "Collaborative & Organizational"],
-                [
-                    "#>",
-                    "Information / Note",
-                    "Knowledge Management & Artifacts",
-                ],
-                ["?!", "Idea", "Knowledge Management & Artifacts"],
-                [
-                    ">#.:<",
-                    "Reference / Source / Agenda",
-                    "Knowledge Management & Artifacts",
-                ],
-                ["<>.%!", "Graph", "Knowledge Management & Artifacts"],
-                ["#>.#", "Tag", "Knowledge Management & Artifacts"],
-                [">>.%>", "Project", "Knowledge Management & Artifacts"],
-                ["^?.>>", "Inbox", "Knowledge Management & Artifacts"],
-                ["<>", "Connection / Link / Connect", "Network & Links"],
-                ["<>.:<", "Backlink", "Network & Links"],
-                [">^.@@", "Share", "Network & Links"],
-                [">#.:!", "Email / Text / Mail", "Communication & Admin"],
-                ["?@.>>", "Call", "Communication & Admin"],
-                [">^", "Send", "Communication & Admin"],
-                [">#.#", "Print", "Communication & Admin"],
-                ["?#", "Read", "Communication & Admin"],
-                ["::.>!", "Schedule", "Communication & Admin"],
-                [">:.%>", "Promote", "Communication & Admin"],
-                ["^^.>>", "Meeting", "Meeting & Collaboration Governance"],
-                ["@%.^^", "Attendees", "Meeting & Collaboration Governance"],
-                [
-                    ">:.%@",
-                    "Discussion / Discuss",
-                    "Meeting & Collaboration Governance",
-                ],
-                [">:.%@.:<", "Discussed", "Meeting & Collaboration Governance"],
-                [">#.>!", "Motion", "Meeting & Collaboration Governance"],
-                ["<>.>!", "Seconded", "Meeting & Collaboration Governance"],
-                ["?%.%!", "Vote", "Meeting & Collaboration Governance"],
-                ["<>.%!", "Unanimous", "Meeting & Collaboration Governance"],
-                ["!>.<@", "Assigned", "Meeting & Collaboration Governance"],
-                ["@!.<@", "Owner", "Meeting & Collaboration Governance"],
+                // --- Ogden's 850 Functional Additions ---
+                ["#<.!!", "able", "Ogden Core"],
+                ["!?.#:", "acid", "Ogden Core"],
+                [">>.<:", "act / react", "Ogden Core"],
+                ["#:.%>", "addition / increase", "Ogden Core"],
+                ["#@.<!", "adjustment", "Ogden Core"],
+                ["#>.#?", "advertisement", "Ogden Core"],
+                ["?@.:>", "agreement", "Ogden Core"],
+                ["^^.%>", "air / atmosphere", "Ogden Core"],
+                ["%!.%>", "amount", "Ogden Core"],
+                ["?@.<!", "amusement / joy", "Ogden Core"],
+                ["@#.%<", "angle", "Ogden Core"],
+                ["?@.><", "approval", "Ogden Core"],
+                ["^<.%<", "arch", "Ogden Core"],
+                ["?>.!!", "argument", "Ogden Core"],
+                ["#:.!^", "art", "Ogden Core"],
+                [">>.?^", "attempt", "Ogden Core"],
+                ["#?.<<", "authority / card", "Ogden Core"],
+                ["#:.%<", "baking / flour", "Ogden Core"],
+                ["%%.<!", "balance", "Ogden Core"],
+                ["#!.<<", "band / belt", "Ogden Core"],
+                ["#^.!!", "bank (money)", "Ogden Core"],
+                ["^^.<<", "basin", "Ogden Core"],
+                ["#<.<<", "basket", "Ogden Core"],
+                ["#:.!^", "beautiful", "Ogden Core"],
+                ["#^.<<", "bed", "Ogden Core"],
+                ["@#.:@", "bee", "Ogden Core"],
+                ["@#.?^", "behavior", "Ogden Core"],
+                ["#%.<<", "bell", "Ogden Core"],
+                ["^<.<<", "bent", "Ogden Core"],
+                ["#>.#:", "berry", "Ogden Core"],
+                ["#?.<<", "book", "Ogden Core"],
+                ["#!.<<", "boot / shoe", "Ogden Core"],
+                ["#<.<<", "bottle", "Ogden Core"],
+                ["#%.<<", "box / case", "Ogden Core"],
+                ["#@.><", "boy", "Ogden Core"],
+                ["#%.<<", "brake", "Ogden Core"],
+                ["#%.<<", "branch", "Ogden Core"],
+                ["#:.#:", "bread", "Ogden Core"],
+                ["#^.<<", "brick", "Ogden Core"],
+                ["#^.<<", "bridge", "Ogden Core"],
+                ["#!.<<", "brush", "Ogden Core"],
+                ["#<.<<", "bucket", "Ogden Core"],
+                ["#^.<<", "building", "Ogden Core"],
+                ["#:.!^", "bulb", "Ogden Core"],
+                ["#:.%<", "butter", "Ogden Core"],
+                ["#%.<<", "button", "Ogden Core"],
+                ["#?.<<", "cake", "Ogden Core"],
+                ["?#.?^", "camera", "Ogden Core"],
+                ["#:.!^", "canvas", "Ogden Core"],
+                ["#?.<<", "card", "Ogden Core"],
+                ["?@.<<", "care / anxiety", "Ogden Core"],
+                ["#^.<<", "carriage / cart", "Ogden Core"],
+                ["@#.:@", "cat", "Ogden Core"],
+                ["<:.<!", "chain", "Ogden Core"],
+                ["#^.<<", "chalk", "Ogden Core"],
+                ["!^.<<", "chance", "Ogden Core"],
+                ["#:.!!", "cheese", "Ogden Core"],
+                ["#:.!^", "chemical", "Ogden Core"],
+                ["?@.!!", "cheerful", "Ogden Core"],
+                ["@#.<>", "chief / ruler", "Ogden Core"],
+                ["#^.<<", "church", "Ogden Core"],
+                ["##.<<", "circle", "Ogden Core"],
+                ["#%.!!", "clean", "Ogden Core"],
+                ["!:.!!", "clear", "Ogden Core"],
+                ["@#.<>", "clerk", "Ogden Core"],
+                ["#%.<<", "clock", "Ogden Core"],
+                ["#:.<<", "cloth", "Ogden Core"],
+                ["#^.#:", "coal", "Ogden Core"],
+                ["#:.<<", "coat", "Ogden Core"],
+                ["#:.<<", "coffee", "Ogden Core"],
+                ["#:.!!", "coin / money", "Ogden Core"],
+                ["!.<<", "colour", "Ogden Core"],
+                ["#%.<<", "comb", "Ogden Core"],
+                ["?@.!!", "comfort", "Ogden Core"],
+                ["@#.<>", "committee", "Ogden Core"],
+                [">#.<^", "comparison", "Ogden Core"],
+                ["%%.!!", "competition", "Ogden Core"],
+                ["!%.<<", "complex", "Ogden Core"],
+                ["!^.<<", "condition", "Ogden Core"],
+                ["?>.<!", "conscious", "Ogden Core"],
+                ["#<.<<", "copper", "Ogden Core"],
+                ["#?.<<", "copy", "Ogden Core"],
+                ["#!.<<", "cord / string", "Ogden Core"],
+                ["#:.!!", "cork", "Ogden Core"],
+                ["#:.!!", "cotton", "Ogden Core"],
+                [">:.><", "cough", "Ogden Core"],
+                ["@#.<>", "country / nation", "Ogden Core"],
+                ["#^.<<", "court", "Ogden Core"],
+                ["@#.:@", "cow", "Ogden Core"],
+                ["?@.<!", "cruel", "Ogden Core"],
+                ["#<.<<", "cup", "Ogden Core"],
+                ["#:.!!", "current / flow", "Ogden Core"],
+                ["#:.<<", "curtain", "Ogden Core"],
+                ["#<.<<", "cushion", "Ogden Core"],
+                ["?@.<!", "damage", "Ogden Core"],
+                ["?@.<!", "danger", "Ogden Core"],
+                ["!.%>", "dark", "Ogden Core"],
+                ["?@.!!", "dear / beloved", "Ogden Core"],
+                ["%%.<!", "debt", "Ogden Core"],
+                ["?>.!!", "decision", "Ogden Core"],
+                ["%.%>", "deep", "Ogden Core"],
+                ["?@.!!", "delicate", "Ogden Core"],
+                ["?!.!!", "dependent", "Ogden Core"],
+                ["#^.<<", "design / blueprint", "Ogden Core"],
+                ["?!.<!", "destruction", "Ogden Core"],
+                ["#?.<<", "detail", "Ogden Core"],
+                ["!^.%>", "development", "Ogden Core"],
+                ["?@.<!", "different", "Ogden Core"],
+                ["#:.^<", "digestion", "Ogden Core"],
+                ["^:.%>", "direction", "Ogden Core"],
+                ["?@.<!", "disgust", "Ogden Core"],
+                ["%%.<<", "distance", "Ogden Core"],
+                ["#^.<<", "distribution", "Ogden Core"],
+                ["#^.<<", "division", "Ogden Core"],
+                ["#^.<<", "door", "Ogden Core"],
+                ["?:.<<", "doubt", "Ogden Core"],
+                ["#:.<<", "drain", "Ogden Core"],
+                ["#?.<<", "drawer", "Ogden Core"],
+                ["#:.<<", "dress", "Ogden Core"],
+                ["#:.#:", "drink", "Ogden Core"],
+                [">^.<<", "driving", "Ogden Core"],
+                ["#:.%<", "drop", "Ogden Core"],
+                ["#:.<<", "dust", "Ogden Core"],
+                ["?@.!!", "eager", "Ogden Core"],
+                ["^@.<<", "earth / world", "Ogden Core"],
+                ["^<.!!", "east", "Ogden Core"],
+                ["%%.!!", "edge", "Ogden Core"],
+                ["?^.!!", "education", "Ogden Core"],
+                ["#>.!!", "effect", "Ogden Core"],
+                ["#%.<<", "elastic", "Ogden Core"],
+                [":!.!!", "electric", "Ogden Core"],
+                ["#^.<<", "engine", "Ogden Core"],
+                ["%!.!!", "equal", "Ogden Core"],
+                ["?@.<!", "error", "Ogden Core"],
+                [":>.<<", "event", "Ogden Core"],
+                [":^.<<", "example", "Ogden Core"],
+                ["?@.!!", "exchange", "Ogden Core"],
+                ["?@.<!", "existence", "Ogden Core"],
+                ["#>.%>", "expansion", "Ogden Core"],
+                ["?@.<<", "experience", "Ogden Core"],
+                ["?>.!!", "expert", "Ogden Core"],
+                ["#?.<<", "fact", "Ogden Core"],
+                ["%%.<!", "fall", "Ogden Core"],
+                ["?@.<!", "false", "Ogden Core"],
+                ["@#.!!", "family", "Ogden Core"],
+                ["^:.%>", "far", "Ogden Core"],
+                ["^@.<<", "farm", "Ogden Core"],
+                ["!.%>", "female", "Ogden Core"],
+                ["#^.<<", "ferment", "Ogden Core"],
+                ["^@.<<", "field", "Ogden Core"],
+                ["#?.<<", "fifth", "Ogden Core"],
+                [">>.<!", "fight", "Ogden Core"],
+                ["#?.<<", "finger", "Ogden Core"],
+                ["!.!^", "flame", "Ogden Core"],
+                ["#%.<<", "flat", "Ogden Core"],
+                ["#:.%<", "flour", "Ogden Core"],
+                ["#:.>^", "flow", "Ogden Core"],
+                ["@#.:@", "fly / insect", "Ogden Core"],
+                ["#:.<<", "fold", "Ogden Core"],
+                ["#:.#:", "food", "Ogden Core"],
+                ["@#.<!", "foolish", "Ogden Core"],
+                ["#@.><", "foot", "Ogden Core"],
+                ["^@.<<", "foreign", "Ogden Core"],
+                ["#^.<<", "fork", "Ogden Core"],
+                ["#?.<<", "form / shape", "Ogden Core"],
+                ["#?.<<", "fourth", "Ogden Core"],
+                ["@#.:@", "fowl / chicken", "Ogden Core"],
+                ["#%.<<", "frame", "Ogden Core"],
+                ["?@.!!", "frequent", "Ogden Core"],
+                ["?@.!!", "friend", "Ogden Core"],
+                ["#>.#:", "fruit", "Ogden Core"],
+                ["%!.!!", "full", "Ogden Core"],
+                ["?@.!!", "future", "Ogden Core"],
+                ["^@.<<", "garden", "Ogden Core"],
+                ["#:.^^", "gas / vapor", "Ogden Core"],
+                ["?@.!!", "general / broad", "Ogden Core"],
+                ["#@.><", "girl", "Ogden Core"],
+                ["#:.!^", "glass", "Ogden Core"],
+                ["!.<<", "glove", "Ogden Core"],
+                ["#:.!!", "glue", "Ogden Core"],
+                ["@#.:@", "goat", "Ogden Core"],
+                ["#:.!!", "gold", "Ogden Core"],
+                ["#^.!!", "government", "Ogden Core"],
+                ["#:.#:", "grain / wheat", "Ogden Core"],
+                ["#:.#:", "grass", "Ogden Core"],
+                ["?@.!!", "great / grand", "Ogden Core"],
+                ["!.#:", "grey", "Ogden Core"],
+                ["^@.<<", "grip / handle", "Ogden Core"],
+                ["#:.%<", "growth", "Ogden Core"],
+                ["?:.<<", "guide", "Ogden Core"],
+                ["!.<<", "hat", "Ogden Core"],
+                ["?@.<!", "hate", "Ogden Core"],
+                ["?#.:!", "hearing", "Ogden Core"],
+                ["#:.%>", "heat / fire", "Ogden Core"],
+                ["?@.<<", "history / past", "Ogden Core"],
+                ["#<.<<", "hole", "Ogden Core"],
+                ["#:.#:", "honey", "Ogden Core"],
+                ["#^.<<", "hospital", "Ogden Core"],
+                ["#^.<<", "hotel", "Ogden Core"],
+                ["%%.<<", "hour", "Ogden Core"],
+                ["#^.<<", "house", "Ogden Core"],
+                ["?@.<!", "ill / sick", "Ogden Core"],
+                ["?@.!!", "important", "Ogden Core"],
+                [">>.%>", "impulse / drive", "Ogden Core"],
+                ["#:.%<", "ink", "Ogden Core"],
+                ["@#.:@", "insect", "Ogden Core"],
+                ["#!.<<", "instrument", "Ogden Core"],
+                ["#:.!!", "insurance", "Ogden Core"],
+                ["?>.!!", "intelligence", "Ogden Core"],
+                ["?@.!!", "invention", "Ogden Core"],
+                ["#:.!!", "iron / steel", "Ogden Core"],
+                ["^@.<<", "island", "Ogden Core"],
+                ["#:.%<", "jelly / jam", "Ogden Core"],
+                ["#?.<<", "jewel", "Ogden Core"],
+                [">>.!!", "join / connect", "Ogden Core"],
+                ["?@.!!", "journey", "Ogden Core"],
+                ["?@.!!", "judge", "Ogden Core"],
+                ["#:.%<", "juice", "Ogden Core"],
+                ["#!.<<", "key", "Ogden Core"],
+                ["?@.!!", "kindness", "Ogden Core"],
+                ["#^.<<", "kitchen", "Ogden Core"],
+                ["#!.<<", "knife", "Ogden Core"],
+                ["#?.<<", "knot", "Ogden Core"],
+                ["^@.<<", "land / country", "Ogden Core"],
+                [">#.<<", "language", "Ogden Core"],
+                [":>.<<", "late", "Ogden Core"],
+                ["?@.!!", "laugh", "Ogden Core"],
+                ["#^.!!", "law / rule", "Ogden Core"],
+                ["#:.!!", "lead (metal)", "Ogden Core"],
+                ["#%.<<", "leather", "Ogden Core"],
+                ["^<.%<", "left (direction)", "Ogden Core"],
+                ["#@.><", "leg", "Ogden Core"],
+                ["#<.<<", "letting / rent", "Ogden Core"],
+                [">#?.<<", "letter / mail", "Ogden Core"],
+                ["%%.<<", "level", "Ogden Core"],
+                ["#^.<<", "library", "Ogden Core"],
+                ["#^.<<", "line", "Ogden Core"],
+                ["#:.%<", "linen / cloth", "Ogden Core"],
+                ["#:.%<", "liquid", "Ogden Core"],
+                ["#?.<<", "list", "Ogden Core"],
+                ["#:.#:", "loaf / bread", "Ogden Core"],
+                ["#^.!!", "lock", "Ogden Core"],
+                ["?@.!!", "loose", "Ogden Core"],
+                ["?@.<!", "loss", "Ogden Core"],
+                ["?@.!!", "loud", "Ogden Core"],
+                ["?@.!!", "love", "Ogden Core"],
+                ["#^.<<", "machine", "Ogden Core"],
+                ["!.%>", "male", "Ogden Core"],
+                ["@#.<<", "manager", "Ogden Core"],
+                ["#?.<<", "map", "Ogden Core"],
+                ["#^.<<", "market", "Ogden Core"],
+                ["#:.#:", "meat", "Ogden Core"],
+                ["#^.<<", "mechanism", "Ogden Core"],
+                ["#:.!!", "medical", "Ogden Core"],
+                ["?@.<<", "memory", "Ogden Core"],
+                ["#:.!!", "metal", "Ogden Core"],
+                ["#:.#:", "milk", "Ogden Core"],
+                ["?>.<<", "mind", "Ogden Core"],
+                ["#^.<<", "mine (ore)", "Ogden Core"],
+                ["%%.<<", "minute", "Ogden Core"],
+                ["#:.%<", "mist / fog", "Ogden Core"],
+                ["#:.!!", "money", "Ogden Core"],
+                ["@#.:@", "monkey", "Ogden Core"],
+                ["%%.<<", "month", "Ogden Core"],
+                ["#^.<<", "monument", "Ogden Core"],
+                ["#^.<<", "motion", "Ogden Core"],
+                ["^#.%>", "mountain", "Ogden Core"],
+                ["@#.:@", "mouse", "Ogden Core"],
+                ["#@.<<", "mouth", "Ogden Core"],
+                [">>.<<", "movement", "Ogden Core"],
+                ["?@.!!", "musical", "Ogden Core"],
+                ["#?.<<", "nail", "Ogden Core"],
+                [">#.<<", "name", "Ogden Core"],
+                ["%%.%<", "narrow", "Ogden Core"],
+                ["^@.<<", "nation", "Ogden Core"],
+                ["#:.!!", "natural", "Ogden Core"],
+                ["^%.<<", "near", "Ogden Core"],
+                ["#@.<<", "neck", "Ogden Core"],
+                ["#!.<<", "needle", "Ogden Core"],
+                ["#@.<<", "nerve", "Ogden Core"],
+                ["#^.<<", "net", "Ogden Core"],
+                [":>.!!", "new", "Ogden Core"],
+                ["#?.<<", "newspaper", "Ogden Core"],
+                ["^<.!!", "north", "Ogden Core"],
+                ["#@.<<", "nose", "Ogden Core"],
+                ["#?.<<", "note / memo", "Ogden Core"],
+                ["#?.<<", "number", "Ogden Core"],
+                ["#:.#:", "nut", "Ogden Core"],
+                ["#^.<<", "office", "Ogden Core"],
+                ["#:.%<", "oil", "Ogden Core"],
+                [":<.<<", "old", "Ogden Core"],
+                ["%!.<<", "open", "Ogden Core"],
+                ["?@.!!", "opinion", "Ogden Core"],
+                ["^<.!!", "opposite", "Ogden Core"],
+                ["#^.<<", "orchard", "Ogden Core"],
+                ["#^.<<", "organization", "Ogden Core"],
+                ["^>.<<", "ornament", "Ogden Core"],
+                ["@#.<<", "owner", "Ogden Core"],
+                ["#?.<<", "page", "Ogden Core"],
+                ["?@.<!", "pain", "Ogden Core"],
+                ["#:.!^", "paint", "Ogden Core"],
+                ["#?.<<", "paper", "Ogden Core"],
+                ["#%.<<", "parallel", "Ogden Core"],
+                ["#%.<<", "part", "Ogden Core"],
+                ["?@.<!", "past / history", "Ogden Core"],
+                ["#:.%<", "paste", "Ogden Core"],
+                ["#^.<<", "payment", "Ogden Core"],
+                ["?@.!!", "peace", "Ogden Core"],
+                ["#!.<<", "pen", "Ogden Core"],
+                ["#!.<<", "pencil", "Ogden Core"],
+                ["@#.<<", "person", "Ogden Core"],
+                ["#:.%<", "physical", "Ogden Core"],
+                ["#?.<<", "picture", "Ogden Core"],
+                ["@#.:@", "pig", "Ogden Core"],
+                ["#%.<<", "pin", "Ogden Core"],
+                ["#<.<<", "pipe", "Ogden Core"],
+                ["^#.<<", "place", "Ogden Core"],
+                ["#^.<<", "plane (surface)", "Ogden Core"],
+                ["#%.:@", "plant / herb", "Ogden Core"],
+                ["#:.!^", "plate", "Ogden Core"],
+                [">>.!!", "play / sport", "Ogden Core"],
+                ["?@.!!", "please / satisfaction", "Ogden Core"],
+                ["#^.<<", "plough / plow", "Ogden Core"],
+                ["#<.<<", "pocket", "Ogden Core"],
+                ["^#.<<", "point", "Ogden Core"],
+                ["?@.<!", "poison", "Ogden Core"],
+                ["#^.!!", "police", "Ogden Core"],
+                ["#:.!!", "polish", "Ogden Core"],
+                ["#^.<<", "porter / carrier", "Ogden Core"],
+                ["^#.<<", "position", "Ogden Core"],
+                ["#:.%<", "powder", "Ogden Core"],
+                ["<%.<<", "power / force", "Ogden Core"],
+                ["?@.!!", "present / gift", "Ogden Core"],
+                ["#?.<<", "price / cost", "Ogden Core"],
+                ["#?.<<", "print", "Ogden Core"],
+                ["#^.!!", "prison", "Ogden Core"],
+                ["#>.!!", "private / secret", "Ogden Core"],
+                ["#>.!!", "probable", "Ogden Core"],
+                ["#^.<<", "process", "Ogden Core"],
+                ["#>.!!", "produce / crop", "Ogden Core"],
+                ["?@.!!", "profit", "Ogden Core"],
+                ["#^.<<", "property", "Ogden Core"],
+                ["?@.!!", "protest", "Ogden Core"],
+                ["?@.!!", "public", "Ogden Core"],
+                ["#^.<<", "pump", "Ogden Core"],
+                ["?@.<!", "punishment", "Ogden Core"],
+                ["?@.!!", "purpose", "Ogden Core"],
+                [">?.<<", "question", "Ogden Core"],
+                ["?@.!!", "quick", "Ogden Core"],
+                ["?@.!!", "quiet", "Ogden Core"],
+                ["#^.<<", "rail / track", "Ogden Core"],
+                ["#:.>^", "rain", "Ogden Core"],
+                ["%%.<<", "range", "Ogden Core"],
+                ["@#.:@", "rat", "Ogden Core"],
+                ["#:.%<", "rayon / fabric", "Ogden Core"],
+                ["#@.<<", "reaction", "Ogden Core"],
+                ["?#.:!", "reading", "Ogden Core"],
+                ["#?.<<", "receipt", "Ogden Core"],
+                ["#?.<<", "record / file", "Ogden Core"],
+                ["!.!^", "red", "Ogden Core"],
+                ["?@.<!", "regret", "Ogden Core"],
+                ["?@.!!", "regular", "Ogden Core"],
+                ["?@.!!", "relation", "Ogden Core"],
+                ["?@.!!", "religion", "Ogden Core"],
+                ["#^.<<", "representative", "Ogden Core"],
+                [">?.<<", "request", "Ogden Core"],
+                ["?@.!!", "respect", "Ogden Core"],
+                ["?@.!!", "responsible", "Ogden Core"],
+                ["?@.!!", "reward", "Ogden Core"],
+                ["#^.<<", "rhythm", "Ogden Core"],
+                ["#:.#:", "rice", "Ogden Core"],
+                ["?@.!!", "right (correct)", "Ogden Core"],
+                ["^<.%>", "right (direction)", "Ogden Core"],
+                ["##.<<", "ring", "Ogden Core"],
+                ["^#.<<", "river", "Ogden Core"],
+                ["^#.<<", "road", "Ogden Core"],
+                ["#%.<<", "rod / bar", "Ogden Core"],
+                ["#^.<<", "roof", "Ogden Core"],
+                ["^^.<<", "room", "Ogden Core"],
+                ["#%.<<", "root", "Ogden Core"],
+                ["#!.<<", "rope", "Ogden Core"],
+                ["##.<<", "rough", "Ogden Core"],
+                ["##.<<", "round", "Ogden Core"],
+                [">>.<<", "rubbing", "Ogden Core"],
+                ["#^.!!", "rule", "Ogden Core"],
+                [">^.<<", "run / leak", "Ogden Core"],
+                ["?@.<!", "sad", "Ogden Core"],
+                ["?@.!!", "safe", "Ogden Core"],
+                ["#^.<<", "sail", "Ogden Core"],
+                ["#:.!!", "salt", "Ogden Core"],
+                ["<>.<<", "same", "Ogden Core"],
+                ["#:.%<", "sand", "Ogden Core"],
+                ["%%.<<", "scale", "Ogden Core"],
+                ["#^.<<", "school", "Ogden Core"],
+                ["#:.!!", "science", "Ogden Core"],
+                ["#!.<<", "scissors", "Ogden Core"],
+                ["#!.<<", "screw", "Ogden Core"],
+                ["^#.<<", "sea / ocean", "Ogden Core"],
+                ["#?.<<", "seat / chair", "Ogden Core"],
+                ["#?.<<", "second", "Ogden Core"],
+                ["#>.!!", "secret", "Ogden Core"],
+                ["?@.!!", "secretary", "Ogden Core"],
+                ["#%.:@", "seed", "Ogden Core"],
+                ["?#.:!", "seeing / sight", "Ogden Core"],
+                ["?@.!!", "selection", "Ogden Core"],
+                ["?@.!!", "self", "Ogden Core"],
+                [">~.<<", "sending", "Ogden Core"],
+                ["?@.<<", "sense / feeling", "Ogden Core"],
+                ["@#.<>", "servant", "Ogden Core"],
+                ["?@.!!", "sex", "Ogden Core"],
+                ["!.<!", "shade / shadow", "Ogden Core"],
+                ["##.<<", "shake / vibration", "Ogden Core"],
+                ["?@.<!", "shame", "Ogden Core"],
+                ["!!.!#", "sharp", "Ogden Core"],
+                ["@#.:@", "sheep", "Ogden Core"],
+                ["#:.<<", "sheet", "Ogden Core"],
+                ["#^.<<", "shelf", "Ogden Core"],
+                ["#^.<<", "ship / boat", "Ogden Core"],
+                ["#:.<<", "shirt", "Ogden Core"],
+                ["#!.<<", "shoe", "Ogden Core"],
+                ["#^.<<", "shop / store", "Ogden Core"],
+                ["%%.%<", "short", "Ogden Core"],
+                ["#@.<<", "shoulder", "Ogden Core"],
+                ["?@.!!", "shout", "Ogden Core"],
+                ["#^.<<", "side", "Ogden Core"],
+                ["?#.<<", "sign / signal", "Ogden Core"],
+                ["#:.!!", "silk", "Ogden Core"],
+                ["#:.!!", "silver", "Ogden Core"],
+                ["?@.!!", "simple", "Ogden Core"],
+                ["#@.<<", "skin", "Ogden Core"],
+                ["#:.<<", "skirt", "Ogden Core"],
+                ["^^.%>", "sky", "Ogden Core"],
+                ["#:.<<", "sleep", "Ogden Core"],
+                ["#%.<<", "slice", "Ogden Core"],
+                ["%%.%<", "slope / angle", "Ogden Core"],
+                ["%%.%<", "slow", "Ogden Core"],
+                ["%%.%<", "small", "Ogden Core"],
+                ["?#.<<", "smell", "Ogden Core"],
+                ["?@.!!", "smile", "Ogden Core"],
+                ["#:.^^", "smoke", "Ogden Core"],
+                ["##.<<", "smooth", "Ogden Core"],
+                ["@#.<>", "snake", "Ogden Core"],
+                ["#:.%<", "snow", "Ogden Core"],
+                ["#:.!!", "soap", "Ogden Core"],
+                ["@#.!!", "society", "Ogden Core"],
+                ["#:.<<", "sock / stocking", "Ogden Core"],
+                ["##.<<", "soft", "Ogden Core"],
+                ["^<.!!", "south", "Ogden Core"],
+                ["^^.<<", "space", "Ogden Core"],
+                ["#!.<<", "spade / shovel", "Ogden Core"],
+                [">#.<<", "speaking / talk", "Ogden Core"],
+                ["?@.!!", "special", "Ogden Core"],
+                ["#^.<<", "sponge", "Ogden Core"],
+                ["#!.<<", "spoon", "Ogden Core"],
+                ["#^.<<", "spring (coil)", "Ogden Core"],
+                ["##.<<", "square", "Ogden Core"],
+                ["^#.<<", "stage", "Ogden Core"],
+                ["#?.<<", "stamp / seal", "Ogden Core"],
+                ["#^.<<", "station", "Ogden Core"],
+                ["#:.^^", "steam", "Ogden Core"],
+                ["#:.!!", "steel", "Ogden Core"],
+                ["#%.<<", "stem / stalk", "Ogden Core"],
+                ["#:.<<", "step", "Ogden Core"],
+                ["#%.<<", "stick", "Ogden Core"],
+                ["##.<<", "sticky", "Ogden Core"],
+                ["?@.!!", "stiff", "Ogden Core"],
+                ["#@.<<", "stomach", "Ogden Core"],
+                ["#^.<<", "stone / rock", "Ogden Core"],
+                ["#^.!!", "stop / barrier", "Ogden Core"],
+                ["#^.<<", "store", "Ogden Core"],
+                ["?@.!!", "strange", "Ogden Core"],
+                ["#^.<<", "street", "Ogden Core"],
+                ["#!.<<", "stretch / band", "Ogden Core"],
+                ["##.<<", "strong", "Ogden Core"],
+                ["#^.<<", "structure", "Ogden Core"],
+                ["#:.!!", "substance", "Ogden Core"],
+                ["?@.!!", "such", "Ogden Core"],
+                ["#:.!!", "sugar", "Ogden Core"],
+                ["#:.%>", "suggestion", "Ogden Core"],
+                ["#^.<<", "sun", "Ogden Core"],
+                ["#^.<<", "support / base", "Ogden Core"],
+                ["?@.<!", "surprise", "Ogden Core"],
+                ["?@.!!", "sweet", "Ogden Core"],
+                [">>.<<", "swimming", "Ogden Core"],
+                ["#^.<<", "system", "Ogden Core"],
+                ["#^.<<", "table", "Ogden Core"],
+                ["#@.<<", "tail", "Ogden Core"],
+                ["?#.:!", "taste", "Ogden Core"],
+                ["#:.!!", "tax", "Ogden Core"],
+                ["#:.<<", "tea", "Ogden Core"],
+                ["?^.<<", "teaching", "Ogden Core"],
+                ["#?.<<", "tendency", "Ogden Core"],
+                ["#^.<<", "test / exam", "Ogden Core"],
+                ["#:.<<", "cloth / fabric", "Ogden Core"],
+                ["?@.!!", "theory", "Ogden Core"],
+                ["##.<<", "thick", "Ogden Core"],
+                ["##.<<", "thin", "Ogden Core"],
+                ["#?.<<", "third", "Ogden Core"],
+                ["?@.<<", "thought", "Ogden Core"],
+                ["#!.<<", "thread", "Ogden Core"],
+                ["#@.<<", "throat", "Ogden Core"],
+                ["#^.<<", "thimble", "Ogden Core"],
+                ["#^.<<", "ticket", "Ogden Core"],
+                ["##.<<", "tight", "Ogden Core"],
+                ["%%.<<", "time", "Ogden Core"],
+                ["#:.!!", "tin", "Ogden Core"],
+                ["?@.<!", "tired", "Ogden Core"],
+                ["#@.<<", "toe", "Ogden Core"],
+                ["#@.<<", "tongue", "Ogden Core"],
+                ["#@.<<", "tooth", "Ogden Core"],
+                ["^@.<<", "town / city", "Ogden Core"],
+                ["#^.<<", "trade / shop", "Ogden Core"],
+                ["#^.<<", "train / rail", "Ogden Core"],
+                ["#^.<<", "transport", "Ogden Core"],
+                ["#^.<<", "tray", "Ogden Core"],
+                ["#%.:@", "tree", "Ogden Core"],
+                ["?@.!!", "trick", "Ogden Core"],
+                ["#:.<<", "trousers / pants", "Ogden Core"],
+                ["?@.!!", "true", "Ogden Core"],
+                [">>.<<", "turn / rotation", "Ogden Core"],
+                ["#^.<<", "umbrella", "Ogden Core"],
+                ["#^.<<", "unit", "Ogden Core"],
+                ["?@.!!", "use / function", "Ogden Core"],
+                ["#?.<<", "value / price", "Ogden Core"],
+                ["#:.%<", "verse / poetry", "Ogden Core"],
+                ["#^.<<", "vessel / ship", "Ogden Core"],
+                ["?#.:!", "view / landscape", "Ogden Core"],
+                ["?@.<!", "violent", "Ogden Core"],
+                [">:.<<", "voice", "Ogden Core"],
+                ["?@.!!", "waiting", "Ogden Core"],
+                [">^.<<", "walk / hike", "Ogden Core"],
+                ["#^.<<", "wall", "Ogden Core"],
+                ["?@.!!", "warm", "Ogden Core"],
+                ["#^.!!", "war", "Ogden Core"],
+                [">>.<<", "wash / cleaning", "Ogden Core"],
+                ["?@.<!", "waste", "Ogden Core"],
+                ["#!.<<", "watch / clock", "Ogden Core"],
+                ["#:.<^", "water", "Ogden Core"],
+                ["#:.!^", "wax", "Ogden Core"],
+                ["^#.<<", "way / path", "Ogden Core"],
+                ["##.<<", "weak", "Ogden Core"],
+                ["?@.!!", "weather", "Ogden Core"],
+                ["%%.<<", "week", "Ogden Core"],
+                ["%%.%>", "weight", "Ogden Core"],
+                ["^<.!!", "west", "Ogden Core"],
+                ["#:.<^", "wet / damp", "Ogden Core"],
+                ["#^.<<", "wheel", "Ogden Core"],
+                ["!.%<", "white", "Ogden Core"],
+                ["%%.%>", "wide / broad", "Ogden Core"],
+                ["?@.!!", "wise", "Ogden Core"],
+                ["#^.<<", "wire", "Ogden Core"],
+                ["?@.!!", "wish / desire", "Ogden Core"],
+                ["@#.<#", "woman", "Ogden Core"],
+                ["#:.!!", "wood / timber", "Ogden Core"],
+                ["#:.%<", "wool / fleece", "Ogden Core"],
+                [">#.<>", "word", "Ogden Core"],
+                [">>.<<", "work / job", "Ogden Core"],
+                ["@#.<>", "worm", "Ogden Core"],
+                ["?@.<!", "wrong / bad", "Ogden Core"],
+                ["%%.<<", "year", "Ogden Core"],
+                ["!.#^", "yellow", "Ogden Core"],
             ];
 
             rawDomains.forEach((d) =>
@@ -1584,7 +2195,7 @@
                     pair: d[0],
                     mean: d[1],
                     type: "domain",
-                    typeLabel: "Domain Specific",
+                    typeLabel: "Ogden Core",
                     cat: d[2],
                 }),
             );
