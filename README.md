@@ -1,320 +1,1114 @@
+## 9 Core Symbols
+
+###### Each symbol represents a fundamental domain of meaning. These are the building blocks - when combined in pairs,
+
+###### they create the full semantic vocabulary. Think of them as the nine dimensions through which all ideas flow.
+
+#### @
+
+```
+people / who
+people
+An
+```
+#### #
+
+```
+objects / what
+objects
+Ob
+```
+#### !
+
+```
+value / quality
+value
+Ve
+```
+#### ?
+
+```
+mind / thought
+mind
+Mo
+```
+#### >
+
+```
+action / outward
+action
+Ak
+```
+#### <
+
+```
+relation / limit / inward
+relation
+Li
+```
+#### :
+
+```
+time / when
+time
+Ti
+```
+#### ^
+
+```
+space / where
+space
+Sa
+```
+#### %
+
+```
+scale / amount
+scale
+Me
+```
 # Two Talk
 
-Two Talk is a concise semantic shorthand system for thought compression in plaintext. Instead of memorizing static vocabulary, meanings are derived by combining **Subject** (1st symbol) with **State** (2nd symbol). By learning just 9 core symbols, you can dynamically construct or decode all 65+ foundational Semantic Primes on the fly. Two Talk works natively in any plaintext environment, including text editors (Vim, Nano, Notepad++) and PKM systems (Obsidian, Notion, Logseq).
+###### Small text. Big notes.
 
-> **Note:** Two Talk is not a spoken language; it is a plaintext semantic notation system optimized for thought compression, rapid note-taking, and information density. It is built for dynamic, high-density conceptual tagging in your personal files, not for social communication, poetic nuance, or shared public documentation.
+#### Two Talk is built on three simple ideas: 9 core symbols combine into 81 semantic
+
+#### primes , which chain together with dots to create unlimited meaning. Think of it as
+
+#### Markdown for clear and compressed thought or Toki Pona for precise and concise notation.
+
+#### Two Talk is a microlanguage for capturing ideas with speed and clarity in cross-platform,
+
+#### plaintext form. Instead of sentences, Two Talk uses concise symbols to compress meaning
+
+#### in a way that is fast to write, easy to scan, and flexible across contexts. Designed for quick
+
+#### note-taking, system design, knowledge mapping, and everyday thinking, it trades the
+
+#### weight of words for the clarity of symbols.
+
+
+## 9 x 9 Matrix
+
+###### The matrix shows every possible two-symbol combination and its meaning. Read the left column to understand what
+
+###### the first symbol signifies, the top row for the second. This is where the magic happens - two simple signs become a
+
+###### precise semantic prime.
+
+```
+@
+who
+An
+```
+```
+@@
+self
+```
+```
+@#
+person
+```
+```
+@!
+I
+```
+```
+@?
+you
+```
+```
+@>
+someone
+```
+```
+@<
+young
+```
+```
+@:
+old
+```
+```
+@^
+other
+```
+```
+@%
+group
+```
+```
+#
+what
+Ob
+```
+```
+#@
+body
+```
+```
+##
+thing
+```
+```
+#!
+tool
+```
+```
+#?
+word
+```
+```
+#>
+output
+```
+```
+#<
+input
+```
+```
+#:
+material
+```
+```
+#^
+this
+```
+```
+#%
+part
+```
+```
+!
+quality
+Ve
+```
+```
+!@
+help
+```
+```
+!#
+purpose
+```
+```
+!!
+good
+```
+```
+!?
+need
+```
+```
+!>
+big
+```
+```
+!<
+small
+```
+```
+!:
+bad
+```
+```
+!^
+true
+```
+```
+!%
+all
+```
+```
+?
+thought
+Mo
+```
+```
+?@
+feeling
+```
+```
+?#
+sense
+```
+```
+?!
+know
+```
+```
+??
+fact
+```
+```
+?>
+listen
+```
+```
+?<
+think
+```
+```
+?:
+way
+```
+```
+?^
+focus
+```
+```
+?%
+desire
+```
+```
+>
+outward
+Ak
+```
+```
+>@
+speech
+```
+```
+>#
+move
+```
+```
+>!
+action
+```
+```
+>?
+ask
+```
+```
+>>
+is
+```
+```
+><
+transfer
+```
+```
+>:
+contact
+```
+```
+>^
+stay
+```
+```
+>%
+act
+```
+```
+<
+limit
+Li
+```
+```
+<@
+hold
+```
+```
+<#
+type
+```
+```
+<!
+not
+```
+```
+<?
+because
+```
+```
+<>
+same
+```
+```
+<<
+have
+```
+```
+<:
+if
+```
+```
+<^
+with
+```
+```
+<%
+can
+```
+```
+:
+when
+Ti
+```
+```
+:@
+life
+```
+```
+:#
+now
+```
+```
+:!
+moment
+```
+```
+:?
+brief
+```
+```
+:>
+future
+```
+```
+:<
+past
+```
+```
+::
+time
+```
+```
+:^
+soon
+```
+```
+:%
+always
+```
+```
+^
+where
+Sa
+```
+```
+^@
+here
+```
+```
+^#
+side
+```
+```
+^!
+above
+```
+```
+^?
+inside
+```
+```
+^>
+below
+```
+```
+^<
+far
+```
+```
+^:
+near
+```
+```
+^^
+space
+```
+```
+^%
+distance
+```
+```
+%
+amount
+Me
+```
+```
+%@
+more
+```
+```
+%#
+less
+```
+```
+%!
+very
+```
+```
+%?
+maybe
+```
+```
+%>
+many
+```
+```
+%<
+some
+```
+```
+%:
+all
+```
+```
+%^
+few
+```
+```
+%%
+size
+```
+## Chaining
+
+```
+1↓ / 2→
+```
+```
+@
+PEOPLE
+AN
+```
+```
+#
+OBJECTS
+OB
+```
+```
+!
+VALUE
+VE
+```
+```
+?
+MIND
+MO
+```
+```
+>
+ACTION
+AK
+```
+```
+<
+RELATION
+LI
+```
+```
+:
+TIME
+TI
+```
+```
+^
+SPACE
+SA
+```
+```
+%
+SCALE
+ME
+```
+
+###### Chaining combines multiple Two Talk primes to create a more nuanced meaning. A dot (.) joins one prime to the
+
+###### next - each addition narrows or intensifies the concept.
+
+#### @#
+
+```
+person
+```
+###### →
+
+```
+person
+```
+#### One prime, one root concept. =
+
+###### person
+
+```
+NOUN
+```
+#### @#
+
+```
+person
+```
+### ·
+
+#### !@
+
+```
+care
+```
+###### →
+
+```
+person+care
+```
+#### Add a qualifier to narrow the concept. =
+
+###### caregiver
+
+```
+NOUN
+```
+#### @#
+
+```
+person
+```
+### ·
+
+#### !@
+
+```
+care
+```
+### ·
+
+#### %!
+
+```
+extreme
+```
+###### →
+
+```
+person+care+extreme
+Each dot intensifies or specifies
+further.
+```
+#### =
+
+###### devoted
+
+```
+ADJECTIVE
+```
+#### #!
+
+```
+tool
+```
+###### →
+
+```
+tool
+```
+#### Any instrument or device. =
+
+###### tool
+
+```
+NOUN
+```
+#### #!
+
+```
+tool
+```
+### ·
+
+#### ?!
+
+```
+know
+```
+###### →
+
+```
+tool+know
+```
+#### A tool shaped by knowledge. =
+
+###### technique
+
+```
+NOUN
+```
+#### #!
+
+```
+tool
+```
+### ·
+
+#### ?!
+
+```
+know
+```
+### ·
+
+#### :<
+
+```
+past
+```
+###### →
+
+```
+tool+know+past
+```
+#### Ancient or obsolete method. =
+
+###### antiquated
+
+```
+ADJECTIVE
+```
+```
+Remember: each prime you add modifies the one before it - like adjectives stacking onto a noun. Stop when the concept is
+precise enough. The highlighted rows show the sharpest, most nuanced result for that chain.
+```
+```
+Literals: When expressing real data in notes, use numbers for amounts (e.g., 5 , 2.5), dates in YYYY-MM-DD format (e.g.,
+2025-04-14), times in 24-hour clock (e.g., 1430 ), and capitalized initials for names (e.g., BM for Barney Matthews).
+Order: Write left to right in order of meaning: who → what → work → when (e.g., @#.##.>!.:# = person + thing + do +
+now = “the person is doing the thing now”).
+Sentences: Each new line is a new sentence.
+Pronunciation: Each core symbol has a spoken name - @ (An), # (Ob),! (Ve),? (Mo), > (Ak), < (Li), : (Ti), ^
+(Sa), % (Me) - so Two Talk can be spoken aloud, not just written which can help with learning.
+```
+
+## 81 Prime Dictionary
+
+###### Search and explore all 81 semantic primes by symbol or meaning. Filter by category to see how concepts cluster -
+
+###### people, objects, values, mental states, and actions all organized by their symbol. Use this as your reference when
+
+###### composing notes.
+
+
+##### @@ self PERSON
+
+##### @# person PERSON
+
+##### @! I / me PERSON
+
+##### @? you PERSON
+
+##### @> someone PERSON
+
+##### @< young PERSON
+
+##### @: old PERSON
+
+##### @^ other PERSON
+
+##### @% group PERSON
+
+##### #@ body THING
+
+##### ## thing THING
+
+##### #! tool THING
+
+##### #? word THING
+
+##### #> output THING
+
+##### #< input THING
+
+##### #: material THING
+
+##### #^ this THING
+
+**SYMBOL MEANING CATEGORY**
+
+
+##### #% part THING
+
+##### !@ help VALUE
+
+##### !# purpose VALUE
+
+##### !! good VALUE
+
+##### !? need VALUE
+
+##### !> big VALUE
+
+##### !< small VALUE
+
+##### !: bad VALUE
+
+##### !^ true VALUE
+
+##### !% all VALUE
+
+##### ?@ feeling MIND
+
+##### ?# sense MIND
+
+##### ?! know MIND
+
+##### ?? fact MIND
+
+##### ?> listen MIND
+
+##### ?< think MIND
+
+##### ?: way MIND
+
+**SYMBOL MEANING CATEGORY**
+
+
+##### ?^ focus MIND
+
+##### ?% desire MIND
+
+##### >@ speech ACT
+
+##### ># move ACT
+
+##### >! action ACT
+
+##### >? ask ACT
+
+##### >> is ACT
+
+##### >< transfer ACT
+
+##### >: contact ACT
+
+##### >^ stay ACT
+
+##### >% act ACT
+
+##### <@ hold STRUCTURE
+
+##### <# type STRUCTURE
+
+##### <! not STRUCTURE
+
+##### <? because STRUCTURE
+
+##### <> same STRUCTURE
+
+##### << have STRUCTURE
+
+**SYMBOL MEANING CATEGORY**
+
+
+##### <: if STRUCTURE
+
+##### <^ with STRUCTURE
+
+##### <% can STRUCTURE
+
+##### :@ life CHRONIC
+
+##### :# now CHRONIC
+
+##### :! moment CHRONIC
+
+##### :? brief CHRONIC
+
+##### :> future CHRONIC
+
+##### :< past CHRONIC
+
+##### :: time CHRONIC
+
+##### :^ soon CHRONIC
+
+##### :% always CHRONIC
+
+##### ^@ here SPACE
+
+##### ^# side SPACE
+
+##### ^! above SPACE
+
+##### ^? inside SPACE
+
+##### ^> below SPACE
+
+**SYMBOL MEANING CATEGORY**
+
+
+##### ^< far SPACE
+
+##### ^: near SPACE
+
+##### ^^ space SPACE
+
+##### ^% distance SPACE
+
+##### %@ more SCALE
+
+##### %# less SCALE
+
+##### %! very SCALE
+
+##### %? maybe SCALE
+
+##### %> many SCALE
+
+##### %< some SCALE
+
+##### %: all SCALE
+
+##### %^ few SCALE
+
+##### %% size SCALE
 
 ## Examples
 
-- **Journal:** *Life is good right now.* → `:@ :! !!`
-- **PKM:** *Positive Thought* → `?>.!!`
-- **Todo:** *Review important notes before tomorrow.* → `?#.!! !> #> :< :>`
+###### Real-world examples of Two Talk in use. From meeting notes to system design, see how Two Talk captures nuance in
 
-## Core Symbols
+###### minimal space. Each example shows the symbol expression and its natural-language equivalent side-by-side.
 
-The entire Two Talk system is based on nine core symbols. Each symbol holds two distinct meanings depending on its structural position: as the **1st symbol (Subject)**, it defines the broad domain of experience; as the **2nd symbol (State)**, it applies a predictable, transformational modifier to that domain.
+```
+SYMBOL MEANING CATEGORY
+```
 
-| Symbol | 1st (Subject) | 2nd (State) |
-| :---: | :--- | :--- |
-| `@` | **People (Who)** | Self (Internal) |
-| `#` | **Object (What)** | Solid (Tangible) |
-| `!` | **Value (Good)** | Max (Extra) |
-| `?` | **Mind (Why)** | Hidden (Thought) |
-| `>` | **Action (Push)** | Outward (Giving) |
-| `<` | **Limit (Pull)** | Inward (Taking) |
-| `:` | **Time (When)** | Now (Next) |
-| `^` | **Space (Where)** | Here (Grounded) |
-| `%` | **Scale (Status)** | More (Multiplied) |
+###### Daily Note
 
-## Grammar Rules
+```
+Rapid capture in a personal journal
+```
+```
+ENGLISH
+```
+```
+I had a good conversation with my colleague
+about the project. It helped me understand the
+problem better.
+```
+```
+TWO TALK
+```
+```
+@!.>@.<^.@#.!!
+>#.?#.^^
+```
+```
+Explaination: @! (I/me), >@ (speak), <^ (with), @#
+(person), !! (good), >< (transfer), ?# (perceive).
+```
+###### Status Update
 
-1. **Order:** Who → What → Action (`@! #% >>` = I thing do)
-2. **Pairs:** Every pair reads left → right as Subject → State. (`?^` = focused mind = learn)
-3. **Modifiers:** `.` modifies the complete expression on its left. (`?>.!!` = good thought = decision)
-4. **Stacking:** Stacks always evaluate left → right. `A.B.C` = `((A.B).C)` (`#%.>^` = (thing.move) = vehicle; `?>.!!.:<` = ((think.good).past) = reflected decision)
-5. **Phrases:** Spaces separate complete semantic phrases. (`@! #> >>` = I note act)
-6. **Literals:** Use numbers for amounts (`123`), dates (`2026-05-16`), and times (`1430`). Use initials for names (`BM`).
-7. **Negation:** Use `<!` as a prefix pair, stacked with the verb using `.` (`<!.?!` = not want)
-8. **Sentence:** Use a newline `[Enter key]` to end a clause. (`@! #% >>` \n `@! ?!` = I thing do. I want.)
-9. **Precedence:** Parsing order is `.` → space → newline. (`?>.!! :<` = [decision] [past]; `?>.!!.:<` = reflected decision)
+```
+Quick communication about work progress
+```
+```
+ENGLISH
+```
+```
+The bug from yesterday is fixed now, but there's
+new work coming tomorrow.
+```
+```
+TWO TALK
+```
+```
+##.!:.:<.(!)
+%%.<:>.!%
+:>
+```
+```
+Explaination: ## (object), !: (bad/broken), :< (past), (!)
+(negated state), %> (many expansion).
+```
+###### Meeting Notes
 
-## Two Talk Dictionary
+```
+Capturing decisions and action items
+```
+```
+ENGLISH
+```
+```
+We need to decide on the feature by Friday.
+The team has good ideas but needs more time
+to think.
+```
+```
+TWO TALK
+```
+```
+@%.!?.:#
+##.!!
+::.%<.>:.!!
+?^.<%
+```
+```
+Explaination: @% (collective we), !? (need constraint),
+:# (now), %< (limited), :> (future window), ?^ (focus
+learn).
+```
+## Getting Started
 
-### 1. Semantic Primes
 
-| Two Talk | English / Meaning |
-| :---: | :--- |
-| `@@` | self / individual |
-| `@!` | i / me |
-| `@?` | you |
-| `@%` | we / people |
-| `@#` | person / human |
-| `@>` | child / offspring |
-| `@<` | parent / ancestor |
-| `@^` | neighbor / other |
-| `@:` | character / role |
-| `##` | object / thing |
-| `#@` | body |
-| `#!` | tool / asset |
-| `#?` | artifact / document |
-| `#>` | output / product |
-| `#<` | input / resource |
-| `#^` | site / structure |
-| `#:` | substance / matter |
-| `#%` | part / component |
-| `!!` | good / optimal |
-| `!@` | help / utility |
-| `!#` | use / function |
-| `!?` | need / critical |
-| `!>` | important / value |
-| `!<` | bad / sub-optimal |
-| `!:` | true / correct |
-| `!^` | change / modify |
-| `!%` | all / absolute |
-| `??` | know / knowledge |
-| `?@` | feel / emotion |
-| `?!` | want / desire |
-| `?#` | see / perceive |
-| `?>` | think / reason |
-| `?<` | remember / recall |
-| `?:` | guess / wonder |
-| `?^` | learn / focus |
-| `?%` | evaluate / judge |
-| `>>` | do / activity |
-| `>:` | say / speak |
-| `>#` | word / language |
-| `>!` | make / create |
-| `>?` | ask / query |
-| `>@` | touch / experience |
-| `><` | give / transfer |
-| `>^` | move / displace |
-| `>%` | happen / occur |
-| `<<` | kind / type |
-| `<@` | have / possess |
-| `<#` | contain / hold |
-| `<>` | same / parallel |
-| `<:` | cause / origin |
-| `<^` | with / joint |
-| `<%` | can / capacity |
-| `<?` | if / conditional |
-| `<!` | not / negation |
-| `::` | time / duration |
-| `:@` | life / era |
-| `:#` | moment / instant |
-| `:!` | now / current |
-| `:?` | when / interval |
-| `:>` | after / future |
-| `:<` | before / past |
-| `:^` | always / permanent |
-| `:%` | often / frequent |
-| `^^` | space / room |
-| `^@` | local / native |
-| `^#` | location / point |
-| `^!` | here / present |
-| `^?` | inside / interior |
-| `^>` | outside / exterior |
-| `^<` | between / intermediate |
-| `^:` | far / distant |
-| `^%` | near / close |
-| `%%` | amount / metric |
-| `%@` | many / numerous |
-| `%#` | some / limited |
-| `%!` | all / gross |
-| `%?` | few / scarce |
-| `%>` | big / macro |
-| `%<` | small / micro |
-| `%:` | more / increment |
-| `%^` | less / decrement |
+###### Learn Two Talk in four steps. Start with the symbols, build to 81 primes, then layer meaning through chaining. You'll
 
-### 2. Swadesh Stacked
+###### be capturing thoughts in your own symbolic language in no time.
 
-| English Word | Two Talk Combination |
-| :--- | :---: |
-| Above | `^.%>` |
-| All | `%!` |
-| Ash | `#:.!^` |
-| Back | `#@.:<` |
-| Below | `^.%<` |
-| Belly | `#@.^?` |
-| Bird | `@#.#^` |
-| Bite | `>>.#@` |
-| Black | `!.%>` |
-| Blood | `#@.#:` |
-| Blow | `>^.%>` |
-| Bone | `#@.#!` |
-| Breast | `#@.#<` |
-| Breathe | `>^.<#` |
-| Burn | `>>.!^` |
-| Cloud | `#^.#:` |
-| Come | `>^.^!` |
-| Day | `:.%<` |
-| Die | `@<.<:` |
-| Dog | `@#.!!` |
-| Drink | `#<.#:` |
-| Ear | `#@.?@` |
-| Eat | `#<.#@` |
-| Earth (soil) | `#:.^@` |
-| Egg | `#%.@>` |
-| Eye | `#@.?#` |
-| Fat | `#@.!!` |
-| Feather | `#@.#^` |
-| Fire | `#:.!^` |
-| Fish | `@#.#:` |
-| Fly | `>^.#^` |
-| Guts | `#@.^?` |
-| Give | `><` |
-| Hair | `#@.%@` |
-| Hand | `#@.>>` |
-| Hard | `#!` |
-| Head | `#@.%>` |
-| Hear | `?@` |
-| Heart | `#@.?%` |
-| Heavy | `%.%>` |
-| Here | `^!` |
-| Horn | `#@.#!` |
-| I | `@!` |
-| If | `<?.<:` |
-| Inside | `^?` |
-| Kill | `>>.<!` |
-| Knee | `#@.>^` |
-| Know | `??` |
-| Leaf | `#%.<#` |
-| Leg | `#@.>^` |
-| Lie | `>^.:<` |
-| Light | `%.%<` |
-| Liver | `#@.<#` |
-| Many | `%@` |
-| Moon | `#^.:#` |
-| Mountain | `^#.%>` |
-| Mouth | `#@.#<` |
-| Neck | `#@.<<` |
-| Nose | `#@.?@` |
-| Not | `<!` |
-| Smoke | `#^.#:` |
-| Sleep | `:@.<!` |
-| Small | `%<` |
-| Soft | `<!.#!` |
-| Some | `%#` |
-| Something | `#%` |
-| Stand | `>^.%>` |
-| Star | `#^.%?` |
-| Stone | `#:.#!` |
-| Sun | `#^.:!` |
-| Swim | `>^.#:` |
-| Sand | `#:.%<` |
-| Say | `>:` |
-| See | `?#` |
-| Sit | `>^.^#` |
-| Sky | `^^.%>` |
-| Tail | `#@.:>` |
-| That | `#<` |
-| Think | `?>` |
-| This | `#<` |
-| Tooth | `#@.#!` |
-| Tongue | `#@.>:` |
-| Tree | `#%.:@` |
-| True | `!:` |
-| Very | `%!` |
-| Walk | `>^.^!` |
-| Want | `?!` |
-| Water | `#:.<^` |
-| We | `@@` |
-| What | `##:?` |
-| When | `:?` |
-| Where | `^^` |
-| White | `!.%<` |
-| Who | `@?:?` |
-| Wing | `#@.>^` |
-| Words | `>#` |
-| Yellow | `!.#^` |
-| You | `@?` |
+###### 1 9 Matrix Symbols
 
-### 3. Domain Specific Vocabulary
+```
+Learn the base components representing primary
+domains of focus: @ #!? > < : ^ %
+```
+###### 2 81 Core Primes
 
-| Two Talk | English / Meaning | Category |
-| :---: | :--- | :--- |
-| `@!` | I / My / Me | Personal Pronouns |
-| `@?` | You | Personal Pronouns |
-| `@@` | We | Personal Pronouns |
-| `<^` | And / With | Particles & Conjunctions |
-| `><` | To / For / Give | Particles & Conjunctions |
-| `^?` | Of / In / On / At | Particles & Conjunctions |
-| `#%` | It / That / Item | Particles & Conjunctions |
-| `:<` | Was | Particles & Conjunctions |
-| `%!` | All | Quantifiers & Consensus |
-| `%!.%<` | Most | Quantifiers & Consensus |
-| `%@` | Many | Quantifiers & Consensus |
-| `%#.:>` | Several | Quantifiers & Consensus |
-| `%#` | Some | Quantifiers & Consensus |
-| `%?` | Few | Quantifiers & Consensus |
-| `::` | Time | Time Expressions |
-| `:!` | Now | Time Expressions |
-| `:!.#:` | Today / Daily | Time Expressions |
-| `:.%<` | Day | Time Expressions |
-| `::.#%` | Date | Time Expressions |
-| `:.<!` | Deadline | Time Expressions |
-| `:>` | Next | Time Expressions |
-| `??` | Know / Knowledge | Senses & Internal States |
-| `?>` | Think | Senses & Internal States |
-| `?%` | Feel | Senses & Internal States |
-| `?!` | Want | Senses & Internal States |
-| `!?` | Need | Senses & Internal States |
-| `?%.!!` | Love | Senses & Internal States |
-| `:@` | Life | Senses & Internal States |
-| `^^.@@` | Home | Senses & Internal States |
-| `!:` | Yeah / True | Senses & Internal States |
-| `>!` | Create / Make | Professional & Creative Actions |
-| `>!.%>` | Develop / Build | Professional & Creative Actions |
-| `>^.>^` | Launch / Publish | Professional & Creative Actions |
-| `>>.!^` | Rework / Edit | Professional & Creative Actions |
-| `>>.:<` | Plan / Design | Professional & Creative Actions |
-| `>>` | Action / Task | Professional & Creative Actions |
-| `>>.:!` | Start | Professional & Creative Actions |
-| `>>.:>` | Follow-up | Professional & Creative Actions |
-| `?^.?>` | Research / Analyze | Intellectual & Analytical |
-| `?>.!!` | Decide on / Decision | Intellectual & Analytical |
-| `><.!!` | Approved | Intellectual & Analytical |
-| `?#.!!` | Check / Review | Intellectual & Analytical |
-| `?#.<^` | Find / Search | Intellectual & Analytical |
-| `?>.:<` | Reflect | Intellectual & Analytical |
-| `>!.<^` | Synthesize | Intellectual & Analytical |
-| `>>.<^` | Collaborate with | Collaborative & Organizational |
-| `>>.<>` | Coordinate / Organise | Collaborative & Organizational |
-| `%!.^?` | Capture / Collect / Compile | Collaborative & Organizational |
-| `%#.<^` | Sort / Classify | Collaborative & Organizational |
-| `^?` | Gather | Collaborative & Organizational |
-| `^?.#` | Store / Archive | Collaborative & Organizational |
-| `<!.#` | Retrieve | Collaborative & Organizational |
-| `#>` | Information / Note | Knowledge Management & Artifacts |
-| `?!` | Idea | Knowledge Management & Artifacts |
-| `>#.:<` | Reference / Source / Agenda | Knowledge Management & Artifacts |
-| `<>.%!` | Graph | Knowledge Management & Artifacts |
-| `#>.#` | Tag | Knowledge Management & Artifacts |
-| `>>.%>` | Project | Knowledge Management & Artifacts |
-| `^?.>>` | Inbox | Knowledge Management & Artifacts |
-| `<>` | Connection / Link / Connect | Network & Links |
-| `<>.:<` | Backlink | Network & Links |
-| `>^.@@` | Share | Network & Links |
-| `>#.:!` | Email / Text / Mail | Communication & Admin |
-| `?@.>>` | Call | Communication & Admin |
-| `>^` | Send | Communication & Admin |
-| `>#.#` | Print | Communication & Admin |
-| `?#` | Read | Communication & Admin |
-| `::.>!` | Schedule | Communication & Admin |
-| `>:.%>` | Promote | Communication & Admin |
-| `^^.>>` | Meeting | Meeting & Collaboration Governance |
-| `@%.^^` | Attendees | Meeting & Collaboration Governance |
-| `>:.%@` | Discussion / Discuss | Meeting & Collaboration Governance |
-| `>:.%@.:<` | Discussed | Meeting & Collaboration Governance |
-| `>#.>!` | Motion | Meeting & Collaboration Governance |
-| `<>.>!` | Seconded | Meeting & Collaboration Governance |
-| `?%.%!` | Vote | Meeting & Collaboration Governance |
-| `<>.%!` | Unanimous | Meeting & Collaboration Governance |
-| `!>.<@` | Assigned | Meeting & Collaboration Governance |
-| `@!.<@` | Owner | Meeting & Collaboration Governance |
+```
+Two base symbols intersect to establish standard
+primes. #! (tool), @# (human).
+```
+###### 3 Chain with Dots
 
-## Resources & License
+```
+Connect root concepts to qualify thoughts on the fly:
+@#.>!.!!
+```
+###### 4 Log in Plaintext
 
-- Two Talk is a concise semantic shorthand for personal notation, not a spoken language. It prioritizes semantic compression over linguistic completeness.
-- **License:** MIT © 2026 Barney Matthews. Free to use, modify, and share.
-- **Links:** [Barney.me](https://barney.me) | [GitHub](https://github.com/barneyme/twotalk/) | [Reddit](https://old.reddit.com/r/twotalk) | [Why Two Talk](https://twotalk.org/why.html)
+```
+Deploy system shortcuts for quick notes, logs, or
+mapping knowledge.
+```
+###### These 25 primes cover the most common ideas you'll reach for - people, tools, actions, time, and basic states.
+
+###### Master these before expanding to the full 81.
+
+###### 1 @@
+
+```
+myself
+```
+###### 2 @#
+
+```
+person
+```
+###### 3 @!
+
+```
+I / me
+```
+###### 4 @?
+
+```
+you
+```
+###### 5 @%
+
+```
+group
+```
+###### 6 ##
+
+```
+thing
+```
+###### 7 #!
+
+```
+tool
+```
+###### 8 #?
+
+```
+word
+```
+###### 9 #@
+
+```
+body
+```
+###### 10 !!
+
+```
+good
+```
+###### 11 !:
+
+```
+bad
+```
+###### 12 !?
+
+```
+need
+```
+###### 13 !@
+
+```
+help
+```
+###### 14 ??
+
+```
+fact
+```
+###### 15 ?#
+
+```
+sense
+```
+###### 16 ?!
+
+```
+know
+```
+###### 17 ?^
+
+```
+focus
+```
+###### 18 >>
+
+```
+is
+```
+###### 19 >!
+
+```
+action
+```
+###### 20 >@
+
+```
+speech
+```
+###### 21 ><
+
+```
+transfer
+```
+###### 22 ::
+
+```
+time
+```
+###### 23 :<
+
+```
+past
+```
+###### 24 :>
+
+```
+future
+```
+###### 25 :#
+
+```
+now
+```
+```
+Two Talk was created by Barney Matthews
+```
+
