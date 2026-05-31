@@ -11,6 +11,7 @@
         />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Space+Mono:wght@400;700&family=Courier+Prime:wght@400;700&display=swap");
+
             :root {
                 --bg: #f5f4f0;
                 --surface: #ffffff;
@@ -25,17 +26,28 @@
                 --accent-hover: #f04a1a;
                 --accent-dim: #b33410;
                 --success: #3a8c3f;
-                --font-sans: "Atkinson Hyperlegible", sans-serif;
+                --font-sans: "Atkinson Hyperlegible", Georgia, serif;
                 --font-mono: "Space Mono", monospace;
+                --font-code: "Courier New", var(--font-mono), monospace;
+                --radius-sm: 4px;
+                --radius-md: 8px;
+                --radius-lg: 12px;
+                --font-xs: 0.75rem;
+                --font-sm: 0.85rem;
             }
-            * {
+
+            *,
+            *::before,
+            *::after {
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
             }
+
             html {
                 scroll-behavior: smooth;
             }
+
             body {
                 background-color: var(--bg);
                 background-image:
@@ -54,10 +66,42 @@
                 line-height: 1.6;
                 padding: 2rem 1rem;
             }
+
             .container {
                 max-width: 1100px;
                 margin: 0 auto;
             }
+
+            /* SHARED INLINE CODE */
+            code {
+                font-family: var(--font-code);
+                color: var(--accent);
+                background: var(--surface-card);
+                padding: 0.05rem 0.3rem;
+                border-radius: var(--radius-sm);
+            }
+
+            /* SHARED SURFACE BLOCKS */
+            .dictionary-block,
+            .quick-start-panel,
+            .matrix-calculator-wrapper {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-lg);
+                padding: 1.75rem;
+                margin-bottom: 2rem;
+            }
+
+            /* SHARED MONO LABEL STYLE */
+            .example-label,
+            .results-info,
+            .category-badge {
+                font-family: var(--font-mono);
+                font-size: var(--font-xs);
+                color: var(--text-muted);
+            }
+
+            /* FOOTER */
             .credits-footer {
                 text-align: center;
                 padding: 2rem 1rem;
@@ -66,16 +110,20 @@
                 border-top: 1px solid var(--border);
                 margin-top: 3rem;
             }
-            .credits-footer p {
-                margin: 0;
+            .credits-footer a {
+                color: var(--accent);
+                text-decoration: none;
+            }
+            .credits-footer a:hover {
+                text-decoration: underline;
             }
 
-            /* INTRO BLOCK */
+            /* HEADER */
             header {
                 background: var(--surface);
                 border: 1px solid var(--border);
                 padding: 2.25rem;
-                border-radius: 12px;
+                border-radius: var(--radius-lg);
                 margin-bottom: 2rem;
                 position: relative;
                 overflow: hidden;
@@ -113,7 +161,7 @@
                 margin-bottom: 1rem;
             }
             .hero-text {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 color: var(--text);
                 line-height: 1.6;
             }
@@ -121,7 +169,7 @@
                 color: var(--accent);
             }
 
-            /* SECTION TITLE */
+            /* SECTION TITLES */
             .section-title {
                 font-family: var(--font-mono);
                 font-size: 1.5rem;
@@ -132,13 +180,13 @@
             }
             .section-intro {
                 color: var(--text-muted);
-                font-size: 0.95rem;
+                font-size: 1.02rem;
                 margin-bottom: 1.5rem;
                 line-height: 1.7;
                 max-width: 850px;
             }
 
-            /* GRID LAYOUT FOR CORE 9 */
+            /* CORE 9 GRID */
             .grid-matrix {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -148,7 +196,7 @@
             .card {
                 background: var(--surface);
                 border: 1px solid var(--border);
-                border-radius: 8px;
+                border-radius: var(--radius-md);
                 padding: 1rem;
                 transition: all 0.2s;
             }
@@ -157,7 +205,7 @@
                 background: var(--surface-card);
             }
             .card-title {
-                font-family: "Courier New", var(--font-mono), monospace;
+                font-family: var(--font-code);
                 font-size: 1.15rem;
                 font-weight: bold;
                 margin-bottom: 0.25rem;
@@ -165,18 +213,19 @@
                 word-break: break-word;
             }
             .card-meta {
-                font-size: 0.85rem;
+                font-size: var(--font-sm);
                 color: var(--text-muted);
                 line-height: 1.4;
             }
+            .card-pronounce {
+                font-size: var(--font-xs);
+                color: var(--text-dim);
+                font-style: italic;
+                margin-top: 0.2rem;
+            }
 
-            /* 9x9 MATRIX GRID BLOCK */
+            /* 9x9 MATRIX */
             .matrix-calculator-wrapper {
-                background: var(--surface);
-                border: 1px solid var(--border);
-                border-radius: 12px;
-                padding: 1.25rem;
-                margin-bottom: 2rem;
                 overflow-x: auto;
             }
             .matrix-table {
@@ -224,12 +273,6 @@
                 margin-top: 0.1rem;
                 letter-spacing: 0.3px;
             }
-            .card-pronounce {
-                font-size: 0.75rem;
-                color: var(--text-dim);
-                font-style: italic;
-                margin-top: 0.2rem;
-            }
             .matrix-table td.matrix-row-label {
                 background: var(--surface-light);
                 color: var(--accent);
@@ -237,7 +280,7 @@
                 font-weight: bold;
                 font-size: 0.9rem;
                 text-align: left;
-                padding: 0.5rem 0.5rem !important;
+                padding: 0.5rem !important;
             }
             .matrix-table .matrix-cell {
                 font-family: var(--font-mono);
@@ -253,8 +296,8 @@
                 color: var(--accent);
                 font-weight: bold;
                 display: block;
-                font-size: 0.85rem;
-                font-family: "Courier New", var(--font-mono), monospace;
+                font-size: var(--font-sm);
+                font-family: var(--font-code);
                 word-break: break-word;
             }
             .matrix-table .cell-mean {
@@ -267,14 +310,7 @@
                 max-width: 95px;
             }
 
-            /* SEARCH & DICTIONARY BLOCK */
-            .dictionary-block {
-                background: var(--surface);
-                border: 1px solid var(--border);
-                border-radius: 12px;
-                padding: 1.75rem;
-                margin-bottom: 2rem;
-            }
+            /* SEARCH & DICTIONARY */
             .search-container {
                 display: flex;
                 justify-content: space-between;
@@ -293,7 +329,7 @@
                 border: 2px solid var(--border);
                 color: var(--text);
                 padding: 0.75rem 1rem;
-                border-radius: 8px;
+                border-radius: var(--radius-md);
                 font-family: var(--font-sans);
                 font-size: 0.95rem;
                 transition: border-color 0.2s;
@@ -313,10 +349,10 @@
                 background: var(--surface-light);
                 border: 1px solid var(--border);
                 color: var(--text-muted);
-                border-radius: 6px;
+                border-radius: var(--radius-sm);
                 cursor: pointer;
                 font-family: var(--font-mono);
-                font-size: 0.85rem;
+                font-size: var(--font-sm);
                 transition: all 0.2s;
             }
             .search-tab:hover {
@@ -331,22 +367,18 @@
 
             /* TABLES */
             .results-info {
-                color: var(--text-dim);
-                font-size: 0.85rem;
                 margin-bottom: 0.75rem;
-                font-family: var(--font-mono);
             }
             .table-wrapper {
                 max-height: 500px;
                 overflow-y: auto;
                 border: 1px solid var(--border);
-                border-radius: 8px;
+                border-radius: var(--radius-md);
             }
             table {
                 width: 100%;
                 border-collapse: collapse;
                 background: var(--bg);
-                overflow: hidden;
             }
             th,
             td {
@@ -359,7 +391,7 @@
                 font-family: var(--font-mono);
                 color: var(--accent);
                 font-weight: bold;
-                font-size: 0.85rem;
+                font-size: var(--font-sm);
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
                 position: sticky;
@@ -373,7 +405,7 @@
                 background: var(--surface-card);
             }
             .symbol-cell {
-                font-family: "Courier New", var(--font-mono), monospace;
+                font-family: var(--font-code);
                 color: var(--accent);
                 font-weight: bold;
                 font-size: 1.05rem;
@@ -388,11 +420,8 @@
                 display: inline-block;
                 background: var(--surface-light);
                 border: 1px solid var(--border-accent);
-                color: var(--text-muted);
                 padding: 0.2rem 0.6rem;
-                border-radius: 4px;
-                font-size: 0.7rem;
-                font-family: var(--font-mono);
+                border-radius: var(--radius-sm);
                 font-weight: bold;
             }
             .no-results {
@@ -427,7 +456,7 @@
             }
             .example-header p {
                 color: var(--text-muted);
-                font-size: 0.85rem;
+                font-size: var(--font-sm);
             }
             .example-body {
                 padding: 1.25rem;
@@ -439,9 +468,6 @@
                 margin-bottom: 0;
             }
             .example-label {
-                font-family: var(--font-mono);
-                color: var(--text-dim);
-                font-size: 0.75rem;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-bottom: 0.25rem;
@@ -449,7 +475,7 @@
             .example-text {
                 background: var(--surface-card);
                 padding: 0.75rem 1rem;
-                border-radius: 6px;
+                border-radius: var(--radius-sm);
                 color: var(--text);
                 border-left: 3px solid var(--accent);
                 font-size: 0.9rem;
@@ -466,17 +492,13 @@
                 color: var(--text-muted);
                 padding: 0.75rem;
                 background: var(--surface-card);
-                border-radius: 4px;
+                border-radius: var(--radius-sm);
                 margin-top: 0.75rem;
                 line-height: 1.4;
             }
 
-            /* MOVED & TITLED GETTING STARTED PANEL */
+            /* GETTING STARTED */
             .quick-start-panel {
-                background: var(--surface);
-                border: 1px solid var(--border);
-                border-radius: 12px;
-                padding: 1.75rem;
                 width: 100%;
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -515,7 +537,7 @@
                 margin-top: 0.15rem;
             }
             .quick-step p {
-                font-size: 0.85rem;
+                font-size: var(--font-sm);
                 color: var(--text-muted);
                 line-height: 1.4;
             }
@@ -525,20 +547,15 @@
                 font-size: 0.95rem;
                 margin-bottom: 0.25rem;
             }
-            .quick-step code {
-                font-family: var(--font-mono);
-                color: var(--accent);
-                background: var(--surface-card);
-                padding: 0.05rem 0.3rem;
-                border-radius: 4px;
-            }
+
+            /* LITERALS / RULES NOTE */
             .literals-note {
                 background: var(--surface-light);
                 border: 1px solid var(--border);
-                border-radius: 8px;
+                border-radius: var(--radius-md);
                 padding: 1rem 1.25rem;
                 margin: 1.5rem 0 2rem 0;
-                font-size: 0.85rem;
+                font-size: var(--font-sm);
                 color: var(--text-muted);
                 line-height: 1.6;
             }
@@ -546,20 +563,13 @@
                 color: var(--accent);
                 font-weight: 700;
             }
-            .literals-note code {
-                font-family: var(--font-mono);
-                color: var(--accent);
-                background: var(--surface-card);
-                padding: 0.05rem 0.3rem;
-                border-radius: 4px;
-            }
 
-            /* CHAINING SECTION */
+            /* CHAINING */
             .chaining-build {
                 display: flex;
                 flex-direction: column;
                 gap: 0.75rem;
-                margin: 2rem 0 2rem 0;
+                margin: 2rem 0;
             }
             .chain-row {
                 display: grid;
@@ -572,11 +582,11 @@
                 padding: 1rem 1.25rem;
                 transition: border-color 0.2s;
             }
-            .chain-row:hover {
+            .chain-row:hover,
+            .chain-row.chain-row--highlight {
                 border-color: var(--accent);
             }
             .chain-row.chain-row--highlight {
-                border-color: var(--accent);
                 background: var(--surface-light);
             }
             @media (max-width: 700px) {
@@ -602,13 +612,9 @@
                 gap: 0.1rem;
             }
             .chain-prime code {
-                font-family: "Courier New", var(--font-mono), monospace;
                 font-size: 1.1rem;
                 font-weight: bold;
-                color: var(--accent);
-                background: var(--surface-light);
                 padding: 0.2rem 0.45rem;
-                border-radius: 4px;
                 letter-spacing: 0.5px;
             }
             .chain-prime .prime-gloss {
@@ -649,7 +655,7 @@
                 gap: 0.3rem;
                 margin-bottom: 0.3rem;
                 font-family: var(--font-mono);
-                font-size: 0.75rem;
+                font-size: var(--font-xs);
                 color: var(--text-dim);
             }
             .chain-breakdown .gloss-plus {
@@ -680,7 +686,7 @@
             .chaining-rule {
                 background: var(--surface-light);
                 border-left: 3px solid var(--accent);
-                border-radius: 0 6px 6px 0;
+                border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
                 padding: 0.75rem 1rem;
                 font-size: 0.82rem;
                 color: var(--text-muted);
@@ -690,14 +696,8 @@
             .chaining-rule strong {
                 color: var(--accent);
             }
-            .explanation {
-                color: var(--text-dim);
-                font-size: 0.8rem;
-                line-height: 1.5;
-                margin-top: 0.5rem;
-            }
 
-            /* ACTIONS / PRINT BUTTON CONTAINER */
+            /* PRINT BUTTON */
             .action-container {
                 display: flex;
                 justify-content: center;
@@ -711,7 +711,7 @@
                 font-family: var(--font-mono);
                 font-size: 1rem;
                 font-weight: bold;
-                border-radius: 8px;
+                border-radius: var(--radius-md);
                 cursor: pointer;
                 transition: all 0.2s ease-in-out;
                 display: flex;
@@ -728,33 +728,17 @@
                 transform: translateY(1px);
             }
 
-            /* PRINT OPTIMIZATION CSS */
+            /* PRINT */
             @media print {
-                body {
-                    background: #fff !important;
+                * {
                     color: #000 !important;
-                    padding: 0 !important;
-                }
-                .container {
-                    max-width: 100% !important;
-                    width: 100% !important;
-                }
-                header,
-                .dictionary-block,
-                .example-card,
-                .card,
-                .quick-start-panel,
-                .matrix-calculator-wrapper {
                     background: #fff !important;
-                    color: #000 !important;
-                    border: 1px solid #ccc !important;
                     box-shadow: none !important;
-                    page-break-inside: avoid;
                 }
-                header::before,
                 .search-container,
                 .action-container,
-                .results-info {
+                .results-info,
+                header::before {
                     display: none !important;
                 }
                 .table-wrapper,
@@ -762,62 +746,34 @@
                     max-height: none !important;
                     overflow: visible !important;
                 }
-                table,
-                .matrix-table {
-                    background: #fff !important;
+                .container {
+                    max-width: 100% !important;
+                    width: 100% !important;
                 }
-                .matrix-table th,
-                .matrix-table td {
-                    border: 1px solid #000 !important;
-                    color: #000 !important;
+                th {
+                    background: #f0f0f0 !important;
+                    border-bottom: 2px solid #000 !important;
+                }
+                td {
+                    border-bottom: 1px solid #eee !important;
                 }
                 .matrix-table th,
                 .matrix-table td.matrix-row-label {
                     background: #f0f0f0 !important;
                 }
-                .matrix-table .matrix-cell {
-                    background: #fff !important;
-                }
-                th {
-                    background: #f0f0f0 !important;
-                    color: #000 !important;
-                    border-bottom: 2px solid #000 !important;
-                }
-                td {
-                    border-bottom: 1px solid #eee !important;
-                    color: #000 !important;
-                }
-                .symbol-cell,
-                h1,
-                h2,
-                h4,
-                .card-title,
-                .quick-step code,
-                .example-text.code,
-                .matrix-table .cell-sym {
-                    color: #000 !important;
-                    font-weight: bold !important;
-                }
-                .text-muted,
-                .text-dim,
-                .card-meta,
-                .example-label,
-                .quick-step p,
-                .matrix-table .cell-mean {
-                    color: #444 !important;
-                }
-                .category-badge {
-                    background: #fff !important;
-                    border: 1px solid #777 !important;
-                    color: #000 !important;
-                }
-                .example-text {
-                    border-left: 3px solid #000 !important;
-                    background: #fdfdfd !important;
+                .matrix-table th,
+                .matrix-table td {
+                    border: 1px solid #000 !important;
                 }
                 .step-num {
                     background: #000 !important;
                     color: #fff !important;
+                }
+                .example-text {
+                    border-left: 3px solid #000 !important;
+                }
+                * {
+                    page-break-inside: avoid;
                 }
             }
         </style>
@@ -827,32 +783,36 @@
             <header>
                 <div class="hero-main">
                     <h1>Two Talk</h1>
-                    <p class="tagline">CONCISE SEMANTIC NOTATION.</p>
+                    <p class="tagline">WRITE LESS, MEAN MORE.</p>
                     <p class="hero-text">
-                        Two Talk is built on three simple ideas:
-                        <strong>9 core symbols</strong> combine into
-                        <strong>81 semantic primes</strong>, which
-                        <strong>chain together</strong> with dots to create
-                        unlimited meaning. Think of it as Markdown for clear and
-                        compressed thought or Toki Pona for precise and concise
-                        notation. Two Talk is a microlanguage for capturing
-                        ideas with speed and clarity in cross-platform,
-                        plaintext form. Instead of sentences, Two Talk uses
-                        symbols to compress meaning in a way that is fast to
-                        write, easy to scan, and flexible across contexts.
-                        Designed for quick note-taking, knowledge mapping, and
-                        everyday thinking, it trades the weight of words for the
-                        clarity of symbols.
+                        Two Talk is a
+                        <strong>semantic shorthand for notes</strong> - minimal,
+                        plaintext, and natively searchable. Built on three
+                        simple ideas: <strong>9 core symbols</strong> paired to
+                        create <strong>81 semantic primes</strong>, which
+                        <strong>chain together</strong> with dots to express
+                        unlimited meaning. It trades the weight of words for the
+                        clarity of symbols - designed for fast note-taking,
+                        knowledge mapping, and everyday thinking across any
+                        platform, any editor, any device.
                     </p>
                 </div>
             </header>
-
+            <div class="literals-note">
+                <p>
+                    <strong>Why Two Talk?</strong> Most notes are too long to
+                    scan, tied to one app, and too unstructured to search. Two
+                    Talk solves all three - it's compact enough to write fast,
+                    plaintext enough to live anywhere, and structured enough to
+                    <code>grep</code>. No app required. No vendor lock-in. Just
+                    a system you carry in your head and write on any keyboard.
+                </p>
+            </div>
             <h2 class="section-title">9 Core Symbols</h2>
             <p class="section-intro">
                 Each symbol represents a fundamental domain of meaning. These
                 are the building blocks - when combined in pairs, they create
-                the full semantic vocabulary. Think of them as the nine
-                dimensions through which all ideas flow.
+                the full semantic vocabulary.
             </p>
             <div class="grid-matrix" id="coreSymbolsGrid"></div>
 
@@ -860,9 +820,7 @@
             <p class="section-intro">
                 The matrix shows every possible two-symbol combination and its
                 meaning. Read the left column to understand what the first
-                symbol signifies, the top row for the second. This is where the
-                magic happens - two simple signs become a precise semantic
-                prime.
+                symbol signifies, the top row for the second.
             </p>
             <div class="matrix-calculator-wrapper">
                 <table class="matrix-table" id="matrixGridTable"></table>
@@ -875,9 +833,7 @@
                 addition narrows or intensifies the concept.
             </p>
 
-            <!-- Chaining build-up: each row = one prime added, one richer word produced -->
             <div class="chaining-build">
-                <!-- Row 1: single prime -->
                 <div class="chain-row">
                     <div class="chain-symbols">
                         <div class="chain-prime">
@@ -899,7 +855,6 @@
                     </div>
                 </div>
 
-                <!-- Row 2: + !@ (care/protect) -->
                 <div class="chain-row">
                     <div class="chain-symbols">
                         <div class="chain-prime">
@@ -909,7 +864,7 @@
                         <span class="chain-dot">·</span>
                         <div class="chain-prime">
                             <code>!@</code>
-                            <span class="prime-gloss">care</span>
+                            <span class="prime-gloss">help</span>
                         </div>
                     </div>
                     <div class="chain-arrow">→</div>
@@ -917,7 +872,7 @@
                         <div class="gloss-parts">
                             <span>person</span>
                             <span class="gloss-plus">+</span>
-                            <span>care</span>
+                            <span>help</span>
                         </div>
                         Add a qualifier to narrow the concept.
                     </div>
@@ -928,7 +883,6 @@
                     </div>
                 </div>
 
-                <!-- Row 3: + %! (very/extreme) -->
                 <div class="chain-row chain-row--highlight">
                     <div class="chain-symbols">
                         <div class="chain-prime">
@@ -938,12 +892,12 @@
                         <span class="chain-dot">·</span>
                         <div class="chain-prime">
                             <code>!@</code>
-                            <span class="prime-gloss">care</span>
+                            <span class="prime-gloss">help</span>
                         </div>
                         <span class="chain-dot">·</span>
                         <div class="chain-prime">
                             <code>%!</code>
-                            <span class="prime-gloss">extreme</span>
+                            <span class="prime-gloss">very</span>
                         </div>
                     </div>
                     <div class="chain-arrow">→</div>
@@ -951,9 +905,9 @@
                         <div class="gloss-parts">
                             <span>person</span>
                             <span class="gloss-plus">+</span>
-                            <span>care</span>
+                            <span>help</span>
                             <span class="gloss-plus">+</span>
-                            <span>extreme</span>
+                            <span>very</span>
                         </div>
                         Each dot intensifies or specifies further.
                     </div>
@@ -965,7 +919,6 @@
                 </div>
             </div>
 
-            <!-- Second set: different domain to show variety -->
             <div class="chaining-build">
                 <div class="chain-row">
                     <div class="chain-symbols">
@@ -1055,45 +1008,69 @@
             <div class="chaining-rule">
                 <strong>Remember:</strong> each prime you add modifies the one
                 before it - like adjectives stacking onto a noun. Stop when the
-                concept is precise enough. The highlighted rows show the
-                sharpest, most nuanced result for that chain.
+                concept is precise enough.
             </div>
 
             <div class="literals-note">
                 <p>
-                    <strong>Literals:</strong> When expressing real data in
-                    notes, use numbers for amounts (e.g., <code>5</code>,
-                    <code>2.5</code>), dates in YYYY-MM-DD format (e.g.,
-                    <code>2025-04-14</code>), times in 24-hour clock (e.g.,
-                    <code>1430</code>), and capitalized initials for names
-                    (e.g., <code>BM</code> for Barney Matthews).
-                </p>
-                <p>
-                    <strong>Order:</strong> Write left to right in order of
-                    meaning: who → what → work → when (e.g.,
-                    <code>@#.##.>!.:#</code> = person + thing + do + now = “the
-                    person is doing the thing now”).
+                    <strong>Order:</strong> Write left to right: who → what →
+                    when. e.g. <code>@!.&gt;@.@?.:#</code> = I spoke to you just
+                    now.
                 </p>
                 <p>
                     <strong>Sentences:</strong> Each new line is a new sentence.
                 </p>
                 <p>
+                    <strong>Negation:</strong> Prefix anything with
+                    <code>&lt;!</code> to negate it. e.g.
+                    <code>&lt;!.&gt;!</code> = not doing,
+                    <code>&lt;!.@!.&gt;:.@%.:&gt;</code> = I will not contact
+                    the group. Think of <code>&lt;!</code> as a minus sign
+                    before the concept it cancels.
+                </p>
+                <p>
+                    <strong>Questions:</strong> Start a line with
+                    <code>&gt;?</code>
+                    to mark it as an open question. e.g.
+                    <code>&gt;?.@%.LG.&gt;^.:#</code> = is legal still waiting?
+                </p>
+                <p>
+                    <strong>Tense:</strong> <code>:&lt;</code> = past,
+                    <code>:&gt;</code> = future, <code>:#</code> = now. For
+                    ongoing or continuous actions, chain <code>::</code> (time)
+                    with your prime — e.g. <code>&gt;!.::</code> = action
+                    ongoing. Drop tense entirely when it's clear from context.
+                </p>
+                <p>
+                    <strong>Literals:</strong> Use numbers for amounts (e.g.,
+                    <code>5</code>), dates in YYYY-MM-DD format (e.g.,
+                    <code>2025-04-14</code>), times in 24-hour clock (e.g.,
+                    <code>1430</code>), and capitalised initials for names and
+                    teams (e.g., <code>BM</code>, <code>LG</code>).
+                </p>
+                <p>
+                    <strong>Comments:</strong> Use <code>//</code> to add a
+                    natural language note inline. Useful when a concept is too
+                    specific to encode or needs context for a future reader.
+                    e.g.
+                    <code
+                        >@#.JN.!:.># // flagged vendor contract as high
+                        risk</code
+                    >
+                </p>
+                <p>
                     <strong>Pronunciation:</strong> Each core symbol has a
-                    spoken name - <code>@</code> (An), <code>#</code> (Ob),
+                    spoken name — <code>@</code> (An), <code>#</code> (Ob),
                     <code>!</code> (Ve), <code>?</code> (Mo),
-                    <code>></code> (Ak), <code><</code> (Li),
+                    <code>&gt;</code> (Ak), <code>&lt;</code> (Li),
                     <code>:</code> (Ti), <code>^</code> (Sa),
-                    <code>%</code> (Me) - so Two Talk can be spoken aloud, not
-                    just written which can help with learning.
+                    <code>%</code> (Me).
                 </p>
             </div>
 
             <h2 class="section-title">81 Prime Dictionary</h2>
             <p class="section-intro">
                 Search and explore all 81 semantic primes by symbol or meaning.
-                Filter by category to see how concepts cluster - people,
-                objects, values, mental states, and actions all organized by
-                their symbol. Use this as your reference when composing notes.
             </p>
             <div class="dictionary-block">
                 <div class="search-container">
@@ -1151,102 +1128,120 @@
             </div>
 
             <h2 class="section-title">Examples</h2>
-            <p class="section-intro">
-                Real-world examples of Two Talk in use. From meeting notes to
-                system design, see how Two Talk captures nuance in minimal
-                space. Each example shows the symbol expression and its
-                natural-language equivalent side-by-side.
-            </p>
             <div class="examples-grid">
                 <div class="example-card">
                     <div class="example-header">
-                        <h4>Daily Note</h4>
-                        <p>Rapid capture in a personal journal</p>
+                        <h4>Meeting Note</h4>
+                        <p>Capturing key points during a security review</p>
                     </div>
                     <div class="example-body">
                         <div class="example-row">
                             <div class="example-label">English</div>
                             <div class="example-text">
-                                I had a good conversation with my colleague
-                                about the project. It helped me understand the
-                                problem better.
+                                Security review meeting. Team raised concerns
+                                about access controls. Need to follow up.
                             </div>
                         </div>
                         <div class="example-row">
                             <div class="example-label">Two Talk</div>
                             <div class="example-text code">
-                                @!.>@.<^.@#.!!<br />>#.<?<br />?#.^^
+                                @%.&gt;@.??.:&lt;<br />
+                                @%.!:.^?.:&lt;<br />
+                                @!.!?.&gt;:.@%.:&gt;
                             </div>
                         </div>
                         <div class="example-breakdown">
-                            <strong>Explaination:</strong> @! (I/me), >@
-                            (speak), <^ (with), @# (person), !! (good), ><
-                            (transfer), ?# (perceive).
+                            <strong>Line 1:</strong> <code>@%</code> (group)
+                            <code>&gt;@</code> (speech) <code>??</code> (fact)
+                            <code>:&lt;</code> (past) - group spoke about
+                            facts<br />
+                            <strong>Line 2:</strong> <code>@%</code> (group)
+                            <code>!:</code> (bad) <code>^?</code> (inside)
+                            <code>:&lt;</code> (past) - team flagged internal
+                            problems<br />
+                            <strong>Line 3:</strong> <code>@!</code> (I)
+                            <code>!?</code> (need) <code>&gt;:</code> (contact)
+                            <code>@%</code> (group) <code>:&gt;</code> (future)
+                            - I need to follow up
                         </div>
                     </div>
                 </div>
 
                 <div class="example-card">
                     <div class="example-header">
-                        <h4>Status Update</h4>
-                        <p>Quick communication about work progress</p>
+                        <h4>Action Item</h4>
+                        <p>
+                            Logging a high-priority task from a security review
+                        </p>
                     </div>
                     <div class="example-body">
                         <div class="example-row">
                             <div class="example-label">English</div>
                             <div class="example-text">
-                                The bug from yesterday is fixed now, but there's
-                                new work coming tomorrow.
+                                Patch the firewall tool before end of week. High
+                                priority.
                             </div>
                         </div>
                         <div class="example-row">
                             <div class="example-label">Two Talk</div>
                             <div class="example-text code">
-                                ##.!:.:<.(!)<br />%%.<:>.!%<br />:>
+                                #!.&gt;!.:&lt;.:&gt;<br />
+                                !&gt;.!?
                             </div>
                         </div>
                         <div class="example-breakdown">
-                            <strong>Explaination:</strong> ## (object), !:
-                            (bad/broken), :< (past), (!) (negated state), %>
-                            (many expansion).
+                            <strong>Line 1:</strong> <code>#!</code> (tool)
+                            <code>&gt;!</code> (action)
+                            <code>:&lt;</code> (overdue)
+                            <code>:&gt;</code> (future deadline) - tool needs
+                            actioning before deadline<br />
+                            <strong>Line 2:</strong> <code>!&gt;</code> (big)
+                            <code>!?</code> (need) - high priority
                         </div>
                     </div>
                 </div>
 
                 <div class="example-card">
                     <div class="example-header">
-                        <h4>Meeting Notes</h4>
-                        <p>Capturing decisions and action items</p>
+                        <h4>Memory Jogger</h4>
+                        <p>
+                            Quick capture of a vendor risk flag and pending
+                            response
+                        </p>
                     </div>
                     <div class="example-body">
                         <div class="example-row">
                             <div class="example-label">English</div>
                             <div class="example-text">
-                                We need to decide on the feature by Friday. The
-                                team has good ideas but needs more time to
-                                think.
+                                John flagged a vendor risk. Waiting on legal.
                             </div>
                         </div>
                         <div class="example-row">
                             <div class="example-label">Two Talk</div>
                             <div class="example-text code">
-                                @%.!?.:#<br />##.!!<br />::.%<.>:.!!<br />?^.<%
+                                @#.JN.&gt;@.##.!:<br />
+                                @%.LG.&gt;^.:#
                             </div>
                         </div>
                         <div class="example-breakdown">
-                            <strong>Explaination:</strong> @% (collective we),
-                            !? (need constraint), :# (now), %< (limited), :>
-                            (future window), ?^ (focus learn).
+                            <strong>Line 1:</strong> <code>@#</code> (person)
+                            <code>JN</code> (John) <code>&gt;@</code> (speech)
+                            <code>##</code> (thing) <code>!:</code> (bad) - John
+                            flagged something bad<br />
+                            <strong>Line 2:</strong> <code>@%</code> (group)
+                            <code>LG</code> (legal) <code>&gt;^</code> (stay)
+                            <code>:#</code> (now) - legal still pending<br />
+                            <strong>Tip:</strong> Use capitalised initials like
+                            <code>JN</code> and <code>LG</code> for names and
+                            teams - they stand out visually and grep cleanly.
                         </div>
                     </div>
                 </div>
             </div>
-
             <h2 class="section-title">Getting Started</h2>
             <p class="section-intro">
                 Learn Two Talk in four steps. Start with the symbols, build to
-                81 primes, then layer meaning through chaining. You'll be
-                capturing thoughts in your own symbolic language in no time.
+                81 primes, then layer meaning through chaining.
             </p>
             <div class="quick-start-panel">
                 <div class="quick-step">
@@ -1254,7 +1249,7 @@
                     <p>
                         <strong>9 Matrix Symbols</strong>Learn the base
                         components representing primary domains of focus:
-                        <code>@ # ! ? > &lt; : ^ %</code>
+                        <code>@ # ! ? &gt; &lt; : ^ %</code>
                     </p>
                 </div>
                 <div class="quick-step">
@@ -1269,14 +1264,15 @@
                     <span class="step-num">3</span>
                     <p>
                         <strong>Chain with Dots</strong>Connect root concepts to
-                        qualify thoughts on the fly: <code>@#.>!.!!</code>
+                        qualify thoughts on the fly: <code>@#.&gt;!.!!</code>
                     </p>
                 </div>
                 <div class="quick-step">
                     <span class="step-num">4</span>
                     <p>
-                        <strong>Log in Plaintext</strong>Deploy system shortcuts
-                        for quick notes, logs, or mapping knowledge.
+                        <strong>Start Writing</strong>One line per thought, left
+                        to right: who → what → when. e.g.
+                        <code>@!.&gt;@.@?.:#</code> = I spoke to you just now.
                     </p>
                 </div>
             </div>
@@ -1293,7 +1289,7 @@
                 <div class="quick-step">
                     <span class="step-num">1</span>
                     <p>
-                        <strong><code>@@</code></strong> myself
+                        <strong><code>@@</code></strong> self
                     </p>
                 </div>
                 <div class="quick-step">
@@ -1441,6 +1437,7 @@
                     </p>
                 </div>
             </div>
+
             <div class="action-container">
                 <button class="btn-print" onclick="window.print()">
                     <svg
@@ -1469,7 +1466,16 @@
         </div>
 
         <footer class="credits-footer">
-            <p>Two Talk was created by Barney Matthews</p>
+            <p>
+                Credit:
+                <a href="https://barney.me" target="_blank">Barney Matthews</a>.
+                <a href="https://github.com/barneyme/twotalk" target="_blank"
+                    >Github</a
+                >.
+                <a href="https://old.reddit.com/r/twotalk/" target="_blank"
+                    >Reddit</a
+                >. <a href="mailto:barneym@duck.com">Contact</a>.
+            </p>
         </footer>
 
         <script>
@@ -1615,6 +1621,485 @@
                 { symbol: "%^", meaning: "few", cat: "SCALE" },
                 { symbol: "%%", meaning: "size", cat: "SCALE" },
             ];
+            // Keep your existing semanticPrimes array for Tier 1 (Atomic Roots)
+
+            // Tier 2: English Vocabulary Mappings (Compound Recipes)
+            const compoundDictionary = [
+                { w: "able", c: "<%" },
+                { w: "about", c: "?:" },
+                { w: "above", c: "^!" },
+                { w: "across", c: "^%" },
+                { w: "act", c: ">%" },
+                { w: "add", c: "%@.>!" },
+                { w: "after", c: ":>" },
+                { w: "again", c: "%@.::" },
+                { w: "against", c: "<!" },
+                { w: "age", c: "::" },
+                { w: "ago", c: ":<" },
+                { w: "air", c: "##" },
+                { w: "all", c: "!%" },
+                { w: "almost", c: "%<.<!" },
+                { w: "alone", c: "@@" },
+                { w: "along", c: "<^" },
+                { w: "already", c: ":<" },
+                { w: "also", c: "<>" },
+                { w: "although", c: "<:" },
+                { w: "always", c: "%:" },
+                { w: "am", c: ">>" },
+                { w: "among", c: "^?" },
+                { w: "animal", c: ":@.##" },
+                { w: "answer", c: ">@.<?" },
+                { w: "appear", c: "?#" },
+                { w: "area", c: "^^" },
+                { w: "around", c: "^^" },
+                { w: "ask", c: ">?" },
+                { w: "at", c: "^@" },
+                { w: "away", c: "^<" },
+                { w: "back", c: "^#" },
+                { w: "be", c: ">>" },
+                { w: "became", c: ">>.:<" },
+                { w: "because", c: "<?" },
+                { w: "become", c: ">>.:>" },
+                { w: "been", c: ">>.:<" },
+                { w: "before", c: ":<" },
+                { w: "began", c: ">!.:<" },
+                { w: "behind", c: "^#" },
+                { w: "being", c: ":@" },
+                { w: "believe", c: "?<.!^" },
+                { w: "below", c: "^>" },
+                { w: "best", c: "!!.%!" },
+                { w: "better", c: "!!.%@" },
+                { w: "between", c: "^#" },
+                { w: "big", c: "!>" },
+                { w: "bird", c: ":@.##" },
+                { w: "book", c: "##.#?" },
+                { w: "both", c: "%:" },
+                { w: "brought", c: "><.:<" },
+                { w: "build", c: ">!.##" },
+                { w: "built", c: ">!.##.:<" },
+                { w: "bus", c: "#!" },
+                { w: "business", c: ">!" },
+                { w: "but", c: "<!" },
+                { w: "buy", c: "><" },
+                { w: "by", c: "^:" },
+                { w: "call", c: ">@" },
+                { w: "came", c: ">>.:<" },
+                { w: "can", c: "<%" },
+                { w: "cannot", c: "<!.<%" },
+                { w: "car", c: "#!" },
+                { w: "care", c: "?@" },
+                { w: "carry", c: "<@" },
+                { w: "case", c: "##" },
+                { w: "cat", c: ":@.##" },
+                { w: "cause", c: "<?" },
+                { w: "center", c: "^?" },
+                { w: "certain", c: "!^" },
+                { w: "change", c: ">#" },
+                { w: "check", c: "?<" },
+                { w: "child", c: "@<" },
+                { w: "children", c: "@%.@<" },
+                { w: "city", c: "^^.%@" },
+                { w: "class", c: "<#" },
+                { w: "close", c: "^:" },
+                { w: "cold", c: "!:.?:" },
+                { w: "come", c: ">#" },
+                { w: "common", c: "<>" },
+                { w: "company", c: "@%" },
+                { w: "complete", c: "!%" },
+                { w: "could", c: "<%.:<" },
+                { w: "country", c: "^^" },
+                { w: "course", c: "?:" },
+                { w: "cut", c: ">!" },
+                { w: "dark", c: "##" },
+                { w: "day", c: "::" },
+                { w: "decide", c: "!?" },
+                { w: "decision", c: "!?" },
+                { w: "deep", c: "^>" },
+                { w: "did", c: ">!.:<" },
+                { w: "differ", c: "@^" },
+                { w: "different", c: "@^" },
+                { w: "do", c: ">!" },
+                { w: "does", c: ">!" },
+                { w: "dog", c: ":@.##" },
+                { w: "done", c: ">!.:<" },
+                { w: "don't", c: "<!.>!" },
+                { w: "door", c: "#<" },
+                { w: "down", c: "^>" },
+                { w: "draw", c: ">!" },
+                { w: "drive", c: ">#" },
+                { w: "dry", c: "##" },
+                { w: "during", c: "::" },
+                { w: "each", c: "!%" },
+                { w: "early", c: ":^" },
+                { w: "earth", c: "##" },
+                { w: "east", c: "^#" },
+                { w: "easy", c: "!!.<%" },
+                { w: "eat", c: ">!" },
+                { w: "end", c: ":<" },
+                { w: "enough", c: "!%" },
+                { w: "even", c: "<>" },
+                { w: "ever", c: "%:" },
+                { w: "every", c: "!%" },
+                { w: "everything", c: "##.!%" },
+                { w: "example", c: "<#" },
+                { w: "face", c: "#@" },
+                { w: "fact", c: "??" },
+                { w: "fall", c: "^>" },
+                { w: "family", c: "@%" },
+                { w: "far", c: "^<" },
+                { w: "fast", c: "%!.:" },
+                { w: "father", c: "@#" },
+                { w: "feel", c: "?@" },
+                { w: "feet", c: "#@" },
+                { w: "few", c: "%^" },
+                { w: "field", c: "^^" },
+                { w: "figure", c: "##" },
+                { w: "fill", c: "%@" },
+                { w: "find", c: "?#" },
+                { w: "fine", c: "!!" },
+                { w: "finger", c: "#@" },
+                { w: "fire", c: "##" },
+                { w: "first", c: "1" },
+                { w: "fish", c: ":@.##" },
+                { w: "five", c: "5" },
+                { w: "floor", c: "^>" },
+                { w: "fly", c: ">#" },
+                { w: "follow", c: ":>" },
+                { w: "food", c: "##" },
+                { w: "foot", c: "#@" },
+                { w: "for", c: "!#" },
+                { w: "force", c: ">!" },
+                { w: "form", c: "<#" },
+                { w: "found", c: "?#.:<" },
+                { w: "four", c: "4" },
+                { w: "free", c: "<%" },
+                { w: "friend", c: "@#" },
+                { w: "from", c: ":<" },
+                { w: "front", c: "^>" },
+                { w: "full", c: "!%" },
+                { w: "funny", c: "!!" },
+                { w: "game", c: ">%" },
+                { w: "garden", c: "^^" },
+                { w: "gave", c: "><.:<" },
+                { w: "general", c: "!%" },
+                { w: "get", c: "<<" },
+                { w: "girl", c: "@<" },
+                { w: "give", c: "><" },
+                { w: "given", c: "><.:<" },
+                { w: "go", c: ">#" },
+                { w: "gold", c: "#:" },
+                { w: "gone", c: ">>.:<" },
+                { w: "good", c: "!!" },
+                { w: "got", c: "<<.:<" },
+                { w: "government", c: "@%" },
+                { w: "great", c: "!>.%!" },
+                { w: "green", c: "##" },
+                { w: "ground", c: "##" },
+                { w: "grow", c: "%@" },
+                { w: "had", c: "<<.:<" },
+                { w: "half", c: "#%" },
+                { w: "hand", c: "#@" },
+                { w: "happen", c: ">!" },
+                { w: "hard", c: "!:" },
+                { w: "has", c: "<<" },
+                { w: "have", c: "<<" },
+                { w: "he", c: "@#" },
+                { w: "head", c: "#@" },
+                { w: "hear", c: "?>" },
+                { w: "heard", c: "?>.:<" },
+                { w: "heat", c: "##" },
+                { w: "heavy", c: "%!" },
+                { w: "help", c: "!@" },
+                { w: "her", c: "@#" },
+                { w: "here", c: "^@" },
+                { w: "high", c: "^!" },
+                { w: "him", c: "@#" },
+                { w: "himself", c: "@@" },
+                { w: "his", c: "@#" },
+                { w: "history", c: ":<" },
+                { w: "hold", c: "<@" },
+                { w: "home", c: "^^" },
+                { w: "hope", c: "?%" },
+                { w: "horse", c: ":@.##" },
+                { w: "hot", c: "##" },
+                { w: "hour", c: "::" },
+                { w: "house", c: "##" },
+                { w: "how", c: "?:" },
+                { w: "however", c: "<!" },
+                { w: "hundred", c: "100" },
+                { w: "i", c: "@!" },
+                { w: "idea", c: "?<" },
+                { w: "if", c: "<:" },
+                { w: "important", c: "!!" },
+                { w: "in", c: "^?" },
+                { w: "include", c: "<@" },
+                { w: "into", c: "^?" },
+                { w: "is", c: ">>" },
+                { w: "it", c: "##" },
+                { w: "its", c: "##" },
+                { w: "itself", c: "@@" },
+                { w: "job", c: ">!" },
+                { w: "just", c: "!^" },
+                { w: "keep", c: "<@" },
+                { w: "kind", c: "<#" },
+                { w: "knew", c: "?!.:<" },
+                { w: "know", c: "?!" },
+                { w: "land", c: "##" },
+                { w: "language", c: "#?" },
+                { w: "large", c: "!>" },
+                { w: "last", c: ":<" },
+                { w: "late", c: ":<" },
+                { w: "later", c: ":>" },
+                { w: "laugh", c: ">@" },
+                { w: "lay", c: ">^" },
+                { w: "lead", c: ">!" },
+                { w: "learn", c: "?!" },
+                { w: "least", c: "%#" },
+                { w: "leave", c: ">#" },
+                { w: "left", c: "^#" },
+                { w: "less", c: "%#" },
+                { w: "let", c: "<%" },
+                { w: "letter", c: "#?" },
+                { w: "life", c: ":@" },
+                { w: "light", c: "##" },
+                { w: "like", c: "<>" },
+                { w: "line", c: "#?" },
+                { w: "list", c: "##" },
+                { w: "listen", c: "?>" },
+                { w: "little", c: "!<" },
+                { w: "live", c: ":@" },
+                { w: "long", c: "::" },
+                { w: "look", c: "?#" },
+                { w: "lost", c: "<!" },
+                { w: "lot", c: "%>" },
+                { w: "love", c: "?@" },
+                { w: "low", c: "^>" },
+                { w: "machine", c: "#!" },
+                { w: "made", c: ">!.##.:<" },
+                { w: "make", c: ">!.##" },
+                { w: "man", c: "@#" },
+                { w: "many", c: "%>" },
+                { w: "map", c: "##" },
+                { w: "mark", c: "#?" },
+                { w: "may", c: "<%" },
+                { w: "maybe", c: "%?" },
+                { w: "mean", c: ">@" },
+                { w: "measure", c: "%%" },
+                { w: "meet", c: ">:" },
+                { w: "men", c: "@%" },
+                { w: "might", c: "<%" },
+                { w: "mile", c: "^%" },
+                { w: "million", c: "1000000" },
+                { w: "mind", c: "?" },
+                { w: "minute", c: ":!" },
+                { w: "miss", c: "<!" },
+                { w: "money", c: "#:" },
+                { w: "month", c: "::" },
+                { w: "more", c: "%@" },
+                { w: "morning", c: ":^" },
+                { w: "most", c: "%!" },
+                { w: "mother", c: "@#" },
+                { w: "mountain", c: "^^" },
+                { w: "move", c: ">#" },
+                { w: "much", c: "%>" },
+                { w: "music", c: "#?" },
+                { w: "must", c: "!?" },
+                { w: "my", c: "@!" },
+                { w: "name", c: "#?" },
+                { w: "national", c: "^^" },
+                { w: "near", c: "^:" },
+                { w: "need", c: "!?" },
+                { w: "never", c: "<!.%:" },
+                { w: "new", c: ":^" },
+                { w: "next", c: ":>" },
+                { w: "night", c: ":<" },
+                { w: "no", c: "<!" },
+                { w: "north", c: "^#" },
+                { w: "not", c: "<!" },
+                { w: "nothing", c: "##.<!" },
+                { w: "notice", c: "?#" },
+                { w: "now", c: ":#" },
+                { w: "number", c: "%" },
+                { w: "off", c: "<!" },
+                { w: "office", c: "^^" },
+                { w: "often", c: "%>" },
+                { w: "old", c: "@:" },
+                { w: "on", c: "^!" },
+                { w: "once", c: "1" },
+                { w: "one", c: "1" },
+                { w: "only", c: "1" },
+                { w: "open", c: "<>" },
+                { w: "or", c: "%?" },
+                { w: "order", c: "?:" },
+                { w: "other", c: "@^" },
+                { w: "others", c: "@%" },
+                { w: "our", c: "@%" },
+                { w: "out", c: "#>" },
+                { w: "outside", c: "#>" },
+                { w: "over", c: "^!" },
+                { w: "own", c: "<<" },
+                { w: "page", c: "##" },
+                { w: "paper", c: "##" },
+                { w: "part", c: "#%" },
+                { w: "party", c: "@%" },
+                { w: "pass", c: ">#" },
+                { w: "past", c: ":<" },
+                { w: "pay", c: "><" },
+                { w: "people", c: "@" },
+                { w: "person", c: "@#" },
+                { w: "picture", c: "##" },
+                { w: "place", c: "^^" },
+                { w: "plant", c: "##" },
+                { w: "play", c: ">%" },
+                { w: "point", c: "^@" },
+                { w: "position", c: "^^" },
+                { w: "possible", c: "<%" },
+                { w: "power", c: "!>" },
+                { w: "probably", c: "%?" },
+                { w: "problem", c: "!:" },
+                { w: "put", c: ">#" },
+                { w: "question", c: ">?" },
+                { w: "quick", c: ":?" },
+                { w: "quickly", c: ":?" },
+                { w: "quite", c: "%!" },
+                { w: "rain", c: "##" },
+                { w: "read", c: "?>" },
+                { w: "ready", c: "<%" },
+                { w: "real", c: "!^" },
+                { w: "really", c: "%!" },
+                { w: "reason", c: "<?" },
+                { w: "receive", c: "#<" },
+                { w: "remember", c: "?!" },
+                { w: "right", c: "!!" },
+                { w: "river", c: "##" },
+                { w: "road", c: "^^" },
+                { w: "room", c: "^^" },
+                { w: "round", c: "%%" },
+                { w: "run", c: ">#" },
+                { w: "said", c: ">@.:<" },
+                { w: "same", c: "<>" },
+                { w: "saw", c: "?#.:<" },
+                { w: "say", c: ">@" },
+                { w: "school", c: "^^" },
+                { w: "sea", c: "##" },
+                { w: "second", c: "2" },
+                { w: "see", c: "?#" },
+                { w: "seem", c: ">>" },
+                { w: "seen", c: "?#.:<" },
+                { w: "self", c: "@@" },
+                { w: "sentence", c: "#?" },
+                { w: "set", c: ">#" },
+                { w: "several", c: "%<" },
+                { w: "shall", c: ":>" },
+                { w: "she", c: "@#" },
+                { w: "should", c: "!?" },
+                { w: "show", c: "?>" },
+                { w: "side", c: "^#" },
+                { w: "since", c: "<?" },
+                { w: "small", c: "!<" },
+                { w: "so", c: "%!" },
+                { w: "some", c: "%<" },
+                { w: "someone", c: "@>" },
+                { w: "something", c: "##" },
+                { w: "sometimes", c: "%<" },
+                { w: "son", c: "@<" },
+                { w: "song", c: "#?" },
+                { w: "soon", c: ":^" },
+                { w: "sound", c: "?#" },
+                { w: "spell", c: "#?" },
+                { w: "stand", c: ">^" },
+                { w: "start", c: ">!" },
+                { w: "state", c: ">>" },
+                { w: "stay", c: ">^" },
+                { w: "step", c: ">#" },
+                { w: "still", c: ">^" },
+                { w: "stop", c: "<!.>#" },
+                { w: "story", c: "#?" },
+                { w: "street", c: "^^" },
+                { w: "study", c: "?!" },
+                { w: "such", c: "<>" },
+                { w: "sun", c: "##" },
+                { w: "sure", c: "!^" },
+                { w: "take", c: "<@" },
+                { w: "talk", c: ">@" },
+                { w: "tell", c: ">@" },
+                { w: "than", c: "<" },
+                { w: "that", c: "#^" },
+                { w: "their", c: "@%" },
+                { w: "them", c: "@%" },
+                { w: "themselves", c: "@@" },
+                { w: "then", c: ":>" },
+                { w: "there", c: "^^" },
+                { w: "these", c: "#^" },
+                { w: "they", c: "@%" },
+                { w: "thing", c: "##" },
+                { w: "think", c: "?<" },
+                { w: "third", c: "3" },
+                { w: "this", c: "#^" },
+                { w: "those", c: "#^" },
+                { w: "though", c: "<!" },
+                { w: "thought", c: "?<" },
+                { w: "thousand", c: "1000" },
+                { w: "three", c: "3" },
+                { w: "through", c: "^?" },
+                { w: "time", c: "::" },
+                { w: "to", c: ":>" },
+                { w: "together", c: "<^" },
+                { w: "told", c: ">@.:<" },
+                { w: "too", c: "%!" },
+                { w: "took", c: "<@.:<" },
+                { w: "town", c: "^^" },
+                { w: "tree", c: "##" },
+                { w: "turn", c: ">#" },
+                { w: "two", c: "2" },
+                { w: "under", c: "^>" },
+                { w: "until", c: ":>" },
+                { w: "up", c: "^!" },
+                { w: "upon", c: "^!" },
+                { w: "us", c: "@%" },
+                { w: "use", c: "#!" },
+                { w: "usually", c: "%:" },
+                { w: "very", c: "%!" },
+                { w: "voice", c: "?#" },
+                { w: "wait", c: ">^" },
+                { w: "walk", c: ">#" },
+                { w: "want", c: "?%" },
+                { w: "warm", c: "!!" },
+                { w: "was", c: ">>.:<" },
+                { w: "watch", c: "?#" },
+                { w: "water", c: "##" },
+                { w: "way", c: "?:" },
+                { w: "we", c: "@%" },
+                { w: "well", c: "!!" },
+                { w: "went", c: ">>.:<" },
+                { w: "were", c: ">>.:<" },
+                { w: "what", c: "#" },
+                { w: "when", c: ":" },
+                { w: "where", c: "^" },
+                { w: "whether", c: "%?" },
+                { w: "which", c: "#^" },
+                { w: "while", c: "::" },
+                { w: "who", c: "@" },
+                { w: "whole", c: "!%" },
+                { w: "why", c: ">?" },
+                { w: "will", c: ":>" },
+                { w: "wind", c: "##" },
+                { w: "with", c: "<^" },
+                { w: "within", c: "^?" },
+                { w: "without", c: "<!.<^" },
+                { w: "word", c: "#?" },
+                { w: "work", c: ">!" },
+                { w: "world", c: "^^" },
+                { w: "would", c: "<%" },
+                { w: "write", c: ">!" },
+                { w: "written", c: ">!.:<" },
+                { w: "year", c: "::" },
+                { w: "yes", c: "!^" },
+                { w: "yet", c: "<!" },
+                { w: "you", c: "@?" },
+                { w: "young", c: "@<" },
+                { w: "your", c: "@?" },
+            ];
 
             let currentFilter = "all";
 
@@ -1630,7 +2115,6 @@
             }
 
             function initializeSystem() {
-                // Safely build 9x9 layout table
                 generate9x9Matrix();
 
                 const grid = document.getElementById("coreSymbolsGrid");
@@ -1667,7 +2151,6 @@
                 const table = document.getElementById("matrixGridTable");
                 const tokens = ["@", "#", "!", "?", ">", "<", ":", "^", "%"];
 
-                // Meanings for each token - split into first and second meanings
                 const tokenMeanings = {
                     "@": { first: "people", second: "who", pronounce: "An" },
                     "#": { first: "objects", second: "what", pronounce: "Ob" },
@@ -1688,7 +2171,6 @@
                     "%": { first: "scale", second: "amount", pronounce: "Me" },
                 };
 
-                // Build Table Header (top row - shows FIRST meaning)
                 let html = `<thead><tr><th class="matrix-header-node">1↓ / 2→</th>`;
                 tokens.forEach((t) => {
                     html += `<th>
@@ -1699,7 +2181,6 @@
                 });
                 html += `</tr></thead><tbody>`;
 
-                // Build Data Rows (left column - shows SECOND meaning)
                 tokens.forEach((rowToken) => {
                     html += `<tr>
                         <td class="matrix-row-label">
@@ -1713,7 +2194,6 @@
                             (p) => p.symbol === targetSymbol,
                         );
 
-                        // Extract first primary word before any slashes for the compact matrix preview
                         let displayMeaning = "-";
                         let fullMeaning = "-";
                         if (primeMatch) {
@@ -1741,38 +2221,106 @@
                     .getElementById("searchInput")
                     .value.toLowerCase()
                     .trim();
-                let filtered = semanticPrimes.filter((item) => {
-                    const matchesSearch =
-                        searchTerm === "" ||
-                        item.symbol.toLowerCase().includes(searchTerm) ||
-                        item.meaning.toLowerCase().includes(searchTerm);
-                    const matchesFilter =
-                        currentFilter === "all" || item.cat === currentFilter;
-                    return matchesSearch && matchesFilter;
-                });
-
                 const resultsBody = document.getElementById("resultsBody");
                 const noResults = document.getElementById("noResults");
                 const resultsInfo = document.getElementById("resultsInfo");
 
                 resultsBody.innerHTML = "";
 
-                if (filtered.length === 0) {
+                // Rule A: If searching by exact symbol or category tabs, query Tier 1 (Primes)
+                if (
+                    searchTerm === "" ||
+                    searchTerm.startsWith("@") ||
+                    searchTerm.startsWith("#") ||
+                    searchTerm.startsWith("!") ||
+                    searchTerm.startsWith("?") ||
+                    searchTerm.startsWith(">") ||
+                    searchTerm.startsWith("<") ||
+                    searchTerm.startsWith(":") ||
+                    searchTerm.startsWith("^") ||
+                    searchTerm.startsWith("%") ||
+                    currentFilter !== "all"
+                ) {
+                    let filtered = semanticPrimes.filter((item) => {
+                        const matchesSearch =
+                            searchTerm === "" ||
+                            item.symbol.toLowerCase().includes(searchTerm) ||
+                            item.meaning.toLowerCase().includes(searchTerm);
+                        const matchesFilter =
+                            currentFilter === "all" ||
+                            item.cat === currentFilter;
+                        return matchesSearch && matchesFilter;
+                    });
+
+                    renderTable(filtered, "PRIME");
+                }
+                // Rule B: If typing an English keyword that matches a compound recipe, show Tier 2
+                else {
+                    let filteredCompounds = compoundDictionary.filter((item) =>
+                        item.w.includes(searchTerm),
+                    );
+
+                    if (filteredCompounds.length === 0) {
+                        noResults.style.display = "block";
+                        resultsInfo.textContent = "";
+                    } else {
+                        noResults.style.display = "none";
+                        resultsInfo.textContent = `Found ${filteredCompounds.length} vocabulary shortcut${filteredCompounds.length !== 1 ? "s" : ""}`;
+
+                        filteredCompounds.forEach((item) => {
+                            const row = document.createElement("tr");
+
+                            // Break down the dots on the fly to explain the pieces to the user
+                            const parts = item.c.split(".");
+                            const explanation = parts
+                                .map((p) => {
+                                    const match = semanticPrimes.find(
+                                        (prime) => prime.symbol === p,
+                                    );
+                                    return match ? match.meaning : p;
+                                })
+                                .join(" + ");
+
+                            row.innerHTML = `
+                                <td class="symbol-cell">${escapeHtml(item.c)}</td>
+                                <td class="meaning-cell">
+                                    <strong>${escapeHtml(item.w)}</strong>
+                                    <span style="display:block; font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono)">
+                                        (${escapeHtml(explanation)})
+                                    </span>
+                                </td>
+                                <td><span class="category-badge" style="background:var(--accent); color:#fff; border:none">COMPOUND</span></td>
+                            `;
+                            resultsBody.appendChild(row);
+                        });
+                    }
+                }
+            }
+
+            // Quick helper to handle base rendering
+            function renderTable(data, type) {
+                const resultsBody = document.getElementById("resultsBody");
+                const noResults = document.getElementById("noResults");
+                const resultsInfo = document.getElementById("resultsInfo");
+
+                if (data.length === 0) {
                     noResults.style.display = "block";
                     resultsInfo.textContent = "";
-                } else {
-                    noResults.style.display = "none";
-                    resultsInfo.textContent = `Showing ${filtered.length} root relation${filtered.length !== 1 ? "s" : ""}`;
-                    filtered.forEach((item) => {
-                        const row = document.createElement("tr");
-                        row.innerHTML = `
-                            <td class="symbol-cell">${escapeHtml(item.symbol)}</td>
-                            <td class="meaning-cell">${escapeHtml(item.meaning)}</td>
-                            <td><span class="category-badge">${escapeHtml(item.cat)}</span></td>
-                        `;
-                        resultsBody.appendChild(row);
-                    });
+                    return;
                 }
+
+                noResults.style.display = "none";
+                resultsInfo.textContent = `Showing ${data.length} root relation${data.length !== 1 ? "s" : ""}`;
+
+                data.forEach((item) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td class="symbol-cell">${escapeHtml(item.symbol)}</td>
+                        <td class="meaning-cell">${escapeHtml(item.meaning)}</td>
+                        <td><span class="category-badge">${escapeHtml(item.cat)}</span></td>
+                    `;
+                    resultsBody.appendChild(row);
+                });
             }
 
             window.addEventListener("DOMContentLoaded", initializeSystem);
