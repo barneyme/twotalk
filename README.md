@@ -1,552 +1,570 @@
-```
-Why Two Talk? Most notes are too long to scan, tied to one app, and too unstructured to search. Two Talk solves all three
-```
-- it's compact enough to write fast, plaintext enough to live anywhere, and structured enough to grep. No app required.
-No vendor lock-in. Just a system you carry in your head and write on any keyboard.
+###### Why Two Talk? Most notes are too long to scan, tied to one app, and too unstructured to search. Two Talk solves all three - it's
+
+###### compact enough to write fast, plaintext enough to live anywhere, and structured enough to grep. No app required. No vendor
+
+###### lock-in. Just a deterministic system you carry in your head and write on any keyboard.
 
 ## 9 Core Symbols
 
-##### Each symbol represents a fundamental domain of meaning. These are the building blocks - when combined
+#### Each symbol represents a distinct dimensional domain of meaning. These are the fundamental structural elements
 
-##### in pairs, they create the full semantic vocabulary.
-
-# Two Talk
-
-##### WRITE LESS, MEAN MORE.
-
-##### Two Talk is a semantic shorthand for notes - minimal, plaintext, and natively searchable. Built on
-
-##### three simple ideas: 9 core symbols paired to create 81 semantic primes , which chain together
-
-##### with dots to express unlimited meaning. It trades the weight of words for the clarity of symbols -
-
-##### designed for fast note-taking, knowledge mapping, and everyday thinking across any platform, any
-
-##### editor, any device.
-
+#### — when combined in pairs, they build the predictable semantic vocabulary.
 
 ### @
 
+###### Human
+
+###### Personal / Mind / Self- / Identity
+
 ```
-people / who
-people
 An
 ```
 ### #
 
+###### Object
+
+###### Physical / Tangible / Matter / Structure
+
 ```
-objects / what
-objects
 Ob
 ```
 ### !
 
+###### Force
+
+###### Intense / Energy / State / Crisis
+
 ```
-value / quality
-value
 Ve
 ```
 ### ?
 
+###### Idea
+
+###### Mental / Fact / Data / Logic
+
 ```
-mind / thought
-mind
 Mo
 ```
 ### >
 
+###### Out
+
+###### Forward / Active / Delivery / Send
+
 ```
-action / outward
-action
 Ak
 ```
 ### <
 
+###### In
+
+###### Backward / Inverse / Receive /
+
+###### Contain
+
 ```
-relation / limit / inward
-relation
 Li
 ```
 ### :
 
+###### Time
+
+###### Sudden / Event / Duration / Phase
+
 ```
-time / when
-time
 Ti
 ```
 ### ^
 
+###### Place
+
+###### Local / Spatial / Room / System
+
 ```
-space / where
-space
 Sa
 ```
 ### %
 
+###### Scale
+
+###### Multiplied / Shared / Crowd / Ratio /
+
+###### Total
+
 ```
-scale / amount
-scale
 Me
 ```
+# Two Talk
+
+##### WRITE LESS, MEAN MORE.
+
+##### Two Talk is a semantic shorthand for notes - minimal, plaintext, and natively searchable. Built on three
+
+##### simple structural concepts: 9 core symbols paired to create 81 semantic primes , which chain together
+
+##### with dots to narrow down unlimited operational meaning. It trades the weight of lexical rules for the clarity
+
+##### of symbols - designed for fast note-taking, knowledge mapping, and systematic thinking across any
+
+##### platform, any editor, any device.
+
+
 ## 9 x 9 Matrix
 
-##### The matrix shows every possible two-symbol combination and its meaning. Read the left column to
+#### The matrix shows every possible two-symbol intersection and its logical derivation. Read the left column to parse
 
-##### understand what the first symbol signifies, the top row for the second.
+#### what the first symbol signifies as a modifier/row, and the top row for the base component/column.
 
+#### @
 
-###### @
+###### @@
 
 ```
-who
-An
-```
-```
-@@
 self
 ```
+###### @#
+
 ```
-@#
 person
 ```
-```
-@!
-I
-```
-```
-@?
-you
-```
-```
-@>
-someone
-```
-```
-@<
-young
-```
-```
-@:
-old
-```
-```
-@^
-other
-```
-```
-@%
-group
-```
-###### #
+###### @!
 
 ```
-what
-Ob
+emotion
 ```
+###### @?
+
 ```
-#@
-body
+identity
 ```
+###### @>
+
 ```
-##
-thing
+expression
 ```
+###### @<
+
 ```
-#!
+impression
+```
+###### @:
+
+```
+age
+```
+###### @^
+
+```
+presence
+```
+###### @%
+
+```
+status
+```
+#### #
+
+###### #@
+
+```
+organism
+```
+###### ##
+
+```
+substance
+```
+###### #!
+
+```
 tool
 ```
+###### #?
+
 ```
-#?
-word
+sign
 ```
+###### #>
+
 ```
-#>
-output
+product
 ```
+###### #<
+
 ```
-#<
-input
+resource
 ```
+###### #:
+
 ```
-#:
-material
+wear
 ```
+###### #^
+
 ```
-#^
-this
+structure
 ```
+###### #%
+
 ```
-#%
 part
 ```
-###### !
+#### !
+
+###### !@
 
 ```
-quality
-Ve
+motive
 ```
-```
-!@
-help
-```
-```
-!#
-purpose
-```
-```
-!!
-good
-```
-```
-!?
-need
-```
-```
-!>
-big
-```
-```
-!<
-small
-```
-```
-!:
-bad
-```
-```
-!^
-true
-```
-```
-!%
-all
-```
-###### ?
+###### !#
 
 ```
-thought
-Mo
+utility
 ```
+###### !!
+
 ```
-?@
-feeling
+perfect
 ```
+###### !?
+
 ```
-?#
-sense
+priority
 ```
+###### !>
+
 ```
-?!
-know
+acceleration
 ```
+###### !<
+
 ```
-??
+resistance
+```
+###### !:
+
+```
+crisis
+```
+###### !^
+
+```
+stability
+```
+###### !%
+
+```
+peak
+```
+#### ?
+
+###### ?@
+
+```
+opinion
+```
+###### ?#
+
+```
 fact
 ```
-```
-?>
-listen
-```
-```
-?<
-think
-```
-```
-?:
-way
-```
-```
-?^
-focus
-```
-```
-?%
-desire
-```
-###### >
+###### ?!
 
 ```
-outward
-Ak
+knowledge
 ```
+###### ??
+
 ```
->@
+truth
+```
+###### ?>
+
+```
+signal
+```
+###### ?<
+
+```
+query
+```
+###### ?:
+
+```
+history
+```
+###### ?^
+
+```
+context
+```
+###### ?%
+
+```
+metric
+```
+#### >
+
+###### >@
+
+```
 speech
 ```
-```
->#
-move
-```
-```
->!
-action
-```
-```
->?
-ask
-```
-```
->>
-is
-```
-```
-><
-transfer
-```
-```
->:
-contact
-```
-```
->^
-stay
-```
-```
->%
-act
-```
-###### <
+###### >#
 
 ```
-limit
-Li
+production
 ```
-```
-<@
-hold
-```
-```
-<#
-type
-```
-```
-<!
-not
-```
-```
-<?
-because
-```
-```
-<>
-same
-```
-```
-<<
-have
-```
-```
-<:
-if
-```
-```
-<^
-with
-```
-```
-<%
-can
-```
-###### :
+###### >!
 
 ```
-when
-Ti
+execution
 ```
+###### >?
+
 ```
-:@
-life
+instruction
 ```
+###### >>
+
 ```
-:#
-now
+progression
 ```
+###### ><
+
 ```
-:!
-moment
+exchange
 ```
+###### >:
+
 ```
-:?
-brief
+delivery
 ```
+###### >^
+
 ```
-:>
+departure
+```
+###### >%
+
+```
+expansion
+```
+#### <
+
+###### <@
+
+```
+perception
+```
+###### <#
+
+```
+consumption
+```
+###### <!
+
+```
+negation
+```
+###### <?
+
+```
+analysis
+```
+###### <>
+
+```
+convergence
+```
+###### <<
+
+```
+possession
+```
+###### <:
+
+```
+origin
+```
+###### <^
+
+```
+arrival
+```
+###### <%
+
+```
+reduction
+```
+#### :
+
+###### :@
+
+```
+generation
+```
+###### :#
+
+```
+event
+```
+###### :!
+
+```
+climax
+```
+###### :?
+
+```
+schedule
+```
+###### :>
+
+```
 future
 ```
+###### :<
+
 ```
-:<
 past
 ```
-```
-::
-time
-```
-```
-:^
-soon
-```
-```
-:%
-always
-```
-###### ^
+###### ::
 
 ```
-where
-Sa
+duration
 ```
-```
-^@
-here
-```
-```
-^#
-side
-```
-```
-^!
-above
-```
-```
-^?
-inside
-```
-```
-^>
-below
-```
-```
-^<
-far
-```
-```
-^:
-near
-```
-```
-^^
-space
-```
-```
-^%
-distance
-```
-###### %
+###### :^
 
 ```
-amount
-Me
+interval
 ```
+###### :%
+
 ```
-%@
-more
+frequency
 ```
+#### ^
+
+###### ^@
+
 ```
-%#
-less
+community
 ```
+###### ^#
+
 ```
-%!
-very
+environment
 ```
+###### ^!
+
 ```
-%?
-maybe
+peak
 ```
+###### ^?
+
 ```
-%>
-many
+system
 ```
+###### ^>
+
 ```
-%<
-some
+range
 ```
+###### ^<
+
 ```
-%:
-all
+boundary
 ```
+###### ^:
+
 ```
-%^
-few
+proximity
 ```
+###### ^^
+
 ```
-%%
-size
+location
+```
+###### ^%
+
+```
+area
+```
+#### %
+
+###### %@
+
+```
+population
+```
+###### %#
+
+```
+inventory
+```
+###### %!
+
+```
+intensity
+```
+###### %?
+
+```
+probability
+```
+###### %>
+
+```
+surplus
+```
+###### %<
+
+```
+deficit
+```
+###### %:
+
+```
+span
+```
+###### %^
+
+```
+density
+```
+###### %%
+
+```
+magnitude
 ```
 ## Chaining
 
-##### Chaining combines multiple Two Talk primes to create a more nuanced meaning. A dot (.) joins one prime
+#### Chaining combines multiple Two Talk primes to isolate a more nuanced meaning. A dot (.) joins one prime to the
 
-##### to the next - each addition narrows or intensifies the concept.
+#### next — each addition further narrows or specifies the target concept.
 
-###### 1↓ / 2→
+#### 1↓
 
-###### @
+#### /
 
-```
-PEOPLE
-AN
-```
-###### #
+#### 2 →
 
-```
-OBJECTS
-OB
-```
-###### !
+#### @ #!? > < : ^ %
 
-```
-VALUE
-VE
-```
-###### ?
-
-```
-MIND
-MO
-```
-###### >
-
-```
-ACTION
-AK
-```
-###### <
-
-```
-RELATION
-LI
-```
-###### :
-
-```
-TIME
-TI
-```
-###### ^
-
-```
-SPACE
-SA
-```
-###### %
-
-```
-SCALE
-ME
-```
 
 #### @#
 
 ```
-person
+human + object
 ```
 ##### →
 
 ```
-person
+human + object
 ```
-#### One prime, one root concept. =
+#### One prime, one root context. =
 
 ##### person
 
@@ -556,23 +574,25 @@ NOUN
 #### @#
 
 ```
-person
+human + object
 ```
 ### ·
 
-#### !@
+#### ^?
 
 ```
-help
+place + idea
 ```
 ##### →
 
 ```
-person+help
+human + object+place + idea
+Add a qualification layer to isolate the
+domain.
 ```
-#### Add a qualifier to narrow the concept. =
+#### =
 
-##### caregiver
+##### architect
 
 ```
 NOUN
@@ -580,47 +600,49 @@ NOUN
 #### @#
 
 ```
-person
+human + object
 ```
 ### ·
 
-#### !@
+#### ^?
 
 ```
-help
+place + idea
 ```
 ### ·
 
-#### %!
+#### !^
 
 ```
-very
+force + place
 ```
 ##### →
 
 ```
-person+help+very
-Each dot intensifies or specifies
-further.
+human + object+place + idea+
+force + place
+Each subsequent dot adds localized
+attributes.
 ```
 #### =
 
-##### devoted
+##### reliable systems engineer
 
 ```
-ADJECTIVE
+NOUN
 ```
 #### #!
 
 ```
-tool
+object + force
 ```
 ##### →
 
 ```
-tool
+object + force
+Any physical utility or asset.
 ```
-#### Any instrument or device. =
+#### =
 
 ##### tool
 
@@ -630,23 +652,25 @@ NOUN
 #### #!
 
 ```
-tool
+object + force
 ```
 ### ·
 
-#### ?!
+#### ^?
 
 ```
-know
+place + idea
 ```
 ##### →
 
 ```
-tool+know
+object + force+place + idea
+A tool integrated into structural
+architecture.
 ```
-#### A tool shaped by knowledge. =
+#### =
 
-##### technique
+##### infrastructure software
 
 ```
 NOUN
@@ -654,704 +678,2747 @@ NOUN
 #### #!
 
 ```
-tool
+object + force
 ```
 ### ·
 
-#### ?!
+#### ^?
 
 ```
-know
+place + idea
 ```
 ### ·
 
-#### :<
+#### !:
 
 ```
-past
+force + time
 ```
 ##### →
 
 ```
-tool+know+past
+object + force+place + idea+
+force + time
+Critical time pressure on architecture.
 ```
-#### Ancient or obsolete method. =
+#### =
 
-##### antiquated
-
-```
-ADJECTIVE
-```
-**Remember:** each prime you add modifies the one before it - like adjectives stacking onto a noun. Stop when the concept is
-
-precise enough.
-
+##### critical infrastructure incident
 
 ```
-Order: Write left to right: who → what → when. e.g. @!.>@.@?.:# = I spoke to you just now.
-Sentences: Each new line is a new sentence.
-Negation: Prefix anything with <! to negate it. e.g. <!.>! = not doing, <!.@!.>:.@%.:> = I will not contact the
-group. Think of <! as a minus sign before the concept it cancels.
-Questions: Start a line with >? to mark it as an open question. e.g. >?.@%.LG.>^.:# = is legal still waiting?
-Tense: :< = past, :> = future, :# = now. For ongoing or continuous actions, chain :: (time) with your prime — e.g.
->!.:: = action ongoing. Drop tense entirely when it's clear from context.
-Literals: Use numbers for amounts (e.g., 5 ), dates in YYYY-MM-DD format (e.g., 2025-04-14), times in 24-hour clock
-(e.g., 1430 ), and capitalised initials for names and teams (e.g., BM, LG).
-Comments: Use // to add a natural language note inline. Useful when a concept is too specific to encode or needs
-context for a future reader. e.g. @#.JN.!:.># // flagged vendor contract as high risk
-Pronunciation: Each core symbol has a spoken name — @ (An), # (Ob),! (Ve),? (Mo), > (Ak), < (Li), : (Ti), ^
-(Sa), % (Me).
+NOUN
+```
+###### Remember: Each prime you append modifies the exact concept before it — like stackable descriptors refining a core noun. Clear
+
+###### thoughts require fewer joins.
+
+## Grammar Rules
+
+
+###### Order: Write left to right: who → what → when. e.g. @!.>@.@?.:# = I communicated to you right now.
+
+###### Topics: Start a line with ## to state the tracking topic or configure context variables. e.g. ## @% [IBM] 2026-05-31 =
+
+###### organization tracking target.
+
+###### Sentences: Each standalone line parses as a distinct sentence concept.
+
+###### Negation: Append a prime block with .<! to negate the preceding expression (postfix logic). e.g. >!.<! = no action / block,
+
+###### @!.>:.<!.@%.#^ = I will not establish contact with this cluster. The .<! acts as a literal parser-override modifier that
+
+###### intercepts the immediately preceding block.
+
+###### Questions: Prepend a structural line segment with >? to establish an open question context. e.g. >?.@%.LG.>^.:# = Is the
+
+###### legal team still pending response?
+
+###### Tense: :< = past, :> = future, :# = now. For continuous or open states, chain :: (duration) directly with your prime block —
+
+###### e.g. >!.:: = ongoing process execution. Omit specific temporal blocks entirely when context dictates the frame.
+
+###### Literals: Express precise measurements with raw integers (e.g.,^5 ), standard dates via YYYY-MM-DD configuration (e.g., 2025-
+
+04-14), tracking clocks in 24-hour style (e.g., (^1430) ), and explicitly wrap unique identifiers inside literal brackets (e.g., [JN],
+
+###### [LG]).
+
+###### Comments: Append // to inject a natural language note. Critical when an artifact notation is uniquely specific or demands
+
+###### future parsing help. e.g. @#.JN.!:.># // flag vendor data asset as high threat risk
+
+###### Pronunciation: Each core symbol has a standard spoken vocalization to aid learning — @ (An), # (Ob),! (Ve),? (Mo), >
+
+###### (Ak), < (Li), : (Ti), ^ (Sa), % (Me).
+
+## 81 Prime Dictionary
+
+#### Filter and verify all 81 logical semantic primes by literal character notation or conceptual output.
+
+
+#### @@ self HUMAN
+
+#### @# person / body HUMAN
+
+#### @! emotion / feeling HUMAN
+
+#### @? identity / viewpoint HUMAN
+
+#### @> expression / choice HUMAN
+
+#### @< impression / sensation HUMAN
+
+#### @: age / lifespan HUMAN
+
+#### @^ presence / role HUMAN
+
+#### @% status / capacity HUMAN
+
+#### #@ organism / creature OBJECT
+
+#### ## substance / mass OBJECT
+
+#### #! tool / asset OBJECT
+
+#### #? sign / code / token OBJECT
+
+#### #> product / output OBJECT
+
+#### #< resource / component OBJECT
+
+#### #: wear / durability OBJECT
+
+#### #^ structure / artifact OBJECT
+
+#### #% part / fraction OBJECT
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### !@ motive / intent FORCE
+
+#### !# utility / function FORCE
+
+#### !! perfect / pure / good FORCE
+
+#### !? priority / criteria FORCE
+
+#### !> acceleration / impact FORCE
+
+#### !< resistance / friction FORCE
+
+#### !: crisis / urgency FORCE
+
+#### !^ stability / severity FORCE
+
+#### !% peak / critical mass FORCE
+
+#### ?@ opinion / belief IDEA
+
+#### ?# fact / datum IDEA
+
+#### ?! knowledge / validation IDEA
+
+#### ?? truth / axiom IDEA
+
+#### ?> signal / message IDEA
+
+#### ?< query / input IDEA
+
+#### ?: history / record IDEA
+
+#### ?^ context / landscape IDEA
+
+#### ?% metric / statistics IDEA
+
+#### >@ speech / communication OUT
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ># production / construction OUT
+
+#### >! execution / action OUT
+
+#### >? instruction / broadcast OUT
+
+#### >> progression / evolution OUT
+
+#### >< exchange / transfer OUT
+
+#### >: delivery / deadline OUT
+
+#### >^ departure / migration OUT
+
+#### >% expansion / distribution OUT
+
+#### <@ perception / absorption IN
+
+#### <# consumption / ingestion IN
+
+#### <! negation / block / stop IN
+
+#### <? analysis / learning IN
+
+#### <> convergence / matching IN
+
+#### << possession / containment IN
+
+#### <: origin / ancestry IN
+
+#### <^ arrival / inclusion IN
+
+#### <% reduction / compression IN
+
+#### :@ generation / era TIME
+
+#### :# event / occurrence TIME
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### :! climax / milestone TIME
+
+#### :? schedule / phase TIME
+
+#### :> future / delay TIME
+
+#### :< past / memory TIME
+
+#### :: duration / continuity TIME
+
+#### :^ interval / sync TIME
+
+#### :% frequency / rate TIME
+
+#### ^@ community / presence PLACE
+
+#### ^# environment / terrain PLACE
+
+#### ^! peak / focus area PLACE
+
+#### ^? system / architecture PLACE
+
+#### ^> range / path PLACE
+
+#### ^< boundary / enclosure PLACE
+
+#### ^: proximity / timeline PLACE
+
+#### ^^ location / coordinates PLACE
+
+#### ^% area / volume PLACE
+
+#### %@ population / crowd SCALE
+
+#### %# inventory / mass SCALE
+
+#### %! intensity / degree SCALE
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### %? probability / variance SCALE
+
+#### %> surplus / growth SCALE
+
+#### %< deficit / scarcity SCALE
+
+#### %: span / eternity SCALE
+
+#### %^ density / layout SCALE
+
+#### %% magnitude / scope SCALE
+
+#### <% able COMPOUND
+
+#### ?: about COMPOUND
+
+#### ^! above COMPOUND
+
+#### ^% across COMPOUND
+
+#### >% act COMPOUND
+
+#### %@.>! add COMPOUND
+
+#### :> after COMPOUND
+
+#### %@.:: again COMPOUND
+
+#### <! against COMPOUND
+
+#### :: age COMPOUND
+
+#### :< ago COMPOUND
+
+#### ## air COMPOUND
+
+#### %: all COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### <% almost COMPOUND
+
+(^1) alone COMPOUND
+
+#### ^% along COMPOUND
+
+#### :< already COMPOUND
+
+#### %@ also COMPOUND
+
+#### <! although COMPOUND
+
+#### %: always COMPOUND
+
+#### >> am COMPOUND
+
+#### ^% among COMPOUND
+
+(^1) an COMPOUND
+
+#### %@ and COMPOUND
+
+#### :@ animal COMPOUND
+
+#### @^ another COMPOUND
+
+#### >@ answer COMPOUND
+
+#### %< any COMPOUND
+
+#### ##.%< anything COMPOUND
+
+#### >> appear COMPOUND
+
+#### ## apple COMPOUND
+
+#### >> are COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ^^ area COMPOUND
+
+#### #@ arm COMPOUND
+
+#### ^% around COMPOUND
+
+#### ## art COMPOUND
+
+#### <> as COMPOUND
+
+#### >? ask COMPOUND
+
+#### ^: at COMPOUND
+
+#### ># away COMPOUND
+
+#### @< baby COMPOUND
+
+#### ^# back COMPOUND
+
+#### !: bad COMPOUND
+
+#### ## ball COMPOUND
+
+#### ^^ bank COMPOUND
+
+#### ^# base COMPOUND
+
+#### >> be COMPOUND
+
+#### :@ bear COMPOUND
+
+#### !! beautiful COMPOUND
+
+#### >>.:< became COMPOUND
+
+#### <? because COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### >> become COMPOUND
+
+#### ## bed COMPOUND
+
+#### >>.:< been COMPOUND
+
+#### :< before COMPOUND
+
+#### >!.:< began COMPOUND
+
+#### >! begin COMPOUND
+
+#### ^# behind COMPOUND
+
+#### >> being COMPOUND
+
+#### ?! believe COMPOUND
+
+#### ## bell COMPOUND
+
+#### ^> below COMPOUND
+
+#### ^: beside COMPOUND
+
+#### !! best COMPOUND
+
+#### !! better COMPOUND
+
+#### ^% between COMPOUND
+
+#### !> big COMPOUND
+
+#### :@ bird COMPOUND
+
+#### !< bit COMPOUND
+
+#### ## black COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## block COMPOUND
+
+#### #@ blood COMPOUND
+
+#### ># blow COMPOUND
+
+#### ## blue COMPOUND
+
+#### ## board COMPOUND
+
+#### #! boat COMPOUND
+
+#### #@ body COMPOUND
+
+#### #@ bone COMPOUND
+
+#### #? book COMPOUND
+
+#### :@ born COMPOUND
+
+(^2) both COMPOUND
+
+#### ^> bottom COMPOUND
+
+#### ><.:< bought COMPOUND
+
+#### ## box COMPOUND
+
+#### @# boy COMPOUND
+
+#### ## branch COMPOUND
+
+#### ## bread COMPOUND
+
+#### >! break COMPOUND
+
+#### ## bright COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### >< bring COMPOUND
+
+#### !> broad COMPOUND
+
+#### >!.:< broke COMPOUND
+
+#### @# brother COMPOUND
+
+#### ><.:< brought COMPOUND
+
+#### ## brown COMPOUND
+
+#### >!.## build COMPOUND
+
+#### >!.##.:< built COMPOUND
+
+#### #! bus COMPOUND
+
+#### >! business COMPOUND
+
+#### <! but COMPOUND
+
+#### >< buy COMPOUND
+
+#### ^: by COMPOUND
+
+#### >@ call COMPOUND
+
+#### >>.:< came COMPOUND
+
+#### <% can COMPOUND
+
+#### <!.<% cannot COMPOUND
+
+#### #! car COMPOUND
+
+#### ?@ care COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### <@ carry COMPOUND
+
+#### ## case COMPOUND
+
+#### :@.## cat COMPOUND
+
+#### <@ catch COMPOUND
+
+#### <@.:< caught COMPOUND
+
+#### <? cause COMPOUND
+
+#### ^: center COMPOUND
+
+#### :: century COMPOUND
+
+#### !^ certain COMPOUND
+
+#### ## chair COMPOUND
+
+#### %? chance COMPOUND
+
+#### ># change COMPOUND
+
+#### !@ charity COMPOUND
+
+#### @# chief COMPOUND
+
+#### @< child COMPOUND
+
+#### @% children COMPOUND
+
+#### ?% choose COMPOUND
+
+#### ?%.:< chose COMPOUND
+
+#### ^^ church COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## circle COMPOUND
+
+#### ^^ city COMPOUND
+
+#### @% class COMPOUND
+
+#### !! clean COMPOUND
+
+#### !! clear COMPOUND
+
+#### ># climb COMPOUND
+
+#### #! clock COMPOUND
+
+#### ^: close COMPOUND
+
+#### #: cloth COMPOUND
+
+#### ## clothes COMPOUND
+
+#### ## cloud COMPOUND
+
+#### ^^ coast COMPOUND
+
+#### ## coat COMPOUND
+
+#### ## cold COMPOUND
+
+#### ^^ college COMPOUND
+
+#### ^^ colony COMPOUND
+
+#### ## color COMPOUND
+
+#### >> come COMPOUND
+
+#### >@ command COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### @% committee COMPOUND
+
+#### <> common COMPOUND
+
+#### @% company COMPOUND
+
+#### <> compare COMPOUND
+
+#### !% complete COMPOUND
+
+#### ## condition COMPOUND
+
+#### ?< consider COMPOUND
+
+#### #? consonant COMPOUND
+
+#### << contain COMPOUND
+
+#### ^^ continent COMPOUND
+
+#### >^ continue COMPOUND
+
+#### <@ control COMPOUND
+
+#### >! cook COMPOUND
+
+#### ## cool COMPOUND
+
+#### ## copy COMPOUND
+
+#### ## corn COMPOUND
+
+#### ^: corner COMPOUND
+
+#### !^ correct COMPOUND
+
+#### ## cost COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### #: cotton COMPOUND
+
+#### <% could COMPOUND
+
+#### % count COMPOUND
+
+#### ^^ country COMPOUND
+
+#### #? course COMPOUND
+
+#### ^^ court COMPOUND
+
+#### <@ cover COMPOUND
+
+#### :@ cow COMPOUND
+
+#### >! create COMPOUND
+
+#### !: crisis COMPOUND
+
+#### ## crop COMPOUND
+
+#### ^% cross COMPOUND
+
+#### @% crowd COMPOUND
+
+#### >@ cry COMPOUND
+
+#### :# current COMPOUND
+
+#### >! cut COMPOUND
+
+#### ># dance COMPOUND
+
+#### !: danger COMPOUND
+
+#### ## dark COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ##.%: data COMPOUND
+
+#### :: date COMPOUND
+
+#### @# daughter COMPOUND
+
+#### :: day COMPOUND
+
+#### <!.:@ dead COMPOUND
+
+#### >: deadline COMPOUND
+
+#### >< deal COMPOUND
+
+#### ?@ dear COMPOUND
+
+#### <!.:@ death COMPOUND
+
+#### ?% decide COMPOUND
+
+#### ?% decision COMPOUND
+
+#### ^> deep COMPOUND
+
+#### %% degree COMPOUND
+
+#### <? depend COMPOUND
+
+#### >@ describe COMPOUND
+
+#### ^^ desert COMPOUND
+
+#### >! design COMPOUND
+
+#### ?% desire COMPOUND
+
+#### %@ development COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### #? dictionary COMPOUND
+
+#### >!.:< did COMPOUND
+
+#### <!.:@ die COMPOUND
+
+#### <! differ COMPOUND
+
+#### <! difference COMPOUND
+
+#### @^ different COMPOUND
+
+#### !: difficult COMPOUND
+
+#### >^ direct COMPOUND
+
+#### >^ direction COMPOUND
+
+#### ?! discover COMPOUND
+
+#### ^% distance COMPOUND
+
+#### ^< distant COMPOUND
+
+#### #% divide COMPOUND
+
+#### #% division COMPOUND
+
+#### >! do COMPOUND
+
+#### @# doctor COMPOUND
+
+#### >! does COMPOUND
+
+#### :@.## dog COMPOUND
+
+#### ## dollar COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### <!. don't COMPOUND
+
+#### >!.:< done COMPOUND
+
+#### ## door COMPOUND
+
+#### 2 double COMPOUND
+
+#### <!.?! doubt COMPOUND
+
+#### ^> down COMPOUND
+
+#### >! draw COMPOUND
+
+#### >!.:< drawn COMPOUND
+
+#### ?< dream COMPOUND
+
+#### ## dress COMPOUND
+
+#### >!.:< drew COMPOUND
+
+#### ># drink COMPOUND
+
+#### ># drive COMPOUND
+
+#### >#.:< driven COMPOUND
+
+#### ^> drop COMPOUND
+
+#### >#.:< drove COMPOUND
+
+#### ## dry COMPOUND
+
+#### :@ duck COMPOUND
+
+#### <? due COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### :: during COMPOUND
+
+#### #: dust COMPOUND
+
+#### !# duty COMPOUND
+
+#### 1 each COMPOUND
+
+#### ?% eager COMPOUND
+
+#### #@ ear COMPOUND
+
+#### :< early COMPOUND
+
+#### ^^ earth COMPOUND
+
+#### !! ease COMPOUND
+
+#### ^^ east COMPOUND
+
+#### !! easy COMPOUND
+
+#### >! eat COMPOUND
+
+#### ^: edge COMPOUND
+
+#### ?! education COMPOUND
+
+#### <? effect COMPOUND
+
+#### >! effort COMPOUND
+
+#### ## egg COMPOUND
+
+(^8) eight COMPOUND
+
+#### %? either COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## electric COMPOUND
+
+#### #% element COMPOUND
+
+#### :@ elephant COMPOUND
+
+#### @^ else COMPOUND
+
+#### ^^ empire COMPOUND
+
+#### >! employ COMPOUND
+
+#### <! empty COMPOUND
+
+#### :< end COMPOUND
+
+#### !% enough COMPOUND
+
+#### <> even COMPOUND
+
+#### %: ever COMPOUND
+
+#### !% every COMPOUND
+
+#### ##.!% everything COMPOUND
+
+#### <# example COMPOUND
+
+#### #@ face COMPOUND
+
+#### ?? fact COMPOUND
+
+#### ^> fall COMPOUND
+
+#### @% family COMPOUND
+
+#### ^< far COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### %!.: fast COMPOUND
+
+#### @# father COMPOUND
+
+#### ?@ feel COMPOUND
+
+#### #@ feet COMPOUND
+
+#### %^ few COMPOUND
+
+#### ^^ field COMPOUND
+
+#### >! fight COMPOUND
+
+#### ## figure COMPOUND
+
+#### <% fill COMPOUND
+
+#### :< final COMPOUND
+
+#### ?! find COMPOUND
+
+#### !! fine COMPOUND
+
+#### #@ finger COMPOUND
+
+#### :< finish COMPOUND
+
+#### ## fire COMPOUND
+
+#### 1 first COMPOUND
+
+#### :@ fish COMPOUND
+
+(^5) five COMPOUND
+
+#### >! fix COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## flag COMPOUND
+
+#### ## flat COMPOUND
+
+#### >#.:< flew COMPOUND
+
+#### ># flies COMPOUND
+
+#### ># flight COMPOUND
+
+#### ## floor COMPOUND
+
+#### ># flow COMPOUND
+
+#### ## flower COMPOUND
+
+#### ># fly COMPOUND
+
+#### :> follow COMPOUND
+
+#### ## food COMPOUND
+
+#### #@ foot COMPOUND
+
+#### !# for COMPOUND
+
+#### >! force COMPOUND
+
+#### @^ foreign COMPOUND
+
+#### ^^ forest COMPOUND
+
+#### <!.?! forget COMPOUND
+
+#### <!.?!.:< forgot COMPOUND
+
+#### <!.?!.:< forgotten COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### <# form COMPOUND
+
+#### >^ forward COMPOUND
+
+#### ?!.:< found COMPOUND
+
+#### 4 four COMPOUND
+
+#### #% fraction COMPOUND
+
+#### !! free COMPOUND
+
+#### !! fresh COMPOUND
+
+#### @# friend COMPOUND
+
+#### :< from COMPOUND
+
+#### ^! front COMPOUND
+
+#### ## fruit COMPOUND
+
+#### %: full COMPOUND
+
+#### !! fun COMPOUND
+
+#### :> future COMPOUND
+
+#### ## game COMPOUND
+
+#### ^^ garden COMPOUND
+
+#### #: gas COMPOUND
+
+#### ><.:< gave COMPOUND
+
+#### %: general COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### !! gentle COMPOUND
+
+#### >< get COMPOUND
+
+#### @# girl COMPOUND
+
+#### >< give COMPOUND
+
+#### ><.:< given COMPOUND
+
+#### ?@ glad COMPOUND
+
+#### #: glass COMPOUND
+
+#### ># go COMPOUND
+
+#### !! god COMPOUND
+
+#### #: gold COMPOUND
+
+#### >#.:< gone COMPOUND
+
+#### !! good COMPOUND
+
+#### ><.:< got COMPOUND
+
+#### <@ govern COMPOUND
+
+#### <@ government COMPOUND
+
+#### !> grand COMPOUND
+
+#### ## grass COMPOUND
+
+#### ## gray COMPOUND
+
+#### !> great COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## green COMPOUND
+
+#### %@.:< grew COMPOUND
+
+#### ^> ground COMPOUND
+
+#### @% group COMPOUND
+
+#### %@ grow COMPOUND
+
+#### <<.:< had COMPOUND
+
+#### #% half COMPOUND
+
+#### #@ hand COMPOUND
+
+#### >! happen COMPOUND
+
+#### !: hard COMPOUND
+
+#### << has COMPOUND
+
+#### << have COMPOUND
+
+#### @# he COMPOUND
+
+#### #@ head COMPOUND
+
+#### ?> hear COMPOUND
+
+#### ?>.:< heard COMPOUND
+
+#### ## heat COMPOUND
+
+#### %! heavy COMPOUND
+
+#### !@ help COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### @# her COMPOUND
+
+#### ^: here COMPOUND
+
+#### ^! high COMPOUND
+
+#### ^^ hill COMPOUND
+
+#### @# him COMPOUND
+
+#### @# his COMPOUND
+
+#### :: history COMPOUND
+
+#### >! hit COMPOUND
+
+#### <@ hold COMPOUND
+
+#### ## hole COMPOUND
+
+#### ^^ home COMPOUND
+
+#### ?% hope COMPOUND
+
+#### :@ horse COMPOUND
+
+#### ## hot COMPOUND
+
+#### :: hour COMPOUND
+
+#### ^^ house COMPOUND
+
+#### >? how COMPOUND
+
+#### !> huge COMPOUND
+
+#### @# human COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+(^100) hundred COMPOUND
+
+#### >#.:< hung COMPOUND
+
+#### >! hunt COMPOUND
+
+#### %!.: hurry COMPOUND
+
+#### @! I COMPOUND
+
+#### ## ice COMPOUND
+
+#### ?? idea COMPOUND
+
+#### %? if COMPOUND
+
+#### !: ill COMPOUND
+
+#### !> important COMPOUND
+
+#### ^> in COMPOUND
+
+#### %% inch COMPOUND
+
+#### :# incident COMPOUND
+
+#### << include COMPOUND
+
+#### %@ increase COMPOUND
+
+#### >@ indicate COMPOUND
+
+#### >! industry COMPOUND
+
+#### ^? infrastructure COMPOUND
+
+#### :@ insect COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ^> inside COMPOUND
+
+#### @^ instead COMPOUND
+
+#### #! instrument COMPOUND
+
+#### ?@ interest COMPOUND
+
+#### ^> into COMPOUND
+
+#### >! invent COMPOUND
+
+#### #: iron COMPOUND
+
+#### >> is COMPOUND
+
+#### ^^ island COMPOUND
+
+#### ## it COMPOUND
+
+#### ## its COMPOUND
+
+#### >! job COMPOUND
+
+#### <^ join COMPOUND
+
+#### ?@ joy COMPOUND
+
+#### ?< judge COMPOUND
+
+#### ># jump COMPOUND
+
+#### :# just COMPOUND
+
+#### <@ keep COMPOUND
+
+#### <@.:< kept COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### #! key COMPOUND
+
+#### <!.:@ kill COMPOUND
+
+#### <# kind COMPOUND
+
+#### @# king COMPOUND
+
+#### ?!.:< knew COMPOUND
+
+#### ?! know COMPOUND
+
+#### ?! knowledge COMPOUND
+
+#### @# lady COMPOUND
+
+#### ^^ lake COMPOUND
+
+#### ^^ land COMPOUND
+
+#### #? language COMPOUND
+
+#### !> large COMPOUND
+
+#### :< last COMPOUND
+
+#### :> late COMPOUND
+
+#### >@ laugh COMPOUND
+
+#### <@ law COMPOUND
+
+#### ># lay COMPOUND
+
+#### >^ lead COMPOUND
+
+#### ?! learn COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### %^ least COMPOUND
+
+#### ># leave COMPOUND
+
+#### ^# left COMPOUND
+
+#### %# less COMPOUND
+
+#### <% let COMPOUND
+
+#### #? letter COMPOUND
+
+#### :@ life COMPOUND
+
+#### ## light COMPOUND
+
+#### <> like COMPOUND
+
+#### #? line COMPOUND
+
+#### ## list COMPOUND
+
+#### ?> listen COMPOUND
+
+#### !< little COMPOUND
+
+#### :@ live COMPOUND
+
+#### :: long COMPOUND
+
+#### ?# look COMPOUND
+
+#### <! lost COMPOUND
+
+#### %> lot COMPOUND
+
+#### ## loud COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ?@ love COMPOUND
+
+#### ^> low COMPOUND
+
+#### #! machine COMPOUND
+
+#### >!.:< made COMPOUND
+
+#### !! magnificent COMPOUND
+
+#### !> main COMPOUND
+
+#### !> major COMPOUND
+
+#### >! make COMPOUND
+
+#### @# man COMPOUND
+
+#### %> many COMPOUND
+
+#### #? map COMPOUND
+
+#### ># march COMPOUND
+
+#### ## mark COMPOUND
+
+#### ^^ market COMPOUND
+
+#### <^ marry COMPOUND
+
+#### ## mass COMPOUND
+
+#### @# master COMPOUND
+
+#### <> match COMPOUND
+
+#### #: material COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## matter COMPOUND
+
+#### <% may COMPOUND
+
+#### @! me COMPOUND
+
+#### >@ mean COMPOUND
+
+#### >@.:< meant COMPOUND
+
+#### %% measure COMPOUND
+
+#### ## meat COMPOUND
+
+#### >: meet COMPOUND
+
+#### ## melody COMPOUND
+
+#### #% member COMPOUND
+
+#### @% men COMPOUND
+
+#### ?< mental COMPOUND
+
+#### 1 merely COMPOUND
+
+#### >:.:< met COMPOUND
+
+#### #: metal COMPOUND
+
+#### #! method COMPOUND
+
+#### ^% middle COMPOUND
+
+#### <% might COMPOUND
+
+#### %% mile COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## milk COMPOUND
+
+(^1000000) million COMPOUND
+
+#### ?< mind COMPOUND
+
+#### @! mine COMPOUND
+
+#### :: minute COMPOUND
+
+#### <! miss COMPOUND
+
+#### <^ mix COMPOUND
+
+#### :# modern COMPOUND
+
+#### :# moment COMPOUND
+
+#### ## money COMPOUND
+
+#### :: month COMPOUND
+
+#### ## moon COMPOUND
+
+#### %> more COMPOUND
+
+#### :: morning COMPOUND
+
+#### %: most COMPOUND
+
+#### @# mother COMPOUND
+
+#### ># motion COMPOUND
+
+#### ^^ mountain COMPOUND
+
+#### #@ mouth COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ># move COMPOUND
+
+#### ># movement COMPOUND
+
+#### %> much COMPOUND
+
+#### %@ multiplication COMPOUND
+
+#### %@ multiply COMPOUND
+
+#### ## music COMPOUND
+
+#### !? must COMPOUND
+
+#### @! my COMPOUND
+
+#### @@ myself COMPOUND
+
+#### #? name COMPOUND
+
+#### ^^ nation COMPOUND
+
+#### ## natural COMPOUND
+
+#### ## nature COMPOUND
+
+#### ^: near COMPOUND
+
+#### !? necessary COMPOUND
+
+#### #@ neck COMPOUND
+
+#### !? need COMPOUND
+
+#### #! needle COMPOUND
+
+#### @# neighbor COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### <! neither COMPOUND
+
+#### <! never COMPOUND
+
+#### :# new COMPOUND
+
+#### :> next COMPOUND
+
+#### !! nice COMPOUND
+
+#### :: night COMPOUND
+
+(^9) nine COMPOUND
+
+#### <! no COMPOUND
+
+#### !! noble COMPOUND
+
+#### ^: node COMPOUND
+
+#### ## noise COMPOUND
+
+#### <! none COMPOUND
+
+#### <! nor COMPOUND
+
+#### ^^ north COMPOUND
+
+#### #@ nose COMPOUND
+
+#### <! not COMPOUND
+
+#### ##.<! nothing COMPOUND
+
+#### ?# notice COMPOUND
+
+#### :# now COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### % number COMPOUND
+
+#### <! off COMPOUND
+
+#### ^^ office COMPOUND
+
+#### %> often COMPOUND
+
+#### @: old COMPOUND
+
+#### ^! on COMPOUND
+
+(^1) once COMPOUND
+
+#### 1 one COMPOUND
+
+#### 1 only COMPOUND
+
+#### <> open COMPOUND
+
+#### %? or COMPOUND
+
+#### ?: order COMPOUND
+
+#### @^ other COMPOUND
+
+#### @% our COMPOUND
+
+#### ^< out COMPOUND
+
+#### ^< outside COMPOUND
+
+#### ^! over COMPOUND
+
+#### << own COMPOUND
+
+#### :@ ox COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### #? page COMPOUND
+
+#### !: pain COMPOUND
+
+#### >! paint COMPOUND
+
+#### 2 pair COMPOUND
+
+#### #: paper COMPOUND
+
+#### #? paragraph COMPOUND
+
+#### @# parent COMPOUND
+
+#### #% part COMPOUND
+
+#### 1 particular COMPOUND
+
+#### @% party COMPOUND
+
+#### ># pass COMPOUND
+
+#### :< past COMPOUND
+
+#### ^? path COMPOUND
+
+#### <# pattern COMPOUND
+
+#### >< pay COMPOUND
+
+#### !! peace COMPOUND
+
+#### #! pen COMPOUND
+
+#### #! pencil COMPOUND
+
+#### @% people COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### #% per COMPOUND
+
+#### !! perfect COMPOUND
+
+#### %? perhaps COMPOUND
+
+#### :: period COMPOUND
+
+#### @# person COMPOUND
+
+#### #? phrase COMPOUND
+
+#### ## physical COMPOUND
+
+#### ## picture COMPOUND
+
+#### #% piece COMPOUND
+
+#### :@ pig COMPOUND
+
+#### #! pin COMPOUND
+
+#### ## pipe COMPOUND
+
+#### ^^ place COMPOUND
+
+#### <> plain COMPOUND
+
+#### ?% plan COMPOUND
+
+#### #! plane COMPOUND
+
+#### ^^ planet COMPOUND
+
+#### ## plant COMPOUND
+
+#### >! play COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### !! pleasant COMPOUND
+
+#### ?% please COMPOUND
+
+#### %> plural COMPOUND
+
+#### #? poem COMPOUND
+
+#### ^: point COMPOUND
+
+#### !: poor COMPOUND
+
+#### @% populate COMPOUND
+
+#### @% population COMPOUND
+
+#### ^^ port COMPOUND
+
+#### ^: position COMPOUND
+
+#### <% possible COMPOUND
+
+#### ## post COMPOUND
+
+#### %% pound COMPOUND
+
+#### >! power COMPOUND
+
+#### >! practice COMPOUND
+
+#### >! prepare COMPOUND
+
+#### :# present COMPOUND
+
+#### @# president COMPOUND
+
+#### >! press COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### !! pretty COMPOUND
+
+#### ## price COMPOUND
+
+#### ?@ pride COMPOUND
+
+#### >! print COMPOUND
+
+(^1) private COMPOUND
+
+#### ## prize COMPOUND
+
+#### !^ probably COMPOUND
+
+#### !: problem COMPOUND
+
+#### ># process COMPOUND
+
+#### >! produce COMPOUND
+
+#### ## product COMPOUND
+
+#### #! program COMPOUND
+
+#### !^ proper COMPOUND
+
+#### ## property COMPOUND
+
+#### <@ protect COMPOUND
+
+#### ?@ proud COMPOUND
+
+#### !^ prove COMPOUND
+
+#### >< provide COMPOUND
+
+#### @% public COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ># pull COMPOUND
+
+#### !! pure COMPOUND
+
+#### !# purpose COMPOUND
+
+#### ># push COMPOUND
+
+#### ># put COMPOUND
+
+#### ## quality COMPOUND
+
+#### %% quart COMPOUND
+
+#### @# queen COMPOUND
+
+#### >? question COMPOUND
+
+#### %!.: quick COMPOUND
+
+#### !! quiet COMPOUND
+
+#### %! quite COMPOUND
+
+#### ># race COMPOUND
+
+#### #! radio COMPOUND
+
+#### ## rail COMPOUND
+
+#### ## rain COMPOUND
+
+#### ^! raise COMPOUND
+
+#### >#.:< ran COMPOUND
+
+#### ^% range COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### %% rate COMPOUND
+
+#### %> rather COMPOUND
+
+#### ># reach COMPOUND
+
+#### ?# read COMPOUND
+
+#### !! ready COMPOUND
+
+#### !^ real COMPOUND
+
+#### <? reason COMPOUND
+
+#### >< receive COMPOUND
+
+#### ## record COMPOUND
+
+#### ## red COMPOUND
+
+#### ^^ region COMPOUND
+
+#### <^ relation COMPOUND
+
+#### ?! religion COMPOUND
+
+#### >^ remain COMPOUND
+
+#### ?! remember COMPOUND
+
+#### %@.:: repeat COMPOUND
+
+#### >@ reply COMPOUND
+
+#### #? report COMPOUND
+
+#### >> represent COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### >? request COMPOUND
+
+#### !? require COMPOUND
+
+#### ?! research COMPOUND
+
+#### ## resource COMPOUND
+
+#### ?@ respect COMPOUND
+
+#### >^ rest COMPOUND
+
+#### <? result COMPOUND
+
+#### ># return COMPOUND
+
+#### ?# review COMPOUND
+
+#### ## rhythm COMPOUND
+
+#### %> rich COMPOUND
+
+#### ># ride COMPOUND
+
+#### !^ right COMPOUND
+
+#### ## ring COMPOUND
+
+#### ^! rise COMPOUND
+
+#### !: risk COMPOUND
+
+#### ^^ river COMPOUND
+
+#### ^? road COMPOUND
+
+#### ## rock COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## rod COMPOUND
+
+#### ## role COMPOUND
+
+#### ># roll COMPOUND
+
+#### ^! roof COMPOUND
+
+#### ^^ room COMPOUND
+
+#### ^# root COMPOUND
+
+#### ## rope COMPOUND
+
+#### ## rose COMPOUND
+
+#### ## round COMPOUND
+
+#### ## row COMPOUND
+
+#### >! rub COMPOUND
+
+#### <@ rule COMPOUND
+
+#### ># run COMPOUND
+
+#### >@.:< said COMPOUND
+
+#### <> same COMPOUND
+
+#### ?#.:< saw COMPOUND
+
+#### >@ say COMPOUND
+
+#### ^^ school COMPOUND
+
+#### ## sea COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+(^2) second COMPOUND
+
+#### ?# see COMPOUND
+
+#### >> seem COMPOUND
+
+#### ?#.:< seen COMPOUND
+
+#### @@ self COMPOUND
+
+#### #? sentence COMPOUND
+
+#### ># set COMPOUND
+
+#### %< several COMPOUND
+
+#### :> shall COMPOUND
+
+#### <# shape COMPOUND
+
+#### >< share COMPOUND
+
+#### !! sharp COMPOUND
+
+#### @# she COMPOUND
+
+#### :@ sheep COMPOUND
+
+#### ## sheet COMPOUND
+
+#### ## shell COMPOUND
+
+#### ## shine COMPOUND
+
+#### #! ship COMPOUND
+
+#### ## shirt COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## shoe COMPOUND
+
+#### ## shone COMPOUND
+
+#### >#.:< shook COMPOUND
+
+#### >! shoot COMPOUND
+
+#### ^^ shop COMPOUND
+
+#### ^^ shore COMPOUND
+
+#### :: short COMPOUND
+
+#### >!.:< shot COMPOUND
+
+#### !? should COMPOUND
+
+#### #@ shoulder COMPOUND
+
+#### >@ shout COMPOUND
+
+#### ?# show COMPOUND
+
+#### ?#.:< shown COMPOUND
+
+#### <! shut COMPOUND
+
+#### !: sick COMPOUND
+
+#### ^% side COMPOUND
+
+#### ?# sight COMPOUND
+
+#### ## sign COMPOUND
+
+#### ## signal COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### !! silent COMPOUND
+
+#### #: silver COMPOUND
+
+#### <> similar COMPOUND
+
+#### <> simple COMPOUND
+
+#### :< since COMPOUND
+
+#### >@ sing COMPOUND
+
+(^1) single COMPOUND
+
+#### @# sir COMPOUND
+
+#### @# sister COMPOUND
+
+#### >^ sit COMPOUND
+
+#### ^^ site COMPOUND
+
+#### ## situation COMPOUND
+
+#### 6 six COMPOUND
+
+#### %% size COMPOUND
+
+#### !! skill COMPOUND
+
+#### #@ skin COMPOUND
+
+#### ## sky COMPOUND
+
+#### @# slave COMPOUND
+
+#### >^ sleep COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### >#.:< slipped COMPOUND
+
+#### :: slow COMPOUND
+
+#### !< small COMPOUND
+
+#### ?# smell COMPOUND
+
+#### >@ smile COMPOUND
+
+#### ## smoke COMPOUND
+
+#### ## snow COMPOUND
+
+#### <? so COMPOUND
+
+#### ## soap COMPOUND
+
+#### @% social COMPOUND
+
+#### !! soft COMPOUND
+
+#### #!.^? software COMPOUND
+
+#### ## soil COMPOUND
+
+#### ><.:< sold COMPOUND
+
+#### @# soldier COMPOUND
+
+#### !! solemn COMPOUND
+
+#### ## solution COMPOUND
+
+#### >! solve COMPOUND
+
+#### %< some COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### @> someone COMPOUND
+
+#### ##.%< something COMPOUND
+
+#### %< sometimes COMPOUND
+
+#### @# son COMPOUND
+
+#### ## song COMPOUND
+
+#### :> soon COMPOUND
+
+#### !: sorrow COMPOUND
+
+#### ## sound COMPOUND
+
+#### ^# source COMPOUND
+
+#### ^^ south COMPOUND
+
+#### ## space COMPOUND
+
+#### >@ speak COMPOUND
+
+#### 1 special COMPOUND
+
+#### >@ speech COMPOUND
+
+#### %!.: speed COMPOUND
+
+#### #? spell COMPOUND
+
+#### >< spend COMPOUND
+
+#### ><.:< spent COMPOUND
+
+#### >@.:< spoke COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ^: spot COMPOUND
+
+#### %@ spread COMPOUND
+
+#### :: spring COMPOUND
+
+#### ## square COMPOUND
+
+#### ## stage COMPOUND
+
+#### >^ stand COMPOUND
+
+#### ## star COMPOUND
+
+#### >! start COMPOUND
+
+#### ^^ state COMPOUND
+
+#### ^^ station COMPOUND
+
+#### >^ stay COMPOUND
+
+#### ^^ stead COMPOUND
+
+#### ## steam COMPOUND
+
+#### #: steel COMPOUND
+
+#### ># step COMPOUND
+
+#### ## stick COMPOUND
+
+#### >^ still COMPOUND
+
+#### ## stone COMPOUND
+
+#### >^.:< stood COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### <! stop COMPOUND
+
+#### ^^ store COMPOUND
+
+#### #? story COMPOUND
+
+#### >^ straight COMPOUND
+
+#### @^ strange COMPOUND
+
+#### ^? stream COMPOUND
+
+#### ^? street COMPOUND
+
+#### %@ stretch COMPOUND
+
+#### >! strike COMPOUND
+
+#### ## string COMPOUND
+
+#### %! strong COMPOUND
+
+#### >!.:< struck COMPOUND
+
+#### <# structure COMPOUND
+
+#### @# student COMPOUND
+
+#### ?! study COMPOUND
+
+#### ## subject COMPOUND
+
+#### #: substance COMPOUND
+
+#### %# subtraction COMPOUND
+
+#### !! success COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### <> such COMPOUND
+
+#### :# sudden COMPOUND
+
+#### #? suffix COMPOUND
+
+#### ## sugar COMPOUND
+
+#### >@ suggest COMPOUND
+
+#### ## suit COMPOUND
+
+#### :: summer COMPOUND
+
+#### ## sun COMPOUND
+
+#### >< supply COMPOUND
+
+#### !@ support COMPOUND
+
+#### ?< suppose COMPOUND
+
+#### !^ sure COMPOUND
+
+#### ^! surface COMPOUND
+
+#### ?@ surprise COMPOUND
+
+#### !! sweet COMPOUND
+
+#### ># swim COMPOUND
+
+#### #? syllable COMPOUND
+
+#### ## symbol COMPOUND
+
+#### #! system COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ## table COMPOUND
+
+#### #@ tail COMPOUND
+
+#### <@ take COMPOUND
+
+#### <@.:< taken COMPOUND
+
+#### >@ talk COMPOUND
+
+#### ^! tall COMPOUND
+
+#### >! task COMPOUND
+
+#### ?# taste COMPOUND
+
+#### ?!.:< taught COMPOUND
+
+#### ## tax COMPOUND
+
+#### ## tea COMPOUND
+
+#### ?! teach COMPOUND
+
+#### @% team COMPOUND
+
+#### #@ teeth COMPOUND
+
+#### >@ tell COMPOUND
+
+#### ## temperature COMPOUND
+
+#### 10 ten COMPOUND
+
+#### #? term COMPOUND
+
+#### !: terrible COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### >! test COMPOUND
+
+#### <! than COMPOUND
+
+#### >@ thank COMPOUND
+
+#### #^ that COMPOUND
+
+(^1) the COMPOUND
+
+#### ^^ theater COMPOUND
+
+#### @% their COMPOUND
+
+#### @% them COMPOUND
+
+#### @@ themselves COMPOUND
+
+#### :> then COMPOUND
+
+#### ^: there COMPOUND
+
+#### <? therefore COMPOUND
+
+#### #^ these COMPOUND
+
+#### @% they COMPOUND
+
+#### %! thick COMPOUND
+
+#### !< thin COMPOUND
+
+#### ## thing COMPOUND
+
+#### ?< think COMPOUND
+
+#### 3 third COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### #^ this COMPOUND
+
+#### #^ those COMPOUND
+
+#### <! though COMPOUND
+
+#### ?< thought COMPOUND
+
+(^1000) thousand COMPOUND
+(^3) three COMPOUND
+
+#### ^? through COMPOUND
+
+#### :: time COMPOUND
+
+#### :> to COMPOUND
+
+#### <^ together COMPOUND
+
+#### >@.:< told COMPOUND
+
+#### %! too COMPOUND
+
+#### <@.:< took COMPOUND
+
+#### ^^ town COMPOUND
+
+#### ## tree COMPOUND
+
+#### ># turn COMPOUND
+
+#### 2 two COMPOUND
+
+#### ^> under COMPOUND
+
+#### :> until COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### ^! up COMPOUND
+
+#### ^! upon COMPOUND
+
+#### @% us COMPOUND
+
+#### #! use COMPOUND
+
+#### %: usually COMPOUND
+
+#### ^^ valley COMPOUND
+
+#### ## value COMPOUND
+
+#### #: vapor COMPOUND
+
+#### @^ various COMPOUND
+
+#### #? verb COMPOUND
+
+#### %! very COMPOUND
+
+#### #! vessel COMPOUND
+
+#### !! victory COMPOUND
+
+#### ?# view COMPOUND
+
+#### ^^ village COMPOUND
+
+#### !! virtue COMPOUND
+
+#### >: visit COMPOUND
+
+#### ?# voice COMPOUND
+
+#### #? vowel COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### >^ wait COMPOUND
+
+#### ># walk COMPOUND
+
+#### ## wall COMPOUND
+
+#### ?% want COMPOUND
+
+#### >! war COMPOUND
+
+#### ## warm COMPOUND
+
+#### >>.:< was COMPOUND
+
+#### >! wash COMPOUND
+
+#### !: waste COMPOUND
+
+#### ?# watch COMPOUND
+
+#### ## water COMPOUND
+
+#### ## wave COMPOUND
+
+#### ^? way COMPOUND
+
+#### @% we COMPOUND
+
+#### !< weak COMPOUND
+
+#### %> wealth COMPOUND
+
+#### ## wear COMPOUND
+
+#### ## weather COMPOUND
+
+#### :: week COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### %% weight COMPOUND
+
+#### !! welcome COMPOUND
+
+#### !! well COMPOUND
+
+#### >#.:< went COMPOUND
+
+#### >>.:< were COMPOUND
+
+#### ^^ west COMPOUND
+
+#### ## wet COMPOUND
+
+#### >? what COMPOUND
+
+#### ## wheel COMPOUND
+
+#### >? when COMPOUND
+
+#### >? where COMPOUND
+
+#### %? whether COMPOUND
+
+#### #^ which COMPOUND
+
+#### :: while COMPOUND
+
+#### ## white COMPOUND
+
+#### >? who COMPOUND
+
+#### !% whole COMPOUND
+
+#### >? whose COMPOUND
+
+#### >? why COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### !? wide COMPOUND
+
+#### @# wife COMPOUND
+
+#### ## wild COMPOUND
+
+#### :> will COMPOUND
+
+#### !! win COMPOUND
+
+#### ## wind COMPOUND
+
+#### ## window COMPOUND
+
+#### #@ wing COMPOUND
+
+#### :: winter COMPOUND
+
+#### ## wire COMPOUND
+
+#### ?! wisdom COMPOUND
+
+#### !! wise COMPOUND
+
+#### ?% wish COMPOUND
+
+#### <^ with COMPOUND
+
+#### ^> within COMPOUND
+
+#### <! without COMPOUND
+
+#### @# woman COMPOUND
+
+#### <!.:> won't COMPOUND
+
+#### ?< wonder COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### #: wood COMPOUND
+
+#### #: wooden COMPOUND
+
+#### #? word COMPOUND
+
+#### ##.:< wore COMPOUND
+
+#### >! work COMPOUND
+
+#### @# worker COMPOUND
+
+#### ^^ world COMPOUND
+
+#### !: worse COMPOUND
+
+#### !: worst COMPOUND
+
+#### ## worth COMPOUND
+
+#### <% would COMPOUND
+
+#### !: wound COMPOUND
+
+#### >! write COMPOUND
+
+#### >!.:< written COMPOUND
+
+#### !: wrong COMPOUND
+
+#### >!.:< wrote COMPOUND
+
+#### %% yard COMPOUND
+
+#### :: year COMPOUND
+
+#### ## yellow COMPOUND
+
+###### SYMBOL MEANING CATEGORY
+
+
+#### !^ yes COMPOUND
+
+#### :< yesterday COMPOUND
+
+#### <! yet COMPOUND
+
+#### @? you COMPOUND
+
+#### @< young COMPOUND
+
+#### @? your COMPOUND
+
+## Examples
+
+###### SYMBOL MEANING CATEGORY
+
+
+##### Security Audit Log
+
+###### Capturing structural observations during an operational
+
+###### review
+
+ENGLISH
+
+###### Security review event. Team broadcast data facts
+
+###### about our structural context. Need urgent action
+
+###### tracking.
+
+TWO TALK
+
+###### @%.>@.?#.:<
+
+###### @%.!:.^?.:<
+
+###### @!.!?.>:.@%.:>
+
+```
+Line 1: @% (status) >@ (speech) ?# (fact) :< (past) -
+Team broadcasted facts.
+Line 2: @% (status) !: (crisis) ^? (system) :< (past)
+```
+- Team highlighted systemic critical issues.
+**Line 3:** @!.!? (emotion/priority) >: (deadline) @%
+(status) :> (future) - I have a deadline to track back with
+the cluster.
+
+##### Action Item Configuration
+
+###### Logging structural parameters for automated asset scripts
+
+```
+ENGLISH
+```
+###### Infrastructure software logic deployment must not
+
+###### be delayed. Highest operational priority.
+
+```
+TWO TALK
+```
+###### #!.>!.:>.<
+
+###### !>.!?
+
+**Line 1:** (^) #! (tool) >! (execution) :> (future) <!
+(negation) - Asset implementation deployment must not be
+delayed (postfix inversion logic).
+**Line 2:** !> (acceleration) !? (priority) - Maximum
+priority state.
+
+##### System Memory Capture
+
+###### Quick plaintext tracking of system exceptions and
+
+###### architectural blocks
+
+ENGLISH
+
+###### John logged an architecture threat fact. Response
+
+###### path is blocked pending legal cluster.
+
+TWO TALK
+
+###### @#.JN.>@.##.!:
+
+###### @%.LG.>^.:#
+
+```
+Line 1: @# (person) JN (John identifier) >@ (speech)
+## (substance) !: (crisis) - John verified a severe
+artifact occurrence.
+Line 2: @% (status) LG (legal identifier) >^ (departure)
+:# (now) - Legal cluster remains stationary/blocking
+operational path.
+Tip: Utilize clean capital literal wrappers like JN and LG
+to ensure clear visual isolation and fast text manipulation.
 ```
 
-### 81 Prime Dictionary
-Search and explore all 81 semantic primes by symbol or meaning.
+## Getting Started
 
-| SYMBOL | MEANING | CATEGORY |
-| :---: | :--- | :--- |
-| `@@` | self | PERSON |
-| `@#` | person | PERSON |
-| `@!` | I/me | PERSON |
-| `@?` | you | PERSON |
-| `@>` | someone | PERSON |
-| `@<` | young | PERSON |
-| `@:` | old | PERSON |
-| `@^` | other | PERSON |
-| `@%` | group | PERSON |
-| `#@` | body | THING |
-| `##` | thing | THING |
-| `#!` | tool | THING |
-| `#?` | word | THING |
-| `#>` | output | THING |
-| `#<` | input | THING |
-| `#:` | material | THING |
-| `#^` | this | THING |
-| `#%` | part | THING |
-| `!@` | help | VALUE |
-| `!#` | purpose | VALUE |
-| `!!` | good | VALUE |
-| `!?` | need | VALUE |
-| `!>` | big | VALUE |
-| `!<` | small | VALUE |
-| `!:` | bad | VALUE |
-| `!^` | true | VALUE |
-| `!%` | all | VALUE |
-| `?@` | feeling | MIND |
-| `?#` | sense | MIND |
-| `?!` | know | MIND |
-| `??` | fact | MIND |
-| `?>` | listen | MIND |
-| `?<` | think | MIND |
-| `?:` | way | MIND |
-| `?^` | focus | MIND |
-| `?%` | desire | MIND |
-| `>@` | speech | ACT |
-| `>#` | move | ACT |
-| `>!` | action | ACT |
-| `>?` | ask | ACT |
-| `>>` | is | ACT |
-| `><` | transfer | ACT |
-| `>:` | contact | ACT |
-| `>^` | stay | ACT |
-| `>%` | act | ACT |
-| `<@` | hold | STRUCTURE |
-| `<#` | type | STRUCTURE |
-| `<!` | not | STRUCTURE |
-| `<?` | because | STRUCTURE |
-| `<>` | same | STRUCTURE |
-| `<<<` | have | STRUCTURE |
-| `<:` | if | STRUCTURE |
-| `<^` | with | STRUCTURE |
-| `<%` | can | STRUCTURE |
-| `: @` | life | CHRONIC |
-| `: #` | now | CHRONIC |
-| `:!` | moment | CHRONIC |
-| `:?` | brief | CHRONIC |
-| `:>` | future | CHRONIC |
-| `:<` | past | CHRONIC |
-| `::` | time | CHRONIC |
-| `:^` | soon | CHRONIC |
-| `:%` | always | CHRONIC |
-| `^@` | here | SPACE |
-| `^#` | side | SPACE |
-| `^!` | above | SPACE |
-| `^?` | inside | SPACE |
-| `^>` | below | SPACE |
-| `^<` | far | SPACE |
-| `^:` | near | SPACE |
-| `^^` | space | SPACE |
-| `^%` | distance | SPACE |
-| `%@` | more | SCALE |
-| `%#` | less | SCALE |
-| `%!` | very | SCALE |
-| `%?` | maybe | SCALE |
-| `%>` | many | SCALE |
-| `%<` | some | SCALE |
-| `%:` | all | SCALE |
-| `%^` | few | SCALE |
-| `%%` | size | SCALE |
+#### Master the Attribute-Entity logic in 5 progressive loops. Start with core dimensions, scale to matrix intersections,
 
----
+#### then build long chains.
 
-### Stacked Vocabulary
-This section expands upon the core primes by stacking base concepts to form complex, context-specific everyday language mappings.
+##### 1 9 Core Primitives
 
-| SYMBOL | MEANING | CATEGORY / DERIVATION |
-| :---: | :--- | :--- |
-| *(Omitted)* | a | Implied by context/root noun |
-| `<%` | able | STRUCTURE |
-| `?:` / `^:` | about | way/regarding OR near |
-| `^!` | above | SPACE |
-| `^%` / `>#` | across | distance OR move |
-| `>%` | act | ACT |
-| `%@ . >!` | add | more + action |
-| `:>` | after | CHRONIC (future) |
-| `%@ . ::` | again | more + time |
-| `<!` / `<` | against | not/opposite OR relation |
-| `::` / `@: . ::` | age | time OR old + time |
-| `:<` | ago | CHRONIC (past) |
-| `##` | air | thing; default natural element |
-| `!%` / `%:` | all | VALUE / SCALE |
-| `%< . <!` | almost | some + not |
-| `@@` | alone | PERSON (self) |
-| `<^` / `>#` | along | with OR move |
-| `:<` | already | CHRONIC (past) |
-| `<>` | also | STRUCTURE (same) |
-| `<:` / `<!` | although | if OR not |
-| `%:` | always | SCALE (all) |
-| `>>` | am | ACT (is) |
-| `^?` / `@%` | among | inside OR group |
-| *(Omitted)* | an | Implied by context/root noun |
-| *(Dot chain `.`)* | and | Implied by connecting syntax |
-| `:@ . ##` | animal | life + thing |
-| `@^` | another | PERSON (other) |
-| `>@ . <?` | answer | speech + because |
-| *(Generic concepts)* | any | Implied by generic primes like `##` or `@>` |
-| `@>` | anyone | PERSON (someone) |
-| `##` | anything | THING (thing) |
-| `?#` / `>^` | appear | sense OR stay |
-| `>>` | are | ACT (is) |
-| `^^` | area | SPACE (space) |
-| `^^` / `^#` | around | space OR side |
-| `<>` | as | STRUCTURE (same) |
-| `>?` | ask | ACT |
-| `^@` | at | SPACE (here) |
-| `^<` | away | SPACE (far) |
-| `^#` / `:<` | back | side OR past |
-| `>>` | be | ACT (is) |
-| `>> . :<` | became | is + past |
-| `<?` | because | STRUCTURE |
-| `>> . :<` | been | is + past |
-| `:<` | before | CHRONIC (past) |
-| `>! . :<` | began | action + past |
-| `^#` / `:<` | behind | side OR past |
-| `:@` / `>>` | being | life OR is |
-| `?< . !^` | believe | think + true |
-| `^>` | below | SPACE |
-| `!! . %!` | best | good + very |
-| `!! . %@` | better | good + more |
-| `^#` / `^?` | between | side OR inside |
-| `!>` | big | VALUE |
-| `:@ . ##` | bird | life + thing |
-| `##` | black | thing; contextually implied color |
-| `##` | blue | thing; contextually implied color |
-| `#@` | body | THING |
-| `## . #?` | book | thing + word |
-| `%:` / `2` | both | all OR literal number |
-| `##` | box | THING |
-| `@<` | boy | PERSON (young) |
-| `>< . :<` | brought | transfer + past |
-| `>! . ##` | build | action + thing |
-| `>! . ## . :<` | built | action + thing + past |
-| `#!` / `##` | bus | tool OR thing |
-| `>!` / `!#` | business | action OR purpose |
-| `<!` | but | STRUCTURE (not) |
-| `><` | buy | ACT (transfer) |
-| `^:` | by | SPACE (near) |
-| `>@` | call | ACT (speech) |
-| `># . :<` | came | move + past |
-| `<%` | can | STRUCTURE |
-| `<! . <%` | cannot | not + can |
-| `#!` / `>#` | car | tool OR move |
-| `?@` | care | MIND (feeling) |
-| `<@` | carry | STRUCTURE (hold) |
-| `##` | case | THING |
-| `:@ . ##` | cat | life + thing |
-| `<?` | cause | STRUCTURE (because) |
-| `^?` | center | SPACE (inside) |
-| `!^` | certain | VALUE (true) |
-| `>#` / `>!` | change | move OR action |
-| `?<` | check | MIND (think) |
-| `@<` | child | PERSON (young) |
-| `@% . @<` | children | group + young |
-| `^^ . %@` | city | space + more |
-| `<#` / `@%` | class | type OR group |
-| `^:` | close | SPACE (near) |
-| `!: . ?:` | cold | bad + way |
-| `>#` | come | ACT (move) |
-| `<>` | common | STRUCTURE (same) |
-| `@%` | company | PERSON (group) |
-| `!%` | complete | VALUE (all) |
-| `<% . :<` | could | can + past |
-| `^^` | country | SPACE (space) |
-| `?:` | course | MIND (way) |
-| `>!` | cut | ACT (action) |
-| `##` | dark | THING |
-| `::` | day | CHRONIC (time) |
-| `!?` | decide | VALUE (need) |
-| `!?` | decision | VALUE (need) |
-| `^>` | deep | SPACE (below) |
-| `>! . :<` | did | action + past |
-| `@^` / `<!` | differ | other OR not |
-| `@^` / `<!` | different | other OR not |
-| `>!` | do | ACT (action) |
-| `>!` | does | ACT (action) |
-| `:@ . ##` | dog | life + thing |
-| `>! . :<` | done | action + past |
-| `<! . >!` | don't | not + do |
-| `#<` / `#>` | door | input OR output |
-| `^>` | down | SPACE (below) |
-| `>!` | draw | ACT |
-| `>#` | drive | ACT (move) |
-| `##` | dry | THING |
-| `::` | during | CHRONIC (time) |
-| `!%` | each | VALUE (all) |
-| `:^` | early | CHRONIC (soon) |
-| `##` | earth | THING (or core symbol `#`) |
-| `^#` | east | SPACE (side) |
-| `!! . <%` | easy | good + can |
-| `>!` | eat | ACT |
-| `:<` | end | CHRONIC (past) |
-| `!%` | enough | VALUE (all) |
-| `<>` | even | STRUCTURE (same) |
-| `%:` | ever | SCALE (all) |
-| `!%` | every | VALUE (all) |
-| `## . !%` | everything | thing + all |
-| `<#` | example | STRUCTURE (type) |
-| `#@` | face | THING (body) |
-| `??` | fact | MIND |
-| `^>` | fall | SPACE (below) |
-| `@%` | family | PERSON (group) |
-| `^<` | far | SPACE |
-| `%! . :` | fast | very + time |
-| `@#` | father | PERSON (person) |
-| `?@` | feel | MIND (feeling) |
-| `#@` | feet | THING (body) |
-| `%^` | few | SCALE |
-| `^^` | field | SPACE (space) |
-| `##` / `?<` | figure | thing OR think |
-| `%@` | fill | SCALE (more) |
-| `?#` | find | MIND (sense) |
-| `!!` | fine | VALUE (good) |
-| `#@` | finger | THING (body) |
-| `##` | fire | THING |
-| `1` | first | Literal number |
-| `:@ . ##` | fish | life + thing |
-| `5` | five | Literal number |
-| `^>` | floor | SPACE (below) |
-| `>#` | fly | ACT (move) |
-| `:>` | follow | CHRONIC (future) |
-| `##` | food | THING |
-| `#@` | foot | THING (body) |
-| `!#` | for | VALUE (purpose) |
-| `>!` | force | ACT |
-| `<#` | form | STRUCTURE (type) |
-| `?# . :<` | found | sense + past |
-| `4` | four | Literal number |
-| `<%` | free | STRUCTURE (can) |
-| `@#` | friend | PERSON (person) |
-| `:<` | from | CHRONIC (past) |
-| `^>` | front | SPACE (below) |
-| `!%` | full | VALUE (all) |
-| `!!` | funny | VALUE (good) |
-| `>%` | game | ACT (act) |
-| `^^` | garden | SPACE |
-| `>< . :<` | gave | transfer + past |
-| `!%` | general | VALUE (all) |
-| `<<` | get | STRUCTURE (have) |
-| `@<` | girl | PERSON (young) |
-| `><` | give | ACT (transfer) |
-| `>< . :<` | given | transfer + past |
-| `>#` | go | ACT (move) |
-| `#:` | gold | THING (material) |
-| `># . :<` | gone | move + past |
-| `!!` | good | VALUE |
-| `<< . :<` | got | have + past |
-| `@%` | government | PERSON (group) |
-| `!> . %!` | great | big + very |
-| `##` | green | THING |
-| `##` | ground | THING |
-| `%@` | grow | SCALE (more) |
-| `<< . :<` | had | have + past |
-| `#%` | half | THING (part) |
-| `#@` | hand | THING (body) |
-| `>!` | happen | ACT |
-| `!:` | hard | VALUE (bad) |
-| `<<` | has | STRUCTURE (have) |
-| `<<` | have | STRUCTURE |
-| `@#` | he | PERSON (person) |
-| `#@` | head | THING (body) |
-| `?>` | hear | MIND (listen) |
-| `?> . :<` | heard | listen + past |
-| `##` | heat | THING |
-| `%!` | heavy | SCALE (very) |
-| `!@` | help | VALUE |
-| `@#` | her | PERSON (person) |
-| `^@` | here | SPACE |
-| `^!` | high | SPACE (above) |
-| `@#` | him | PERSON (person) |
-| `@@` | himself | PERSON (self) |
-| `@#` | his | PERSON (person) |
-| `:<` | history | CHRONIC (past) |
-| `<@` | hold | STRUCTURE |
-| `^^` | home | SPACE |
-| `?%` | hope | MIND (desire) |
-| `:@ . ##` | horse | life + thing |
-| `##` | hot | THING |
-| `::` | hour | CHRONIC (time) |
-| `##` | house | THING |
-| `?:` | how | MIND (way) |
-| `<!` | however | STRUCTURE (not) |
-| `100` | hundred | Literal number |
-| `@!` | i | PERSON (I) |
-| `?<` | idea | MIND (think) |
-| `<:` | if | STRUCTURE |
-| `!!` / `!?` | important | good OR need |
-| `^?` | in | SPACE (inside) |
-| `<@` / `^?` | include | hold OR inside |
-| `^?` | into | SPACE (inside) |
-| `>>` | is | ACT |
-| `##` / `#^` | it | thing OR this |
-| `##` / `#^` | its | thing OR this |
-| `@@` | itself | PERSON (self) |
-| `>!` | job | ACT |
-| `!^` / `:#` | just | true OR now |
-| `<@` | keep | STRUCTURE (hold) |
-| `<#` | kind | STRUCTURE (type) |
-| `?! . :<` | knew | know + past |
-| `?!` | know | MIND |
-| `##` / `^^` | land | thing OR space |
-| `#?` | language | THING (word) |
-| `!>` | large | VALUE (big) |
-| `:<` | last | CHRONIC (past) |
-| `:<` | late | CHRONIC (past) |
-| `:>` | later | CHRONIC (future) |
-| `>@` | laugh | ACT (speech) |
-| `>^` | lay | ACT (stay) |
-| `>!` | lead | ACT |
-| `?!` | learn | MIND (know) |
-| `%#` | least | SCALE (less) |
-| `>#` | leave | ACT (move) |
-| `^#` / `:<` | left | side OR past |
-| `%#` | less | SCALE |
-| `<%` | let | STRUCTURE (can) |
-| `#?` | letter | THING (word) |
-| `:@` | life | CHRONIC |
-| `##` | light | THING |
-| `<>` | like | STRUCTURE (same) |
-| `#?` | line | THING (word) |
-| `##` | list | THING |
-| `?>` | listen | MIND |
-| `!<` | little | VALUE (small) |
-| `:@` | live | CHRONIC (life) |
-| `::` / `^^` | long | time OR space |
-| `?#` | look | MIND (sense) |
-| `<!` | lost | STRUCTURE (not) |
-| `%>` | lot | SCALE (many) |
-| `?@` | love | MIND (feeling) |
-| `^>` | low | SPACE (below) |
-| `#!` | machine | THING (tool) |
-| `>! . ## . :<` | made | action + thing + past |
-| `>! . ##` | make | action + thing |
-| `@#` | man | PERSON (person) |
-| `%>` | many | SCALE |
-| `##` | map | THING |
-| `#?` / `>!` | mark | word OR action |
-| `%?` / `<%` | may | maybe OR can |
-| `%?` | maybe | SCALE |
-| `>@` | mean | ACT (speech) |
-| `%%` | measure | SCALE (size) |
-| `>:` | meet | ACT (contact) |
-| `@%` | men | PERSON (group) |
-| `<%` / `!>` | might | can OR big |
-| `^%` | mile | SPACE (distance) |
-| `1000000` | million | Literal number |
-| `?` | mind | MIND (core domain) |
-| `:!` | minute | CHRONIC (moment) |
-| `<!` | miss | STRUCTURE (not) |
-| `#:` | money | THING (material) |
-| `::` | month | CHRONIC (time) |
-| `%@` | more | SCALE |
-| `:^` | morning | CHRONIC (soon) |
-| `%!` | most | SCALE (very) |
-| `@#` | mother | PERSON (person) |
-| `^^` | mountain | SPACE |
-| `>#` | move | ACT |
-| `%>` / `%!` | much | many OR very |
-| `#?` / `?>` | music | word OR listen |
-| `!?` | must | VALUE (need) |
-| `@!` | my | PERSON (I) |
-| `#?` | name | THING (word) |
-| `^^` | national | SPACE |
-| `^:` | near | SPACE |
-| `!?` | need | VALUE |
-| `<! . %:` | never | not + always |
-| `:^` | new | CHRONIC (soon) |
-| `:>` | next | CHRONIC (future) |
-| `:<` | night | CHRONIC (past) |
-| `<!` | no | STRUCTURE (not) |
-| `^#` | north | SPACE (side) |
-| `<!` | not | STRUCTURE |
-| `## . <!` | nothing | thing + not |
-| `?#` | notice | MIND (sense) |
-| `:#` | now | CHRONIC |
-| `%` | number | SCALE (core domain) |
-| `<!` | off | STRUCTURE (not) |
-| `^^` | office | SPACE |
-| `%>` | often | SCALE (many) |
-| `@:` | old | PERSON |
-| `^!` | on | SPACE (above) |
-| `1` | once | Literal number |
-| `1` | one | Literal number |
-| `1` | only | Literal number |
-| `<>` | open | STRUCTURE (same) |
-| `%?` | or | SCALE (maybe) |
-| `?:` | order | MIND (way) |
-| `@^` | other | PERSON |
-| `@%` | others | PERSON (group) |
-| `@%` | our | PERSON (group) |
-| `#>` | out | THING (output) |
-| `#>` | outside | THING (output) |
-| `^!` | over | SPACE (above) |
-| `<<` | own | STRUCTURE (have) |
-| `##` | page | THING |
-| `##` | paper | THING |
-| `#%` | part | THING |
-| `@%` | party | PERSON (group) |
-| `>#` | pass | ACT (move) |
-| `:<` | past | CHRONIC |
-| `><` | pay | ACT (transfer) |
-| `@` | people | PEOPLE (core domain) |
-| `@#` | person | PERSON |
-| `##` | picture | THING |
-| `^^` | place | SPACE |
-| `##` / `:@ . ##` | plant | thing OR life + thing |
-| `>%` | play | ACT |
-| `^@` / `?^` | point | here OR focus |
-| `^^` | position | SPACE |
-| `<%` | possible | STRUCTURE (can) |
-| `!>` | power | VALUE (big) |
-| `%?` | probably | SCALE (maybe) |
-| `!:` | problem | VALUE (bad) |
-| `>#` | put | ACT (move) |
-| `>?` | question | ACT (ask) |
-| `:?` | quick | CHRONIC (brief) |
-| `:?` | quickly | CHRONIC (brief) |
-| `%!` | quite | SCALE (very) |
-| `##` | rain | THING |
-| `?>` | read | MIND (listen) |
-| `<%` | ready | STRUCTURE (can) |
-| `!^` | real | VALUE (true) |
-| `%!` | really | SCALE (very) |
-| `<?` | reason | STRUCTURE (because) |
-| `#<` | receive | THING (input) |
-| `?!` | remember | MIND (know) |
-| `!!` / `^#` | right | good OR side |
-| `##` | river | THING |
-| `^^` | road | SPACE |
-| `^^` | room | SPACE |
-| `%%` | round | SCALE (size) |
-| `>#` | run | ACT (move) |
-| `>@ . :<` | said | speech + past |
-| `<>` | same | STRUCTURE |
-| `?# . :<` | saw | sense + past |
-| `>@` | say | ACT (speech) |
-| `^^` | school | SPACE |
-| `##` | sea | THING |
-| `2` | second | Literal number |
-| `?#` | see | MIND (sense) |
-| `>>` | seem | ACT (is) |
-| `?# . :<` | seen | sense + past |
-| `@@` | self | PERSON |
-| `#?` | sentence | THING (word) |
-| `>#` / `<#` | set | move OR type |
-| `%<` | several | SCALE (some) |
-| `:>` | shall | CHRONIC (future) |
-| `@#` | she | PERSON (person) |
-| `!?` | should | VALUE (need) |
-| `?>` / `>!` | show | listen OR action |
-| `^#` | side | SPACE |
-| `<?` / `:<` | since | because OR past |
-| `!<` | small | VALUE |
-| `%!` | so | SCALE (very) |
-| `%<` | some | SCALE |
-| `@>` | someone | PERSON |
-| `##` | something | THING |
-| `%<` | sometimes | SCALE (some) |
-| `@<` | son | PERSON (young) |
-| `#?` | song | THING (word) |
-| `:^` | soon | CHRONIC |
-| `?#` | sound | MIND (sense) |
-| `#?` | spell | THING (word) |
-| `>^` | stand | ACT (stay) |
-| `>!` | start | ACT (action) |
-| `>>` | state | ACT (is) |
-| `>^` | stay | ACT |
-| `>#` | step | ACT (move) |
-| `>^` | still | ACT (stay) |
-| `<! . >#` | stop | not + move |
-| `#?` | story | THING (word) |
-| `^^` | street | SPACE |
-| `?!` | study | MIND (know) |
-| `<>` | such | STRUCTURE (same) |
-| `##` | sun | THING |
-| `!^` | sure | VALUE (true) |
-| `<@` | take | STRUCTURE (hold) |
-| `>@` | talk | ACT (speech) |
-| `>@` | tell | ACT (speech) |
-| `<` | than | STRUCTURE (relation) |
-| `#^` | that | THING (this) |
-| *(Omitted)* | the | Implied by context/root noun |
-| `@%` | their | PERSON (group) |
-| `@%` | them | PERSON (group) |
-| `@@` | themselves | PERSON (self) |
-| `:>` | then | CHRONIC (future) |
-| `^^` | there | SPACE |
-| `#^` | these | THING (this) |
-| `@%` | they | PERSON (group) |
-| `##` | thing | THING |
-| `?<` | think | MIND |
-| `3` | third | Literal number |
-| `#^` | this | THING |
-| `#^` | those | THING (this) |
-| `<!` | though | STRUCTURE (not) |
-| `?<` | thought | MIND (think) |
-| `1000` | thousand | Literal number |
-| `3` | three | Literal number |
-| `^?` | through | SPACE (inside) |
-| `::` | time | CHRONIC |
-| `:>` / `^` | to | future OR direction |
-| `<^` | together | STRUCTURE (with) |
-| `>@ . :<` | told | speech + past |
-| `%!` | too | SCALE (very) |
-| `<@ . :<` | took | hold + past |
-| `^^` | town | SPACE |
-| `##` | tree | THING |
-| `>#` | turn | ACT (move) |
-| `2` | two | Literal number |
-| `^>` | under | SPACE (below) |
-| `:>` | until | CHRONIC (future) |
-| `^!` | up | SPACE (above) |
-| `^!` | upon | SPACE (above) |
-| `@%` | us | PERSON (group) |
-| `#!` | use | THING (tool) |
-| `%:` | usually | SCALE (all) |
-| `%!` | very | SCALE |
-| `?#` / `>@` | voice | sense OR speech |
-| `>^` | wait | ACT (stay) |
-| `>#` | walk | ACT (move) |
-| `?%` | want | MIND (desire) |
-| `!!` | warm | VALUE (good) |
-| `>> . :<` | was | is + past |
-| `?#` | watch | MIND (sense) |
-| `##` | water | THING |
-| `?:` | way | MIND |
-| `@%` | we | PERSON (group) |
-| `!!` | well | VALUE (good) |
-| `># . :<` | went | move + past |
-| `>> . :<` | were | is + past |
-| `#` | what | OBJECTS (core domain) |
-| `:` | when | TIME (core domain) |
-| `^` | where | SPACE (core domain) |
-| `%?` | whether | SCALE (maybe) |
-| `#^` | which | THING (this) |
-| `::` | while | CHRONIC (time) |
-| `@` | who | PEOPLE (core domain) |
-| `!%` | whole | VALUE (all) |
-| `>?` / `<?` | why | ask OR because |
-| `:>` | will | CHRONIC (future) |
-| `##` | wind | THING |
-| `<^` | with | STRUCTURE |
-| `^?` | within | SPACE (inside) |
-| `<! . <^` | without | not + with |
-| `#?` | word | THING |
-| `>!` | work | ACT (action) |
-| `^^` | world | SPACE |
-| `<%` / `:>` | would | can OR future |
-| `>!` | write | ACT (action) |
-| `>! . :<` | written | action + past |
-| `::` | year | CHRONIC (time) |
-| `!^` | yes | VALUE (true) |
-| `<!` | yet | STRUCTURE (not) |
-| `@?` | you | PERSON |
-| `@<` | young | PERSON |
-| `@?` | your | PERSON (you) |
+###### Internalize the 9 structural axioms anchoring all
 
----
+###### semantic pairs: @ #!? > < : ^ %
 
-### Examples
+##### 2 81 Matrix Intersections
 
-#### Meeting Note
-*Capturing key points during a security review*
-* **ENGLISH:** Security review meeting. Team raised concerns about access controls. Need to follow up.
-* **TWO TALK:**
-    * `@% . >@ . ?? . :<` *(Line 1: @% (group) >@ (speech) ?? (fact) :< (past) - group spoke about facts)*
-    * `@% . !: . ^? . :<` *(Line 2: @% (group) !: (bad) ^? (inside) :< (past) - team flagged internal problems)*
-    * `@! . !? . >: . @% . :>` *(Line 3: @! (I) !? (need) >: (contact) @% (group) :> (future) - I need to follow up)*
+###### Verify how components lock together predictably. #!
 
-#### Action Item
-*Logging a high-priority task from a security review*
-* **ENGLISH:** Patch the firewall tool before end of week. High priority.
-* **TWO TALK:**
-    * `#! . >! . :< . :>` *(Line 1: #! (tool) >! (action) :< (past/overdue) :> (future deadline) - tool needs actioning before deadline)*
-    * `!> . !?` *(Line 2: !> (big) !? (need) - high priority)*
+###### (tool), @# (person).
 
-#### Memory Jogger
-*Quick capture of a vendor risk flag and pending response*
-* **ENGLISH:** John flagged a vendor risk. Waiting on legal.
-* **TWO TALK:**
-    * `@# . JN . >@ . ## . !:` *(Line 1: @# (person) JN (John) >@ (speech) ## (thing) !: (bad) - John flagged something bad)*
-    * `@% . LG . >^ . :#` *(Line 2: @% (group) LG (legal) >^ (stay) :# (now) - legal still pending)*
+##### 3 Chain Via Delimiters
 
-> **Tip:** Use capitalized initials like `JN` and `LG` for names and teams—they stand out visually and grep cleanly.
+###### Stack relational primes using simple dot syntax to bound
 
----
+###### meaning on the fly: @#.>!.!!
 
-### Getting Started
-Learn Two Talk in four steps. Start with the symbols, build to 81 primes, then layer meaning through chaining.
+##### 4 Structure Sentences
 
-1.  **9 Matrix Symbols:** Learn the base components representing primary domains of focus: `@ # ! ? > < : ^ %`
-2.  **81 Core Primes:** Two base symbols intersect to establish standard primes. `#!` (tool), `@#` (human).
-3.  **Chain with Dots:** Connect root concepts to qualify thoughts on the fly: `who . what . when` (e.g., `@# . !@ . !!`)
-4.  **Start Writing:** One line per thought, left to right: `who what when` (e.g., `@! . >@ . @? . :#` = I spoke to you just now).
+###### One tracking node line per statement: who → what →
 
-#### 25 Common Primes
-These 25 primes cover the most common ideas you'll reach for—people, tools, actions, time, and basic states. Master these before expanding to the full 81.
+###### when. Postfix parameters process negation smoothly:
 
-1. `@@` self
-2. `@#` person
-3. `@!` I/me
-4. `@?` you
-5. `@%` group
-6. `##` thing
-7. `#!` tool
-8. `#?` word
-9. `#@` body
-10. `!!` good
-11. `!:` bad
-12. `!?` need
-13. `!@` help
-14. `??` fact
-15. `?#` sense
-16. `?!` know
-17. `?^` focus
-18. `>>` is
-19. `>!` action
-20. `>@` speech
-21. `><` transfer
-22. `::` time
-23. `:<` past
-24. `:>` future
-25. `:#` now
+###### >!.<!.
 
----
-*Two Talk was created by Barney Matthews*
+##### 5 Deploy Runtime Tools
+
+###### (Optional.) Bind the structural Two Talk engine directly
+
+###### into your system shell workflow or browser extension
+
+###### stack.
+
+#### These 25 foundational intersections capture the core mechanics you will track daily — identities, physical objects,
+
+#### dynamic states, and times.
+
+##### 1 @@
+
+###### self
+
+##### 2 @#
+
+###### person / body
+
+##### 3 @!
+
+###### emotion / feeling
+
+##### 4 @?
+
+###### identity /
+
+###### viewpoint
+
+##### 5 @%
+
+###### status / capacity
+
+##### 6 ##
+
+###### substance
+
+##### 7 #!
+
+###### tool
+
+##### 8 #?
+
+###### sign / code
+
+##### 9 #@
+
+###### organism
+
+##### 10 !!
+
+###### perfect / pure
+
+##### 11 !:
+
+###### crisis
+
+##### 12 !?
+
+###### priority
+
+##### 13 !@
+
+###### motive / intent
+
+##### 14 ??
+
+###### truth / axiom
+
+##### 15 ?#
+
+###### fact / datum
+
+##### 16 ?!
+
+###### knowledge
+
+##### 17 ?^
+
+###### context
+
+##### 18 >>
+
+###### progression
+
+##### 19 >!
+
+###### execution
+
+##### 20 >@
+
+###### speech
+
+##### 21 ><
+
+###### exchange
+
+##### 22 ::
+
+###### duration
+
+##### 23 :<
+
+###### past
+
+##### 24 :>
+
+###### future
+
+##### 25 :#
+
+###### now
+
+
+Credit: Barney Matthews. Github. Install. Reddit. Contact.
