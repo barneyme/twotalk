@@ -39,7 +39,7 @@ The grid shows what every two-symbol combination means. To read it: find the fir
 | @ HUMAN    | @@ I    | @# Who   | @! Feel | @? Is  | @> You | @< Have | @: Live | @^ Stay | @% We    |
 | # OBJECT   | @# Body | ## What  | #! Tool | #? Word | #> Make | #< Part | #: Die  | #^ Be   | #% Some |
 | ! FORCE    | !@ Want | !# Do    | !! Go   | !? Can  | !> Move | !< Refuse | !: Bad | !^ Rise | !% Very |
-| ? IDEA     | ?@ See  | ?# Know  | ?! True | ?? Wonder | ?> Speak | ?< Else | ?: Why | ?^ Think | ?% One |
+| ? IDEA     | ?@ See  | ?# Know  | ?! True | ?? Wonder | ?> Speak | ?< Else | ?: Why | ?^ Think | ?% Focus |
 | > OUT      | >@ Say  | ># Work  | >! Give | >? Ask | >> Far | >< If | >: After | >^ Out | >% Big |
 | < IN       | <@ Hear | <# Own   | <! Not  | <? Like | <> Other | << Stop | <: Before | <^ In | <% Small |
 | : TIME     | :@ When | :# Now   | :! Soon | ?: Maybe | :> Will | :< Was | :: Long | :^ Old | :% Time |
@@ -152,7 +152,7 @@ Example: `>?.@% [LG] >^ : #` = Is the legal team still waiting?
 | ?<     | Else (otherwise, alternative, instead) | IDEA |
 | ?:     | Why (since, reason, therefore) | IDEA |
 | ?^     | Think (ponder, analyze, evaluate) | IDEA |
-| ?%     | One (single, particular, sole) | IDEA |
+| ?%     | Focus (core, main, subject) | IDEA |
 
 ### OUT
 | Symbol | Meaning | Category |
@@ -215,7 +215,7 @@ Example: `>?.@% [LG] >^ : #` = Is the legal team still waiting?
 | %?     | May (perhaps, possibly, potential) | MEASURE |
 | %>     | More (extra, plus, further) | MEASURE |
 | %<     | Less (scarce, rare, handful) | MEASURE |
-| %:     | Two (double, repeat, dual) | MEASURE |
+| %:     | Limit (boundary, threshhold, cap) | MEASURE |
 | %^     | All (entirely, complete, full) | MEASURE |
 | %%     | Same (identical, equal, uniform) | MEASURE |
 
