@@ -274,12 +274,12 @@
                 font-family: var(--font-mono);
                 background: var(--bg);
                 transition: background 0.15s;
-                cursor: help;
+                cursor: default;
                 padding: 0.6rem 0.4rem;
             }
             .matrix-table .matrix-cell:hover {
-                background: var(--surface-card);
-                border-color: var(--accent);
+                background: var(--bg);
+                border-color: var(--border);
             }
             .matrix-table .cell-sym {
                 color: var(--accent);
@@ -635,7 +635,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
-                gap: 0.3rum;
+                gap: 0.3rem;
                 margin-bottom: 0.3rem;
                 font-family: var(--font-mono);
                 font-size: var(--font-xs);
@@ -790,33 +790,50 @@
             <header>
                 <div class="hero-main">
                     <h1>Two Talk</h1>
-                    <p class="tagline">WRITE LESS, MEAN MORE - #!.^?.!:</p>
-                    <p class="hero-text">
-                        Two Talk is a
-                        <strong>semantic shorthand for notes</strong> - minimal,
-                        plaintext, and natively searchable. Built on three
-                        simple structural concepts:
-                        <strong>9 core symbols</strong> paired to create
-                        <strong>81 semantic primes</strong>, which
-                        <strong>chained together</strong> with dots to express
-                        nuanced meaning.
+                    <p class="tagline">
+                        #&gt;.&lt;% &gt;?.&gt;%<br />
+                        WRITE LESS, MEAN MORE
+                    </p>
+                    <p class="description">
+                        Two Talk is a semantic shorthand for notes - minimal,
+                        plaintext, and natively searchable. It is based on three
+                        simple concepts:
+                        <strong>9 core symbols</strong> are paired to generate
+                        <strong>81 semantic primes</strong>, which can then be
+                        <strong>compounded together with dots</strong> to form
+                        highly nuanced ideas in a concise form. The result is a
+                        highly compact, deterministic language designed to
+                        capture meeting context, project milestones, and rapid
+                        task updates in a single line.
                     </p>
                 </div>
 
                 <div class="literals-note">
                     <p>
-                        <strong>Why Two Talk?</strong> Most notes are too long
-                        to scan, tied to one app, and too unstructured to
-                        search. Two Talk solves all three - it's compact enough
-                        to write fast, plaintext enough to live anywhere, and
-                        structured enough to <code>grep</code>. No app required.
-                        No vendor lock-in. Just a deterministic system you carry
-                        in your head and write on any keyboard.
+                        <strong>Why Two Talk?</strong> Keeping track of meeting
+                        notes, complex projects, and relentless task lists was
+                        the biggest bottleneck in my daily workflow. I needed a
+                        high-speed note taking system that worked well in a
+                        keyboard-first environment to let me to document
+                        everything that was going on. Writing full sentences was
+                        too slow to type and too dense to scan when searching
+                        for critical details. Unable to find an existing
+                        solution for my problem I created Two Talk.
                     </p>
+                    <li>
+                        Two Talk is keyboard first and terminal friendly. It
+                        allows you to log deep context with just a handful of
+                        strokes.
+                    </li>
+                    <li>
+                        Two Talk uses standard ASCII symbols which means your
+                        files can live anywhere and on any OS. No app required.
+                        No vendor lock-in.
+                    </li>
                 </div>
             </header>
 
-            <h2 class="section-title">#? - Symbols</h2>
+            <h2 class="section-title">#? Symbols</h2>
             <p class="section-intro">
                 Each symbol stands for one basic category of meaning. These 9
                 categories are the building blocks - pair any two together and
@@ -824,7 +841,7 @@
             </p>
             <div class="grid-matrix" id="coreSymbolsGrid"></div>
 
-            <h2 class="section-title">%^ - Matrix</h2>
+            <h2 class="section-title">%^ Matrix</h2>
             <p class="section-intro">
                 The grid shows what every two-symbol combination means. To read
                 it: find the first symbol in the left column, and the second
@@ -834,10 +851,10 @@
                 <table class="matrix-table" id="matrixGridTable"></table>
             </div>
 
-            <h2 class="section-title">:: - Chaining</h2>
+            <h2 class="section-title">:: Compounding</h2>
             <p class="section-intro">
-                Chaining lets you stack symbols together to get more specific.
-                Use dots (.) to chain up to three pairs together:
+                Compounding lets you stack symbols together to get more
+                specific. Use dots (.) to join up to three pairs together:
                 <code>XX.XX.XX</code>. Each pair modifies the one directly
                 preceding it.
             </p>
@@ -953,13 +970,13 @@
                 </div>
             </div>
 
-            <h2 class="section-title">?! - Rules</h2>
+            <h2 class="section-title">?! Rules</h2>
             <div class="literals-note">
                 <p>
                     <strong>Order:</strong> Write left to right: who → what →
                     when. Words modify each other from left to right. e.g.
-                    <code>@!.>@ @? :#</code> = I communicated to you right now,
-                    and <code>!: #!.^?</code> = broken software.
+                    <code>@!.&gt;@ @? :#</code> = I communicated to you right
+                    now, and <code>!: #!.^?</code> = broken software.
                 </p>
                 <p>
                     <strong>Topics:</strong> Start a line with
@@ -987,7 +1004,7 @@
                 <p>
                     <strong>Tense:</strong> <code>:&lt;</code> = past,
                     <code>:&gt;</code> = future, <code>:#</code> = now. For
-                    something ongoing, chain <code>::</code> - e.g.
+                    something ongoing, compound <code>::</code> - e.g.
                     <code>&gt;!.::</code> = process still running. Leave tense
                     out when it's obvious from context.
                 </p>
@@ -995,15 +1012,10 @@
                     <strong>Literals:</strong> Use plain numbers for amounts
                     (<code>5</code>), dates as YYYY-MM-DD
                     (<code>2025-04-14</code>), times in 24hr
-                    (<code>1430</code>), and wrap named identifiers in brackets
-                    (<code>[JN]</code>, <code>[LG]</code>).
+                    (<code>1430</code>), and use initials for names and entities
+                    (<code>JN</code>, <code>[LG]</code>).
                 </p>
-                <p>
-                    <strong>Comments:</strong> Add <code>//</code> at the end to
-                    write a plain English note. Use this when the notation needs
-                    extra context. e.g.
-                    <code>@#.[JN] !: >#</code>
-                </p>
+
                 <p>
                     <strong>Pronunciation:</strong> Each symbol has a spoken
                     sound - <code>@</code> (An), <code>#</code> (Ob),
@@ -1013,9 +1025,9 @@
                     <code>%</code> (Me).
                 </p>
             </div>
-            <h2 class="section-title">>? - Dictionary</h2>
+            <h2 class="section-title">&gt;? Dictionary</h2>
             <p class="section-intro">
-                Search the 81 semantic primes and common chained words by
+                Search the 81 semantic primes and common alternate synonyms by
                 English or Two Talk.
             </p>
             <div class="dictionary-block">
@@ -1025,7 +1037,7 @@
                             type="text"
                             id="searchInput"
                             class="search-input"
-                            placeholder="Type to filter by symbol or meaning... (e.g. '@#' or 'tool')"
+                            placeholder="Type to filter by symbol or meaning... (e.g. '@#' or 'human')"
                             autocomplete="off"
                         />
                     </div>
@@ -1034,16 +1046,29 @@
                             All
                         </button>
                         <button class="search-tab" data-filter="HUMAN">
-                            Human (@)
+                            HUMAN
                         </button>
                         <button class="search-tab" data-filter="OBJECT">
-                            Object (#)
+                            OBJECT
                         </button>
-                        <button class="search-tab" data-filter="OUT">
-                            Out (&gt;)
+                        <button class="search-tab" data-filter="FORCE">
+                            FORCE
                         </button>
                         <button class="search-tab" data-filter="IDEA">
-                            Idea (?)
+                            IDEA
+                        </button>
+                        <button class="search-tab" data-filter="OUT">
+                            OUT
+                        </button>
+                        <button class="search-tab" data-filter="IN">IN</button>
+                        <button class="search-tab" data-filter="TIME">
+                            TIME
+                        </button>
+                        <button class="search-tab" data-filter="PLACE">
+                            PLACE
+                        </button>
+                        <button class="search-tab" data-filter="MEASURE">
+                            MEASURE
                         </button>
                     </div>
                 </div>
@@ -1070,77 +1095,11 @@
                 </div>
             </div>
 
-            <h2 class="section-title">?# - Examples</h2>
+            <h2 class="section-title">?# Example</h2>
             <div class="examples-grid">
                 <div class="example-card">
                     <div class="example-header">
-                        <h4>Security Audit Log</h4>
-                        <p>Logging observations during a security review.</p>
-                    </div>
-                    <div class="example-body">
-                        <div class="example-row">
-                            <div class="example-label">English</div>
-                            <div class="example-text">
-                                Team shared data facts. Flagged structural
-                                context as critical. Need to track urgent
-                                action.
-                            </div>
-                        </div>
-                        <div class="example-row">
-                            <div class="example-label">Two Talk</div>
-                            <div class="example-text code">
-                                @% &gt;@.?# :&lt;<br />
-                                @% !:.^? :&lt;<br />
-                                @! !?.&gt;: @% :&gt;
-                            </div>
-                        </div>
-                        <div class="example-breakdown">
-                            <strong>Line 1:</strong> <code>@%</code> (group)
-                            <code>&gt;@.?#</code> (broadcast + fact)
-                            <code>:&lt;</code> (past).<br />
-                            <strong>Line 2:</strong> <code>@%</code> (group)
-                            <code>!:.^?</code> (crisis + context)
-                            <code>:&lt;</code> (past).<br />
-                            <strong>Line 3:</strong> <code>@!</code> (I/feeling)
-                            <code>!?.&gt;:</code> (priority + deadline)
-                            <code>@%</code> (group) <code>:&gt;</code> (future).
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-card">
-                    <div class="example-header">
-                        <h4>Action Item</h4>
-                        <p>Logging a task that must not be delayed.</p>
-                    </div>
-                    <div class="example-body">
-                        <div class="example-row">
-                            <div class="example-label">English</div>
-                            <div class="example-text">
-                                Software deployment must not be delayed. Highest
-                                priority.
-                            </div>
-                        </div>
-                        <div class="example-row">
-                            <div class="example-label">Two Talk</div>
-                            <div class="example-text code">
-                                #!.&gt;! :&gt; &lt;!<br />
-                                !&gt; !?
-                            </div>
-                        </div>
-                        <div class="example-breakdown">
-                            <strong>Line 1:</strong> <code>#!.&gt;!</code> (tool
-                            + execution) <code>:&gt;</code> (future)
-                            <code>&lt;!</code> (negation - must not).<br />
-                            <strong>Line 2:</strong> <code>!&gt;</code> (speed)
-                            <code>!?</code> (priority) - two standalone words.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-card">
-                    <div class="example-header">
-                        <h4>System Note</h4>
+                        <h4>Meeting Note</h4>
                         <p>Tracking an issue and a blocked response.</p>
                     </div>
                     <div class="example-body">
@@ -1154,24 +1113,23 @@
                         <div class="example-row">
                             <div class="example-label">Two Talk</div>
                             <div class="example-text code">
-                                @#.[JN] &gt;@ ## !:<br />
-                                @#.[LG] &gt;^ :#
+                                JN &gt;@.!: :&lt;<br />
+                                @%.^? &gt;!.&lt;! ::
                             </div>
                         </div>
                         <div class="example-breakdown">
-                            <strong>Line 1:</strong> <code>@#.[JN]</code> (John)
-                            <code>&gt;@</code> (said)
-                            <code>##</code> (thing/object)
-                            <code>!:</code> (threat).<br />
-                            <strong>Line 2:</strong> <code>@#.[LG]</code> (legal
-                            group) <code>&gt;^</code> (move/respond)
-                            <code>:#</code> (now).
+                            <strong>Line 1:</strong> <code>JN</code> (Literal
+                            name) <code>&gt;@.!:</code> (state + crisis)
+                            <code>:&lt;</code> (past).<br />
+                            <strong>Line 2:</strong> <code>@%.^?</code> (group +
+                            context/legal) <code>&gt;!.&lt;!</code> (execution +
+                            negation/blocked) <code>::</code> (ongoing).
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h2 class="section-title">>! - Start</h2>
+            <h2 class="section-title">>! Start</h2>
             <p class="section-intro">
                 Four steps to learn Two Talk. Start with the symbols, then build
                 up to writing full sentences.
@@ -1196,7 +1154,7 @@
                 <div class="quick-step">
                     <span class="step-num">3</span>
                     <p>
-                        <strong>Chain pairs with a dot.</strong> Join up to
+                        <strong>Compound pairs with a dot.</strong> Join up to
                         three pairs to deeply nest meanings:
                         <code>XX.XX.XX</code>. Left pairs are modified by right
                         pairs.
@@ -1342,7 +1300,7 @@
                 <div class="quick-step">
                     <span class="step-num">21</span>
                     <p>
-                        <strong><code>&gt;&lt;</code></strong> Exchange
+                        <strong><code>&gt;&lt;</code></strong> If
                     </p>
                 </div>
                 <div class="quick-step">
@@ -1379,133 +1337,105 @@
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2.5"
+                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        style="
-                            display: inline-block;
-                            vertical-align: middle;
-                            margin-top: -2px;
-                        "
                     >
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
                         <path
-                            d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+                            d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
                         ></path>
                         <rect x="6" y="14" width="12" height="8"></rect>
                     </svg>
-                    Print Guide
+                    Print Two Talk Guide
                 </button>
             </div>
+
+            <footer class="credits-footer">
+                <p>Two Talk. &copy; 2026. Barney Matthews.</p>
+            </footer>
         </div>
 
-        <footer class="credits-footer">
-            <p>
-                Credit:
-                <a href="https://barney.me" target="_blank">Barney Matthews</a>.
-                <a href="https://github.com/barneyme/twotalk" target="_blank"
-                    >Github</a
-                >.
-                <a
-                    href="https://twotalk.org/install/install.html"
-                    target="_blank"
-                    >Install</a
-                >.
-                <a href="https://old.reddit.com/r/twotalk/" target="_blank"
-                    >Reddit</a
-                >.
-                <a
-                    href="/cdn-cgi/l/email-protection#a7c5c6d5c9c2decae7c3d2c4cc89c4c8ca"
-                    >Contact</a
-                >.
-            </p>
-        </footer>
-
-        <script
-            data-cfasync="false"
-            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-        ></script>
         <script>
-            // 1. Core Dimensions Definitions
             const coreSymbols = [
                 {
                     s: "@",
-                    m: "Human",
+                    m: "HUMAN",
+                    d: "People, feelings, identities, existence, relationships.",
                     p: "An",
-                    d: "Actors, individual personas, emotive states, identities",
                 },
                 {
                     s: "#",
-                    m: "Object",
+                    m: "OBJECT",
+                    d: "Physical things, materials, entities, structures, components.",
                     p: "Ob",
-                    d: "Physical assets, tangible substance, raw materials",
                 },
                 {
                     s: "!",
-                    m: "Force",
+                    m: "FORCE",
+                    d: "Action, execution, power, dynamic states, intent, errors.",
                     p: "Ve",
-                    d: "Action execution, accelerated priority, crises, stress points",
                 },
                 {
                     s: "?",
-                    m: "Idea",
+                    m: "IDEA",
+                    d: "Thoughts, information, data, truth, inquiries, reasoning.",
                     p: "Mo",
-                    d: "Logic tracking, definition mapping, parameters",
                 },
                 {
                     s: ">",
-                    m: "Out",
+                    m: "OUT",
+                    d: "External expression, moving forward, deploying, separating.",
                     p: "Ak",
-                    d: "External routing, speech events, structural growth",
                 },
                 {
                     s: "<",
-                    m: "In",
+                    m: "IN",
+                    d: "Internal perception, retention, privacy, refusal, reduction.",
                     p: "Li",
-                    d: "Internal boundaries, data containment, inversion logic",
                 },
                 {
                     s: ":",
-                    m: "Time",
+                    m: "TIME",
+                    d: "Schedules, current moments, history, continuous durations.",
                     p: "Ti",
-                    d: "Chronological points, system loops, deadlocks",
                 },
                 {
                     s: "^",
-                    m: "Place",
+                    m: "PLACE",
+                    d: "Locations, positions, regions, contextual environments.",
                     p: "Sa",
-                    d: "Topologies, physical coordinates, local zones",
                 },
                 {
                     s: "%",
-                    m: "Measure",
+                    m: "MEASURE",
+                    d: "Quantity, quality, multiples, completeness, similarity.",
                     p: "Me",
-                    d: "Probability variables, volume scale, macro states",
                 },
             ];
 
-            // 2. 81 Core Semantic Primes
             const semanticPrimes = [
                 { symbol: "@@", meaning: "I", cat: "HUMAN" },
-                { symbol: "@#", meaning: "Someone", cat: "HUMAN" },
+                { symbol: "@#", meaning: "Who", cat: "HUMAN" },
                 { symbol: "@!", meaning: "Feel", cat: "HUMAN" },
                 { symbol: "@?", meaning: "Is", cat: "HUMAN" },
                 { symbol: "@>", meaning: "You", cat: "HUMAN" },
-                { symbol: "@<", meaning: "Own", cat: "HUMAN" },
+                { symbol: "@<", meaning: "Have", cat: "HUMAN" },
                 { symbol: "@:", meaning: "Live", cat: "HUMAN" },
                 { symbol: "@^", meaning: "Stay", cat: "HUMAN" },
-                { symbol: "@%", meaning: "People", cat: "HUMAN" },
+                { symbol: "@%", meaning: "We", cat: "HUMAN" },
                 { symbol: "#@", meaning: "Body", cat: "OBJECT" },
-                { symbol: "##", meaning: "Thing", cat: "OBJECT" },
-                { symbol: "#!", meaning: "Touch", cat: "OBJECT" },
-                { symbol: "#?", meaning: "Kind", cat: "OBJECT" },
+                { symbol: "##", meaning: "What", cat: "OBJECT" },
+                { symbol: "#!", meaning: "Tool", cat: "OBJECT" },
+                { symbol: "#?", meaning: "Word", cat: "OBJECT" },
                 { symbol: "#>", meaning: "Make", cat: "OBJECT" },
                 { symbol: "#<", meaning: "Part", cat: "OBJECT" },
                 { symbol: "#:", meaning: "Die", cat: "OBJECT" },
-                { symbol: "#^", meaning: "Exists", cat: "OBJECT" },
+                { symbol: "#^", meaning: "Be", cat: "OBJECT" },
                 { symbol: "#%", meaning: "Some", cat: "OBJECT" },
                 { symbol: "!@", meaning: "Want", cat: "FORCE" },
-                { symbol: "!#", meaning: "Happen", cat: "FORCE" },
-                { symbol: "!!", meaning: "Act", cat: "FORCE" },
+                { symbol: "!#", meaning: "Do", cat: "FORCE" },
+                { symbol: "!!", meaning: "Go", cat: "FORCE" },
                 { symbol: "!?", meaning: "Can", cat: "FORCE" },
                 { symbol: "!>", meaning: "Move", cat: "FORCE" },
                 { symbol: "!<", meaning: "Refuse", cat: "FORCE" },
@@ -1518,245 +1448,300 @@
                 { symbol: "??", meaning: "Wonder", cat: "IDEA" },
                 { symbol: "?>", meaning: "Speak", cat: "IDEA" },
                 { symbol: "?<", meaning: "Else", cat: "IDEA" },
-                { symbol: "?:", meaning: "Because", cat: "IDEA" },
+                { symbol: "?:", meaning: "Why", cat: "IDEA" },
                 { symbol: "?^", meaning: "Think", cat: "IDEA" },
                 { symbol: "?%", meaning: "One", cat: "IDEA" },
                 { symbol: ">@", meaning: "Say", cat: "OUT" },
-                { symbol: ">#", meaning: "Do", cat: "OUT" },
-                { symbol: ">!", meaning: "Push", cat: "OUT" },
-                { symbol: ">?", meaning: "Words", cat: "OUT" },
-                { symbol: ">>", meaning: "Send", cat: "OUT" },
-                { symbol: "><", meaning: "Apart", cat: "OUT" },
+                { symbol: ">#", meaning: "Work", cat: "OUT" },
+                { symbol: ">!", meaning: "Give", cat: "OUT" },
+                { symbol: ">?", meaning: "Ask", cat: "OUT" },
+                { symbol: ">>", meaning: "Far", cat: "OUT" },
+                { symbol: "><", meaning: "If", cat: "LOGIC" },
                 { symbol: ">:", meaning: "After", cat: "OUT" },
-                { symbol: ">^", meaning: "Go", cat: "OUT" },
+                { symbol: ">^", meaning: "Out", cat: "OUT" },
                 { symbol: ">%", meaning: "Big", cat: "OUT" },
                 { symbol: "<@", meaning: "Hear", cat: "IN" },
-                { symbol: "<#", meaning: "Mine", cat: "IN" },
+                { symbol: "<#", meaning: "Own", cat: "IN" },
                 { symbol: "<!", meaning: "Not", cat: "IN" },
-                { symbol: "<?", meaning: "Like", cat: "IN" },
+                { symbol: "<?", meaning: "Like", cat: "SIMIL" },
                 { symbol: "<>", meaning: "Other", cat: "IN" },
                 { symbol: "<<", meaning: "Stop", cat: "IN" },
                 { symbol: "<:", meaning: "Before", cat: "IN" },
-                { symbol: "<^", meaning: "Within", cat: "IN" },
+                { symbol: "<^", meaning: "In", cat: "IN" },
                 { symbol: "<%", meaning: "Small", cat: "IN" },
-                { symbol: ":@", meaning: "Time", cat: "TIME" },
+                { symbol: ":@", meaning: "When", cat: "TIME" },
                 { symbol: ":#", meaning: "Now", cat: "TIME" },
-                { symbol: ":!", meaning: "Moment", cat: "TIME" },
-                { symbol: ":?", meaning: "Soon", cat: "TIME" },
-                { symbol: ":>", meaning: "Future", cat: "TIME" },
-                { symbol: ":<", meaning: "Before", cat: "TIME" },
-                { symbol: "::", meaning: "Always", cat: "TIME" },
-                { symbol: ":^", meaning: "Long", cat: "TIME" },
-                { symbol: ":%", meaning: "While", cat: "TIME" },
+                { symbol: ":!", meaning: "Soon", cat: "TIME" },
+                { symbol: ":?", meaning: "Maybe", cat: "TIME" },
+                { symbol: ":>", meaning: "Will", cat: "TIME" },
+                { symbol: ":<", meaning: "Was", cat: "TIME" },
+                { symbol: "::", meaning: "Long", cat: "TIME" },
+                { symbol: ":^", meaning: "Old", cat: "TIME" },
+                { symbol: ":%", meaning: "Time", cat: "TIME" },
                 { symbol: "^@", meaning: "Here", cat: "PLACE" },
                 { symbol: "^#", meaning: "This", cat: "PLACE" },
-                { symbol: "^!", meaning: "Above", cat: "PLACE" },
-                { symbol: "^?", meaning: "Side", cat: "PLACE" },
-                { symbol: "^>", meaning: "Far", cat: "PLACE" },
-                { symbol: "^<", meaning: "Below", cat: "PLACE" },
-                { symbol: "^:", meaning: "Inside", cat: "PLACE" },
-                { symbol: "^^", meaning: "Where", cat: "PLACE" },
+                { symbol: "^!", meaning: "Up", cat: "PLACE" },
+                { symbol: "^?", meaning: "Where", cat: "PLACE" },
+                { symbol: "^>", meaning: "Side", cat: "PLACE" },
+                { symbol: "^<", meaning: "Down", cat: "PLACE" },
+                { symbol: "^:", meaning: "Near", cat: "PLACE" },
+                { symbol: "^^", meaning: "Place", cat: "PLACE" },
                 { symbol: "^%", meaning: "Across", cat: "PLACE" },
                 { symbol: "%@", meaning: "Good", cat: "MEASURE" },
-                { symbol: "%#", meaning: "Many", cat: "MEASURE" },
+                { symbol: "%#", meaning: "Much", cat: "MEASURE" },
                 { symbol: "%!", meaning: "Most", cat: "MEASURE" },
-                { symbol: "%?", meaning: "Maybe", cat: "MEASURE" },
+                { symbol: "%?", meaning: "May", cat: "MEASURE" },
                 { symbol: "%>", meaning: "More", cat: "MEASURE" },
-                { symbol: "%<", meaning: "Few", cat: "MEASURE" },
-                { symbol: "%:", meaning: "Twice", cat: "MEASURE" },
+                { symbol: "%<", meaning: "Less", cat: "MEASURE" },
+                { symbol: "%:", meaning: "Two", cat: "MEASURE" },
                 { symbol: "%^", meaning: "All", cat: "MEASURE" },
                 { symbol: "%%", meaning: "Same", cat: "MEASURE" },
             ];
-            // 3. Compounds Dictionary
-            const compoundDictionary = [
-                { w: "A", c: "#%.?%" },
-                { w: "After", c: ">:" },
-                { w: "All", c: "%^" },
-                { w: "Also", c: "%^.><" },
-                { w: "An", c: "#%.?%" },
-                { w: "And", c: "%^.><" },
-                { w: "Any", c: "#%.?<" },
-                { w: "At", c: "^@.:#" },
-                { w: "Base", c: "^<" },
-                { w: "Basket", c: "<#" },
-                { w: "Bath", c: "##" },
-                { w: "Be", c: "##.>:" },
-                { w: "Bean", c: "#@" },
-                { w: "Bear", c: "#@" },
-                { w: "Beautiful", c: "!!" },
-                { w: "Bed", c: "#^" },
-                { w: "Bell", c: "#!" },
-                { w: "Berry", c: "#@" },
-                { w: "Best", c: "!!.><" },
-                { w: "Bird", c: "#@" },
-                { w: "But", c: "?<.><" },
-                { w: "By", c: "@#.><" },
-                { w: "Come", c: "!>.<^" },
-                { w: "Each", c: "?%.%^" },
-                { w: "Even", c: "%%.<^" },
-                { w: "Find", c: "?@.^^" },
-                { w: "For", c: "!@.^#" },
-                { w: "From", c: "^@.<:" },
-                { w: "Get", c: "#<.@@" },
-                { w: "Give", c: "#>.@>" },
-                { w: "Go", c: "!>.^>" },
-                { w: "Goodbye", c: ">@.<:" },
-                { w: "Have", c: "@<.##" },
-                { w: "He", c: "@#.>#" },
-                { w: "Hello", c: ">@.@>" },
-                { w: "Her", c: "@#.@<" },
-                { w: "Here", c: "^@" },
-                { w: "Hi", c: ">@.@>" },
-                { w: "Him", c: "@#.<#" },
-                { w: "His", c: "@#.@<" },
-                { w: "How", c: "??.>#" },
-                { w: "If", c: "%?.?:" },
-                { w: "In", c: "<^" },
-                { w: "Into", c: "!>.<^" },
-                { w: "It", c: "##.^#" },
-                { w: "Jewel", c: "##" },
-                { w: "Just", c: "?!.<%" },
-                { w: "Kettle", c: "#!" },
-                { w: "Key", c: "#!" },
-                { w: "Knee", c: "@#" },
-                { w: "Knife", c: "#!" },
-                { w: "Knot", c: "##" },
-                { w: "Lamp", c: "#!" },
-                { w: "Leaf", c: "#@" },
-                { w: "Leg", c: "@#" },
-                { w: "Library", c: "^%" },
-                { w: "Line", c: "^:" },
-                { w: "Lip", c: "@#" },
-                { w: "Lock", c: "#!" },
-                { w: "Look", c: "?@.^#" },
-                { w: "Make", c: "#>.!!" },
-                { w: "Map", c: "#?" },
-                { w: "Match", c: "#!" },
-                { w: "Me", c: "@@.<#" },
-                { w: "Monkey", c: "#@" },
-                { w: "Moon", c: "##" },
-                { w: "Mouth", c: ">@" },
-                { w: "Muscle", c: "##" },
-                { w: "My", c: "@@.@<" },
-                { w: "Nail", c: "##" },
-                { w: "Neck", c: "@#" },
-                { w: "Needle", c: "#!" },
-                { w: "Nerve", c: "##" },
-                { w: "Net", c: "##" },
-                { w: "No", c: "<!.@@" },
-                { w: "Not", c: "<!" },
-                { w: "Now", c: ":#" },
-                { w: "Of", c: "#<.^#" },
-                { w: "On", c: "^!.<^" },
-                { w: "Only", c: "?%.< !" },
-                { w: "Or", c: "?<.%?" },
-                { w: "Other", c: "<>" },
-                { w: "Out", c: ">" },
-                { w: "Over", c: "^!.%>" },
-                { w: "Please", c: "!@.@>" },
-                { w: "Range", c: "<%" },
-                { w: "Rather", c: ">?" },
-                { w: "Reach", c: "^^" },
-                { w: "Read", c: "?!" },
-                { w: "Ready", c: "%!" },
-                { w: "Real", c: "<#" },
-                { w: "Reason", c: "%@" },
-                { w: "Receive", c: "#<" },
-                { w: "Record", c: "#?" },
-                { w: "Red", c: "#:" },
-                { w: "Region", c: "^?" },
-                { w: "Relation", c: "%^" },
-                { w: "Remember", c: "?:" },
-                { w: "Repeat", c: "::" },
-                { w: "Reply", c: "?%.><" },
-                { w: "Represent", c: "#?" },
-                { w: "Require", c: "%^" },
-                { w: "Research", c: "??" },
-                { w: "Resource", c: "#<" },
-                { w: "Rest", c: "::" },
-                { w: "Result", c: "#>" },
-                { w: "Return", c: "><.:>" },
-                { w: "Rich", c: "!:" },
-                { w: "Ride", c: ">>" },
-                { w: "Sentence", c: "#?" },
-                { w: "She", c: "@#.<?" },
-                { w: "So", c: "?:.>#" },
-                { w: "Some", c: "#%" },
-                { w: "Sorry", c: "@!.<!" },
-                { w: "Street", c: "^?" },
-                { w: "Stretch", c: "<:" },
-                { w: "String", c: "##" },
-                { w: "Strong", c: "<!" },
-                { w: "Structure", c: "%^" },
-                { w: "Student", c: "@#" },
-                { w: "Study", c: "??" },
-                { w: "Subject", c: "##" },
-                { w: "Substance", c: "#:" },
-                { w: "Such", c: "%#" },
-                { w: "Sudden", c: ":#" },
-                { w: "Sugar", c: "#:" },
-                { w: "Suggest", c: ">?" },
-                { w: "Take", c: "#<.!>" },
-                { w: "Thank You", c: "%@.@>" },
-                { w: "That", c: "^#.?!" },
-                { w: "The", c: "^#" },
-                { w: "Them", c: "@%.<#" },
-                { w: "Then", c: ">:.:#" },
-                { w: "There", c: "^>.^@" },
-                { w: "They", c: "@%.>#" },
-                { w: "This", c: "^#" },
-                { w: "To", c: "!>.^#" },
-                { w: "Use", c: "#!.!!" },
-                { w: "Very", c: "!%" },
-                { w: "We", c: "@@.@%" },
-                { w: "Well", c: "%@.?!" },
-                { w: "What", c: "##.??" },
-                { w: "When", c: ":@.??" },
-                { w: "Where", c: "^^" },
-                { w: "Which", c: "?<.^#" },
-                { w: "Who", c: "@#.??" },
-                { w: "Whom", c: "@#" },
-                { w: "Whose", c: "@#" },
-                { w: "Why", c: "%@" },
-                { w: "Wide", c: "<:" },
-                { w: "Wife", c: "@#" },
-                { w: "Wild", c: "@^" },
-                { w: "Will", c: ":>" },
-                { w: "Win", c: "<>" },
-                { w: "Wind", c: "#:" },
-                { w: "Window", c: "##" },
-                { w: "Wing", c: "#@" },
-                { w: "Winter", c: ":?" },
-                { w: "Wire", c: "##" },
-                { w: "Wise", c: "<>" },
-                { w: "Wish", c: "?>" },
-                { w: "With", c: "%^" },
-                { w: "Within", c: "^#" },
-                { w: "Without", c: "%%" },
-                { w: "Woman", c: "@#" },
-                { w: "Women", c: "@!" },
-                { w: "Wonder", c: "??" },
-                { w: "Wood", c: "#:" },
-                { w: "Word", c: "#?" },
-                { w: "Work", c: ">#" },
-                { w: "Worker", c: "@#" },
-                { w: "World", c: "^?" },
-                { w: "Worry", c: "?@" },
-                { w: "Worse", c: "<<" },
-                { w: "Worst", c: "<<.><" },
-                { w: "Worth", c: "<%" },
-                { w: "Would", c: "%!" },
-                { w: "Write", c: "#>" },
-                { w: "Written", c: "#>.:<" },
-                { w: "Wrong", c: "%%.<@" },
-                { w: "Wrote", c: "#>.:<" },
-                { w: "Yard", c: "^?" },
-                { w: "Year", c: ":?" },
-                { w: "Yellow", c: "#:" },
-                { w: "Yes", c: "?!.@@" },
-                { w: "Yesterday", c: ":<" },
-                { w: "Yet", c: "::" },
-                { w: "Your", c: "@>.@<" },
+
+            const primeSynonyms = [
+                { synonym: "myself", canonical: "@@" },
+                { synonym: "me", canonical: "@@" },
+                { synonym: "self", canonical: "@@" },
+                { synonym: "person", canonical: "@#" },
+                { synonym: "individual", canonical: "@#" },
+                { synonym: "human", canonical: "@#" },
+                { synonym: "emotion", canonical: "@!" },
+                { synonym: "sense", canonical: "@!" },
+                { synonym: "experience", canonical: "@!" },
+                { synonym: "exists", canonical: "@?" },
+                { synonym: "equals", canonical: "@?" },
+                { synonym: "represents", canonical: "@?" },
+                { synonym: "yourself", canonical: "@>" },
+                { synonym: "customer", canonical: "@>" },
+                { synonym: "recipient", canonical: "@>" },
+                { synonym: "possess", canonical: "@<" },
+                { synonym: "keep", canonical: "@<" },
+                { synonym: "hold", canonical: "@<" },
+                { synonym: "reside", canonical: "@:" },
+                { synonym: "survive", canonical: "@:" },
+                { synonym: "inhabit", canonical: "@:" },
+                { synonym: "remain", canonical: "@^" },
+                { synonym: "wait", canonical: "@^" },
+                { synonym: "linger", canonical: "@^" },
+                { synonym: "group", canonical: "@%" },
+                { synonym: "team", canonical: "@%" },
+                { synonym: "community", canonical: "@%" },
+                { synonym: "anatomy", canonical: "#@" },
+                { synonym: "physical", canonical: "#@" },
+                { synonym: "framework", canonical: "#@" },
+                { synonym: "object", canonical: "##" },
+                { synonym: "item", canonical: "##" },
+                { synonym: "asset", canonical: "##" },
+                { synonym: "contact", canonical: "#!" },
+                { synonym: "press", canonical: "#!" },
+                { synonym: "strike", canonical: "#!" },
+                { synonym: "category", canonical: "#?" },
+                { synonym: "type", canonical: "#?" },
+                { synonym: "sort", canonical: "#?" },
+                { synonym: "build", canonical: "#>" },
+                { synonym: "create", canonical: "#>" },
+                { synonym: "produce", canonical: "#>" },
+                { synonym: "component", canonical: "#<" },
+                { synonym: "fraction", canonical: "#<" },
+                { synonym: "element", canonical: "#<" },
+                { synonym: "perish", canonical: "#:" },
+                { synonym: "expire", canonical: "#:" },
+                { synonym: "cease", canonical: "#:" },
+                { synonym: "occurs", canonical: "#^" },
+                { synonym: "present", canonical: "#^" },
+                { synonym: "stands", canonical: "#^" },
+                { synonym: "several", canonical: "#%" },
+                { synonym: "partial", canonical: "#%" },
+                { synonym: "various", canonical: "#%" },
+                { synonym: "desire", canonical: "!@" },
+                { synonym: "wish", canonical: "!@" },
+                { synonym: "intent", canonical: "!@" },
+                { synonym: "occur", canonical: "!#" },
+                { synonym: "transpire", canonical: "!#" },
+                { synonym: "unfold", canonical: "!#" },
+                { synonym: "execute", canonical: "!!" },
+                { synonym: "perform", canonical: "!!" },
+                { synonym: "run", canonical: "!!" },
+                { synonym: "able", canonical: "!?" },
+                { synonym: "capable", canonical: "!?" },
+                { synonym: "permits", canonical: "!?" },
+                { synonym: "travel", canonical: "!>" },
+                { synonym: "shift", canonical: "!>" },
+                { synonym: "transfer", canonical: "!>" },
+                { synonym: "deny", canonical: "!<" },
+                { synonym: "reject", canonical: "!<" },
+                { synonym: "decline", canonical: "!<" },
+                { synonym: "crisis", canonical: "!:" },
+                { synonym: "wrong", canonical: "!:" },
+                { synonym: "faulty", canonical: "!:" },
+                { synonym: "ascend", canonical: "!^" },
+                { synonym: "grow", canonical: "!^" },
+                { synonym: "increase", canonical: "!^" },
+                { synonym: "highly", canonical: "!%" },
+                { synonym: "extremely", canonical: "!%" },
+                { synonym: "immensely", canonical: "!%" },
+                { synonym: "view", canonical: "?@" },
+                { synonym: "observe", canonical: "?@" },
+                { synonym: "witness", canonical: "?@" },
+                { synonym: "understand", canonical: "?#" },
+                { synonym: "comprehend", canonical: "?#" },
+                { synonym: "recall", canonical: "?#" },
+                { synonym: "valid", canonical: "?!" },
+                { synonym: "authentic", canonical: "?!" },
+                { synonym: "correct", canonical: "?!" },
+                { synonym: "ask", canonical: "??" },
+                { synonym: "query", canonical: "??" },
+                { synonym: "doubt", canonical: "??" },
+                { synonym: "talk", canonical: "?>" },
+                { synonym: "discuss", canonical: "?>" },
+                { synonym: "conversing", canonical: "?>" },
+                { synonym: "otherwise", canonical: "?<" },
+                { synonym: "alternative", canonical: "?<" },
+                { synonym: "instead", canonical: "?<" },
+                { synonym: "since", canonical: "?:" },
+                { synonym: "reason", canonical: "?:" },
+                { synonym: "therefore", canonical: "?:" },
+                { synonym: "ponder", canonical: "?^" },
+                { synonym: "analyze", canonical: "?^" },
+                { synonym: "evaluate", canonical: "?^" },
+                { synonym: "single", canonical: "?%" },
+                { synonym: "particular", canonical: "?%" },
+                { synonym: "sole", canonical: "?%" },
+                { synonym: "state", canonical: ">@" },
+                { synonym: "utter", canonical: ">@" },
+                { synonym: "tell", canonical: ">@" },
+                { synonym: "task", canonical: ">#" },
+                { synonym: "perform", canonical: ">#" },
+                { synonym: "accomplish", canonical: ">#" },
+                { synonym: "deploy", canonical: ">!" },
+                { synonym: "force", canonical: ">!" },
+                { synonym: "promote", canonical: ">!" },
+                { synonym: "text", canonical: ">?" },
+                { synonym: "phrasing", canonical: ">?" },
+                { synonym: "vocabulary", canonical: ">?" },
+                { synonym: "route", canonical: ">>" },
+                { synonym: "ship", canonical: ">>" },
+                { synonym: "broadcast", canonical: ">>" },
+                { synonym: "split", canonical: "><" },
+                { synonym: "separate", canonical: "><" },
+                { synonym: "detached", canonical: "><" },
+                { synonym: "following", canonical: ">:" },
+                { synonym: "subsequent", canonical: ">:" },
+                { synonym: "post", canonical: ">:" },
+                { synonym: "depart", canonical: ">^" },
+                { synonym: "leave", canonical: ">^" },
+                { synonym: "proceed", canonical: ">^" },
+                { synonym: "large", canonical: ">%" },
+                { synonym: "massive", canonical: ">%" },
+                { synonym: "extensive", canonical: ">%" },
+                { synonym: "listen", canonical: "<@" },
+                { synonym: "register", canonical: "<@" },
+                { synonym: "perceive", canonical: "<@" },
+                { synonym: "personal", canonical: "<#" },
+                { synonym: "private", canonical: "<#" },
+                { synonym: "interior", canonical: "<#" },
+                { synonym: "negate", canonical: "<!" },
+                { synonym: "deny", canonical: "<!" },
+                { synonym: "exclude", canonical: "<!" },
+                { synonym: "prefer", canonical: "<?" },
+                { synonym: "enjoy", canonical: "<?" },
+                { synonym: "favor", canonical: "<?" },
+                { synonym: "alternative", canonical: "<>" },
+                { synonym: "different", canonical: "<>" },
+                { synonym: "foreign", canonical: "<>" },
+                { synonym: "halt", canonical: "<<" },
+                { synonym: "cease", canonical: "<<" },
+                { synonym: "block", canonical: "<<" },
+                { synonym: "prior", canonical: "<:" },
+                { synonym: "preceding", canonical: "<:" },
+                { synonym: "pre", canonical: "<:" },
+                { synonym: "inside", canonical: "<^" },
+                { synonym: "internal", canonical: "<^" },
+                { synonym: "inner", canonical: "<^" },
+                { synonym: "minor", canonical: "<%" },
+                { synonym: "tiny", canonical: "<%" },
+                { synonym: "minimal", canonical: "<%" },
+                { synonym: "schedule", canonical: ":@" },
+                { synonym: "clock", canonical: ":@" },
+                { synonym: "period", canonical: ":@" },
+                { synonym: "current", canonical: ":#" },
+                { synonym: "immediately", canonical: ":#" },
+                { synonym: "presently", canonical: ":#" },
+                { synonym: "instant", canonical: ":!" },
+                { synonym: "flash", canonical: ":!" },
+                { synonym: "second", canonical: ":!" },
+                { synonym: "shortly", canonical: ":?" },
+                { synonym: "upcoming", canonical: ":?" },
+                { synonym: "imminent", canonical: ":?" },
+                { synonym: "subsequent", canonical: ":>" },
+                { synonym: "ahead", canonical: ":>" },
+                { synonym: "upcoming", canonical: ":>" },
+                { synonym: "past", canonical: ":<" },
+                { synonym: "earlier", canonical: ":<" },
+                { synonym: "historic", canonical: ":<" },
+                { synonym: "constantly", canonical: "::" },
+                { synonym: "perpetual", canonical: "::" },
+                { synonym: "endless", canonical: "::" },
+                { synonym: "extended", canonical: ":^" },
+                { synonym: "lengthy", canonical: ":^" },
+                { synonym: "distant", canonical: ":^" },
+                { synonym: "during", canonical: ":%" },
+                { synonym: "span", canonical: ":%" },
+                { synonym: "interval", canonical: ":%" },
+                { synonym: "local", canonical: "^@" },
+                { synonym: "nearby", canonical: "^@" },
+                { synonym: "present", canonical: "^@" },
+                { synonym: "specific", canonical: "^#" },
+                { synonym: "indicated", canonical: "^#" },
+                { synonym: "identified", canonical: "^#" },
+                { synonym: "over", canonical: "^!" },
+                { synonym: "superior", canonical: "^!" },
+                { synonym: "upper", canonical: "^!" },
+                { synonym: "aspect", canonical: "^?" },
+                { synonym: "edge", canonical: "^?" },
+                { synonym: "flank", canonical: "^?" },
+                { synonym: "distant", canonical: "^>" },
+                { synonym: "remote", canonical: "^>" },
+                { synonym: "isolated", canonical: "^>" },
+                { synonym: "under", canonical: "^<" },
+                { synonym: "beneath", canonical: "^<" },
+                { synonym: "lower", canonical: "^<" },
+                { synonym: "indoor", canonical: "^:" },
+                { synonym: "interior", canonical: "^:" },
+                { synonym: "enclosed", canonical: "^:" },
+                { synonym: "location", canonical: "^^" },
+                { synonym: "coordinate", canonical: "^^" },
+                { synonym: "venue", canonical: "^^" },
+                { synonym: "span", canonical: "^%" },
+                { synonym: "transverse", canonical: "^%" },
+                { synonym: "cross", canonical: "^%" },
+                { synonym: "positive", canonical: "%@" },
+                { synonym: "quality", canonical: "%@" },
+                { synonym: "excellent", canonical: "%@" },
+                { synonym: "numerous", canonical: "%#" },
+                { synonym: "multiple", canonical: "%#" },
+                { synonym: "plenty", canonical: "%#" },
+                { synonym: "maximum", canonical: "%!" },
+                { synonym: "majority", canonical: "%!" },
+                { synonym: "highest", canonical: "%!" },
+                { synonym: "perhaps", canonical: "%?" },
+                { synonym: "possibly", canonical: "%?" },
+                { synonym: "potential", canonical: "%?" },
+                { synonym: "extra", canonical: "%>" },
+                { synonym: "plus", canonical: "%>" },
+                { synonym: "further", canonical: "%>" },
+                { synonym: "scarce", canonical: "%<" },
+                { synonym: "rare", canonical: "%<" },
+                { synonym: "handful", canonical: "%<" },
+                { synonym: "double", canonical: "%:" },
+                { synonym: "repeat", canonical: "%:" },
+                { synonym: "dual", canonical: "%:" },
+                { synonym: "entirely", canonical: "%^" },
+                { synonym: "complete", canonical: "%^" },
+                { synonym: "full", canonical: "%^" },
+                { synonym: "identical", canonical: "%%" },
+                { synonym: "equal", canonical: "%%" },
+                { synonym: "uniform", canonical: "%%" },
             ];
 
             let currentCategoryFilter = "all";
@@ -1796,7 +1781,6 @@
                 const matrixTable = document.getElementById("matrixGridTable");
                 matrixTable.innerHTML = "";
 
-                // Use explicit innerHTML assembly to build standard table blocks cleanly
                 let tableContent = "<thead><tr><th>1st \\ 2nd</th>";
                 coreSymbols.forEach((col) => {
                     tableContent += `
@@ -1812,12 +1796,12 @@
                         <strong>${escapeHtml(row.s)}</strong> <br><span style="font-size:0.65rem; font-weight:normal; color:var(--text-muted);">${escapeHtml(row.m)}</span>
                     </td>`;
                     coreSymbols.forEach((col) => {
-                        const comboSym = row.s + col.s;
-                        const meaning = getMatrixMeaning(row.s, col.s);
+                        const cellCombo = row.s + col.s;
+                        const cellMeaning = getMatrixMeaning(row.s, col.s);
                         tableContent += `
                             <td class="matrix-cell">
-                                <span class="cell-sym">${escapeHtml(comboSym)}</span>
-                                <span class="cell-mean">${escapeHtml(meaning)}</span>
+                                <span class="cell-sym">${escapeHtml(cellCombo)}</span>
+                                <span class="cell-mean" title="${escapeHtml(cellMeaning)}">${escapeHtml(cellMeaning)}</span>
                             </td>`;
                     });
                     tableContent += "</tr>";
@@ -1825,9 +1809,6 @@
                 tableContent += "</tbody>";
                 matrixTable.innerHTML = tableContent;
 
-                document
-                    .getElementById("searchInput")
-                    .addEventListener("input", performSearch);
                 document.querySelectorAll(".search-tab").forEach((tab) => {
                     tab.addEventListener("click", function () {
                         document
@@ -1840,6 +1821,9 @@
                     });
                 });
 
+                document
+                    .getElementById("searchInput")
+                    .addEventListener("input", performSearch);
                 performSearch();
             }
 
@@ -1852,7 +1836,7 @@
                 if (!resultsBody) return;
                 resultsBody.innerHTML = "";
 
-                let filteredPrimes = semanticPrimes.filter((item) => {
+                let matchedPrimes = semanticPrimes.filter((item) => {
                     const catMatch =
                         currentCategoryFilter === "all" ||
                         item.cat === currentCategoryFilter;
@@ -1863,21 +1847,27 @@
                     return catMatch && queryMatch;
                 });
 
-                let filteredCompounds = [];
-                if (currentCategoryFilter === "all") {
-                    filteredCompounds = compoundDictionary.filter((item) => {
-                        return (
-                            !query ||
-                            item.c.toLowerCase().includes(query) ||
-                            item.w.toLowerCase().includes(query)
-                        );
+                if (query && currentCategoryFilter === "all") {
+                    primeSynonyms.forEach((synItem) => {
+                        if (synItem.synonym.toLowerCase().includes(query)) {
+                            const originalPrime = semanticPrimes.find(
+                                (p) => p.symbol === synItem.canonical,
+                            );
+                            if (
+                                originalPrime &&
+                                !matchedPrimes.some(
+                                    (p) => p.symbol === originalPrime.symbol,
+                                )
+                            ) {
+                                matchedPrimes.push(originalPrime);
+                            }
+                        }
                     });
                 }
 
-                const totalMatches =
-                    filteredPrimes.length + filteredCompounds.length;
+                const totalMatches = matchedPrimes.length;
                 document.getElementById("resultsInfo").innerText =
-                    `${totalMatches} metric entries resolved`;
+                    `${totalMatches} canonical primes`;
 
                 if (totalMatches === 0) {
                     document.getElementById("noResults").style.display =
@@ -1890,22 +1880,21 @@
                 document.getElementById("noResults").style.display = "none";
                 document.getElementById("resultsTable").style.display = "table";
 
-                filteredPrimes.forEach((item) => {
+                matchedPrimes.forEach((item) => {
+                    const associatedSyns = primeSynonyms
+                        .filter((s) => s.canonical === item.symbol)
+                        .map((s) => s.synonym)
+                        .join(", ");
+
+                    const synonymDisplay = associatedSyns
+                        ? `<br><small style="color: var(--text-dim)">${escapeHtml(associatedSyns)}</small>`
+                        : "";
+
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td class="symbol-cell">${escapeHtml(item.symbol)}</td>
-                        <td class="meaning-cell">${escapeHtml(item.meaning)}</td>
+                        <td class="meaning-cell"><strong>${escapeHtml(item.meaning)}</strong>${synonymDisplay}</td>
                         <td><span class="category-badge">${escapeHtml(item.cat)}</span></td>
-                    `;
-                    resultsBody.appendChild(row);
-                });
-
-                filteredCompounds.forEach((item) => {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-                        <td class="symbol-cell">${escapeHtml(item.c)}</td>
-                        <td class="meaning-cell">${escapeHtml(item.w)}</td>
-                        <td><span class="category-badge">CHAIN</span></td>
                     `;
                     resultsBody.appendChild(row);
                 });
@@ -1919,21 +1908,19 @@
                 tbody.innerHTML = "";
 
                 semanticPrimes.forEach((item) => {
+                    const associatedSyns = primeSynonyms
+                        .filter((s) => s.canonical === item.symbol)
+                        .map((s) => s.synonym)
+                        .join(", ");
+
+                    const synonymDisplay = associatedSyns
+                        ? ` (${associatedSyns})`
+                        : "";
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td class="symbol-cell">${escapeHtml(item.symbol)}</td>
-                        <td class="meaning-cell">${escapeHtml(item.meaning)}</td>
+                        <td class="meaning-cell">${escapeHtml(item.meaning)}${escapeHtml(synonymDisplay)}</td>
                         <td><span class="category-badge">${escapeHtml(item.cat)}</span></td>
-                    `;
-                    tbody.appendChild(row);
-                });
-
-                compoundDictionary.forEach((item) => {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-                        <td class="symbol-cell">${escapeHtml(item.c)}</td>
-                        <td class="meaning-cell">${escapeHtml(item.w)}</td>
-                        <td><span class="category-badge">CHAIN</span></td>
                     `;
                     tbody.appendChild(row);
                 });
